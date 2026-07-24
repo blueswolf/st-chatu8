@@ -65373,6 +65373,17 @@ function unzipFile(arrayBuffer) {
 }
 async function generateNovelAIImage({ prompt: link, width: Xwidth, height: Xheight, change, extraNegativePrompt }) {
   clearLog();
+  if (extension_settings51[extensionName].client === "jiuguan") {
+    const now = Date.now();
+    if (now - (window.lastNativeNovelAIGenTime || 0) < 60000) {
+      const remaining = Math.ceil((60000 - (now - (window.lastNativeNovelAIGenTime || 0))) / 1000);
+      if (typeof toastr !== "undefined") {
+        toastr.error(`使用酒馆原生接口限制为每分钟生成一次。请等待 ${remaining} 秒后重试。`, "频率限制");
+      }
+      throw new Error(`频率限制：请等待 ${remaining} 秒后重试`);
+    }
+    window.lastNativeNovelAIGenTime = now;
+  }
   const taskId = taskQueue.addTask({
     name: (link || "").substring(0, 30) + (link && link.length > 30 ? "..." : ""),
     type: TaskType.NOVELAI,
@@ -65799,6 +65810,19 @@ async function generateNovelAIImage({ prompt: link, width: Xwidth, height: Xheig
     throw validationError;
   }
   const payload = preset_data;
+  if (extension_settings51[extensionName].client === "jiuguan" && payload && payload.parameters) {
+    delete payload.parameters.reference_image;
+    delete payload.parameters.reference_information_extracted;
+    delete payload.parameters.reference_strength;
+    delete payload.parameters.character_prompts;
+    delete payload.parameters.vibe;
+    delete payload.parameters.vibe_transfer;
+    delete payload.parameters.vibe_images;
+    delete payload.parameters.vibe_information_extracted;
+    delete payload.parameters.bg_remove;
+    delete payload.parameters.remove_bg;
+    delete payload.parameters.upscale;
+  }
   const loggablePayload = createLoggableNovelAIPayload(payload);
   if (extension_settings51[extensionName].client != "jiuguan") {
     addLog(`\u6700\u7EC8\u751F\u56FE\u53C2\u6570 (payload): ${JSON.stringify(loggablePayload, null, 2)}`);
