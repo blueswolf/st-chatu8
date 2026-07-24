@@ -65908,7 +65908,35 @@ async function generateNovelAIImage({ prompt: link, width: Xwidth, height: Xheig
           console.warn(`Could not parse JSON from /api/secrets/write. Response was: "${responseText}". Continuing without rotating key.`);
         }
       }
-      const tavernAIPayload = { prompt: prompt2, model: extension_settings51[extensionName].novelaimode, sampler: preset_data.sampler, scheduler: preset_data.noise_schedule, steps: preset_data.steps, scale: preset_data.scale, width: preset_data.width, height: preset_data.height, negative_prompt: preset_data.negative_prompt, decrisper: preset_data.dynamic_thresholding, variety_boost: preset_data.skip_cfg_above_sigma, sm: preset_data.sm, sm_dyn: preset_data.sm_dyn, seed: preset_data.seed };
+      let nativeSteps = Math.min(Number(preset_data.steps) || 28, 28);
+      if (preset_data.steps > 28) {
+        addLog("[\u539F\u711F\u9632\u62A4\u7269] \u91C7\u6837\u6B65\u6570\u5DF2\u88AB\u5F3A\u5236\u9650\u588B\u4E3A\u6700\u5927 28 \u6B65");
+      }
+      let nativeWidth = Math.min(Number(preset_data.width) || 1024, 1024);
+      if (preset_data.width > 1024) {
+        addLog("[\u539F\u711F\u9632\u62A4\u7269] \u5BBD\u5EA6\u5DF2\u88AB\u5F3A\u5236\u9650\u588B\u4E3A\u6700\u5927 1024");
+      }
+      let nativeHeight = Math.min(Number(preset_data.height) || 1024, 1024);
+      if (preset_data.height > 1024) {
+        addLog("[\u539F\u711F\u9632\u62A4\u7269] \u9AD8\u5EA6\u5DF2\u88AB\u5F3A\u5236\u9650\u588B\u4E3A\u6700\u5927 1024");
+      }
+      const tavernAIPayload = {
+        prompt: prompt2,
+        model: extension_settings51[extensionName].novelaimode,
+        sampler: preset_data.sampler,
+        scheduler: preset_data.noise_schedule,
+        steps: nativeSteps,
+        scale: preset_data.scale,
+        width: nativeWidth,
+        height: nativeHeight,
+        negative_prompt: preset_data.negative_prompt,
+        decrisper: preset_data.dynamic_thresholding,
+        variety_boost: preset_data.skip_cfg_above_sigma,
+        sm: preset_data.sm,
+        sm_dyn: preset_data.sm_dyn,
+        seed: preset_data.seed,
+        n_samples: 1
+      };
       addLog(`\u6700\u7EC8\u751F\u56FE\u53C2\u6570 (payload): ${JSON.stringify(tavernAIPayload, null, 2)}`);
       const result = await fetch("/api/novelai/generate-image", { method: "POST", headers: getRequestHeaders(window.token), body: JSON.stringify(tavernAIPayload), signal: currentAbortController2?.signal });
       if (currentCloudQueueInfo) {
@@ -82320,7 +82348,15 @@ async function check_update() {
   reload();
   return true;
 }
+function applyNativeProtectionUI() {
+  const isNative = extension_settings51[extensionName]?.client === "jiuguan";
+  const vibeSection = document.getElementById("nai-vibe-transfer-section");
+  const charRefSection = document.getElementById("nai-char-ref-section");
+  if (vibeSection) vibeSection.style.display = isNative ? "none" : "";
+  if (charRefSection) charRefSection.style.display = isNative ? "none" : "";
+}
 async function chenk() {
+  applyNativeProtectionUI();
   if (!(extension_settings100[extensionName].scriptEnabled == true || extension_settings100[extensionName].scriptEnabled == "true") || checkSendBuClass()) {
     return;
   }
