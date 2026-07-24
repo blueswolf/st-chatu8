@@ -35401,10 +35401,9 @@ function initializeMainDocumentObserver() {
           return node.tagName === "IFRAME" || Boolean(node.querySelector?.("iframe"));
         });
       });
-      if (!hasIframeMutation) {
-        return;
+      if (hasIframeMutation) {
+        observeAllIframes();
       }
-      observeAllIframes();
       debouncedProcessVisible();
     });
     mainDocumentObserver.observe(root, {
