@@ -80323,7 +80323,7 @@ function initAutoLLMClick() {
 var settings2;
 var currentPreviewTheme2 = {};
 var generationTabs3 = ["sd", "novelai", "comfyui"];
-var tabIds = ["main", "sd", "novelai", "comfyui", "banana", "llm", "vocabulary", "knowledgeBase", "character", "theme", "fab", "image-cache", "regex", "send_data", "about", "log"];
+var tabIds = ["main", "novelai", "image-cache", "log", "theme", "fab", "sd", "comfyui", "banana", "llm", "vocabulary", "knowledgeBase", "character", "regex", "send_data", "about"];
 var FAB_ICON_ACCEPTED_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif"];
 var FAB_ICON_MAX_FILE_SIZE = 5 * 1024 * 1024;
 var FAB_ICON_MAX_DIMENSION = 512;
@@ -80480,45 +80480,6 @@ async function loadAllTabsContent(container) {
   }
   try {
     const fetchPromises = tabIds.map((tabId) => {
-      if (tabId === "about") {
-        const aboutContent = getAboutPageContent();
-        const requiredBlocks = [
-          // 作者信息块（完整HTML）
-          `<div class="st-chatu8-settings-section">
-        <h3>\u5173\u4E8E \u667A\u7ED8\u59EC \u{1F5BC}\uFE0F</h3>
-        <p>\u63D2\u4EF6\u4F5C\u8005: \u4ECE\u524D\u8DDF\u4F60\u4E00\u6837</p>
-        <div class="st-chatu8-about-links">
-            <a href="https://afdian.com/a/cqgnyy" target="_blank" class="st-chatu8-about-link support">
-                <i class="fa-solid fa-heart"></i>
-                <span>\u652F\u6301\u4F5C\u8005</span>
-                <span class="st-chatu8-cute-emoji">\u{1F496}</span>
-            </a>
-            <a href="https://gxcgf4l6b2y.feishu.cn/wiki/UXtHw83pmiHnx1k4WpwcIn79nec?from=from_copylink" target="_blank" class="st-chatu8-about-link help">
-                <i class="fa-solid fa-circle-question"></i>
-                <span>\u67E5\u770B\u5E2E\u52A9</span>
-                <span class="st-chatu8-cute-emoji">\u2753</span>
-            </a>
-        </div>
-    </div>`,
-          // 关键免责声明句子
-          "\u514D\u8D23\u58F0\u660E",
-          "\u672C\u63D2\u4EF6\u4EC5\u4F5C\u4E3A\u56FE\u50CF\u751F\u6210\u7684\u6865\u63A5\u5DE5\u5177",
-          "\u7528\u6237\u751F\u6210\u7684\u6240\u6709\u5185\u5BB9\u7531\u7528\u6237\u81EA\u884C\u8D1F\u8D23",
-          "\u7981\u6B62\u4F7F\u7528\u672C\u63D2\u4EF6\u751F\u6210\u4EFB\u4F55\u8FDD\u6CD5\u8FDD\u89C4\u5185\u5BB9",
-          "\u56E0\u4F7F\u7528\u672C\u63D2\u4EF6\u4EA7\u751F\u7684\u4EFB\u4F55\u6CD5\u5F8B\u8D23\u4EFB\u6216\u540E\u679C",
-          // 免费声明关键句子
-          "\u672C\u63D2\u4EF6\u5B8C\u5168\u514D\u8D39",
-          "\u672C\u63D2\u4EF6\u4E3A\u514D\u8D39\u8F6F\u4EF6",
-          "\u5982\u679C\u60A8\u662F\u901A\u8FC7\u4ED8\u8D39\u6E20\u9053\u83B7\u5F97\u672C\u63D2\u4EF6\uFF0C\u60A8\u5DF2\u88AB\u9A97"
-        ];
-        const missingBlocks = requiredBlocks.filter((block) => !aboutContent.includes(block));
-        if (missingBlocks.length > 0) {
-          console.error("[Chatu8] \u5173\u952E\u58F0\u660E\u5185\u5BB9\u7F3A\u5931\uFF0C\u63D2\u4EF6\u65E0\u6CD5\u52A0\u8F7D");
-          alert("\u26A0\uFE0F \u6587\u751F\u56FE\u63D2\u4EF6\u68C0\u6D4B\u5230\u5173\u952E\u6587\u4EF6\u88AB\u7BE1\u6539\uFF0C\u65E0\u6CD5\u52A0\u8F7D\u3002\n\n\u8BF7\u91CD\u65B0\u5B89\u88C5\u539F\u7248\u63D2\u4EF6\u3002");
-          throw new Error("\u58F0\u660E\u5185\u5BB9\u6821\u9A8C\u5931\u8D25");
-        }
-        return Promise.resolve(aboutContent);
-      }
       return fetch(`${extensionFolderPath}/html/settings/${tabId}.html`).then((res) => {
         if (!res.ok) throw new Error(`Failed to fetch ${tabId}.html`);
         return res.text();
@@ -80602,6 +80563,27 @@ async function initUI({ check_update: check_update2 }) {
       toastr.warning("\u68C0\u6D4B\u5230\u51B2\u7A81\uFF1A\u89D2\u8272\u53C2\u8003\u4F18\u5148\uFF0CVibe Transfer \u5DF2\u7981\u7528", "\u529F\u80FD\u51B2\u7A81");
       saveSettingsDebounced59();
     }
+    if (settings2.autoInjectImagePrompt === undefined) {
+      settings2.autoInjectImagePrompt = "true";
+    }
+    if (!settings2.autoInjectSystemPromptText) {
+      settings2.autoInjectSystemPromptText = `[生图任务指令]
+请在你的每条回复末尾，结合当前情景描绘、角色动作、服装、表情、背景环境及画风，自动生成一段适配 NovelAI (NAI 4.5) 的英文 Danbooru 提示词。
+格式要求：必须严格包裹在 <image>image### 和 ###</image> 之间！
+范例：
+<image>image### 1girl, solo, masterpiece, anime style, detailed background, [人物特征], [服装描写], [动作与表情], [场景与光影] ###</image>
+注意：保持提示词精炼准确，遵循 Danbooru / NAI 语法。`;
+    }
+    if (!settings2.novelai_character_descriptions) {
+      settings2.novelai_character_descriptions = `# 角色固定外貌特征设定 (Character Features)
+# 支持多角色。当开启「随聊天一起生成」时，此处的特征设定会随生图指令一同发送给大模型，确保生图外貌特征高度稳定。
+
+[角色1: 莉莉丝 / Lilith]
+long silver hair, red eyes, twin tails, pale skin, black gothic dress, hair ribbon
+
+[角色2: 示例角色 / Example]
+short blonde hair, blue eyes, casual hoodie, denim shorts`;
+    }
     if (!settings2.themes) {
       settings2.themes = JSON.parse(JSON.stringify(defaultThemes));
     }
@@ -80609,7 +80591,7 @@ async function initUI({ check_update: check_update2 }) {
       settings2.theme_id = "\u9ED8\u8BA4-\u767D\u5929";
     }
     applyTheme(settings2.themes[settings2.theme_id]);
-    const mainKeys = ["scriptEnabled", "helpTipsEnabled", "newlineFixEnabled", "mode", "client", "displayMode", "heavyFrontendMode", "insertOriginalText", "dbclike", "collapseImage", "zidongdianji", "zidongdianji2", "longPressToEdit", "clickToPreview", "startTag", "endTag", "cache", "sdUrl", "st_chatu8_sd_auth", "comfyuiUrl", "novelaiApi", "novelaisite", "novelaiOtherSite", "enableCloudQueue", "cloudQueueUrl", "cloudQueueGreeting", "showQueueGreeting", "novelaimode", "novelai_sampler", "Schedule", "nai3Scale", "cfg_rescale", "AI_use_coords", "sm", "dyn", "nai3Variety", "nai3Deceisp", "sd_cwidth", "sd_cheight", "sd_csteps", "sd_cseed", "sdCfgScale", "restoreFaces", "novelai_width", "novelai_height", "novelai_steps", "novelai_seed", "nai3VibeTransfer", "enableVibeGroupTransfer", "normalizeRefStrength", "InformationExtracted", "ReferenceStrength", "nai3CharRef", "nai3StylePerception", "comfyui_width", "comfyui_height", "comfyui_steps", "comfyui_seed", "cfg_comfyui", "worker", "ipa", "c_fenwei", "c_xijie", "c_quanzhong", "c_idquanzhong", "AQT_sd", "UCP_sd", "AQT_novelai", "UCP_novelai", "AQT_comfyui", "UCP_comfyui", "addFurryDataset", "sd_cupscale_factor", "sd_chires_fix", "sd_chires_steps", "sd_cdenoising_strength", "sd_cclip_skip", "sd_cadetailer", "worldBookEnabled", "ai_temperature", "ai_top_p", "ai_presence_penalty", "ai_frequency_penalty", "ai_stream", "ai_private", "ai_token", "vocabulary_search_startswith", "vocabulary_search_limit", "vocabulary_search_sort", "enablePregen", "autoLLMImageGen", "randomYushe", "aiAutonomousResolution", "imageAlignment", "imageSizeScale", "imageGenInterval", "translation_system_prompt", "ai_test_system", "ai_test_user", "ai_test_output", "jiuguanchucun", "vibeJiuguanchucun", "convertToJpegStorage", "weilin_lora_fix"];
+    const mainKeys = ["scriptEnabled", "helpTipsEnabled", "newlineFixEnabled", "mode", "client", "displayMode", "heavyFrontendMode", "insertOriginalText", "dbclike", "collapseImage", "zidongdianji", "zidongdianji2", "longPressToEdit", "clickToPreview", "startTag", "endTag", "cache", "sdUrl", "st_chatu8_sd_auth", "comfyuiUrl", "novelaiApi", "novelaisite", "novelaiOtherSite", "enableCloudQueue", "cloudQueueUrl", "cloudQueueGreeting", "showQueueGreeting", "novelaimode", "novelai_sampler", "Schedule", "nai3Scale", "cfg_rescale", "AI_use_coords", "sm", "dyn", "nai3Variety", "nai3Deceisp", "sd_cwidth", "sd_cheight", "sd_csteps", "sd_cseed", "sdCfgScale", "restoreFaces", "novelai_width", "novelai_height", "novelai_steps", "novelai_seed", "nai3VibeTransfer", "enableVibeGroupTransfer", "normalizeRefStrength", "InformationExtracted", "ReferenceStrength", "nai3CharRef", "nai3StylePerception", "comfyui_width", "comfyui_height", "comfyui_steps", "comfyui_seed", "cfg_comfyui", "worker", "ipa", "c_fenwei", "c_xijie", "c_quanzhong", "c_idquanzhong", "AQT_sd", "UCP_sd", "AQT_novelai", "UCP_novelai", "AQT_comfyui", "UCP_comfyui", "addFurryDataset", "sd_cupscale_factor", "sd_chires_fix", "sd_chires_steps", "sd_cdenoising_strength", "sd_cclip_skip", "sd_cadetailer", "worldBookEnabled", "ai_temperature", "ai_top_p", "ai_presence_penalty", "ai_frequency_penalty", "ai_stream", "ai_private", "ai_token", "vocabulary_search_startswith", "vocabulary_search_limit", "vocabulary_search_sort", "enablePregen", "autoLLMImageGen", "autoInjectImagePrompt", "autoInjectSystemPromptText", "novelai_character_descriptions", "randomYushe", "aiAutonomousResolution", "imageAlignment", "imageSizeScale", "imageGenInterval", "translation_system_prompt", "ai_test_system", "ai_test_user", "ai_test_output", "jiuguanchucun", "vibeJiuguanchucun", "convertToJpegStorage", "weilin_lora_fix"];
     mainKeys.forEach((key) => {
       const element = document.getElementById(key);
       if (element) {
@@ -82469,6 +82451,7 @@ async function main() {
   extension_settings100[extensionName] = mergedSettings;
   installGlobalErrorHandler();
   initImageGenStatsListener();
+  initAutoInjectPromptListener();
   await initUI({ check_update });
   initializeNewlineFixer();
   initializeTTS();
@@ -82476,6 +82459,36 @@ async function main() {
   setTimeout(addNewElement, 2e3);
   setInterval(chenk, 4e3);
   await checkForUpdates2();
+}
+function initAutoInjectPromptListener() {
+  try {
+    if (typeof eventSource !== "undefined" && typeof event_types !== "undefined" && event_types.CHAT_COMPLETION_PROMPT_READY) {
+      eventSource.on(event_types.CHAT_COMPLETION_PROMPT_READY, (data) => {
+        const isEnabled = settings2?.autoInjectImagePrompt === "true" || settings2?.autoInjectImagePrompt === true;
+        if (!isEnabled) return;
+        
+        let injectText = (settings2.autoInjectSystemPromptText || "").trim();
+        let charDesc = (settings2.novelai_character_descriptions || "").trim();
+        
+        let combined = "";
+        if (injectText) combined += injectText;
+        if (charDesc) {
+          if (combined) combined += "\n\n";
+          combined += charDesc;
+        }
+
+        if (combined && data && Array.isArray(data.chat)) {
+          data.chat.push({
+            role: "system",
+            content: combined
+          });
+          console.log("[zinao-chatu8] Auto injected image generation prompt and character descriptions into chat payload.");
+        }
+      });
+    }
+  } catch (err) {
+    console.error("[zinao-chatu8] Failed to initialize AutoInjectPromptListener:", err);
+  }
 }
 function addNewElement() {
   const targetElement = document.querySelector("#option_toggle_AN");

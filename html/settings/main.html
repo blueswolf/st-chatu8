@@ -88,6 +88,18 @@
             </div>
         </div>
         <div class="st-chatu8-field">
+            <label for="autoInjectImagePrompt">随聊天一起生成 (自动注入Prompt)</label>
+            <div class="st-chatu8-toggle">
+                <input id="autoInjectImagePrompt" type="checkbox"/>
+                <span class="st-chatu8-slider"></span>
+            </div>
+        </div>
+        <div class="st-chatu8-field-col" id="autoInjectSystemPromptCol" style="margin-bottom: 12px;">
+            <label for="autoInjectSystemPromptText">生图指令系统提示词 <span class="st-chatu8-unsaved-warning" title="设置尚未保存" style="display: none;"><i class="fa-solid fa-triangle-exclamation"></i></span></label>
+            <textarea id="autoInjectSystemPromptText" class="st-chatu8-textarea" rows="5" placeholder="请输入发送给大模型的生图指令..."></textarea>
+            <small style="color: #888; margin-top: 4px; display: block;">开启后，每次发送聊天对话时，会自动将此指令（及角色外貌设定）附带给大模型，让其在回复末尾吐出生图 Tag。</small>
+        </div>
+        <div class="st-chatu8-field">
             <label for="autoLLMImageGen">自动LLM请求生图(非同层)</label>
             <div class="st-chatu8-toggle">
                 <input id="autoLLMImageGen" type="checkbox"/>
