@@ -29900,6 +29900,18 @@ function showTagModifyDemandPopup() {
     setTimeout(() => textarea.focus(), 100);
   });
 }
+function cleanExtractedPrompt(promptText) {
+  if (!promptText || typeof promptText !== "string") return "";
+  let cleaned = promptText
+    .replace(/^<image>/i, "")
+    .replace(/<\/image>$/i, "")
+    .replace(/^image\s*###/i, "")
+    .replace(/###$/i, "")
+    .trim();
+  // Strip reasoning / CoT headers if accidentally captured (e.g., "Refining Image and Text...")
+  cleaned = cleaned.replace(/^(?:\*\*)?(?:\d+\.\s*)?(?:Generating|Refining)\s+(?:Image|Text|Prompt)[\s\S]*?(?=\b1girl\b|\b1boy\b|\bmasterpiece\b|\bsolo\b|[a-zA-Z0-9_]+,)/i, "");
+  return cleaned.trim();
+}
 function parseImageTagFromResponse(text) {
   if (!text || typeof text !== "string") return null;
   let normalizedText = text.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
@@ -29920,9 +29932,9 @@ function parseImageTagFromResponse(text) {
       const innerRegex = new RegExp(`(?:${escapedStart}|image\\s*###)\\s*([\\s\\S]*?)\\s*(?:${escapedEnd}|###)`, "gi");
       const innerMatches = [...lastImageContent.matchAll(innerRegex)];
       if (innerMatches.length > 0) {
-        return innerMatches[innerMatches.length - 1][1].trim();
+        return cleanExtractedPrompt(innerMatches[innerMatches.length - 1][1]);
       }
-      const fallback = lastImageContent.trim();
+      const fallback = cleanExtractedPrompt(lastImageContent);
       if (fallback) return fallback;
     }
   }
@@ -29934,21 +29946,21 @@ function parseImageTagFromResponse(text) {
     const innerRegex = new RegExp(`(?:${escapedStart}|image\\s*###)\\s*([\\s\\S]*?)\\s*(?:${escapedEnd}|###)`, "gi");
     const innerMatches = [...lastImageContent.matchAll(innerRegex)];
     if (innerMatches.length > 0) {
-      return innerMatches[innerMatches.length - 1][1].trim();
+      return cleanExtractedPrompt(innerMatches[innerMatches.length - 1][1]);
     }
-    const fallback = lastImageContent.trim();
+    const fallback = cleanExtractedPrompt(lastImageContent);
     if (fallback) return fallback;
   }
   const regex = new RegExp(`(?:${escapedStart}|image\\s*###)\\s*([\\s\\S]*?)\\s*(?:${escapedEnd}|###)`, "gi");
   const matches = [...normalizedText.matchAll(regex)];
   if (matches.length > 0) {
     console.log("[parseImageTagFromResponse] Using last image### in full text");
-    return matches[matches.length - 1][1].trim();
+    return cleanExtractedPrompt(matches[matches.length - 1][1]);
   }
   const fallbackRegex = /image\s*#{2,}\s*([\s\S]*?)\s*#{2,}/gi;
   const fallbackMatches = [...normalizedText.matchAll(fallbackRegex)];
   if (fallbackMatches.length > 0) {
-    return fallbackMatches[fallbackMatches.length - 1][1].trim();
+    return cleanExtractedPrompt(fallbackMatches[fallbackMatches.length - 1][1]);
   }
   console.warn("[parseImageTagFromResponse] No match found in text:", normalizedText.substring(0, 300));
   return null;
