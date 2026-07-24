@@ -65427,7 +65427,7 @@ async function generateNovelAIImage({ prompt: link, width: Xwidth, height: Xheig
   link = await stripChineseAnnotations(link);
   change = await stripChineseAnnotations(change);
   console.log("\u6B63\u5728\u5904\u7406\u4E2D\u6587\u6CE8\u91CA\u5B8C\u6210...", link);
-  if (extension_settings51[extensionName].novelaiApi == "000000") {
+  if (extension_settings51[extensionName].client !== "jiuguan" && extension_settings51[extensionName].novelaiApi == "000000") {
     addLog("\u8BF7\u586B\u5199 NovelAI API Key");
     toastr.error("\u8BF7\u586B\u5199 NovelAI API Key");
     taskQueue.completeTask(taskId, false);
@@ -65873,7 +65873,7 @@ async function generateNovelAIImage({ prompt: link, width: Xwidth, height: Xheig
         headers: getRequestHeaders(window.token),
         body: JSON.stringify({})
       });
-      if (read.ok) {
+      if (read.ok && extension_settings51[extensionName].novelaiApi && extension_settings51[extensionName].novelaiApi !== "000000") {
         if (extension_settings51[extensionName].novelaiApi_id != "") {
           const read2 = await fetch("/api/secrets/delete", {
             method: "POST",
