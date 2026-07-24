@@ -82482,12 +82482,12 @@ function initAutoInjectPromptListener() {
             role: "system",
             content: combined
           });
-          console.log("[zinao-chatu8] Auto injected image generation prompt and character descriptions into chat payload.");
+          console.log("[st-chatu8] Auto injected image generation prompt and character descriptions into chat payload.");
         }
       });
     }
   } catch (err) {
-    console.error("[zinao-chatu8] Failed to initialize AutoInjectPromptListener:", err);
+    console.error("[st-chatu8] Failed to initialize AutoInjectPromptListener:", err);
   }
 }
 function addNewElement() {
