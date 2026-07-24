@@ -80566,6 +80566,9 @@ async function initUI({ check_update: check_update2 }) {
     if (settings2.autoInjectImagePrompt === undefined) {
       settings2.autoInjectImagePrompt = "true";
     }
+    if (settings2.autoInjectCharDesc === undefined) {
+      settings2.autoInjectCharDesc = "false";
+    }
     if (!settings2.autoInjectSystemPromptText) {
       settings2.autoInjectSystemPromptText = `[生图任务指令]
 请在你的每条回复末尾，结合当前情景描绘、角色动作、服装、表情、背景环境及画风，自动生成一段适配 NovelAI (NAI 4.5) 的英文 Danbooru 提示词。
@@ -80576,7 +80579,7 @@ async function initUI({ check_update: check_update2 }) {
     }
     if (!settings2.novelai_character_descriptions) {
       settings2.novelai_character_descriptions = `# 角色固定外貌特征设定 (Character Features)
-# 支持多角色。当开启「随聊天一起生成」时，此处的特征设定会随生图指令一同发送给大模型，确保生图外貌特征高度稳定。
+# 支持多角色。当开启「随聊天一起生成」和「发送角色外貌给大模型」开关时，此处的特征设定会随生图指令一同发送给大模型。
 
 [角色1: 莉莉丝 / Lilith]
 long silver hair, red eyes, twin tails, pale skin, black gothic dress, hair ribbon
@@ -80591,7 +80594,7 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
       settings2.theme_id = "\u9ED8\u8BA4-\u767D\u5929";
     }
     applyTheme(settings2.themes[settings2.theme_id]);
-    const mainKeys = ["scriptEnabled", "helpTipsEnabled", "newlineFixEnabled", "mode", "client", "displayMode", "heavyFrontendMode", "insertOriginalText", "dbclike", "collapseImage", "zidongdianji", "zidongdianji2", "longPressToEdit", "clickToPreview", "startTag", "endTag", "cache", "sdUrl", "st_chatu8_sd_auth", "comfyuiUrl", "novelaiApi", "novelaisite", "novelaiOtherSite", "enableCloudQueue", "cloudQueueUrl", "cloudQueueGreeting", "showQueueGreeting", "novelaimode", "novelai_sampler", "Schedule", "nai3Scale", "cfg_rescale", "AI_use_coords", "sm", "dyn", "nai3Variety", "nai3Deceisp", "sd_cwidth", "sd_cheight", "sd_csteps", "sd_cseed", "sdCfgScale", "restoreFaces", "novelai_width", "novelai_height", "novelai_steps", "novelai_seed", "nai3VibeTransfer", "enableVibeGroupTransfer", "normalizeRefStrength", "InformationExtracted", "ReferenceStrength", "nai3CharRef", "nai3StylePerception", "comfyui_width", "comfyui_height", "comfyui_steps", "comfyui_seed", "cfg_comfyui", "worker", "ipa", "c_fenwei", "c_xijie", "c_quanzhong", "c_idquanzhong", "AQT_sd", "UCP_sd", "AQT_novelai", "UCP_novelai", "AQT_comfyui", "UCP_comfyui", "addFurryDataset", "sd_cupscale_factor", "sd_chires_fix", "sd_chires_steps", "sd_cdenoising_strength", "sd_cclip_skip", "sd_cadetailer", "worldBookEnabled", "ai_temperature", "ai_top_p", "ai_presence_penalty", "ai_frequency_penalty", "ai_stream", "ai_private", "ai_token", "vocabulary_search_startswith", "vocabulary_search_limit", "vocabulary_search_sort", "enablePregen", "autoLLMImageGen", "autoInjectImagePrompt", "autoInjectSystemPromptText", "novelai_character_descriptions", "randomYushe", "aiAutonomousResolution", "imageAlignment", "imageSizeScale", "imageGenInterval", "translation_system_prompt", "ai_test_system", "ai_test_user", "ai_test_output", "jiuguanchucun", "vibeJiuguanchucun", "convertToJpegStorage", "weilin_lora_fix"];
+    const mainKeys = ["scriptEnabled", "helpTipsEnabled", "newlineFixEnabled", "mode", "client", "displayMode", "heavyFrontendMode", "insertOriginalText", "dbclike", "collapseImage", "zidongdianji", "zidongdianji2", "longPressToEdit", "clickToPreview", "startTag", "endTag", "cache", "sdUrl", "st_chatu8_sd_auth", "comfyuiUrl", "novelaiApi", "novelaisite", "novelaiOtherSite", "enableCloudQueue", "cloudQueueUrl", "cloudQueueGreeting", "showQueueGreeting", "novelaimode", "novelai_sampler", "Schedule", "nai3Scale", "cfg_rescale", "AI_use_coords", "sm", "dyn", "nai3Variety", "nai3Deceisp", "sd_cwidth", "sd_cheight", "sd_csteps", "sd_cseed", "sdCfgScale", "restoreFaces", "novelai_width", "novelai_height", "novelai_steps", "novelai_seed", "nai3VibeTransfer", "enableVibeGroupTransfer", "normalizeRefStrength", "InformationExtracted", "ReferenceStrength", "nai3CharRef", "nai3StylePerception", "comfyui_width", "comfyui_height", "comfyui_steps", "comfyui_seed", "cfg_comfyui", "worker", "ipa", "c_fenwei", "c_xijie", "c_quanzhong", "c_idquanzhong", "AQT_sd", "UCP_sd", "AQT_novelai", "UCP_novelai", "AQT_comfyui", "UCP_comfyui", "addFurryDataset", "sd_cupscale_factor", "sd_chires_fix", "sd_chires_steps", "sd_cdenoising_strength", "sd_cclip_skip", "sd_cadetailer", "worldBookEnabled", "ai_temperature", "ai_top_p", "ai_presence_penalty", "ai_frequency_penalty", "ai_stream", "ai_private", "ai_token", "vocabulary_search_startswith", "vocabulary_search_limit", "vocabulary_search_sort", "enablePregen", "autoLLMImageGen", "autoInjectImagePrompt", "autoInjectCharDesc", "autoInjectSystemPromptText", "novelai_character_descriptions", "randomYushe", "aiAutonomousResolution", "imageAlignment", "imageSizeScale", "imageGenInterval", "translation_system_prompt", "ai_test_system", "ai_test_user", "ai_test_output", "jiuguanchucun", "vibeJiuguanchucun", "convertToJpegStorage", "weilin_lora_fix"];
     mainKeys.forEach((key) => {
       const element = document.getElementById(key);
       if (element) {
@@ -82468,7 +82471,9 @@ function initAutoInjectPromptListener() {
         if (!isEnabled) return;
         
         let injectText = (settings2.autoInjectSystemPromptText || "").trim();
-        let charDesc = (settings2.novelai_character_descriptions || "").trim();
+        
+        const isCharDescEnabled = settings2?.autoInjectCharDesc === "true" || settings2?.autoInjectCharDesc === true;
+        let charDesc = isCharDescEnabled ? (settings2.novelai_character_descriptions || "").trim() : "";
         
         let combined = "";
         if (injectText) combined += injectText;
