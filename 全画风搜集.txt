@@ -1,0 +1,531 @@
+"styles": [
+                {
+                    "name": "Default",
+                    "negative": "lowres, bad anatomy, bad hands, text, error, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
+                    "prefix": "best quality, absurdres, aesthetic,"
+                },
+                {
+                    "name": "1",
+                    "prefix": "best quality as ultra-clear and ultra seductive, aesthetic movie wallpaper, fine lines.[[artist:shiizaki hinaki]], [[[[artist:ueda metawo]]]], [[[[artist:yamashita shun'ya]]]], [[artist:nanaran]], [[artist:mika_pikazo]],ray tracing, bold shadow,",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "3",
+                    "prefix": "Photorealism, Futuristic architecture, {{NSFW}}, perfect anatomy, Background crowds, Surroundings, Distant view,",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "写实",
+                    "prefix": "Photorealism, Futuristic architecture, {{NSFW}}, perfect anatomy, Background crowds, Surroundings, Distant view,",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "明媚少女",
+                    "prefix": "artist:ATDAN,[artist:ningen_mame],artist:ask (askzy),[artist:hiten_(hitenkei)],[[artist:sy4]],[[artist:alpha_(alpha91)]],[[artist:houraku]],[[[artist:fuzichoco]]],[[artist:sencha_(senchat)]],[[[artist:rei (sanbonzakura)]]],[[artist:chen_bin]],[artist:wlop],[artist:houkisei], newest, {{NSFW}},",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "水彩",
+                    "prefix": "[[[transparent watercolor]]],{pale},[a girl],{colordul},{small breasts},[[close-up]],{solo},{{{artist:OneneChan}}},{{{artist:melanbread}}},{{artist:Kaikanaaaaa}},[[artist:wanke]],{artist:ask(askzy)},{artist:siroimorino},[sketch],",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "哥特",
+                    "prefix": "[artist:rudecopper],{{{AU}}},[artist:4cedayo],[artist:yosiedayo],[artist:st31010],artist:nidone_0927],[artist:wanke],[mochizukikei],[[cierra(ra-bit)]],",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "少女漫画",
+                    "prefix": "[artist:kedama milk],artist:starshadowmagic,artist:rella,[artist:dino(dinoartforame)],artist:modare,[[as109]],[[[[rei(sanbonzakura)]]]],{artist:dishwasher1910},{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}},",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "萝莉",
+                    "prefix": "[[artist:omochi monaka]],[[artist:shio (shiofeifei)]] ,{artist:kele mimi} , [[[[[[[artist:signalviolet]]]]]]] ,[[[artist:ciloranko]]] , [[[[[artist:d omm]]]]], artist:Riko(Rik0Ring), [[[artist:Ningen Mame]]] , {{year 2024}},{{NSFW}},",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "nai4-nsfw",
+                    "prefix": "[[artist:mochi]],[[[artist:mignon]]],[artist:kedama_milk],[[artist:mafuyu]],[[[[artist:reddizen]]]],[artist:chenbin],[[artist:sho(sho_lwlw)]],[[[[artist:wlop]]]],artist:Genshin impact,",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "港漫",
+                    "prefix": "best quality as ultra-clear and ultra seductive, aesthetic movie wallpaper, fine lines.[[artist:shiizaki hinaki]], [[[[artist:ueda metawo]]]], [[[[artist:yamashita shun'ya]]]], [[artist:nanaran]], [[artist:mika_pikazo]],ray tracing, bold shadow,",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "扶她",
+                    "prefix": "best quality as ultra-clear and ultra seductive, aesthetic movie wallpaper, fine lines,artist:youngjoo kjy, shiny, year 2024, looking at viewer, no text, best quality, very aesthetic, absurdres, best anatomy,ray tracing, bold shadow,",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "扶她-2",
+                    "prefix": ",{{{Character Study}}},idolmaster shiny colors,[hiten (hitenkei)],ask (askzy),[baek hyang],",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "精选",
+                    "prefix": "{{{Character Study}}},[artist:wanke],[hiten(hitenkei)],ask(askzy),[baek_hyang],[skade],",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "彩色",
+                    "prefix": ",{{{Character Study}}},idolmaster shiny colors,[hiten (hitenkei)],ask (askzy),[baek hyang],best quality, amazing quality, very aesthetic, absurdres,nsfw,cowboy shot,1girl,shore,beach ,amazing beauty, detailed characters, amazing quality, very aesthetic, absurdres, ,",
+                    "negative": ",blurry,lowres, error, film grain, scan artifacts, worst quality, bad quality, jpeg artifacts, very displeasing, chromatic aberration, logo, dated, signature, multiple views, gigantic breasts, ,fat, fat lady, thick thighs,thick legs,,{bad}, error, fewer, extra, missing, worst quality, jpeg,artifacts, bad quality,flipped hair, , unfinished, , chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], flipped hair,fet,fet thigh,{child},lowres,"
+                },
+                {
+                    "name": "6",
+                    "prefix": "{artist:kase_daiki},[[artist:torino_aqua]],{{artist:rolua}},{artist:cutesexyrobutts},year 2023,1girl, upper body, (open hand, waving, waving arms), hand, fingers, solo, looking at viewer, hair flower, best quality, amazing quality, very aesthetic, absurdres, best quality, amazing quality, very aesthetic, absurdres",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "8",
+                    "prefix": "{{artist:typehatena}},[[artist:misheng_liu_yin]],[[artist:dishwasher1910]],[[artist:chen-bin]],artist:wlop,{{{artist:yoneyama_mai}}},year 2023,1girl, upper body, (open hand, waving, waving arms), hand, fingers, solo, looking at viewer, hair flower, best quality, amazing quality, very aesthetic, absurdres, best quality, amazing quality, very aesthetic, absurdres",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "9",
+                    "prefix": "[[[artist:ame_usari]]],{artist:ask(askzy)},{{{{artist:meion}}}},artist:saru,[[artist:cutesexyrobutts]],year 2023,1girl, upper body, (open hand, waving, waving arms), hand, fingers, solo, looking at viewer, hair flower, best quality, amazing quality, very aesthetic, absurdres, best quality, amazing quality, very aesthetic, absurdres",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "91",
+                    "prefix": "[[[artist:wlop]]],[artist:sho_(sho_lwlw)],[artist:rella],artist:meion,{{{artist:omone_hokoma_agm}}},[[artist:ciloranko]],{artist:as109},[[artist:mignon]],year 2023,1girl, solo, takamachi_nanoha, open_mouth, navel, shower_head, breasts, nude, showering, hair_down, blush, brown_hair, convenient_censoring, collarbone, shiny_hair, small_breasts, standing, covering_breasts, barefoot, tile_wall, smile, tiles, long_hair, steam, shiny, blue_eyes, covering, bathroom, looking_at_viewer, full_body, :d, groin, purple_eyes, steam_censor, censored, bathtub, indoors, holding, best quality, amazing quality, very aesthetic, absurdres",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "成熟风",
+                    "prefix": "[artist:as109],[artist:mikaze_oto],{artist:sheya},artist:liduk,artist:wakaba_(945599620),artist:kawacy",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "新风",
+                    "prefix": "{artist:kuzuvine},[[[artist:mecha]]],[artist:ask_(askzy)],{{{artist:kawacy}}},artist:dokuro_deluxe,[[[artist:sakurazawa_izumi]]]",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "优雅风",
+                    "prefix": "[artist:kedama_milk],{artist:omone_hokoma_agm},{artist:meion},artist:binggong_asylu,artist:colis",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "实教风格",
+                    "prefix": "[[[[artist:freng]]]],[[artist:tianliang_duohe_fangdongye]],[[artist:typehatena]],[[artist:ebifuya]],artist:cutesexyrobutts,{{{{artist:rella}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "彩绘风",
+                    "prefix": "artist:mikaze_oto,{artist:joyfull_(terrace)},[[artist:wakaba_(945599620)]],[artist:kousaki_rui],artist:dk_senie,[artist:null_(nyanpyoun)]",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "美丽风格",
+                    "prefix": "artist:kase_daiki,artist:wanke,{{artist:konya_karasue}},{{artist:nixeu}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "古代风格",
+                    "prefix": "[[artist:wanke]],[[artist:omone_hokoma_agm]],artist:typehatena,[[[artist:sho_(sho_lwlw)]]],{artist:wlop}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "114514",
+                    "prefix": "artist:ogata_tei,{artist:cutesexyrobutts},{{{artist:rei_(sanbonzakura)}}},[[artist:misheng_liu_yin]],[[artist:cool-kyou_shinja]]",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "暧昧风格",
+                    "prefix": "{artist:mignon},[artist:tab_head,chen_bin],{artist:sheya},[artist:mo_(kireinamo)]",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "艺术风格",
+                    "prefix": "[artist:ningen_mame],{{{artist:tidsean}}},{{artist:liduk}},[[artist:yoneyama_mai]],[[[artist:ru_zhai]]],artist:chen_bin",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "恋爱文字游戏风格",
+                    "prefix": "{{{artist:ebifuya}}},[artist:tandohark],{{artist:nixeu}},{artist:tab_head,chen_bin},[artist:kedama_milk]",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "杠铃般",
+                    "prefix": "[[[artist:mignon]]],artist:kyokucho,[[artist:rolua]],{{artist:typehatena}},artist:dishwasher1910",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "好冷冻",
+                    "prefix": "{{artist:ebifuya}},[artist:wlop],{{{artist:rolua}}},{{artist:meion}},artist:usashiro_mani,[artist:omone_hokoma_agm]",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "萝莉风",
+                    "prefix": "{{{artist:aak}}},{{artist:tandohark}},[[artist:hiro_(dismaless)]],[[artist:omone_hokoma_agm]],artist:freng,[[[artist:ame_usari]]]",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "璱璱风",
+                    "prefix": "{artist:cutesexyrobutts},[[artist:rolua]],{artist:omone_hokoma_agm},[[artist:ebifuya]],artist:mignon",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "新海诚",
+                    "prefix": "nsfw，[artist:yoneyama_mai],{{artist:rei_(sanbonzakura)}},artist:ruriri,[[artist:anmi]]",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "油画风",
+                    "prefix": "[[artist:torino]],{artist:omone_hokoma_agm},artist:ask(askzy),[[artist:ciloranko]],[[[artist:shiro9jira]]],{{artist:as109}},[artist:sho_(sho_lwlw)],{{{artist:wlop}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "可爱",
+                    "prefix": "artist:ask(askzy),artist:omone_hokoma_agm,artist:wlop,artist:momoco,artist:momozu_komamochi,artist:as109,artist:shiro9jira,artist:ciloranko",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "幼年",
+                    "prefix": "{artist:shiro9jira},[artist:ogipote],[[artist:wakaba_(945599620)]],{{artist:hitomaru}},artist:as109",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "阿帕奇",
+                    "prefix": "{{{artist:aak}}},{{artist:tandohark}},[[artist:hiro_(dismaless)]],[[artist:omone_hokoma_agm]],artist:freng,[[[artist:ame_usari]]]",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "局长风格",
+                    "prefix": "{{artist:ebifuya}},[[artist:rei_(sanbonzakura)]],artist:ogata_tei,{{{{artist:kyokucho}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "黄油风格",
+                    "prefix": "artist:cool-kyou_shinja,[artist:tianliang_duohe_fangdongye],{artist:binggong_asylum},{{{artist:as109}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "雷火剑",
+                    "prefix": "{{artist:cutesexyrobutts}},[[artist:hiro_(dismaless)]],{artist:ebifuya},artist:binggong_asylum,{artist:kidmo}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "韩漫风格",
+                    "prefix": "{artist:muloli},{artist:cool-kyou_shinja},[[[artist:binggong_asylum]]],[artist:kidmo]",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "卡哇伊",
+                    "prefix": "[artist:kedama_milk],{artist:omone_hokoma_agm},{artist:meion},artist:binggong_asylu,artist:colis",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "柚子社",
+                    "prefix": "cafe stella to shinigami no chou (game cg),{{senren banka (game cg)}},riddle joker (game cg),amairo islenauts (game cg),{{{ask (askzy),kobuichi,muririn}}},game cg，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "真黄油",
+                    "prefix": "artist:cool-kyou_shinja,[artist:tianliang_duohe_fangdongye],{artist:binggong_asylum},{{{artist:as109}}}，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "火箭",
+                    "prefix": "{{artist:cutesexyrobutts}},[[artist:hiro_(dismaless)]],{artist:ebifuya},artist:binggong_asylum,{artist:kidmo}，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "1919810",
+                    "prefix": "artist:ogata_tei,{artist:cutesexyrobutts},{{{artist:rei_(sanbonzakura)}}},[[artist:misheng_liu_yin]],[[artist:cool-kyou_shinja]]，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "大才汇丰",
+                    "prefix": "artist:mikaze_oto,{artist:joyfull_(terrace)},[[artist:wakaba_(945599620)]],[artist:kousaki_rui],artist:dk_senie,[artist:null_(nyanpyoun)]，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "真失恋",
+                    "prefix": "[[[[artist:freng]]]],[[artist:tianliang_duohe_fangdongye]],[[artist:typehatena]],[[artist:ebifuya]],artist:cutesexyrobutts,{{{{artist:rella}}}}，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "悠米",
+                    "prefix": "{{artist:fuzichoco}},artist:tab_head,chen_bin,{artist:asakuraf},[artist:binggong_asylum],{{artist:houkisei}}，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "浮世绘",
+                    "prefix": "artist:tandohark,{artist:freng},{{{{artist:wlop}}}},{{{artist:dishwasher1910}}},{{artist:ebifuya}},{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "As109",
+                    "prefix": "{artist:shiro9jira},[artist:ogipote],[[artist:wakaba_(945599620)]],{{artist:hitomaru}},artist:as109,{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "韩漫",
+                    "prefix": "{artist:muloli},{artist:cool-kyou_shinja},[[[artist:binggong_asylum]]],[artist:kidmo]，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "龙族风",
+                    "prefix": "{{artist:houkisei}},[artist:cutesexyrobutts],artist:atdan,[artist:ciloranko],{{{artist:omone_hokoma_agm}}}，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "新局长",
+                    "prefix": "{{artist:ebifuya}},[[artist:rei_(sanbonzakura)]],artist:ogata_tei,{{{{artist:kyokucho}}}}，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "精美风",
+                    "prefix": "[[artist:ningen_mame]],{{artist:tab_head,chen_bin}},{artist:reddizen},{{artist:rei_(sanbonzakura)}},artist:typehatena，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "多娜多娜",
+                    "prefix": "[artist:cutesexyrobutts],{{artist:onono_imoko}},[artist:muloli],[[artist:ningen_mame]]，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "羞涩风",
+                    "prefix": "{artist:fuzichoco},{artist:saru},[artist:tandohark],{{{{artist:kidmo}}}},{{artist:musashi(detks)}}{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "油亮风",
+                    "prefix": "[[[artist:yoneyama_mai]]],{{{artist:binggong_asylu}}},[[[[artist:chiaroscuro]]]],artist:ogata_tei,[[[artist:nixeu]]]，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "大雷风格",
+                    "prefix": "[artist:tidsean],{artist:kidmo},[artist:omone_hokoma_agm],[artist:chiaroscuro]，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "大仍子风格",
+                    "prefix": "[artist:tidsean],{artist:kidmo},[artist:omone_hokoma_agm],[artist:chiaroscuro]，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "大眼风格",
+                    "prefix": "{artist:fuzichoco},{artist:saru},[artist:tandohark],{{{{artist:kidmo}}}},{{artist:musashi(detks)}}{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "轻音风格",
+                    "prefix": "[artist:tidsean],{artist:kidmo},[artist:omone_hokoma_agm],[artist:chiaroscuro]，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "丧女",
+                    "prefix": "[artist:tidsean],{artist:kidmo},[artist:omone_hokoma_agm],[artist:chiaroscuro]，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "肉感",
+                    "prefix": "artist:kazutake_hazano, artist:danimaru,[artist:ask_(askzy)], artist:wanke, artist:wlop, artist:fujiyama, artisit:yuyu_(yuyuworks)，artist:hiten_(hitenkei),atrisit:dishwasher1910,{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "人体",
+                    "prefix": "artist:kazutake_hazano, artist:danimaru,[artist:ask_(askzy)], artist:wanke, artist:wlop, artist:fujiyama, artisit:yuyu_(yuyuworks)，artist:hiten_(hitenkei),atrisit:dishwasher1910,,{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "吧友推荐",
+                    "prefix": "0.75::artist:fuzichoco::,0.5::artist:nixeu,0.85::artist:starshadowmagician::,artist:stu_dts,1.2::artist:oreki_genya::,artist:mashuu_(neko_no_oyashiro)，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "新肉感",
+                    "prefix": "artist:kazutake_hazano, artist:danimaru,[artist:ask_(askzy)], artist:wanke, artist:wlop, artist:fujiyama, artisit:yuyu_(yuyuworks)，artist:hiten_(hitenkei),atrisit:dishwasher1910",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "外网",
+                    "prefix": "4::masterpiece, best quality ::, 2::official art, year2025 ::, 1.55::artist:nobusawa_osamu ::, 1.55::artist:tedain ::, 0.65::artist:houkisei ::,\n0.85::artist:blue_gk ::,0.65::artist:kcccc ::,-2::3D, chibi,realistic ::, no text```",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "油腻师姐",
+                    "prefix": "nsfw,{{{{le_(huanglongen)}}}},{{{monosucre}}},soaryuna,{{akita_hika}},{kataokasan},mimoza_(96mimo414),misaka_12003-gou,[hiten_(hitenkei)],yuyu_(yuyuworks),binggong_asylum,yunsang,{au_(d_elete)},{{mocha_(cotton)}},{{s16xue}},noyu_(noyu23386566),{{cian_yo}},masterpiece,pretty face, shiny skin, {{{{foreshortening}}}},2::wet skin::,",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "像素",
+                    "prefix": "4::masterpiece, best quality ::, 4::pixel art,dithering ::, 1.95::artist:tedain ::,  1.55::Artist:nanami_yuki_(yuki77mi) ::, 1.55::artist:nobusawa_osamu ::,  0.65::artist:houkisei ::,0.45::artist:blue_gk ::,0.45::artist:kcccc ::, -2::3D, realistic ::,  no text\n```",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "可爱冷风",
+                    "prefix": "nsfw，{artist:cutesexyrobutts},[[artist:rolua]],{artist:omone_hokoma_agm},[[artist:ebifuya]],artist:mignon，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "鱼介风格",
+                    "prefix": "nsfw，[artist:cutesexyrobutts],{{artist:onono_imoko}},[artist:muloli],[[artist:ningen_mame]]，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "半局长",
+                    "prefix": "nsfw，[[artist:dishwasher1910]],[[artist:mo_(kireinamo)]],[artist:kawacy],{{{artist:kyokucho}}}，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "倾心风格",
+                    "prefix": "nsfw，{{artist:kase_daiki}},{artist:atdan},[artist:musashi(detks)],{{{artist:nixeu}}},artist:ciloranko，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "兽娘风",
+                    "prefix": "nsfw，{{artist:sheya}},artist:usashiro_mani,[artist:rella],{{artist:atdan}},[[artist:ningen_mame]],{{artist:reddizen}}，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "冷艳风",
+                    "prefix": "nsfw，[[artist:wanke]],[[artist:omone_hokoma_agm]],artist:typehatena,[[[artist:sho_(sho_lwlw)]]],{artist:wlop}，best quality, amazing quality, very aesthetic, absurdres, best quality, amazing quality, very aesthetic, absurdres",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "卡通黄油",
+                    "prefix": "nsfw，{artist:fuzichoco},{artist:saru},[artist:tandohark],{{{{artist:kidmo}}}},{{artist:musashi(detks)}} ，best quality, amazing quality, very aesthetic, absurdres",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "水叔加强",
+                    "prefix": "nsfw，artist:binggong_asylum,{{artist:ogata_tei}},[artist:as109],artist:tidsean,artist:kase_daiki，best quality, amazing quality, very aesthetic, absurdres",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "半油腻",
+                    "prefix": "nsfw，{artist:muloli},[[[artist:typehatena]]],artist:binggong_asylum,artist:mignon，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "油腻大雷风",
+                    "prefix": "nsfw，[artist:ask(askzy)],{{artist:binggong_asylum}},{{{artist:momozu_komamochi}}},artist:namie,[[artist:kedama_milk]],{artist:ogata_tei}，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "小萝莉",
+                    "prefix": "nsfw，[artist:ru_zhai],[[[artist:fuzichoco]]],artist:kedama_milk,[[artist:muloli]],[artist:saru],[[[artist:kidmo]]]，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "暖身",
+                    "prefix": "nsfw，{{artist:muloli}},{artist:kawacy},[[artist:omone_hokoma_agm]],{{artist:cool-kyou_shinja}},{{artist:chen_bin}}，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "国漫",
+                    "prefix": "nsfw，[[[artist:mignon]]],artist:kyokucho,[[artist:rolua]],{{artist:typehatena}},artist:dishwasher1910，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "知音漫客",
+                    "prefix": "nsfw，[[[artist:40hara]]],[artist:kawacy],[[[[artist:sho_(sho_lwlw)]]]],{{artist:binggong_asylu}},[[artist:meion]],artist:sheya，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "光线",
+                    "prefix": "nsfw，artist:kase_daiki,artist:wanke,{{artist:konya_karasue}},{{artist:nixeu}}，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "雌小鬼👻",
+                    "prefix": "nsfw，{artist:tab_head,chen_bin},artist:kedama_milk,[[artist:ogata_tei]],[[artist:asakuraf]]，best quality, amazing quality, very aesthetic, absurdres, best quality, amazing quality, very aesthetic, absurdres",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "雪女",
+                    "prefix": "nsfw，[[artist:dishwasher1910]],{{artist:kidmo}},{{artist:shiratama_(shiratamaco)}},{{artist:hiro_(dismaless)}}，best quality, amazing quality, very aesthetic, absurdres,",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "冷艳丽",
+                    "prefix": "nsfw，[artist:tab_head,chen_bin],[[artist:tandohark]],{artist:houkisei},{artist:konya_karasue},{{{artist:tab_head}}}，best quality, amazing quality, very aesthetic, absurdres,",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "献上心脏",
+                    "prefix": "nsfw，[artist:namie],{artist:hiro_(dismaless)},[artist:nixeu],[artist:tianliang_duohe_fangdongye]，best quality, amazing quality, very aesthetic, absurdres,",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "雌小鬼",
+                    "prefix": "nsfw，[artist:momozu_komamochi],[artist:ebifuya],[[[artist:tianliang_duohe_fangdongye]]],{{artist:cool-kyou_shinja}},artist:freng，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "冰冷女神",
+                    "prefix": "nsfw，{{{{artist:nixeu}}}},[artist:konya_karasue],[[artist:omone_hokoma_agm]],artist:cool-kyou_shinja,[[artist:dishwasher1910]],{artist:cutesexyrobutts}，{{{{amazing quality}}}},{{{{{{very aesthetic}}}}}},(Beautiful Backgrounds),{{{{beautiful}}}}",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "清新女神",
+                    "prefix": "nsfw，{{{artist:anmi}}},artist:meion,{artist:ciloranko},[artist:chen_bin]， best quality, amazing quality, very aesthetic, absurdres, best quality, amazing quality, very aesthetic, absurdres",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "卡拉布里亚",
+                    "prefix": "nsfw，[artist:konya_karasue],[[artist:hiro_(dismaless)]],artist:rella,artist:beni_shake,[[artist:ningen_mame]],[[artist:momozu_komamochi]]， best quality, amazing quality, very aesthetic, absurdres, best quality, amazing quality, very aesthetic, absurdres",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "真新海诚",
+                    "prefix": "nsfw，{{{{artist:fuzichoco}}}},{artist:dishwasher1910},artist:kawacy,{artist:ogata_tei}， best quality, amazing quality, very aesthetic, absurdres, best quality, amazing quality, very aesthetic, absurdres",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "炫彩",
+                    "prefix": "nsfw，artist:konya_karasue,[[[artist:ciloranko]]],[artist:sheya],{artist:liduk}， best quality, amazing quality, very aesthetic, absurdres, best quality, amazing quality, very aesthetic, absurdres",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "芙莉莲",
+                    "prefix": "nsfw，[artist:dishwasher1910],{{{artist:reddizen}}},[[artist:wanke]],{{{artist:kyokucho}}},[artist:torino_aqua]， best quality, amazing quality, very aesthetic, absurdres, best quality, amazing quality, very aesthetic, absurdres",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "战场原",
+                    "prefix": "nsfw，[[artist:dishwasher1910]],[artist:nixeu],{{artist:misheng_liu_yin}},artist:tianliang_duohe_fangdongye,{{{artist:kawacy}}},{{artist:hitomaru}}， best quality, amazing quality, very aesthetic, absurdres, best quality, amazing quality, very aesthetic, absurdres",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "樱花",
+                    "prefix": "nsfw，[artist:namie],{artist:hiro_(dismaless)},[artist:nixeu],[artist:tianliang_duohe_fangdongye]，best quality, amazing quality, very aesthetic, absurdres",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "日漫",
+                    "prefix": "nsfw，best quality as ultra-clear and ultra seductive, aesthetic movie wallpaper, fine lines.[[artist:shiizaki hinaki]], [[[[artist:ueda metawo]]]], [[[[artist:yamashita shun'ya]]]], [[artist:nanaran]], [[artist:mika_pikazo]],ray tracing, bold shadow,",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "马院",
+                    "prefix": "nsfw，{artist:kuzuvine},[[[artist:mecha]]],[artist:ask_(askzy)],{{{artist:kawacy}}},artist:dokuro_deluxe,[[[artist:sakurazawa_izumi]]]",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "冰清玉洁",
+                    "prefix": "nsfw，artist:musashi(detks),{{artist:cutesexyrobutts}},[[artist:tandohark]],artist:aak,{{artist:tidsean}},artist:chiaroscuro， best quality, amazing quality, very aesthetic, absurdres, best quality, amazing quality, very aesthetic, absurdres",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "无比精致",
+                    "prefix": "nsfw，{artist:kase_daiki},[[artist:torino_aqua]],{{artist:rolua}},{artist:cutesexyrobutts}， best quality, amazing quality, very aesthetic, absurdres, best quality, amazing quality, very aesthetic, absurdres",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "兰斯",
+                    "prefix": "nsfw，artist:onono_imoko,{artist:saru},[artist:ningen_mame],[artist:kedama_milk]， best quality, amazing quality, very aesthetic, absurdres, best quality, amazing quality, very aesthetic, absurdres",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                },
+                {
+                    "name": "欣欣",
+                    "prefix": "nsfw，{artist:kyokucho},{artist:reddizen},[artist:fuzichoco],{artist:ningen_mame}，best quality, amazing quality, very aesthetic, absurdres",
+                    "negative": "lowres, {bad}, error, fewer, extra, missing, worst quality, jpeg artifacts, bad quality, watermark, unfinished, displeasing, chromatic aberration, signature, extra digits, artistic error, username, scan, [abstract], lowres, {bad}, text, error, missing, extra, fewer, cropped, jpeg artifacts, worst quality, bad quality, watermark, displeasing, unfinished, chromatic aberration, scan, scan artifacts, photo, deformed, realism, disfigured, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, screencap"
+                }
