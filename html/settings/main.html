@@ -100,6 +100,18 @@
             <small style="color: #888; margin-top: 4px; display: block;">开启后，每次发送聊天对话时，会自动将此指令（及角色外貌设定）附带给大模型，让其在回复末尾吐出生图 Tag。</small>
         </div>
         <div class="st-chatu8-field">
+            <label for="autoInjectCharDesc">发送角色外貌给大模型</label>
+            <div class="st-chatu8-toggle">
+                <input id="autoInjectCharDesc" type="checkbox"/>
+                <span class="st-chatu8-slider"></span>
+            </div>
+        </div>
+        <div class="st-chatu8-field-col" id="autoInjectCharDescCol" style="margin-bottom: 12px;">
+            <label for="novelai_character_descriptions">多角色外貌特征设定 <span class="st-chatu8-unsaved-warning" title="设置尚未保存" style="display: none;"><i class="fa-solid fa-triangle-exclamation"></i></span></label>
+            <textarea id="novelai_character_descriptions" class="st-chatu8-textarea" rows="6" placeholder="[角色1]\n特征1, 特征2...\n[角色2]\n特征1, 特征2..."></textarea>
+            <small style="color: #888; margin-top: 4px; display: block;">可在这里记录多个角色的固定外貌特征，它会和生图任务指令一起发送给模型。</small>
+        </div>
+        <div class="st-chatu8-field">
             <label for="autoLLMImageGen">自动LLM请求生图(非同层)</label>
             <div class="st-chatu8-toggle">
                 <input id="autoLLMImageGen" type="checkbox"/>

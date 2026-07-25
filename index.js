@@ -1840,6 +1840,10 @@ var init_config = __esm({
       // 仅对生图请求生效：历史消息中保留 <image> 标签原文作为参考（当前正文仍按正则清理）
       enablePregen: "false",
       autoLLMImageGen: "false",
+      autoInjectImagePrompt: "true",
+      autoInjectCharDesc: "false",
+      autoInjectSystemPromptText: "[生图任务指令]\n请在你的每条回复末尾，结合当前情景描绘、角色动作、服装、表情、背景环境及画风，自动生成一段适配 NovelAI (NAI 4.5) 的英文 Danbooru 提示词。\n格式要求：必须严格包裹在 <image>image### 和 ###</image> 之间！\n范例：\n<image>image### 1girl, solo, masterpiece, anime style, detailed background, [人物特征], [服装描写], [动作与表情], [场景与光影] ###</image>\n注意：保持提示词精炼准确，遵循 Danbooru / NAI 语法。",
+      novelai_character_descriptions: "# 角色固定外貌特征设定 (Character Features)\n# 支持多角色。当开启「随聊天一起生成」和「发送角色外貌给大模型」开关时，此处的特征设定会随生图指令一同发送给大模型。\n\n[角色1: 莉莉丝 / Lilith]\nlong silver hair, red eyes, twin tails, pale skin, black gothic dress, hair ribbon\n\n[角色2: 示例角色 / Example]\nshort blonde hair, blue eyes, casual hoodie, denim shorts",
       // 自动LLM请求生图
       imageAlignment: "center",
       // 图片对齐方式：left（靠左）、center（居中）、right（靠右）
@@ -81358,6 +81362,22 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
     } else {
       addLog("[\u7F13\u5B58] JPEG\u50A8\u5B58\u5DF2\u5173\u95ED");
     }
+  });
+  settingsModal.find("#autoInjectImagePrompt").on("change", function() {
+    settings2.autoInjectImagePrompt = $(this).prop("checked").toString();
+    saveSettingsDebounced59();
+  });
+  settingsModal.find("#autoInjectSystemPromptText").on("input", function() {
+    settings2.autoInjectSystemPromptText = $(this).val();
+    saveSettingsDebounced59();
+  });
+  settingsModal.find("#autoInjectCharDesc").on("change", function() {
+    settings2.autoInjectCharDesc = $(this).prop("checked").toString();
+    saveSettingsDebounced59();
+  });
+  settingsModal.find("#novelai_character_descriptions").on("input", function() {
+    settings2.novelai_character_descriptions = $(this).val();
+    saveSettingsDebounced59();
   });
   settingsModal.find("#autoLLMImageGen").on("change", async function() {
     const isEnabled = $(this).prop("checked");
