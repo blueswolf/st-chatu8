@@ -730,29 +730,46 @@
 .zinao-chatu-model-tabs-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 4px;
     margin-bottom: 15px;
-    border-bottom: 1px solid var(--zinao-chatu-border-color);
+    position: relative;
 }
 .zinao-chatu-model-tab-label {
-    padding: 8px 16px;
+    padding: 10px 20px;
     cursor: pointer;
-    border-radius: 4px 4px 0 0;
+    border-radius: 8px 8px 0 0;
     font-weight: normal;
     color: var(--zinao-chatu-text-secondary);
+    background-color: var(--zinao-chatu-bg-tertiary);
+    border: 1px solid var(--zinao-chatu-border-color);
+    border-bottom: 1px solid var(--zinao-chatu-border-color);
     transition: all 0.2s ease;
-    margin-bottom: -1px; /* overlap border */
-    border: 1px solid transparent;
+    opacity: 0.6;
+    margin-bottom: -1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    z-index: 1;
 }
 .zinao-chatu-model-tab-label:hover {
-    background-color: var(--zinao-chatu-bg-tertiary);
+    opacity: 1;
+    background-color: var(--zinao-chatu-bg-secondary);
 }
 input[type="radio"]:checked + .zinao-chatu-model-tab-label {
     background-color: var(--zinao-chatu-bg-primary, #1e1e2e);
     color: var(--zinao-chatu-accent-color);
     font-weight: bold;
+    opacity: 1;
     border: 1px solid var(--zinao-chatu-border-color);
-    border-bottom-color: var(--zinao-chatu-bg-primary, #1e1e2e);
+    border-bottom: 2px solid var(--zinao-chatu-bg-primary, #1e1e2e);
+    z-index: 3;
+}
+input[type="radio"]:checked + .zinao-chatu-model-tab-label::before {
+    content: '\f0e7';
+    font-family: "Font Awesome 6 Free", "Font Awesome 5 Free";
+    font-weight: 900;
+    color: var(--zinao-chatu-accent-color);
 }
 .model-tab-break {
     flex-basis: 100%;
@@ -762,7 +779,13 @@ input[type="radio"]:checked + .zinao-chatu-model-tab-label {
 .model-tab-content {
     display: none;
     width: 100%;
-    padding-top: 15px;
+    padding: 20px;
+    border: 1px solid var(--zinao-chatu-border-color);
+    border-radius: 0 8px 8px 8px;
+    background-color: var(--zinao-chatu-bg-primary, #1e1e2e);
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 #tab-radio-novelai:checked ~ #model_tab_novelai,
 #tab-radio-sd:checked ~ #model_tab_sd,
