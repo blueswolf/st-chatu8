@@ -15597,7 +15597,26 @@ async function executeTypedLLMRequest(data, requestType, responseEventName, upda
     }
     let outboundMessages = send_images ? prompt2 : stripImagesFromMessages(prompt2);
     if (Array.isArray(outboundMessages)) {
-      outboundMessages = outboundMessages.filter((msg) => {
+      outboundMessages = outboundMessages.map((msg) => {
+        if (!msg) return msg;
+        if (Array.isArray(msg.content)) {
+          const cleanContent = msg.content.filter((part) => {
+            if (part && part.type === "text" && (!part.text || part.text.trim() === "")) return false;
+            return true;
+          });
+          if (cleanContent.length === 1 && cleanContent[0].type === "text") {
+            return { ...msg, content: cleanContent[0].text.trim() };
+          }
+          if (cleanContent.length === 0) {
+            return { ...msg, content: "" };
+          }
+          return { ...msg, content: cleanContent };
+        }
+        if (typeof msg.content === "string") {
+          return { ...msg, content: msg.content.trim() };
+        }
+        return msg;
+      }).filter((msg) => {
         if (!msg) return false;
         if (typeof msg.content === "string") return msg.content.trim() !== "";
         if (Array.isArray(msg.content)) return msg.content.length > 0;
@@ -15938,7 +15957,34 @@ async function executeDefaultLLMRequest(data, profileData, updateResultUI = null
       );
     } catch (_e) {
     }
-    const outboundMessages = send_images ? prompt2 : stripImagesFromMessages(prompt2);
+    let outboundMessages = send_images ? prompt2 : stripImagesFromMessages(prompt2);
+    if (Array.isArray(outboundMessages)) {
+      outboundMessages = outboundMessages.map((msg) => {
+        if (!msg) return msg;
+        if (Array.isArray(msg.content)) {
+          const cleanContent = msg.content.filter((part) => {
+            if (part && part.type === "text" && (!part.text || part.text.trim() === "")) return false;
+            return true;
+          });
+          if (cleanContent.length === 1 && cleanContent[0].type === "text") {
+            return { ...msg, content: cleanContent[0].text.trim() };
+          }
+          if (cleanContent.length === 0) {
+            return { ...msg, content: "" };
+          }
+          return { ...msg, content: cleanContent };
+        }
+        if (typeof msg.content === "string") {
+          return { ...msg, content: msg.content.trim() };
+        }
+        return msg;
+      }).filter((msg) => {
+        if (!msg) return false;
+        if (typeof msg.content === "string") return msg.content.trim() !== "";
+        if (Array.isArray(msg.content)) return msg.content.length > 0;
+        return true;
+      });
+    }
     if (!api_url || !api_key || !model) {
       const errorMsg = "API URL, API Key, \u6216 Model \u672A\u914D\u7F6E\u3002";
       toastr.error(errorMsg);
