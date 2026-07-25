@@ -747,7 +747,7 @@
 .zinao-chatu-model-tab-label:hover {
     background-color: var(--zinao-chatu-bg-tertiary);
 }
-input[name="model_tab_select"]:checked + .zinao-chatu-model-tab-label {
+input[type="radio"]:checked + .zinao-chatu-model-tab-label {
     background-color: var(--zinao-chatu-bg-primary, #1e1e2e);
     color: var(--zinao-chatu-accent-color);
     font-weight: bold;
