@@ -24,21 +24,7 @@ export function initZinaoChatuUI() {
         });
     }
 
-    const radioInline = document.getElementById("tab-radio-prompt-inline");
-    const radioDblclick = document.getElementById("tab-radio-prompt-dblclick");
-    if (radioInline && radioDblclick) {
-        const syncTabsToSlider = (e) => {
-            const isDblClick = radioDblclick.checked;
-            if (modeToggle) {
-                modeToggle.checked = isDblClick;
-            }
-            settings.prompt_generation_mode = isDblClick ? "dblclick" : "inline";
-            saveSettingsDebounced();
-            updateModeDisplay(isDblClick);
-        };
-        radioInline.addEventListener("change", syncTabsToSlider);
-        radioDblclick.addEventListener("change", syncTabsToSlider);
-    }
+
 
     // --- 文本框与下拉框数据双向绑定 ---
     const fields = [
@@ -78,8 +64,8 @@ export function initZinaoChatuUI() {
 function updateModeDisplay(isDblClick) {
     const inlineLabel = document.getElementById('label-mode-inline');
     const dblclickLabel = document.getElementById('label-mode-dblclick');
-    const radioInline = document.getElementById('tab-radio-prompt-inline');
-    const radioDblclick = document.getElementById('tab-radio-prompt-dblclick');
+    const iconInline = document.getElementById('icon-active-inline');
+    const iconDblclick = document.getElementById('icon-active-dblclick');
     
     if (inlineLabel && dblclickLabel) {
         if (isDblClick) {
@@ -95,11 +81,8 @@ function updateModeDisplay(isDblClick) {
         }
     }
     
-    if (radioInline && radioDblclick) {
-        if (isDblClick) {
-            radioDblclick.checked = true;
-        } else {
-            radioInline.checked = true;
-        }
+    if (iconInline && iconDblclick) {
+        iconInline.style.display = isDblClick ? 'none' : 'inline-block';
+        iconDblclick.style.display = isDblClick ? 'inline-block' : 'none';
     }
 }
