@@ -1,197 +1,33 @@
-﻿<div id="ch-tab-sd">
-    <div class="ch-prompts-section zinao-chatu-settings-section">
-        <h3>固定提示词</h3>
-        <div class="zinao-chatu-field">
-            <label for="yusheid">提示词预设</label>
-            <div class="zinao-chatu-profile-controls">
-                <select id="yusheid" class="zinao-chatu-select"></select>
-                <button class="zinao-chatu-icon-btn" id="zinao_chatu_tishici_visual_select" title="可视化选择"><i class="fa-solid fa-grip"></i></button>
-                <button class="zinao-chatu-icon-btn" id="zinao_chatu_tishici_new" title="新建"><i class="fa-solid fa-plus"></i></button>
-                <button class="zinao-chatu-icon-btn" id="zinao_chatu_tishici_update_style" title="保存"><i class="fa-solid fa-save"></i></button>
-                <button class="zinao-chatu-icon-btn" id="zinao_chatu_tishici_save_style" title="另存为"><i class="fa-solid fa-file-export"></i></button>
-                <button class="zinao-chatu-icon-btn" id="zinao_chatu_tishici_rename" title="重命名"><i class="fa-solid fa-pen"></i></button>
-                <button class="zinao-chatu-icon-btn" id="zinao_chatu_tishici_export_current" title="导出当前"><i class="fa-solid fa-upload"></i></button>
-                <button class="zinao-chatu-icon-btn" id="zinao_chatu_tishici_export_all" title="导出全部"><i class="fa-solid fa-file-export"></i></button>
-                <button class="zinao-chatu-icon-btn" id="zinao_chatu_tishici_import" title="导入"><i class="fa-solid fa-download"></i></button>
-                <button class="zinao-chatu-icon-btn danger" id="zinao_chatu_tishici_delete_style" title="删除"><i class="fa-solid fa-trash"></i></button>
-            </div>
-        </div>
-        <div class="zinao-chatu-field-col">
-            <label for="fixedPrompt">固定正面提示词 <span class="zinao-chatu-unsaved-warning" title="设置尚未保存" style="display: none;"><i class="fa-solid fa-triangle-exclamation"></i></span></label>
-            <button class="zinao-chatu-icon-btn" id="translate_fixedPrompt" title="翻译" style="align-self: flex-end; margin: 4px 0;"><i class="fa-solid fa-language"></i></button>
-            <textarea id="fixedPrompt" class="zinao-chatu-textarea" rows="4"></textarea>
-            <div id="fixedPrompt-results" class="ch-autocomplete-results"></div>
-        </div>
-        <div class="zinao-chatu-field-col">
-            <label for="fixedPrompt_end">后置固定正面提示词 <span class="zinao-chatu-unsaved-warning" title="设置尚未保存" style="display: none;"><i class="fa-solid fa-triangle-exclamation"></i></span></label>
-            <button class="zinao-chatu-icon-btn" id="translate_fixedPrompt_end" title="翻译" style="align-self: flex-end; margin: 4px 0;"><i class="fa-solid fa-language"></i></button>
-            <textarea id="fixedPrompt_end" class="zinao-chatu-textarea" rows="4"></textarea>
-            <div id="fixedPrompt_end-results" class="ch-autocomplete-results"></div>
-        </div>
-        <div class="zinao-chatu-field-col">
-            <label for="negativePrompt">固定负面提示词 <span class="zinao-chatu-unsaved-warning" title="设置尚未保存" style="display: none;"><i class="fa-solid fa-triangle-exclamation"></i></span></label>
-            <textarea id="negativePrompt" class="zinao-chatu-textarea" rows="4"></textarea>
-            <div id="negativePrompt-results" class="ch-autocomplete-results"></div>
-        </div>
-        <h3>LORA</h3>
-        <div class="zinao-chatu-field">
-            <label for="sd_cchatu_8_lora">添加 LORA</label>
-            <div class="zinao-chatu-profile-controls">
-                <select id="sd_cchatu_8_lora" class="zinao-chatu-select"></select>
-                <button class="zinao-chatu-icon-btn" id="sd_add_lora" title="添加"><i class="fa-solid fa-plus"></i></button>
-            </div>
-        </div>
-    </div>
-    <div class="zinao-chatu-settings-section">
-        <h3>质量预设</h3>
-        <div class="zinao-chatu-field">
-            <label for="AQT_sd">正面质量预设</label>
-            <select id="AQT_sd" class="zinao-chatu-select">
-                <option value="best quality, amazing quality, very aesthetic, absurdres">启用</option>
-                <option value="">禁用</option>
-            </select>
-        </div>
-        <div class="zinao-chatu-field">
-            <label for="UCP_sd">负面质量预设</label>
-            <select id="UCP_sd" class="zinao-chatu-select">
-<option value="">无</option>
-<option value="bad proportions, out of focus, username, text, bad anatomy, lowres, worstquality, watermark, cropped, bad body, deformed, mutated, disfigured, poorly drawn face, malformed hands, extra arms, extra limb, missing limb, too many fingers, extra legs, bad feet, missing fingers, fused fingers, acnes, floating limbs, disconnected limbs, long neck, long body, mutation, ugly, blurry, low quality, sketches, normal quality, monochrome, grayscale, signature, logo, jpeg artifacts, unfinished, displeasing, chromatic aberration, extra digits, artistic error, scan, abstract, photo, realism, screencap">作者预设</option>
-<option value="negativeXL_D, negativeXL, source_furry, extra limbs, deformations, long fingers, fused fingers, inaccurate_anatomy, bad proportions, poorly drawn hands, bad hands, extra_fingers, extra_hand, extra_arm, distorted fingers, ugly hands, creepy hands, six fingers, malformed fingers, long_fingers, interlocked fingers:1.2, ugly, deformed, uneven, asymmetrical, unnatural, missing fingers, extra digit, fewer digits, opaque eyes, small eyes, ugly eyes, blurred eyes, bad face, (bad anatomy, ugly face:1.2), (worst quality, low quality, not detailed, low resolution:1.2), motion_blur, blur, blur_censor, blurry, simple_background, text, error, cropped, normal quality, jpeg artifacts, watermark, logo, signature, username, artist name">作者预set 2</option>
-            </select>
-        </div>
-    </div>
-    <div class="zinao-chatu-settings-section">
-        <h3>Stable Diffusion 设置</h3>
-        <div class="zinao-chatu-field">
-            <label for="sdUrl">API 地址</label>
-            <div class="zinao-chatu-input-group">
-                <i class="fa-solid fa-exclamation-triangle zinao-chatu-url-warning-icon" title="无效的URL格式"></i>
-                <input type="text" id="sdUrl" class="zinao-chatu-text-input" placeholder="http://127.0.0.1:7860">
-                <button id="testSd" class="zinao-chatu-btn">连接刷新数据</button>
-            </div>
-        </div>
-        <div class="zinao-chatu-field">
-            <label for="zinao_chatu_sd_auth">身份验证</label>
-            <input type="text" id="zinao_chatu_sd_auth" class="zinao-chatu-text-input" placeholder="例： 用户名:密码">
-        </div>
-    </div>
-        <div class="zinao-chatu-settings-section">
-        <h4>其他设置</h4>
+<style>
+    .model-tab-content { display: none; }
+    #tab-radio-novelai:checked ~ #model_tab_novelai { display: block; }
+    #tab-radio-sd:checked ~ #model_tab_sd { display: block; }
+    #tab-radio-comfyui:checked ~ #model_tab_comfyui { display: block; }
+    #tab-radio-banana:checked ~ #model_tab_banana { display: block; }
+    .model-tab-label { padding: 8px 12px; cursor: pointer; border: 1px solid var(--zinao-chatu-border-color); border-radius: 4px; transition: all 0.2s ease; margin-bottom: 5px; }
+    input[type="radio"]:checked + .model-tab-label { background-color: var(--zinao-chatu-bg-tertiary); font-weight: bold; border-color: var(--zinao-chatu-accent-color); color: var(--zinao-chatu-accent-color); }
+</style>
+
+<div id="ch-tab-models">
+<div class="zinao-chatu-settings-section" style="margin-bottom: 20px;">
+    <h3>生图模型设置</h3>
+    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <input type="radio" id="tab-radio-novelai" name="model_tab_select" style="display:none;" checked>
+        <label for="tab-radio-novelai" class="model-tab-label">NovelAI</label>
+
+        <input type="radio" id="tab-radio-sd" name="model_tab_select" style="display:none;">
+        <label for="tab-radio-sd" class="model-tab-label">SD</label>
+
+        <input type="radio" id="tab-radio-comfyui" name="model_tab_select" style="display:none;">
+        <label for="tab-radio-comfyui" class="model-tab-label">ComfyUI</label>
+
+        <input type="radio" id="tab-radio-banana" name="model_tab_select" style="display:none;">
+        <label for="tab-radio-banana" class="model-tab-label">Banana/Grok</label>
         
-            <div class="zinao-chatu-field">
-                <label for="sd_cchatu_8_model">模型</label>
-                <select id="sd_cchatu_8_model" class="zinao-chatu-select"></select>
-            </div>
-            <div class="zinao-chatu-field">
-                <label for="sd_cchatu_8_vae">VAE</label>
-                <select id="sd_cchatu_8_vae" class="zinao-chatu-select"></select>
-            </div>
-            <div class="zinao-chatu-field">
-                <label for="sd_cchatu_8_samplerName">采样方法</label>
-                <select id="sd_cchatu_8_samplerName" class="zinao-chatu-select"></select>
-            </div>
-            <div class="zinao-chatu-field">
-                <label for="sd_cchatu_8_scheduler">调度器</label>
-                <select id="sd_cchatu_8_scheduler" class="zinao-chatu-select"></select>
-            </div>
-
-        </div>
+        <div style="flex-basis: 100%; height: 0;"></div>
         
-            <div class="zinao-chatu-settings-section">
-                <h4>生成参数</h4>
-                <div class="zinao-chatu-grid">
-                    <div class="zinao-chatu-field">
-                        <label for="sd_csize">预设尺寸</label>
-                        <select id="sd_csize" class="zinao-chatu-select">
-                            <option value="512x512">512x512 (1:1, 图标)</option>
-                            <option value="640x640">640x640 (1:1, 图标)</option>
-                            <option value="512x768">512x768 (2:3, 垂直)</option>
-                            <option value="768x512">768x512 (3:2, 水平)</option>
-                            <option value="1024x1024">1024x1024 (1:1, SDXL)</option>
-                            <option value="1216x832">1216x832 (19:13, 超高清)</option>
-                            <option value="832x1216">832x1216 (13:19, 超高清)</option>
-                        </select>
-                    </div>
-                    <div class="zinao-chatu-field">
-                        <label for="sd_cwidth">宽度</label>
-                        <input type="number" id="sd_cwidth" class="zinao-chatu-text-input">
-                    </div>
-                    <div class="zinao-chatu-field">
-                        <label for="sd_cheight">高度</label>
-                        <input type="number" id="sd_cheight" class="zinao-chatu-text-input">
-                    </div>
-                    <div class="zinao-chatu-field">
-                        <label for="sd_csteps">采样步数</label>
-                        <input type="number" id="sd_csteps" class="zinao-chatu-text-input">
-                    </div>
-                    <div class="zinao-chatu-field">
-                        <label for="sdCfgScale">CFG缩放</label>
-                        <input type="number" id="sdCfgScale" class="zinao-chatu-text-input">
-                    </div>
-
-                    <div class="zinao-chatu-field">
-                        <label for="sd_cclip_skip">片段跳过</label>
-                        <input type="number" id="sd_cclip_skip" class="zinao-chatu-text-input">
-                    </div>
-                    <div class="zinao-chatu-field">
-                        <label for="sd_cseed">种子 (seed)</label>
-                        <input type="number" id="sd_cseed" class="zinao-chatu-text-input" value="-1">
-                    </div>
-
-                </div>
-                </div>
-                    <div class="zinao-chatu-settings-section">
-                        <h4>放大修复</h4>
-                     <div class="zinao-chatu-field">
-                            <label for="sd_chires_fix">高清修复</label>
-                            <div class="zinao-chatu-toggle">
-                                <input id="sd_chires_fix" type="checkbox"/>
-                                <span class="zinao-chatu-slider"></span>
-                            </div>
-                        </div>
-                    <div class="zinao-chatu-field">
-                        <label for="sd_chires_steps">高清修复步数</label>
-                        <input type="number" id="sd_chires_steps" class="zinao-chatu-text-input">
-                    </div>    
-                    <div class="zinao-chatu-field">
-                        <label for="sd_cchatu_8_upscaler">图像扩大器</label>
-                        <select id="sd_cchatu_8_upscaler" class="zinao-chatu-select"></select>
-                    </div>
-                    <div class="zinao-chatu-field">
-                        <label for="sd_cupscale_factor">扩大倍数</label>
-                        <input type="number" id="sd_cupscale_factor" class="zinao-chatu-text-input">
-                    </div>
-                    
-                    <div class="zinao-chatu-field">
-                        <label for="sd_cdenoising_strength">去噪强度</label>
-                        <input type="number" id="sd_cdenoising_strength" class="zinao-chatu-text-input" step="0.1">
-                    </div>
-                   </div>
-               
-           
-
-                <div class="zinao-chatu-settings-section">
-                    <h4>修复</h4>
-
-                    <div class="zinao-chatu-field">
-                        <label for="restoreFaces">面部修复</label>
-                        <div class="zinao-chatu-toggle">
-                            <input id="restoreFaces" type="checkbox"/>
-                            <span class="zinao-chatu-slider"></span>
-                        </div>
-                    </div>
-                    <div class="zinao-chatu-field">
-                        <label for="sd_cadetailer">使用ADetailer（脸部）</label>
-                        <div class="zinao-chatu-toggle">
-                            <input id="sd_cadetailer" type="checkbox"/>
-                            <span class="zinao-chatu-slider"></span>
-                        </div>
-                    </div> 
-               </div>
+        <div id="model_tab_novelai" class="model-tab-content" style="width:100%; margin-top: 5px;">
             
-            </div>
-
-<div id="ch-tab-novelai">
     <div class="ch-prompts-section zinao-chatu-settings-section">
         <h3>固定提示词</h3>
         <div class="zinao-chatu-field">
@@ -427,147 +263,142 @@
             </div>
         </div>
     </div>
-</div>
 
-<div id="ch-tab-comfyui">
-    <div class="ch-prompts-section zinao-chatu-settings-section">
-        <h3>固定提示词</h3>
+        </div>
+        <div id="model_tab_sd" class="model-tab-content" style="width:100%; margin-top: 5px;">
+            <div class="zinao-chatu-settings-section">
+        <h3>Stable Diffusion 设置</h3>
         <div class="zinao-chatu-field">
-            <label for="yusheid_comfyui">提示词预设</label>
-            <div class="zinao-chatu-profile-controls">
-                <select id="yusheid_comfyui" class="zinao-chatu-select"></select>
-                <button class="zinao-chatu-icon-btn" id="zinao_chatu_tishici_visual_select_comfyui" title="可视化选择"><i class="fa-solid fa-grip"></i></button>
-                <button class="zinao-chatu-icon-btn" id="zinao_chatu_tishici_new_comfyui" title="新建"><i class="fa-solid fa-plus"></i></button>
-                <button class="zinao-chatu-icon-btn" id="zinao_chatu_tishici_update_style_comfyui" title="保存"><i class="fa-solid fa-save"></i></button>
-                <button class="zinao-chatu-icon-btn" id="zinao_chatu_tishici_save_style_comfyui" title="另存为"><i class="fa-solid fa-file-export"></i></button>
-                <button class="zinao-chatu-icon-btn" id="zinao_chatu_tishici_rename_comfyui" title="重命名"><i class="fa-solid fa-pen"></i></button>
-                <button class="zinao-chatu-icon-btn" id="zinao_chatu_tishici_export_current_comfyui" title="导出当前"><i class="fa-solid fa-upload"></i></button>
-                <button class="zinao-chatu-icon-btn" id="zinao_chatu_tishici_export_all_comfyui" title="导出全部"><i class="fa-solid fa-file-export"></i></button>
-                <button class="zinao-chatu-icon-btn" id="zinao_chatu_tishici_import_comfyui" title="导入"><i class="fa-solid fa-download"></i></button>
-                <button class="zinao-chatu-icon-btn danger" id="zinao_chatu_tishici_delete_style_comfyui" title="删除"><i class="fa-solid fa-trash"></i></button>
+            <label for="sdUrl">API 地址</label>
+            <div class="zinao-chatu-input-group">
+                <i class="fa-solid fa-exclamation-triangle zinao-chatu-url-warning-icon" title="无效的URL格式"></i>
+                <input type="text" id="sdUrl" class="zinao-chatu-text-input" placeholder="http://127.0.0.1:7860">
+                <button id="testSd" class="zinao-chatu-btn">连接刷新数据</button>
             </div>
         </div>
-        <div class="zinao-chatu-field-col">
-            <label for="fixedPrompt_comfyui">固定正面提示词 <span class="zinao-chatu-unsaved-warning" title="设置尚未保存" style="display: none;"><i class="fa-solid fa-triangle-exclamation"></i></span></label>
-            <button class="zinao-chatu-icon-btn" id="translate_fixedPrompt_comfyui" title="翻译" style="align-self: flex-end; margin: 4px 0;"><i class="fa-solid fa-language"></i></button>
-            <textarea id="fixedPrompt_comfyui" class="zinao-chatu-textarea" rows="4"></textarea>
-            <div id="fixedPrompt_comfyui-results" class="ch-autocomplete-results"></div>
+        <div class="zinao-chatu-field">
+            <label for="zinao_chatu_sd_auth">身份验证</label>
+            <input type="text" id="zinao_chatu_sd_auth" class="zinao-chatu-text-input" placeholder="例： 用户名:密码">
         </div>
-        <div class="zinao-chatu-field-col">
-            <label for="fixedPrompt_end_comfyui">后置固定正面提示词 <span class="zinao-chatu-unsaved-warning" title="设置尚未保存" style="display: none;"><i class="fa-solid fa-triangle-exclamation"></i></span></label>
-            <button class="zinao-chatu-icon-btn" id="translate_fixedPrompt_end_comfyui" title="翻译" style="align-self: flex-end; margin: 4px 0;"><i class="fa-solid fa-language"></i></button>
-            <textarea id="fixedPrompt_end_comfyui" class="zinao-chatu-textarea" rows="4"></textarea>
-            <div id="fixedPrompt_end_comfyui-results" class="ch-autocomplete-results"></div>
-        </div>
-        <div class="zinao-chatu-field-col">
-            <label for="negativePrompt_comfyui">固定负面提示词 <span class="zinao-chatu-unsaved-warning" title="设置尚未保存" style="display: none;"><i class="fa-solid fa-triangle-exclamation"></i></span></label>
-            <textarea id="negativePrompt_comfyui" class="zinao-chatu-textarea" rows="4"></textarea>
-            <div id="negativePrompt_comfyui-results" class="ch-autocomplete-results"></div>
+    </div>
+        <div class="zinao-chatu-settings-section">
+        <h4>其他设置</h4>
+        
+            <div class="zinao-chatu-field">
+                <label for="sd_cchatu_8_model">模型</label>
+                <select id="sd_cchatu_8_model" class="zinao-chatu-select"></select>
+            </div>
+            <div class="zinao-chatu-field">
+                <label for="sd_cchatu_8_vae">VAE</label>
+                <select id="sd_cchatu_8_vae" class="zinao-chatu-select"></select>
+            </div>
+            <div class="zinao-chatu-field">
+                <label for="sd_cchatu_8_samplerName">采样方法</label>
+                <select id="sd_cchatu_8_samplerName" class="zinao-chatu-select"></select>
+            </div>
+            <div class="zinao-chatu-field">
+                <label for="sd_cchatu_8_scheduler">调度器</label>
+                <select id="sd_cchatu_8_scheduler" class="zinao-chatu-select"></select>
+            </div>
+
         </div>
         
-        <h3>LORA</h3>
-        <div class="zinao-chatu-field">
-            <label for="ComfyuiLORA">添加 LORA</label>
-            <div class="zinao-chatu-profile-controls">
-                <select id="ComfyuiLORA" class="zinao-chatu-select"></select>
-                <button class="zinao-chatu-icon-btn" id="ComfyuiaddLORA" title="添加"><i class="fa-solid fa-plus"></i></button>
-            </div>
+            <div class="zinao-chatu-settings-section">
+                <h4>生成参数</h4>
+                <div class="zinao-chatu-grid">
+                    <div class="zinao-chatu-field">
+                        <label for="sd_csize">预设尺寸</label>
+                        <select id="sd_csize" class="zinao-chatu-select">
+                            <option value="512x512">512x512 (1:1, 图标)</option>
+                            <option value="640x640">640x640 (1:1, 图标)</option>
+                            <option value="512x768">512x768 (2:3, 垂直)</option>
+                            <option value="768x512">768x512 (3:2, 水平)</option>
+                            <option value="1024x1024">1024x1024 (1:1, SDXL)</option>
+                            <option value="1216x832">1216x832 (19:13, 超高清)</option>
+                            <option value="832x1216">832x1216 (13:19, 超高清)</option>
+                        </select>
+                    </div>
+                    <div class="zinao-chatu-field">
+                        <label for="sd_cwidth">宽度</label>
+                        <input type="number" id="sd_cwidth" class="zinao-chatu-text-input">
+                    </div>
+                    <div class="zinao-chatu-field">
+                        <label for="sd_cheight">高度</label>
+                        <input type="number" id="sd_cheight" class="zinao-chatu-text-input">
+                    </div>
+                    <div class="zinao-chatu-field">
+                        <label for="sd_csteps">采样步数</label>
+                        <input type="number" id="sd_csteps" class="zinao-chatu-text-input">
+                    </div>
+                    <div class="zinao-chatu-field">
+                        <label for="sdCfgScale">CFG缩放</label>
+                        <input type="number" id="sdCfgScale" class="zinao-chatu-text-input">
+                    </div>
+
+                    <div class="zinao-chatu-field">
+                        <label for="sd_cclip_skip">片段跳过</label>
+                        <input type="number" id="sd_cclip_skip" class="zinao-chatu-text-input">
+                    </div>
+                    <div class="zinao-chatu-field">
+                        <label for="sd_cseed">种子 (seed)</label>
+                        <input type="number" id="sd_cseed" class="zinao-chatu-text-input" value="-1">
+                    </div>
+
+                </div>
+                </div>
+                    <div class="zinao-chatu-settings-section">
+                        <h4>放大修复</h4>
+                     <div class="zinao-chatu-field">
+                            <label for="sd_chires_fix">高清修复</label>
+                            <div class="zinao-chatu-toggle">
+                                <input id="sd_chires_fix" type="checkbox"/>
+                                <span class="zinao-chatu-slider"></span>
+                            </div>
+                        </div>
+                    <div class="zinao-chatu-field">
+                        <label for="sd_chires_steps">高清修复步数</label>
+                        <input type="number" id="sd_chires_steps" class="zinao-chatu-text-input">
+                    </div>    
+                    <div class="zinao-chatu-field">
+                        <label for="sd_cchatu_8_upscaler">图像扩大器</label>
+                        <select id="sd_cchatu_8_upscaler" class="zinao-chatu-select"></select>
+                    </div>
+                    <div class="zinao-chatu-field">
+                        <label for="sd_cupscale_factor">扩大倍数</label>
+                        <input type="number" id="sd_cupscale_factor" class="zinao-chatu-text-input">
+                    </div>
+                    
+                    <div class="zinao-chatu-field">
+                        <label for="sd_cdenoising_strength">去噪强度</label>
+                        <input type="number" id="sd_cdenoising_strength" class="zinao-chatu-text-input" step="0.1">
+                    </div>
+                   </div>
+               
+           
+
+                <div class="zinao-chatu-settings-section">
+                    <h4>修复</h4>
+
+                    <div class="zinao-chatu-field">
+                        <label for="restoreFaces">面部修复</label>
+                        <div class="zinao-chatu-toggle">
+                            <input id="restoreFaces" type="checkbox"/>
+                            <span class="zinao-chatu-slider"></span>
+                        </div>
+                    </div>
+                    <div class="zinao-chatu-field">
+                        <label for="sd_cadetailer">使用ADetailer（脸部）</label>
+                        <div class="zinao-chatu-toggle">
+                            <input id="sd_cadetailer" type="checkbox"/>
+                            <span class="zinao-chatu-slider"></span>
+                        </div>
+                    </div> 
+               </div>
+            
+            
         </div>
-        <div class="zinao-chatu-field">
-            <label for="weilin_lora_fix">新版weilin节点的lora报错修复(自动添加触发词强度1)</label>
-            <select id="weilin_lora_fix" class="zinao-chatu-select">
-                <option value="true">启用</option>
-                <option value="false">禁用</option>
-            </select>
-        </div>
-        
-    </div>
-    <div class="zinao-chatu-settings-section">
-        <h3>质量预设</h3>
-        <div class="zinao-chatu-field">
-            <label for="AQT_comfyui">正面质量预设</label>
-            <select id="AQT_comfyui" class="zinao-chatu-select">
-                <option value="best quality, amazing quality, very aesthetic, absurdres">启用</option>
-                <option value="">禁用</option>
-            </select>
-        </div>
-        <div class="zinao-chatu-field">
-            <label for="UCP_comfyui">负面质量预设</label>
-            <select id="UCP_comfyui" class="zinao-chatu-select">
-<option value="">无</option>
-<option value="bad proportions, out of focus, username, text, bad anatomy, lowres, worstquality, watermark, cropped, bad body, deformed, mutated, disfigured, poorly drawn face, malformed hands, extra arms, extra limb, missing limb, too many fingers, extra legs, bad feet, missing fingers, fused fingers, acnes, floating limbs, disconnected limbs, long neck, long body, mutation, ugly, blurry, low quality, sketches, normal quality, monochrome, grayscale, signature, logo, jpeg artifacts, unfinished, displeasing, chromatic aberration, extra digits, artistic error, scan, abstract, photo, realism, screencap">作者预设</option>
-<option value="negativeXL_D, negativeXL, source_furry, extra limbs, deformations, long fingers, fused fingers, inaccurate_anatomy, bad proportions, poorly drawn hands, bad hands, extra_fingers, extra_hand, extra_arm, distorted fingers, ugly hands, creepy hands, six fingers, malformed fingers, long_fingers, interlocked fingers:1.2, ugly, deformed, uneven, asymmetrical, unnatural, missing fingers, extra digit, fewer digits, opaque eyes, small eyes, ugly eyes, blurred eyes, bad face, (bad anatomy, ugly face:1.2), (worst quality, low quality, not detailed, low resolution:1.2), motion_blur, blur, blur_censor, blurry, simple_background, text, error, cropped, normal quality, jpeg artifacts, watermark, logo, signature, username, artist name">作者预set 2</option>
-            </select>
-        </div>
-    </div>
-    <div class="zinao-chatu-settings-section">
-        <h3>配置档案</h3>
-        <div class="zinao-chatu-field">
-            <label for="comfyui_profile_id">当前配置</label>
-            <div class="zinao-chatu-profile-controls">
-                <select id="comfyui_profile_id" class="zinao-chatu-select"></select>
-                <button class="zinao-chatu-icon-btn" id="comfyui_profile_load" title="读取">
-                    <i class="fa-solid fa-folder-open"></i>
-                </button>
-                <button class="zinao-chatu-icon-btn" id="comfyui_profile_new" title="新建">
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-                <button class="zinao-chatu-icon-btn" id="comfyui_profile_save" title="保存当前">
-                    <i class="fa-solid fa-save"></i>
-                </button>
-                <button class="zinao-chatu-icon-btn danger" id="comfyui_profile_delete" title="删除">
-                    <i class="fa-solid fa-trash"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-    <div class="zinao-chatu-settings-section">
-        <h3>工作流</h3>
-        <div class="zinao-chatu-field">
-            <label for="workerid">工作流预设</label>
-            <div class="zinao-chatu-profile-controls">
-                <select id="workerid" class="zinao-chatu-select"></select>
-                <button class="zinao-chatu-icon-btn" id="worker_new" title="新建"><i class="fa-solid fa-plus"></i></button>
-                <button class="zinao-chatu-icon-btn" id="worker_update_style" title="保存"><i class="fa-solid fa-save"></i></button>
-                <button class="zinao-chatu-icon-btn" id="worker_save_style" title="另存为"><i class="fa-solid fa-file-export"></i></button>
-                <button class="zinao-chatu-icon-btn" id="worker_rename" title="重命名"><i class="fa-solid fa-pen"></i></button>
-                <button class="zinao-chatu-icon-btn" id="worker_export_current" title="导出当前"><i class="fa-solid fa-upload"></i></button>
-                <button class="zinao-chatu-icon-btn" id="worker_export_all" title="导出全部"><i class="fa-solid fa-file-export"></i></button>
-                <button class="zinao-chatu-icon-btn" id="worker_import" title="导入"><i class="fa-solid fa-download"></i></button>
-                <button class="zinao-chatu-icon-btn danger" id="worker_delete_style" title="删除"><i class="fa-solid fa-trash"></i></button>
-            </div>
-        </div>
-        <div class="zinao-chatu-field-col">
-            <label for="worker">工作流 (JSON)</label>
-            <textarea id="worker" class="zinao-chatu-textarea" rows="5"></textarea>
-            <div style="display: flex; gap: 10px; align-self: flex-end; margin-top: 10px;">
-                <button id="eidtwork" class="zinao-chatu-btn">简易修改</button>
-                <button id="visualize_workflow" class="zinao-chatu-btn"><i class="fa-solid fa-diagram-project"></i> 可视化</button>
-            </div>
-        </div>
-    </div>
-    <div class="zinao-chatu-settings-section">
-        <h3>修图预设</h3>
-        <div class="zinao-chatu-field">
-            <label for="editWorkerid">修图工作流预设</label>
-            <div class="zinao-chatu-profile-controls">
-                <select id="editWorkerid" class="zinao-chatu-select"></select>
-                <button class="zinao-chatu-icon-btn" id="edit_worker_new" title="新建"><i class="fa-solid fa-plus"></i></button>
-                <button class="zinao-chatu-icon-btn" id="edit_worker_update_style" title="保存"><i class="fa-solid fa-save"></i></button>
-                <button class="zinao-chatu-icon-btn" id="edit_worker_save_style" title="另存为"><i class="fa-solid fa-file-export"></i></button>
-                <button class="zinao-chatu-icon-btn" id="edit_worker_rename" title="重命名"><i class="fa-solid fa-pen"></i></button>
-                <button class="zinao-chatu-icon-btn" id="edit_worker_export_current" title="导出当前"><i class="fa-solid fa-upload"></i></button>
-                <button class="zinao-chatu-icon-btn" id="edit_worker_export_all" title="导出全部"><i class="fa-solid fa-file-export"></i></button>
-                <button class="zinao-chatu-icon-btn" id="edit_worker_import" title="导入"><i class="fa-solid fa-download"></i></button>
-                <button class="zinao-chatu-icon-btn danger" id="edit_worker_delete_style" title="删除"><i class="fa-solid fa-trash"></i></button>
-            </div>
-        </div>
-        <div class="zinao-chatu-field-col">
-            <label for="editWorker">修图工作流 (JSON)</label>
-            <textarea id="editWorker" class="zinao-chatu-textarea" rows="5"></textarea>
-        </div>
-    </div>
-    <div class="zinao-chatu-settings-section">
+        <div id="model_tab_comfyui" class="model-tab-content" style="width:100%; margin-top: 5px;">
+            <div class="zinao-chatu-settings-section">
         <h3>ComfyUI 设置</h3>
         <div class="zinao-chatu-field">
             <label for="comfyuiUrl">API 地址</label>
@@ -684,4 +515,192 @@
             <input type="number" id="c_idquanzhong" class="zinao-chatu-text-input">
         </div>
     </div>
+
+        </div>
+        <div id="model_tab_banana" class="model-tab-content" style="width:100%; margin-top: 5px;">
+            
+    <!-- 1. 基础设置 -->
+    <div class="zinao-chatu-settings-section">
+        <h3>基础设置</h3>
+        <div class="zinao-chatu-field-col">
+            <label for="zinao-chatu-banana-api-url">API 连接地址</label>
+            <input type="text" id="zinao-chatu-banana-api-url" class="zinao-chatu-text-input" placeholder="http://localhost:7860">
+        </div>
+        <div class="zinao-chatu-field-col">
+            <label for="zinao-chatu-banana-api-key">API Key</label>
+            <div style="position: relative; display: flex; align-items: center;">
+                <input type="password" id="zinao-chatu-banana-api-key" class="zinao-chatu-text-input" placeholder="在此输入您的 API Key" style="padding-right: 2.2em;">
+                <button type="button" id="zinao-chatu-banana-api-key-toggle" title="显示/隐藏 API Key" style="position: absolute; right: 0.4em; background: none; border: none; cursor: pointer; color: inherit; opacity: 0.6; padding: 0; font-size: 1em; line-height: 1;">
+                    <i class="fa-solid fa-eye"></i>
+                </button>
+            </div>
+        </div>
+        <div class="zinao-chatu-field">
+            <label for="zinao-chatu-banana-model-select">图像模型</label>
+            <div class="zinao-chatu-profile-controls">
+                <select id="zinao-chatu-banana-model-select" class="zinao-chatu-select"></select>
+                <button class="zinao-chatu-icon-btn" id="zinao-chatu-banana-fetch-models" title="获取模型列表（同时填充图像/修图/视频三个下拉框）"><i class="fa-solid fa-rotate"></i></button>
+            </div>
+        </div>
+        <div class="zinao-chatu-grid-2">
+            <div class="zinao-chatu-field">
+                <label for="zinao-chatu-banana-edit-model-select">修图模型</label>
+                <div class="zinao-chatu-profile-controls">
+                    <select id="zinao-chatu-banana-edit-model-select" class="zinao-chatu-select"></select>
+                </div>
+            </div>
+            <div class="zinao-chatu-field">
+                <label for="zinao-chatu-banana-video-model-select">视频模型</label>
+                <div class="zinao-chatu-profile-controls">
+                    <select id="zinao-chatu-banana-video-model-select" class="zinao-chatu-select"></select>
+                </div>
+            </div>
+        </div>
+        <div class="zinao-chatu-field">
+            <label for="zinao-chatu-banana-aspect-ratio">长宽比</label>
+            <select id="zinao-chatu-banana-aspect-ratio" class="zinao-chatu-select">
+                <option value="1:1">1:1</option>
+                <option value="9:16">9:16</option>
+                <option value="16:9">16:9</option>
+                <option value="4:3">4:3</option>
+                <option value="3:4">3:4</option>
+            </select>
+        </div>
+        <div class="zinao-chatu-field">
+            <label for="zinao-chatu-banana-use-grok-format">Grok 原生格式</label>
+            <label class="zinao-chatu-toggle" for="zinao-chatu-banana-use-grok-format" title="开启后使用 Grok 的 /v1/images/generations 端点。仅发送 { model, prompt, n, response_format }，将忽略对话预设/参考图，且不支持修图与视频模式。">
+                <input id="zinao-chatu-banana-use-grok-format" type="checkbox"/>
+                <span class="zinao-chatu-slider"></span>
+            </label>
+        </div>
+        <div class="zinao-chatu-banana-replace-help">
+            <details>
+                <summary><i class="fa-solid fa-circle-info"></i> Grok 原生格式说明</summary>
+                <div class="zinao-chatu-help-content">
+                    <ul>
+                        <li>适用于 <code>grok-imagine-*</code> 等通过 <code>/v1/images/generations</code> 端点生图的模型。</li>
+                        <li>开启后将<strong>忽略对话预设与参考图</strong>，仅发送 <code>{ model, prompt, n, response_format }</code>。</li>
+                        <li><strong>不支持修图与视频模式</strong>（这两类仍走多模态 chat/completions 路径）。</li>
+                        <li>Grok 当前固定输出分辨率，<strong>长宽比设置对它无效</strong>。</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+        <div class="zinao-chatu-grid-2">
+            <div class="zinao-chatu-field">
+                <label for="zinao-chatu-banana-edit-preset">修图预设选择</label>
+                <select id="zinao-chatu-banana-edit-preset" class="zinao-chatu-select"></select>
+            </div>
+            <div class="zinao-chatu-field">
+                <label for="zinao-chatu-banana-video-preset">视频预设选择</label>
+                <select id="zinao-chatu-banana-video-preset" class="zinao-chatu-select"></select>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. 多轮对话 -->
+    <div id="zinao-chatu-banana-multimodal-section" class="zinao-chatu-settings-section">
+        <h3>多轮对话 (Gemini)</h3>
+        <div class="zinao-chatu-field-col">
+            <label for="zinao-chatu-banana-fixed-prompt">固定正面提示词</label>
+            <textarea id="zinao-chatu-banana-fixed-prompt" class="zinao-chatu-textarea" rows="2"></textarea>
+        </div>
+        <div class="zinao-chatu-field-col">
+            <label for="zinao-chatu-banana-postfix-prompt">后置固定正面提示词</label>
+            <textarea id="zinao-chatu-banana-postfix-prompt" class="zinao-chatu-textarea" rows="2"></textarea>
+        </div>
+        <div class="zinao-chatu-field">
+            <label for="zinao-chatu-banana-conversation-preset-id">对话预设</label>
+            <div class="zinao-chatu-profile-controls">
+                <select id="zinao-chatu-banana-conversation-preset-id" class="zinao-chatu-select"></select>
+                <button class="zinao-chatu-icon-btn" id="zinao-chatu-banana-conversation-new" title="新建"><i class="fa-solid fa-plus"></i></button>
+                <button class="zinao-chatu-icon-btn" id="zinao-chatu-banana-conversation-rename" title="重命名"><i class="fa-solid fa-pen"></i></button>
+                <button class="zinao-chatu-icon-btn" id="zinao-chatu-banana-conversation-save" title="保存"><i class="fa-solid fa-save"></i></button>
+                <button class="zinao-chatu-icon-btn" id="zinao-chatu-banana-conversation-save-as" title="另存为"><i class="fa-solid fa-file-export"></i></button>
+                <button class="zinao-chatu-icon-btn" id="zinao-chatu-banana-conversation-import" title="导入"><i class="fa-solid fa-download"></i></button>
+                <button class="zinao-chatu-icon-btn" id="zinao-chatu-banana-conversation-export" title="导出"><i class="fa-solid fa-upload"></i></button>
+                <button class="zinao-chatu-icon-btn danger" id="zinao-chatu-banana-conversation-delete" title="删除"><i class="fa-solid fa-trash"></i></button>
+            </div>
+        </div>
+        
+        <div class="zinao-chatu-banana-conversation-group">
+            <h4>第 1 轮</h4>
+            <div class="zinao-chatu-banana-conversation-turn">
+                <div class="zinao-chatu-banana-turn-user">
+                    <h5>User</h5>
+                    <textarea id="zinao-chatu-banana-user-text-1" class="zinao-chatu-textarea" rows="3" placeholder="用户文本..."></textarea>
+                    <div class="zinao-chatu-image-preview-container small" id="zinao-chatu-banana-user-image-container-1">
+                        <img id="zinao-chatu-banana-user-image-1" src="" style="display:none;">
+                        <div class="zinao-chatu-image-placeholder"><i class="fa-solid fa-image"></i></div>
+                        <button class="zinao-chatu-icon-btn danger top-right" id="zinao-chatu-banana-user-image-remove-1" style="display:none;"><i class="fa-solid fa-xmark"></i></button>
+                        <input type="file" id="zinao-chatu-banana-user-image-input-1" accept="image/*" style="display:none;">
+                    </div>
+                </div>
+                <div class="zinao-chatu-banana-turn-model">
+                    <h5>Model</h5>
+                    <textarea id="zinao-chatu-banana-model-text-1" class="zinao-chatu-textarea" rows="3" placeholder="模型文本..."></textarea>
+                    <div class="zinao-chatu-image-preview-container small" id="zinao-chatu-banana-model-image-container-1">
+                        <img id="zinao-chatu-banana-model-image-1" src="" style="display:none;">
+                        <div class="zinao-chatu-image-placeholder"><i class="fa-solid fa-image"></i></div>
+                        <button class="zinao-chatu-icon-btn danger top-right" id="zinao-chatu-banana-model-image-remove-1" style="display:none;"><i class="fa-solid fa-xmark"></i></button>
+                        <input type="file" id="zinao-chatu-banana-model-image-input-1" accept="image/*" style="display:none;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="zinao-chatu-banana-conversation-group">
+            <h4>第 2 轮</h4>
+            <div class="zinao-chatu-banana-conversation-turn">
+                <div class="zinao-chatu-banana-turn-user">
+                    <h5>User</h5>
+                    <textarea id="zinao-chatu-banana-user-text-2" class="zinao-chatu-textarea" rows="3" placeholder="用户文本..."></textarea>
+                    <div class="zinao-chatu-image-preview-container small" id="zinao-chatu-banana-user-image-container-2">
+                        <img id="zinao-chatu-banana-user-image-2" src="" style="display:none;">
+                        <div class="zinao-chatu-image-placeholder"><i class="fa-solid fa-image"></i></div>
+                        <button class="zinao-chatu-icon-btn danger top-right" id="zinao-chatu-banana-user-image-remove-2" style="display:none;"><i class="fa-solid fa-xmark"></i></button>
+                        <input type="file" id="zinao-chatu-banana-user-image-input-2" accept="image/*" style="display:none;">
+                    </div>
+                </div>
+                <div class="zinao-chatu-banana-turn-model">
+                    <h5>Model</h5>
+                    <textarea id="zinao-chatu-banana-model-text-2" class="zinao-chatu-textarea" rows="3" placeholder="模型文本..."></textarea>
+                    <div class="zinao-chatu-image-preview-container small" id="zinao-chatu-banana-model-image-container-2">
+                        <img id="zinao-chatu-banana-model-image-2" src="" style="display:none;">
+                        <div class="zinao-chatu-image-placeholder"><i class="fa-solid fa-image"></i></div>
+                        <button class="zinao-chatu-icon-btn danger top-right" id="zinao-chatu-banana-model-image-remove-2" style="display:none;"><i class="fa-solid fa-xmark"></i></button>
+                        <input type="file" id="zinao-chatu-banana-model-image-input-2" accept="image/*" style="display:none;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="zinao-chatu-banana-conversation-group">
+            <h4>第 3 轮</h4>
+            <div class="zinao-chatu-banana-conversation-turn">
+                <div class="zinao-chatu-banana-turn-user">
+                    <h5>User</h5>
+                    <textarea id="zinao-chatu-banana-user-text-3" class="zinao-chatu-textarea" rows="3" placeholder="用户文本..."></textarea>
+                    <div class="zinao-chatu-image-preview-container small" id="zinao-chatu-banana-user-image-container-3">
+                        <img id="zinao-chatu-banana-user-image-3" src="" style="display:none;">
+                        <div class="zinao-chatu-image-placeholder"><i class="fa-solid fa-image"></i></div>
+                        <button class="zinao-chatu-icon-btn danger top-right" id="zinao-chatu-banana-user-image-remove-3" style="display:none;"><i class="fa-solid fa-xmark"></i></button>
+                        <input type="file" id="zinao-chatu-banana-user-image-input-3" accept="image/*" style="display:none;">
+                    </div>
+                </div>
+                <div class="zinao-chatu-banana-turn-model">
+                    <h5>Model</h5>
+                    <textarea id="zinao-chatu-banana-model-text-3" class="zinao-chatu-textarea" rows="3" placeholder="模型文本..."></textarea>
+                    <div class="zinao-chatu-image-preview-container small" id="zinao-chatu-banana-model-image-container-3">
+                        <img id="zinao-chatu-banana-model-image-3" src="" style="display:none;">
+                        <div class="zinao-chatu-image-placeholder"><i class="fa-solid fa-image"></i></div>
+                        <button class="zinao-chatu-icon-btn danger top-right" id="zinao-chatu-banana-model-image-remove-3" style="display:none;"><i class="fa-solid fa-xmark"></i></button>
+                        <input type="file" id="zinao-chatu-banana-model-image-input-3" accept="image/*" style="display:none;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </div>
+</div>
 </div>

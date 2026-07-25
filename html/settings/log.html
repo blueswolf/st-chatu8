@@ -1,93 +1,4 @@
 <div id="ch-tab-log">
-    <!-- 生图生涯 -->
-    <div class="zinao-chatu-settings-section">
-        <h3>🎨 生图生涯</h3>
-
-        <!-- 汇总卡片 -->
-        <div id="ch-gen-summary" style="margin-bottom: 10px;">
-            <span style="color: #888;">加载中...</span>
-        </div>
-
-        <!-- 图例 -->
-        <div id="ch-gen-legend" style="margin-bottom: 6px;"></div>
-
-        <!-- 时间维度切换 -->
-        <div style="display: flex; gap: 4px; margin-bottom: 6px;">
-            <button class="ch-period-btn" data-period="day"
-                style="padding: 3px 10px; font-size: 12px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); cursor: pointer; background: rgba(255,255,255,0.06); color: #aaa;">日</button>
-            <button class="ch-period-btn" data-period="week"
-                style="padding: 3px 10px; font-size: 12px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); cursor: pointer; background: rgba(255,255,255,0.06); color: #aaa;">周</button>
-            <button class="ch-period-btn" data-period="month"
-                style="padding: 3px 10px; font-size: 12px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); cursor: pointer; background: rgba(255,255,255,0.06); color: #aaa;">月</button>
-            <button class="ch-period-btn" data-period="year"
-                style="padding: 3px 10px; font-size: 12px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); cursor: pointer; background: rgba(255,255,255,0.06); color: #aaa;">年</button>
-        </div>
-
-        <!-- 柱状图区域 -->
-        <div id="ch-gen-chart" style="min-height: 110px; margin-bottom: 10px;">
-            <div style="text-align:center; color:#888; padding:20px 0;">加载中...</div>
-        </div>
-
-        <!-- 按后端进度条 -->
-        <div id="ch-gen-backends" style="margin-bottom: 8px;"></div>
-
-        <!-- 操作按钮 -->
-        <div class="zinao-chatu-field" style="margin-top: 4px;">
-            <label>操作</label>
-            <div>
-                <button id="ch-refresh-gen-stats" class="zinao-chatu-btn">刷新统计</button>
-                <button id="ch-reset-gen-stats" class="zinao-chatu-btn danger">重置统计</button>
-            </div>
-        </div>
-        <div class="zinao-chatu-field-col" style="font-size: 12px; color: #888;">
-            <span>💡 每次生图成功自动记录，永久保存，按 日/周/月/年 查看趋势。</span>
-        </div>
-    </div>
-
-    <!-- 调试模式 -->
-    <div class="zinao-chatu-settings-section">
-        <h3>🔧 调试模式</h3>
-        <div class="zinao-chatu-field">
-            <label>调试开关</label>
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <label class="checkbox_label">
-                    <input id="ch-debug-mode-toggle" type="checkbox" />
-                    <span>启用详细调试日志</span>
-                </label>
-                <span id="ch-debug-status" style="color: #999; font-size: 12px;"></span>
-            </div>
-        </div>
-        <div class="zinao-chatu-field">
-            <label>调试工具</label>
-            <div>
-                <button id="ch-download-debug-log" class="zinao-chatu-btn" disabled>下载调试日志</button>
-                <button id="ch-clear-debug-log" class="zinao-chatu-btn danger" disabled>清空调试日志</button>
-            </div>
-        </div>
-        <div class="zinao-chatu-field-col" style="font-size: 12px; color: #888;">
-            <span>💡 调试模式记录详细的函数执行时间和分支逻辑，开关不持久化，关闭设置页面后需重新启用。</span>
-        </div>
-    </div>
-
-    <!-- 错误收集器 -->
-    <div class="zinao-chatu-settings-section">
-        <h3>🚨 错误记录</h3>
-        <div class="zinao-chatu-field">
-            <label>错误统计</label>
-            <div id="ch-error-stats" style="font-size: 12px; color: #666; line-height: 1.6;">
-                <span>加载中...</span>
-            </div>
-        </div>
-        <div class="zinao-chatu-field">
-            <label>错误工具</label>
-            <div>
-                <button id="ch-view-errors" class="zinao-chatu-btn">查看错误详情</button>
-                <button id="ch-download-errors" class="zinao-chatu-btn" disabled>下载诊断包</button>
-                <button id="ch-clear-errors" class="zinao-chatu-btn danger" disabled>清空错误记录</button>
-            </div>
-        </div>
-    </div>
-
     <!-- 普通日志 -->
     <div class="zinao-chatu-settings-section">
         <h3>📋 日志</h3>
@@ -101,24 +12,6 @@
         <div class="zinao-chatu-field-col">
             <label for="ch-log-textarea">日志输出</label>
             <textarea id="ch-log-textarea" class="zinao-chatu-textarea" rows="15" readonly style="font-family: monospace; font-size: 12px;"></textarea>
-        </div>
-    </div>
-
-    <!-- 任务管理器 -->
-    <div class="zinao-chatu-settings-section">
-        <h3>📊 任务管理 <span id="ch-task-stats" class="zinao-chatu-task-stats" style="display: none;"></span></h3>
-        <div class="zinao-chatu-field">
-            <label>操作</label>
-            <div>
-                <button id="ch-cancel-all-tasks" class="zinao-chatu-btn danger">全部取消</button>
-                <button id="ch-clear-completed" class="zinao-chatu-btn">清空已完成</button>
-            </div>
-        </div>
-        <div class="zinao-chatu-field-col">
-            <label>任务列表</label>
-            <div id="ch-task-list" class="zinao-chatu-task-list">
-                <div class="zinao-chatu-task-empty">暂无任务</div>
-            </div>
         </div>
     </div>
 </div>

@@ -74,7 +74,7 @@
 #zinao-chatu-settings .zinao-chatu-sidebar {
     width: 220px;
     flex-shrink: 0;
-    background-color: var(--zinao-chatu-bg-secondary);
+    background-color: var(--zinao-chatu-bg-secondary, #2a2a4a);
     padding: 16px;
     display: flex;
     flex-direction: column;
