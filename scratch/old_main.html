@@ -1,0 +1,242 @@
+<div id="ch-tab-main">
+    <!-- 生图提示词设置区域 -->
+    <div class="zinao-chatu-settings-section">
+        <h3>生图提示词设置</h3>
+        <div class="zinao-chatu-field" style="margin-bottom: 15px;">
+            <label>选择模式</label>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span id="label-mode-inline" style="font-weight: bold; color: var(--zinao-chatu-accent-color);">随正文一起输出</span>
+                <div class="zinao-chatu-toggle">
+                    <input id="prompt-generation-mode-toggle" type="checkbox"/>
+                    <span class="zinao-chatu-slider"></span>
+                </div>
+                <span id="label-mode-dblclick" style="color: var(--zinao-chatu-text-secondary);">双击聊天记录获取</span>
+            </div>
+        </div>
+
+        <!-- 随正文模式面板 -->
+        <div id="panel-mode-inline" class="prompt-mode-panel" style="border-top: 1px dashed var(--zinao-chatu-border-color); padding-top: 15px;">
+            <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
+                <label>角色描述 (可添加，可设置关键词激活，方便多个角色时自动选择性插入)</label>
+                <textarea id="inline_char_desc" class="zinao-chatu-textarea" rows="3"></textarea>
+            </div>
+            <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
+                <label>生图提示词</label>
+                <textarea id="inline_prompt" class="zinao-chatu-textarea" rows="3"></textarea>
+            </div>
+            <div class="zinao-chatu-field-col">
+                <label>尾部提示词 (留空备用)</label>
+                <textarea id="inline_negative_prompt" class="zinao-chatu-textarea" rows="2"></textarea>
+            </div>
+        </div>
+
+        <!-- 双击聊天记录模式面板 -->
+        <div id="panel-mode-dblclick" class="prompt-mode-panel" style="display: none; border-top: 1px dashed var(--zinao-chatu-border-color); padding-top: 15px;">
+            <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
+                <label>提示词模型选择</label>
+                <div style="display: flex; gap: 10px; margin-bottom: 5px;">
+                    <input type="text" id="dblclick_api_endpoint" class="zinao-chatu-text-input" placeholder="API 端点 (Endpoint)" style="flex: 2;">
+                    <input type="password" id="dblclick_api_key" class="zinao-chatu-text-input" placeholder="API Key" style="flex: 2;">
+                </div>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <select id="dblclick_model_select" class="zinao-chatu-select" style="flex: 2;">
+                        <option value="">(请先获取模型)</option>
+                    </select>
+                    <button id="dblclick_fetch_models" class="zinao-chatu-btn"><i class="fa-solid fa-sync"></i> 获取模型</button>
+                    <button id="dblclick_test_conn" class="zinao-chatu-btn"><i class="fa-solid fa-wifi"></i> 测试连接</button>
+                </div>
+            </div>
+            <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
+                <label>破限提示词</label>
+                <textarea id="dblclick_jailbreak_prompt" class="zinao-chatu-textarea" rows="3"></textarea>
+            </div>
+            <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
+                <label>生图提示词</label>
+                <textarea id="dblclick_gen_prompt" class="zinao-chatu-textarea" rows="3"></textarea>
+            </div>
+            <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
+                <label>用户要求提示词 (捕获用户在聊天区呼出生图菜单时追加并拼接)</label>
+                <textarea id="dblclick_user_req_prompt" class="zinao-chatu-textarea" rows="2"></textarea>
+            </div>
+            <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
+                <label>上下文捕获区 (设置楼层，文本如能捕获)</label>
+                <textarea id="dblclick_context_capture" class="zinao-chatu-textarea" rows="3" readonly style="background-color: var(--zinao-chatu-bg-tertiary); cursor: not-allowed;"></textarea>
+            </div>
+            <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
+                <label>正文捕获区</label>
+                <textarea id="dblclick_main_capture" class="zinao-chatu-textarea" rows="3" readonly style="background-color: var(--zinao-chatu-bg-tertiary); cursor: not-allowed;"></textarea>
+            </div>
+            <div class="zinao-chatu-field-col">
+                <label>尾部提示词</label>
+                <textarea id="dblclick_postfix_prompt" class="zinao-chatu-textarea" rows="2"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- 核心通用设置 -->
+    <div class="zinao-chatu-settings-section">
+        <h3>通用设置</h3>
+        <div class="zinao-chatu-field">
+            <label for="scriptEnabled">启用插件</label>
+            <div class="zinao-chatu-toggle">
+                <input id="scriptEnabled" type="checkbox"/>
+                <span class="zinao-chatu-slider"></span>
+            </div>
+        </div>
+        <div class="zinao-chatu-field">
+            <label for="mode">生图模型</label>
+            <select id="mode" class="zinao-chatu-select">
+                <option value="sd">SD</option>
+                <option value="novelai">NovelAI</option>
+                <option value="comfyui">ComfyUI</option>
+                <option value="banana">Banana/Grok</option>
+            </select>
+        </div>
+        <div class="zinao-chatu-field">
+            <label for="client">客户端</label>
+            <select id="client" class="zinao-chatu-select">
+                <option value="browser">浏览器</option>
+                <option value="jiuguan">酒馆</option>
+            </select>
+        </div>
+        <div class="zinao-chatu-field">
+            <label for="dbclike">隐藏按钮（双击图片触发）</label>
+            <div class="zinao-chatu-toggle">
+                <input id="dbclike" type="checkbox"/>
+                <span class="zinao-chatu-slider"></span>
+            </div>
+        </div>
+        <div class="zinao-chatu-field">
+            <label for="collapseImage">折叠图片</label>
+            <div class="zinao-chatu-toggle">
+                <input id="collapseImage" type="checkbox"/>
+                <span class="zinao-chatu-slider"></span>
+            </div>
+        </div>
+        <div class="zinao-chatu-field">
+            <label for="zidongdianji">自动点击生成</label>
+            <div class="zinao-chatu-toggle">
+                <input id="zidongdianji" type="checkbox"/>
+                <span class="zinao-chatu-slider"></span>
+            </div>
+        </div>
+        <div class="zinao-chatu-field">
+            <label for="longPressToEdit">长按图片修改tag</label>
+            <div class="zinao-chatu-toggle">
+                <input id="longPressToEdit" type="checkbox"/>
+                <span class="zinao-chatu-slider"></span>
+            </div>
+        </div>
+        <div class="zinao-chatu-field">
+            <label for="clickToPreview">单击图片预览</label>
+            <div class="zinao-chatu-toggle">
+                <input id="clickToPreview" type="checkbox"/>
+                <span class="zinao-chatu-slider"></span>
+            </div>
+        </div>
+        <div class="zinao-chatu-field">
+            <label for="enablePregen">启用流式预生成</label>
+            <div class="zinao-chatu-toggle">
+                <input id="enablePregen" type="checkbox"/>
+                <span class="zinao-chatu-slider"></span>
+            </div>
+        </div>
+        <div class="zinao-chatu-field">
+            <label for="imageGenInterval">生图间隔时间（毫秒）</label>
+            <input type="number" id="imageGenInterval" class="zinao-chatu-text-input" min="0" step="100" placeholder="0">
+        </div>
+        <div class="zinao-chatu-field">
+            <label for="imageAlignment">图片对齐方式</label>
+            <select id="imageAlignment" class="zinao-chatu-select">
+                <option value="left">靠左</option>
+                <option value="center">居中</option>
+                <option value="right">靠右</option>
+            </select>
+        </div>
+        <div class="zinao-chatu-field">
+            <label for="imageSizeScale">图片显示大小</label>
+            <select id="imageSizeScale" class="zinao-chatu-select">
+                <option value="100">自适应（100%）</option>
+                <option value="75">3/4 大小（75%）</option>
+                <option value="50">1/2 大小（50%）</option>
+                <option value="25">1/4 大小（25%）</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- 标记设置 -->
+    <div class="zinao-chatu-settings-section">
+        <h3>标记</h3>
+        <div class="zinao-chatu-field">
+            <label for="startTag">开始标记</label>
+            <input type="text" id="startTag" class="zinao-chatu-text-input">
+        </div>
+        <div class="zinao-chatu-field">
+            <label for="endTag">结束标记</label>
+            <input type="text" id="endTag" class="zinao-chatu-text-input">
+        </div>
+    </div>
+
+    <!-- 缓存管理 -->
+    <div class="zinao-chatu-settings-section">
+        <h3>缓存管理</h3>
+        <div class="zinao-chatu-field">
+            <label for="cache">需要清除的缓存</label>
+            <select id="cache" class="zinao-chatu-select">
+                <option value="0">不再缓存</option>
+                <option value="1">点击清除一天前的</option>
+                <option value="7">点击清除一星期前的</option>
+                <option value="30">点击清除一个月前的</option>
+                <option value="365">点击清除一年前的</option>
+            </select>
+        </div>
+        <div class="zinao-chatu-field">
+            <label for="jiuguanchucun">缓存图片到酒馆</label>
+            <div class="zinao-chatu-toggle">
+                <input id="jiuguanchucun" type="checkbox"/>
+                <span class="zinao-chatu-slider"></span>
+            </div>
+        </div>
+        <div class="zinao-chatu-field">
+            <label for="vibeJiuguanchucun">缓存 Vibe 到酒馆</label>
+            <div class="zinao-chatu-toggle">
+                <input id="vibeJiuguanchucun" type="checkbox"/>
+                <span class="zinao-chatu-slider"></span>
+            </div>
+        </div>
+        <div class="zinao-chatu-field">
+            <label for="convertToJpegStorage">转JPEG储存节省70%空间(噪点明显增加)</label>
+            <div class="zinao-chatu-toggle">
+                <input id="convertToJpegStorage" type="checkbox"/>
+                <span class="zinao-chatu-slider"></span>
+            </div>
+        </div>
+        <div class="zinao-chatu-field">
+            <label>操作</label>
+            <div>
+                <button id="sync-server-images-btn" class="zinao-chatu-btn">同步服务器图片</button>
+                <button id="Clear-Cache" class="zinao-chatu-btn danger">清除图片缓存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById('prompt-generation-mode-toggle').addEventListener('change', function(e) {
+        const isDblClick = e.target.checked;
+        if (isDblClick) {
+            document.getElementById('label-mode-inline').style.color = 'var(--zinao-chatu-text-secondary)';
+            document.getElementById('label-mode-inline').style.fontWeight = 'normal';
+            document.getElementById('label-mode-dblclick').style.color = 'var(--zinao-chatu-accent-color)';
+            document.getElementById('label-mode-dblclick').style.fontWeight = 'bold';
+            document.getElementById('panel-mode-inline').style.display = 'none';
+            document.getElementById('panel-mode-dblclick').style.display = 'block';
+        } else {
+            document.getElementById('label-mode-inline').style.color = 'var(--zinao-chatu-accent-color)';
+            document.getElementById('label-mode-inline').style.fontWeight = 'bold';
+            document.getElementById('label-mode-dblclick').style.color = 'var(--zinao-chatu-text-secondary)';
+            document.getElementById('label-mode-dblclick').style.fontWeight = 'normal';
+            document.getElementById('panel-mode-inline').style.display = 'block';
+            document.getElementById('panel-mode-dblclick').style.display = 'none';
+        }
+    });
+</script>

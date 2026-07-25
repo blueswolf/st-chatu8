@@ -1,32 +1,23 @@
-<style>
-    .model-tab-content { display: none; }
-    #tab-radio-novelai:checked ~ #model_tab_novelai { display: block; }
-    #tab-radio-sd:checked ~ #model_tab_sd { display: block; }
-    #tab-radio-comfyui:checked ~ #model_tab_comfyui { display: block; }
-    #tab-radio-banana:checked ~ #model_tab_banana { display: block; }
-    .model-tab-label { padding: 8px 12px; cursor: pointer; border: 1px solid var(--zinao-chatu-border-color); border-radius: 4px; transition: all 0.2s ease; margin-bottom: 5px; }
-    input[type="radio"]:checked + .model-tab-label { background-color: var(--zinao-chatu-bg-tertiary); font-weight: bold; border-color: var(--zinao-chatu-accent-color); color: var(--zinao-chatu-accent-color); }
-</style>
-
 <div id="ch-tab-models">
 <div class="zinao-chatu-settings-section" style="margin-bottom: 20px;">
     <h3>生图模型设置</h3>
-    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+    
+    <div class="zinao-chatu-model-tabs-container">
         <input type="radio" id="tab-radio-novelai" name="model_tab_select" style="display:none;" checked>
-        <label for="tab-radio-novelai" class="model-tab-label">NovelAI</label>
+        <label for="tab-radio-novelai" class="zinao-chatu-model-tab-label">NovelAI</label>
 
         <input type="radio" id="tab-radio-sd" name="model_tab_select" style="display:none;">
-        <label for="tab-radio-sd" class="model-tab-label">SD</label>
+        <label for="tab-radio-sd" class="zinao-chatu-model-tab-label">SD</label>
 
         <input type="radio" id="tab-radio-comfyui" name="model_tab_select" style="display:none;">
-        <label for="tab-radio-comfyui" class="model-tab-label">ComfyUI</label>
+        <label for="tab-radio-comfyui" class="zinao-chatu-model-tab-label">ComfyUI</label>
 
         <input type="radio" id="tab-radio-banana" name="model_tab_select" style="display:none;">
-        <label for="tab-radio-banana" class="model-tab-label">Banana/Grok</label>
+        <label for="tab-radio-banana" class="zinao-chatu-model-tab-label">Banana/Grok</label>
         
-        <div style="flex-basis: 100%; height: 0;"></div>
+        <div class="model-tab-break"></div>
         
-        <div id="model_tab_novelai" class="model-tab-content" style="width:100%; margin-top: 5px;">
+        <div id="model_tab_novelai" class="model-tab-content">
             
     <div class="ch-prompts-section zinao-chatu-settings-section">
         <h3>固定提示词</h3>
@@ -265,7 +256,7 @@
     </div>
 
         </div>
-        <div id="model_tab_sd" class="model-tab-content" style="width:100%; margin-top: 5px;">
+        <div id="model_tab_sd" class="model-tab-content">
             <div class="zinao-chatu-settings-section">
         <h3>Stable Diffusion 设置</h3>
         <div class="zinao-chatu-field">
@@ -397,7 +388,7 @@
             
             
         </div>
-        <div id="model_tab_comfyui" class="model-tab-content" style="width:100%; margin-top: 5px;">
+        <div id="model_tab_comfyui" class="model-tab-content">
             <div class="zinao-chatu-settings-section">
         <h3>ComfyUI 设置</h3>
         <div class="zinao-chatu-field">
@@ -517,7 +508,7 @@
     </div>
 
         </div>
-        <div id="model_tab_banana" class="model-tab-content" style="width:100%; margin-top: 5px;">
+        <div id="model_tab_banana" class="model-tab-content">
             
     <!-- 1. 基础设置 -->
     <div class="zinao-chatu-settings-section">

@@ -10706,12 +10706,13 @@ function applyTheme(theme) {
     console.error(`Theme object is invalid.`);
     return;
   }
+  const defaultThemeValues = typeof defaultSettings !== 'undefined' && defaultSettings.themes ? defaultSettings.themes["默认-白天"] : {};
   const defaults = {
     "--zinao-chatu-input-bg": theme["--zinao-chatu-bg-secondary"] || "#ffffff",
     "--zinao-chatu-input-text": theme["--zinao-chatu-text-primary"] || "#000000",
     "--zinao-chatu-input-border": theme["--zinao-chatu-border-color"] || "#cccccc"
   };
-  const fullTheme = { ...defaults, ...theme };
+  const fullTheme = { ...defaultThemeValues, ...defaults, ...theme };
   const root = document.querySelector("#zinao-chatu-settings");
   if (root) {
     for (const [key, value] of Object.entries(fullTheme)) {
