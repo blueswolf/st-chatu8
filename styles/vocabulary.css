@@ -1,83 +1,83 @@
-.st-chatu8-vocabulary-list {
-    border: 1px solid var(--st-chatu8-border-color);
+.zinao-chatu-vocabulary-list {
+    border: 1px solid var(--zinao-chatu-border-color);
     border-radius: 5px;
     padding: 10px;
     max-height: 300px;
     overflow-y: auto;
-    background-color: var(--st-chatu8-bg-color-lighter);
+    background-color: var(--zinao-chatu-bg-color-lighter);
 }
 
-.st-chatu8-vocabulary-ul {
+.zinao-chatu-vocabulary-ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-.st-chatu8-vocabulary-item {
+.zinao-chatu-vocabulary-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 8px 12px;
-    border-bottom: 1px solid var(--st-chatu8-border-color);
+    border-bottom: 1px solid var(--zinao-chatu-border-color);
     transition: background-color 0.2s;
 }
 
-.st-chatu8-vocabulary-item:last-child {
+.zinao-chatu-vocabulary-item:last-child {
     border-bottom: none;
 }
 
-.st-chatu8-vocabulary-item:hover {
-    background-color: var(--st-chatu8-bg-color-hover);
+.zinao-chatu-vocabulary-item:hover {
+    background-color: var(--zinao-chatu-bg-color-hover);
 }
 
-.st-chatu8-vocabulary-actions {
+.zinao-chatu-vocabulary-actions {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.st-chatu8-installed-label {
+.zinao-chatu-installed-label {
     font-size: 0.9em;
-    color: var(--st-chatu8-text-color-secondary);
+    color: var(--zinao-chatu-text-color-secondary);
 }
 
-.st-chatu8-search-result-item {
+.zinao-chatu-search-result-item {
     padding: 5px;
     cursor: pointer;
     border-radius: 3px;
 }
 
-.st-chatu8-search-result-item:hover {
-    background-color: var(--st-chatu8-accent-color);
+.zinao-chatu-search-result-item:hover {
+    background-color: var(--zinao-chatu-accent-color);
     color: white;
 }
 
 /* Tag Tree Styles */
-.st-chatu8-tree-container {
-    border: 1px solid var(--st-chatu8-border-color);
+.zinao-chatu-tree-container {
+    border: 1px solid var(--zinao-chatu-border-color);
     border-radius: 5px;
     padding: 10px;
     max-height: 400px;
     overflow-y: auto;
-    background-color: var(--st-chatu8-bg-color-lighter);
+    background-color: var(--zinao-chatu-bg-color-lighter);
 }
 
-.st-chatu8-tree,
-.st-chatu8-tree-sublist,
-.st-chatu8-tree-taglist {
+.zinao-chatu-tree,
+.zinao-chatu-tree-sublist,
+.zinao-chatu-tree-taglist {
     list-style-type: none;
     padding-left: 20px;
 }
 
-.st-chatu8-tree {
+.zinao-chatu-tree {
     padding-left: 0;
 }
 
-.st-chatu8-tree-item {
+.zinao-chatu-tree-item {
     margin: 5px 0;
 }
 
-.st-chatu8-tree-content {
+.zinao-chatu-tree-content {
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -86,11 +86,11 @@
     transition: background-color 0.2s;
 }
 
-.st-chatu8-tree-content:hover {
-    background-color: var(--st-chatu8-bg-color-hover);
+.zinao-chatu-tree-content:hover {
+    background-color: var(--zinao-chatu-bg-color-hover);
 }
 
-.st-chatu8-tree-toggle {
+.zinao-chatu-tree-toggle {
     margin-right: 5px;
     width: 15px;
     display: inline-block;
@@ -99,31 +99,31 @@
     transition: transform 0.2s;
 }
 
-.st-chatu8-tree-group {
+.zinao-chatu-tree-group {
     font-weight: bold;
-    color: var(--st-chatu8-accent-color);
+    color: var(--zinao-chatu-accent-color);
 }
 
-.st-chatu8-tree-subgroup {
+.zinao-chatu-tree-subgroup {
     font-weight: 500;
 }
 
-.st-chatu8-tree-tag {
+.zinao-chatu-tree-tag {
     padding: 3px 0 3px 20px;
     cursor: pointer;
     border-radius: 3px;
     transition: background-color 0.2s;
     font-size: 0.9em;
-    color: var(--st-chatu8-text-color-secondary);
+    color: var(--zinao-chatu-text-color-secondary);
 }
 
-.st-chatu8-tree-tag:hover {
-    background-color: var(--st-chatu8-accent-color);
+.zinao-chatu-tree-tag:hover {
+    background-color: var(--zinao-chatu-accent-color);
     color: #fff;
 }
 
 /* Styles for Tag Browser Input and Actions */
-.st-chatu8-tag-browser-actions {
+.zinao-chatu-tag-browser-actions {
     display: flex;
     gap: 10px;
     margin-top: 10px;

@@ -1,5 +1,5 @@
 /* Image Cache Manager Styles */
-#st-chatu8-settings .st-chatu8-image-cache-grid {
+#zinao-chatu-settings .zinao-chatu-image-cache-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 16px;
@@ -7,42 +7,42 @@
     margin-bottom: 20px;
 }
 
-#st-chatu8-settings .st-chatu8-image-cache-item {
+#zinao-chatu-settings .zinao-chatu-image-cache-item {
     position: relative;
     cursor: pointer;
-    border-radius: var(--st-chatu8-border-radius);
+    border-radius: var(--zinao-chatu-border-radius);
     overflow: hidden;
     border: 2px solid transparent;
     transition: border-color 0.2s, transform 0.2s;
-    background-color: var(--st-chatu8-bg-tertiary);
+    background-color: var(--zinao-chatu-bg-tertiary);
 }
 
-#st-chatu8-settings .st-chatu8-image-cache-item:hover {
+#zinao-chatu-settings .zinao-chatu-image-cache-item:hover {
     transform: translateY(-4px);
-    box-shadow: var(--st-chatu8-box-shadow);
+    box-shadow: var(--zinao-chatu-box-shadow);
 }
 
-#st-chatu8-settings .st-chatu8-image-cache-item.selected {
-    border-color: var(--st-chatu8-accent-primary);
-    box-shadow: 0 0 10px var(--st-chatu8-accent-primary);
+#zinao-chatu-settings .zinao-chatu-image-cache-item.selected {
+    border-color: var(--zinao-chatu-accent-primary);
+    box-shadow: 0 0 10px var(--zinao-chatu-accent-primary);
 }
 
-#st-chatu8-settings .st-chatu8-image-cache-item img {
+#zinao-chatu-settings .zinao-chatu-image-cache-item img {
     width: 100%;
     height: 150px;
     object-fit: cover;
     display: block;
 }
 
-#st-chatu8-settings .st-chatu8-image-info {
+#zinao-chatu-settings .zinao-chatu-image-info {
     padding: 8px;
     font-size: 0.8rem;
     text-align: center;
-    color: var(--st-chatu8-text-secondary);
-    background-color: var(--st-chatu8-bg-secondary);
+    color: var(--zinao-chatu-text-secondary);
+    background-color: var(--zinao-chatu-bg-secondary);
 }
 
-#st-chatu8-settings .st-chatu8-pagination {
+#zinao-chatu-settings .zinao-chatu-pagination {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,24 +51,24 @@
     flex-wrap: wrap;
 }
 
-#st-chatu8-settings .st-chatu8-pagination button {
+#zinao-chatu-settings .zinao-chatu-pagination button {
     padding: 8px 12px;
 }
 
-#st-chatu8-settings .st-chatu8-pagination span {
-    color: var(--st-chatu8-text-primary);
+#zinao-chatu-settings .zinao-chatu-pagination span {
+    color: var(--zinao-chatu-text-primary);
 }
 
 /* Page Jump Input Styles */
-#st-chatu8-settings .st-chatu8-page-jump-input {
+#zinao-chatu-settings .zinao-chatu-page-jump-input {
     text-align: center;
     transition: all 0.3s ease;
     font-size: 14px;
     border: 1px solid var(--SmartThemeBorderColor);
     border-radius: 4px;
     padding: 4px;
-    background-color: var(--st-chatu8-bg-tertiary); /* 确保背景颜色一致 */
-    color: var(--st-chatu8-text-secondary);
+    background-color: var(--zinao-chatu-bg-tertiary); /* 确保背景颜色一致 */
+    color: var(--zinao-chatu-text-secondary);
     width: 60px; /* 确保宽度一致 */
 }
     text-align: center;
@@ -77,69 +77,69 @@
     border: 1px solid var(--SmartThemeBorderColor);
     border-radius: 4px;
     padding: 4px;
-    background-color: var(--st-chatu8-bg-tertiary); /* Updated to match the main background color */
+    background-color: var(--zinao-chatu-bg-tertiary); /* Updated to match the main background color */
     color: var(--SmartThemeEmColor);
     width: 60px;
 }
 
-#st-chatu8-settings .st-chatu8-page-jump-input:focus {
+#zinao-chatu-settings .zinao-chatu-page-jump-input:focus {
     outline: none;
-    border-color: var(--st-chatu8-accent-primary) !important;
-    box-shadow: 0 0 2px rgba(var(--st-chatu8-accent-primary-rgb, 0, 123, 255), 0.5);
+    border-color: var(--zinao-chatu-accent-primary) !important;
+    box-shadow: 0 0 2px rgba(var(--zinao-chatu-accent-primary-rgb, 0, 123, 255), 0.5);
 }
 
-#st-chatu8-settings .st-chatu8-page-jump-input:focus {
+#zinao-chatu-settings .zinao-chatu-page-jump-input:focus {
     outline: none;
-    border-color: var(--st-chatu8-accent-primary) !important;
-    box-shadow: 0 0 0 2px rgba(var(--st-chatu8-accent-primary-rgb, 0, 123, 255), 0.25);
+    border-color: var(--zinao-chatu-accent-primary) !important;
+    box-shadow: 0 0 0 2px rgba(var(--zinao-chatu-accent-primary-rgb, 0, 123, 255), 0.25);
 }
 
-#st-chatu8-settings .st-chatu8-page-jump-input::-webkit-inner-spin-button,
-#st-chatu8-settings .st-chatu8-page-jump-input::-webkit-outer-spin-button {
+#zinao-chatu-settings .zinao-chatu-page-jump-input::-webkit-inner-spin-button,
+#zinao-chatu-settings .zinao-chatu-page-jump-input::-webkit-outer-spin-button {
     opacity: 1;
     height: 30px;
 }
 
-#st-chatu8-settings .st-chatu8-cache-info {
+#zinao-chatu-settings .zinao-chatu-cache-info {
     margin-top: 16px;
     padding: 12px;
-    background-color: var(--st-chatu8-bg-secondary);
-    border-radius: var(--st-chatu8-border-radius);
-    color: var(--st-chatu8-text-secondary);
+    background-color: var(--zinao-chatu-bg-secondary);
+    border-radius: var(--zinao-chatu-border-radius);
+    color: var(--zinao-chatu-text-secondary);
     text-align: center;
     font-size: 0.9rem;
 }
 
 /* Image Preview Styles */
-#st-chatu8-settings .st-chatu8-image-preview-container {
+#zinao-chatu-settings .zinao-chatu-image-preview-container {
     width: 100%;
     max-width: 420px; /* Match other controls */
     height: 200px;
-    border: 2px dashed var(--st-chatu8-border-color);
-    border-radius: var(--st-chatu8-border-radius);
+    border: 2px dashed var(--zinao-chatu-border-color);
+    border-radius: var(--zinao-chatu-border-radius);
     display: grid;
     place-items: center;
     position: relative;
     overflow: hidden;
-    background-color: var(--st-chatu8-bg-tertiary);
+    background-color: var(--zinao-chatu-bg-tertiary);
     margin-bottom: 12px;
 }
 
-#st-chatu8-settings .st-chatu8-image-placeholder {
+#zinao-chatu-settings .zinao-chatu-image-placeholder {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--st-chatu8-text-secondary);
+    color: var(--zinao-chatu-text-secondary);
     text-align: center;
 }
 
-#st-chatu8-settings .st-chatu8-image-placeholder i {
+#zinao-chatu-settings .zinao-chatu-image-placeholder i {
     font-size: 3rem;
     margin-bottom: 12px;
 }
 
-#st-chatu8-settings .st-chatu8-image-preview-container img {
+#zinao-chatu-settings .zinao-chatu-image-preview-container img {
     position: absolute;
     top: 0;
     left: 0;
@@ -149,13 +149,13 @@
     display: none; /* Hidden by default */
 }
 
-#st-chatu8-settings .st-chatu8-image-controls {
+#zinao-chatu-settings .zinao-chatu-image-controls {
     display: flex;
     gap: 10px;
     max-width: 420px;
 }
 
-#st-chatu8-settings .st-chatu8-image-controls .st-chatu8-btn {
+#zinao-chatu-settings .zinao-chatu-image-controls .zinao-chatu-btn {
     flex-grow: 1;
     display: flex;
     align-items: center;
@@ -163,16 +163,16 @@
     gap: 8px;
 }
 
-#st-chatu8-settings .st-chatu8-image-cache-grid.multi-select-mode .st-chatu8-image-cache-item {
+#zinao-chatu-settings .zinao-chatu-image-cache-grid.multi-select-mode .zinao-chatu-image-cache-item {
     cursor: copy;
 }
 
-#st-chatu8-settings .st-chatu8-image-cache-grid.multi-select-mode .st-chatu8-image-cache-item.selected::after {
+#zinao-chatu-settings .zinao-chatu-image-cache-grid.multi-select-mode .zinao-chatu-image-cache-item.selected::after {
     content: '✔';
     position: absolute;
     top: 5px;
     right: 5px;
-    background-color: var(--st-chatu8-accent-primary);
+    background-color: var(--zinao-chatu-accent-primary);
     color: white;
     border-radius: 50%;
     width: 20px;
@@ -184,8 +184,8 @@
     z-index: 1;
 }
 
-#st-chatu8-settings .st-chatu8-cache-controls .st-chatu8-btn.active {
-    background-color: var(--st-chatu8-accent-primary);
-    color: var(--st-chatu8-text-highlight, white);
-    border-color: var(--st-chatu8-accent-secondary);
+#zinao-chatu-settings .zinao-chatu-cache-controls .zinao-chatu-btn.active {
+    background-color: var(--zinao-chatu-accent-primary);
+    color: var(--zinao-chatu-text-highlight, white);
+    border-color: var(--zinao-chatu-accent-secondary);
 }

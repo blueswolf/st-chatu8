@@ -4,7 +4,7 @@
    ═══════════════════════════════════════════════════════════ */
 
 /* ── 面板容器 ── */
-.st-chatu8-summary-manager {
+.zinao-chatu-summary-manager {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -16,18 +16,18 @@
     z-index: 10001;
     display: flex;
     flex-direction: column;
-    background: var(--st-chatu8-bg, #1a1a2e);
+    background: var(--zinao-chatu-bg, #1a1a2e);
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 12px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(12px);
     overflow: hidden;
     font-size: 13px;
-    color: var(--st-chatu8-text, #e0e0e0);
+    color: var(--zinao-chatu-text, #e0e0e0);
 }
 
 /* 半透明遮罩层 */
-.st-chatu8-summary-overlay {
+.zinao-chatu-summary-overlay {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.45);
@@ -40,7 +40,7 @@
     align-items: center;
     gap: 6px;
     padding: 10px 14px;
-    background: var(--st-chatu8-header-bg, #16213e);
+    background: var(--zinao-chatu-header-bg, #16213e);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     flex-shrink: 0;
     flex-wrap: wrap;
@@ -49,7 +49,7 @@
 .summary-title {
     font-size: 14px;
     font-weight: 600;
-    color: var(--st-chatu8-accent, #7ca3ff);
+    color: var(--zinao-chatu-accent, #7ca3ff);
     margin-right: 8px;
     white-space: nowrap;
 }
@@ -139,7 +139,7 @@
 
 .summary-btn--outline {
     background: transparent;
-    color: var(--st-chatu8-text-secondary, #aaa);
+    color: var(--zinao-chatu-text-secondary, #aaa);
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
@@ -153,7 +153,7 @@
 .summary-btn--icon {
     padding: 5px 8px;
     background: transparent;
-    color: var(--st-chatu8-text-secondary, #aaa);
+    color: var(--zinao-chatu-text-secondary, #aaa);
     border: none;
     font-size: 14px;
 }
@@ -244,7 +244,7 @@
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.5px;
-    color: var(--st-chatu8-text-secondary, #888);
+    color: var(--zinao-chatu-text-secondary, #888);
     background: rgba(255, 255, 255, 0.03);
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     flex-shrink: 0;
@@ -334,7 +334,7 @@
 .summary-card-title {
     font-size: 11px;
     font-weight: 600;
-    color: var(--st-chatu8-text, #ddd);
+    color: var(--zinao-chatu-text, #ddd);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -342,7 +342,7 @@
 
 .summary-card-info {
     font-size: 10px;
-    color: var(--st-chatu8-text-secondary, #888);
+    color: var(--zinao-chatu-text-secondary, #888);
     margin-bottom: 2px;
 }
 
@@ -365,7 +365,7 @@
 
 .summary-card-preview {
     font-size: 10px;
-    color: var(--st-chatu8-text-secondary, #999);
+    color: var(--zinao-chatu-text-secondary, #999);
     line-height: 1.35;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -407,7 +407,7 @@
 .summary-empty {
     padding: 20px 10px;
     text-align: center;
-    color: var(--st-chatu8-text-secondary, #666);
+    color: var(--zinao-chatu-text-secondary, #666);
     font-size: 11px;
     line-height: 1.5;
 }
@@ -440,20 +440,20 @@
 .summary-total-tokens {
     font-size: 11px;
     font-weight: 600;
-    color: var(--st-chatu8-accent, #7ca3ff);
+    color: var(--zinao-chatu-accent, #7ca3ff);
     white-space: nowrap;
 }
 
 .summary-footer-tip {
     font-size: 10px;
-    color: var(--st-chatu8-text-secondary, #666);
+    color: var(--zinao-chatu-text-secondary, #666);
     text-align: right;
 }
 
 /* ── Token 统计 ── */
 .summary-card-tokens {
     font-size: 10px;
-    color: var(--st-chatu8-accent, #7ca3ff);
+    color: var(--zinao-chatu-accent, #7ca3ff);
     font-weight: 600;
     opacity: 0.85;
 }
@@ -461,7 +461,7 @@
 .summary-card-tokens--excluded {
     text-decoration: line-through;
     opacity: 0.4;
-    color: var(--st-chatu8-text-secondary, #888);
+    color: var(--zinao-chatu-text-secondary, #888);
 }
 
 /* ── SVG 连线样式 ── */

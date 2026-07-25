@@ -1,4 +1,4 @@
-#st-chatu8-fab {
+#zinao-chatu-fab {
     position: fixed;
     top: 65vh;
     left: 20px;
@@ -26,7 +26,7 @@
 }
 
 /* 视频模式下的样式 */
-#st-chatu8-fab.st-chatu8-fab-video-mode {
+#zinao-chatu-fab.zinao-chatu-fab-video-mode {
     border-radius: 0;
     box-shadow: none;
     /* ✅ 修复：视频模式下让透明区域的事件穿透到下层页面 */
@@ -34,11 +34,11 @@
 }
 
 /* 视频模式下隐藏图标 */
-#st-chatu8-fab.st-chatu8-fab-video-mode i {
+#zinao-chatu-fab.zinao-chatu-fab-video-mode i {
     display: none !important;
 }
 
-#st-chatu8-fab i {
+#zinao-chatu-fab i {
     color: white;
     font-size: 24px;
     transition: font-size 0.3s;
@@ -46,7 +46,7 @@
     /* 确保图标在video上方（作为占位符时） */
 }
 
-#st-chatu8-fab .st-chatu8-fab-custom-icon {
+#zinao-chatu-fab .zinao-chatu-fab-custom-icon {
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -58,21 +58,21 @@
     z-index: 1;
 }
 
-#st-chatu8-fab.st-chatu8-fab-video-mode .st-chatu8-fab-custom-icon {
+#zinao-chatu-fab.zinao-chatu-fab-video-mode .zinao-chatu-fab-custom-icon {
     display: none !important;
 }
 
-#st-chatu8-fab:active {
+#zinao-chatu-fab:active {
     cursor: grabbing;
 }
 
-#st-chatu8-fab.st-chatu8-fab-dragging {
+#zinao-chatu-fab.zinao-chatu-fab-dragging {
     transition: none;
     /* ✅ 拖动时禁用所有过渡效果，确保即时响应 */
 }
 
 /* Video element styles (Canvas 版本) */
-.st-chatu8-fab-video {
+.zinao-chatu-fab-video {
     position: absolute;
     top: 0;
     left: 0;
@@ -90,7 +90,7 @@
 }
 
 /* 视频背景层（可选，用于解决视频透明问题） */
-#st-chatu8-fab.st-chatu8-fab-video-mode::before {
+#zinao-chatu-fab.zinao-chatu-fab-video-mode::before {
     content: '';
     position: absolute;
     top: 0;
@@ -103,7 +103,7 @@
 }
 
 /* 调试模式：显示点击区域边界（可选） */
-#st-chatu8-fab.st-chatu8-fab-video-mode.debug-hitbox::after {
+#zinao-chatu-fab.zinao-chatu-fab-video-mode.debug-hitbox::after {
     content: '';
     position: absolute;
     top: 0;
@@ -116,20 +116,20 @@
 }
 
 /* Loading state for FAB during LLM requests */
-#st-chatu8-fab.st-chatu8-fab-loading i {
+#zinao-chatu-fab.zinao-chatu-fab-loading i {
     display: none;
 }
 
-#st-chatu8-fab.st-chatu8-fab-loading .st-chatu8-fab-custom-icon {
+#zinao-chatu-fab.zinao-chatu-fab-loading .zinao-chatu-fab-custom-icon {
     display: none !important;
 }
 
-#st-chatu8-fab.st-chatu8-fab-loading .st-chatu8-fab-video {
+#zinao-chatu-fab.zinao-chatu-fab-loading .zinao-chatu-fab-video {
     display: none !important;
     /* 加载动画时隐藏video */
 }
 
-#st-chatu8-fab.st-chatu8-fab-loading::after {
+#zinao-chatu-fab.zinao-chatu-fab-loading::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -140,12 +140,12 @@
     border: 3px solid rgba(255, 255, 255, 0.3);
     border-top-color: white;
     border-radius: 50%;
-    animation: st-chatu8-fab-spin 0.8s linear infinite;
+    animation: zinao-chatu-fab-spin 0.8s linear infinite;
     z-index: 3;
     /* 加载动画在最上层 */
 }
 
-@keyframes st-chatu8-fab-spin {
+@keyframes zinao-chatu-fab-spin {
     from {
         transform: translate(-50%, -50%) rotate(0deg);
     }
@@ -155,14 +155,14 @@
     }
 }
 
-.st-chatu8-fab-icon-config {
+.zinao-chatu-fab-icon-config {
     display: flex;
     align-items: center;
     gap: 12px;
     width: 100%;
 }
 
-.st-chatu8-fab-icon-preview {
+.zinao-chatu-fab-icon-preview {
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -175,34 +175,34 @@
     flex: 0 0 auto;
 }
 
-.st-chatu8-fab-icon-preview i {
+.zinao-chatu-fab-icon-preview i {
     color: #fff;
     font-size: 22px;
 }
 
-.st-chatu8-fab-icon-preview img {
+.zinao-chatu-fab-icon-preview img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: none;
 }
 
-.st-chatu8-fab-icon-preview.has-image i {
+.zinao-chatu-fab-icon-preview.has-image i {
     display: none;
 }
 
-.st-chatu8-fab-icon-preview.has-image img {
+.zinao-chatu-fab-icon-preview.has-image img {
     display: block;
 }
 
-.st-chatu8-fab-icon-actions {
+.zinao-chatu-fab-icon-actions {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 8px;
 }
 
-.st-chatu8-fab-icon-actions small {
+.zinao-chatu-fab-icon-actions small {
     width: 100%;
     color: var(--SmartThemeEmColor, #888);
     font-size: 12px;

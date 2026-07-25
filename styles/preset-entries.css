@@ -1,20 +1,20 @@
 /* Preset Entries - LLM 预设条目列表样式 */
 
 /* 条目容器 - 固定高度可滚动 */
-#st-chatu8-settings .st-chatu8-preset-entries-container {
+#zinao-chatu-settings .zinao-chatu-preset-entries-container {
     max-height: 400px;
     overflow-y: auto;
-    border: 1px solid var(--st-chatu8-border-color);
+    border: 1px solid var(--zinao-chatu-border-color);
     border-radius: 8px;
-    background: var(--st-chatu8-bg-tertiary);
+    background: var(--zinao-chatu-bg-tertiary);
     padding: 8px;
     margin-top: 12px;
 }
 
 /* 单个条目卡片 */
-#st-chatu8-settings .st-chatu8-preset-entry {
-    background: var(--st-chatu8-bg-secondary);
-    border: 1px solid var(--st-chatu8-border-color);
+#zinao-chatu-settings .zinao-chatu-preset-entry {
+    background: var(--zinao-chatu-bg-secondary);
+    border: 1px solid var(--zinao-chatu-border-color);
     border-radius: 6px;
     padding: 12px;
     margin-bottom: 8px;
@@ -22,25 +22,25 @@
     transition: box-shadow 0.2s, border-color 0.2s;
 }
 
-#st-chatu8-settings .st-chatu8-preset-entry:last-child {
+#zinao-chatu-settings .zinao-chatu-preset-entry:last-child {
     margin-bottom: 0;
 }
 
-#st-chatu8-settings .st-chatu8-preset-entry:hover {
-    border-color: var(--st-chatu8-accent-secondary);
+#zinao-chatu-settings .zinao-chatu-preset-entry:hover {
+    border-color: var(--zinao-chatu-accent-secondary);
 }
 
-#st-chatu8-settings .st-chatu8-preset-entry.dragging {
+#zinao-chatu-settings .zinao-chatu-preset-entry.dragging {
     opacity: 0.5;
-    border: 2px dashed var(--st-chatu8-accent-primary);
+    border: 2px dashed var(--zinao-chatu-accent-primary);
 }
 
-#st-chatu8-settings .st-chatu8-preset-entry.drag-over {
-    border-top: 3px solid var(--st-chatu8-accent-primary);
+#zinao-chatu-settings .zinao-chatu-preset-entry.drag-over {
+    border-top: 3px solid var(--zinao-chatu-accent-primary);
 }
 
 /* 条目头部 - 拖拽手柄、名称、控件 */
-#st-chatu8-settings .st-chatu8-entry-header {
+#zinao-chatu-settings .zinao-chatu-entry-header {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -49,45 +49,45 @@
 }
 
 /* 拖拽手柄 */
-#st-chatu8-settings .st-chatu8-entry-drag-handle {
+#zinao-chatu-settings .zinao-chatu-entry-drag-handle {
     cursor: grab;
-    color: var(--st-chatu8-text-secondary);
+    color: var(--zinao-chatu-text-secondary);
     padding: 4px;
     font-size: 14px;
     opacity: 0.6;
     transition: opacity 0.2s;
 }
 
-#st-chatu8-settings .st-chatu8-entry-drag-handle:hover {
+#zinao-chatu-settings .zinao-chatu-entry-drag-handle:hover {
     opacity: 1;
-    color: var(--st-chatu8-accent-primary);
+    color: var(--zinao-chatu-accent-primary);
 }
 
-#st-chatu8-settings .st-chatu8-entry-drag-handle:active {
+#zinao-chatu-settings .zinao-chatu-entry-drag-handle:active {
     cursor: grabbing;
 }
 
 /* 条目名称输入 */
-#st-chatu8-settings .st-chatu8-entry-name {
+#zinao-chatu-settings .zinao-chatu-entry-name {
     flex: 1;
     min-width: 120px;
     max-width: 200px;
-    background: var(--st-chatu8-bg-tertiary);
-    border: 1px solid var(--st-chatu8-border-color);
-    color: var(--st-chatu8-text-primary);
+    background: var(--zinao-chatu-bg-tertiary);
+    border: 1px solid var(--zinao-chatu-border-color);
+    color: var(--zinao-chatu-text-primary);
     border-radius: 4px;
     padding: 6px 10px;
     font-size: 0.9rem;
     font-weight: 500;
 }
 
-#st-chatu8-settings .st-chatu8-entry-name:focus {
+#zinao-chatu-settings .zinao-chatu-entry-name:focus {
     outline: none;
-    border-color: var(--st-chatu8-accent-primary);
+    border-color: var(--zinao-chatu-accent-primary);
 }
 
 /* 角色选择 */
-#st-chatu8-settings .st-chatu8-entry-role {
+#zinao-chatu-settings .zinao-chatu-entry-role {
     min-width: 100px;
     padding: 6px 10px;
     font-size: 0.85rem;
@@ -95,33 +95,33 @@
 }
 
 /* 角色颜色标签 */
-#st-chatu8-settings .st-chatu8-entry-role option[value="system"] {
+#zinao-chatu-settings .zinao-chatu-entry-role option[value="system"] {
     color: #a855f7;
 }
 
-#st-chatu8-settings .st-chatu8-entry-role option[value="user"] {
+#zinao-chatu-settings .zinao-chatu-entry-role option[value="user"] {
     color: #3b82f6;
 }
 
-#st-chatu8-settings .st-chatu8-entry-role option[value="assistant"] {
+#zinao-chatu-settings .zinao-chatu-entry-role option[value="assistant"] {
     color: #22c55e;
 }
 
 /* 角色颜色指示条 */
-#st-chatu8-settings .st-chatu8-preset-entry[data-role="system"] {
+#zinao-chatu-settings .zinao-chatu-preset-entry[data-role="system"] {
     border-left: 3px solid #a855f7;
 }
 
-#st-chatu8-settings .st-chatu8-preset-entry[data-role="user"] {
+#zinao-chatu-settings .zinao-chatu-preset-entry[data-role="user"] {
     border-left: 3px solid #3b82f6;
 }
 
-#st-chatu8-settings .st-chatu8-preset-entry[data-role="assistant"] {
+#zinao-chatu-settings .zinao-chatu-preset-entry[data-role="assistant"] {
     border-left: 3px solid #22c55e;
 }
 
 /* 条目开关 - 小型版本 */
-#st-chatu8-settings .st-chatu8-entry-toggle {
+#zinao-chatu-settings .zinao-chatu-entry-toggle {
     position: relative;
     display: inline-block;
     width: 36px;
@@ -129,7 +129,7 @@
     flex-shrink: 0;
 }
 
-#st-chatu8-settings .st-chatu8-entry-toggle input {
+#zinao-chatu-settings .zinao-chatu-entry-toggle input {
     opacity: 0;
     width: 100%;
     height: 100%;
@@ -140,19 +140,19 @@
     z-index: 1;
 }
 
-#st-chatu8-settings .st-chatu8-entry-toggle .st-chatu8-slider {
+#zinao-chatu-settings .zinao-chatu-entry-toggle .zinao-chatu-slider {
     position: absolute;
     cursor: pointer;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--st-chatu8-bg-tertiary);
+    background-color: var(--zinao-chatu-bg-tertiary);
     transition: background-color 0.3s ease;
     border-radius: 20px;
 }
 
-#st-chatu8-settings .st-chatu8-entry-toggle .st-chatu8-slider:before {
+#zinao-chatu-settings .zinao-chatu-entry-toggle .zinao-chatu-slider:before {
     position: absolute;
     content: "";
     height: 14px;
@@ -164,23 +164,23 @@
     border-radius: 50%;
 }
 
-#st-chatu8-settings .st-chatu8-entry-toggle input:checked+.st-chatu8-slider {
-    background-color: var(--st-chatu8-accent-primary);
+#zinao-chatu-settings .zinao-chatu-entry-toggle input:checked+.zinao-chatu-slider {
+    background-color: var(--zinao-chatu-accent-primary);
 }
 
-#st-chatu8-settings .st-chatu8-entry-toggle input:checked+.st-chatu8-slider:before {
+#zinao-chatu-settings .zinao-chatu-entry-toggle input:checked+.zinao-chatu-slider:before {
     transform: translateX(16px);
 }
 
 /* 删除按钮 */
-#st-chatu8-settings .st-chatu8-entry-delete {
+#zinao-chatu-settings .zinao-chatu-entry-delete {
     padding: 4px 8px;
     font-size: 12px;
     margin-left: auto;
 }
 
 /* 条目设置行 - 触发模式 */
-#st-chatu8-settings .st-chatu8-entry-settings {
+#zinao-chatu-settings .zinao-chatu-entry-settings {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -188,20 +188,20 @@
     flex-wrap: wrap;
 }
 
-#st-chatu8-settings .st-chatu8-entry-settings label {
+#zinao-chatu-settings .zinao-chatu-entry-settings label {
     font-size: 0.85rem;
-    color: var(--st-chatu8-text-secondary);
+    color: var(--zinao-chatu-text-secondary);
     margin: 0;
 }
 
-#st-chatu8-settings .st-chatu8-trigger-mode {
+#zinao-chatu-settings .zinao-chatu-trigger-mode {
     padding: 4px 8px;
     font-size: 0.85rem;
     border-radius: 4px;
     min-width: 80px;
 }
 
-#st-chatu8-settings .st-chatu8-trigger-words {
+#zinao-chatu-settings .zinao-chatu-trigger-words {
     flex: 1;
     min-width: 150px;
     padding: 6px 10px;
@@ -209,19 +209,19 @@
     border-radius: 4px;
 }
 
-#st-chatu8-settings .st-chatu8-trigger-words-container {
+#zinao-chatu-settings .zinao-chatu-trigger-words-container {
     display: none;
     flex: 1;
     align-items: center;
     gap: 8px;
 }
 
-#st-chatu8-settings .st-chatu8-trigger-words-container.visible {
+#zinao-chatu-settings .zinao-chatu-trigger-words-container.visible {
     display: flex;
 }
 
 /* 内容文本框 */
-#st-chatu8-settings .st-chatu8-entry-content {
+#zinao-chatu-settings .zinao-chatu-entry-content {
     width: 100%;
     min-height: 60px;
     resize: vertical;
@@ -229,52 +229,52 @@
 }
 
 /* 禁用状态样式 */
-#st-chatu8-settings .st-chatu8-preset-entry.disabled {
+#zinao-chatu-settings .zinao-chatu-preset-entry.disabled {
     opacity: 0.5;
 }
 
-#st-chatu8-settings .st-chatu8-preset-entry.disabled .st-chatu8-entry-content {
-    background: var(--st-chatu8-bg-tertiary);
+#zinao-chatu-settings .zinao-chatu-preset-entry.disabled .zinao-chatu-entry-content {
+    background: var(--zinao-chatu-bg-tertiary);
 }
 
 /* 空状态提示 */
-#st-chatu8-settings .st-chatu8-entries-empty {
+#zinao-chatu-settings .zinao-chatu-entries-empty {
     text-align: center;
     padding: 40px 20px;
-    color: var(--st-chatu8-text-secondary);
+    color: var(--zinao-chatu-text-secondary);
 }
 
-#st-chatu8-settings .st-chatu8-entries-empty i {
+#zinao-chatu-settings .zinao-chatu-entries-empty i {
     font-size: 32px;
     margin-bottom: 12px;
     opacity: 0.5;
 }
 
 /* 添加条目按钮区域 */
-#st-chatu8-settings .st-chatu8-add-entry-area {
+#zinao-chatu-settings .zinao-chatu-add-entry-area {
     display: flex;
     gap: 8px;
     margin-bottom: 12px;
 }
 
-#st-chatu8-settings .st-chatu8-add-entry-btn {
+#zinao-chatu-settings .zinao-chatu-add-entry-btn {
     flex: 1;
 }
 
 /* ==================== 折叠视图样式 ==================== */
 
 /* 折叠视图条目 - 单行紧凑布局 */
-#st-chatu8-settings .st-chatu8-preset-entry-collapsed {
+#zinao-chatu-settings .zinao-chatu-preset-entry-collapsed {
     padding: 8px 12px;
 }
 
-#st-chatu8-settings .st-chatu8-preset-entry-collapsed .st-chatu8-entry-header {
+#zinao-chatu-settings .zinao-chatu-preset-entry-collapsed .zinao-chatu-entry-header {
     margin-bottom: 0;
     align-items: center;
 }
 
 /* 角色标签 */
-#st-chatu8-settings .st-chatu8-entry-role-badge {
+#zinao-chatu-settings .zinao-chatu-entry-role-badge {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -287,23 +287,23 @@
     flex-shrink: 0;
 }
 
-#st-chatu8-settings .st-chatu8-entry-role-badge[data-role="system"] {
+#zinao-chatu-settings .zinao-chatu-entry-role-badge[data-role="system"] {
     background-color: rgba(168, 85, 247, 0.2);
     color: #a855f7;
 }
 
-#st-chatu8-settings .st-chatu8-entry-role-badge[data-role="user"] {
+#zinao-chatu-settings .zinao-chatu-entry-role-badge[data-role="user"] {
     background-color: rgba(59, 130, 246, 0.2);
     color: #3b82f6;
 }
 
-#st-chatu8-settings .st-chatu8-entry-role-badge[data-role="assistant"] {
+#zinao-chatu-settings .zinao-chatu-entry-role-badge[data-role="assistant"] {
     background-color: rgba(34, 197, 94, 0.2);
     color: #22c55e;
 }
 
 /* 折叠视图的条目名称 - 只读、固定宽度对齐 */
-#st-chatu8-settings .st-chatu8-preset-entry-collapsed .st-chatu8-entry-name {
+#zinao-chatu-settings .zinao-chatu-preset-entry-collapsed .zinao-chatu-entry-name {
     flex: 0 0 150px;
     width: 150px;
     min-width: 150px;
@@ -318,15 +318,15 @@
     white-space: nowrap;
 }
 
-#st-chatu8-settings .st-chatu8-preset-entry-collapsed .st-chatu8-entry-name:focus {
+#zinao-chatu-settings .zinao-chatu-preset-entry-collapsed .zinao-chatu-entry-name:focus {
     outline: none;
     border: none;
 }
 
 /* 内容预览 */
-#st-chatu8-settings .st-chatu8-entry-preview {
+#zinao-chatu-settings .zinao-chatu-entry-preview {
     flex: 1;
-    color: var(--st-chatu8-text-secondary);
+    color: var(--zinao-chatu-text-secondary);
     font-size: 0.85rem;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -336,7 +336,7 @@
 }
 
 /* 操作按钮组 */
-#st-chatu8-settings .st-chatu8-entry-actions {
+#zinao-chatu-settings .zinao-chatu-entry-actions {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -345,22 +345,22 @@
 }
 
 /* 编辑按钮 */
-#st-chatu8-settings .st-chatu8-entry-edit {
-    color: var(--st-chatu8-accent-primary);
+#zinao-chatu-settings .zinao-chatu-entry-edit {
+    color: var(--zinao-chatu-accent-primary);
     background: transparent;
 }
 
-#st-chatu8-settings .st-chatu8-entry-edit:hover {
-    background: rgba(var(--st-chatu8-accent-primary-rgb, 74, 144, 226), 0.1);
+#zinao-chatu-settings .zinao-chatu-entry-edit:hover {
+    background: rgba(var(--zinao-chatu-accent-primary-rgb, 74, 144, 226), 0.1);
 }
 
 /* 删除按钮调整 */
-#st-chatu8-settings .st-chatu8-preset-entry-collapsed .st-chatu8-entry-delete {
+#zinao-chatu-settings .zinao-chatu-preset-entry-collapsed .zinao-chatu-entry-delete {
     margin-left: 0;
 }
 
 /* 折叠视图下的开关调整 */
-#st-chatu8-settings .st-chatu8-preset-entry-collapsed .st-chatu8-entry-toggle {
+#zinao-chatu-settings .zinao-chatu-preset-entry-collapsed .zinao-chatu-entry-toggle {
     margin-right: 0;
 }
 
@@ -368,13 +368,13 @@
 /* ==================== 正则条目样式 ==================== */
 
 /* 正则条目角色标签 */
-#st-chatu8-settings .st-chatu8-entry-role-badge[data-role="regex"] {
+#zinao-chatu-settings .zinao-chatu-entry-role-badge[data-role="regex"] {
     background-color: rgba(249, 115, 22, 0.2);
     color: #f97316;
 }
 
 /* 正则条目左侧颜色指示条 */
-#st-chatu8-settings .st-chatu8-preset-entry[data-role="regex"] {
+#zinao-chatu-settings .zinao-chatu-preset-entry[data-role="regex"] {
     border-left: 3px solid #f97316;
 }
 
@@ -382,7 +382,7 @@
 /* ==================== 警告指示器样式 ==================== */
 
 /* replaceString 长度警告图标 */
-#st-chatu8-settings .st-chatu8-entry-warning {
+#zinao-chatu-settings .zinao-chatu-entry-warning {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -393,12 +393,12 @@
     cursor: help;
 }
 
-#st-chatu8-settings .st-chatu8-entry-warning:hover {
+#zinao-chatu-settings .zinao-chatu-entry-warning:hover {
     color: #fbbf24;
 }
 
 /* 危险正则警告图标 - 红色骷髅 */
-#st-chatu8-settings .st-chatu8-entry-danger-warning {
+#zinao-chatu-settings .zinao-chatu-entry-danger-warning {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -410,7 +410,7 @@
     animation: danger-pulse 1.5s ease-in-out infinite;
 }
 
-#st-chatu8-settings .st-chatu8-entry-danger-warning:hover {
+#zinao-chatu-settings .zinao-chatu-entry-danger-warning:hover {
     color: #f87171;
 }
 
@@ -425,43 +425,43 @@
         opacity: 0.6;
     }
 }
-/* ==================== �ƶ�������ʽ ==================== */
+/* ==================== �ƶ�������ʽ ==================== */
 
-/* �ƶ���ť������ʽ */
-#st-chatu8-settings .st-chatu8-entry-move-btn {
-    color: var(--st-chatu8-text-secondary);
+/* �ƶ���ť������ʽ */
+#zinao-chatu-settings .zinao-chatu-entry-move-btn {
+    color: var(--zinao-chatu-text-secondary);
     transition: all 0.2s ease;
 }
 
-#st-chatu8-settings .st-chatu8-entry-move-btn:hover {
-    color: var(--st-chatu8-accent-primary);
-    background: rgba(var(--st-chatu8-accent-primary-rgb, 74, 144, 226), 0.1);
+#zinao-chatu-settings .zinao-chatu-entry-move-btn:hover {
+    color: var(--zinao-chatu-accent-primary);
+    background: rgba(var(--zinao-chatu-accent-primary-rgb, 74, 144, 226), 0.1);
 }
 
-/* ���ڱ��ƶ�����Ŀ��ť״̬ */
-#st-chatu8-settings .st-chatu8-entry-move-btn.active {
-    color: var(--st-chatu8-accent-primary);
-    background: rgba(var(--st-chatu8-accent-primary-rgb, 74, 144, 226), 0.2);
+/* ���ڱ��ƶ�����Ŀ��ť״̬ */
+#zinao-chatu-settings .zinao-chatu-entry-move-btn.active {
+    color: var(--zinao-chatu-accent-primary);
+    background: rgba(var(--zinao-chatu-accent-primary-rgb, 74, 144, 226), 0.2);
     animation: move-active-pulse 1.5s infinite;
 }
 
-/* �ƶ�ģʽ�µ�Ŀ�갴ť״̬ (����) */
-#st-chatu8-settings .st-chatu8-preset-entries-container.move-mode .st-chatu8-preset-entry:not(.moving-source) .st-chatu8-entry-move-btn {
-    color: #10b981; /* ��ɫ��ʾ��ΪĿ�� */
+/* �ƶ�ģʽ�µ�Ŀ�갴ť״̬ (����) */
+#zinao-chatu-settings .zinao-chatu-preset-entries-container.move-mode .zinao-chatu-preset-entry:not(.moving-source) .zinao-chatu-entry-move-btn {
+    color: #10b981; /* ��ɫ��ʾ��ΪĿ�� */
     background: rgba(16, 185, 129, 0.15);
     border: 1px dashed #10b981;
     animation: move-target-pulse 2s infinite;
 }
 
-#st-chatu8-settings .st-chatu8-preset-entries-container.move-mode .st-chatu8-preset-entry:not(.moving-source) .st-chatu8-entry-move-btn:hover {
+#zinao-chatu-settings .zinao-chatu-preset-entries-container.move-mode .zinao-chatu-preset-entry:not(.moving-source) .zinao-chatu-entry-move-btn:hover {
     background: rgba(16, 185, 129, 0.3);
     border-style: solid;
 }
 
-/* �ƶ�Դ��Ŀ��������ʽ */
-#st-chatu8-settings .st-chatu8-preset-entry.moving-source {
-    border-color: var(--st-chatu8-accent-primary);
-    box-shadow: 0 0 8px rgba(var(--st-chatu8-accent-primary-rgb, 74, 144, 226), 0.4);
+/* �ƶ�Դ��Ŀ��������ʽ */
+#zinao-chatu-settings .zinao-chatu-preset-entry.moving-source {
+    border-color: var(--zinao-chatu-accent-primary);
+    box-shadow: 0 0 8px rgba(var(--zinao-chatu-accent-primary-rgb, 74, 144, 226), 0.4);
     z-index: 10;
 }
 

@@ -1,4 +1,4 @@
-# SillyTavern 文生图 (st-chatu8)
+# SillyTavern 文生图 (zinao-chatu)
 
 **作者:** 从前跟你一样
 **版本:** 1.0.0
@@ -30,10 +30,10 @@
 
 1.  在 SillyTavern 的扩展菜单中，从以下 URL 安装插件：
     ```
-    https://github.com/damoshen123/st-chatu8
+    https://github.com/damoshen123/zinao-chatu
     ```
 2.  重启 SillyTavern。
-3.  在扩展菜单中启用 "st-chatu8"。
+3.  在扩展菜单中启用 "zinao-chatu"。
 
 ## 📖 使用方法
 

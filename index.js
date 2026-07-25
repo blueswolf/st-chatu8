@@ -7,7 +7,13 @@
  * ====================================================
  */
 import { extension_settings } from "../../../extensions.js";
+if (extension_settings["st-chatu8"] && !extension_settings["zinao-chatu"]) {
+    extension_settings["zinao-chatu"] = extension_settings["st-chatu8"];
+    delete extension_settings["st-chatu8"];
+    console.log("[zinao-chatu] Migrated settings from st-chatu8 to zinao-chatu");
+}
 import { saveSettingsDebounced } from "../../../../script.js";
+import { initZinaoChatuUI } from "./src/ui.js";
 import { extension_settings as extension_settings2 } from "../../../extensions.js";
 import { saveSettingsDebounced as saveSettingsDebounced2 } from "../../../../script.js";
 import { extension_settings as extension_settings3 } from "../../../extensions.js";
@@ -1318,276 +1324,276 @@ var init_themePresets = __esm({
   "utils/settings/themePresets.js"() {
     themePresets = {
       "\u9ED8\u8BA4-\u767D\u5929": {
-        "--st-chatu8-bg-primary": "#f5f5f5",
-        "--st-chatu8-bg-secondary": "#eeeeee",
-        "--st-chatu8-bg-tertiary": "#e9e9e9",
-        "--st-chatu8-text-primary": "#212529",
-        "--st-chatu8-text-secondary": "#6c757d",
-        "--st-chatu8-accent-primary": "#007bff",
-        "--st-chatu8-accent-secondary": "#0056b3",
-        "--st-chatu8-danger-primary": "#dc3545",
-        "--st-chatu8-danger-secondary": "#c82333",
-        "--st-chatu8-danger-text": "#ffffff",
-        "--st-chatu8-border-color": "#dee2e6",
-        "--st-chatu8-dropdown-bg": "#eeeeee",
-        "--st-chatu8-dropdown-text": "#212529",
-        "--st-chatu8-dropdown-list-bg": "#ffffff",
-        "--st-chatu8-text-highlight": "#ffffff"
+        "--zinao-chatu-bg-primary": "#f5f5f5",
+        "--zinao-chatu-bg-secondary": "#eeeeee",
+        "--zinao-chatu-bg-tertiary": "#e9e9e9",
+        "--zinao-chatu-text-primary": "#212529",
+        "--zinao-chatu-text-secondary": "#6c757d",
+        "--zinao-chatu-accent-primary": "#007bff",
+        "--zinao-chatu-accent-secondary": "#0056b3",
+        "--zinao-chatu-danger-primary": "#dc3545",
+        "--zinao-chatu-danger-secondary": "#c82333",
+        "--zinao-chatu-danger-text": "#ffffff",
+        "--zinao-chatu-border-color": "#dee2e6",
+        "--zinao-chatu-dropdown-bg": "#eeeeee",
+        "--zinao-chatu-dropdown-text": "#212529",
+        "--zinao-chatu-dropdown-list-bg": "#ffffff",
+        "--zinao-chatu-text-highlight": "#ffffff"
       },
       "\u9ED8\u8BA4-\u591C\u95F4": {
-        "--st-chatu8-bg-primary": "#0a192f",
-        "--st-chatu8-bg-secondary": "#172a45",
-        "--st-chatu8-bg-tertiary": "#233554",
-        "--st-chatu8-text-primary": "#ff8c00",
-        "--st-chatu8-text-secondary": "#8892b0",
-        "--st-chatu8-accent-primary": "#ff8c00",
-        "--st-chatu8-accent-secondary": "#e67e00",
-        "--st-chatu8-danger-primary": "#dc3545",
-        "--st-chatu8-danger-secondary": "#c82333",
-        "--st-chatu8-danger-text": "#ffffff",
-        "--st-chatu8-border-color": "#233554",
-        "--st-chatu8-dropdown-bg": "#172a45",
-        "--st-chatu8-dropdown-text": "#ff8c00",
-        "--st-chatu8-dropdown-list-bg": "#233554",
-        "--st-chatu8-text-highlight": "#ffffff"
+        "--zinao-chatu-bg-primary": "#0a192f",
+        "--zinao-chatu-bg-secondary": "#172a45",
+        "--zinao-chatu-bg-tertiary": "#233554",
+        "--zinao-chatu-text-primary": "#ff8c00",
+        "--zinao-chatu-text-secondary": "#8892b0",
+        "--zinao-chatu-accent-primary": "#ff8c00",
+        "--zinao-chatu-accent-secondary": "#e67e00",
+        "--zinao-chatu-danger-primary": "#dc3545",
+        "--zinao-chatu-danger-secondary": "#c82333",
+        "--zinao-chatu-danger-text": "#ffffff",
+        "--zinao-chatu-border-color": "#233554",
+        "--zinao-chatu-dropdown-bg": "#172a45",
+        "--zinao-chatu-dropdown-text": "#ff8c00",
+        "--zinao-chatu-dropdown-list-bg": "#233554",
+        "--zinao-chatu-text-highlight": "#ffffff"
       },
       "\u6DF1\u6D77\u84DD": {
-        "--st-chatu8-bg-primary": "#0d1b2a",
-        "--st-chatu8-bg-secondary": "#1b263b",
-        "--st-chatu8-bg-tertiary": "#415a77",
-        "--st-chatu8-text-primary": "#e0e1dd",
-        "--st-chatu8-text-secondary": "#778da9",
-        "--st-chatu8-accent-primary": "#00b4d8",
-        "--st-chatu8-accent-secondary": "#0096c7",
-        "--st-chatu8-danger-primary": "#ef476f",
-        "--st-chatu8-danger-secondary": "#d63d5e",
-        "--st-chatu8-danger-text": "#ffffff",
-        "--st-chatu8-border-color": "#415a77",
-        "--st-chatu8-dropdown-bg": "#1b263b",
-        "--st-chatu8-dropdown-text": "#e0e1dd",
-        "--st-chatu8-dropdown-list-bg": "#415a77",
-        "--st-chatu8-text-highlight": "#ffffff"
+        "--zinao-chatu-bg-primary": "#0d1b2a",
+        "--zinao-chatu-bg-secondary": "#1b263b",
+        "--zinao-chatu-bg-tertiary": "#415a77",
+        "--zinao-chatu-text-primary": "#e0e1dd",
+        "--zinao-chatu-text-secondary": "#778da9",
+        "--zinao-chatu-accent-primary": "#00b4d8",
+        "--zinao-chatu-accent-secondary": "#0096c7",
+        "--zinao-chatu-danger-primary": "#ef476f",
+        "--zinao-chatu-danger-secondary": "#d63d5e",
+        "--zinao-chatu-danger-text": "#ffffff",
+        "--zinao-chatu-border-color": "#415a77",
+        "--zinao-chatu-dropdown-bg": "#1b263b",
+        "--zinao-chatu-dropdown-text": "#e0e1dd",
+        "--zinao-chatu-dropdown-list-bg": "#415a77",
+        "--zinao-chatu-text-highlight": "#ffffff"
       },
       "\u6A31\u82B1\u7C89": {
-        "--st-chatu8-bg-primary": "#fff5f5",
-        "--st-chatu8-bg-secondary": "#ffe4e6",
-        "--st-chatu8-bg-tertiary": "#fecdd3",
-        "--st-chatu8-text-primary": "#881337",
-        "--st-chatu8-text-secondary": "#be185d",
-        "--st-chatu8-accent-primary": "#ec4899",
-        "--st-chatu8-accent-secondary": "#db2777",
-        "--st-chatu8-danger-primary": "#e11d48",
-        "--st-chatu8-danger-secondary": "#be123c",
-        "--st-chatu8-danger-text": "#ffffff",
-        "--st-chatu8-border-color": "#fda4af",
-        "--st-chatu8-dropdown-bg": "#ffe4e6",
-        "--st-chatu8-dropdown-text": "#881337",
-        "--st-chatu8-dropdown-list-bg": "#fff5f5",
-        "--st-chatu8-text-highlight": "#ffffff"
+        "--zinao-chatu-bg-primary": "#fff5f5",
+        "--zinao-chatu-bg-secondary": "#ffe4e6",
+        "--zinao-chatu-bg-tertiary": "#fecdd3",
+        "--zinao-chatu-text-primary": "#881337",
+        "--zinao-chatu-text-secondary": "#be185d",
+        "--zinao-chatu-accent-primary": "#ec4899",
+        "--zinao-chatu-accent-secondary": "#db2777",
+        "--zinao-chatu-danger-primary": "#e11d48",
+        "--zinao-chatu-danger-secondary": "#be123c",
+        "--zinao-chatu-danger-text": "#ffffff",
+        "--zinao-chatu-border-color": "#fda4af",
+        "--zinao-chatu-dropdown-bg": "#ffe4e6",
+        "--zinao-chatu-dropdown-text": "#881337",
+        "--zinao-chatu-dropdown-list-bg": "#fff5f5",
+        "--zinao-chatu-text-highlight": "#ffffff"
       },
       "\u68EE\u6797\u7EFF": {
-        "--st-chatu8-bg-primary": "#f0fdf4",
-        "--st-chatu8-bg-secondary": "#dcfce7",
-        "--st-chatu8-bg-tertiary": "#bbf7d0",
-        "--st-chatu8-text-primary": "#14532d",
-        "--st-chatu8-text-secondary": "#166534",
-        "--st-chatu8-accent-primary": "#22c55e",
-        "--st-chatu8-accent-secondary": "#16a34a",
-        "--st-chatu8-danger-primary": "#dc2626",
-        "--st-chatu8-danger-secondary": "#b91c1c",
-        "--st-chatu8-danger-text": "#ffffff",
-        "--st-chatu8-border-color": "#86efac",
-        "--st-chatu8-dropdown-bg": "#dcfce7",
-        "--st-chatu8-dropdown-text": "#14532d",
-        "--st-chatu8-dropdown-list-bg": "#f0fdf4",
-        "--st-chatu8-text-highlight": "#ffffff"
+        "--zinao-chatu-bg-primary": "#f0fdf4",
+        "--zinao-chatu-bg-secondary": "#dcfce7",
+        "--zinao-chatu-bg-tertiary": "#bbf7d0",
+        "--zinao-chatu-text-primary": "#14532d",
+        "--zinao-chatu-text-secondary": "#166534",
+        "--zinao-chatu-accent-primary": "#22c55e",
+        "--zinao-chatu-accent-secondary": "#16a34a",
+        "--zinao-chatu-danger-primary": "#dc2626",
+        "--zinao-chatu-danger-secondary": "#b91c1c",
+        "--zinao-chatu-danger-text": "#ffffff",
+        "--zinao-chatu-border-color": "#86efac",
+        "--zinao-chatu-dropdown-bg": "#dcfce7",
+        "--zinao-chatu-dropdown-text": "#14532d",
+        "--zinao-chatu-dropdown-list-bg": "#f0fdf4",
+        "--zinao-chatu-text-highlight": "#ffffff"
       },
       "\u85B0\u8863\u8349": {
-        "--st-chatu8-bg-primary": "#faf5ff",
-        "--st-chatu8-bg-secondary": "#f3e8ff",
-        "--st-chatu8-bg-tertiary": "#e9d5ff",
-        "--st-chatu8-text-primary": "#581c87",
-        "--st-chatu8-text-secondary": "#7c3aed",
-        "--st-chatu8-accent-primary": "#a855f7",
-        "--st-chatu8-accent-secondary": "#9333ea",
-        "--st-chatu8-danger-primary": "#dc2626",
-        "--st-chatu8-danger-secondary": "#b91c1c",
-        "--st-chatu8-danger-text": "#ffffff",
-        "--st-chatu8-border-color": "#d8b4fe",
-        "--st-chatu8-dropdown-bg": "#f3e8ff",
-        "--st-chatu8-dropdown-text": "#581c87",
-        "--st-chatu8-dropdown-list-bg": "#faf5ff",
-        "--st-chatu8-text-highlight": "#ffffff"
+        "--zinao-chatu-bg-primary": "#faf5ff",
+        "--zinao-chatu-bg-secondary": "#f3e8ff",
+        "--zinao-chatu-bg-tertiary": "#e9d5ff",
+        "--zinao-chatu-text-primary": "#581c87",
+        "--zinao-chatu-text-secondary": "#7c3aed",
+        "--zinao-chatu-accent-primary": "#a855f7",
+        "--zinao-chatu-accent-secondary": "#9333ea",
+        "--zinao-chatu-danger-primary": "#dc2626",
+        "--zinao-chatu-danger-secondary": "#b91c1c",
+        "--zinao-chatu-danger-text": "#ffffff",
+        "--zinao-chatu-border-color": "#d8b4fe",
+        "--zinao-chatu-dropdown-bg": "#f3e8ff",
+        "--zinao-chatu-dropdown-text": "#581c87",
+        "--zinao-chatu-dropdown-list-bg": "#faf5ff",
+        "--zinao-chatu-text-highlight": "#ffffff"
       },
       "\u7425\u73C0\u6A59": {
-        "--st-chatu8-bg-primary": "#fffbeb",
-        "--st-chatu8-bg-secondary": "#fef3c7",
-        "--st-chatu8-bg-tertiary": "#fde68a",
-        "--st-chatu8-text-primary": "#78350f",
-        "--st-chatu8-text-secondary": "#b45309",
-        "--st-chatu8-accent-primary": "#f59e0b",
-        "--st-chatu8-accent-secondary": "#d97706",
-        "--st-chatu8-danger-primary": "#dc2626",
-        "--st-chatu8-danger-secondary": "#b91c1c",
-        "--st-chatu8-danger-text": "#ffffff",
-        "--st-chatu8-border-color": "#fcd34d",
-        "--st-chatu8-dropdown-bg": "#fef3c7",
-        "--st-chatu8-dropdown-text": "#78350f",
-        "--st-chatu8-dropdown-list-bg": "#fffbeb",
-        "--st-chatu8-text-highlight": "#ffffff"
+        "--zinao-chatu-bg-primary": "#fffbeb",
+        "--zinao-chatu-bg-secondary": "#fef3c7",
+        "--zinao-chatu-bg-tertiary": "#fde68a",
+        "--zinao-chatu-text-primary": "#78350f",
+        "--zinao-chatu-text-secondary": "#b45309",
+        "--zinao-chatu-accent-primary": "#f59e0b",
+        "--zinao-chatu-accent-secondary": "#d97706",
+        "--zinao-chatu-danger-primary": "#dc2626",
+        "--zinao-chatu-danger-secondary": "#b91c1c",
+        "--zinao-chatu-danger-text": "#ffffff",
+        "--zinao-chatu-border-color": "#fcd34d",
+        "--zinao-chatu-dropdown-bg": "#fef3c7",
+        "--zinao-chatu-dropdown-text": "#78350f",
+        "--zinao-chatu-dropdown-list-bg": "#fffbeb",
+        "--zinao-chatu-text-highlight": "#ffffff"
       },
       "\u8D5B\u535A\u670B\u514B": {
-        "--st-chatu8-bg-primary": "#0f0f23",
-        "--st-chatu8-bg-secondary": "#1a1a3e",
-        "--st-chatu8-bg-tertiary": "#2d2d5a",
-        "--st-chatu8-text-primary": "#00ff9f",
-        "--st-chatu8-text-secondary": "#ff00ff",
-        "--st-chatu8-accent-primary": "#00ffff",
-        "--st-chatu8-accent-secondary": "#00cccc",
-        "--st-chatu8-danger-primary": "#ff0055",
-        "--st-chatu8-danger-secondary": "#cc0044",
-        "--st-chatu8-danger-text": "#ffffff",
-        "--st-chatu8-border-color": "#ff00ff",
-        "--st-chatu8-dropdown-bg": "#1a1a3e",
-        "--st-chatu8-dropdown-text": "#00ff9f",
-        "--st-chatu8-dropdown-list-bg": "#2d2d5a",
-        "--st-chatu8-text-highlight": "#ffffff"
+        "--zinao-chatu-bg-primary": "#0f0f23",
+        "--zinao-chatu-bg-secondary": "#1a1a3e",
+        "--zinao-chatu-bg-tertiary": "#2d2d5a",
+        "--zinao-chatu-text-primary": "#00ff9f",
+        "--zinao-chatu-text-secondary": "#ff00ff",
+        "--zinao-chatu-accent-primary": "#00ffff",
+        "--zinao-chatu-accent-secondary": "#00cccc",
+        "--zinao-chatu-danger-primary": "#ff0055",
+        "--zinao-chatu-danger-secondary": "#cc0044",
+        "--zinao-chatu-danger-text": "#ffffff",
+        "--zinao-chatu-border-color": "#ff00ff",
+        "--zinao-chatu-dropdown-bg": "#1a1a3e",
+        "--zinao-chatu-dropdown-text": "#00ff9f",
+        "--zinao-chatu-dropdown-list-bg": "#2d2d5a",
+        "--zinao-chatu-text-highlight": "#ffffff"
       },
       "\u83AB\u5170\u8FEA": {
-        "--st-chatu8-bg-primary": "#e8e4df",
-        "--st-chatu8-bg-secondary": "#d4cfc7",
-        "--st-chatu8-bg-tertiary": "#c0b9ae",
-        "--st-chatu8-text-primary": "#5c574f",
-        "--st-chatu8-text-secondary": "#7a746a",
-        "--st-chatu8-accent-primary": "#8b9a8b",
-        "--st-chatu8-accent-secondary": "#6d7a6d",
-        "--st-chatu8-danger-primary": "#c4a4a4",
-        "--st-chatu8-danger-secondary": "#a68888",
-        "--st-chatu8-danger-text": "#ffffff",
-        "--st-chatu8-border-color": "#ada79d",
-        "--st-chatu8-dropdown-bg": "#d4cfc7",
-        "--st-chatu8-dropdown-text": "#5c574f",
-        "--st-chatu8-dropdown-list-bg": "#e8e4df",
-        "--st-chatu8-text-highlight": "#ffffff"
+        "--zinao-chatu-bg-primary": "#e8e4df",
+        "--zinao-chatu-bg-secondary": "#d4cfc7",
+        "--zinao-chatu-bg-tertiary": "#c0b9ae",
+        "--zinao-chatu-text-primary": "#5c574f",
+        "--zinao-chatu-text-secondary": "#7a746a",
+        "--zinao-chatu-accent-primary": "#8b9a8b",
+        "--zinao-chatu-accent-secondary": "#6d7a6d",
+        "--zinao-chatu-danger-primary": "#c4a4a4",
+        "--zinao-chatu-danger-secondary": "#a68888",
+        "--zinao-chatu-danger-text": "#ffffff",
+        "--zinao-chatu-border-color": "#ada79d",
+        "--zinao-chatu-dropdown-bg": "#d4cfc7",
+        "--zinao-chatu-dropdown-text": "#5c574f",
+        "--zinao-chatu-dropdown-list-bg": "#e8e4df",
+        "--zinao-chatu-text-highlight": "#ffffff"
       },
       "\u6697\u591C\u7D2B": {
-        "--st-chatu8-bg-primary": "#13111c",
-        "--st-chatu8-bg-secondary": "#1e1b2e",
-        "--st-chatu8-bg-tertiary": "#2d2844",
-        "--st-chatu8-text-primary": "#e2e0f0",
-        "--st-chatu8-text-secondary": "#a39ec4",
-        "--st-chatu8-accent-primary": "#9d4edd",
-        "--st-chatu8-accent-secondary": "#7b2cbf",
-        "--st-chatu8-danger-primary": "#ff6b6b",
-        "--st-chatu8-danger-secondary": "#ee5a5a",
-        "--st-chatu8-danger-text": "#ffffff",
-        "--st-chatu8-border-color": "#3d3764",
-        "--st-chatu8-dropdown-bg": "#1e1b2e",
-        "--st-chatu8-dropdown-text": "#e2e0f0",
-        "--st-chatu8-dropdown-list-bg": "#2d2844",
-        "--st-chatu8-text-highlight": "#ffffff"
+        "--zinao-chatu-bg-primary": "#13111c",
+        "--zinao-chatu-bg-secondary": "#1e1b2e",
+        "--zinao-chatu-bg-tertiary": "#2d2844",
+        "--zinao-chatu-text-primary": "#e2e0f0",
+        "--zinao-chatu-text-secondary": "#a39ec4",
+        "--zinao-chatu-accent-primary": "#9d4edd",
+        "--zinao-chatu-accent-secondary": "#7b2cbf",
+        "--zinao-chatu-danger-primary": "#ff6b6b",
+        "--zinao-chatu-danger-secondary": "#ee5a5a",
+        "--zinao-chatu-danger-text": "#ffffff",
+        "--zinao-chatu-border-color": "#3d3764",
+        "--zinao-chatu-dropdown-bg": "#1e1b2e",
+        "--zinao-chatu-dropdown-text": "#e2e0f0",
+        "--zinao-chatu-dropdown-list-bg": "#2d2844",
+        "--zinao-chatu-text-highlight": "#ffffff"
       },
       "\u51B0\u5DDD\u84DD": {
-        "--st-chatu8-bg-primary": "#f0f9ff",
-        "--st-chatu8-bg-secondary": "#e0f2fe",
-        "--st-chatu8-bg-tertiary": "#bae6fd",
-        "--st-chatu8-text-primary": "#0c4a6e",
-        "--st-chatu8-text-secondary": "#0369a1",
-        "--st-chatu8-accent-primary": "#0ea5e9",
-        "--st-chatu8-accent-secondary": "#0284c7",
-        "--st-chatu8-danger-primary": "#ef4444",
-        "--st-chatu8-danger-secondary": "#dc2626",
-        "--st-chatu8-danger-text": "#ffffff",
-        "--st-chatu8-border-color": "#7dd3fc",
-        "--st-chatu8-dropdown-bg": "#e0f2fe",
-        "--st-chatu8-dropdown-text": "#0c4a6e",
-        "--st-chatu8-dropdown-list-bg": "#f0f9ff",
-        "--st-chatu8-text-highlight": "#ffffff"
+        "--zinao-chatu-bg-primary": "#f0f9ff",
+        "--zinao-chatu-bg-secondary": "#e0f2fe",
+        "--zinao-chatu-bg-tertiary": "#bae6fd",
+        "--zinao-chatu-text-primary": "#0c4a6e",
+        "--zinao-chatu-text-secondary": "#0369a1",
+        "--zinao-chatu-accent-primary": "#0ea5e9",
+        "--zinao-chatu-accent-secondary": "#0284c7",
+        "--zinao-chatu-danger-primary": "#ef4444",
+        "--zinao-chatu-danger-secondary": "#dc2626",
+        "--zinao-chatu-danger-text": "#ffffff",
+        "--zinao-chatu-border-color": "#7dd3fc",
+        "--zinao-chatu-dropdown-bg": "#e0f2fe",
+        "--zinao-chatu-dropdown-text": "#0c4a6e",
+        "--zinao-chatu-dropdown-list-bg": "#f0f9ff",
+        "--zinao-chatu-text-highlight": "#ffffff"
       },
       "\u6696\u6C99\u68D5": {
-        "--st-chatu8-bg-primary": "#fefcfb",
-        "--st-chatu8-bg-secondary": "#f5ebe0",
-        "--st-chatu8-bg-tertiary": "#e3d5ca",
-        "--st-chatu8-text-primary": "#3d2c1e",
-        "--st-chatu8-text-secondary": "#6b5344",
-        "--st-chatu8-accent-primary": "#b08968",
-        "--st-chatu8-accent-secondary": "#9c6644",
-        "--st-chatu8-danger-primary": "#cd5c5c",
-        "--st-chatu8-danger-secondary": "#b54848",
-        "--st-chatu8-danger-text": "#ffffff",
-        "--st-chatu8-border-color": "#d5bdaf",
-        "--st-chatu8-dropdown-bg": "#f5ebe0",
-        "--st-chatu8-dropdown-text": "#3d2c1e",
-        "--st-chatu8-dropdown-list-bg": "#fefcfb",
-        "--st-chatu8-text-highlight": "#ffffff"
+        "--zinao-chatu-bg-primary": "#fefcfb",
+        "--zinao-chatu-bg-secondary": "#f5ebe0",
+        "--zinao-chatu-bg-tertiary": "#e3d5ca",
+        "--zinao-chatu-text-primary": "#3d2c1e",
+        "--zinao-chatu-text-secondary": "#6b5344",
+        "--zinao-chatu-accent-primary": "#b08968",
+        "--zinao-chatu-accent-secondary": "#9c6644",
+        "--zinao-chatu-danger-primary": "#cd5c5c",
+        "--zinao-chatu-danger-secondary": "#b54848",
+        "--zinao-chatu-danger-text": "#ffffff",
+        "--zinao-chatu-border-color": "#d5bdaf",
+        "--zinao-chatu-dropdown-bg": "#f5ebe0",
+        "--zinao-chatu-dropdown-text": "#3d2c1e",
+        "--zinao-chatu-dropdown-list-bg": "#fefcfb",
+        "--zinao-chatu-text-highlight": "#ffffff"
       },
       "\u6781\u5149\u7EFF": {
-        "--st-chatu8-bg-primary": "#0a1612",
-        "--st-chatu8-bg-secondary": "#132520",
-        "--st-chatu8-bg-tertiary": "#1d3830",
-        "--st-chatu8-text-primary": "#6ee7b7",
-        "--st-chatu8-text-secondary": "#34d399",
-        "--st-chatu8-accent-primary": "#10b981",
-        "--st-chatu8-accent-secondary": "#059669",
-        "--st-chatu8-danger-primary": "#f87171",
-        "--st-chatu8-danger-secondary": "#ef4444",
-        "--st-chatu8-danger-text": "#ffffff",
-        "--st-chatu8-border-color": "#2d5446",
-        "--st-chatu8-dropdown-bg": "#132520",
-        "--st-chatu8-dropdown-text": "#6ee7b7",
-        "--st-chatu8-dropdown-list-bg": "#1d3830",
-        "--st-chatu8-text-highlight": "#ffffff"
+        "--zinao-chatu-bg-primary": "#0a1612",
+        "--zinao-chatu-bg-secondary": "#132520",
+        "--zinao-chatu-bg-tertiary": "#1d3830",
+        "--zinao-chatu-text-primary": "#6ee7b7",
+        "--zinao-chatu-text-secondary": "#34d399",
+        "--zinao-chatu-accent-primary": "#10b981",
+        "--zinao-chatu-accent-secondary": "#059669",
+        "--zinao-chatu-danger-primary": "#f87171",
+        "--zinao-chatu-danger-secondary": "#ef4444",
+        "--zinao-chatu-danger-text": "#ffffff",
+        "--zinao-chatu-border-color": "#2d5446",
+        "--zinao-chatu-dropdown-bg": "#132520",
+        "--zinao-chatu-dropdown-text": "#6ee7b7",
+        "--zinao-chatu-dropdown-list-bg": "#1d3830",
+        "--zinao-chatu-text-highlight": "#ffffff"
       },
       "\u73AB\u7470\u91D1": {
-        "--st-chatu8-bg-primary": "#1a1515",
-        "--st-chatu8-bg-secondary": "#2a2020",
-        "--st-chatu8-bg-tertiary": "#3a2d2d",
-        "--st-chatu8-text-primary": "#f4d4c4",
-        "--st-chatu8-text-secondary": "#d4a494",
-        "--st-chatu8-accent-primary": "#e8a090",
-        "--st-chatu8-accent-secondary": "#d08878",
-        "--st-chatu8-danger-primary": "#e07070",
-        "--st-chatu8-danger-secondary": "#c85858",
-        "--st-chatu8-danger-text": "#ffffff",
-        "--st-chatu8-border-color": "#5a4a4a",
-        "--st-chatu8-dropdown-bg": "#2a2020",
-        "--st-chatu8-dropdown-text": "#f4d4c4",
-        "--st-chatu8-dropdown-list-bg": "#3a2d2d",
-        "--st-chatu8-text-highlight": "#ffffff"
+        "--zinao-chatu-bg-primary": "#1a1515",
+        "--zinao-chatu-bg-secondary": "#2a2020",
+        "--zinao-chatu-bg-tertiary": "#3a2d2d",
+        "--zinao-chatu-text-primary": "#f4d4c4",
+        "--zinao-chatu-text-secondary": "#d4a494",
+        "--zinao-chatu-accent-primary": "#e8a090",
+        "--zinao-chatu-accent-secondary": "#d08878",
+        "--zinao-chatu-danger-primary": "#e07070",
+        "--zinao-chatu-danger-secondary": "#c85858",
+        "--zinao-chatu-danger-text": "#ffffff",
+        "--zinao-chatu-border-color": "#5a4a4a",
+        "--zinao-chatu-dropdown-bg": "#2a2020",
+        "--zinao-chatu-dropdown-text": "#f4d4c4",
+        "--zinao-chatu-dropdown-list-bg": "#3a2d2d",
+        "--zinao-chatu-text-highlight": "#ffffff"
       },
       "\u7EAF\u51C0\u767D": {
-        "--st-chatu8-bg-primary": "#ffffff",
-        "--st-chatu8-bg-secondary": "#f8f9fa",
-        "--st-chatu8-bg-tertiary": "#e9ecef",
-        "--st-chatu8-text-primary": "#212529",
-        "--st-chatu8-text-secondary": "#495057",
-        "--st-chatu8-accent-primary": "#495057",
-        "--st-chatu8-accent-secondary": "#343a40",
-        "--st-chatu8-danger-primary": "#dc3545",
-        "--st-chatu8-danger-secondary": "#c82333",
-        "--st-chatu8-danger-text": "#ffffff",
-        "--st-chatu8-border-color": "#ced4da",
-        "--st-chatu8-dropdown-bg": "#f8f9fa",
-        "--st-chatu8-dropdown-text": "#212529",
-        "--st-chatu8-dropdown-list-bg": "#ffffff",
-        "--st-chatu8-text-highlight": "#ffffff"
+        "--zinao-chatu-bg-primary": "#ffffff",
+        "--zinao-chatu-bg-secondary": "#f8f9fa",
+        "--zinao-chatu-bg-tertiary": "#e9ecef",
+        "--zinao-chatu-text-primary": "#212529",
+        "--zinao-chatu-text-secondary": "#495057",
+        "--zinao-chatu-accent-primary": "#495057",
+        "--zinao-chatu-accent-secondary": "#343a40",
+        "--zinao-chatu-danger-primary": "#dc3545",
+        "--zinao-chatu-danger-secondary": "#c82333",
+        "--zinao-chatu-danger-text": "#ffffff",
+        "--zinao-chatu-border-color": "#ced4da",
+        "--zinao-chatu-dropdown-bg": "#f8f9fa",
+        "--zinao-chatu-dropdown-text": "#212529",
+        "--zinao-chatu-dropdown-list-bg": "#ffffff",
+        "--zinao-chatu-text-highlight": "#ffffff"
       },
       "\u58A8\u7389\u9ED1": {
-        "--st-chatu8-bg-primary": "#121212",
-        "--st-chatu8-bg-secondary": "#1e1e1e",
-        "--st-chatu8-bg-tertiary": "#2d2d2d",
-        "--st-chatu8-text-primary": "#e0e0e0",
-        "--st-chatu8-text-secondary": "#a0a0a0",
-        "--st-chatu8-accent-primary": "#bb86fc",
-        "--st-chatu8-accent-secondary": "#9b66dc",
-        "--st-chatu8-danger-primary": "#cf6679",
-        "--st-chatu8-danger-secondary": "#b54d5f",
-        "--st-chatu8-danger-text": "#ffffff",
-        "--st-chatu8-border-color": "#3d3d3d",
-        "--st-chatu8-dropdown-bg": "#1e1e1e",
-        "--st-chatu8-dropdown-text": "#e0e0e0",
-        "--st-chatu8-dropdown-list-bg": "#2d2d2d",
-        "--st-chatu8-text-highlight": "#ffffff"
+        "--zinao-chatu-bg-primary": "#121212",
+        "--zinao-chatu-bg-secondary": "#1e1e1e",
+        "--zinao-chatu-bg-tertiary": "#2d2d2d",
+        "--zinao-chatu-text-primary": "#e0e0e0",
+        "--zinao-chatu-text-secondary": "#a0a0a0",
+        "--zinao-chatu-accent-primary": "#bb86fc",
+        "--zinao-chatu-accent-secondary": "#9b66dc",
+        "--zinao-chatu-danger-primary": "#cf6679",
+        "--zinao-chatu-danger-secondary": "#b54d5f",
+        "--zinao-chatu-danger-text": "#ffffff",
+        "--zinao-chatu-border-color": "#3d3d3d",
+        "--zinao-chatu-dropdown-bg": "#1e1e1e",
+        "--zinao-chatu-dropdown-text": "#e0e0e0",
+        "--zinao-chatu-dropdown-list-bg": "#2d2d2d",
+        "--zinao-chatu-text-highlight": "#ffffff"
       }
     };
   }
@@ -1599,15 +1605,15 @@ var init_config = __esm({
   "utils/config.js"() {
     init_workers();
     init_themePresets();
-    extensionName = "st-chatu8";
+    extensionName = "zinao-chatu";
     extensionFolderPath = `scripts/extensions/third-party/${extensionName}`;
     EventType = {
       GENERATE_IMAGE_REQUEST: "generate-image-request",
       GENERATE_IMAGE_RESPONSE: "generate-image-response"
     };
     eventNames = {
-      REGEX_TEST_MESSAGE: "regex-st-chatu8-test-message",
-      REGEX_RESULT_MESSAGE: "regex-st-chatu8-result-message",
+      REGEX_TEST_MESSAGE: "regex-zinao-chatu-test-message",
+      REGEX_RESULT_MESSAGE: "regex-zinao-chatu-result-message",
       // LLM 相关事件
       LLM_TEST_RESULT: "ch-llm-test-result",
       LLM_GET_PROMPT_REQUEST: "ch-llm-get-prompt-request",
@@ -1731,7 +1737,7 @@ var init_config = __esm({
       client: "browser",
       cache: "1",
       sdUrl: "http://localhost:7860",
-      st_chatu8_sd_auth: "",
+      zinao_chatu_sd_auth: "",
       comfyuiUrl: "http://localhost:8188",
       novelaiApi: "000000",
       novelaiApi_id: "000000",
@@ -5948,7 +5954,7 @@ async function exportLogsWithHistory() {
   }
   const lines = [];
   lines.push("========================================");
-  lines.push("\u{1F4CB} st-chatu8 \u65E5\u5FD7\u5BFC\u51FA");
+  lines.push("\u{1F4CB} zinao-chatu \u65E5\u5FD7\u5BFC\u51FA");
   lines.push(`\u751F\u6210\u65F6\u95F4: ${formatLogSessionTimestamp(getNow())}`);
   lines.push(`\u5305\u542B\u65E5\u5FD7\u4F1A\u8BDD: ${validSessions.length}`);
   lines.push("\u8303\u56F4: \u5F53\u524D\u4F1A\u8BDD + \u6700\u8FD1 24 \u5C0F\u65F6\u5386\u53F2\u4F1A\u8BDD");
@@ -5986,7 +5992,7 @@ function stringToBase64(str) {
   return btoa(binString);
 }
 function getsdAuth() {
-  return `Basic ${stringToBase64(extension_settings3[extensionName].st_chatu8_sd_auth)}`;
+  return `Basic ${stringToBase64(extension_settings3[extensionName].zinao_chatu_sd_auth)}`;
 }
 async function getSDMode(sdurl) {
   try {
@@ -6683,7 +6689,7 @@ async function countTokens(messages, model) {
   try {
     if (!model) {
       const { extension_settings: es } = await import("../../../extensions.js");
-      const settings3 = es?.["st-chatu8"];
+      const settings3 = es?.["zinao-chatu"];
       const profileName = settings3?.current_llm_profile || "\u9ED8\u8BA4";
       model = settings3?.llm_profiles?.[profileName]?.model || "gpt-4";
     }
@@ -7027,7 +7033,7 @@ async function loadVideoAsBlobUrl(src) {
     }
     return URL.createObjectURL(blob);
   } catch (err) {
-    console.warn(`[st-chatu8] \u65E0\u6CD5\u52A0\u8F7D ${src}\uFF0C\u5C1D\u8BD5\u56DE\u9000...`, err);
+    console.warn(`[zinao-chatu] \u65E0\u6CD5\u52A0\u8F7D ${src}\uFF0C\u5C1D\u8BD5\u56DE\u9000...`, err);
     let fallbackSrc = src;
     if (src.includes("idle.chatu8")) fallbackSrc = src.replace("idle.chatu8", "\u9759\u606F\u753B\u9762.mp4");
     else if (src.includes("dragging.chatu8")) fallbackSrc = src.replace("dragging.chatu8", "\u62D6\u52A8.mp4");
@@ -7041,7 +7047,7 @@ async function loadVideoAsBlobUrl(src) {
         const blob2 = await res2.blob();
         return URL.createObjectURL(new Blob([blob2], { type: "video/mp4" }));
       } catch (err2) {
-        console.error(`[st-chatu8] \u56DE\u9000\u52A0\u8F7D\u4E5F\u5931\u8D25: ${fallbackSrc}`, err2);
+        console.error(`[zinao-chatu] \u56DE\u9000\u52A0\u8F7D\u4E5F\u5931\u8D25: ${fallbackSrc}`, err2);
         throw err2;
       }
     }
@@ -7058,7 +7064,7 @@ function createHiddenVideo(src, id) {
     existingVideo.src = "";
     existingVideo.removeAttribute("src");
     existingVideo.parentNode?.removeChild(existingVideo);
-    console.log(`[st-chatu8] Cleaned up stale video element: ${id}`);
+    console.log(`[zinao-chatu] Cleaned up stale video element: ${id}`);
   }
   const video = document.createElement("video");
   video.id = id;
@@ -7081,14 +7087,14 @@ function createHiddenVideo(src, id) {
 }
 function startVideoLoad(video) {
   if (!video._loadPromise) {
-    console.error(`[st-chatu8] Video ${video.id} has no load promise`);
+    console.error(`[zinao-chatu] Video ${video.id} has no load promise`);
     return;
   }
   video._loadPromise.then((blobUrl) => {
     video.src = blobUrl;
     video.load();
   }).catch((err) => {
-    console.error(`[st-chatu8] Failed to load video as Blob: ${video.dataset.originalSrc}`, err);
+    console.error(`[zinao-chatu] Failed to load video as Blob: ${video.dataset.originalSrc}`, err);
     video.dispatchEvent(new Event("error"));
   });
 }
@@ -7198,16 +7204,16 @@ function initWebGL(canvas) {
 }
 function createVideoPlayer(container, options) {
   const { idleVideoSrc, draggingVideoSrc, onError } = options;
-  const idleVideo = createHiddenVideo(idleVideoSrc, "st-chatu8-fab-video-idle");
-  const draggingVideo = createHiddenVideo(draggingVideoSrc, "st-chatu8-fab-video-dragging");
-  const idleVideoClone = createHiddenVideo(idleVideoSrc, "st-chatu8-fab-video-idle-clone");
-  const draggingVideoClone = createHiddenVideo(draggingVideoSrc, "st-chatu8-fab-video-dragging-clone");
+  const idleVideo = createHiddenVideo(idleVideoSrc, "zinao-chatu-fab-video-idle");
+  const draggingVideo = createHiddenVideo(draggingVideoSrc, "zinao-chatu-fab-video-dragging");
+  const idleVideoClone = createHiddenVideo(idleVideoSrc, "zinao-chatu-fab-video-idle-clone");
+  const draggingVideoClone = createHiddenVideo(draggingVideoSrc, "zinao-chatu-fab-video-dragging-clone");
   const headPatVideoSrc = idleVideoSrc.replace(/[^/]+\.(mp4|chatu8)$/, "headpat.chatu8");
   const thinkingVideoSrc = idleVideoSrc.replace(/[^/]+\.(mp4|chatu8)$/, "thinking.chatu8");
   const talkVideoSrc = idleVideoSrc.replace(/[^/]+\.(mp4|chatu8)$/, "talk.chatu8");
   const canvasElement = document.createElement("canvas");
-  canvasElement.id = "st-chatu8-fab-video-canvas";
-  canvasElement.className = "st-chatu8-fab-video";
+  canvasElement.id = "zinao-chatu-fab-video-canvas";
+  canvasElement.className = "zinao-chatu-fab-video";
   canvasElement.style.width = "100%";
   canvasElement.style.height = "100%";
   canvasElement.style.position = "absolute";
@@ -7286,7 +7292,7 @@ function createVideoPlayer(container, options) {
       setTimeout(() => {
         const sizeSuccess = updateCanvasSize(state3);
         if (!sizeSuccess) {
-          console.warn("[st-chatu8] Initial canvas size update failed, will retry automatically");
+          console.warn("[zinao-chatu] Initial canvas size update failed, will retry automatically");
         }
         const icon = container.querySelector("i");
         if (icon) {
@@ -7338,15 +7344,15 @@ function createVideoPlayer(container, options) {
   startVideoLoad(draggingVideoClone);
   const handleContextLost = (e) => {
     e.preventDefault();
-    console.log("[st-chatu8] WebGL context lost, stopping render loop...");
+    console.log("[zinao-chatu] WebGL context lost, stopping render loop...");
     stopRenderLoop(state3);
     state3.isPlaying = false;
   };
   const handleContextRestored = () => {
-    console.log("[st-chatu8] WebGL context restored, reinitializing WebGL pipeline...");
+    console.log("[zinao-chatu] WebGL context restored, reinitializing WebGL pipeline...");
     const newWebgl = initWebGL(canvasElement);
     if (!newWebgl) {
-      console.error("[st-chatu8] Failed to reinitialize WebGL after context restore");
+      console.error("[zinao-chatu] Failed to reinitialize WebGL after context restore");
       fallbackToTraditionalMode(container);
       return;
     }
@@ -7362,7 +7368,7 @@ function createVideoPlayer(container, options) {
         state3.isPlaying = true;
         if (video.paused && video.readyState >= 2) {
           video.play().catch((err) => {
-            console.warn("[st-chatu8] Failed to resume video after context restore:", err);
+            console.warn("[zinao-chatu] Failed to resume video after context restore:", err);
           });
         }
         startRenderLoop(state3);
@@ -7379,41 +7385,41 @@ function createVideoPlayer(container, options) {
   const handleVisibilityChange = () => {
     if (document.visibilityState === "visible") {
       if (state3.isLoaded && !state3.hasError) {
-        console.log("[st-chatu8] Page became visible, resuming video playback...");
-        console.log("[st-chatu8] activeVideo:", state3.activeVideo?.id, "readyState:", state3.activeVideo?.readyState, "paused:", state3.activeVideo?.paused);
+        console.log("[zinao-chatu] Page became visible, resuming video playback...");
+        console.log("[zinao-chatu] activeVideo:", state3.activeVideo?.id, "readyState:", state3.activeVideo?.readyState, "paused:", state3.activeVideo?.paused);
         setTimeout(() => {
           if (!state3.isLoaded || state3.hasError) return;
           if (state3.gl && state3.gl.isContextLost()) {
-            console.log("[st-chatu8] WebGL context is lost, deferring resume to contextrestored handler");
+            console.log("[zinao-chatu] WebGL context is lost, deferring resume to contextrestored handler");
             return;
           }
           const video = state3.activeVideo;
           if (!video) {
-            console.warn("[st-chatu8] No active video found!");
+            console.warn("[zinao-chatu] No active video found!");
             return;
           }
-          console.log("[st-chatu8] After delay - readyState:", video.readyState, "paused:", video.paused);
+          console.log("[zinao-chatu] After delay - readyState:", video.readyState, "paused:", video.paused);
           const canvas = state3.canvasElement;
           if (canvas && (canvas.width === 0 || canvas.height === 0 || state3.container.offsetWidth === 0 || state3.container.offsetHeight === 0)) {
-            console.log("[st-chatu8] Canvas/container size is invalid, triggering updateCanvasSize...");
+            console.log("[zinao-chatu] Canvas/container size is invalid, triggering updateCanvasSize...");
             updateCanvasSize(state3);
           }
           state3.lastVideoTime = -1;
           state3.alphaCacheDirty = true;
           if (video.readyState < 2) {
-            console.log("[st-chatu8] Video not ready, attempting to reload...");
+            console.log("[zinao-chatu] Video not ready, attempting to reload...");
             video.load();
           }
           if (video.paused) {
-            console.log("[st-chatu8] Video is paused, attempting to play...");
+            console.log("[zinao-chatu] Video is paused, attempting to play...");
             const playPromise = video.play();
             if (playPromise !== void 0) {
               playPromise.then(() => {
-                console.log("[st-chatu8] Video play successful");
+                console.log("[zinao-chatu] Video play successful");
                 state3.isPlaying = true;
                 startRenderLoop(state3);
               }).catch((err) => {
-                console.error("[st-chatu8] Failed to resume video:", err);
+                console.error("[zinao-chatu] Failed to resume video:", err);
                 const autoResume = () => {
                   video.play().then(() => {
                     state3.isPlaying = true;
@@ -7428,7 +7434,7 @@ function createVideoPlayer(container, options) {
               });
             }
           } else {
-            console.log("[st-chatu8] Video already playing, just restarting render loop");
+            console.log("[zinao-chatu] Video already playing, just restarting render loop");
             state3.isPlaying = true;
             startRenderLoop(state3);
           }
@@ -7438,14 +7444,14 @@ function createVideoPlayer(container, options) {
         }, 100);
       }
     } else {
-      console.log("[st-chatu8] Page became hidden, stopping render loop...");
+      console.log("[zinao-chatu] Page became hidden, stopping render loop...");
       stopRenderLoop(state3);
     }
   };
   document.addEventListener("visibilitychange", handleVisibilityChange);
   const handlePageShow = (event) => {
     if (event.persisted) {
-      console.log("[st-chatu8] Page restored from bfcache, triggering visibility handler...");
+      console.log("[zinao-chatu] Page restored from bfcache, triggering visibility handler...");
       handleVisibilityChange();
     }
   };
@@ -7461,11 +7467,11 @@ function createVideoPlayer(container, options) {
     const video = state3.activeVideo;
     if (!video) return;
     if (state3.gl && state3.gl.isContextLost()) {
-      console.log("[st-chatu8] Focus: WebGL context is lost, waiting for restore...");
+      console.log("[zinao-chatu] Focus: WebGL context is lost, waiting for restore...");
       return;
     }
     if (video.paused || !state3.isPlaying) {
-      console.log("[st-chatu8] Window focused, video paused:", video.paused, "isPlaying:", state3.isPlaying);
+      console.log("[zinao-chatu] Window focused, video paused:", video.paused, "isPlaying:", state3.isPlaying);
       state3.lastVideoTime = -1;
       state3.alphaCacheDirty = true;
       if (video.paused && video.readyState >= 2) {
@@ -7475,7 +7481,7 @@ function createVideoPlayer(container, options) {
             state3.isPlaying = true;
             startRenderLoop(state3);
           }).catch((err) => {
-            console.warn("[st-chatu8] Focus resume play failed:", err);
+            console.warn("[zinao-chatu] Focus resume play failed:", err);
           });
         }
       } else if (!state3.isPlaying) {
@@ -7515,7 +7521,7 @@ function createVideoPlayer(container, options) {
       state3._healthLastWall = now;
     }
     if (reasons.length === 0) return;
-    console.warn(`[st-chatu8][HealthMonitor] \u68C0\u6D4B\u5230\u89C6\u9891\u5F02\u5E38: ${reasons.join(", ")}, \u5C1D\u8BD5\u6062\u590D ${video.id}`);
+    console.warn(`[zinao-chatu][HealthMonitor] \u68C0\u6D4B\u5230\u89C6\u9891\u5F02\u5E38: ${reasons.join(", ")}, \u5C1D\u8BD5\u6062\u590D ${video.id}`);
     state3.lastVideoTime = -1;
     state3.alphaCacheDirty = true;
     if (video.paused && video.readyState >= 2) {
@@ -7526,7 +7532,7 @@ function createVideoPlayer(container, options) {
           startRenderLoop(state3);
         }).catch((err) => {
           if (err.name !== "AbortError") {
-            console.warn("[st-chatu8][HealthMonitor] \u6062\u590D\u64AD\u653E\u5931\u8D25:", err);
+            console.warn("[zinao-chatu][HealthMonitor] \u6062\u590D\u64AD\u653E\u5931\u8D25:", err);
           }
         });
       }
@@ -7572,18 +7578,18 @@ function updateCanvasSize(state3, scheduleRetry = true) {
   const containerWidth = container.offsetWidth;
   const containerHeight = container.offsetHeight;
   if (containerWidth === 0 || containerHeight === 0) {
-    console.warn("[st-chatu8] Container size is 0 (width:", containerWidth, "height:", containerHeight, ")");
+    console.warn("[zinao-chatu] Container size is 0 (width:", containerWidth, "height:", containerHeight, ")");
     if (scheduleRetry && !state3._sizeRetryScheduled) {
       state3._sizeRetryScheduled = true;
       state3._sizeRetryCount = (state3._sizeRetryCount || 0) + 1;
       if (state3._sizeRetryCount <= 20) {
         const delay2 = state3._sizeRetryCount <= 5 ? 50 : (state3._sizeRetryCount - 5) * 100;
-        console.log(`[st-chatu8] Scheduling retry #${state3._sizeRetryCount} in ${delay2}ms`);
+        console.log(`[zinao-chatu] Scheduling retry #${state3._sizeRetryCount} in ${delay2}ms`);
         setTimeout(() => {
           state3._sizeRetryScheduled = false;
           const success = updateCanvasSize(state3, true);
           if (success && state3.isLoaded && state3.activeVideo && state3.activeVideo.readyState >= 2) {
-            console.log("[st-chatu8] Canvas size updated successfully after retry");
+            console.log("[zinao-chatu] Canvas size updated successfully after retry");
             renderFrame(state3);
             updateAlphaCache(state3);
             state3.alphaCacheDirty = false;
@@ -7591,7 +7597,7 @@ function updateCanvasSize(state3, scheduleRetry = true) {
           }
         }, delay2);
       } else {
-        console.error("[st-chatu8] Max retry count reached for updateCanvasSize, giving up");
+        console.error("[zinao-chatu] Max retry count reached for updateCanvasSize, giving up");
       }
     }
     return false;
@@ -7615,7 +7621,7 @@ function updateCanvasSize(state3, scheduleRetry = true) {
   canvas.width = videoWidth;
   canvas.height = videoHeight;
   state3.gl.viewport(0, 0, canvas.width, canvas.height);
-  console.log("[st-chatu8] Canvas size updated:", {
+  console.log("[zinao-chatu] Canvas size updated:", {
     containerSize: `${containerWidth}x${containerHeight}`,
     displaySize: `${displayWidth}x${displayHeight}`,
     resolution: `${canvas.width}x${canvas.height}`
@@ -7735,7 +7741,7 @@ function ensureVideoLoaded(state3, videoKey, srcKey, id) {
     });
     video.addEventListener("error", () => {
       state3[loadingKey] = false;
-      console.warn(`[st-chatu8] \u53EF\u9009\u89C6\u9891 ${id} \u52A0\u8F7D\u5931\u8D25\uFF0C\u529F\u80FD\u4E0D\u53EF\u7528`);
+      console.warn(`[zinao-chatu] \u53EF\u9009\u89C6\u9891 ${id} \u52A0\u8F7D\u5931\u8D25\uFF0C\u529F\u80FD\u4E0D\u53EF\u7528`);
       reject(new Error(`\u53EF\u9009\u89C6\u9891 ${id} \u52A0\u8F7D\u5931\u8D25`));
     });
     startVideoLoad(video);
@@ -7746,7 +7752,7 @@ function setupHeadPatEndedHandler(state3) {
   state3.headPatVideo.addEventListener("ended", () => {
     if (state3.isPlayingHeadPat) {
       state3.isPlayingHeadPat = false;
-      const fab = document.getElementById("st-chatu8-fab");
+      const fab = document.getElementById("zinao-chatu-fab");
       const isLoading = fab && fab.dataset.isLoading === "true";
       if (isLoading && state3.thinkingVideo && state3.thinkingVideo.readyState >= 2) {
         state3.currentVideo = "thinking";
@@ -7896,7 +7902,7 @@ async function playHeadPatVideo(state3) {
       state3,
       "headPatVideo",
       "headPatVideoSrc",
-      "st-chatu8-fab-video-headpat"
+      "zinao-chatu-fab-video-headpat"
     );
     if (!video._endedHandlerRegistered) {
       setupHeadPatEndedHandler(state3);
@@ -7936,7 +7942,7 @@ async function playThinkingVideo(state3) {
       state3,
       "thinkingVideo",
       "thinkingVideoSrc",
-      "st-chatu8-fab-video-thinking"
+      "zinao-chatu-fab-video-thinking"
     );
     if (!state3.thinkingRequested) return;
     if (!video._endedHandlerRegistered) {
@@ -7946,8 +7952,8 @@ async function playThinkingVideo(state3) {
   } catch (err) {
     console.warn("\u601D\u8003\u89C6\u9891\u4E0D\u53EF\u7528\uFF0C\u4F7F\u7528\u4F20\u7EDF\u52A0\u8F7D\u52A8\u753B");
     if (state3.thinkingRequested) {
-      const fab = document.getElementById("st-chatu8-fab");
-      if (fab) fab.classList.add("st-chatu8-fab-loading");
+      const fab = document.getElementById("zinao-chatu-fab");
+      if (fab) fab.classList.add("zinao-chatu-fab-loading");
     }
     return;
   }
@@ -7993,8 +7999,8 @@ async function playThinkingVideo(state3) {
 function stopThinkingVideo(state3) {
   const wasRequested = state3.thinkingRequested;
   state3.thinkingRequested = false;
-  const fab = document.getElementById("st-chatu8-fab");
-  if (fab) fab.classList.remove("st-chatu8-fab-loading");
+  const fab = document.getElementById("zinao-chatu-fab");
+  if (fab) fab.classList.remove("zinao-chatu-fab-loading");
   if (!state3.isPlayingThinking) {
     return;
   }
@@ -8011,21 +8017,21 @@ async function playTalkVideo(state3) {
       state3,
       "talkVideo",
       "talkVideoSrc",
-      "st-chatu8-fab-video-talk"
+      "zinao-chatu-fab-video-talk"
     );
     if (!video._endedHandlerRegistered) {
       video.addEventListener("ended", () => {
         if (state3.isPlayingTalk) {
-          console.log("[st-chatu8] Talk video ended, looping...");
+          console.log("[zinao-chatu] Talk video ended, looping...");
           video.currentTime = 0;
           const playPromise2 = video.play();
           if (playPromise2 !== void 0) {
             playPromise2.then(() => {
-              console.log("[st-chatu8] Talk video loop successful");
+              console.log("[zinao-chatu] Talk video loop successful");
               startRenderLoop(state3);
             }).catch((err) => {
               if (err.name !== "AbortError") {
-                console.error("[st-chatu8] Failed to loop talk video:", err);
+                console.error("[zinao-chatu] Failed to loop talk video:", err);
                 state3.isPlayingTalk = false;
                 switchToIdleVideo(state3);
               }
@@ -8045,7 +8051,7 @@ async function playTalkVideo(state3) {
   }
   if (state3.isPlayingTalk && state3.currentVideo === "talk") {
     if (state3.talkVideo.paused) {
-      console.log("[st-chatu8] Resuming paused talk video");
+      console.log("[zinao-chatu] Resuming paused talk video");
       const playPromise2 = state3.talkVideo.play();
       if (playPromise2 !== void 0) {
         playPromise2.then(() => {
@@ -8061,7 +8067,7 @@ async function playTalkVideo(state3) {
     }
     return;
   }
-  console.log("[st-chatu8] Starting talk video playback");
+  console.log("[zinao-chatu] Starting talk video playback");
   state3.isPlayingTalk = true;
   state3.currentVideo = "talk";
   pauseAllVideos(state3);
@@ -8077,13 +8083,13 @@ async function playTalkVideo(state3) {
   const playPromise = state3.talkVideo.play();
   if (playPromise !== void 0) {
     playPromise.then(() => {
-      console.log("[st-chatu8] Talk video play successful");
+      console.log("[zinao-chatu] Talk video play successful");
       state3.talkVideoHealthCheckInterval = setInterval(() => {
         if (state3.isPlayingTalk && state3.talkVideo) {
           if (state3.talkVideo.paused && state3.talkVideo.readyState >= 2) {
-            console.warn("[st-chatu8] Talk video unexpectedly paused, attempting to resume...");
+            console.warn("[zinao-chatu] Talk video unexpectedly paused, attempting to resume...");
             state3.talkVideo.play().catch((err) => {
-              console.error("[st-chatu8] Failed to resume talk video in health check:", err);
+              console.error("[zinao-chatu] Failed to resume talk video in health check:", err);
               state3.isPlayingTalk = false;
               clearInterval(state3.talkVideoHealthCheckInterval);
               state3.talkVideoHealthCheckInterval = null;
@@ -8091,7 +8097,7 @@ async function playTalkVideo(state3) {
             });
           }
           if (!state3.isPlaying) {
-            console.warn("[st-chatu8] Render loop stopped unexpectedly, restarting...");
+            console.warn("[zinao-chatu] Render loop stopped unexpectedly, restarting...");
             state3.isPlaying = true;
             startRenderLoop(state3);
           }
@@ -8111,7 +8117,7 @@ async function playTalkVideo(state3) {
 }
 function stopTalkVideo(state3) {
   if (!state3.isPlayingTalk) return;
-  console.log("[st-chatu8] Stopping talk video");
+  console.log("[zinao-chatu] Stopping talk video");
   state3.isPlayingTalk = false;
   if (state3.talkVideoHealthCheckInterval) {
     clearInterval(state3.talkVideoHealthCheckInterval);
@@ -8308,10 +8314,10 @@ var init_fabVideoController = __esm({
 
 
 function getFabCustomIconElement(fabElement) {
-  let img = fabElement.querySelector(".st-chatu8-fab-custom-icon");
+  let img = fabElement.querySelector(".zinao-chatu-fab-custom-icon");
   if (!img) {
     img = document.createElement("img");
-    img.className = "st-chatu8-fab-custom-icon";
+    img.className = "zinao-chatu-fab-custom-icon";
     img.alt = "\u60AC\u6D6E\u7403\u56FE\u6807";
     fabElement.appendChild(img);
   }
@@ -8320,7 +8326,7 @@ function getFabCustomIconElement(fabElement) {
 function clearFabCustomIcon(fab, size) {
   fabIconLoadToken++;
   const icon = fab.find("i");
-  const img = fab[0]?.querySelector(".st-chatu8-fab-custom-icon");
+  const img = fab[0]?.querySelector(".zinao-chatu-fab-custom-icon");
   if (img) {
     img.removeAttribute("src");
     img.style.display = "none";
@@ -8347,7 +8353,7 @@ function fallbackLoadFabIcon(fab, settings3, size, imageId, token2) {
     clearFabCustomIcon(fab, size);
   }).catch((error) => {
     if (token2 !== fabIconLoadToken) return;
-    console.error("[st-chatu8] \u52A0\u8F7D\u60AC\u6D6E\u7403\u81EA\u5B9A\u4E49\u56FE\u6807\u5931\u8D25:", error);
+    console.error("[zinao-chatu] \u52A0\u8F7D\u60AC\u6D6E\u7403\u81EA\u5B9A\u4E49\u56FE\u6807\u5931\u8D25:", error);
     clearFabCustomIcon(fab, size);
   });
 }
@@ -8383,7 +8389,7 @@ function isValidUrl(string) {
 }
 function validateUrlInput(inputElement) {
   if (!inputElement) return;
-  const parentGroup = inputElement.closest(".st-chatu8-input-group");
+  const parentGroup = inputElement.closest(".zinao-chatu-input-group");
   if (!parentGroup) return;
   const isValid = isValidUrl(inputElement.value);
   parentGroup.classList.toggle("invalid", !isValid);
@@ -8407,29 +8413,29 @@ function size_change(prefix) {
 }
 function stylInput(message, defaultValue = "") {
   return new Promise((resolve) => {
-    const parent = document.getElementById("st-chatu8-settings") || document.body;
+    const parent = document.getElementById("zinao-chatu-settings") || document.body;
     const backdrop = document.createElement("div");
-    backdrop.className = "st-chatu8-confirm-backdrop";
+    backdrop.className = "zinao-chatu-confirm-backdrop";
     const confirmBox = document.createElement("div");
-    confirmBox.className = "st-chatu8-confirm-box";
+    confirmBox.className = "zinao-chatu-confirm-box";
     const messageText = document.createElement("p");
     messageText.textContent = message;
-    messageText.className = "st-chatu8-confirm-message";
+    messageText.className = "zinao-chatu-confirm-message";
     confirmBox.appendChild(messageText);
     const messageinput = document.createElement("input");
-    messageinput.className = "st-chatu8-text-input";
+    messageinput.className = "zinao-chatu-text-input";
     messageinput.value = defaultValue;
     confirmBox.appendChild(messageinput);
     const buttonContainer = document.createElement("div");
-    buttonContainer.className = "st-chatu8-confirm-buttons";
+    buttonContainer.className = "zinao-chatu-confirm-buttons";
     confirmBox.appendChild(buttonContainer);
     const cancelButton = document.createElement("button");
     cancelButton.textContent = "\u53D6\u6D88";
-    cancelButton.className = "st-chatu8-btn";
+    cancelButton.className = "zinao-chatu-btn";
     buttonContainer.appendChild(cancelButton);
     const confirmButton = document.createElement("button");
     confirmButton.textContent = "\u786E\u5B9A";
-    confirmButton.className = "st-chatu8-btn";
+    confirmButton.className = "zinao-chatu-btn";
     buttonContainer.appendChild(confirmButton);
     backdrop.appendChild(confirmBox);
     parent.appendChild(backdrop);
@@ -8444,26 +8450,26 @@ function stylInput(message, defaultValue = "") {
 }
 function stylishConfirm(message) {
   return new Promise((resolve) => {
-    const parent = document.getElementById("st-chatu8-settings") || document.body;
+    const parent = document.getElementById("zinao-chatu-settings") || document.body;
     const backdrop = document.createElement("div");
-    backdrop.className = "st-chatu8-confirm-backdrop";
+    backdrop.className = "zinao-chatu-confirm-backdrop";
     backdrop.style.zIndex = "99999";
     const confirmBox = document.createElement("div");
-    confirmBox.className = "st-chatu8-confirm-box";
+    confirmBox.className = "zinao-chatu-confirm-box";
     const messageText = document.createElement("p");
     messageText.textContent = message;
-    messageText.className = "st-chatu8-confirm-message";
+    messageText.className = "zinao-chatu-confirm-message";
     confirmBox.appendChild(messageText);
     const buttonContainer = document.createElement("div");
-    buttonContainer.className = "st-chatu8-confirm-buttons";
+    buttonContainer.className = "zinao-chatu-confirm-buttons";
     confirmBox.appendChild(buttonContainer);
     const cancelButton = document.createElement("button");
     cancelButton.textContent = "\u53D6\u6D88";
-    cancelButton.className = "st-chatu8-btn";
+    cancelButton.className = "zinao-chatu-btn";
     buttonContainer.appendChild(cancelButton);
     const confirmButton = document.createElement("button");
     confirmButton.textContent = "\u786E\u5B9A";
-    confirmButton.className = "st-chatu8-btn";
+    confirmButton.className = "zinao-chatu-btn";
     buttonContainer.appendChild(confirmButton);
     backdrop.appendChild(confirmBox);
     parent.appendChild(backdrop);
@@ -8482,7 +8488,7 @@ function logJSZipStatus() {
   const globalJSZip = window.JSZip;
   const jszipConstructor = pluginScopedJSZip || globalJSZip;
   const canInstantiate = typeof jszipConstructor === "function";
-  console.log("[st-chatu8] JSZip panel check", {
+  console.log("[zinao-chatu] JSZip panel check", {
     hasDefine: typeof globalThis.define === "function",
     hasDefineAmd: Boolean(globalThis.define?.amd),
     defineType: typeof globalThis.define,
@@ -8509,18 +8515,18 @@ function logJSZipStatus() {
   }
   try {
     const zip = new jszipConstructor();
-    zip.file("st-chatu8-jszip-test.txt", `panel-check-${Date.now()}`);
+    zip.file("zinao-chatu-jszip-test.txt", `panel-check-${Date.now()}`);
     zip.generateAsync({ type: "blob" }).then((blob) => {
-      console.log("[st-chatu8] JSZip compression test passed", {
+      console.log("[zinao-chatu] JSZip compression test passed", {
         constructorSource: pluginScopedJSZip ? "plugin-scoped" : "window",
         resultType: Object.prototype.toString.call(blob),
         resultSize: blob?.size
       });
     }).catch((error) => {
-      console.error("[st-chatu8] JSZip compression test failed", error);
+      console.error("[zinao-chatu] JSZip compression test failed", error);
     });
   } catch (error) {
-    console.error("[st-chatu8] JSZip instantiation test failed", error);
+    console.error("[zinao-chatu] JSZip instantiation test failed", error);
   }
 }
 function showSettingsPanel() {
@@ -8532,13 +8538,13 @@ function showSettingsPanel() {
   }
   logJSZipStatus();
   const lastTab = settings3.lastTab || "main";
-  const lastTabLink = panel.find(`.st-chatu8-nav-link[data-tab="${lastTab}"]`);
+  const lastTabLink = panel.find(`.zinao-chatu-nav-link[data-tab="${lastTab}"]`);
   if (lastTabLink.length) {
     lastTabLink.click();
   } else {
-    panel.find('.st-chatu8-nav-link[data-tab="main"]').click();
+    panel.find('.zinao-chatu-nav-link[data-tab="main"]').click();
   }
-  const content = panel.find(".st-chatu8-modal-content");
+  const content = panel.find(".zinao-chatu-modal-content");
   if (window.innerWidth <= 768) {
     const buttonHeight = $("#ai-config-button").outerHeight(true) || 0;
     panel.css({ "align-items": "start" });
@@ -8557,13 +8563,13 @@ function showSettingsPanel() {
     });
   }
   panel.css("display", "grid");
-  panel.find(".st-chatu8-modal-content").focus();
+  panel.find(".zinao-chatu-modal-content").focus();
 }
 function hideSettingsPanel() {
   const panel = $("#ch-settings-modal");
   panel.hide();
   panel.css({ "align-items": "", "padding-top": "" });
-  panel.find(".st-chatu8-modal-content").css({
+  panel.find(".zinao-chatu-modal-content").css({
     "margin-top": "",
     "height": ""
   });
@@ -8589,7 +8595,7 @@ function showToast(message, type = "info", duration = 3e3) {
 }
 function applyFabSettings() {
   const settings3 = extension_settings4[extensionName];
-  const fab = $("#st-chatu8-fab");
+  const fab = $("#zinao-chatu-fab");
   if (!fab.length) {
     console.error("FAB element not found in DOM");
     return;
@@ -8602,17 +8608,17 @@ function applyFabSettings() {
     fab.show();
     const videoModeEnabled = settings3.enable_chatu8_fab_video === true || settings3.enable_chatu8_fab_video === "true";
     if (videoModeEnabled) {
-      fab.addClass("st-chatu8-fab-video-mode");
+      fab.addClass("zinao-chatu-fab-video-mode");
       fab.css("background-color", "transparent");
       fab.css("opacity", 1);
       fab.find("i").css("display", "none");
       if (!globalVideoPlayer) {
         console.log("Creating video player...");
         console.log("WebGL support:", checkWebGLSupport());
-        const staleCanvas = fab[0].querySelector("#st-chatu8-fab-video-canvas");
+        const staleCanvas = fab[0].querySelector("#zinao-chatu-fab-video-canvas");
         if (staleCanvas) {
           staleCanvas.parentNode.removeChild(staleCanvas);
-          console.log("[st-chatu8] Cleaned up stale canvas element");
+          console.log("[zinao-chatu] Cleaned up stale canvas element");
         }
         if (settings3.chatu8_fab_video_paths) {
           let needsSave = false;
@@ -8683,7 +8689,7 @@ function applyFabSettings() {
           });
           globalVideoController = initVideoController(globalVideoPlayer, {
             isLoadingFn: () => {
-              const fabEl = document.getElementById("st-chatu8-fab");
+              const fabEl = document.getElementById("zinao-chatu-fab");
               return fabEl && fabEl.dataset.isLoading === "true";
             }
           });
@@ -8691,7 +8697,7 @@ function applyFabSettings() {
           setTimeout(() => {
             const isMobile4 = window.innerWidth <= 768;
             const size2 = isMobile4 ? settings3.chatu8_fab_size?.mobile ?? settings3.chatu8_fab_size ?? 40 : settings3.chatu8_fab_size?.desktop ?? settings3.chatu8_fab_size ?? 50;
-            console.log("[st-chatu8] Applying initial size to video player:", size2);
+            console.log("[zinao-chatu] Applying initial size to video player:", size2);
             if (globalVideoPlayer) {
               globalVideoPlayer.updateSize(size2);
             }
@@ -8704,7 +8710,7 @@ function applyFabSettings() {
         console.log("Video player already exists, skipping creation");
       }
     } else {
-      fab.removeClass("st-chatu8-fab-video-mode");
+      fab.removeClass("zinao-chatu-fab-video-mode");
       fab.css("background-color", settings3.chatu8_fab_bg_color || "#ADD8E6");
       fab.find("i").css("color", settings3.chatu8_fab_icon_color || "#FFFFFF");
       fab.css("opacity", settings3.chatu8_fab_opacity ?? 1);
@@ -8742,7 +8748,7 @@ function applyFabSettings() {
 function updateFabSize(size) {
   console.log("[updateFabSize] Called with size:", size);
   const settings3 = extension_settings4[extensionName];
-  const fab = $("#st-chatu8-fab");
+  const fab = $("#zinao-chatu-fab");
   if (!fab.length) {
     console.error("[updateFabSize] FAB element not found!");
     return;
@@ -8790,7 +8796,7 @@ var init_ui_common = __esm({
 // utils/settings/buttonstyle.js
 function injectButtonStyleToDocument(targetDoc) {
   if (!targetDoc || !currentButtonStyleCSS) return;
-  const styleId = "st-chatu8-generate-btn-style";
+  const styleId = "zinao-chatu-generate-btn-style";
   let styleEl = targetDoc.getElementById(styleId);
   if (!styleEl) {
     styleEl = targetDoc.createElement("style");
@@ -8807,7 +8813,7 @@ function injectButtonStyleToDocument(targetDoc) {
   }
 }
 function applyGenerateButtonStyle(styleName, isDark = true) {
-  const styleId = "st-chatu8-generate-btn-style";
+  const styleId = "zinao-chatu-generate-btn-style";
   let styleEl = document.getElementById(styleId);
   if (!styleEl) {
     styleEl = document.createElement("style");
@@ -8815,19 +8821,19 @@ function applyGenerateButtonStyle(styleName, isDark = true) {
     document.head.appendChild(styleEl);
   }
   let css = "";
-  const btnSelector = ".st-chatu8-image-button";
+  const btnSelector = ".zinao-chatu-image-button";
   const keyframes = `
-        @keyframes st-chatu8-pulse {
+        @keyframes zinao-chatu-pulse {
             0% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.4); }
             70% { box-shadow: 0 0 0 10px rgba(0, 255, 255, 0); }
             100% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0); }
         }
-        @keyframes st-chatu8-gradient {
+        @keyframes zinao-chatu-gradient {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        @keyframes st-chatu8-wobble {
+        @keyframes zinao-chatu-wobble {
             0% { transform: translateY(0); }
             20% { transform: translateY(-3px); }
             40% { transform: translateY(1px); }
@@ -8835,7 +8841,7 @@ function applyGenerateButtonStyle(styleName, isDark = true) {
             80% { transform: translateY(0.5px); }
             100% { transform: translateY(0); }
         }
-        @keyframes st-chatu8-spin {
+        @keyframes zinao-chatu-spin {
             0% { transform: translate(-50%, -50%) rotate(0deg); }
             100% { transform: translate(-50%, -50%) rotate(360deg); }
         }
@@ -8863,7 +8869,7 @@ function applyGenerateButtonStyle(styleName, isDark = true) {
             left: 50% !important;
             /* \u4F7F\u7528\u52A8\u753B\u4E2D\u7684 translate \u5C45\u4E2D\uFF0C\u4E0D\u8BBE\u7F6E margin \u548C transform */
             margin: 0 !important;
-            animation: st-chatu8-spin 0.8s linear infinite !important;
+            animation: zinao-chatu-spin 0.8s linear infinite !important;
             /* \u91CD\u7F6E\u5176\u4ED6\u6837\u5F0F */
             font-family: inherit !important;
             font-size: 0 !important;
@@ -8884,7 +8890,7 @@ function applyGenerateButtonStyle(styleName, isDark = true) {
     case "\u9ED8\u8BA4":
       css += `
                 ${btnSelector} {
-                    background: var(--st-chatu8-accent-primary, #4a90d9) !important;
+                    background: var(--zinao-chatu-accent-primary, #4a90d9) !important;
                     color: white !important;
                     border: none !important;
                     border-radius: 6px !important;
@@ -10127,7 +10133,7 @@ var init_buttonstyle = __esm({
 
 function injectFrameStyleToDocument(targetDoc) {
   if (!targetDoc || !currentFrameStyleCSS) return;
-  const styleId = "st-chatu8-image-frame-style";
+  const styleId = "zinao-chatu-image-frame-style";
   let styleEl = targetDoc.getElementById(styleId);
   if (!styleEl) {
     styleEl = targetDoc.createElement("style");
@@ -10144,7 +10150,7 @@ function injectFrameStyleToDocument(targetDoc) {
   }
 }
 function applyImageFrameStyle(styleName, isDark = true) {
-  const styleId = "st-chatu8-image-frame-style";
+  const styleId = "zinao-chatu-image-frame-style";
   let styleEl = document.getElementById(styleId);
   if (!styleEl) {
     styleEl = document.createElement("style");
@@ -10155,7 +10161,7 @@ function applyImageFrameStyle(styleName, isDark = true) {
   const alignment = settings3?.imageAlignment || "center";
   const imageSizeScale = settings3?.imageSizeScale || "100";
   let css = "";
-  const containerSelector = ".st-chatu8-image-container";
+  const containerSelector = ".zinao-chatu-image-container";
   const imgSelector = `${containerSelector} img, ${containerSelector} video`;
   css += `
         ${containerSelector} {
@@ -10388,7 +10394,7 @@ var init_framestyle = __esm({
 
 function injectCollapseStyleToDocument(targetDoc) {
   if (!targetDoc || !currentCollapseStyleCSS) return;
-  const styleId = "st-chatu8-collapse-style";
+  const styleId = "zinao-chatu-collapse-style";
   let styleEl = targetDoc.getElementById(styleId);
   if (!styleEl) {
     styleEl = targetDoc.createElement("style");
@@ -10405,7 +10411,7 @@ function injectCollapseStyleToDocument(targetDoc) {
   }
 }
 function applyCollapseStyle(styleName, isDark = true) {
-  const styleId = "st-chatu8-collapse-style";
+  const styleId = "zinao-chatu-collapse-style";
   let styleEl = document.getElementById(styleId);
   if (!styleEl) {
     styleEl = document.createElement("style");
@@ -10417,12 +10423,12 @@ function applyCollapseStyle(styleName, isDark = true) {
   currentCollapseStyleCSS = css;
 }
 function generateCollapseStyleCSS(styleName, isDark) {
-  const wrapper = ".st-chatu8-collapse-wrapper";
-  const header = ".st-chatu8-collapse-header";
-  const icon = ".st-chatu8-collapse-icon";
-  const title = ".st-chatu8-collapse-title";
-  const badge = ".st-chatu8-collapse-badge";
-  const content = ".st-chatu8-collapse-content";
+  const wrapper = ".zinao-chatu-collapse-wrapper";
+  const header = ".zinao-chatu-collapse-header";
+  const icon = ".zinao-chatu-collapse-icon";
+  const title = ".zinao-chatu-collapse-title";
+  const badge = ".zinao-chatu-collapse-badge";
+  const content = ".zinao-chatu-collapse-content";
   let css = `
         ${wrapper} {
             margin: 8px 0;
@@ -10479,11 +10485,11 @@ function generateCollapseStyleCSS(styleName, isDark) {
             justify-content: center;
             align-items: flex-start;
         }
-        ${content} .st-chatu8-image-container {
+        ${content} .zinao-chatu-image-container {
             margin: 0;
         }
-        ${content} .st-chatu8-image-container img,
-        ${content} .st-chatu8-image-container video {
+        ${content} .zinao-chatu-image-container img,
+        ${content} .zinao-chatu-image-container video {
             display: block;
             max-width: 100%;
             height: auto;
@@ -10684,7 +10690,7 @@ __export(theme_exports, {
 
 
 function isThemeDark(theme) {
-  const bgColor = theme["--st-chatu8-bg-primary"] || "#ffffff";
+  const bgColor = theme["--zinao-chatu-bg-primary"] || "#ffffff";
   const color = bgColor.substring(1);
   const rgb = parseInt(color, 16);
   const r = rgb >> 16 & 255;
@@ -10699,12 +10705,12 @@ function applyTheme(theme) {
     return;
   }
   const defaults = {
-    "--st-chatu8-input-bg": theme["--st-chatu8-bg-secondary"] || "#ffffff",
-    "--st-chatu8-input-text": theme["--st-chatu8-text-primary"] || "#000000",
-    "--st-chatu8-input-border": theme["--st-chatu8-border-color"] || "#cccccc"
+    "--zinao-chatu-input-bg": theme["--zinao-chatu-bg-secondary"] || "#ffffff",
+    "--zinao-chatu-input-text": theme["--zinao-chatu-text-primary"] || "#000000",
+    "--zinao-chatu-input-border": theme["--zinao-chatu-border-color"] || "#cccccc"
   };
   const fullTheme = { ...defaults, ...theme };
-  const root = document.querySelector("#st-chatu8-settings");
+  const root = document.querySelector("#zinao-chatu-settings");
   if (root) {
     for (const [key, value] of Object.entries(fullTheme)) {
       root.style.setProperty(key, value);
@@ -10739,14 +10745,14 @@ function populateThemeColorPickers(themeId) {
       const labelText = colorVarMap[key];
       const color = theme[key];
       const field = document.createElement("div");
-      field.className = "st-chatu8-field";
+      field.className = "zinao-chatu-field";
       const label = document.createElement("label");
       label.textContent = labelText;
       label.htmlFor = `theme-color-${key}`;
       const colorPicker = document.createElement("input");
       colorPicker.type = "color";
       colorPicker.id = `theme-color-${key}`;
-      colorPicker.className = "st-chatu8-color-picker";
+      colorPicker.className = "zinao-chatu-color-picker";
       colorPicker.value = color;
       colorPicker.dataset.var = key;
       colorPicker.addEventListener("input", (event) => {
@@ -10903,7 +10909,7 @@ function theme_export(all = false) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `st-chatu8-theme${all ? "s-all" : "-" + themeId}.json`;
+  a.download = `zinao-chatu-theme${all ? "s-all" : "-" + themeId}.json`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -10948,24 +10954,24 @@ var init_theme = __esm({
     init_collapsestyle();
     currentPreviewTheme = {};
     colorVarMap = {
-      "--st-chatu8-bg-primary": "\u4E3B\u80CC\u666F\u8272",
-      "--st-chatu8-bg-secondary": "\u6B21\u80CC\u666F\u8272",
-      "--st-chatu8-bg-tertiary": "\u4E09\u7EA7\u80CC\u666F\u8272",
-      "--st-chatu8-text-primary": "\u4E3B\u6587\u672C\u989C\u8272",
-      "--st-chatu8-text-secondary": "\u6B21\u6587\u672C\u989C\u8272",
-      "--st-chatu8-accent-primary": "\u4E3B\u5F3A\u8C03\u8272",
-      "--st-chatu8-accent-secondary": "\u6B21\u5F3A\u8C03\u8272",
-      "--st-chatu8-danger-primary": "\u5371\u9669/\u5220\u9664\u6309\u94AE\u8272",
-      "--st-chatu8-danger-secondary": "\u5371\u9669/\u5220\u9664\u6309\u94AE\u60AC\u505C\u8272",
-      "--st-chatu8-danger-text": "\u5371\u9669/\u5220\u9664\u6309\u94AE\u6587\u672C\u8272",
-      "--st-chatu8-border-color": "\u8FB9\u6846\u989C\u8272",
-      "--st-chatu8-dropdown-bg": "\u4E0B\u62C9\u6846\u80CC\u666F\u8272",
-      "--st-chatu8-dropdown-text": "\u4E0B\u62C9\u5217\u8868\u6587\u672C\u989C\u8272",
-      "--st-chatu8-dropdown-list-bg": "\u4E0B\u62C9\u9009\u9879\u80CC\u666F\u8272",
-      "--st-chatu8-text-highlight": "\u9AD8\u4EAE\u6587\u672C\u989C\u8272",
-      "--st-chatu8-input-bg": "\u8F93\u5165\u6846\u80CC\u666F\u8272",
-      "--st-chatu8-input-text": "\u8F93\u5165\u6846\u6587\u672C\u989C\u8272",
-      "--st-chatu8-input-border": "\u8F93\u5165\u6846\u8FB9\u6846\u989C\u8272"
+      "--zinao-chatu-bg-primary": "\u4E3B\u80CC\u666F\u8272",
+      "--zinao-chatu-bg-secondary": "\u6B21\u80CC\u666F\u8272",
+      "--zinao-chatu-bg-tertiary": "\u4E09\u7EA7\u80CC\u666F\u8272",
+      "--zinao-chatu-text-primary": "\u4E3B\u6587\u672C\u989C\u8272",
+      "--zinao-chatu-text-secondary": "\u6B21\u6587\u672C\u989C\u8272",
+      "--zinao-chatu-accent-primary": "\u4E3B\u5F3A\u8C03\u8272",
+      "--zinao-chatu-accent-secondary": "\u6B21\u5F3A\u8C03\u8272",
+      "--zinao-chatu-danger-primary": "\u5371\u9669/\u5220\u9664\u6309\u94AE\u8272",
+      "--zinao-chatu-danger-secondary": "\u5371\u9669/\u5220\u9664\u6309\u94AE\u60AC\u505C\u8272",
+      "--zinao-chatu-danger-text": "\u5371\u9669/\u5220\u9664\u6309\u94AE\u6587\u672C\u8272",
+      "--zinao-chatu-border-color": "\u8FB9\u6846\u989C\u8272",
+      "--zinao-chatu-dropdown-bg": "\u4E0B\u62C9\u6846\u80CC\u666F\u8272",
+      "--zinao-chatu-dropdown-text": "\u4E0B\u62C9\u5217\u8868\u6587\u672C\u989C\u8272",
+      "--zinao-chatu-dropdown-list-bg": "\u4E0B\u62C9\u9009\u9879\u80CC\u666F\u8272",
+      "--zinao-chatu-text-highlight": "\u9AD8\u4EAE\u6587\u672C\u989C\u8272",
+      "--zinao-chatu-input-bg": "\u8F93\u5165\u6846\u80CC\u666F\u8272",
+      "--zinao-chatu-input-text": "\u8F93\u5165\u6846\u6587\u672C\u989C\u8272",
+      "--zinao-chatu-input-border": "\u8F93\u5165\u6846\u8FB9\u6846\u989C\u8272"
     };
   }
 });
@@ -11037,7 +11043,7 @@ var init_utils2 = __esm({
 
 
 function ensureFabCenterInViewport() {
-  const fab = document.getElementById("st-chatu8-fab");
+  const fab = document.getElementById("zinao-chatu-fab");
   if (!fab) return;
   const settings3 = extension_settings8[extensionName];
   if (!settings3 || String(settings3.enable_chatu8_fab) !== "true") return;
@@ -11068,7 +11074,7 @@ function ensureFabCenterInViewport() {
   }
 }
 function initFab() {
-  let fab = document.getElementById("st-chatu8-fab");
+  let fab = document.getElementById("zinao-chatu-fab");
   if (!fab) return;
   let isDragging = false;
   let hasMoved = false;
@@ -11083,7 +11089,7 @@ function initFab() {
     return clientX >= rect.left && clientX <= rect.right && clientY >= rect.top && clientY <= rect.bottom;
   };
   const isFabOverlappingDialog = () => {
-    const aiDialog = document.getElementById("st-chatu8-ai-dialog");
+    const aiDialog = document.getElementById("zinao-chatu-ai-dialog");
     if (!aiDialog || !aiDialog.classList.contains("active")) {
       return false;
     }
@@ -11092,12 +11098,12 @@ function initFab() {
     return !(fabRect.right < dialogRect.left || fabRect.left > dialogRect.right || fabRect.bottom < dialogRect.top || fabRect.top > dialogRect.bottom);
   };
   const isVideoMode = () => {
-    return fab.classList.contains("st-chatu8-fab-video-mode");
+    return fab.classList.contains("zinao-chatu-fab-video-mode");
   };
   const isEventFromSettingsPanel = (e) => {
     const target = e.target;
     if (!target || typeof target.closest !== "function") return false;
-    return !!target.closest("#ch-settings-modal, #st-chatu8-settings");
+    return !!target.closest("#ch-settings-modal, #zinao-chatu-settings");
   };
   const dragStart = (e) => {
     if (isFabOverlappingDialog()) {
@@ -11122,7 +11128,7 @@ function initFab() {
     hasMoved = false;
     isLongPress2 = false;
     fab.style.cursor = "grabbing";
-    fab.classList.add("st-chatu8-fab-dragging");
+    fab.classList.add("zinao-chatu-fab-dragging");
     startX = clientX;
     startY = clientY;
     offsetX = clientX - rect.left;
@@ -11133,11 +11139,11 @@ function initFab() {
         if (navigator.vibrate) {
           navigator.vibrate(50);
         }
-        const triggerBtn = document.getElementById("st-chatu8-ai-trigger");
+        const triggerBtn = document.getElementById("zinao-chatu-ai-trigger");
         if (triggerBtn) {
           triggerBtn.click();
         } else {
-          const dialog = document.getElementById("st-chatu8-ai-dialog");
+          const dialog = document.getElementById("zinao-chatu-ai-dialog");
           if (dialog && !dialog.classList.contains("active")) {
             const dialogWidth = dialog.offsetWidth;
             const dialogHeight = dialog.offsetHeight;
@@ -11149,7 +11155,7 @@ function initFab() {
             dialog.style.top = Math.max(0, centerTop) + "px";
             dialog.classList.add("active");
             setTimeout(() => {
-              const inputArea = document.getElementById("st-chatu8-ai-input");
+              const inputArea = document.getElementById("zinao-chatu-ai-input");
               if (inputArea) inputArea.focus();
             }, 300);
           }
@@ -11227,7 +11233,7 @@ function initFab() {
     if (!isDragging) return;
     isDragging = false;
     fab.style.cursor = "grab";
-    fab.classList.remove("st-chatu8-fab-dragging");
+    fab.classList.remove("zinao-chatu-fab-dragging");
     if (isVideoMode() && !hasMoved && !isLongPress2) {
       const clientX = e.type === "touchend" ? e.changedTouches?.[0]?.clientX ?? startX : e.clientX;
       const clientY = e.type === "touchend" ? e.changedTouches?.[0]?.clientY ?? startY : e.clientY;
@@ -11385,7 +11391,7 @@ function initFab() {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
           applyFabSettings();
-          const settingsPanel = document.getElementById("st-chatu8-settings-panel");
+          const settingsPanel = document.getElementById("zinao-chatu-settings-panel");
           if (settingsPanel && settingsPanel.classList.contains("active")) {
             const settings3 = extension_settings8[extensionName];
             if (typeof settings3.chatu8_fab_size === "object") {
@@ -11416,7 +11422,7 @@ function initFab() {
   };
 }
 function startFabLoading() {
-  const fab = document.getElementById("st-chatu8-fab");
+  const fab = document.getElementById("zinao-chatu-fab");
   if (!fab) return;
   fab.dataset.isLoading = "true";
   const videoPlayer = getGlobalVideoPlayer();
@@ -11429,11 +11435,11 @@ function startFabLoading() {
   if (videoPlayer && videoPlayer.playThinkingVideo) {
     videoPlayer.playThinkingVideo();
   } else {
-    fab.classList.add("st-chatu8-fab-loading");
+    fab.classList.add("zinao-chatu-fab-loading");
   }
 }
 function stopFabLoading() {
-  const fab = document.getElementById("st-chatu8-fab");
+  const fab = document.getElementById("zinao-chatu-fab");
   if (!fab) return;
   fab.dataset.isLoading = "false";
   const videoPlayer = getGlobalVideoPlayer();
@@ -11446,7 +11452,7 @@ function stopFabLoading() {
   if (videoPlayer && videoPlayer.stopThinkingVideo) {
     videoPlayer.stopThinkingVideo();
   } else {
-    fab.classList.remove("st-chatu8-fab-loading");
+    fab.classList.remove("zinao-chatu-fab-loading");
   }
 }
 var init_fab = __esm({
@@ -11813,7 +11819,7 @@ function applyWordReplacement(text, type) {
       const regex = new RegExp(escaped, "g");
       result = result.replace(regex, rule.replace);
     } catch (e) {
-      console.warn(`[st-chatu8] \u8BCD\u6C47\u66FF\u6362\u89C4\u5219\u6267\u884C\u5931\u8D25: "${rule.find}" -> "${rule.replace}"`, e);
+      console.warn(`[zinao-chatu] \u8BCD\u6C47\u66FF\u6362\u89C4\u5219\u6267\u884C\u5931\u8D25: "${rule.find}" -> "${rule.replace}"`, e);
     }
   }
   return result;
@@ -11952,7 +11958,7 @@ function onWRExportProfile() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `st_chatu8_word_replace_${profileName}.json`;
+  a.download = `zinao_chatu_word_replace_${profileName}.json`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -12598,13 +12604,13 @@ async function insertImagesIntoElement(rootElement, images) {
   });
   debugElement("insertImagesIntoElement", "\u76EE\u6807\u6839\u5143\u7D20", rootElement);
   const doc = rootElement.ownerDocument || document;
-  const existingButtons = rootElement.querySelectorAll(".image-tag-button, .st-chatu8-image-button");
+  const existingButtons = rootElement.querySelectorAll(".image-tag-button, .zinao-chatu-image-button");
   existingButtons.forEach((btn) => btn.remove());
-  const existingSpans = rootElement.querySelectorAll(".st-chatu8-image-span");
+  const existingSpans = rootElement.querySelectorAll(".zinao-chatu-image-span");
   existingSpans.forEach((span) => span.remove());
-  const existingContainers = rootElement.querySelectorAll(".st-chatu8-image-container");
+  const existingContainers = rootElement.querySelectorAll(".zinao-chatu-image-container");
   existingContainers.forEach((container) => container.remove());
-  const existingCollapseWrappers = rootElement.querySelectorAll(".st-chatu8-collapse-wrapper");
+  const existingCollapseWrappers = rootElement.querySelectorAll(".zinao-chatu-collapse-wrapper");
   existingCollapseWrappers.forEach((wrapper) => wrapper.remove());
   debugLog("imageInserter.insertImagesIntoElement", "\u6E05\u7406\u65E7\u5143\u7D20\u5B8C\u6210", {
     \u6E05\u7406\u6309\u94AE\u6570: existingButtons.length,
@@ -12645,7 +12651,7 @@ async function insertImagesIntoElement(rootElement, images) {
       if (node.nodeType === Node.ELEMENT_NODE && node.tagName !== "BR") {
         return NodeFilter.FILTER_SKIP;
       }
-      if (parentTag === "SCRIPT" || parentTag === "STYLE" || parentTag === "BUTTON" || node.parentElement?.classList.contains("image-tag-button") || node.parentElement?.classList.contains("st-chatu8-image-span")) {
+      if (parentTag === "SCRIPT" || parentTag === "STYLE" || parentTag === "BUTTON" || node.parentElement?.classList.contains("image-tag-button") || node.parentElement?.classList.contains("zinao-chatu-image-span")) {
         return NodeFilter.FILTER_REJECT;
       }
       return NodeFilter.FILTER_ACCEPT;
@@ -12919,11 +12925,11 @@ function getCleanLogicalText(el) {
   if (!el) return "";
   const clone = el.cloneNode(true);
   const selectorsToRemove = [
-    ".st-chatu8-image-button",
+    ".zinao-chatu-image-button",
     ".image-tag-button",
-    ".st-chatu8-image-span",
-    ".st-chatu8-image-container",
-    ".st-chatu8-collapse-wrapper"
+    ".zinao-chatu-image-span",
+    ".zinao-chatu-image-container",
+    ".zinao-chatu-collapse-wrapper"
   ];
   for (const selector of selectorsToRemove) {
     const elements = clone.querySelectorAll(selector);
@@ -13344,10 +13350,10 @@ async function deleteImagesForElement(el) {
   }
   const imageSelectors = [
     ".image-tag-button",
-    ".st-chatu8-image-button",
-    ".st-chatu8-image-span",
-    ".st-chatu8-image-container",
-    ".st-chatu8-collapse-wrapper"
+    ".zinao-chatu-image-button",
+    ".zinao-chatu-image-span",
+    ".zinao-chatu-image-container",
+    ".zinao-chatu-collapse-wrapper"
   ];
   let removedCount = 0;
   let lockedCount = 0;
@@ -13418,7 +13424,7 @@ async function deleteImagesForElement(el) {
       console.log("[imageInserter] Element locked (self):", link?.substring(0, 30));
       return true;
     }
-    const parentButton = elem.closest?.(".st-chatu8-image-button, .image-tag-button");
+    const parentButton = elem.closest?.(".zinao-chatu-image-button, .image-tag-button");
     if (parentButton && parentButton !== elem) {
       const parentLink = parentButton.dataset?.link || parentButton.getAttribute?.("data-link");
       if (isTagLocked2(parentLink)) {
@@ -13428,7 +13434,7 @@ async function deleteImagesForElement(el) {
     }
     const parent = elem.parentElement;
     if (parent) {
-      const siblingButtons = parent.querySelectorAll(".st-chatu8-image-button, .image-tag-button");
+      const siblingButtons = parent.querySelectorAll(".zinao-chatu-image-button, .image-tag-button");
       for (const sibBtn of siblingButtons) {
         const sibLink = sibBtn.dataset?.link || sibBtn.getAttribute?.("data-link");
         if (isTagLocked2(sibLink)) {
@@ -13438,7 +13444,7 @@ async function deleteImagesForElement(el) {
       }
     }
     const prevSibling = elem.previousElementSibling;
-    if (prevSibling?.classList?.contains("st-chatu8-image-button") || prevSibling?.classList?.contains("image-tag-button")) {
+    if (prevSibling?.classList?.contains("zinao-chatu-image-button") || prevSibling?.classList?.contains("image-tag-button")) {
       const prevLink = prevSibling.dataset?.link || prevSibling.getAttribute?.("data-link");
       if (isTagLocked2(prevLink)) {
         console.log("[imageInserter] Element locked via prev sibling:", prevLink?.substring(0, 30));
@@ -13455,7 +13461,7 @@ async function deleteImagesForElement(el) {
     }
   };
   try {
-    const allButtons = searchRoot.querySelectorAll(".st-chatu8-image-button, .image-tag-button");
+    const allButtons = searchRoot.querySelectorAll(".zinao-chatu-image-button, .image-tag-button");
     allButtons.forEach((btn) => collectTagsFromElement(btn));
     console.log("[imageInserter] Tags to delete from storage:", Array.from(deletedTags));
   } catch (e) {
@@ -13464,9 +13470,9 @@ async function deleteImagesForElement(el) {
   const elKeyForImageGroups = generateElKey2(getCleanLogicalText(el));
   console.log("[imageInserter] Pre-computed elKey for image_groups:", elKeyForImageGroups);
   try {
-    const collapseWrappers = searchRoot.querySelectorAll(".st-chatu8-collapse-wrapper");
+    const collapseWrappers = searchRoot.querySelectorAll(".zinao-chatu-collapse-wrapper");
     collapseWrappers.forEach((wrapper) => {
-      const buttons = wrapper.querySelectorAll(".st-chatu8-image-button, .image-tag-button");
+      const buttons = wrapper.querySelectorAll(".zinao-chatu-image-button, .image-tag-button");
       const hasAnyLocked = Array.from(buttons).some((btn) => isElementLocked(btn));
       if (hasAnyLocked) {
         console.log("[imageInserter] Collapse wrapper has locked buttons, keeping wrapper");
@@ -13491,7 +13497,7 @@ async function deleteImagesForElement(el) {
     console.warn("[imageInserter] Error removing collapse wrappers:", e);
   }
   for (const selector of imageSelectors) {
-    if (selector === ".st-chatu8-collapse-wrapper") {
+    if (selector === ".zinao-chatu-collapse-wrapper") {
       continue;
     }
     try {
@@ -13501,7 +13507,7 @@ async function deleteImagesForElement(el) {
           console.log("[imageInserter] Skipped locked element:", selector);
           return;
         }
-        const innerButtons = elem.querySelectorAll?.(".st-chatu8-image-button, .image-tag-button");
+        const innerButtons = elem.querySelectorAll?.(".zinao-chatu-image-button, .image-tag-button");
         if (innerButtons && innerButtons.length > 0) {
           const hasLockedInside = Array.from(innerButtons).some((btn) => isElementLocked(btn));
           if (hasLockedInside) {
@@ -13509,7 +13515,7 @@ async function deleteImagesForElement(el) {
             return;
           }
         }
-        if (elem.classList?.contains("image-tag-button") || elem.classList?.contains("st-chatu8-image-button")) {
+        if (elem.classList?.contains("image-tag-button") || elem.classList?.contains("zinao-chatu-image-button")) {
           const prevSib = elem.previousElementSibling;
           if (prevSib && prevSib.tagName === "P" && prevSib.querySelector("image")) {
             prevSib.remove();
@@ -13519,7 +13525,7 @@ async function deleteImagesForElement(el) {
           if (parentP && parentP.tagName === "P") {
             const hasImageTag = parentP.querySelector("image") || parentP.querySelector("img");
             const hasFontTag = parentP.querySelector("font");
-            const hasGeneratedImage = parentP.querySelector(".st-chatu8-image-container img, .st-chatu8-image-container video");
+            const hasGeneratedImage = parentP.querySelector(".zinao-chatu-image-container img, .zinao-chatu-image-container video");
             if ((hasImageTag || hasFontTag) && !hasGeneratedImage) {
               parentP.remove();
               removedCount++;
@@ -14262,16 +14268,16 @@ var init_imageInserter = __esm({
 
 async function setcharData(name, value) {
   let context = getContext2();
-  context.chatMetadata["st-chatu8"] = context.chatMetadata["st-chatu8"] || {};
-  context.chatMetadata["st-chatu8"]["data"] = context.chatMetadata["st-chatu8"]["data"] || {};
-  context.chatMetadata["st-chatu8"]["data"][name] = value;
+  context.chatMetadata["zinao-chatu"] = context.chatMetadata["zinao-chatu"] || {};
+  context.chatMetadata["zinao-chatu"]["data"] = context.chatMetadata["zinao-chatu"]["data"] || {};
+  context.chatMetadata["zinao-chatu"]["data"][name] = value;
   saveChatConditional2();
 }
 async function getcharData(name) {
   let context = getContext2();
-  context.chatMetadata["st-chatu8"] = context.chatMetadata["st-chatu8"] || {};
-  context.chatMetadata["st-chatu8"]["data"] = context.chatMetadata["st-chatu8"]["data"] || {};
-  return context.chatMetadata["st-chatu8"]["data"][name] || {};
+  context.chatMetadata["zinao-chatu"] = context.chatMetadata["zinao-chatu"] || {};
+  context.chatMetadata["zinao-chatu"]["data"] = context.chatMetadata["zinao-chatu"]["data"] || {};
+  return context.chatMetadata["zinao-chatu"]["data"][name] || {};
 }
 async function getElContext(el, maxCount = 3, options = {}) {
   const keepImageTagInHistory = options.keepImageTagInHistory === true;
@@ -15191,7 +15197,7 @@ var init_taskQueue = __esm({
         task.completedAt = Date.now();
         this.notify();
         console.log(`[TaskQueue] \u4EFB\u52A1\u5DF2\u53D6\u6D88: ${id}`);
-        eventSource4.emit("st_chatu8_task_cancelled", { taskId: id });
+        eventSource4.emit("zinao_chatu_task_cancelled", { taskId: id });
         return wasRunning;
       }
       /**
@@ -16149,7 +16155,7 @@ function createGetPromptHandler(requestType, responseEventName) {
     const { id } = data;
     if (!id) return;
     const typeName = REQUEST_TYPE_NAMES[requestType] || requestType;
-    console.log(`st-chatu8: \u6536\u5230${typeName}\u63D0\u793A\u8BCD\u83B7\u53D6\u8BF7\u6C42 (ID: ${id})`);
+    console.log(`zinao-chatu: \u6536\u5230${typeName}\u63D0\u793A\u8BCD\u83B7\u53D6\u8BF7\u6C42 (ID: ${id})`);
     const prompt2 = buildPromptForRequestType(requestType);
     eventSource5.emit(responseEventName, { prompt: prompt2, id });
   };
@@ -16173,7 +16179,7 @@ var init_llmService = __esm({
     llmTaskControllers = /* @__PURE__ */ new Map();
     fabLoadingRefCount = 0;
     _reqSeq = 0;
-    eventSource5.on("st_chatu8_cancel_llm_task", ({ taskId }) => {
+    eventSource5.on("zinao_chatu_cancel_llm_task", ({ taskId }) => {
       const controller = llmTaskControllers.get(taskId);
       if (controller) {
         controller.abort();
@@ -16214,55 +16220,55 @@ function getResultTextareaUpdater() {
 }
 function getEntryEditModalHTML() {
   return `
-        <div class="st-chatu8-entry-edit-modal-backdrop" id="ch-entry-edit-modal">
-            <div class="st-chatu8-entry-edit-modal">
-                <div class="st-chatu8-entry-edit-modal-header">
+        <div class="zinao-chatu-entry-edit-modal-backdrop" id="ch-entry-edit-modal">
+            <div class="zinao-chatu-entry-edit-modal">
+                <div class="zinao-chatu-entry-edit-modal-header">
                     <h4>\u7F16\u8F91\u6761\u76EE</h4>
-                    <span class="st-chatu8-entry-edit-modal-close">&times;</span>
+                    <span class="zinao-chatu-entry-edit-modal-close">&times;</span>
                 </div>
-                <div class="st-chatu8-entry-edit-modal-body">
-                    <div class="st-chatu8-modal-field">
+                <div class="zinao-chatu-entry-edit-modal-body">
+                    <div class="zinao-chatu-modal-field">
                         <label>\u6761\u76EE\u540D\u79F0</label>
-                        <input type="text" id="ch-modal-entry-name" class="st-chatu8-text-input" placeholder="\u6761\u76EE\u540D\u79F0" />
+                        <input type="text" id="ch-modal-entry-name" class="zinao-chatu-text-input" placeholder="\u6761\u76EE\u540D\u79F0" />
                     </div>
-                    <div class="st-chatu8-modal-field-row">
-                        <div class="st-chatu8-modal-field">
+                    <div class="zinao-chatu-modal-field-row">
+                        <div class="zinao-chatu-modal-field">
                             <label>\u89D2\u8272</label>
-                            <select id="ch-modal-entry-role" class="st-chatu8-select">
+                            <select id="ch-modal-entry-role" class="zinao-chatu-select">
                                 <option value="system">System</option>
                                 <option value="user">User</option>
                                 <option value="assistant">Assistant</option>
                             </select>
                         </div>
-                        <div class="st-chatu8-modal-field">
+                        <div class="zinao-chatu-modal-field">
                             <label>\u89E6\u53D1\u6A21\u5F0F</label>
-                            <select id="ch-modal-trigger-mode" class="st-chatu8-select">
+                            <select id="ch-modal-trigger-mode" class="zinao-chatu-select">
                                 <option value="always">\u5E38\u5F00</option>
                                 <option value="trigger">\u89E6\u53D1</option>
                             </select>
                         </div>
-                        <div class="st-chatu8-modal-field st-chatu8-modal-toggle-field">
+                        <div class="zinao-chatu-modal-field zinao-chatu-modal-toggle-field">
                             <label>\u542F\u7528</label>
-                            <div class="st-chatu8-toggle">
+                            <div class="zinao-chatu-toggle">
                                 <input id="ch-modal-entry-enabled" type="checkbox" checked />
-                                <span class="st-chatu8-slider"></span>
+                                <span class="zinao-chatu-slider"></span>
                             </div>
                         </div>
                     </div>
-                    <div class="st-chatu8-modal-field" id="ch-modal-trigger-words-container" style="display: none;">
+                    <div class="zinao-chatu-modal-field" id="ch-modal-trigger-words-container" style="display: none;">
                         <label>\u89E6\u53D1\u8BCD\uFF08\u9017\u53F7\u5206\u9694\uFF09</label>
-                        <input type="text" id="ch-modal-trigger-words" class="st-chatu8-text-input" placeholder="\u89E6\u53D1\u8BCD1, \u89E6\u53D1\u8BCD2" />
+                        <input type="text" id="ch-modal-trigger-words" class="zinao-chatu-text-input" placeholder="\u89E6\u53D1\u8BCD1, \u89E6\u53D1\u8BCD2" />
                         <label style="margin-top: 10px;">\u5E76\u5217\u89E6\u53D1\u8BCD\uFF08\u540C\u65F6\u6EE1\u8DB3\uFF0C\u9017\u53F7\u5206\u9694\uFF0C\u53EF\u9009\uFF09</label>
-                        <input type="text" id="ch-modal-and-trigger-words" class="st-chatu8-text-input" placeholder="\u5E76\u5217\u89E6\u53D1\u8BCD1, \u5E76\u5217\u89E6\u53D1\u8BCD2" />
+                        <input type="text" id="ch-modal-and-trigger-words" class="zinao-chatu-text-input" placeholder="\u5E76\u5217\u89E6\u53D1\u8BCD1, \u5E76\u5217\u89E6\u53D1\u8BCD2" />
                     </div>
-                    <div class="st-chatu8-modal-field">
+                    <div class="zinao-chatu-modal-field">
                         <label>\u5185\u5BB9</label>
-                        <textarea id="ch-modal-entry-content" class="st-chatu8-textarea" rows="10" placeholder="\u8F93\u5165\u5185\u5BB9..."></textarea>
+                        <textarea id="ch-modal-entry-content" class="zinao-chatu-textarea" rows="10" placeholder="\u8F93\u5165\u5185\u5BB9..."></textarea>
                     </div>
                 </div>
-                <div class="st-chatu8-entry-edit-modal-footer">
-                    <button class="st-chatu8-btn st-chatu8-modal-cancel-btn">\u53D6\u6D88</button>
-                    <button class="st-chatu8-btn st-chatu8-btn-primary st-chatu8-modal-save-btn">\u4FDD\u5B58</button>
+                <div class="zinao-chatu-entry-edit-modal-footer">
+                    <button class="zinao-chatu-btn zinao-chatu-modal-cancel-btn">\u53D6\u6D88</button>
+                    <button class="zinao-chatu-btn zinao-chatu-btn-primary zinao-chatu-modal-save-btn">\u4FDD\u5B58</button>
                 </div>
             </div>
         </div>
@@ -16274,9 +16280,9 @@ function showEntryEditModal($entryElement) {
   if (!$modal.length) {
     $("body").append(getEntryEditModalHTML());
     $modal = $("#ch-entry-edit-modal");
-    $modal.find(".st-chatu8-entry-edit-modal-close").on("click", closeEntryEditModal);
-    $modal.find(".st-chatu8-modal-cancel-btn").on("click", closeEntryEditModal);
-    $modal.find(".st-chatu8-modal-save-btn").on("click", saveEntryFromModal);
+    $modal.find(".zinao-chatu-entry-edit-modal-close").on("click", closeEntryEditModal);
+    $modal.find(".zinao-chatu-modal-cancel-btn").on("click", closeEntryEditModal);
+    $modal.find(".zinao-chatu-modal-save-btn").on("click", saveEntryFromModal);
     $modal.find("#ch-modal-trigger-mode").on("change", function() {
       const $container3 = $modal.find("#ch-modal-trigger-words-container");
       if ($(this).val() === "trigger") {
@@ -16286,13 +16292,13 @@ function showEntryEditModal($entryElement) {
       }
     });
   }
-  $modal.find("#ch-modal-entry-name").val($entryElement.find(".st-chatu8-entry-name").val());
+  $modal.find("#ch-modal-entry-name").val($entryElement.find(".zinao-chatu-entry-name").val());
   $modal.find("#ch-modal-entry-role").val($entryElement.attr("data-role") || "user");
   $modal.find("#ch-modal-entry-enabled").prop("checked", !$entryElement.hasClass("disabled"));
   $modal.find("#ch-modal-trigger-mode").val($entryElement.attr("data-trigger-mode") || "always").trigger("change");
   $modal.find("#ch-modal-trigger-words").val($entryElement.attr("data-trigger-words") || "");
   $modal.find("#ch-modal-and-trigger-words").val($entryElement.attr("data-and-trigger-words") || "");
-  $modal.find("#ch-modal-entry-content").val($entryElement.find(".st-chatu8-entry-content").val());
+  $modal.find("#ch-modal-entry-content").val($entryElement.find(".zinao-chatu-entry-content").val());
   $modal.fadeIn(200);
 }
 function closeEntryEditModal() {
@@ -16314,21 +16320,21 @@ function saveEntryFromModal() {
   const triggerWords = $modal.find("#ch-modal-trigger-words").val();
   const andTriggerWords = $modal.find("#ch-modal-and-trigger-words").val();
   const content = $modal.find("#ch-modal-entry-content").val();
-  $entry.find(".st-chatu8-entry-name").val(name);
+  $entry.find(".zinao-chatu-entry-name").val(name);
   $entry.attr("data-role", role);
-  $entry.find(".st-chatu8-entry-role-badge").text(getRoleBadgeText(role)).attr("data-role", role);
+  $entry.find(".zinao-chatu-entry-role-badge").text(getRoleBadgeText(role)).attr("data-role", role);
   $entry.attr("data-trigger-mode", triggerMode);
   $entry.attr("data-trigger-words", triggerWords);
   $entry.attr("data-and-trigger-words", andTriggerWords);
-  $entry.find(".st-chatu8-entry-content").val(content);
-  $entry.find(".st-chatu8-entry-toggle input").prop("checked", enabled);
+  $entry.find(".zinao-chatu-entry-content").val(content);
+  $entry.find(".zinao-chatu-entry-toggle input").prop("checked", enabled);
   if (enabled) {
     $entry.removeClass("disabled");
   } else {
     $entry.addClass("disabled");
   }
   const preview = content.length > 50 ? content.substring(0, 50) + "..." : content;
-  $entry.find(".st-chatu8-entry-preview").text(preview || "(\u7A7A)");
+  $entry.find(".zinao-chatu-entry-preview").text(preview || "(\u7A7A)");
   if (virtualScrollEnabled) {
     const entryIndex = parseInt($entry.attr("data-entry-index"), 10);
     if (!isNaN(entryIndex) && virtualEntriesData[entryIndex]) {
@@ -16431,7 +16437,7 @@ function renderPresetEntries(entriesData = []) {
   lastRenderedRange = { start: -1, end: -1 };
   if (entriesData.length === 0) {
     presetEntriesContainer.html(`
-            <div class="st-chatu8-entries-empty">
+            <div class="zinao-chatu-entries-empty">
                 <i class="fa-solid fa-inbox"></i>
                 <p>\u6682\u65E0\u6761\u76EE\uFF0C\u70B9\u51FB\u4E0A\u65B9\u6309\u94AE\u6DFB\u52A0</p>
             </div>
@@ -16448,12 +16454,12 @@ function renderPresetEntries(entriesData = []) {
   virtualScrollEnabled = true;
   const totalHeight = entriesData.length * VIRTUAL_ITEM_HEIGHT;
   presetEntriesContainer.html(`
-        <div class="st-chatu8-virtual-spacer" style="height: ${totalHeight}px; position: relative;">
-            <div class="st-chatu8-virtual-content" style="position: absolute; left: 0; right: 0; top: 0;"></div>
+        <div class="zinao-chatu-virtual-spacer" style="height: ${totalHeight}px; position: relative;">
+            <div class="zinao-chatu-virtual-content" style="position: absolute; left: 0; right: 0; top: 0;"></div>
         </div>
     `);
-  virtualScrollSpacer = presetEntriesContainer.find(".st-chatu8-virtual-spacer");
-  virtualScrollContainer = presetEntriesContainer.find(".st-chatu8-virtual-content");
+  virtualScrollSpacer = presetEntriesContainer.find(".zinao-chatu-virtual-spacer");
+  virtualScrollContainer = presetEntriesContainer.find(".zinao-chatu-virtual-content");
   presetEntriesContainer.off("scroll.virtual").on("scroll.virtual", onVirtualScroll);
   updateVirtualScroll();
 }
@@ -16537,7 +16543,7 @@ function createEntryElementAbsolute(entry, index) {
   const contentPreview = entryContent.length > 50 ? entryContent.substring(0, 50) + "..." : entryContent || "(\u7A7A)";
   const topPosition = index * VIRTUAL_ITEM_HEIGHT;
   const div = document.createElement("div");
-  div.className = `st-chatu8-preset-entry st-chatu8-preset-entry-collapsed ${disabledClass}`;
+  div.className = `zinao-chatu-preset-entry zinao-chatu-preset-entry-collapsed ${disabledClass}`;
   div.setAttribute("data-entry-id", entryId);
   div.setAttribute("data-entry-index", String(index));
   div.setAttribute("data-role", entryRole);
@@ -16547,30 +16553,30 @@ function createEntryElementAbsolute(entry, index) {
   div.setAttribute("draggable", "true");
   div.style.cssText = `position: absolute; left: 0; right: 0; min-height: ${VIRTUAL_ITEM_HEIGHT}px; transform: translateY(${topPosition}px); will-change: transform; overflow: visible;`;
   div.innerHTML = `
-        <div class="st-chatu8-entry-header">
-            <span class="st-chatu8-entry-drag-handle" title="\u62D6\u62FD\u6392\u5E8F">
+        <div class="zinao-chatu-entry-header">
+            <span class="zinao-chatu-entry-drag-handle" title="\u62D6\u62FD\u6392\u5E8F">
                 <i class="fa-solid fa-grip-vertical"></i>
             </span>
-            <span class="st-chatu8-entry-role-badge" data-role="${entryRole}">${getRoleBadgeText(entryRole)}</span>
-            <input type="text" class="st-chatu8-entry-name" value="${escapeHtml(entryName)}" placeholder="\u6761\u76EE\u540D\u79F0" readonly />
-            <span class="st-chatu8-entry-preview">${escapeHtml(contentPreview)}</span>
-            <div class="st-chatu8-entry-actions">
-                <div class="st-chatu8-entry-toggle" title="\u542F\u7528/\u7981\u7528">
+            <span class="zinao-chatu-entry-role-badge" data-role="${entryRole}">${getRoleBadgeText(entryRole)}</span>
+            <input type="text" class="zinao-chatu-entry-name" value="${escapeHtml(entryName)}" placeholder="\u6761\u76EE\u540D\u79F0" readonly />
+            <span class="zinao-chatu-entry-preview">${escapeHtml(contentPreview)}</span>
+            <div class="zinao-chatu-entry-actions">
+                <div class="zinao-chatu-entry-toggle" title="\u542F\u7528/\u7981\u7528">
                     <input type="checkbox" ${entryEnabled ? "checked" : ""} />
-                    <span class="st-chatu8-slider"></span>
+                    <span class="zinao-chatu-slider"></span>
                 </div>
-                <button class="st-chatu8-icon-btn st-chatu8-entry-move-btn" title="\u70B9\u51FB\u79FB\u52A8\u6B64\u6761\u76EE">
+                <button class="zinao-chatu-icon-btn zinao-chatu-entry-move-btn" title="\u70B9\u51FB\u79FB\u52A8\u6B64\u6761\u76EE">
                     <i class="fa-solid fa-arrows-up-down"></i>
                 </button>
-                <button class="st-chatu8-icon-btn st-chatu8-entry-edit" title="\u7F16\u8F91">
+                <button class="zinao-chatu-icon-btn zinao-chatu-entry-edit" title="\u7F16\u8F91">
                     <i class="fa-solid fa-pen"></i>
                 </button>
-                <button class="st-chatu8-icon-btn danger st-chatu8-entry-delete" title="\u5220\u9664\u6761\u76EE">
+                <button class="zinao-chatu-icon-btn danger zinao-chatu-entry-delete" title="\u5220\u9664\u6761\u76EE">
                     <i class="fa-solid fa-trash"></i>
                 </button>
             </div>
         </div>
-        <textarea class="st-chatu8-entry-content" style="display:none;">${escapeHtml(entryContent)}</textarea>
+        <textarea class="zinao-chatu-entry-content" style="display:none;">${escapeHtml(entryContent)}</textarea>
     `;
   return div;
 }
@@ -16590,38 +16596,38 @@ function addPresetEntryDOM(entry, index = -1) {
   const disabledClass = entryEnabled ? "" : "disabled";
   const contentPreview = entryContent.length > 50 ? entryContent.substring(0, 50) + "..." : entryContent || "(\u7A7A)";
   const entryElement = $(`
-        <div class="st-chatu8-preset-entry st-chatu8-preset-entry-collapsed ${disabledClass}" 
+        <div class="zinao-chatu-preset-entry zinao-chatu-preset-entry-collapsed ${disabledClass}" 
              data-entry-id="${entryId}" 
              data-role="${entryRole}" 
              data-trigger-mode="${triggerMode}"
              data-trigger-words="${escapeHtml(triggerWords)}"
              data-and-trigger-words="${escapeHtml(andTriggerWords)}"
              draggable="true">
-            <div class="st-chatu8-entry-header">
-                <span class="st-chatu8-entry-drag-handle" title="\u62D6\u62FD\u6392\u5E8F">
+            <div class="zinao-chatu-entry-header">
+                <span class="zinao-chatu-entry-drag-handle" title="\u62D6\u62FD\u6392\u5E8F">
                     <i class="fa-solid fa-grip-vertical"></i>
                 </span>
-                <span class="st-chatu8-entry-role-badge" data-role="${entryRole}">${getRoleBadgeText(entryRole)}</span>
-                <input type="text" class="st-chatu8-entry-name" value="${escapeHtml(entryName)}" placeholder="\u6761\u76EE\u540D\u79F0" readonly />
-                <span class="st-chatu8-entry-preview">${escapeHtml(contentPreview)}</span>
-                <div class="st-chatu8-entry-actions">
-                    <div class="st-chatu8-entry-toggle" title="\u542F\u7528/\u7981\u7528">
+                <span class="zinao-chatu-entry-role-badge" data-role="${entryRole}">${getRoleBadgeText(entryRole)}</span>
+                <input type="text" class="zinao-chatu-entry-name" value="${escapeHtml(entryName)}" placeholder="\u6761\u76EE\u540D\u79F0" readonly />
+                <span class="zinao-chatu-entry-preview">${escapeHtml(contentPreview)}</span>
+                <div class="zinao-chatu-entry-actions">
+                    <div class="zinao-chatu-entry-toggle" title="\u542F\u7528/\u7981\u7528">
                         <input type="checkbox" ${entryEnabled ? "checked" : ""} />
-                        <span class="st-chatu8-slider"></span>
+                        <span class="zinao-chatu-slider"></span>
                     </div>
-                    <button class="st-chatu8-icon-btn st-chatu8-entry-move-btn" title="\u70B9\u51FB\u79FB\u52A8\u6B64\u6761\u76EE">
+                    <button class="zinao-chatu-icon-btn zinao-chatu-entry-move-btn" title="\u70B9\u51FB\u79FB\u52A8\u6B64\u6761\u76EE">
                         <i class="fa-solid fa-arrows-up-down"></i>
                     </button>
-                    <button class="st-chatu8-icon-btn st-chatu8-entry-edit" title="\u7F16\u8F91">
+                    <button class="zinao-chatu-icon-btn zinao-chatu-entry-edit" title="\u7F16\u8F91">
                         <i class="fa-solid fa-pen"></i>
                     </button>
-                    <button class="st-chatu8-icon-btn danger st-chatu8-entry-delete" title="\u5220\u9664\u6761\u76EE">
+                    <button class="zinao-chatu-icon-btn danger zinao-chatu-entry-delete" title="\u5220\u9664\u6761\u76EE">
                         <i class="fa-solid fa-trash"></i>
                     </button>
                 </div>
             </div>
             <!-- \u9690\u85CF\u7684\u6570\u636E\u5B58\u50A8 -->
-            <textarea class="st-chatu8-entry-content" style="display:none;">${escapeHtml(entryContent)}</textarea>
+            <textarea class="zinao-chatu-entry-content" style="display:none;">${escapeHtml(entryContent)}</textarea>
         </div>
     `);
   presetEntriesContainer.append(entryElement);
@@ -16633,8 +16639,8 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 function addNewPresetEntry() {
-  presetEntriesContainer.find(".st-chatu8-entries-empty").remove();
-  const currentCount = virtualScrollEnabled ? virtualEntriesData.length : presetEntriesContainer.find(".st-chatu8-preset-entry").length;
+  presetEntriesContainer.find(".zinao-chatu-entries-empty").remove();
+  const currentCount = virtualScrollEnabled ? virtualEntriesData.length : presetEntriesContainer.find(".zinao-chatu-preset-entry").length;
   const newEntry = {
     id: generateEntryId(),
     name: `\u6761\u76EE ${currentCount + 1}`,
@@ -16677,14 +16683,14 @@ function collectTestContextDataFromUI() {
     };
   }
   const entries = [];
-  presetEntriesContainer.find(".st-chatu8-preset-entry").each(function() {
+  presetEntriesContainer.find(".zinao-chatu-preset-entry").each(function() {
     const $entry = $(this);
     const entry = {
       id: $entry.attr("data-entry-id"),
-      name: $entry.find(".st-chatu8-entry-name").val() || "",
+      name: $entry.find(".zinao-chatu-entry-name").val() || "",
       role: $entry.attr("data-role") || "user",
-      content: $entry.find(".st-chatu8-entry-content").val() || "",
-      enabled: $entry.find(".st-chatu8-entry-toggle input").is(":checked"),
+      content: $entry.find(".zinao-chatu-entry-content").val() || "",
+      enabled: $entry.find(".zinao-chatu-entry-toggle input").is(":checked"),
       triggerMode: $entry.attr("data-trigger-mode") || "always",
       triggerWords: $entry.attr("data-trigger-words") || "",
       andTriggerWords: $entry.attr("data-and-trigger-words") || ""
@@ -16694,25 +16700,25 @@ function collectTestContextDataFromUI() {
   return { entries };
 }
 function bindDragEvents() {
-  presetEntriesContainer.on("dragstart", ".st-chatu8-preset-entry", function(e) {
+  presetEntriesContainer.on("dragstart", ".zinao-chatu-preset-entry", function(e) {
     draggedEntry = this;
     $(this).addClass("dragging");
     e.originalEvent.dataTransfer.effectAllowed = "move";
   });
-  presetEntriesContainer.on("dragend", ".st-chatu8-preset-entry", function() {
+  presetEntriesContainer.on("dragend", ".zinao-chatu-preset-entry", function() {
     $(this).removeClass("dragging");
-    presetEntriesContainer.find(".st-chatu8-preset-entry").removeClass("drag-over");
+    presetEntriesContainer.find(".zinao-chatu-preset-entry").removeClass("drag-over");
     draggedEntry = null;
     if (dragScrollInterval) {
       clearInterval(dragScrollInterval);
       dragScrollInterval = null;
     }
   });
-  presetEntriesContainer.on("dragover", ".st-chatu8-preset-entry", function(e) {
+  presetEntriesContainer.on("dragover", ".zinao-chatu-preset-entry", function(e) {
     e.preventDefault();
     e.originalEvent.dataTransfer.dropEffect = "move";
     if (this !== draggedEntry) {
-      presetEntriesContainer.find(".st-chatu8-preset-entry").removeClass("drag-over");
+      presetEntriesContainer.find(".zinao-chatu-preset-entry").removeClass("drag-over");
       $(this).addClass("drag-over");
     }
   });
@@ -16747,7 +16753,7 @@ function bindDragEvents() {
       }, 16);
     }
   });
-  presetEntriesContainer.on("drop", ".st-chatu8-preset-entry", function(e) {
+  presetEntriesContainer.on("drop", ".zinao-chatu-preset-entry", function(e) {
     e.preventDefault();
     if (dragScrollInterval) {
       clearInterval(dragScrollInterval);
@@ -16785,7 +16791,7 @@ function bindDragEvents() {
         }
       }
     }
-    presetEntriesContainer.find(".st-chatu8-preset-entry").removeClass("drag-over");
+    presetEntriesContainer.find(".zinao-chatu-preset-entry").removeClass("drag-over");
   });
   presetEntriesContainer.on("dragleave", function(e) {
     const container = presetEntriesContainer[0];
@@ -16804,20 +16810,20 @@ function bindDragEvents() {
 function cancelMoveMode() {
   if (activeMoveSourceEntry) {
     activeMoveSourceEntry.removeClass("moving-source");
-    activeMoveSourceEntry.find(".st-chatu8-entry-move-btn").removeClass("active");
+    activeMoveSourceEntry.find(".zinao-chatu-entry-move-btn").removeClass("active");
     activeMoveSourceEntry = null;
     presetEntriesContainer.removeClass("move-mode");
   }
 }
 function bindEntryEvents() {
   $(document).on("click", function(e) {
-    if (activeMoveSourceEntry && !$(e.target).closest(".st-chatu8-entry-move-btn").length) {
+    if (activeMoveSourceEntry && !$(e.target).closest(".zinao-chatu-entry-move-btn").length) {
       cancelMoveMode();
     }
   });
-  presetEntriesContainer.on("click", ".st-chatu8-entry-move-btn", function(e) {
+  presetEntriesContainer.on("click", ".zinao-chatu-entry-move-btn", function(e) {
     e.stopPropagation();
-    const $entry = $(this).closest(".st-chatu8-preset-entry");
+    const $entry = $(this).closest(".zinao-chatu-preset-entry");
     if (!activeMoveSourceEntry) {
       activeMoveSourceEntry = $entry;
       $entry.addClass("moving-source");
@@ -16853,20 +16859,20 @@ function bindEntryEvents() {
       cancelMoveMode();
     }
   });
-  presetEntriesContainer.on("click", ".st-chatu8-entry-edit", function(e) {
+  presetEntriesContainer.on("click", ".zinao-chatu-entry-edit", function(e) {
     e.stopPropagation();
-    const $entry = $(this).closest(".st-chatu8-preset-entry");
+    const $entry = $(this).closest(".zinao-chatu-preset-entry");
     if (virtualScrollEnabled) {
       const entryIndex = parseInt($entry.attr("data-entry-index"), 10);
       if (!isNaN(entryIndex) && virtualEntriesData[entryIndex]) {
         const data = virtualEntriesData[entryIndex];
-        $entry.find(".st-chatu8-entry-content").val(data.content || "");
+        $entry.find(".zinao-chatu-entry-content").val(data.content || "");
       }
     }
     showEntryEditModal($entry);
   });
-  presetEntriesContainer.on("change", ".st-chatu8-entry-toggle input", function() {
-    const $entry = $(this).closest(".st-chatu8-preset-entry");
+  presetEntriesContainer.on("change", ".zinao-chatu-entry-toggle input", function() {
+    const $entry = $(this).closest(".zinao-chatu-preset-entry");
     const enabled = $(this).is(":checked");
     if (enabled) {
       $entry.removeClass("disabled");
@@ -16880,14 +16886,14 @@ function bindEntryEvents() {
       }
     }
   });
-  presetEntriesContainer.on("click", ".st-chatu8-entry-delete", function(e) {
+  presetEntriesContainer.on("click", ".zinao-chatu-entry-delete", function(e) {
     e.stopPropagation();
-    const totalCount = virtualScrollEnabled ? virtualEntriesData.length : presetEntriesContainer.find(".st-chatu8-preset-entry").length;
+    const totalCount = virtualScrollEnabled ? virtualEntriesData.length : presetEntriesContainer.find(".zinao-chatu-preset-entry").length;
     if (totalCount <= 1) {
       toastr.warning("\u81F3\u5C11\u9700\u8981\u4FDD\u7559\u4E00\u4E2A\u6761\u76EE");
       return;
     }
-    const $entry = $(this).closest(".st-chatu8-preset-entry");
+    const $entry = $(this).closest(".zinao-chatu-preset-entry");
     if (virtualScrollEnabled) {
       const entryIndex = parseInt($entry.attr("data-entry-index"), 10);
       if (!isNaN(entryIndex)) {
@@ -16903,15 +16909,15 @@ function bindEntryEvents() {
     }
     toastr.info("\u5DF2\u5220\u9664\u6761\u76EE");
   });
-  presetEntriesContainer.on("dblclick", ".st-chatu8-preset-entry", function(e) {
-    if ($(e.target).closest(".st-chatu8-entry-actions, .st-chatu8-entry-drag-handle").length) {
+  presetEntriesContainer.on("dblclick", ".zinao-chatu-preset-entry", function(e) {
+    if ($(e.target).closest(".zinao-chatu-entry-actions, .zinao-chatu-entry-drag-handle").length) {
       return;
     }
     if (virtualScrollEnabled) {
       const entryIndex = parseInt($(this).attr("data-entry-index"), 10);
       if (!isNaN(entryIndex) && virtualEntriesData[entryIndex]) {
         const data = virtualEntriesData[entryIndex];
-        $(this).find(".st-chatu8-entry-content").val(data.content || "");
+        $(this).find(".zinao-chatu-entry-content").val(data.content || "");
       }
     }
     showEntryEditModal($(this));
@@ -17216,7 +17222,7 @@ function onExportAllTestContextClick() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `st_chatu8_all_test_contexts.json`;
+  a.download = `zinao_chatu_all_test_contexts.json`;
   document.body.appendChild(a);
   a.click();
   URL.revokeObjectURL(url);
@@ -17235,7 +17241,7 @@ function onExportProfileClick() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `st_chatu8_llm_profile_${profileName}.json`;
+  a.download = `zinao_chatu_llm_profile_${profileName}.json`;
   document.body.appendChild(a);
   a.click();
   URL.revokeObjectURL(url);
@@ -17253,7 +17259,7 @@ function onExportTestContextClick() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `st_chatu8_test_context_${contextName}.json`;
+  a.download = `zinao_chatu_test_context_${contextName}.json`;
   document.body.appendChild(a);
   a.click();
   URL.revokeObjectURL(url);
@@ -17515,7 +17521,7 @@ function buildPrompt() {
 function onGetPromptRequest(data) {
   const { id } = data;
   if (!id) return;
-  console.log(`st-chatu8: \u6536\u5230\u63D0\u793A\u8BCD\u83B7\u53D6\u8BF7\u6C42 (ID: ${id})`);
+  console.log(`zinao-chatu: \u6536\u5230\u63D0\u793A\u8BCD\u83B7\u53D6\u8BF7\u6C42 (ID: ${id})`);
   const prompt2 = buildPrompt();
   eventSource6.emit(eventNames.LLM_GET_PROMPT_RESPONSE, { prompt: prompt2, id });
 }
@@ -17834,47 +17840,47 @@ function saveRequestTypeSelection(requestType, field, value) {
     "api_profile": "API \u914D\u7F6E",
     "context_profile": "\u4E0A\u4E0B\u6587\u9884\u8BBE"
   };
-  console.log(`st-chatu8: ${typeNames[requestType]} \u7684 ${fieldNames[field]} \u5DF2\u66F4\u6539\u4E3A "${value}"`);
+  console.log(`zinao-chatu: ${typeNames[requestType]} \u7684 ${fieldNames[field]} \u5DF2\u66F4\u6539\u4E3A "${value}"`);
 }
 function onImageGenGetPromptRequest(data) {
   const { id } = data;
   if (!id) return;
-  console.log(`st-chatu8: \u6536\u5230\u6B63\u6587\u56FE\u7247\u751F\u6210\u63D0\u793A\u8BCD\u83B7\u53D6\u8BF7\u6C42 (ID: ${id})`);
+  console.log(`zinao-chatu: \u6536\u5230\u6B63\u6587\u56FE\u7247\u751F\u6210\u63D0\u793A\u8BCD\u83B7\u53D6\u8BF7\u6C42 (ID: ${id})`);
   const prompt2 = buildPromptForRequestType(LLMRequestTypes.IMAGE_GEN);
   eventSource6.emit(eventNames.LLM_IMAGE_GEN_GET_PROMPT_RESPONSE, { prompt: prompt2, id });
 }
 function onCharDesignGetPromptRequest(data) {
   const { id } = data;
   if (!id) return;
-  console.log(`st-chatu8: \u6536\u5230\u89D2\u8272/\u670D\u88C5\u8BBE\u8BA1\u63D0\u793A\u8BCD\u83B7\u53D6\u8BF7\u6C42 (ID: ${id})`);
+  console.log(`zinao-chatu: \u6536\u5230\u89D2\u8272/\u670D\u88C5\u8BBE\u8BA1\u63D0\u793A\u8BCD\u83B7\u53D6\u8BF7\u6C42 (ID: ${id})`);
   const prompt2 = buildPromptForRequestType(LLMRequestTypes.CHAR_DESIGN);
   eventSource6.emit(eventNames.LLM_CHAR_DESIGN_GET_PROMPT_RESPONSE, { prompt: prompt2, id });
 }
 function onCharDisplayGetPromptRequest(data) {
   const { id } = data;
   if (!id) return;
-  console.log(`st-chatu8: \u6536\u5230\u89D2\u8272/\u670D\u88C5\u5C55\u793A\u63D0\u793A\u8BCD\u83B7\u53D6\u8BF7\u6C42 (ID: ${id})`);
+  console.log(`zinao-chatu: \u6536\u5230\u89D2\u8272/\u670D\u88C5\u5C55\u793A\u63D0\u793A\u8BCD\u83B7\u53D6\u8BF7\u6C42 (ID: ${id})`);
   const prompt2 = buildPromptForRequestType(LLMRequestTypes.CHAR_DISPLAY);
   eventSource6.emit(eventNames.LLM_CHAR_DISPLAY_GET_PROMPT_RESPONSE, { prompt: prompt2, id });
 }
 function onCharModifyGetPromptRequest(data) {
   const { id } = data;
   if (!id) return;
-  console.log(`st-chatu8: \u6536\u5230\u89D2\u8272/\u670D\u88C5\u4FEE\u6539\u63D0\u793A\u8BCD\u83B7\u53D6\u8BF7\u6C42 (ID: ${id})`);
+  console.log(`zinao-chatu: \u6536\u5230\u89D2\u8272/\u670D\u88C5\u4FEE\u6539\u63D0\u793A\u8BCD\u83B7\u53D6\u8BF7\u6C42 (ID: ${id})`);
   const prompt2 = buildPromptForRequestType(LLMRequestTypes.CHAR_MODIFY);
   eventSource6.emit(eventNames.LLM_CHAR_MODIFY_GET_PROMPT_RESPONSE, { prompt: prompt2, id });
 }
 function onTranslationGetPromptRequest(data) {
   const { id } = data;
   if (!id) return;
-  console.log(`st-chatu8: \u6536\u5230\u7FFB\u8BD1\u63D0\u793A\u8BCD\u83B7\u53D6\u8BF7\u6C42 (ID: ${id})`);
+  console.log(`zinao-chatu: \u6536\u5230\u7FFB\u8BD1\u63D0\u793A\u8BCD\u83B7\u53D6\u8BF7\u6C42 (ID: ${id})`);
   const prompt2 = buildPromptForRequestType(LLMRequestTypes.TRANSLATION);
   eventSource6.emit(eventNames.LLM_TRANSLATION_GET_PROMPT_RESPONSE, { prompt: prompt2, id });
 }
 function onTagModifyGetPromptRequest(data) {
   const { id } = data;
   if (!id) return;
-  console.log(`st-chatu8: \u6536\u5230Tag\u4FEE\u6539\u63D0\u793A\u8BCD\u83B7\u53D6\u8BF7\u6C42 (ID: ${id})`);
+  console.log(`zinao-chatu: \u6536\u5230Tag\u4FEE\u6539\u63D0\u793A\u8BCD\u83B7\u53D6\u8BF7\u6C42 (ID: ${id})`);
   const prompt2 = buildPromptForRequestType(LLMRequestTypes.TAG_MODIFY);
   eventSource6.emit(eventNames.LLM_TAG_MODIFY_GET_PROMPT_RESPONSE, { prompt: prompt2, id });
 }
@@ -17903,7 +17909,7 @@ async function onTagModifyRequest(data) {
 function onPersonaGenGetPromptRequest(data) {
   const { id } = data;
   if (!id) return;
-  console.log(`st-chatu8: \u6536\u5230\u4EBA\u8BBE\u751F\u6210\u63D0\u793A\u8BCD\u83B7\u53D6\u8BF7\u6C42 (ID: ${id})`);
+  console.log(`zinao-chatu: \u6536\u5230\u4EBA\u8BBE\u751F\u6210\u63D0\u793A\u8BCD\u83B7\u53D6\u8BF7\u6C42 (ID: ${id})`);
   const prompt2 = buildPromptForRequestType(LLMRequestTypes.PERSONA_GEN);
   eventSource6.emit(eventNames.LLM_PERSONA_GEN_GET_PROMPT_RESPONSE, { prompt: prompt2, id });
 }
@@ -18019,7 +18025,7 @@ function bindUIEvents() {
       if (profileName && extension_settings14[extensionName].llm_profiles[profileName]) {
         extension_settings14[extensionName].llm_profiles[profileName] = collectProfileDataFromUI();
         saveSettingsDebounced7();
-        console.log(`st-chatu8: \u914D\u7F6E\u5DF2\u81EA\u52A8\u4FDD\u5B58 "${profileName}"`);
+        console.log(`zinao-chatu: \u914D\u7F6E\u5DF2\u81EA\u52A8\u4FDD\u5B58 "${profileName}"`);
       }
     }, 800);
   }
@@ -18736,7 +18742,7 @@ async function translatePromptTags(promptText) {
       originalTags
     };
   } catch (error) {
-    console.error("st-chatu8: \u7FFB\u8BD1\u63D0\u793A\u8BCD\u6807\u7B7E\u5931\u8D25:", error);
+    console.error("zinao-chatu: \u7FFB\u8BD1\u63D0\u793A\u8BCD\u6807\u7B7E\u5931\u8D25:", error);
     throw error;
   }
 }
@@ -18751,7 +18757,7 @@ function parseTranslationResult(text) {
       }
     }
   } catch (e) {
-    console.warn("st-chatu8: JSON\u89E3\u6790\u5931\u8D25\uFF0C\u5C1D\u8BD5\u65E7\u683C\u5F0F:", e.message);
+    console.warn("zinao-chatu: JSON\u89E3\u6790\u5931\u8D25\uFF0C\u5C1D\u8BD5\u65E7\u683C\u5F0F:", e.message);
   }
   const cleaned = String(text).replace(/[\r\n]+/g, " ").replace(/^[\s"'`]+|[\s"'`]+$/g, "").trim();
   const pairs = cleaned.split(/[,，]/).map((s) => s.trim()).filter(Boolean);
@@ -18775,7 +18781,7 @@ function generateRequestId() {
 function LLM_TRANSLATION(prompt2, { timeoutMs = 6e4 } = {}) {
   return new Promise((resolve, reject) => {
     const executeRequestId = generateRequestId();
-    console.log(`st-chatu8: \u8BF7\u6C42\u7FFB\u8BD1 LLM (ID: ${executeRequestId})`);
+    console.log(`zinao-chatu: \u8BF7\u6C42\u7FFB\u8BD1 LLM (ID: ${executeRequestId})`);
     let timeoutTimer = null;
     const cleanup = () => {
       eventSource7.removeListener(eventNames.LLM_TRANSLATION_RESPONSE, executeResponseHandler);
@@ -18784,7 +18790,7 @@ function LLM_TRANSLATION(prompt2, { timeoutMs = 6e4 } = {}) {
     const executeResponseHandler = (executeData) => {
       if (executeData.id !== executeRequestId) return;
       cleanup();
-      console.log(`st-chatu8: \u5DF2\u6536\u5230\u7FFB\u8BD1 LLM \u6267\u884C\u7ED3\u679C (ID: ${executeRequestId}):`, executeData);
+      console.log(`zinao-chatu: \u5DF2\u6536\u5230\u7FFB\u8BD1 LLM \u6267\u884C\u7ED3\u679C (ID: ${executeRequestId}):`, executeData);
       if (executeData.success) {
         resolve(executeData.result);
       } else {
@@ -19058,30 +19064,30 @@ function findMessageIndexWithPlaceholder(messages, placeholder) {
 function showUserRequirementPopup() {
   return new Promise((resolve) => {
     const uploadedImages = [];
-    const parent = document.getElementById("st-chatu8-settings") || document.body;
+    const parent = document.getElementById("zinao-chatu-settings") || document.body;
     const backdrop = document.createElement("div");
-    backdrop.className = "st-chatu8-confirm-backdrop";
+    backdrop.className = "zinao-chatu-confirm-backdrop";
     const modal = document.createElement("div");
-    modal.className = "st-chatu8-confirm-box st-chatu8-popup-modal";
+    modal.className = "zinao-chatu-confirm-box zinao-chatu-popup-modal";
     const title = document.createElement("h3");
-    title.className = "st-chatu8-popup-title";
+    title.className = "zinao-chatu-popup-title";
     title.textContent = "\u751F\u6210\u670D\u88C5\u56FE\u7247\u63D0\u793A\u8BCD";
     modal.appendChild(title);
     const description = document.createElement("p");
-    description.className = "st-chatu8-popup-description";
+    description.className = "zinao-chatu-popup-description";
     description.textContent = "\u8BF7\u8F93\u5165\u60A8\u7684\u5177\u4F53\u9700\u6C42\uFF0CAI \u5C06\u6839\u636E\u670D\u88C5\u4FE1\u606F\u751F\u6210\u56FE\u7247\u63D0\u793A\u8BCD\uFF1A";
     modal.appendChild(description);
     const textarea = document.createElement("textarea");
-    textarea.className = "st-chatu8-textarea";
+    textarea.className = "zinao-chatu-textarea";
     textarea.rows = 4;
     textarea.placeholder = "\u4F8B\u5982\uFF1A\u5C55\u793A\u670D\u88C5\u5168\u8C8C\u3001\u7279\u5199\u7EC6\u8282\u3001\u6A21\u7279\u7A7F\u7740\u6548\u679C...";
     modal.appendChild(textarea);
     const imageUploadSection = document.createElement("div");
-    imageUploadSection.className = "st-chatu8-popup-upload-section";
+    imageUploadSection.className = "zinao-chatu-popup-upload-section";
     const uploadHeader = document.createElement("div");
-    uploadHeader.className = "st-chatu8-popup-upload-header";
+    uploadHeader.className = "zinao-chatu-popup-upload-header";
     const uploadLabel = document.createElement("span");
-    uploadLabel.className = "st-chatu8-popup-upload-label";
+    uploadLabel.className = "zinao-chatu-popup-upload-label";
     uploadLabel.textContent = "\u{1F4CE} \u53C2\u8003\u56FE\u7247\uFF08\u53EF\u9009\uFF09";
     const fileInput = document.createElement("input");
     fileInput.type = "file";
@@ -19090,35 +19096,35 @@ function showUserRequirementPopup() {
     const uploadBtn = document.createElement("button");
     uploadBtn.type = "button";
     uploadBtn.innerHTML = '<i class="fa-solid fa-plus"></i> \u6DFB\u52A0\u56FE\u7247';
-    uploadBtn.className = "st-chatu8-btn st-chatu8-popup-upload-btn";
+    uploadBtn.className = "zinao-chatu-btn zinao-chatu-popup-upload-btn";
     uploadBtn.addEventListener("click", () => fileInput.click());
     uploadHeader.appendChild(uploadLabel);
     uploadHeader.appendChild(uploadBtn);
     const imagePreviewContainer = document.createElement("div");
-    imagePreviewContainer.className = "st-chatu8-popup-image-preview";
+    imagePreviewContainer.className = "zinao-chatu-popup-image-preview";
     const emptyHint = document.createElement("div");
-    emptyHint.className = "st-chatu8-popup-empty-hint";
+    emptyHint.className = "zinao-chatu-popup-empty-hint";
     emptyHint.textContent = "\u70B9\u51FB\u4E0A\u65B9\u6309\u94AE\u6DFB\u52A0\u53C2\u8003\u56FE\u7247";
     imagePreviewContainer.appendChild(emptyHint);
     function updateImagePreviews() {
       imagePreviewContainer.innerHTML = "";
       if (uploadedImages.length === 0) {
         const hint = document.createElement("div");
-        hint.className = "st-chatu8-popup-empty-hint";
+        hint.className = "zinao-chatu-popup-empty-hint";
         hint.textContent = "\u70B9\u51FB\u4E0A\u65B9\u6309\u94AE\u6DFB\u52A0\u53C2\u8003\u56FE\u7247";
         imagePreviewContainer.appendChild(hint);
         return;
       }
       uploadedImages.forEach((imgObj, index) => {
         const itemContainer = document.createElement("div");
-        itemContainer.className = "st-chatu8-popup-image-item";
+        itemContainer.className = "zinao-chatu-popup-image-item";
         const imgWrapper = document.createElement("div");
-        imgWrapper.className = "st-chatu8-popup-image-wrapper";
+        imgWrapper.className = "zinao-chatu-popup-image-wrapper";
         const img = document.createElement("img");
         img.src = imgObj.base64;
         const deleteBtn = document.createElement("button");
         deleteBtn.type = "button";
-        deleteBtn.className = "st-chatu8-popup-image-delete";
+        deleteBtn.className = "zinao-chatu-popup-image-delete";
         deleteBtn.innerHTML = "\xD7";
         deleteBtn.addEventListener("click", (e) => {
           e.stopPropagation();
@@ -19135,7 +19141,7 @@ function showUserRequirementPopup() {
         imgWrapper.appendChild(deleteBtn);
         const nameInput = document.createElement("input");
         nameInput.type = "text";
-        nameInput.className = "st-chatu8-popup-image-name";
+        nameInput.className = "zinao-chatu-popup-image-name";
         nameInput.placeholder = `\u56FE${index + 1}`;
         nameInput.value = imgObj.name || "";
         nameInput.addEventListener("input", (e) => {
@@ -19146,7 +19152,7 @@ function showUserRequirementPopup() {
         imagePreviewContainer.appendChild(itemContainer);
       });
       const countLabel = document.createElement("div");
-      countLabel.className = "st-chatu8-popup-image-count";
+      countLabel.className = "zinao-chatu-popup-image-count";
       countLabel.textContent = `\u5DF2\u6DFB\u52A0 ${uploadedImages.length} \u5F20\u56FE\u7247`;
       imagePreviewContainer.appendChild(countLabel);
     }
@@ -19175,14 +19181,14 @@ function showUserRequirementPopup() {
     imageUploadSection.appendChild(imagePreviewContainer);
     modal.appendChild(imageUploadSection);
     const buttonContainer = document.createElement("div");
-    buttonContainer.className = "st-chatu8-confirm-buttons";
+    buttonContainer.className = "zinao-chatu-confirm-buttons";
     const cancelButton = document.createElement("button");
     cancelButton.textContent = "\u53D6\u6D88";
-    cancelButton.className = "st-chatu8-btn";
+    cancelButton.className = "zinao-chatu-btn";
     buttonContainer.appendChild(cancelButton);
     const confirmButton = document.createElement("button");
     confirmButton.innerHTML = '<i class="fa-solid fa-magic"></i> \u751F\u6210';
-    confirmButton.className = "st-chatu8-btn st-chatu8-btn-primary";
+    confirmButton.className = "zinao-chatu-btn zinao-chatu-btn-primary";
     buttonContainer.appendChild(confirmButton);
     modal.appendChild(buttonContainer);
     backdrop.appendChild(modal);
@@ -19218,33 +19224,33 @@ function showUserRequirementPopup() {
 }
 function showResultConfirmPopup(generatedPrompt) {
   return new Promise((resolve) => {
-    const parent = document.getElementById("st-chatu8-settings") || document.body;
+    const parent = document.getElementById("zinao-chatu-settings") || document.body;
     const backdrop = document.createElement("div");
-    backdrop.className = "st-chatu8-confirm-backdrop";
+    backdrop.className = "zinao-chatu-confirm-backdrop";
     const modal = document.createElement("div");
-    modal.className = "st-chatu8-confirm-box st-chatu8-popup-modal";
+    modal.className = "zinao-chatu-confirm-box zinao-chatu-popup-modal";
     const title = document.createElement("h3");
-    title.className = "st-chatu8-popup-title";
+    title.className = "zinao-chatu-popup-title";
     title.textContent = "\u751F\u6210\u7ED3\u679C";
     modal.appendChild(title);
     const description = document.createElement("p");
-    description.className = "st-chatu8-popup-description";
+    description.className = "zinao-chatu-popup-description";
     description.textContent = "\u4EE5\u4E0B\u662F\u751F\u6210\u7684\u56FE\u7247\u63D0\u793A\u8BCD\uFF0C\u786E\u8BA4\u540E\u5C06\u4FDD\u5B58\u5230\u670D\u88C5\u9884\u8BBE\u4E2D\uFF1A";
     modal.appendChild(description);
     const promptDisplay = document.createElement("textarea");
-    promptDisplay.className = "st-chatu8-textarea";
+    promptDisplay.className = "zinao-chatu-textarea";
     promptDisplay.value = generatedPrompt;
     promptDisplay.rows = 8;
     modal.appendChild(promptDisplay);
     const buttonContainer = document.createElement("div");
-    buttonContainer.className = "st-chatu8-confirm-buttons";
+    buttonContainer.className = "zinao-chatu-confirm-buttons";
     const cancelButton = document.createElement("button");
     cancelButton.textContent = "\u53D6\u6D88";
-    cancelButton.className = "st-chatu8-btn";
+    cancelButton.className = "zinao-chatu-btn";
     buttonContainer.appendChild(cancelButton);
     const confirmButton = document.createElement("button");
     confirmButton.innerHTML = '<i class="fa-solid fa-check"></i> \u786E\u8BA4\u4FDD\u5B58';
-    confirmButton.className = "st-chatu8-btn st-chatu8-btn-success";
+    confirmButton.className = "zinao-chatu-btn zinao-chatu-btn-success";
     buttonContainer.appendChild(confirmButton);
     modal.appendChild(buttonContainer);
     backdrop.appendChild(modal);
@@ -19659,7 +19665,7 @@ async function updateOutfitPresetFromLLM(presetId, newData) {
     }
   }
   saveSettingsDebounced10();
-  const outfitTab = $("#st-chatu8-tab-character");
+  const outfitTab = $("#zinao-chatu-tab-character");
   if (outfitTab.length) {
     loadOutfitPreset();
   }
@@ -19740,9 +19746,9 @@ async function showGenericVisualSelector(config) {
     onRefresh,
     loadPresetData
   } = config;
-  const parent = document.getElementById("st-chatu8-settings") || document.body;
+  const parent = document.getElementById("zinao-chatu-settings") || document.body;
   const backdrop = document.createElement("div");
-  backdrop.className = "st-chatu8-workflow-viz-backdrop";
+  backdrop.className = "zinao-chatu-workflow-viz-backdrop";
   const selectedForDelete = /* @__PURE__ */ new Set();
   let isBulkDeleteMode = false;
   let currentPage = 1;
@@ -19750,45 +19756,45 @@ async function showGenericVisualSelector(config) {
   let filteredPresetNames = [];
   let searchQuery = "";
   backdrop.innerHTML = `
-        <div class="st-chatu8-workflow-viz-dialog st-chatu8-preset-viz-dialog-wrapper">
-            <div class="st-chatu8-workflow-viz-header">
+        <div class="zinao-chatu-workflow-viz-dialog zinao-chatu-preset-viz-dialog-wrapper">
+            <div class="zinao-chatu-workflow-viz-header">
                 <h3>${title}</h3>
-                <span class="st-chatu8-workflow-viz-close">&times;</span>
+                <span class="zinao-chatu-workflow-viz-close">&times;</span>
             </div>
-            <div class="st-chatu8-workflow-viz-toolbar" style="justify-content: space-between; align-items: center; gap: 15px;">
-                <div class="st-chatu8-viz-search-container" style="position: relative; flex-grow: 1; max-width: 300px;">
+            <div class="zinao-chatu-workflow-viz-toolbar" style="justify-content: space-between; align-items: center; gap: 15px;">
+                <div class="zinao-chatu-viz-search-container" style="position: relative; flex-grow: 1; max-width: 300px;">
                     <i class="fa-solid fa-search" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #aaa; pointer-events: none;"></i>
-                    <input type="text" class="st-chatu8-viz-search-input" placeholder="\u641C\u7D22\u9884\u8BBE..." style="width: 100%; padding: 8px 12px 8px 36px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; color: white; outline: none; transition: all 0.3s;">
+                    <input type="text" class="zinao-chatu-viz-search-input" placeholder="\u641C\u7D22\u9884\u8BBE..." style="width: 100%; padding: 8px 12px 8px 36px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; color: white; outline: none; transition: all 0.3s;">
                 </div>
                 <div style="display: flex; gap: 10px;">
-                    <div class="st-chatu8-viz-bulk-delete" style="cursor: pointer; padding: 6px 14px; background: rgba(255,255,255,0.1); border-radius: 20px; font-size: 0.9em; user-select: none; white-space: nowrap; display: flex; align-items: center; gap: 6px; transition: all 0.3s;">
+                    <div class="zinao-chatu-viz-bulk-delete" style="cursor: pointer; padding: 6px 14px; background: rgba(255,255,255,0.1); border-radius: 20px; font-size: 0.9em; user-select: none; white-space: nowrap; display: flex; align-items: center; gap: 6px; transition: all 0.3s;">
                         <i class="fa-solid fa-trash-can"></i> <span>\u6279\u91CF\u5220\u9664</span>
                     </div>
-                     <div class="st-chatu8-viz-confirm-delete" style="display: none; cursor: pointer; padding: 6px 14px; background: var(--st-chatu8-danger-primary, #d9534f); border-radius: 20px; font-size: 0.9em; user-select: none; white-space: nowrap; align-items: center; gap: 6px; transition: all 0.3s; color: white;">
+                     <div class="zinao-chatu-viz-confirm-delete" style="display: none; cursor: pointer; padding: 6px 14px; background: var(--zinao-chatu-danger-primary, #d9534f); border-radius: 20px; font-size: 0.9em; user-select: none; white-space: nowrap; align-items: center; gap: 6px; transition: all 0.3s; color: white;">
                         <i class="fa-solid fa-check"></i> <span>\u786E\u8BA4\u5220\u9664 (0)</span>
                     </div>
-                    <div class="st-chatu8-viz-mode-toggle" style="cursor: pointer; padding: 6px 14px; background: rgba(255,255,255,0.1); border-radius: 20px; font-size: 0.9em; user-select: none; white-space: nowrap; display: flex; align-items: center; gap: 6px; transition: all 0.3s;">
+                    <div class="zinao-chatu-viz-mode-toggle" style="cursor: pointer; padding: 6px 14px; background: rgba(255,255,255,0.1); border-radius: 20px; font-size: 0.9em; user-select: none; white-space: nowrap; display: flex; align-items: center; gap: 6px; transition: all 0.3s;">
                         <i class="fa-solid fa-pen-to-square"></i> <span>\u7BA1\u7406</span>
                     </div>
                 </div>
             </div>
-            <div class="st-chatu8-pagination-container" style="display: flex; justify-content: center; align-items: center; gap: 12px; padding: 12px 20px; background: rgba(30, 30, 46, 0.6); border-bottom: 1px solid rgba(255,255,255,0.05);">
-                <button class="st-chatu8-pagination-btn st-chatu8-pagination-prev" title="\u4E0A\u4E00\u9875" style="padding: 6px 12px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; color: #ccc; cursor: pointer; transition: all 0.2s;">
+            <div class="zinao-chatu-pagination-container" style="display: flex; justify-content: center; align-items: center; gap: 12px; padding: 12px 20px; background: rgba(30, 30, 46, 0.6); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <button class="zinao-chatu-pagination-btn zinao-chatu-pagination-prev" title="\u4E0A\u4E00\u9875" style="padding: 6px 12px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; color: #ccc; cursor: pointer; transition: all 0.2s;">
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
-                <div class="st-chatu8-pagination-info" style="display: flex; align-items: center; gap: 8px; color: #aaa; font-size: 0.9em;">
-                    <span class="st-chatu8-pagination-current">1</span>
+                <div class="zinao-chatu-pagination-info" style="display: flex; align-items: center; gap: 8px; color: #aaa; font-size: 0.9em;">
+                    <span class="zinao-chatu-pagination-current">1</span>
                     <span>/</span>
-                    <span class="st-chatu8-pagination-total">1</span>
+                    <span class="zinao-chatu-pagination-total">1</span>
                     <span style="margin-left: 8px; color: #666;">|</span>
-                    <span style="margin-left: 8px;">\u5171 <span class="st-chatu8-pagination-count">0</span> \u4E2A</span>
+                    <span style="margin-left: 8px;">\u5171 <span class="zinao-chatu-pagination-count">0</span> \u4E2A</span>
                 </div>
-                <button class="st-chatu8-pagination-btn st-chatu8-pagination-next" title="\u4E0B\u4E00\u9875" style="padding: 6px 12px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; color: #ccc; cursor: pointer; transition: all 0.2s;">
+                <button class="zinao-chatu-pagination-btn zinao-chatu-pagination-next" title="\u4E0B\u4E00\u9875" style="padding: 6px 12px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; color: #ccc; cursor: pointer; transition: all 0.2s;">
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
                 <div style="margin-left: 16px; display: flex; align-items: center; gap: 6px;">
                     <span style="color: #888; font-size: 0.85em;">\u6BCF\u9875</span>
-                    <select class="st-chatu8-pagination-size" style="padding: 4px 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; color: #ccc; cursor: pointer; font-size: 0.85em;">
+                    <select class="zinao-chatu-pagination-size" style="padding: 4px 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; color: #ccc; cursor: pointer; font-size: 0.85em;">
                         <option value="8">8</option>
                         <option value="12" selected>12</option>
                         <option value="16">16</option>
@@ -19797,61 +19803,61 @@ async function showGenericVisualSelector(config) {
                     </select>
                 </div>
             </div>
-            <div class="st-chatu8-workflow-viz-body">
-                <div class="st-chatu8-workflow-viz-container st-chatu8-preset-viz-container">
-                    <div class="st-chatu8-preset-grid"></div>
+            <div class="zinao-chatu-workflow-viz-body">
+                <div class="zinao-chatu-workflow-viz-container zinao-chatu-preset-viz-container">
+                    <div class="zinao-chatu-preset-grid"></div>
                 </div>
             </div>
         </div>
     `;
-  const closeBtn = backdrop.querySelector(".st-chatu8-workflow-viz-close");
+  const closeBtn = backdrop.querySelector(".zinao-chatu-workflow-viz-close");
   closeBtn.onclick = () => parent.removeChild(backdrop);
   backdrop.onclick = (e) => {
     if (e.target === backdrop) {
       parent.removeChild(backdrop);
     }
   };
-  const searchInput = backdrop.querySelector(".st-chatu8-viz-search-input");
+  const searchInput = backdrop.querySelector(".zinao-chatu-viz-search-input");
   searchInput.oninput = (e) => {
     searchQuery = e.target.value.toLowerCase();
     currentPage = 1;
     updateFilteredPresets();
     renderCurrentPage();
   };
-  const wrapper = backdrop.querySelector(".st-chatu8-preset-viz-dialog-wrapper");
-  const bulkDeleteBtn = backdrop.querySelector(".st-chatu8-viz-bulk-delete");
-  const confirmDeleteBtn = backdrop.querySelector(".st-chatu8-viz-confirm-delete");
-  const toggleBtn = backdrop.querySelector(".st-chatu8-viz-mode-toggle");
+  const wrapper = backdrop.querySelector(".zinao-chatu-preset-viz-dialog-wrapper");
+  const bulkDeleteBtn = backdrop.querySelector(".zinao-chatu-viz-bulk-delete");
+  const confirmDeleteBtn = backdrop.querySelector(".zinao-chatu-viz-confirm-delete");
+  const toggleBtn = backdrop.querySelector(".zinao-chatu-viz-mode-toggle");
   toggleBtn.onclick = () => {
     if (isBulkDeleteMode) {
       exitBulkDeleteMode();
     }
-    wrapper.classList.toggle("st-chatu8-mode-manage");
-    const isManage = wrapper.classList.contains("st-chatu8-mode-manage");
-    toggleBtn.style.background = isManage ? "var(--st-chatu8-accent-primary)" : "rgba(255,255,255,0.1)";
+    wrapper.classList.toggle("zinao-chatu-mode-manage");
+    const isManage = wrapper.classList.contains("zinao-chatu-mode-manage");
+    toggleBtn.style.background = isManage ? "var(--zinao-chatu-accent-primary)" : "rgba(255,255,255,0.1)";
     toggleBtn.style.color = isManage ? "white" : "inherit";
   };
   function exitBulkDeleteMode() {
     isBulkDeleteMode = false;
     selectedForDelete.clear();
-    wrapper.classList.remove("st-chatu8-mode-bulk-delete");
+    wrapper.classList.remove("zinao-chatu-mode-bulk-delete");
     bulkDeleteBtn.style.background = "rgba(255,255,255,0.1)";
     bulkDeleteBtn.style.color = "inherit";
     bulkDeleteBtn.querySelector("span").textContent = "\u6279\u91CF\u5220\u9664";
     confirmDeleteBtn.style.display = "none";
-    const cards = backdrop.querySelectorAll(".st-chatu8-preset-card");
+    const cards = backdrop.querySelectorAll(".zinao-chatu-preset-card");
     cards.forEach((card) => card.classList.remove("selected-for-delete"));
   }
   bulkDeleteBtn.onclick = () => {
-    if (wrapper.classList.contains("st-chatu8-mode-manage")) {
-      wrapper.classList.remove("st-chatu8-mode-manage");
+    if (wrapper.classList.contains("zinao-chatu-mode-manage")) {
+      wrapper.classList.remove("zinao-chatu-mode-manage");
       toggleBtn.style.background = "rgba(255,255,255,0.1)";
       toggleBtn.style.color = "inherit";
     }
     isBulkDeleteMode = !isBulkDeleteMode;
     if (isBulkDeleteMode) {
-      wrapper.classList.add("st-chatu8-mode-bulk-delete");
-      bulkDeleteBtn.style.background = "var(--st-chatu8-danger-primary, #d9534f)";
+      wrapper.classList.add("zinao-chatu-mode-bulk-delete");
+      bulkDeleteBtn.style.background = "var(--zinao-chatu-danger-primary, #d9534f)";
       bulkDeleteBtn.style.color = "white";
       bulkDeleteBtn.querySelector("span").textContent = "\u53D6\u6D88\u5220\u9664";
       confirmDeleteBtn.style.display = "flex";
@@ -19909,13 +19915,13 @@ async function showGenericVisualSelector(config) {
       if (onRefresh) onRefresh();
     }
   };
-  const grid = backdrop.querySelector(".st-chatu8-preset-grid");
-  const paginationPrev = backdrop.querySelector(".st-chatu8-pagination-prev");
-  const paginationNext = backdrop.querySelector(".st-chatu8-pagination-next");
-  const paginationCurrent = backdrop.querySelector(".st-chatu8-pagination-current");
-  const paginationTotal = backdrop.querySelector(".st-chatu8-pagination-total");
-  const paginationCount = backdrop.querySelector(".st-chatu8-pagination-count");
-  const paginationSizeSelect = backdrop.querySelector(".st-chatu8-pagination-size");
+  const grid = backdrop.querySelector(".zinao-chatu-preset-grid");
+  const paginationPrev = backdrop.querySelector(".zinao-chatu-pagination-prev");
+  const paginationNext = backdrop.querySelector(".zinao-chatu-pagination-next");
+  const paginationCurrent = backdrop.querySelector(".zinao-chatu-pagination-current");
+  const paginationTotal = backdrop.querySelector(".zinao-chatu-pagination-total");
+  const paginationCount = backdrop.querySelector(".zinao-chatu-pagination-count");
+  const paginationSizeSelect = backdrop.querySelector(".zinao-chatu-pagination-size");
   const allPresetNames = Object.keys(presets).sort(
     (a, b) => a.localeCompare(b, "zh-CN", { sensitivity: "base" })
   );
@@ -20040,9 +20046,9 @@ async function createPresetCard(config) {
     loadPresetData
   } = config;
   const card = document.createElement("div");
-  card.className = "st-chatu8-preset-card" + (isSelected ? " selected" : "");
+  card.className = "zinao-chatu-preset-card" + (isSelected ? " selected" : "");
   const imageContainer = document.createElement("div");
-  imageContainer.className = "st-chatu8-preset-card-image";
+  imageContainer.className = "zinao-chatu-preset-card-image";
   let previewImageData = null;
   const imageIds = preset?.[imageIdField] || [];
   if (imageIds.length > 0) {
@@ -20069,9 +20075,9 @@ async function createPresetCard(config) {
     addPlaceholder(imageContainer);
   }
   const actions = document.createElement("div");
-  actions.className = "st-chatu8-preset-card-actions";
+  actions.className = "zinao-chatu-preset-card-actions";
   const uploadBtn = document.createElement("button");
-  uploadBtn.className = "st-chatu8-preset-action-btn";
+  uploadBtn.className = "zinao-chatu-preset-action-btn";
   uploadBtn.title = "\u4E0A\u4F20/\u4FEE\u6539\u9884\u89C8\u56FE";
   uploadBtn.innerHTML = '<i class="fa-solid fa-image"></i>';
   uploadBtn.onclick = (e) => {
@@ -20081,7 +20087,7 @@ async function createPresetCard(config) {
   actions.appendChild(uploadBtn);
   if (previewImageData) {
     const deleteImgBtn = document.createElement("button");
-    deleteImgBtn.className = "st-chatu8-preset-action-btn danger";
+    deleteImgBtn.className = "zinao-chatu-preset-action-btn danger";
     deleteImgBtn.title = "\u5220\u9664\u9884\u89C8\u56FE";
     deleteImgBtn.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
     deleteImgBtn.onclick = async (e) => {
@@ -20103,7 +20109,7 @@ async function createPresetCard(config) {
     actions.appendChild(deleteImgBtn);
   }
   const renameBtn = document.createElement("button");
-  renameBtn.className = "st-chatu8-preset-action-btn";
+  renameBtn.className = "zinao-chatu-preset-action-btn";
   renameBtn.title = "\u91CD\u547D\u540D\u9884\u8BBE";
   renameBtn.innerHTML = '<i class="fa-solid fa-pen-nib"></i>';
   renameBtn.onclick = async (e) => {
@@ -20178,7 +20184,7 @@ async function createPresetCard(config) {
   };
   actions.appendChild(renameBtn);
   const deletePresetBtn = document.createElement("button");
-  deletePresetBtn.className = "st-chatu8-preset-action-btn danger";
+  deletePresetBtn.className = "zinao-chatu-preset-action-btn danger";
   deletePresetBtn.title = "\u5220\u9664\u6B64\u9884\u8BBE";
   deletePresetBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
   deletePresetBtn.onclick = async (e) => {
@@ -20204,7 +20210,7 @@ async function createPresetCard(config) {
       saveSettingsDebounced11();
       if (onRefresh) onRefresh();
       if (isDeletingCurrentPreset) {
-        const parentElement = card.closest(".st-chatu8-workflow-viz-backdrop");
+        const parentElement = card.closest(".zinao-chatu-workflow-viz-backdrop");
         if (parentElement && parentElement.parentNode) {
           parentElement.parentNode.removeChild(parentElement);
         }
@@ -20217,7 +20223,7 @@ async function createPresetCard(config) {
   imageContainer.appendChild(actions);
   card.appendChild(imageContainer);
   const nameLabel = document.createElement("div");
-  nameLabel.className = "st-chatu8-preset-card-name";
+  nameLabel.className = "zinao-chatu-preset-card-name";
   nameLabel.textContent = presetName;
   card.appendChild(nameLabel);
   card.onclick = () => onCardClick(presetName, card);
@@ -20225,12 +20231,12 @@ async function createPresetCard(config) {
 }
 function addPlaceholder(container) {
   const placeholder = document.createElement("div");
-  placeholder.className = "st-chatu8-preset-card-placeholder";
+  placeholder.className = "zinao-chatu-preset-card-placeholder";
   placeholder.innerHTML = '<i class="fa-solid fa-image"></i>';
   container.appendChild(placeholder);
 }
 async function refreshCardImage(container, imageData) {
-  const actions = container.querySelector(".st-chatu8-preset-card-actions");
+  const actions = container.querySelector(".zinao-chatu-preset-card-actions");
   container.innerHTML = "";
   if (imageData) {
     const img = document.createElement("img");
@@ -20293,7 +20299,7 @@ async function loadTransformersIsolated() {
   try {
     await fetch(absoluteScriptSrc);
   } catch (e) {
-    console.warn("[st-chatu8] transformers pre-fetch failed, falling back to direct import", e);
+    console.warn("[zinao-chatu] transformers pre-fetch failed, falling back to direct import", e);
   }
   const originalDefine = window.define;
   const originalModule = window.module;
@@ -20306,7 +20312,7 @@ async function loadTransformersIsolated() {
     transformersLoadPromise = transformers;
     return transformers;
   } catch (error) {
-    console.error("[st-chatu8] transformers load failed", error);
+    console.error("[zinao-chatu] transformers load failed", error);
     transformersLoadPromise = null;
     throw error;
   } finally {
@@ -20324,7 +20330,7 @@ async function initNovelAITokenizer() {
     const modelPath = "Xenova/t5-small";
     tokenizer = await AutoTokenizer.from_pretrained(modelPath);
   } catch (error) {
-    console.error("[st-chatu8] \u52A0\u8F7D\u5206\u8BCD\u5668\u5931\u8D25:", error);
+    console.error("[zinao-chatu] \u52A0\u8F7D\u5206\u8BCD\u5668\u5931\u8D25:", error);
   }
 }
 async function calculateNovelAITokens(prompt2) {
@@ -20339,7 +20345,7 @@ async function calculateNovelAITokens(prompt2) {
     const tokenIds = Array.from(encoded.input_ids.data);
     return tokenIds.length;
   } catch (error) {
-    console.error("[st-chatu8] \u8BA1\u7B97 Token \u65F6\u53D1\u751F\u9519\u8BEF:", error);
+    console.error("[zinao-chatu] \u8BA1\u7B97 Token \u65F6\u53D1\u751F\u9519\u8BEF:", error);
     return 0;
   }
 }
@@ -20492,7 +20498,7 @@ function loadOutfitPresetData(presetId) {
     const element = document.getElementById(`outfit_${field}`);
     if (element) {
       element.value = preset[field] || "";
-      const warning = element.closest(".st-chatu8-field-col")?.querySelector(".st-chatu8-unsaved-warning");
+      const warning = element.closest(".zinao-chatu-field-col")?.querySelector(".zinao-chatu-unsaved-warning");
       if (warning) $(warning).hide();
     }
   });
@@ -20667,7 +20673,7 @@ async function exportOutfitPreset() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `st-chatu8-\u670D\u88C5-${presetId}.json`;
+  a.download = `zinao-chatu-\u670D\u88C5-${presetId}.json`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -20737,7 +20743,7 @@ ${Object.keys(relatedCharacters).join("\n")}
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = "st-chatu8-\u670D\u88C5-\u5168\u90E8.json";
+  a.download = "zinao-chatu-\u670D\u88C5-\u5168\u90E8.json";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -20836,7 +20842,7 @@ function bindOutfitFieldListeners() {
       $(element).on("input", function() {
         const settings3 = extension_settings19[extensionName];
         const presetName = settings3.outfitPresetId;
-        const warning = $(this).closest(".st-chatu8-field-col").find(".st-chatu8-unsaved-warning");
+        const warning = $(this).closest(".zinao-chatu-field-col").find(".zinao-chatu-unsaved-warning");
         $(warning).hide();
         if (presetName && settings3.outfitPresets[presetName]) {
           saveCurrentOutfitData(presetName);
@@ -21127,30 +21133,30 @@ function readFileAsBase64ForPopup(file) {
 }
 function handleOutfitPhotoModifyPrompt() {
   const uploadedImages = [];
-  const parent = document.getElementById("st-chatu8-settings") || document.body;
+  const parent = document.getElementById("zinao-chatu-settings") || document.body;
   const backdrop = document.createElement("div");
-  backdrop.className = "st-chatu8-confirm-backdrop";
+  backdrop.className = "zinao-chatu-confirm-backdrop";
   const modal = document.createElement("div");
-  modal.className = "st-chatu8-confirm-box st-chatu8-popup-modal";
+  modal.className = "zinao-chatu-confirm-box zinao-chatu-popup-modal";
   const title = document.createElement("h3");
-  title.className = "st-chatu8-popup-title";
+  title.className = "zinao-chatu-popup-title";
   title.textContent = "\u4FEE\u6539\u670D\u88C5\u63D0\u793A\u8BCD";
   modal.appendChild(title);
   const description = document.createElement("p");
-  description.className = "st-chatu8-popup-description";
+  description.className = "zinao-chatu-popup-description";
   description.textContent = "\u8BF7\u8F93\u5165\u60A8\u7684\u4FEE\u6539\u9700\u6C42\uFF0CAI \u5C06\u6839\u636E\u9700\u6C42\u8C03\u6574\u670D\u88C5\u63D0\u793A\u8BCD\uFF1A";
   modal.appendChild(description);
   const textarea = document.createElement("textarea");
-  textarea.className = "st-chatu8-textarea";
+  textarea.className = "zinao-chatu-textarea";
   textarea.rows = 4;
   textarea.placeholder = "\u4F8B\u5982\uFF1A\u589E\u52A0\u66F4\u591A\u7EC6\u8282\u63CF\u8FF0\u3001\u8C03\u6574\u989C\u8272\u63CF\u8FF0\u3001\u6DFB\u52A0\u914D\u9970\u7EC6\u8282...";
   modal.appendChild(textarea);
   const imageUploadSection = document.createElement("div");
-  imageUploadSection.className = "st-chatu8-popup-upload-section";
+  imageUploadSection.className = "zinao-chatu-popup-upload-section";
   const uploadHeader = document.createElement("div");
-  uploadHeader.className = "st-chatu8-popup-upload-header";
+  uploadHeader.className = "zinao-chatu-popup-upload-header";
   const uploadLabel = document.createElement("span");
-  uploadLabel.className = "st-chatu8-popup-upload-label";
+  uploadLabel.className = "zinao-chatu-popup-upload-label";
   uploadLabel.textContent = "\u{1F4CE} \u53C2\u8003\u56FE\u7247\uFF08\u53EF\u9009\uFF09";
   const fileInput = document.createElement("input");
   fileInput.type = "file";
@@ -21160,35 +21166,35 @@ function handleOutfitPhotoModifyPrompt() {
   const uploadBtn = document.createElement("button");
   uploadBtn.type = "button";
   uploadBtn.innerHTML = '<i class="fa-solid fa-plus"></i> \u6DFB\u52A0\u56FE\u7247';
-  uploadBtn.className = "st-chatu8-btn st-chatu8-popup-upload-btn";
+  uploadBtn.className = "zinao-chatu-btn zinao-chatu-popup-upload-btn";
   uploadBtn.addEventListener("click", () => fileInput.click());
   uploadHeader.appendChild(uploadLabel);
   uploadHeader.appendChild(uploadBtn);
   const imagePreviewContainer = document.createElement("div");
-  imagePreviewContainer.className = "st-chatu8-popup-image-preview";
+  imagePreviewContainer.className = "zinao-chatu-popup-image-preview";
   const emptyHint = document.createElement("div");
-  emptyHint.className = "st-chatu8-popup-empty-hint";
+  emptyHint.className = "zinao-chatu-popup-empty-hint";
   emptyHint.textContent = "\u70B9\u51FB\u4E0A\u65B9\u6309\u94AE\u6DFB\u52A0\u53C2\u8003\u56FE\u7247";
   imagePreviewContainer.appendChild(emptyHint);
   function updateImagePreviews() {
     imagePreviewContainer.innerHTML = "";
     if (uploadedImages.length === 0) {
       const hint = document.createElement("div");
-      hint.className = "st-chatu8-popup-empty-hint";
+      hint.className = "zinao-chatu-popup-empty-hint";
       hint.textContent = "\u70B9\u51FB\u4E0A\u65B9\u6309\u94AE\u6DFB\u52A0\u53C2\u8003\u56FE\u7247";
       imagePreviewContainer.appendChild(hint);
       return;
     }
     uploadedImages.forEach((imgObj, index) => {
       const itemContainer = document.createElement("div");
-      itemContainer.className = "st-chatu8-popup-image-item";
+      itemContainer.className = "zinao-chatu-popup-image-item";
       const imgWrapper = document.createElement("div");
-      imgWrapper.className = "st-chatu8-popup-image-wrapper";
+      imgWrapper.className = "zinao-chatu-popup-image-wrapper";
       const img = document.createElement("img");
       img.src = imgObj.base64;
       const deleteBtn = document.createElement("button");
       deleteBtn.type = "button";
-      deleteBtn.className = "st-chatu8-popup-image-delete";
+      deleteBtn.className = "zinao-chatu-popup-image-delete";
       deleteBtn.innerHTML = "\xD7";
       deleteBtn.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -21205,7 +21211,7 @@ function handleOutfitPhotoModifyPrompt() {
       imgWrapper.appendChild(deleteBtn);
       const nameInput = document.createElement("input");
       nameInput.type = "text";
-      nameInput.className = "st-chatu8-popup-image-name";
+      nameInput.className = "zinao-chatu-popup-image-name";
       nameInput.placeholder = `\u56FE${index + 1}`;
       nameInput.value = imgObj.name || "";
       nameInput.addEventListener("input", (e) => {
@@ -21216,7 +21222,7 @@ function handleOutfitPhotoModifyPrompt() {
       imagePreviewContainer.appendChild(itemContainer);
     });
     const countLabel = document.createElement("div");
-    countLabel.className = "st-chatu8-popup-image-count";
+    countLabel.className = "zinao-chatu-popup-image-count";
     countLabel.textContent = `\u5DF2\u6DFB\u52A0 ${uploadedImages.length} \u5F20\u56FE\u7247`;
     imagePreviewContainer.appendChild(countLabel);
   }
@@ -21243,14 +21249,14 @@ function handleOutfitPhotoModifyPrompt() {
   imageUploadSection.appendChild(imagePreviewContainer);
   modal.appendChild(imageUploadSection);
   const buttonContainer = document.createElement("div");
-  buttonContainer.className = "st-chatu8-confirm-buttons";
+  buttonContainer.className = "zinao-chatu-confirm-buttons";
   const cancelButton = document.createElement("button");
   cancelButton.textContent = "\u53D6\u6D88";
-  cancelButton.className = "st-chatu8-btn";
+  cancelButton.className = "zinao-chatu-btn";
   buttonContainer.appendChild(cancelButton);
   const confirmButton = document.createElement("button");
   confirmButton.innerHTML = '<i class="fa-solid fa-check"></i> \u786E\u8BA4';
-  confirmButton.className = "st-chatu8-btn st-chatu8-btn-primary";
+  confirmButton.className = "zinao-chatu-btn zinao-chatu-btn-primary";
   buttonContainer.appendChild(confirmButton);
   modal.appendChild(buttonContainer);
   backdrop.appendChild(modal);
@@ -21320,9 +21326,9 @@ async function showOutfitImageViewer(imageIds, initialIndex) {
     return;
   }
   let currentIndex = Math.max(0, Math.min(initialIndex, imageIds.length - 1));
-  const parent = document.getElementById("st-chatu8-settings") || document.body;
+  const parent = document.getElementById("zinao-chatu-settings") || document.body;
   const backdrop = document.createElement("div");
-  backdrop.className = "st-chatu8-confirm-backdrop";
+  backdrop.className = "zinao-chatu-confirm-backdrop";
   backdrop.style.cssText = `
         z-index: 10002;
         display: flex;
@@ -21353,7 +21359,7 @@ async function showOutfitImageViewer(imageIds, initialIndex) {
     `;
   const leftButton = document.createElement("button");
   leftButton.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
-  leftButton.className = "st-chatu8-btn";
+  leftButton.className = "zinao-chatu-btn";
   leftButton.style.cssText = `
         width: 50px;
         height: 50px;
@@ -21377,7 +21383,7 @@ async function showOutfitImageViewer(imageIds, initialIndex) {
   imageArea.appendChild(img);
   const rightButton = document.createElement("button");
   rightButton.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
-  rightButton.className = "st-chatu8-btn";
+  rightButton.className = "zinao-chatu-btn";
   rightButton.style.cssText = `
         width: 50px;
         height: 50px;
@@ -21408,7 +21414,7 @@ async function showOutfitImageViewer(imageIds, initialIndex) {
     `;
   const downloadButton = document.createElement("button");
   downloadButton.innerHTML = '<i class="fa-solid fa-download"></i> \u4E0B\u8F7D\u56FE\u7247';
-  downloadButton.className = "st-chatu8-btn";
+  downloadButton.className = "zinao-chatu-btn";
   downloadButton.style.cssText = `
         background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
         padding: 10px 20px;
@@ -21417,7 +21423,7 @@ async function showOutfitImageViewer(imageIds, initialIndex) {
   buttonContainer.appendChild(downloadButton);
   const deleteButton = document.createElement("button");
   deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i> \u5220\u9664\u56FE\u7247';
-  deleteButton.className = "st-chatu8-btn";
+  deleteButton.className = "zinao-chatu-btn";
   deleteButton.style.cssText = `
         background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
         padding: 10px 20px;
@@ -21426,7 +21432,7 @@ async function showOutfitImageViewer(imageIds, initialIndex) {
   buttonContainer.appendChild(deleteButton);
   const deleteOthersButton = document.createElement("button");
   deleteOthersButton.innerHTML = '<i class="fa-solid fa-trash-can"></i> \u5220\u9664\u5176\u4ED6';
-  deleteOthersButton.className = "st-chatu8-btn";
+  deleteOthersButton.className = "zinao-chatu-btn";
   deleteOthersButton.style.cssText = `
         background: linear-gradient(135deg, #fd7e14 0%, #e65c00 100%);
         padding: 10px 20px;
@@ -21435,7 +21441,7 @@ async function showOutfitImageViewer(imageIds, initialIndex) {
   buttonContainer.appendChild(deleteOthersButton);
   const closeButton = document.createElement("button");
   closeButton.innerHTML = '<i class="fa-solid fa-xmark"></i> \u5173\u95ED';
-  closeButton.className = "st-chatu8-btn";
+  closeButton.className = "zinao-chatu-btn";
   closeButton.style.cssText = `
         padding: 10px 20px;
         font-size: 14px;
@@ -22489,7 +22495,7 @@ async function updateCharacterPresetFromLLM(presetId, newData) {
     }
   }
   saveSettingsDebounced14();
-  const characterTab = $("#st-chatu8-tab-character");
+  const characterTab = $("#zinao-chatu-tab-character");
   if (characterTab.length) {
     refreshCharacterSettings(characterTab);
   }
@@ -22579,7 +22585,7 @@ async function updateOutfitPresetsFromLLM(outfitsData) {
     }
   }
   saveSettingsDebounced14();
-  const characterTab = $("#st-chatu8-tab-character");
+  const characterTab = $("#zinao-chatu-tab-character");
   if (characterTab.length) {
     refreshCharacterSettings(characterTab);
   }
@@ -22861,30 +22867,30 @@ function findMessageIndexWithPlaceholder4(messages, placeholder) {
 function showUserRequirementPopup2() {
   return new Promise((resolve) => {
     const uploadedImages = [];
-    const parent = document.getElementById("st-chatu8-settings") || document.body;
+    const parent = document.getElementById("zinao-chatu-settings") || document.body;
     const backdrop = document.createElement("div");
-    backdrop.className = "st-chatu8-confirm-backdrop";
+    backdrop.className = "zinao-chatu-confirm-backdrop";
     const modal = document.createElement("div");
-    modal.className = "st-chatu8-confirm-box st-chatu8-popup-modal";
+    modal.className = "zinao-chatu-confirm-box zinao-chatu-popup-modal";
     const title = document.createElement("h3");
-    title.className = "st-chatu8-popup-title";
+    title.className = "zinao-chatu-popup-title";
     title.textContent = "\u751F\u6210\u56FE\u7247\u63D0\u793A\u8BCD";
     modal.appendChild(title);
     const description = document.createElement("p");
-    description.className = "st-chatu8-popup-description";
+    description.className = "zinao-chatu-popup-description";
     description.textContent = "\u8BF7\u8F93\u5165\u60A8\u7684\u5177\u4F53\u9700\u6C42\uFF0CAI \u5C06\u6839\u636E\u89D2\u8272\u548C\u670D\u88C5\u4FE1\u606F\u751F\u6210\u56FE\u7247\u63D0\u793A\u8BCD\uFF1A";
     modal.appendChild(description);
     const textarea = document.createElement("textarea");
-    textarea.className = "st-chatu8-textarea";
+    textarea.className = "zinao-chatu-textarea";
     textarea.rows = 4;
     textarea.placeholder = "\u4F8B\u5982\uFF1A\u89D2\u8272\u7AD9\u5728\u82B1\u56ED\u4E2D\u3001\u7A7F\u7740\u6821\u670D\u7684\u65E5\u5E38\u573A\u666F\u3001\u5149\u7EBF\u67D4\u548C\u7684\u5BA4\u5185...";
     modal.appendChild(textarea);
     const imageUploadSection = document.createElement("div");
-    imageUploadSection.className = "st-chatu8-popup-upload-section";
+    imageUploadSection.className = "zinao-chatu-popup-upload-section";
     const uploadHeader = document.createElement("div");
-    uploadHeader.className = "st-chatu8-popup-upload-header";
+    uploadHeader.className = "zinao-chatu-popup-upload-header";
     const uploadLabel = document.createElement("span");
-    uploadLabel.className = "st-chatu8-popup-upload-label";
+    uploadLabel.className = "zinao-chatu-popup-upload-label";
     uploadLabel.textContent = "\u{1F4CE} \u53C2\u8003\u56FE\u7247\uFF08\u53EF\u9009\uFF09";
     const fileInput = document.createElement("input");
     fileInput.type = "file";
@@ -22893,35 +22899,35 @@ function showUserRequirementPopup2() {
     const uploadBtn = document.createElement("button");
     uploadBtn.type = "button";
     uploadBtn.innerHTML = '<i class="fa-solid fa-plus"></i> \u6DFB\u52A0\u56FE\u7247';
-    uploadBtn.className = "st-chatu8-btn st-chatu8-popup-upload-btn";
+    uploadBtn.className = "zinao-chatu-btn zinao-chatu-popup-upload-btn";
     uploadBtn.addEventListener("click", () => fileInput.click());
     uploadHeader.appendChild(uploadLabel);
     uploadHeader.appendChild(uploadBtn);
     const imagePreviewContainer = document.createElement("div");
-    imagePreviewContainer.className = "st-chatu8-popup-image-preview";
+    imagePreviewContainer.className = "zinao-chatu-popup-image-preview";
     const emptyHint = document.createElement("div");
-    emptyHint.className = "st-chatu8-popup-empty-hint";
+    emptyHint.className = "zinao-chatu-popup-empty-hint";
     emptyHint.textContent = "\u70B9\u51FB\u4E0A\u65B9\u6309\u94AE\u6DFB\u52A0\u53C2\u8003\u56FE\u7247";
     imagePreviewContainer.appendChild(emptyHint);
     function updateImagePreviews() {
       imagePreviewContainer.innerHTML = "";
       if (uploadedImages.length === 0) {
         const hint = document.createElement("div");
-        hint.className = "st-chatu8-popup-empty-hint";
+        hint.className = "zinao-chatu-popup-empty-hint";
         hint.textContent = "\u70B9\u51FB\u4E0A\u65B9\u6309\u94AE\u6DFB\u52A0\u53C2\u8003\u56FE\u7247";
         imagePreviewContainer.appendChild(hint);
         return;
       }
       uploadedImages.forEach((imgObj, index) => {
         const itemContainer = document.createElement("div");
-        itemContainer.className = "st-chatu8-popup-image-item";
+        itemContainer.className = "zinao-chatu-popup-image-item";
         const imgWrapper = document.createElement("div");
-        imgWrapper.className = "st-chatu8-popup-image-wrapper";
+        imgWrapper.className = "zinao-chatu-popup-image-wrapper";
         const img = document.createElement("img");
         img.src = imgObj.base64;
         const deleteBtn = document.createElement("button");
         deleteBtn.type = "button";
-        deleteBtn.className = "st-chatu8-popup-image-delete";
+        deleteBtn.className = "zinao-chatu-popup-image-delete";
         deleteBtn.innerHTML = "\xD7";
         deleteBtn.addEventListener("click", (e) => {
           e.stopPropagation();
@@ -22938,7 +22944,7 @@ function showUserRequirementPopup2() {
         imgWrapper.appendChild(deleteBtn);
         const nameInput = document.createElement("input");
         nameInput.type = "text";
-        nameInput.className = "st-chatu8-popup-image-name";
+        nameInput.className = "zinao-chatu-popup-image-name";
         nameInput.placeholder = `\u56FE${index + 1}`;
         nameInput.value = imgObj.name || "";
         nameInput.addEventListener("input", (e) => {
@@ -22949,7 +22955,7 @@ function showUserRequirementPopup2() {
         imagePreviewContainer.appendChild(itemContainer);
       });
       const countLabel = document.createElement("div");
-      countLabel.className = "st-chatu8-popup-image-count";
+      countLabel.className = "zinao-chatu-popup-image-count";
       countLabel.textContent = `\u5DF2\u6DFB\u52A0 ${uploadedImages.length} \u5F20\u56FE\u7247`;
       imagePreviewContainer.appendChild(countLabel);
     }
@@ -22978,14 +22984,14 @@ function showUserRequirementPopup2() {
     imageUploadSection.appendChild(imagePreviewContainer);
     modal.appendChild(imageUploadSection);
     const buttonContainer = document.createElement("div");
-    buttonContainer.className = "st-chatu8-confirm-buttons";
+    buttonContainer.className = "zinao-chatu-confirm-buttons";
     const cancelButton = document.createElement("button");
     cancelButton.textContent = "\u53D6\u6D88";
-    cancelButton.className = "st-chatu8-btn";
+    cancelButton.className = "zinao-chatu-btn";
     buttonContainer.appendChild(cancelButton);
     const confirmButton = document.createElement("button");
     confirmButton.innerHTML = '<i class="fa-solid fa-magic"></i> \u751F\u6210';
-    confirmButton.className = "st-chatu8-btn st-chatu8-btn-primary";
+    confirmButton.className = "zinao-chatu-btn zinao-chatu-btn-primary";
     buttonContainer.appendChild(confirmButton);
     modal.appendChild(buttonContainer);
     backdrop.appendChild(modal);
@@ -23021,33 +23027,33 @@ function showUserRequirementPopup2() {
 }
 function showResultConfirmPopup2(generatedPrompt) {
   return new Promise((resolve) => {
-    const parent = document.getElementById("st-chatu8-settings") || document.body;
+    const parent = document.getElementById("zinao-chatu-settings") || document.body;
     const backdrop = document.createElement("div");
-    backdrop.className = "st-chatu8-confirm-backdrop";
+    backdrop.className = "zinao-chatu-confirm-backdrop";
     const modal = document.createElement("div");
-    modal.className = "st-chatu8-confirm-box st-chatu8-popup-modal";
+    modal.className = "zinao-chatu-confirm-box zinao-chatu-popup-modal";
     const title = document.createElement("h3");
-    title.className = "st-chatu8-popup-title";
+    title.className = "zinao-chatu-popup-title";
     title.textContent = "\u751F\u6210\u7ED3\u679C";
     modal.appendChild(title);
     const description = document.createElement("p");
-    description.className = "st-chatu8-popup-description";
+    description.className = "zinao-chatu-popup-description";
     description.textContent = "\u4EE5\u4E0B\u662F\u751F\u6210\u7684\u56FE\u7247\u63D0\u793A\u8BCD\uFF0C\u786E\u8BA4\u540E\u5C06\u4FDD\u5B58\u5230\u89D2\u8272\u9884\u8BBE\u4E2D\uFF1A";
     modal.appendChild(description);
     const promptDisplay = document.createElement("textarea");
-    promptDisplay.className = "st-chatu8-textarea";
+    promptDisplay.className = "zinao-chatu-textarea";
     promptDisplay.value = generatedPrompt;
     promptDisplay.rows = 8;
     modal.appendChild(promptDisplay);
     const buttonContainer = document.createElement("div");
-    buttonContainer.className = "st-chatu8-confirm-buttons";
+    buttonContainer.className = "zinao-chatu-confirm-buttons";
     const cancelButton = document.createElement("button");
     cancelButton.textContent = "\u53D6\u6D88";
-    cancelButton.className = "st-chatu8-btn";
+    cancelButton.className = "zinao-chatu-btn";
     buttonContainer.appendChild(cancelButton);
     const confirmButton = document.createElement("button");
     confirmButton.innerHTML = '<i class="fa-solid fa-check"></i> \u786E\u8BA4\u4FDD\u5B58';
-    confirmButton.className = "st-chatu8-btn st-chatu8-btn-success";
+    confirmButton.className = "zinao-chatu-btn zinao-chatu-btn-success";
     buttonContainer.appendChild(confirmButton);
     modal.appendChild(buttonContainer);
     backdrop.appendChild(modal);
@@ -23256,7 +23262,7 @@ function loadCharacterPresetData(presetId) {
     const element = document.getElementById(`char_${field}`);
     if (element) {
       element.value = preset[field] || "";
-      const warning = element.closest(".st-chatu8-field-col")?.querySelector(".st-chatu8-unsaved-warning");
+      const warning = element.closest(".zinao-chatu-field-col")?.querySelector(".zinao-chatu-unsaved-warning");
       if (warning) $(warning).hide();
     }
   });
@@ -23283,7 +23289,7 @@ function updateCharacterPreset() {
   CHARACTER_FIELDS.forEach((field) => {
     const element = document.getElementById(`char_${field}`);
     if (element) {
-      const warning = element.closest(".st-chatu8-field-col")?.querySelector(".st-chatu8-unsaved-warning");
+      const warning = element.closest(".zinao-chatu-field-col")?.querySelector(".zinao-chatu-unsaved-warning");
       if (warning) $(warning).hide();
     }
   });
@@ -23487,7 +23493,7 @@ async function exportCharacterPreset() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `st-chatu8-\u89D2\u8272-${presetId}.json`;
+  a.download = `zinao-chatu-\u89D2\u8272-${presetId}.json`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -23559,7 +23565,7 @@ async function exportAllCharacterPresets() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = "st-chatu8-\u89D2\u8272-\u5168\u90E8.json";
+  a.download = "zinao-chatu-\u89D2\u8272-\u5168\u90E8.json";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -23732,7 +23738,7 @@ function bindCharacterFieldListeners() {
       $(element).on("input", function() {
         const settings3 = extension_settings23[extensionName];
         const presetName = settings3.characterPresetId;
-        const warning = $(this).closest(".st-chatu8-field-col").find(".st-chatu8-unsaved-warning");
+        const warning = $(this).closest(".zinao-chatu-field-col").find(".zinao-chatu-unsaved-warning");
         $(warning).hide();
         if (presetName && settings3.characterPresets[presetName]) {
           saveCurrentCharacterData(presetName);
@@ -24134,30 +24140,30 @@ function readFileAsBase64ForPopup2(file) {
 }
 function handlePhotoModifyCharacterPrompt() {
   const uploadedImages = [];
-  const parent = document.getElementById("st-chatu8-settings") || document.body;
+  const parent = document.getElementById("zinao-chatu-settings") || document.body;
   const backdrop = document.createElement("div");
-  backdrop.className = "st-chatu8-confirm-backdrop";
+  backdrop.className = "zinao-chatu-confirm-backdrop";
   const modal = document.createElement("div");
-  modal.className = "st-chatu8-confirm-box st-chatu8-popup-modal";
+  modal.className = "zinao-chatu-confirm-box zinao-chatu-popup-modal";
   const title = document.createElement("h3");
-  title.className = "st-chatu8-popup-title";
+  title.className = "zinao-chatu-popup-title";
   title.textContent = "\u4FEE\u6539\u89D2\u8272\u63D0\u793A\u8BCD";
   modal.appendChild(title);
   const description = document.createElement("p");
-  description.className = "st-chatu8-popup-description";
+  description.className = "zinao-chatu-popup-description";
   description.textContent = "\u8BF7\u8F93\u5165\u60A8\u7684\u4FEE\u6539\u9700\u6C42\uFF0CAI \u5C06\u6839\u636E\u9700\u6C42\u8C03\u6574\u89D2\u8272\u63D0\u793A\u8BCD\uFF1A";
   modal.appendChild(description);
   const textarea = document.createElement("textarea");
-  textarea.className = "st-chatu8-textarea";
+  textarea.className = "zinao-chatu-textarea";
   textarea.rows = 4;
   textarea.placeholder = "\u4F8B\u5982\uFF1A\u8BA9\u89D2\u8272\u7684\u8868\u60C5\u66F4\u751F\u52A8\u3001\u589E\u52A0\u80CC\u666F\u63CF\u8FF0\u3001\u8C03\u6574\u670D\u88C5\u7EC6\u8282...";
   modal.appendChild(textarea);
   const imageUploadSection = document.createElement("div");
-  imageUploadSection.className = "st-chatu8-popup-upload-section";
+  imageUploadSection.className = "zinao-chatu-popup-upload-section";
   const uploadHeader = document.createElement("div");
-  uploadHeader.className = "st-chatu8-popup-upload-header";
+  uploadHeader.className = "zinao-chatu-popup-upload-header";
   const uploadLabel = document.createElement("span");
-  uploadLabel.className = "st-chatu8-popup-upload-label";
+  uploadLabel.className = "zinao-chatu-popup-upload-label";
   uploadLabel.textContent = "\u{1F4CE} \u53C2\u8003\u56FE\u7247\uFF08\u53EF\u9009\uFF09";
   const fileInput = document.createElement("input");
   fileInput.type = "file";
@@ -24167,35 +24173,35 @@ function handlePhotoModifyCharacterPrompt() {
   const uploadBtn = document.createElement("button");
   uploadBtn.type = "button";
   uploadBtn.innerHTML = '<i class="fa-solid fa-plus"></i> \u6DFB\u52A0\u56FE\u7247';
-  uploadBtn.className = "st-chatu8-btn st-chatu8-popup-upload-btn";
+  uploadBtn.className = "zinao-chatu-btn zinao-chatu-popup-upload-btn";
   uploadBtn.addEventListener("click", () => fileInput.click());
   uploadHeader.appendChild(uploadLabel);
   uploadHeader.appendChild(uploadBtn);
   const imagePreviewContainer = document.createElement("div");
-  imagePreviewContainer.className = "st-chatu8-popup-image-preview";
+  imagePreviewContainer.className = "zinao-chatu-popup-image-preview";
   const emptyHint = document.createElement("div");
-  emptyHint.className = "st-chatu8-popup-empty-hint";
+  emptyHint.className = "zinao-chatu-popup-empty-hint";
   emptyHint.textContent = "\u70B9\u51FB\u4E0A\u65B9\u6309\u94AE\u6DFB\u52A0\u53C2\u8003\u56FE\u7247";
   imagePreviewContainer.appendChild(emptyHint);
   function updateImagePreviews() {
     imagePreviewContainer.innerHTML = "";
     if (uploadedImages.length === 0) {
       const hint = document.createElement("div");
-      hint.className = "st-chatu8-popup-empty-hint";
+      hint.className = "zinao-chatu-popup-empty-hint";
       hint.textContent = "\u70B9\u51FB\u4E0A\u65B9\u6309\u94AE\u6DFB\u52A0\u53C2\u8003\u56FE\u7247";
       imagePreviewContainer.appendChild(hint);
       return;
     }
     uploadedImages.forEach((imgObj, index) => {
       const itemContainer = document.createElement("div");
-      itemContainer.className = "st-chatu8-popup-image-item";
+      itemContainer.className = "zinao-chatu-popup-image-item";
       const imgWrapper = document.createElement("div");
-      imgWrapper.className = "st-chatu8-popup-image-wrapper";
+      imgWrapper.className = "zinao-chatu-popup-image-wrapper";
       const img = document.createElement("img");
       img.src = imgObj.base64;
       const deleteBtn = document.createElement("button");
       deleteBtn.type = "button";
-      deleteBtn.className = "st-chatu8-popup-image-delete";
+      deleteBtn.className = "zinao-chatu-popup-image-delete";
       deleteBtn.innerHTML = "\xD7";
       deleteBtn.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -24212,7 +24218,7 @@ function handlePhotoModifyCharacterPrompt() {
       imgWrapper.appendChild(deleteBtn);
       const nameInput = document.createElement("input");
       nameInput.type = "text";
-      nameInput.className = "st-chatu8-popup-image-name";
+      nameInput.className = "zinao-chatu-popup-image-name";
       nameInput.placeholder = `\u56FE${index + 1}`;
       nameInput.value = imgObj.name || "";
       nameInput.addEventListener("input", (e) => {
@@ -24223,7 +24229,7 @@ function handlePhotoModifyCharacterPrompt() {
       imagePreviewContainer.appendChild(itemContainer);
     });
     const countLabel = document.createElement("div");
-    countLabel.className = "st-chatu8-popup-image-count";
+    countLabel.className = "zinao-chatu-popup-image-count";
     countLabel.textContent = `\u5DF2\u6DFB\u52A0 ${uploadedImages.length} \u5F20\u56FE\u7247`;
     imagePreviewContainer.appendChild(countLabel);
   }
@@ -24250,14 +24256,14 @@ function handlePhotoModifyCharacterPrompt() {
   imageUploadSection.appendChild(imagePreviewContainer);
   modal.appendChild(imageUploadSection);
   const buttonContainer = document.createElement("div");
-  buttonContainer.className = "st-chatu8-confirm-buttons";
+  buttonContainer.className = "zinao-chatu-confirm-buttons";
   const cancelButton = document.createElement("button");
   cancelButton.textContent = "\u53D6\u6D88";
-  cancelButton.className = "st-chatu8-btn";
+  cancelButton.className = "zinao-chatu-btn";
   buttonContainer.appendChild(cancelButton);
   const confirmButton = document.createElement("button");
   confirmButton.innerHTML = '<i class="fa-solid fa-check"></i> \u786E\u8BA4';
-  confirmButton.className = "st-chatu8-btn st-chatu8-btn-primary";
+  confirmButton.className = "zinao-chatu-btn zinao-chatu-btn-primary";
   buttonContainer.appendChild(confirmButton);
   modal.appendChild(buttonContainer);
   backdrop.appendChild(modal);
@@ -24284,17 +24290,17 @@ function handleCharacterData() {
   const generationContext = preset.generationContext || "";
   const generationWorldBook = preset.generationWorldBook || "";
   const generationVariables = preset.generationVariables || {};
-  const parent = document.getElementById("st-chatu8-settings") || document.body;
+  const parent = document.getElementById("zinao-chatu-settings") || document.body;
   const backdrop = document.createElement("div");
-  backdrop.className = "st-chatu8-confirm-backdrop";
+  backdrop.className = "zinao-chatu-confirm-backdrop";
   const modal = document.createElement("div");
-  modal.className = "st-chatu8-confirm-box st-chatu8-popup-modal st-chatu8-popup-modal-large";
+  modal.className = "zinao-chatu-confirm-box zinao-chatu-popup-modal zinao-chatu-popup-modal-large";
   const title = document.createElement("h3");
-  title.className = "st-chatu8-popup-title";
+  title.className = "zinao-chatu-popup-title";
   title.textContent = `\u89D2\u8272\u6570\u636E - ${presetId}`;
   modal.appendChild(title);
   const contentArea = document.createElement("div");
-  contentArea.className = "st-chatu8-popup-content";
+  contentArea.className = "zinao-chatu-popup-content";
   const contextSection = createDataSection(
     "\u751F\u6210\u65F6\u7684\u4E0A\u4E0B\u6587",
     "char_data_context",
@@ -24312,13 +24318,13 @@ function handleCharacterData() {
   );
   contentArea.appendChild(worldBookSection);
   const variablesSection = document.createElement("div");
-  variablesSection.className = "st-chatu8-field-col";
+  variablesSection.className = "zinao-chatu-field-col";
   const variablesLabel = document.createElement("label");
   variablesLabel.textContent = "\u751F\u6210\u65F6\u4F7F\u7528\u7684\u53D8\u91CF";
   variablesSection.appendChild(variablesLabel);
   const variablesTextarea = document.createElement("textarea");
   variablesTextarea.id = "char_data_variables";
-  variablesTextarea.className = "st-chatu8-textarea st-chatu8-popup-code-textarea";
+  variablesTextarea.className = "zinao-chatu-textarea zinao-chatu-popup-code-textarea";
   variablesTextarea.rows = 4;
   variablesTextarea.placeholder = "\u53D8\u91CF\u683C\u5F0F: \u53D8\u91CF\u540D=\u503C\uFF08\u6BCF\u884C\u4E00\u4E2A\uFF09...";
   variablesTextarea.value = Object.entries(generationVariables).map(([key, value]) => `${key}=${value}`).join("\n");
@@ -24326,14 +24332,14 @@ function handleCharacterData() {
   contentArea.appendChild(variablesSection);
   modal.appendChild(contentArea);
   const buttonContainer = document.createElement("div");
-  buttonContainer.className = "st-chatu8-confirm-buttons";
+  buttonContainer.className = "zinao-chatu-confirm-buttons";
   const cancelButton = document.createElement("button");
   cancelButton.textContent = "\u53D6\u6D88";
-  cancelButton.className = "st-chatu8-btn";
+  cancelButton.className = "zinao-chatu-btn";
   buttonContainer.appendChild(cancelButton);
   const saveButton = document.createElement("button");
   saveButton.innerHTML = '<i class="fa-solid fa-save"></i> \u4FDD\u5B58';
-  saveButton.className = "st-chatu8-btn st-chatu8-btn-primary";
+  saveButton.className = "zinao-chatu-btn zinao-chatu-btn-primary";
   buttonContainer.appendChild(saveButton);
   modal.appendChild(buttonContainer);
   backdrop.appendChild(modal);
@@ -24367,13 +24373,13 @@ function handleCharacterData() {
 }
 function createDataSection(labelText, textareaId, value, placeholder, rows) {
   const section = document.createElement("div");
-  section.className = "st-chatu8-field-col";
+  section.className = "zinao-chatu-field-col";
   const label = document.createElement("label");
   label.textContent = labelText;
   section.appendChild(label);
   const textarea = document.createElement("textarea");
   textarea.id = textareaId;
-  textarea.className = "st-chatu8-textarea st-chatu8-popup-code-textarea";
+  textarea.className = "zinao-chatu-textarea zinao-chatu-popup-code-textarea";
   textarea.rows = rows;
   textarea.placeholder = placeholder;
   textarea.value = value;
@@ -24389,9 +24395,9 @@ async function showImageViewer(imageIds, initialIndex) {
     return;
   }
   let currentIndex = Math.max(0, Math.min(initialIndex, imageIds.length - 1));
-  const parent = document.getElementById("st-chatu8-settings") || document.body;
+  const parent = document.getElementById("zinao-chatu-settings") || document.body;
   const backdrop = document.createElement("div");
-  backdrop.className = "st-chatu8-confirm-backdrop";
+  backdrop.className = "zinao-chatu-confirm-backdrop";
   backdrop.style.cssText = `
         z-index: 10002;
         display: flex;
@@ -24422,7 +24428,7 @@ async function showImageViewer(imageIds, initialIndex) {
     `;
   const leftButton = document.createElement("button");
   leftButton.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
-  leftButton.className = "st-chatu8-btn";
+  leftButton.className = "zinao-chatu-btn";
   leftButton.style.cssText = `
         width: 50px;
         height: 50px;
@@ -24446,7 +24452,7 @@ async function showImageViewer(imageIds, initialIndex) {
   imageArea.appendChild(img);
   const rightButton = document.createElement("button");
   rightButton.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
-  rightButton.className = "st-chatu8-btn";
+  rightButton.className = "zinao-chatu-btn";
   rightButton.style.cssText = `
         width: 50px;
         height: 50px;
@@ -24477,7 +24483,7 @@ async function showImageViewer(imageIds, initialIndex) {
     `;
   const downloadButton = document.createElement("button");
   downloadButton.innerHTML = '<i class="fa-solid fa-download"></i> \u4E0B\u8F7D\u56FE\u7247';
-  downloadButton.className = "st-chatu8-btn";
+  downloadButton.className = "zinao-chatu-btn";
   downloadButton.style.cssText = `
         background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
         padding: 10px 20px;
@@ -24486,7 +24492,7 @@ async function showImageViewer(imageIds, initialIndex) {
   buttonContainer.appendChild(downloadButton);
   const deleteButton = document.createElement("button");
   deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i> \u5220\u9664\u56FE\u7247';
-  deleteButton.className = "st-chatu8-btn";
+  deleteButton.className = "zinao-chatu-btn";
   deleteButton.style.cssText = `
         background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
         padding: 10px 20px;
@@ -24495,7 +24501,7 @@ async function showImageViewer(imageIds, initialIndex) {
   buttonContainer.appendChild(deleteButton);
   const deleteOthersButton = document.createElement("button");
   deleteOthersButton.innerHTML = '<i class="fa-solid fa-trash-can"></i> \u5220\u9664\u5176\u4ED6';
-  deleteOthersButton.className = "st-chatu8-btn";
+  deleteOthersButton.className = "zinao-chatu-btn";
   deleteOthersButton.style.cssText = `
         background: linear-gradient(135deg, #fd7e14 0%, #e65c00 100%);
         padding: 10px 20px;
@@ -24504,7 +24510,7 @@ async function showImageViewer(imageIds, initialIndex) {
   buttonContainer.appendChild(deleteOthersButton);
   const closeButton = document.createElement("button");
   closeButton.innerHTML = '<i class="fa-solid fa-xmark"></i> \u5173\u95ED';
-  closeButton.className = "st-chatu8-btn";
+  closeButton.className = "zinao-chatu-btn";
   closeButton.style.cssText = `
         padding: 10px 20px;
         font-size: 14px;
@@ -25937,7 +25943,7 @@ ${relatedCharacters.join("\n")}
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `st-chatu8-\u89D2\u8272\u542F\u7528\u5217\u8868-${presetId}.json`;
+  a.download = `zinao-chatu-\u89D2\u8272\u542F\u7528\u5217\u8868-${presetId}.json`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -26001,7 +26007,7 @@ ${Array.from(allOutfits).join("\n")}
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = "st-chatu8-\u89D2\u8272\u542F\u7528\u5217\u8868-\u5168\u90E8.json";
+  a.download = "zinao-chatu-\u89D2\u8272\u542F\u7528\u5217\u8868-\u5168\u90E8.json";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -26370,7 +26376,7 @@ ${relatedOutfits.join("\n")}
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `st-chatu8-\u901A\u7528\u670D\u88C5\u5217\u8868-${presetId}.json`;
+  a.download = `zinao-chatu-\u901A\u7528\u670D\u88C5\u5217\u8868-${presetId}.json`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -26412,7 +26418,7 @@ ${Array.from(allOutfits).join("\n")}
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = "st-chatu8-\u901A\u7528\u670D\u88C5\u5217\u8868-\u5168\u90E8.json";
+  a.download = "zinao-chatu-\u901A\u7528\u670D\u88C5\u5217\u8868-\u5168\u90E8.json";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -26774,7 +26780,7 @@ ${relatedCharacters.join("\n")}
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `st-chatu8-\u901A\u7528\u89D2\u8272\u5217\u8868-${presetId}.json`;
+  a.download = `zinao-chatu-\u901A\u7528\u89D2\u8272\u5217\u8868-${presetId}.json`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -26838,7 +26844,7 @@ ${Array.from(allOutfits).join("\n")}
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = "st-chatu8-\u901A\u7528\u89D2\u8272\u5217\u8868-\u5168\u90E8.json";
+  a.download = "zinao-chatu-\u901A\u7528\u89D2\u8272\u5217\u8868-\u5168\u90E8.json";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -27245,7 +27251,7 @@ var init_bananaCharacter = __esm({
     setupBananaImageUpload = (role) => {
       const container = document.getElementById(`banana_char_${role}_image_container`);
       const img = document.getElementById(`banana_char_${role}_image`);
-      const placeholder = container.querySelector(".st-chatu8-image-placeholder");
+      const placeholder = container.querySelector(".zinao-chatu-image-placeholder");
       const removeBtn = document.getElementById(`banana_char_${role}_image_remove`);
       const input = document.getElementById(`banana_char_${role}_image_input`);
       if (!container || !img || !placeholder || !removeBtn || !input) return;
@@ -27278,7 +27284,7 @@ var init_bananaCharacter = __esm({
       const img = document.getElementById(`banana_char_${role}_image`);
       const container = document.getElementById(`banana_char_${role}_image_container`);
       if (!img || !container) return;
-      const placeholder = container.querySelector(".st-chatu8-image-placeholder");
+      const placeholder = container.querySelector(".zinao-chatu-image-placeholder");
       const removeBtn = document.getElementById(`banana_char_${role}_image_remove`);
       if (imageData) {
         img.src = imageData;
@@ -27362,7 +27368,7 @@ function handleResultClick(inputEl, resultsEl, tag) {
 function initTagAutocomplete() {
   console.log("[Character] Initializing tag autocomplete...");
   document.addEventListener("click", (event) => {
-    if (!event.target.closest(".st-chatu8-field-col") && !event.target.closest(".ch-autocomplete-results")) {
+    if (!event.target.closest(".zinao-chatu-field-col") && !event.target.closest(".ch-autocomplete-results")) {
       $(".ch-autocomplete-results").hide();
     }
   });
@@ -27445,11 +27451,11 @@ function createSearchInput(select, config) {
   searchInput = document.createElement("input");
   searchInput.type = "text";
   searchInput.id = config.searchId;
-  searchInput.className = "st-chatu8-text-input st-chatu8-select-search";
+  searchInput.className = "zinao-chatu-text-input zinao-chatu-select-search";
   searchInput.placeholder = config.placeholder;
   const selectParent = select.parentElement;
   if (!selectParent) return searchInput;
-  if (selectParent.classList.contains("st-chatu8-profile-controls")) {
+  if (selectParent.classList.contains("zinao-chatu-profile-controls")) {
     const grandParent = selectParent.parentElement;
     if (grandParent) {
       grandParent.insertBefore(searchInput, selectParent);
@@ -27738,32 +27744,32 @@ function ensureCharacterSettings() {
   }
 }
 function setupSubNavigation(container) {
-  container.find(".st-chatu8-sub-nav-link").off("click").on("click", function(e) {
+  container.find(".zinao-chatu-sub-nav-link").off("click").on("click", function(e) {
     e.preventDefault();
     const subTabId = $(this).data("sub-tab");
-    container.find(".st-chatu8-sub-nav-link").removeClass("active");
+    container.find(".zinao-chatu-sub-nav-link").removeClass("active");
     $(this).addClass("active");
-    container.find(".st-chatu8-sub-tab-content").css("display", "none");
+    container.find(".zinao-chatu-sub-tab-content").css("display", "none");
     container.find(`#${subTabId}`).css("display", "block");
   });
-  const allSubNavLinks = container.find(".st-chatu8-sub-nav-link");
+  const allSubNavLinks = container.find(".zinao-chatu-sub-nav-link");
   const firstLink = allSubNavLinks.first();
   if (firstLink.length > 0) {
     allSubNavLinks.removeClass("active");
     firstLink.addClass("active");
     const firstSubTabId = firstLink.data("sub-tab");
-    container.find(".st-chatu8-sub-tab-content").css("display", "none");
+    container.find(".zinao-chatu-sub-tab-content").css("display", "none");
     container.find(`#${firstSubTabId}`).css("display", "block");
   }
 }
 function resetSubNavigation(container) {
-  const allSubNavLinks = container.find(".st-chatu8-sub-nav-link");
+  const allSubNavLinks = container.find(".zinao-chatu-sub-nav-link");
   const firstLink = allSubNavLinks.first();
   if (firstLink.length > 0) {
     allSubNavLinks.removeClass("active");
     firstLink.addClass("active");
     const firstSubTabId = firstLink.data("sub-tab");
-    container.find(".st-chatu8-sub-tab-content").css("display", "none");
+    container.find(".zinao-chatu-sub-tab-content").css("display", "none");
     container.find(`#${firstSubTabId}`).css("display", "block");
   }
 }
@@ -28143,7 +28149,7 @@ async function handleExtractedData(extracted, metadata = {}) {
       console.log(`ChatU8: \u670D\u88C5 "${outfitName}" \u5DF2\u5F52\u5C5E\u5230 ${matchCount} \u4E2A\u540C\u540D\u89D2\u8272`);
     }
   }
-  const characterTab = $("#st-chatu8-tab-character");
+  const characterTab = $("#zinao-chatu-tab-character");
   if (characterTab.length) {
     refreshCharacterSettings(characterTab);
   }
@@ -28241,9 +28247,9 @@ function showUserDemandPopup() {
     const availableHeight = Math.max(200, bottomBound - topBound);
     const overlay2 = document.createElement("div");
     overlay2.id = "user-demand-overlay";
-    overlay2.className = "st-chatu8-popup-overlay";
+    overlay2.className = "zinao-chatu-popup-overlay";
     const bubble = document.createElement("div");
-    bubble.className = "st-chatu8-popup-bubble";
+    bubble.className = "zinao-chatu-popup-bubble";
     if (isMobile3) {
       bubble.classList.add("mobile");
       bubble.style.top = `${topBound}px`;
@@ -28251,20 +28257,20 @@ function showUserDemandPopup() {
     }
     const title = document.createElement("div");
     title.textContent = "\u{1F3A8} \u8F93\u5165\u751F\u6210\u9700\u6C42";
-    title.className = "st-chatu8-popup-title";
+    title.className = "zinao-chatu-popup-title";
     const hint = document.createElement("div");
     hint.textContent = "\u8BF7\u63CF\u8FF0\u60A8\u5E0C\u671B\u751F\u6210\u7684\u89D2\u8272\u6216\u670D\u88C5\u7684\u5177\u4F53\u9700\u6C42";
-    hint.className = "st-chatu8-popup-hint";
+    hint.className = "zinao-chatu-popup-hint";
     const textarea = document.createElement("textarea");
     textarea.placeholder = "\u4F8B\u5982\uFF1A\u751F\u6210\u4E00\u4E2A\u7A7F\u7740\u53E4\u98CE\u6C49\u670D\u7684\u5C11\u5973\u89D2\u8272\uFF0C\u6E29\u67D4\u53EF\u7231...";
-    textarea.className = "st-chatu8-popup-textarea";
+    textarea.className = "zinao-chatu-popup-textarea";
     const imageUploadSection = document.createElement("div");
-    imageUploadSection.className = "st-chatu8-popup-upload-section";
+    imageUploadSection.className = "zinao-chatu-popup-upload-section";
     const uploadHeader = document.createElement("div");
-    uploadHeader.className = "st-chatu8-popup-upload-header";
+    uploadHeader.className = "zinao-chatu-popup-upload-header";
     const uploadLabel = document.createElement("span");
     uploadLabel.textContent = "\u{1F4CE} \u53C2\u8003\u56FE\u7247\uFF08\u53EF\u9009\uFF09";
-    uploadLabel.className = "st-chatu8-popup-upload-label";
+    uploadLabel.className = "zinao-chatu-popup-upload-label";
     const fileInput = document.createElement("input");
     fileInput.type = "file";
     fileInput.accept = "image/*";
@@ -28272,36 +28278,36 @@ function showUserDemandPopup() {
     const uploadBtn = document.createElement("button");
     uploadBtn.type = "button";
     uploadBtn.innerHTML = '<i class="fa-solid fa-plus"></i> \u6DFB\u52A0\u56FE\u7247';
-    uploadBtn.className = "st-chatu8-popup-upload-btn";
+    uploadBtn.className = "zinao-chatu-popup-upload-btn";
     uploadBtn.addEventListener("click", () => fileInput.click());
     uploadHeader.appendChild(uploadLabel);
     uploadHeader.appendChild(uploadBtn);
     const imagePreviewContainer = document.createElement("div");
-    imagePreviewContainer.className = "st-chatu8-popup-preview-container";
+    imagePreviewContainer.className = "zinao-chatu-popup-preview-container";
     const emptyHint = document.createElement("div");
     emptyHint.textContent = "\u70B9\u51FB\u4E0A\u65B9\u6309\u94AE\u6DFB\u52A0\u53C2\u8003\u56FE\u7247";
-    emptyHint.className = "st-chatu8-popup-empty-hint";
+    emptyHint.className = "zinao-chatu-popup-empty-hint";
     imagePreviewContainer.appendChild(emptyHint);
     function updateImagePreviews() {
       imagePreviewContainer.innerHTML = "";
       if (uploadedImages.length === 0) {
         const hint2 = document.createElement("div");
         hint2.textContent = "\u70B9\u51FB\u4E0A\u65B9\u6309\u94AE\u6DFB\u52A0\u53C2\u8003\u56FE\u7247";
-        hint2.className = "st-chatu8-popup-empty-hint";
+        hint2.className = "zinao-chatu-popup-empty-hint";
         imagePreviewContainer.appendChild(hint2);
         return;
       }
       uploadedImages.forEach((imgObj, index) => {
         const itemContainer = document.createElement("div");
-        itemContainer.className = "st-chatu8-popup-img-item";
+        itemContainer.className = "zinao-chatu-popup-img-item";
         const imgWrapper = document.createElement("div");
-        imgWrapper.className = "st-chatu8-popup-img-wrapper";
+        imgWrapper.className = "zinao-chatu-popup-img-wrapper";
         const img = document.createElement("img");
         img.src = imgObj.base64;
         const deleteBtn = document.createElement("button");
         deleteBtn.type = "button";
         deleteBtn.innerHTML = "\xD7";
-        deleteBtn.className = "st-chatu8-popup-img-delete";
+        deleteBtn.className = "zinao-chatu-popup-img-delete";
         deleteBtn.addEventListener("click", (e) => {
           e.stopPropagation();
           uploadedImages.splice(index, 1);
@@ -28313,7 +28319,7 @@ function showUserDemandPopup() {
         nameInput.type = "text";
         nameInput.placeholder = `\u56FE${index + 1}`;
         nameInput.value = imgObj.name || "";
-        nameInput.className = "st-chatu8-popup-img-name";
+        nameInput.className = "zinao-chatu-popup-img-name";
         nameInput.addEventListener("input", (e) => {
           uploadedImages[index].name = e.target.value;
         });
@@ -28323,7 +28329,7 @@ function showUserDemandPopup() {
       });
       const countLabel = document.createElement("div");
       countLabel.textContent = `\u5DF2\u6DFB\u52A0 ${uploadedImages.length} \u5F20\u56FE\u7247`;
-      countLabel.className = "st-chatu8-popup-img-count";
+      countLabel.className = "zinao-chatu-popup-img-count";
       imagePreviewContainer.appendChild(countLabel);
     }
     fileInput.addEventListener("change", async (e) => {
@@ -28359,13 +28365,13 @@ function showUserDemandPopup() {
     imageUploadSection.appendChild(fileInput);
     imageUploadSection.appendChild(imagePreviewContainer);
     const buttonContainer = document.createElement("div");
-    buttonContainer.className = "st-chatu8-popup-buttons";
+    buttonContainer.className = "zinao-chatu-popup-buttons";
     const cancelBtn = document.createElement("button");
     cancelBtn.textContent = "\u53D6\u6D88";
-    cancelBtn.className = "st-chatu8-popup-btn-cancel";
+    cancelBtn.className = "zinao-chatu-popup-btn-cancel";
     const confirmBtn = document.createElement("button");
     confirmBtn.textContent = "\u786E\u5B9A\u751F\u6210";
-    confirmBtn.className = "st-chatu8-popup-btn-confirm";
+    confirmBtn.className = "zinao-chatu-popup-btn-confirm";
     const closePopup = (result) => {
       overlay2.classList.add("closing");
       setTimeout(() => {
@@ -29267,9 +29273,9 @@ function showUserDemandPopup2() {
     }
     const overlay2 = document.createElement("div");
     overlay2.id = "user-demand-overlay";
-    overlay2.className = "st-chatu8-popup-overlay";
+    overlay2.className = "zinao-chatu-popup-overlay";
     const bubble = document.createElement("div");
-    bubble.className = "st-chatu8-popup-bubble";
+    bubble.className = "zinao-chatu-popup-bubble";
     if (isMobile3) {
       bubble.classList.add("mobile");
       bubble.style.top = `${topOffset}px`;
@@ -29277,20 +29283,20 @@ function showUserDemandPopup2() {
     }
     const title = document.createElement("div");
     title.textContent = "\u{1F5BC}\uFE0F \u8F93\u5165\u751F\u56FE\u9700\u6C42";
-    title.className = "st-chatu8-popup-title";
+    title.className = "zinao-chatu-popup-title";
     const hint = document.createElement("div");
     hint.textContent = "\u8BF7\u63CF\u8FF0\u60A8\u5E0C\u671B\u751F\u6210\u7684\u56FE\u7247\u7684\u5177\u4F53\u9700\u6C42\uFF08\u53EF\u9009\uFF09";
-    hint.className = "st-chatu8-popup-hint";
+    hint.className = "zinao-chatu-popup-hint";
     const textarea = document.createElement("textarea");
     textarea.placeholder = "\u4F8B\u5982\uFF1A\u91CD\u70B9\u63CF\u7ED8\u573A\u666F\u6C1B\u56F4\uFF0C\u5149\u7EBF\u67D4\u548C...";
-    textarea.className = "st-chatu8-popup-textarea";
+    textarea.className = "zinao-chatu-popup-textarea";
     const imageUploadSection = document.createElement("div");
-    imageUploadSection.className = "st-chatu8-popup-upload-section";
+    imageUploadSection.className = "zinao-chatu-popup-upload-section";
     const uploadHeader = document.createElement("div");
-    uploadHeader.className = "st-chatu8-popup-upload-header";
+    uploadHeader.className = "zinao-chatu-popup-upload-header";
     const uploadLabel = document.createElement("span");
     uploadLabel.textContent = "\u{1F4CE} \u53C2\u8003\u56FE\u7247\uFF08\u53EF\u9009\uFF09";
-    uploadLabel.className = "st-chatu8-popup-upload-label";
+    uploadLabel.className = "zinao-chatu-popup-upload-label";
     const fileInput = document.createElement("input");
     fileInput.type = "file";
     fileInput.accept = "image/*";
@@ -29298,36 +29304,36 @@ function showUserDemandPopup2() {
     const uploadBtn = document.createElement("button");
     uploadBtn.type = "button";
     uploadBtn.innerHTML = '<i class="fa-solid fa-plus"></i> \u6DFB\u52A0\u56FE\u7247';
-    uploadBtn.className = "st-chatu8-popup-upload-btn";
+    uploadBtn.className = "zinao-chatu-popup-upload-btn";
     uploadBtn.addEventListener("click", () => fileInput.click());
     uploadHeader.appendChild(uploadLabel);
     uploadHeader.appendChild(uploadBtn);
     const imagePreviewContainer = document.createElement("div");
-    imagePreviewContainer.className = "st-chatu8-popup-preview-container";
+    imagePreviewContainer.className = "zinao-chatu-popup-preview-container";
     const emptyHint = document.createElement("div");
     emptyHint.textContent = "\u70B9\u51FB\u4E0A\u65B9\u6309\u94AE\u6DFB\u52A0\u53C2\u8003\u56FE\u7247";
-    emptyHint.className = "st-chatu8-popup-empty-hint";
+    emptyHint.className = "zinao-chatu-popup-empty-hint";
     imagePreviewContainer.appendChild(emptyHint);
     function updateImagePreviews() {
       imagePreviewContainer.innerHTML = "";
       if (uploadedImages.length === 0) {
         const hint2 = document.createElement("div");
         hint2.textContent = "\u70B9\u51FB\u4E0A\u65B9\u6309\u94AE\u6DFB\u52A0\u53C2\u8003\u56FE\u7247";
-        hint2.className = "st-chatu8-popup-empty-hint";
+        hint2.className = "zinao-chatu-popup-empty-hint";
         imagePreviewContainer.appendChild(hint2);
         return;
       }
       uploadedImages.forEach((imgObj, index) => {
         const itemContainer = document.createElement("div");
-        itemContainer.className = "st-chatu8-popup-img-item";
+        itemContainer.className = "zinao-chatu-popup-img-item";
         const imgWrapper = document.createElement("div");
-        imgWrapper.className = "st-chatu8-popup-img-wrapper";
+        imgWrapper.className = "zinao-chatu-popup-img-wrapper";
         const img = document.createElement("img");
         img.src = imgObj.base64;
         const deleteBtn = document.createElement("button");
         deleteBtn.type = "button";
         deleteBtn.innerHTML = "\xD7";
-        deleteBtn.className = "st-chatu8-popup-img-delete";
+        deleteBtn.className = "zinao-chatu-popup-img-delete";
         deleteBtn.addEventListener("click", (e) => {
           e.stopPropagation();
           uploadedImages.splice(index, 1);
@@ -29339,7 +29345,7 @@ function showUserDemandPopup2() {
         nameInput.type = "text";
         nameInput.placeholder = `\u56FE${index + 1}`;
         nameInput.value = imgObj.name || "";
-        nameInput.className = "st-chatu8-popup-img-name";
+        nameInput.className = "zinao-chatu-popup-img-name";
         nameInput.addEventListener("input", (e) => {
           uploadedImages[index].name = e.target.value;
         });
@@ -29349,7 +29355,7 @@ function showUserDemandPopup2() {
       });
       const countLabel = document.createElement("div");
       countLabel.textContent = `\u5DF2\u6DFB\u52A0 ${uploadedImages.length} \u5F20\u56FE\u7247`;
-      countLabel.className = "st-chatu8-popup-img-count";
+      countLabel.className = "zinao-chatu-popup-img-count";
       imagePreviewContainer.appendChild(countLabel);
     }
     fileInput.addEventListener("change", async (e) => {
@@ -29385,13 +29391,13 @@ function showUserDemandPopup2() {
     imageUploadSection.appendChild(fileInput);
     imageUploadSection.appendChild(imagePreviewContainer);
     const buttonContainer = document.createElement("div");
-    buttonContainer.className = "st-chatu8-popup-buttons";
+    buttonContainer.className = "zinao-chatu-popup-buttons";
     const cancelBtn = document.createElement("button");
     cancelBtn.textContent = "\u53D6\u6D88";
-    cancelBtn.className = "st-chatu8-popup-btn-cancel";
+    cancelBtn.className = "zinao-chatu-popup-btn-cancel";
     const confirmBtn = document.createElement("button");
     confirmBtn.textContent = "\u786E\u5B9A\u751F\u6210";
-    confirmBtn.className = "st-chatu8-popup-btn-confirm";
+    confirmBtn.className = "zinao-chatu-popup-btn-confirm";
     const closePopup = (result) => {
       overlay2.classList.add("closing");
       setTimeout(() => {
@@ -29719,7 +29725,7 @@ async function handlePromptRequest(el, gestureId) {
       const completeHandler = (data) => {
         if (data.taskId === autoClickTaskId) {
           taskQueue2.completeTask(autoClickTaskId, data.success !== false);
-          eventSource41.removeListener("st_chatu8_auto_click_complete", completeHandler);
+          eventSource41.removeListener("zinao_chatu_auto_click_complete", completeHandler);
           window.autoClickTaskId = null;
           if (extension_settings34[extensionName]?.zidongdianji2 !== "true") {
             setTimeout(() => {
@@ -29728,13 +29734,13 @@ async function handlePromptRequest(el, gestureId) {
           }
         }
       };
-      eventSource41.on("st_chatu8_auto_click_complete", completeHandler);
+      eventSource41.on("zinao_chatu_auto_click_complete", completeHandler);
       setTimeout(() => {
         if (!taskQueue2.isTaskInQueue(autoClickTaskId)) {
           console.log("[promptReq] \u81EA\u52A8\u70B9\u51FB\u4EFB\u52A1\u5DF2\u88AB\u53D6\u6D88");
           window.zidongdianji = false;
           window.autoClickTaskId = null;
-          eventSource41.removeListener("st_chatu8_auto_click_complete", completeHandler);
+          eventSource41.removeListener("zinao_chatu_auto_click_complete", completeHandler);
           return;
         }
         Promise.resolve().then(() => (init_iframe(), iframe_exports)).then(({ processImagePlaceholdersForElement: processImagePlaceholdersForElement2 }) => {
@@ -29742,7 +29748,7 @@ async function handlePromptRequest(el, gestureId) {
             console.log("[promptReq] \u81EA\u52A8\u70B9\u51FB\u4EFB\u52A1\u5DF2\u88AB\u53D6\u6D88");
             window.zidongdianji = false;
             window.autoClickTaskId = null;
-            eventSource41.removeListener("st_chatu8_auto_click_complete", completeHandler);
+            eventSource41.removeListener("zinao_chatu_auto_click_complete", completeHandler);
             return;
           }
           processImagePlaceholdersForElement2(el);
@@ -29751,7 +29757,7 @@ async function handlePromptRequest(el, gestureId) {
           console.error("[promptReq] \u52A0\u8F7D iframe \u6A21\u5757\u5931\u8D25:", err);
           taskQueue2.completeTask(autoClickTaskId, false);
           window.autoClickTaskId = null;
-          eventSource41.removeListener("st_chatu8_auto_click_complete", completeHandler);
+          eventSource41.removeListener("zinao_chatu_auto_click_complete", completeHandler);
         });
       }, 100);
     }
@@ -29814,9 +29820,9 @@ function showTagModifyDemandPopup() {
     const availableHeight = bottomBound - topBound;
     const overlay2 = document.createElement("div");
     overlay2.id = "tag-modify-overlay";
-    overlay2.className = "st-chatu8-popup-overlay";
+    overlay2.className = "zinao-chatu-popup-overlay";
     const bubble = document.createElement("div");
-    bubble.className = "st-chatu8-popup-bubble";
+    bubble.className = "zinao-chatu-popup-bubble";
     if (isMobile3) {
       bubble.classList.add("mobile");
       bubble.style.top = `${topBound}px`;
@@ -29824,20 +29830,20 @@ function showTagModifyDemandPopup() {
     }
     const title = document.createElement("div");
     title.textContent = "\u{1F3F7}\uFE0F \u4FEE\u6539 Tag";
-    title.className = "st-chatu8-popup-title";
+    title.className = "zinao-chatu-popup-title";
     const hint = document.createElement("div");
     hint.textContent = "\u8BF7\u63CF\u8FF0\u60A8\u5E0C\u671B\u5982\u4F55\u4FEE\u6539\u5F53\u524D\u7684\u56FE\u7247\u6807\u7B7E";
-    hint.className = "st-chatu8-popup-hint";
+    hint.className = "zinao-chatu-popup-hint";
     const textarea = document.createElement("textarea");
     textarea.placeholder = "\u4F8B\u5982\uFF1A\u628A\u80CC\u666F\u6539\u6210\u591C\u665A\u3001\u7ED9\u4EBA\u7269\u6DFB\u52A0\u7FC5\u8180\u3001\u589E\u52A0\u66F4\u591A\u7EC6\u8282...";
-    textarea.className = "st-chatu8-popup-textarea";
+    textarea.className = "zinao-chatu-popup-textarea";
     const imageUploadSection = document.createElement("div");
-    imageUploadSection.className = "st-chatu8-popup-upload-section";
+    imageUploadSection.className = "zinao-chatu-popup-upload-section";
     const uploadHeader = document.createElement("div");
-    uploadHeader.className = "st-chatu8-popup-upload-header";
+    uploadHeader.className = "zinao-chatu-popup-upload-header";
     const uploadLabel = document.createElement("span");
     uploadLabel.textContent = "\u{1F4CE} \u53C2\u8003\u56FE\u7247\uFF08\u53EF\u9009\uFF09";
-    uploadLabel.className = "st-chatu8-popup-upload-label";
+    uploadLabel.className = "zinao-chatu-popup-upload-label";
     const fileInput = document.createElement("input");
     fileInput.type = "file";
     fileInput.accept = "image/*";
@@ -29845,36 +29851,36 @@ function showTagModifyDemandPopup() {
     const uploadBtn = document.createElement("button");
     uploadBtn.type = "button";
     uploadBtn.innerHTML = '<i class="fa-solid fa-plus"></i> \u6DFB\u52A0\u56FE\u7247';
-    uploadBtn.className = "st-chatu8-popup-upload-btn";
+    uploadBtn.className = "zinao-chatu-popup-upload-btn";
     uploadBtn.addEventListener("click", () => fileInput.click());
     uploadHeader.appendChild(uploadLabel);
     uploadHeader.appendChild(uploadBtn);
     const imagePreviewContainer = document.createElement("div");
-    imagePreviewContainer.className = "st-chatu8-popup-preview-container";
+    imagePreviewContainer.className = "zinao-chatu-popup-preview-container";
     const emptyHint = document.createElement("div");
     emptyHint.textContent = "\u70B9\u51FB\u4E0A\u65B9\u6309\u94AE\u6DFB\u52A0\u53C2\u8003\u56FE\u7247";
-    emptyHint.className = "st-chatu8-popup-empty-hint";
+    emptyHint.className = "zinao-chatu-popup-empty-hint";
     imagePreviewContainer.appendChild(emptyHint);
     function updateImagePreviews() {
       imagePreviewContainer.innerHTML = "";
       if (uploadedImages.length === 0) {
         const hint2 = document.createElement("div");
         hint2.textContent = "\u70B9\u51FB\u4E0A\u65B9\u6309\u94AE\u6DFB\u52A0\u53C2\u8003\u56FE\u7247";
-        hint2.className = "st-chatu8-popup-empty-hint";
+        hint2.className = "zinao-chatu-popup-empty-hint";
         imagePreviewContainer.appendChild(hint2);
         return;
       }
       uploadedImages.forEach((imgObj, index) => {
         const itemContainer = document.createElement("div");
-        itemContainer.className = "st-chatu8-popup-img-item";
+        itemContainer.className = "zinao-chatu-popup-img-item";
         const imgWrapper = document.createElement("div");
-        imgWrapper.className = "st-chatu8-popup-img-wrapper";
+        imgWrapper.className = "zinao-chatu-popup-img-wrapper";
         const img = document.createElement("img");
         img.src = imgObj.base64;
         const deleteBtn = document.createElement("button");
         deleteBtn.type = "button";
         deleteBtn.innerHTML = "\xD7";
-        deleteBtn.className = "st-chatu8-popup-img-delete";
+        deleteBtn.className = "zinao-chatu-popup-img-delete";
         deleteBtn.addEventListener("click", (e) => {
           e.stopPropagation();
           uploadedImages.splice(index, 1);
@@ -29886,7 +29892,7 @@ function showTagModifyDemandPopup() {
         nameInput.type = "text";
         nameInput.placeholder = `\u56FE${index + 1}`;
         nameInput.value = imgObj.name || "";
-        nameInput.className = "st-chatu8-popup-img-name";
+        nameInput.className = "zinao-chatu-popup-img-name";
         nameInput.addEventListener("input", (e) => {
           uploadedImages[index].name = e.target.value;
         });
@@ -29896,7 +29902,7 @@ function showTagModifyDemandPopup() {
       });
       const countLabel = document.createElement("div");
       countLabel.textContent = `\u5DF2\u6DFB\u52A0 ${uploadedImages.length} \u5F20\u56FE\u7247`;
-      countLabel.className = "st-chatu8-popup-img-count";
+      countLabel.className = "zinao-chatu-popup-img-count";
       imagePreviewContainer.appendChild(countLabel);
     }
     fileInput.addEventListener("change", async (e) => {
@@ -29924,13 +29930,13 @@ function showTagModifyDemandPopup() {
     imageUploadSection.appendChild(fileInput);
     imageUploadSection.appendChild(imagePreviewContainer);
     const buttonContainer = document.createElement("div");
-    buttonContainer.className = "st-chatu8-popup-buttons";
+    buttonContainer.className = "zinao-chatu-popup-buttons";
     const cancelBtn = document.createElement("button");
     cancelBtn.textContent = "\u53D6\u6D88";
-    cancelBtn.className = "st-chatu8-popup-btn-cancel";
+    cancelBtn.className = "zinao-chatu-popup-btn-cancel";
     const confirmBtn = document.createElement("button");
     confirmBtn.textContent = "\u786E\u5B9A\u4FEE\u6539";
-    confirmBtn.className = "st-chatu8-popup-btn-confirm";
+    confirmBtn.className = "zinao-chatu-popup-btn-confirm";
     const closePopup = (result) => {
       overlay2.classList.add("closing");
       setTimeout(() => {
@@ -30282,7 +30288,7 @@ function isMobileDevice2() {
 }
 function createToolbarContainer(isMobile3, toolbar, denoiseGroup) {
   const container = document.createElement("div");
-  container.className = "st-chatu8-inpaint-toolbar-container";
+  container.className = "zinao-chatu-inpaint-toolbar-container";
   if (isMobile3) {
     container.classList.add("mobile");
   } else {
@@ -30301,100 +30307,100 @@ async function showComfyUIInpaintDialog(img, button) {
   });
   const editorContainer = doc.createElement("div");
   editorContainer.id = "inpaint-editor-container";
-  editorContainer.className = "st-chatu8-inpaint-editor-container";
+  editorContainer.className = "zinao-chatu-inpaint-editor-container";
   dialog.appendChild(editorContainer);
   const savedPositive = extension_settings37[extensionName]?.inpaint_positive_prompt || "";
   const savedNegative = extension_settings37[extensionName]?.inpaint_negative_prompt || "";
   const savedDenoise = extension_settings37[extensionName]?.inpaint_denoise || "0.75";
   const savedFeatherRadius = extension_settings37[extensionName]?.inpaint_feather_radius || 0;
   const toolbar = doc.createElement("div");
-  toolbar.className = "st-chatu8-inpaint-toolbar";
+  toolbar.className = "zinao-chatu-inpaint-toolbar";
   toolbar.innerHTML = `
-        <button id="tool-draw" class="st-chatu8-tool-btn active" title="\u753B\u7B14">\u{1F58C}\uFE0F \u753B\u7B14</button>
-        <button id="tool-erase" class="st-chatu8-tool-btn" title="\u6A61\u76AE">\u{1F9FD} \u6A61\u76AE</button>
-        <button id="tool-undo" class="st-chatu8-tool-btn" title="\u64A4\u9500">\u293A \u64A4\u9500</button>
-        <button id="tool-redo" class="st-chatu8-tool-btn" title="\u91CD\u505A">\u293B \u91CD\u505A</button>
-        <button id="tool-clear" class="st-chatu8-tool-btn" title="\u6E05\u7A7A">\u{1F5D1}\uFE0F \u6E05\u7A7A</button>
-        <label class="st-chatu8-inpaint-brush-label">
-            \u753B\u7B14\u5927\u5C0F: <input type="range" id="brush-size" min="5" max="100" value="30" class="st-chatu8-inpaint-brush-slider">
+        <button id="tool-draw" class="zinao-chatu-tool-btn active" title="\u753B\u7B14">\u{1F58C}\uFE0F \u753B\u7B14</button>
+        <button id="tool-erase" class="zinao-chatu-tool-btn" title="\u6A61\u76AE">\u{1F9FD} \u6A61\u76AE</button>
+        <button id="tool-undo" class="zinao-chatu-tool-btn" title="\u64A4\u9500">\u293A \u64A4\u9500</button>
+        <button id="tool-redo" class="zinao-chatu-tool-btn" title="\u91CD\u505A">\u293B \u91CD\u505A</button>
+        <button id="tool-clear" class="zinao-chatu-tool-btn" title="\u6E05\u7A7A">\u{1F5D1}\uFE0F \u6E05\u7A7A</button>
+        <label class="zinao-chatu-inpaint-brush-label">
+            \u753B\u7B14\u5927\u5C0F: <input type="range" id="brush-size" min="5" max="100" value="30" class="zinao-chatu-inpaint-brush-slider">
             <span id="brush-size-value">30</span>px
         </label>
-        <label class="st-chatu8-inpaint-brush-label">
-            \u7FBD\u5316\u5F3A\u5EA6: <input type="range" id="feather-radius" min="0" max="50" value="${savedFeatherRadius}" class="st-chatu8-inpaint-brush-slider">
+        <label class="zinao-chatu-inpaint-brush-label">
+            \u7FBD\u5316\u5F3A\u5EA6: <input type="range" id="feather-radius" min="0" max="50" value="${savedFeatherRadius}" class="zinao-chatu-inpaint-brush-slider">
             <span id="feather-radius-value">${savedFeatherRadius}</span>px
         </label>
     `;
   const style = doc.createElement("style");
   style.textContent = `
         /* Toolbar container base styles */
-        .st-chatu8-inpaint-toolbar-container {
+        .zinao-chatu-inpaint-toolbar-container {
             display: flex;
             flex-direction: column;
             gap: 10px;
             padding: 10px;
-            background-color: var(--st-chatu8-bg-secondary, #2a2a4a);
+            background-color: var(--zinao-chatu-bg-secondary, #2a2a4a);
             border-radius: 8px;
             margin-bottom: 15px;
         }
         
         /* Mobile-specific styles - no separate scrollbar */
-        .st-chatu8-inpaint-toolbar-container.mobile {
+        .zinao-chatu-inpaint-toolbar-container.mobile {
             overflow: visible;
             /* Let the dialog handle scrolling */
         }
         
         /* Desktop-specific styles */
-        .st-chatu8-inpaint-toolbar-container.desktop {
+        .zinao-chatu-inpaint-toolbar-container.desktop {
             overflow: visible;
             max-height: none;
         }
         
         /* Ensure toolbar items wrap properly */
-        .st-chatu8-inpaint-toolbar {
+        .zinao-chatu-inpaint-toolbar {
             flex-wrap: wrap;
         }
         
         /* Toolbar styles */
-        .st-chatu8-inpaint-toolbar {
+        .zinao-chatu-inpaint-toolbar {
             display: flex;
             gap: 10px;
             align-items: center;
             flex-wrap: wrap;
         }
         
-        .st-chatu8-inpaint-brush-label {
+        .zinao-chatu-inpaint-brush-label {
             display: flex;
             align-items: center;
             gap: 8px;
         }
         
-        .st-chatu8-inpaint-brush-slider {
+        .zinao-chatu-inpaint-brush-slider {
             width: 100px;
         }
         
-        .st-chatu8-tool-btn {
+        .zinao-chatu-tool-btn {
             padding: 8px 12px;
-            border: 1px solid var(--st-chatu8-border-color, #444);
+            border: 1px solid var(--zinao-chatu-border-color, #444);
             border-radius: 6px;
-            background: var(--st-chatu8-bg-secondary, #2a2a4a);
-            color: var(--st-chatu8-text-primary, #fff);
+            background: var(--zinao-chatu-bg-secondary, #2a2a4a);
+            color: var(--zinao-chatu-text-primary, #fff);
             cursor: pointer;
             transition: all 0.2s;
         }
-        .st-chatu8-tool-btn:hover {
-            background: var(--st-chatu8-accent-secondary, #3a3a5a);
+        .zinao-chatu-tool-btn:hover {
+            background: var(--zinao-chatu-accent-secondary, #3a3a5a);
         }
-        .st-chatu8-tool-btn.active {
-            background: var(--st-chatu8-accent-primary, #4a4a8a);
-            border-color: var(--st-chatu8-accent-primary, #6a6aaa);
+        .zinao-chatu-tool-btn.active {
+            background: var(--zinao-chatu-accent-primary, #4a4a8a);
+            border-color: var(--zinao-chatu-accent-primary, #6a6aaa);
         }
         
         /* Autocomplete styles for inpaint dialog */
-        .st-chatu8-edit-backdrop .ch-autocomplete-results {
+        .zinao-chatu-edit-backdrop .ch-autocomplete-results {
             display: none;
             position: absolute;
-            background-color: var(--st-chatu8-dropdown-list-bg, #2a2a4a);
-            border: 1px solid var(--st-chatu8-border-color, #444);
+            background-color: var(--zinao-chatu-dropdown-list-bg, #2a2a4a);
+            border: 1px solid var(--zinao-chatu-border-color, #444);
             border-radius: 6px;
             max-height: 150px;
             overflow-y: auto;
@@ -30402,59 +30408,59 @@ async function showComfyUIInpaintDialog(img, button) {
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             max-width: 100%;
         }
-        .st-chatu8-edit-backdrop .ch-autocomplete-item {
+        .zinao-chatu-edit-backdrop .ch-autocomplete-item {
             padding: 8px 12px;
             cursor: pointer;
-            color: var(--st-chatu8-dropdown-text, #fff);
+            color: var(--zinao-chatu-dropdown-text, #fff);
             font-size: 0.9em;
         }
-        .st-chatu8-edit-backdrop .ch-autocomplete-item:hover {
-            background-color: var(--st-chatu8-accent-secondary, #3a3a5a);
-            color: var(--st-chatu8-text-highlight, #fff);
+        .zinao-chatu-edit-backdrop .ch-autocomplete-item:hover {
+            background-color: var(--zinao-chatu-accent-secondary, #3a3a5a);
+            color: var(--zinao-chatu-text-highlight, #fff);
         }
         
         /* Prompt section styles */
-        .st-chatu8-inpaint-prompt-section {
+        .zinao-chatu-inpaint-prompt-section {
             display: flex;
             flex-direction: column;
             gap: 10px;
             position: relative;
         }
         
-        .st-chatu8-inpaint-prompt-group {
+        .zinao-chatu-inpaint-prompt-group {
             display: flex;
             flex-direction: column;
             gap: 5px;
             position: relative;
         }
         
-        .st-chatu8-inpaint-denoise-group {
+        .zinao-chatu-inpaint-denoise-group {
             display: flex;
             align-items: center;
             gap: 10px;
         }
         
-        .st-chatu8-inpaint-denoise-label {
+        .zinao-chatu-inpaint-denoise-label {
             flex-shrink: 0;
         }
         
-        .st-chatu8-inpaint-denoise-slider {
+        .zinao-chatu-inpaint-denoise-slider {
             flex: 1;
             min-width: 100px;
         }
         
-        .st-chatu8-inpaint-denoise-value {
+        .zinao-chatu-inpaint-denoise-value {
             min-width: 40px;
             text-align: right;
         }
     `;
   dialog.appendChild(style);
   const denoiseGroupHTML = `
-        <div class="st-chatu8-inpaint-denoise-group">
-            <label class="st-chatu8-inpaint-denoise-label">\u91CD\u7ED8\u5E45\u5EA6\uFF1A</label>
+        <div class="zinao-chatu-inpaint-denoise-group">
+            <label class="zinao-chatu-inpaint-denoise-label">\u91CD\u7ED8\u5E45\u5EA6\uFF1A</label>
             <input type="range" id="inpaint-denoise" min="0" max="1" step="0.05" value="${savedDenoise}" 
-                class="st-chatu8-inpaint-denoise-slider">
-            <span id="denoise-value" class="st-chatu8-inpaint-denoise-value">${savedDenoise}</span>
+                class="zinao-chatu-inpaint-denoise-slider">
+            <span id="denoise-value" class="zinao-chatu-inpaint-denoise-value">${savedDenoise}</span>
         </div>
     `;
   const denoiseGroup = doc.createElement("div");
@@ -30462,18 +30468,18 @@ async function showComfyUIInpaintDialog(img, button) {
   const toolbarContainer = createToolbarContainer(isMobile3, toolbar, denoiseGroup);
   dialog.appendChild(toolbarContainer);
   const promptSection = doc.createElement("div");
-  promptSection.className = "st-chatu8-inpaint-prompt-section";
+  promptSection.className = "zinao-chatu-inpaint-prompt-section";
   promptSection.innerHTML = `
-        <div class="st-chatu8-inpaint-prompt-group">
+        <div class="zinao-chatu-inpaint-prompt-group">
             <label>\u6B63\u9762\u63D0\u793A\u8BCD\uFF08\u53EF\u9009\uFF09\uFF1A</label>
             <textarea id="inpaint-positive-prompt" rows="2" placeholder="\u63CF\u8FF0\u91CD\u7ED8\u533A\u57DF\u60F3\u8981\u7684\u5185\u5BB9..."
-                class="st-chatu8-edit-input">${savedPositive}</textarea>
+                class="zinao-chatu-edit-input">${savedPositive}</textarea>
             <div class="ch-autocomplete-results" id="positive-autocomplete"></div>
         </div>
-        <div class="st-chatu8-inpaint-prompt-group">
+        <div class="zinao-chatu-inpaint-prompt-group">
             <label>\u8D1F\u9762\u63D0\u793A\u8BCD\uFF08\u53EF\u9009\uFF09\uFF1A</label>
             <textarea id="inpaint-negative-prompt" rows="2" placeholder="\u63CF\u8FF0\u4E0D\u60F3\u51FA\u73B0\u7684\u5185\u5BB9..."
-                class="st-chatu8-edit-input">${savedNegative}</textarea>
+                class="zinao-chatu-edit-input">${savedNegative}</textarea>
             <div class="ch-autocomplete-results" id="negative-autocomplete"></div>
         </div>
     `;
@@ -30536,7 +30542,7 @@ async function showComfyUIInpaintDialog(img, button) {
       onClick: closeDialog
     }
   ]);
-  buttonContainer.querySelector(".st-chatu8-edit-button.send").id = "inpaint-submit";
+  buttonContainer.querySelector(".zinao-chatu-edit-button.send").id = "inpaint-submit";
   dialog.appendChild(buttonContainer);
   backdrop.appendChild(dialog);
   doc.body.appendChild(backdrop);
@@ -31085,90 +31091,90 @@ async function showNovelAIInpaintDialog(img, button) {
   const style = document.createElement("style");
   style.textContent = `
         /* Toolbar container base styles */
-        .st-chatu8-inpaint-toolbar-container {
+        .zinao-chatu-inpaint-toolbar-container {
             display: flex;
             flex-direction: column;
             gap: 10px;
             padding: 10px;
-            background-color: var(--st-chatu8-bg-secondary, #2a2a4a);
+            background-color: var(--zinao-chatu-bg-secondary, #2a2a4a);
             border-radius: 8px;
             margin-bottom: 15px;
         }
         
         /* Mobile-specific styles - no separate scrollbar */
-        .st-chatu8-inpaint-toolbar-container.mobile {
+        .zinao-chatu-inpaint-toolbar-container.mobile {
             overflow: visible;
             /* Let the dialog handle scrolling */
         }
         
         /* Desktop-specific styles */
-        .st-chatu8-inpaint-toolbar-container.desktop {
+        .zinao-chatu-inpaint-toolbar-container.desktop {
             overflow: visible;
             max-height: none;
         }
         
         /* Toolbar styles */
-        .st-chatu8-inpaint-toolbar {
+        .zinao-chatu-inpaint-toolbar {
             display: flex;
             gap: 10px;
             align-items: center;
             flex-wrap: wrap;
         }
         
-        .st-chatu8-inpaint-brush-label {
+        .zinao-chatu-inpaint-brush-label {
             display: flex;
             align-items: center;
             gap: 8px;
         }
         
-        .st-chatu8-inpaint-brush-slider {
+        .zinao-chatu-inpaint-brush-slider {
             width: 100px;
         }
         
-        .st-chatu8-tool-btn {
+        .zinao-chatu-tool-btn {
             padding: 8px 12px;
-            border: 1px solid var(--st-chatu8-border-color, #444);
+            border: 1px solid var(--zinao-chatu-border-color, #444);
             border-radius: 6px;
-            background: var(--st-chatu8-bg-secondary, #2a2a4a);
-            color: var(--st-chatu8-text-primary, #fff);
+            background: var(--zinao-chatu-bg-secondary, #2a2a4a);
+            color: var(--zinao-chatu-text-primary, #fff);
             cursor: pointer;
             transition: all 0.2s;
         }
-        .st-chatu8-tool-btn:hover {
-            background: var(--st-chatu8-accent-secondary, #3a3a5a);
+        .zinao-chatu-tool-btn:hover {
+            background: var(--zinao-chatu-accent-secondary, #3a3a5a);
         }
-        .st-chatu8-tool-btn.active {
-            background: var(--st-chatu8-accent-primary, #4a4a8a);
-            border-color: var(--st-chatu8-accent-primary, #6a6aaa);
+        .zinao-chatu-tool-btn.active {
+            background: var(--zinao-chatu-accent-primary, #4a4a8a);
+            border-color: var(--zinao-chatu-accent-primary, #6a6aaa);
         }
         
         /* Denoise/Strength slider styles (matching ComfyUI) */
-        .st-chatu8-inpaint-denoise-group {
+        .zinao-chatu-inpaint-denoise-group {
             display: flex;
             align-items: center;
             gap: 10px;
         }
         
-        .st-chatu8-inpaint-denoise-label {
+        .zinao-chatu-inpaint-denoise-label {
             flex-shrink: 0;
         }
         
-        .st-chatu8-inpaint-denoise-slider {
+        .zinao-chatu-inpaint-denoise-slider {
             flex: 1;
             min-width: 100px;
         }
         
-        .st-chatu8-inpaint-denoise-value {
+        .zinao-chatu-inpaint-denoise-value {
             min-width: 40px;
             text-align: right;
         }
         
         /* Autocomplete styles for inpaint dialog */
-        .st-chatu8-edit-backdrop .ch-autocomplete-results {
+        .zinao-chatu-edit-backdrop .ch-autocomplete-results {
             display: none;
             position: absolute;
-            background-color: var(--st-chatu8-dropdown-list-bg, #2a2a4a);
-            border: 1px solid var(--st-chatu8-border-color, #444);
+            background-color: var(--zinao-chatu-dropdown-list-bg, #2a2a4a);
+            border: 1px solid var(--zinao-chatu-border-color, #444);
             border-radius: 6px;
             max-height: 150px;
             overflow-y: auto;
@@ -31176,26 +31182,26 @@ async function showNovelAIInpaintDialog(img, button) {
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             max-width: 100%;
         }
-        .st-chatu8-edit-backdrop .ch-autocomplete-item {
+        .zinao-chatu-edit-backdrop .ch-autocomplete-item {
             padding: 8px 12px;
             cursor: pointer;
-            color: var(--st-chatu8-dropdown-text, #fff);
+            color: var(--zinao-chatu-dropdown-text, #fff);
             font-size: 0.9em;
         }
-        .st-chatu8-edit-backdrop .ch-autocomplete-item:hover {
-            background-color: var(--st-chatu8-accent-secondary, #3a3a5a);
-            color: var(--st-chatu8-text-highlight, #fff);
+        .zinao-chatu-edit-backdrop .ch-autocomplete-item:hover {
+            background-color: var(--zinao-chatu-accent-secondary, #3a3a5a);
+            color: var(--zinao-chatu-text-highlight, #fff);
         }
         
         /* Prompt section styles */
-        .st-chatu8-inpaint-prompt-section {
+        .zinao-chatu-inpaint-prompt-section {
             display: flex;
             flex-direction: column;
             gap: 10px;
             position: relative;
         }
         
-        .st-chatu8-inpaint-prompt-group {
+        .zinao-chatu-inpaint-prompt-group {
             display: flex;
             flex-direction: column;
             gap: 5px;
@@ -31435,7 +31441,7 @@ function canvasToBase64(canvas) {
 }
 function createToolbarContainer2(isMobile3, toolbar, parameterInputs) {
   const container = document.createElement("div");
-  container.className = "st-chatu8-inpaint-toolbar-container";
+  container.className = "zinao-chatu-inpaint-toolbar-container";
   container.style.position = "relative";
   container.style.zIndex = "1";
   if (isMobile3) {
@@ -31449,16 +31455,16 @@ function createToolbarContainer2(isMobile3, toolbar, parameterInputs) {
 }
 function createToolbar(state3) {
   const toolbar = document.createElement("div");
-  toolbar.className = "st-chatu8-inpaint-toolbar";
+  toolbar.className = "zinao-chatu-inpaint-toolbar";
   toolbar.innerHTML = `
-        <button id="tool-draw" class="st-chatu8-tool-btn active" title="\u753B\u7B14">\u{1F58C}\uFE0F \u753B\u7B14</button>
-        <button id="tool-erase" class="st-chatu8-tool-btn" title="\u6A61\u76AE">\u{1F9FD} \u6A61\u76AE</button>
-        <button id="tool-undo" class="st-chatu8-tool-btn" title="\u64A4\u9500">\u293A \u64A4\u9500</button>
-        <button id="tool-redo" class="st-chatu8-tool-btn" title="\u91CD\u505A">\u293B \u91CD\u505A</button>
-        <button id="tool-clear" class="st-chatu8-tool-btn" title="\u6E05\u7A7A">\u{1F5D1}\uFE0F \u6E05\u7A7A</button>
-        <button id="tool-preview" class="st-chatu8-tool-btn" title="\u9884\u89C8\u8499\u7248">\u{1F441}\uFE0F \u9884\u89C8</button>
-        <label class="st-chatu8-inpaint-brush-label">
-            \u753B\u7B14: <input type="range" id="brush-size" min="8" max="150" step="8" value="${state3.brushSize}" class="st-chatu8-inpaint-brush-slider">
+        <button id="tool-draw" class="zinao-chatu-tool-btn active" title="\u753B\u7B14">\u{1F58C}\uFE0F \u753B\u7B14</button>
+        <button id="tool-erase" class="zinao-chatu-tool-btn" title="\u6A61\u76AE">\u{1F9FD} \u6A61\u76AE</button>
+        <button id="tool-undo" class="zinao-chatu-tool-btn" title="\u64A4\u9500">\u293A \u64A4\u9500</button>
+        <button id="tool-redo" class="zinao-chatu-tool-btn" title="\u91CD\u505A">\u293B \u91CD\u505A</button>
+        <button id="tool-clear" class="zinao-chatu-tool-btn" title="\u6E05\u7A7A">\u{1F5D1}\uFE0F \u6E05\u7A7A</button>
+        <button id="tool-preview" class="zinao-chatu-tool-btn" title="\u9884\u89C8\u8499\u7248">\u{1F441}\uFE0F \u9884\u89C8</button>
+        <label class="zinao-chatu-inpaint-brush-label">
+            \u753B\u7B14: <input type="range" id="brush-size" min="8" max="150" step="8" value="${state3.brushSize}" class="zinao-chatu-inpaint-brush-slider">
             <span id="brush-size-value">${state3.brushSize}</span>px
         </label>
     `;
@@ -31519,7 +31525,7 @@ function createToolbar(state3) {
 }
 function createParameterInputs(state3) {
   const container = document.createElement("div");
-  container.className = "st-chatu8-inpaint-prompt-section";
+  container.className = "zinao-chatu-inpaint-prompt-section";
   container.style.cssText = `
         display: flex;
         flex-direction: column;
@@ -31527,7 +31533,7 @@ function createParameterInputs(state3) {
         position: relative;
     `;
   const positivePromptContainer = document.createElement("div");
-  positivePromptContainer.className = "st-chatu8-inpaint-prompt-group";
+  positivePromptContainer.className = "zinao-chatu-inpaint-prompt-group";
   positivePromptContainer.style.cssText = `
         display: flex;
         flex-direction: column;
@@ -31537,11 +31543,11 @@ function createParameterInputs(state3) {
   positivePromptContainer.innerHTML = `
         <label style="display: block;">\u6B63\u9762\u63D0\u793A\u8BCD:</label>
         <textarea id="novelai-prompt" rows="2" placeholder="\u8F93\u5165\u751F\u6210\u63D0\u793A\u8BCD\uFF0C\u4F8B\u5982: blue eyes, highly detailed, masterpiece" 
-            class="st-chatu8-edit-input" style="resize: vertical; box-sizing: border-box;">${state3.prompt}</textarea>
+            class="zinao-chatu-edit-input" style="resize: vertical; box-sizing: border-box;">${state3.prompt}</textarea>
         <div class="ch-autocomplete-results" id="positive-autocomplete"></div>
     `;
   const negativePromptContainer = document.createElement("div");
-  negativePromptContainer.className = "st-chatu8-inpaint-prompt-group";
+  negativePromptContainer.className = "zinao-chatu-inpaint-prompt-group";
   negativePromptContainer.style.cssText = `
         display: flex;
         flex-direction: column;
@@ -31551,16 +31557,16 @@ function createParameterInputs(state3) {
   negativePromptContainer.innerHTML = `
         <label style="display: block;">\u8D1F\u9762\u63D0\u793A\u8BCD:</label>
         <textarea id="novelai-negative-prompt" rows="2" placeholder="\u63CF\u8FF0\u4E0D\u60F3\u51FA\u73B0\u7684\u5185\u5BB9..." 
-            class="st-chatu8-edit-input" style="resize: vertical; box-sizing: border-box;">${state3.negativePrompt || ""}</textarea>
+            class="zinao-chatu-edit-input" style="resize: vertical; box-sizing: border-box;">${state3.negativePrompt || ""}</textarea>
         <div class="ch-autocomplete-results" id="negative-autocomplete"></div>
     `;
   const strengthContainer = document.createElement("div");
-  strengthContainer.className = "st-chatu8-inpaint-denoise-group";
+  strengthContainer.className = "zinao-chatu-inpaint-denoise-group";
   strengthContainer.innerHTML = `
-        <label class="st-chatu8-inpaint-denoise-label">\u5F3A\u5EA6\uFF1A</label>
+        <label class="zinao-chatu-inpaint-denoise-label">\u5F3A\u5EA6\uFF1A</label>
         <input type="range" id="novelai-strength" min="0" max="1" step="0.01" value="${state3.strength}" 
-            class="st-chatu8-inpaint-denoise-slider">
-        <span id="strength-value" class="st-chatu8-inpaint-denoise-value">${state3.strength.toFixed(2)}</span>
+            class="zinao-chatu-inpaint-denoise-slider">
+        <span id="strength-value" class="zinao-chatu-inpaint-denoise-value">${state3.strength.toFixed(2)}</span>
     `;
   container.appendChild(positivePromptContainer);
   container.appendChild(negativePromptContainer);
@@ -31682,7 +31688,7 @@ async function createCanvasContainer(img, isMobile3) {
         overflow: hidden;
         box-sizing: content-box;
     `;
-  container.className = "st-chatu8-inpaint-editor-container";
+  container.className = "zinao-chatu-inpaint-editor-container";
   const imageCanvas = document.createElement("canvas");
   imageCanvas.width = originalWidth;
   imageCanvas.height = originalHeight;
@@ -31901,9 +31907,9 @@ function showImageSizePopup(button, inputEl, onConfirm) {
     const availableHeight = bottomBound - topBound;
     const overlay2 = doc.createElement("div");
     overlay2.id = "image-size-overlay";
-    overlay2.className = "st-chatu8-popup-overlay";
+    overlay2.className = "zinao-chatu-popup-overlay";
     const bubble = doc.createElement("div");
-    bubble.className = "st-chatu8-popup-bubble";
+    bubble.className = "zinao-chatu-popup-bubble";
     if (isMobile3) {
       bubble.classList.add("mobile");
       bubble.style.top = `${topBound}px`;
@@ -31911,21 +31917,21 @@ function showImageSizePopup(button, inputEl, onConfirm) {
     }
     const title = doc.createElement("div");
     title.textContent = `\u{1F4D0} \u56FE\u7247\u5927\u5C0F\u8BBE\u7F6E (${modeName})`;
-    title.className = "st-chatu8-popup-title";
+    title.className = "zinao-chatu-popup-title";
     const hint = doc.createElement("div");
     hint.textContent = mode === "banana" ? "\u8BBE\u7F6E\u751F\u6210\u56FE\u7247\u7684\u7EB5\u6A2A\u6BD4" : "\u8BBE\u7F6E\u751F\u6210\u56FE\u7247\u7684\u5BBD\u5EA6\u548C\u9AD8\u5EA6";
-    hint.className = "st-chatu8-popup-hint";
+    hint.className = "zinao-chatu-popup-hint";
     const formSection = doc.createElement("div");
-    formSection.className = "st-chatu8-popup-size-form";
+    formSection.className = "zinao-chatu-popup-size-form";
     let widthInput, heightInput;
     if (mode === "banana") {
       const ratioRow = doc.createElement("div");
-      ratioRow.className = "st-chatu8-popup-size-row";
+      ratioRow.className = "zinao-chatu-popup-size-row";
       const ratioLabel = doc.createElement("label");
       ratioLabel.textContent = "\u7EB5\u6A2A\u6BD4";
-      ratioLabel.className = "st-chatu8-popup-size-label";
+      ratioLabel.className = "zinao-chatu-popup-size-label";
       const ratioSelect = doc.createElement("select");
-      ratioSelect.className = "st-chatu8-popup-size-input";
+      ratioSelect.className = "zinao-chatu-popup-size-input";
       ["1:1", "16:9", "9:16", "4:3", "3:4", "3:2", "2:3"].forEach((ratio) => {
         const option = doc.createElement("option");
         option.value = ratio;
@@ -31939,39 +31945,39 @@ function showImageSizePopup(button, inputEl, onConfirm) {
       widthInput = ratioSelect;
     } else {
       const widthRow = doc.createElement("div");
-      widthRow.className = "st-chatu8-popup-size-row";
+      widthRow.className = "zinao-chatu-popup-size-row";
       const widthLabel = doc.createElement("label");
       widthLabel.textContent = "\u5BBD\u5EA6";
-      widthLabel.className = "st-chatu8-popup-size-label";
+      widthLabel.className = "zinao-chatu-popup-size-label";
       widthInput = doc.createElement("input");
       widthInput.type = "number";
       widthInput.value = currentWidth;
       widthInput.min = "64";
       widthInput.max = "4096";
       widthInput.step = "64";
-      widthInput.className = "st-chatu8-popup-size-input";
+      widthInput.className = "zinao-chatu-popup-size-input";
       widthRow.appendChild(widthLabel);
       widthRow.appendChild(widthInput);
       const heightRow = doc.createElement("div");
-      heightRow.className = "st-chatu8-popup-size-row";
+      heightRow.className = "zinao-chatu-popup-size-row";
       const heightLabel = doc.createElement("label");
       heightLabel.textContent = "\u9AD8\u5EA6";
-      heightLabel.className = "st-chatu8-popup-size-label";
+      heightLabel.className = "zinao-chatu-popup-size-label";
       heightInput = doc.createElement("input");
       heightInput.type = "number";
       heightInput.value = currentHeight;
       heightInput.min = "64";
       heightInput.max = "4096";
       heightInput.step = "64";
-      heightInput.className = "st-chatu8-popup-size-input";
+      heightInput.className = "zinao-chatu-popup-size-input";
       heightRow.appendChild(heightLabel);
       heightRow.appendChild(heightInput);
       const swapRow = doc.createElement("div");
-      swapRow.className = "st-chatu8-popup-size-row swap-row";
+      swapRow.className = "zinao-chatu-popup-size-row swap-row";
       const swapBtn = doc.createElement("button");
       swapBtn.type = "button";
       swapBtn.innerHTML = "\u21C5 \u5BF9\u8C03\u5BBD\u9AD8";
-      swapBtn.className = "st-chatu8-popup-swap-btn";
+      swapBtn.className = "zinao-chatu-popup-swap-btn";
       swapBtn.onclick = () => {
         const temp = widthInput.value;
         widthInput.value = heightInput.value;
@@ -31983,13 +31989,13 @@ function showImageSizePopup(button, inputEl, onConfirm) {
       formSection.appendChild(swapRow);
     }
     const buttonContainer = doc.createElement("div");
-    buttonContainer.className = "st-chatu8-popup-buttons";
+    buttonContainer.className = "zinao-chatu-popup-buttons";
     const cancelBtn = doc.createElement("button");
     cancelBtn.textContent = "\u53D6\u6D88";
-    cancelBtn.className = "st-chatu8-popup-btn-cancel";
+    cancelBtn.className = "zinao-chatu-popup-btn-cancel";
     const confirmBtn = doc.createElement("button");
     confirmBtn.textContent = "\u786E\u5B9A\u5E76\u751F\u6210";
-    confirmBtn.className = "st-chatu8-popup-btn-confirm";
+    confirmBtn.className = "zinao-chatu-popup-btn-confirm";
     const closePopup = (result) => {
       overlay2.classList.add("closing");
       setTimeout(() => {
@@ -32089,16 +32095,16 @@ function showBananaRetouchDialog(originalImgElement, originalButton) {
 function showEditDialog(img, button) {
   const doc = window.top.document;
   const currentTag = button.dataset.change || button.dataset.link;
-  const styleId = "st-chatu8-autocomplete-styles";
+  const styleId = "zinao-chatu-autocomplete-styles";
   if (!doc.getElementById(styleId)) {
     const style = doc.createElement("style");
     style.id = styleId;
     style.innerHTML = `
             /* Dialog Styles - scoped to edit backdrop */
-            .st-chatu8-edit-backdrop .st-chatu8-edit-dialog {
-                background-color: var(--st-chatu8-bg-primary);
-                color: var(--st-chatu8-text-primary);
-                border: 1px solid var(--st-chatu8-border-color);
+            .zinao-chatu-edit-backdrop .zinao-chatu-edit-dialog {
+                background-color: var(--zinao-chatu-bg-primary);
+                color: var(--zinao-chatu-text-primary);
+                border: 1px solid var(--zinao-chatu-border-color);
                 box-shadow: 0 8px 24px rgba(0,0,0,0.2);
                 border-radius: 12px;
                 padding: 20px;
@@ -32115,34 +32121,34 @@ function showEditDialog(img, button) {
             
             /* \u79FB\u52A8\u7AEF\u589E\u5927\u6EDA\u52A8\u6761\u5BBD\u5EA6 */
             @media (max-width: 768px) {
-                .st-chatu8-edit-backdrop .st-chatu8-edit-dialog::-webkit-scrollbar {
+                .zinao-chatu-edit-backdrop .zinao-chatu-edit-dialog::-webkit-scrollbar {
                     width: 16px;
                     height: 16px;
                 }
-                .st-chatu8-edit-backdrop .st-chatu8-edit-dialog::-webkit-scrollbar-track {
-                    background: var(--st-chatu8-bg-secondary, #1a1a2a);
+                .zinao-chatu-edit-backdrop .zinao-chatu-edit-dialog::-webkit-scrollbar-track {
+                    background: var(--zinao-chatu-bg-secondary, #1a1a2a);
                     border-radius: 8px;
                 }
-                .st-chatu8-edit-backdrop .st-chatu8-edit-dialog::-webkit-scrollbar-thumb {
-                    background: var(--st-chatu8-accent-primary, #4a4a8a);
+                .zinao-chatu-edit-backdrop .zinao-chatu-edit-dialog::-webkit-scrollbar-thumb {
+                    background: var(--zinao-chatu-accent-primary, #4a4a8a);
                     border-radius: 8px;
-                    border: 2px solid var(--st-chatu8-bg-secondary, #1a1a2a);
+                    border: 2px solid var(--zinao-chatu-bg-secondary, #1a1a2a);
                 }
-                .st-chatu8-edit-backdrop .st-chatu8-edit-dialog::-webkit-scrollbar-thumb:hover {
-                    background: var(--st-chatu8-accent-secondary, #6a6aaa);
+                .zinao-chatu-edit-backdrop .zinao-chatu-edit-dialog::-webkit-scrollbar-thumb:hover {
+                    background: var(--zinao-chatu-accent-secondary, #6a6aaa);
                 }
             }
             
-            .st-chatu8-edit-backdrop .st-chatu8-edit-title {
-                color: var(--st-chatu8-text-primary);
+            .zinao-chatu-edit-backdrop .zinao-chatu-edit-title {
+                color: var(--zinao-chatu-text-primary);
                 font-size: 1.2em;
                 font-weight: bold;
                 margin-bottom: 15px;
             }
-            .st-chatu8-edit-backdrop .st-chatu8-edit-input {
-                background-color: var(--st-chatu8-input-bg);
-                color: var(--st-chatu8-input-text);
-                border: 1px solid var(--st-chatu8-input-border);
+            .zinao-chatu-edit-backdrop .zinao-chatu-edit-input {
+                background-color: var(--zinao-chatu-input-bg);
+                color: var(--zinao-chatu-input-text);
+                border: 1px solid var(--zinao-chatu-input-border);
                 border-radius: 6px;
                 padding: 10px;
                 width: 100%;
@@ -32151,14 +32157,14 @@ function showEditDialog(img, button) {
                 flex: 1 1 auto;
                 resize: both;
             }
-            .st-chatu8-edit-backdrop .st-chatu8-edit-buttons {
+            .zinao-chatu-edit-backdrop .zinao-chatu-edit-buttons {
                 margin-top: 15px;
                 display: flex;
                 justify-content: center;
                 flex-wrap: wrap;
                 gap: 8px;
             }
-            .st-chatu8-edit-backdrop .st-chatu8-edit-button {
+            .zinao-chatu-edit-backdrop .zinao-chatu-edit-button {
                 border-radius: 6px;
                 padding: 6px 12px;
                 font-weight: bold;
@@ -32167,21 +32173,21 @@ function showEditDialog(img, button) {
                 font-size: 0.9em;
                 white-space: nowrap;
             }
-            .st-chatu8-edit-backdrop .st-chatu8-edit-button.send {
-                background-color: var(--st-chatu8-accent-primary);
+            .zinao-chatu-edit-backdrop .zinao-chatu-edit-button.send {
+                background-color: var(--zinao-chatu-accent-primary);
                 color: white;
             }
-            .st-chatu8-edit-backdrop .st-chatu8-edit-button.cancel {
-                background-color: var(--st-chatu8-bg-secondary);
-                color: var(--st-chatu8-text-secondary);
+            .zinao-chatu-edit-backdrop .zinao-chatu-edit-button.cancel {
+                background-color: var(--zinao-chatu-bg-secondary);
+                color: var(--zinao-chatu-text-secondary);
             }
 
             /* Autocomplete Styles - scoped to edit backdrop only */
-            .st-chatu8-edit-backdrop .ch-autocomplete-results {
+            .zinao-chatu-edit-backdrop .ch-autocomplete-results {
                 display: none;
                 position: absolute;
-                background-color: var(--st-chatu8-dropdown-list-bg);
-                border: 1px solid var(--st-chatu8-border-color);
+                background-color: var(--zinao-chatu-dropdown-list-bg);
+                border: 1px solid var(--zinao-chatu-border-color);
                 border-radius: 6px;
                 max-height: 150px;
                 overflow-y: auto;
@@ -32189,20 +32195,20 @@ function showEditDialog(img, button) {
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
                 max-width: 100%;
             }
-            .st-chatu8-edit-backdrop .ch-autocomplete-item {
+            .zinao-chatu-edit-backdrop .ch-autocomplete-item {
                 padding: 8px 12px;
                 cursor: pointer;
-                color: var(--st-chatu8-dropdown-text);
+                color: var(--zinao-chatu-dropdown-text);
                 font-size: 0.9em;
             }
-            .st-chatu8-edit-backdrop .ch-autocomplete-item:hover {
-                background-color: var(--st-chatu8-accent-secondary);
-                color: var(--st-chatu8-text-highlight);
+            .zinao-chatu-edit-backdrop .ch-autocomplete-item:hover {
+                background-color: var(--zinao-chatu-accent-secondary);
+                color: var(--zinao-chatu-text-highlight);
             }
         `;
     doc.head.appendChild(style);
   }
-  doc.querySelector(".st-chatu8-edit-backdrop")?.remove();
+  doc.querySelector(".zinao-chatu-edit-backdrop")?.remove();
   const resultsEl = doc.createElement("div");
   resultsEl.className = "ch-autocomplete-results";
   let originalDialogHeight = null;
@@ -32227,9 +32233,9 @@ function showEditDialog(img, button) {
     backdrop.remove();
   };
   const backdrop = doc.createElement("div");
-  backdrop.className = "st-chatu8-edit-backdrop";
+  backdrop.className = "zinao-chatu-edit-backdrop";
   const dialog = doc.createElement("div");
-  dialog.className = "st-chatu8-edit-dialog";
+  dialog.className = "zinao-chatu-edit-dialog";
   dialog.style.position = "relative";
   dialog.addEventListener("click", (e) => e.stopPropagation());
   const isMobile3 = window.top.innerWidth <= 768;
@@ -32254,19 +32260,19 @@ function showEditDialog(img, button) {
     }
   }
   const title = doc.createElement("div");
-  title.className = "st-chatu8-edit-title";
+  title.className = "zinao-chatu-edit-title";
   title.textContent = "\u7F16\u8F91\u56FE\u7247\u6807\u7B7E";
   const inputContainer = doc.createElement("div");
   inputContainer.style.position = "relative";
   inputContainer.style.width = "100%";
   const inputBackdrop = doc.createElement("div");
-  inputBackdrop.className = "st-chatu8-edit-input st-chatu8-edit-input-backdrop";
+  inputBackdrop.className = "zinao-chatu-edit-input zinao-chatu-edit-input-backdrop";
   inputBackdrop.style.position = "absolute";
   inputBackdrop.style.top = "0";
   inputBackdrop.style.left = "0";
   inputBackdrop.style.width = "100%";
   inputBackdrop.style.height = "100%";
-  inputBackdrop.style.color = "var(--st-chatu8-input-text, #f0f0f0)";
+  inputBackdrop.style.color = "var(--zinao-chatu-input-text, #f0f0f0)";
   inputBackdrop.style.pointerEvents = "none";
   inputBackdrop.style.zIndex = "1";
   inputBackdrop.style.margin = "0";
@@ -32276,8 +32282,8 @@ function showEditDialog(img, button) {
   inputBackdrop.style.setProperty("letter-spacing", "normal", "important");
   inputBackdrop.style.setProperty("word-spacing", "normal", "important");
   const input = doc.createElement("textarea");
-  input.id = "st-chatu8-edit-input";
-  input.className = "st-chatu8-edit-input";
+  input.id = "zinao-chatu-edit-input";
+  input.className = "zinao-chatu-edit-input";
   input.value = currentTag;
   input.style.position = "relative";
   input.style.zIndex = "2";
@@ -32291,7 +32297,7 @@ function showEditDialog(img, button) {
   input.style.setProperty("color", "transparent", "important");
   input.style.setProperty("-webkit-text-fill-color", "transparent", "important");
   input.style.setProperty("text-shadow", "none", "important");
-  input.style.caretColor = "var(--st-chatu8-input-text, #f0f0f0)";
+  input.style.caretColor = "var(--zinao-chatu-input-text, #f0f0f0)";
   const escapeHTML3 = (str) => str.replace(/[&<>"']/g, (m) => ({
     "&": "&amp;",
     "<": "&lt;",
@@ -32310,9 +32316,9 @@ function showEditDialog(img, button) {
       htmlText += escapeHTML3(rawText.substring(lastIndex, match.index));
       const processed = processCharacterPrompt(fullMatch);
       if (typeof processed === "string" && processed !== fullMatch) {
-        htmlText += `<span class="st-chatu8-highlight-match">${escapeHTML3(fullMatch)}</span>`;
+        htmlText += `<span class="zinao-chatu-highlight-match">${escapeHTML3(fullMatch)}</span>`;
       } else {
-        htmlText += `<span class="st-chatu8-highlight-error">${escapeHTML3(fullMatch)}</span>`;
+        htmlText += `<span class="zinao-chatu-highlight-error">${escapeHTML3(fullMatch)}</span>`;
       }
       lastIndex = regex.lastIndex;
     }
@@ -32331,16 +32337,16 @@ function showEditDialog(img, button) {
   inputContainer.appendChild(inputBackdrop);
   inputContainer.appendChild(input);
   const buttonContainer = doc.createElement("div");
-  buttonContainer.className = "st-chatu8-edit-buttons";
+  buttonContainer.className = "zinao-chatu-edit-buttons";
   const tagActionsContainer = doc.createElement("div");
-  tagActionsContainer.className = "st-chatu8-tag-actions-container";
+  tagActionsContainer.className = "zinao-chatu-tag-actions-container";
   tagActionsContainer.style.cssText = "position: relative; display: inline-block;";
   const tagActionsButton = doc.createElement("button");
-  tagActionsButton.className = "st-chatu8-edit-button send";
+  tagActionsButton.className = "zinao-chatu-edit-button send";
   tagActionsButton.textContent = "Tag\u64CD\u4F5C \u25BC";
   tagActionsButton.type = "button";
   const tagActionsMenu = doc.createElement("div");
-  tagActionsMenu.className = "st-chatu8-tag-actions-menu";
+  tagActionsMenu.className = "zinao-chatu-tag-actions-menu";
   tagActionsMenu.style.cssText = `
         display: none;
         position: absolute;
@@ -32348,8 +32354,8 @@ function showEditDialog(img, button) {
         left: 50%;
         transform: translateX(-50%);
         margin-bottom: 8px;
-        background-color: var(--st-chatu8-bg-primary, #2a2a2a);
-        border: 1px solid var(--st-chatu8-border-color, #444);
+        background-color: var(--zinao-chatu-bg-primary, #2a2a2a);
+        border: 1px solid var(--zinao-chatu-border-color, #444);
         border-radius: 8px;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
         padding: 8px;
@@ -32359,7 +32365,7 @@ function showEditDialog(img, button) {
         gap: 6px;
     `;
   const resetButton = doc.createElement("button");
-  resetButton.className = "st-chatu8-tag-action-item";
+  resetButton.className = "zinao-chatu-tag-action-item";
   resetButton.innerHTML = "\u{1F504} \u91CD\u7F6Etag";
   resetButton.style.cssText = `
         display: flex;
@@ -32370,14 +32376,14 @@ function showEditDialog(img, button) {
         background: transparent;
         border: none;
         border-radius: 6px;
-        color: var(--st-chatu8-text-primary, #fff);
+        color: var(--zinao-chatu-text-primary, #fff);
         cursor: pointer;
         font-size: 0.9em;
         text-align: left;
         transition: background-color 0.2s ease;
     `;
   resetButton.onmouseenter = () => {
-    resetButton.style.backgroundColor = "var(--st-chatu8-accent-secondary, #3a3a3a)";
+    resetButton.style.backgroundColor = "var(--zinao-chatu-accent-secondary, #3a3a3a)";
   };
   resetButton.onmouseleave = () => {
     resetButton.style.backgroundColor = "transparent";
@@ -32390,11 +32396,11 @@ function showEditDialog(img, button) {
     if (typeof debouncedUpdateDialogTokens === "function") debouncedUpdateDialogTokens();
   };
   const lockTagButton = doc.createElement("button");
-  lockTagButton.className = "st-chatu8-tag-action-item";
+  lockTagButton.className = "zinao-chatu-tag-action-item";
   lockTagButton.innerHTML = "\u{1F512} \u9501\u5B9Atag";
   lockTagButton.style.cssText = resetButton.style.cssText;
   lockTagButton.onmouseenter = () => {
-    lockTagButton.style.backgroundColor = "var(--st-chatu8-accent-secondary, #3a3a3a)";
+    lockTagButton.style.backgroundColor = "var(--zinao-chatu-accent-secondary, #3a3a3a)";
   };
   lockTagButton.onmouseleave = () => {
     lockTagButton.style.backgroundColor = "transparent";
@@ -32445,7 +32451,7 @@ function showEditDialog(img, button) {
     }
   };
   const deleteTagButton = doc.createElement("button");
-  deleteTagButton.className = "st-chatu8-tag-action-item";
+  deleteTagButton.className = "zinao-chatu-tag-action-item";
   deleteTagButton.innerHTML = "\u{1F5D1}\uFE0F \u5220\u9664tag";
   deleteTagButton.style.cssText = resetButton.style.cssText;
   deleteTagButton.style.color = "#ff6b6b";
@@ -32469,12 +32475,12 @@ function showEditDialog(img, button) {
     const mesText = contextEl?.closest(".mes_text") || contextEl;
     const result = await deleteTagForElement(mesText, currentTag2);
     if (result.success) {
-      let containerToRemove = button.closest(".st-chatu8-collapse-wrapper");
+      let containerToRemove = button.closest(".zinao-chatu-collapse-wrapper");
       if (!containerToRemove) {
-        containerToRemove = button.closest(".st-chatu8-image-span");
+        containerToRemove = button.closest(".zinao-chatu-image-span");
       }
       if (!containerToRemove) {
-        containerToRemove = button.closest(".st-chatu8-image-container");
+        containerToRemove = button.closest(".zinao-chatu-image-container");
       }
       if (containerToRemove) {
         containerToRemove.remove();
@@ -32505,7 +32511,7 @@ function showEditDialog(img, button) {
   tagActionsContainer.appendChild(tagActionsButton);
   tagActionsContainer.appendChild(tagActionsMenu);
   const translateButton = doc.createElement("button");
-  translateButton.className = "st-chatu8-edit-button send";
+  translateButton.className = "zinao-chatu-edit-button send";
   translateButton.textContent = "\u7FFB\u8BD1";
   translateButton.onclick = async () => {
     try {
@@ -32711,7 +32717,7 @@ ${keyword}`);
     }
   };
   const sendButton = doc.createElement("button");
-  sendButton.className = "st-chatu8-edit-button send";
+  sendButton.className = "zinao-chatu-edit-button send";
   sendButton.textContent = "\u53D1\u9001";
   let sendPressTimer = null;
   let sendIsLongPress = false;
@@ -32762,18 +32768,18 @@ ${keyword}`);
     clearTimeout(sendPressTimer);
   });
   const cancelButton = doc.createElement("button");
-  cancelButton.className = "st-chatu8-edit-button cancel";
+  cancelButton.className = "zinao-chatu-edit-button cancel";
   cancelButton.textContent = "\u53D6\u6D88";
   cancelButton.onclick = closeDialog;
   const imageProcessContainer = doc.createElement("div");
-  imageProcessContainer.className = "st-chatu8-image-process-container";
+  imageProcessContainer.className = "zinao-chatu-image-process-container";
   imageProcessContainer.style.cssText = "position: relative; display: inline-block;";
   const imageProcessButton = doc.createElement("button");
-  imageProcessButton.className = "st-chatu8-edit-button send";
+  imageProcessButton.className = "zinao-chatu-edit-button send";
   imageProcessButton.textContent = "\u56FE\u50CF\u5904\u7406 \u25BC";
   imageProcessButton.type = "button";
   const imageProcessMenu = doc.createElement("div");
-  imageProcessMenu.className = "st-chatu8-image-process-menu";
+  imageProcessMenu.className = "zinao-chatu-image-process-menu";
   imageProcessMenu.style.cssText = `
         display: none;
         position: absolute;
@@ -32781,8 +32787,8 @@ ${keyword}`);
         left: 50%;
         transform: translateX(-50%);
         margin-bottom: 8px;
-        background-color: var(--st-chatu8-bg-primary, #2a2a2a);
-        border: 1px solid var(--st-chatu8-border-color, #444);
+        background-color: var(--zinao-chatu-bg-primary, #2a2a2a);
+        border: 1px solid var(--zinao-chatu-border-color, #444);
         border-radius: 8px;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
         padding: 8px;
@@ -32800,7 +32806,7 @@ ${keyword}`);
         background: transparent;
         border: none;
         border-radius: 6px;
-        color: var(--st-chatu8-text-primary, #fff);
+        color: var(--zinao-chatu-text-primary, #fff);
         cursor: pointer;
         font-size: 0.9em;
         text-align: left;
@@ -32808,11 +32814,11 @@ ${keyword}`);
         white-space: nowrap;
     `;
   const bananaRetouchItem = doc.createElement("button");
-  bananaRetouchItem.className = "st-chatu8-image-process-item";
+  bananaRetouchItem.className = "zinao-chatu-image-process-item";
   bananaRetouchItem.innerHTML = "\u{1F34C} Banana\u4FEE\u56FE";
   bananaRetouchItem.style.cssText = menuItemStyle;
   bananaRetouchItem.onmouseenter = () => {
-    bananaRetouchItem.style.backgroundColor = "var(--st-chatu8-accent-secondary, #3a3a3a)";
+    bananaRetouchItem.style.backgroundColor = "var(--zinao-chatu-accent-secondary, #3a3a3a)";
   };
   bananaRetouchItem.onmouseleave = () => {
     bananaRetouchItem.style.backgroundColor = "transparent";
@@ -32823,11 +32829,11 @@ ${keyword}`);
     closeDialog();
   };
   const gorkVideoItem = doc.createElement("button");
-  gorkVideoItem.className = "st-chatu8-image-process-item";
+  gorkVideoItem.className = "zinao-chatu-image-process-item";
   gorkVideoItem.innerHTML = "\u{1F3AC} Gork\u751F\u6210\u89C6\u9891";
   gorkVideoItem.style.cssText = menuItemStyle;
   gorkVideoItem.onmouseenter = () => {
-    gorkVideoItem.style.backgroundColor = "var(--st-chatu8-accent-secondary, #3a3a3a)";
+    gorkVideoItem.style.backgroundColor = "var(--zinao-chatu-accent-secondary, #3a3a3a)";
   };
   gorkVideoItem.onmouseleave = () => {
     gorkVideoItem.style.backgroundColor = "transparent";
@@ -32838,11 +32844,11 @@ ${keyword}`);
     closeDialog();
   };
   const comfyuiInpaintItem = doc.createElement("button");
-  comfyuiInpaintItem.className = "st-chatu8-image-process-item";
+  comfyuiInpaintItem.className = "zinao-chatu-image-process-item";
   comfyuiInpaintItem.innerHTML = "\u{1F3A8} ComfyUI\u5C40\u90E8\u91CD\u7ED8";
   comfyuiInpaintItem.style.cssText = menuItemStyle;
   comfyuiInpaintItem.onmouseenter = () => {
-    comfyuiInpaintItem.style.backgroundColor = "var(--st-chatu8-accent-secondary, #3a3a3a)";
+    comfyuiInpaintItem.style.backgroundColor = "var(--zinao-chatu-accent-secondary, #3a3a3a)";
   };
   comfyuiInpaintItem.onmouseleave = () => {
     comfyuiInpaintItem.style.backgroundColor = "transparent";
@@ -32853,11 +32859,11 @@ ${keyword}`);
     closeDialog();
   };
   const novelaiInpaintItem = doc.createElement("button");
-  novelaiInpaintItem.className = "st-chatu8-image-process-item";
+  novelaiInpaintItem.className = "zinao-chatu-image-process-item";
   novelaiInpaintItem.innerHTML = "\u{1F3A8} NovelAI\u5C40\u90E8\u91CD\u7ED8";
   novelaiInpaintItem.style.cssText = menuItemStyle;
   novelaiInpaintItem.onmouseenter = () => {
-    novelaiInpaintItem.style.backgroundColor = "var(--st-chatu8-accent-secondary, #3a3a3a)";
+    novelaiInpaintItem.style.backgroundColor = "var(--zinao-chatu-accent-secondary, #3a3a3a)";
   };
   novelaiInpaintItem.onmouseleave = () => {
     novelaiInpaintItem.style.backgroundColor = "transparent";
@@ -32884,7 +32890,7 @@ ${keyword}`);
   imageProcessContainer.appendChild(imageProcessButton);
   imageProcessContainer.appendChild(imageProcessMenu);
   const modifyTagButton = doc.createElement("button");
-  modifyTagButton.className = "st-chatu8-edit-button send";
+  modifyTagButton.className = "zinao-chatu-edit-button send";
   modifyTagButton.textContent = "\u4FEE\u6539tag";
   modifyTagButton.onclick = async () => {
     let targetEl = button;
@@ -32904,7 +32910,7 @@ ${keyword}`);
     }
   };
   const expandPresetButton = doc.createElement("button");
-  expandPresetButton.className = "st-chatu8-edit-button send";
+  expandPresetButton.className = "zinao-chatu-edit-button send";
   expandPresetButton.textContent = "\u5C55\u5F00\u9884\u8BBE";
   expandPresetButton.onclick = () => {
     const originalValue = input.value;
@@ -32954,7 +32960,7 @@ ${keyword}`);
     }
   };
   const tokenDisplayContainer = doc.createElement("div");
-  tokenDisplayContainer.className = "st-chatu8-token-display-panel";
+  tokenDisplayContainer.className = "zinao-chatu-token-display-panel";
   tokenDisplayContainer.style.cssText = "font-size: 0.85em; color: inherit; opacity: 0.8; font-weight: 600; padding: 4px; display: flex; justify-content: space-between; margin-top: 4px; display: none;";
   const positiveTokensSpan = doc.createElement("span");
   positiveTokensSpan.id = "dialog-positive-tokens";
@@ -33110,11 +33116,11 @@ function calculateDialogDimensions(isMobile3) {
 function createUnifiedDialog(options) {
   const doc = window.top.document;
   const { title, isMobile: isMobile3 } = options;
-  doc.querySelector(".st-chatu8-edit-backdrop")?.remove();
+  doc.querySelector(".zinao-chatu-edit-backdrop")?.remove();
   const backdrop = doc.createElement("div");
-  backdrop.className = "st-chatu8-edit-backdrop";
+  backdrop.className = "zinao-chatu-edit-backdrop";
   const dialog = doc.createElement("div");
-  dialog.className = "st-chatu8-edit-dialog";
+  dialog.className = "zinao-chatu-edit-dialog";
   dialog.style.position = "relative";
   dialog.style.display = "flex";
   dialog.style.flexDirection = "column";
@@ -33135,7 +33141,7 @@ function createUnifiedDialog(options) {
     dialog.style.overflowY = "auto";
   }
   const titleEl = doc.createElement("div");
-  titleEl.className = "st-chatu8-edit-title";
+  titleEl.className = "zinao-chatu-edit-title";
   titleEl.textContent = title;
   dialog.appendChild(titleEl);
   const closeDialog = () => backdrop.remove();
@@ -33146,7 +33152,7 @@ function createUnifiedDialog(options) {
 function createUnifiedInput(options) {
   const { placeholder = "", value = "", rows = 2 } = options;
   const input = document.createElement("textarea");
-  input.className = "st-chatu8-edit-input";
+  input.className = "zinao-chatu-edit-input";
   input.placeholder = placeholder;
   input.value = value;
   input.rows = rows;
@@ -33154,10 +33160,10 @@ function createUnifiedInput(options) {
 }
 function createButtonContainer(buttons) {
   const container = document.createElement("div");
-  container.className = "st-chatu8-edit-buttons";
+  container.className = "zinao-chatu-edit-buttons";
   buttons.forEach((btnConfig) => {
     const button = document.createElement("button");
-    button.className = `st-chatu8-edit-button ${btnConfig.className}`;
+    button.className = `zinao-chatu-edit-button ${btnConfig.className}`;
     button.textContent = btnConfig.text;
     button.onclick = btnConfig.onClick;
     container.appendChild(button);
@@ -33231,7 +33237,7 @@ function createAndShowImage(container, imageUrl, alt, button, change, isVideo = 
   const doc = container.ownerDocument;
   if (!doc) return;
   const div = doc.createElement("div");
-  div.className = "st-chatu8-image-container";
+  div.className = "zinao-chatu-image-container";
   let media;
   if (isVideo) {
     media = doc.createElement("video");
@@ -33262,7 +33268,7 @@ function createAndShowImage(container, imageUrl, alt, button, change, isVideo = 
         return;
       }
       const notice = doc.createElement("div");
-      notice.className = "st-chatu8-video-notice";
+      notice.className = "zinao-chatu-video-notice";
       notice.style.cssText = `
                 display: flex;
                 flex-direction: column;
@@ -33391,25 +33397,25 @@ function createAndShowImage(container, imageUrl, alt, button, change, isVideo = 
   }
   if (String(extension_settings39[extensionName]?.collapseImage) === "true") {
     const wrapper = doc.createElement("div");
-    wrapper.className = "st-chatu8-collapse-wrapper";
+    wrapper.className = "zinao-chatu-collapse-wrapper";
     wrapper.dataset.mediaType = isVideo ? "video" : "image";
     wrapper.dataset.collapsed = "true";
     const header = doc.createElement("div");
-    header.className = "st-chatu8-collapse-header";
+    header.className = "zinao-chatu-collapse-header";
     const icon = doc.createElement("span");
-    icon.className = "st-chatu8-collapse-icon";
+    icon.className = "zinao-chatu-collapse-icon";
     icon.textContent = "\u25BC";
     const title = doc.createElement("span");
-    title.className = "st-chatu8-collapse-title";
+    title.className = "zinao-chatu-collapse-title";
     title.textContent = isVideo ? "\u{1F4F9} \u70B9\u51FB\u5C55\u5F00\u89C6\u9891" : "\u{1F4F7} \u70B9\u51FB\u5C55\u5F00\u56FE\u7247";
     const badge = doc.createElement("span");
-    badge.className = "st-chatu8-collapse-badge";
+    badge.className = "zinao-chatu-collapse-badge";
     badge.textContent = "\u5DF2\u6298\u53E0";
     header.appendChild(icon);
     header.appendChild(title);
     header.appendChild(badge);
     const content = doc.createElement("div");
-    content.className = "st-chatu8-collapse-content";
+    content.className = "zinao-chatu-collapse-content";
     content.appendChild(div);
     header.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -33546,7 +33552,7 @@ var init_generation = __esm({
       let imageExistsInDom = false;
       for (const doc of docs) {
         const span = doc.querySelector(`span[data-request-id="${requestId}"]`);
-        if (span && span.querySelector("img, video, .st-chatu8-video-fallback")) {
+        if (span && span.querySelector("img, video, .zinao-chatu-video-fallback")) {
           console.log("Media already exists in DOM. Triggering regeneration.");
           imageExistsInDom = true;
           break;
@@ -33617,7 +33623,7 @@ function extractPureTag(tag, startTag, endTag) {
 async function getSavedImageMatches(logicalText, rootElement, logicalTextForMatchOverride, firstDivEndOffset = 0) {
   const result = [];
   try {
-    const existingImage = rootElement.querySelector(`.st-chatu8-image-container`);
+    const existingImage = rootElement.querySelector(`.zinao-chatu-image-container`);
     if (existingImage) {
       return result;
     }
@@ -33830,7 +33836,7 @@ async function createButtonAtPosition(insertPosition, tag, nodeInfos, doc, rootE
     rootElement.setAttribute(tagMarkerAttr, "true");
   }
   const button = doc.createElement("button");
-  button.className = "image-tag-button st-chatu8-image-button";
+  button.className = "image-tag-button zinao-chatu-image-button";
   button.textContent = "\u751F\u6210\u56FE\u7247";
   button.dataset.link = link;
   button.dataset.requestId = requestId;
@@ -33872,7 +33878,7 @@ async function createButtonAtPosition(insertPosition, tag, nodeInfos, doc, rootE
   button.addEventListener("touchend", handlePressEnd);
   button.addEventListener("touchcancel", handlePressEnd);
   const imgSpan = doc.createElement("span");
-  imgSpan.className = "st-chatu8-image-span";
+  imgSpan.className = "zinao-chatu-image-span";
   imgSpan.dataset.requestId = requestId;
   const range = doc.createRange();
   try {
@@ -33982,7 +33988,7 @@ async function findAndReplaceInElement(rootElement, imageAlt = "Generated Image"
       if (CODE_RELATED_TAGS.has(parentTag)) {
         return NodeFilter.FILTER_REJECT;
       }
-      if (parent?.classList.contains("image-tag-button") || parent?.classList.contains("st-chatu8-image-span")) {
+      if (parent?.classList.contains("image-tag-button") || parent?.classList.contains("zinao-chatu-image-span")) {
         return NodeFilter.FILTER_REJECT;
       }
       if (parent?.className && typeof parent.className === "string") {
@@ -34088,7 +34094,7 @@ async function findAndReplaceInElement(rootElement, imageAlt = "Generated Image"
         range.setEndAfter(endNode);
       }
     } catch (e) {
-      console.error("st-chatu8: Error setting range. Skipping match.", e, matchInfo);
+      console.error("zinao-chatu: Error setting range. Skipping match.", e, matchInfo);
       continue;
     }
     range.deleteContents();
@@ -34118,7 +34124,7 @@ async function findAndReplaceInElement(rootElement, imageAlt = "Generated Image"
       rootElement.setAttribute(tagMarkerAttr, "true");
     }
     const button = doc.createElement("button");
-    button.className = "image-tag-button st-chatu8-image-button";
+    button.className = "image-tag-button zinao-chatu-image-button";
     button.textContent = "\u751F\u6210\u56FE\u7247";
     button.dataset.link = link;
     button.dataset.requestId = requestId;
@@ -34160,7 +34166,7 @@ async function findAndReplaceInElement(rootElement, imageAlt = "Generated Image"
     button.addEventListener("touchend", handlePressEnd);
     button.addEventListener("touchcancel", handlePressEnd);
     const imgSpan = doc.createElement("span");
-    imgSpan.className = "st-chatu8-image-span";
+    imgSpan.className = "zinao-chatu-image-span";
     imgSpan.dataset.requestId = requestId;
     range.insertNode(imgSpan);
     range.insertNode(button);
@@ -34189,7 +34195,7 @@ async function findAndReplaceInElement(rootElement, imageAlt = "Generated Image"
       }
     }
     if (window.autoClickTaskId) {
-      eventSource19.emit("st_chatu8_auto_click_complete", {
+      eventSource19.emit("zinao_chatu_auto_click_complete", {
         taskId: window.autoClickTaskId,
         success: true
       });
@@ -34436,7 +34442,7 @@ function showImagePreview(img, button) {
   const doc = window.top.document;
   const currentTag = button.dataset.link;
   const backdrop = doc.createElement("div");
-  backdrop.className = "st-chatu8-preview-backdrop";
+  backdrop.className = "zinao-chatu-preview-backdrop";
   backdrop.style.cssText = `
         position: fixed;
         top: 0;
@@ -34451,7 +34457,7 @@ function showImagePreview(img, button) {
         z-index: 10000;
     `;
   const dialog = doc.createElement("div");
-  dialog.className = "st-chatu8-preview-dialog";
+  dialog.className = "zinao-chatu-preview-dialog";
   dialog.addEventListener("click", (e) => e.stopPropagation());
   dialog.style.cssText = `
         display: flex;
@@ -34469,7 +34475,7 @@ function showImagePreview(img, button) {
         overflow: hidden;
     `;
   const closeButton = doc.createElement("div");
-  closeButton.className = "st-chatu8-preview-close";
+  closeButton.className = "zinao-chatu-preview-close";
   closeButton.innerHTML = "&times;";
   closeButton.onclick = () => {
     if (!images || images.length === 0 || !(currentIndex >= 0 && currentIndex < images.length)) {
@@ -34483,8 +34489,8 @@ function showImagePreview(img, button) {
     getItemImg(currentTag, newIndex).then(([newSrc, change, , isVideo, origUrl]) => {
       if (!newSrc) return;
       if (selectedIsVideo !== originalIsVideo) {
-        const collapseWrapper = img.closest(".st-chatu8-collapse-wrapper");
-        const imageContainer2 = img.closest(".st-chatu8-image-container");
+        const collapseWrapper = img.closest(".zinao-chatu-collapse-wrapper");
+        const imageContainer2 = img.closest(".zinao-chatu-image-container");
         const spanContainer = collapseWrapper ? collapseWrapper.parentElement : imageContainer2?.parentElement;
         if (spanContainer) {
           createAndShowImage(spanContainer, newSrc, "Generated Image", button, change, isVideo, origUrl || "");
@@ -34510,7 +34516,7 @@ function showImagePreview(img, button) {
     backdrop.remove();
   };
   const imageContainer = doc.createElement("div");
-  imageContainer.className = "st-chatu8-preview-image-container";
+  imageContainer.className = "zinao-chatu-preview-image-container";
   imageContainer.style.cssText = `
         position: relative;
         flex: 1;
@@ -34519,7 +34525,7 @@ function showImagePreview(img, button) {
     `;
   let largeMedia = null;
   const largeMediaWrapper = doc.createElement("div");
-  largeMediaWrapper.className = "st-chatu8-preview-large-wrapper";
+  largeMediaWrapper.className = "zinao-chatu-preview-large-wrapper";
   largeMediaWrapper.style.cssText = `
         position: absolute;
         top: 0;
@@ -34529,7 +34535,7 @@ function showImagePreview(img, button) {
         overflow: hidden;
     `;
   const track = doc.createElement("div");
-  track.className = "st-chatu8-preview-track";
+  track.className = "zinao-chatu-preview-track";
   track.style.cssText = `
         display: flex;
         width: 300%;
@@ -34540,7 +34546,7 @@ function showImagePreview(img, button) {
   largeMediaWrapper.appendChild(track);
   imageContainer.appendChild(largeMediaWrapper);
   const imageCounter = doc.createElement("div");
-  imageCounter.className = "st-chatu8-preview-counter";
+  imageCounter.className = "zinao-chatu-preview-counter";
   imageCounter.style.cssText = `
         position: absolute;
         top: 8px;
@@ -34580,7 +34586,7 @@ function showImagePreview(img, button) {
         user-select: none;
     `;
   const prevButton = doc.createElement("div");
-  prevButton.className = "st-chatu8-preview-nav prev";
+  prevButton.className = "zinao-chatu-preview-nav prev";
   prevButton.innerHTML = "&#10094;";
   prevButton.style.cssText = navButtonStyle + "left: 10px;";
   prevButton.onmouseenter = () => {
@@ -34594,7 +34600,7 @@ function showImagePreview(img, button) {
     updateLargeImage((currentIndex - 1 + images.length) % images.length);
   };
   const nextButton = doc.createElement("div");
-  nextButton.className = "st-chatu8-preview-nav next";
+  nextButton.className = "zinao-chatu-preview-nav next";
   nextButton.innerHTML = "&#10095;";
   nextButton.style.cssText = navButtonStyle + "right: 10px;";
   nextButton.onmouseenter = () => {
@@ -34659,7 +34665,7 @@ function showImagePreview(img, button) {
         } catch (_) {
         }
       }
-      const thumbnails = thumbnailContainer.querySelectorAll(".st-chatu8-preview-thumbnail");
+      const thumbnails = thumbnailContainer.querySelectorAll(".zinao-chatu-preview-thumbnail");
       thumbnails.forEach((t, i) => t.classList.toggle("active", i === currentIndex));
       if (thumbnails[currentIndex]) {
         thumbnails[currentIndex].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
@@ -34877,7 +34883,7 @@ function showImagePreview(img, button) {
   imageContainer.addEventListener("pointerdown", (e) => {
     if (e.pointerType !== "mouse" || e.button !== 0) return;
     if (zoomScale <= 1) return;
-    if (e.target.closest(".st-chatu8-preview-nav")) return;
+    if (e.target.closest(".zinao-chatu-preview-nav")) return;
     e.preventDefault();
     panning = true;
     panStartX = e.clientX;
@@ -34905,7 +34911,7 @@ function showImagePreview(img, button) {
   imageContainer.addEventListener("pointercancel", endPan);
   imageContainer.addEventListener("dblclick", (e) => {
     if (!largeMedia || largeMedia.tagName === "VIDEO") return;
-    if (e.target.closest(".st-chatu8-preview-nav")) return;
+    if (e.target.closest(".zinao-chatu-preview-nav")) return;
     if (zoomScale > 1) {
       resetZoom();
     } else {
@@ -34940,12 +34946,12 @@ function showImagePreview(img, button) {
   });
   mo.observe(doc.body, { childList: true });
   const thumbnailContainer = doc.createElement("div");
-  thumbnailContainer.className = "st-chatu8-preview-thumbnail-container";
+  thumbnailContainer.className = "zinao-chatu-preview-thumbnail-container";
   const actionContainer = doc.createElement("div");
-  actionContainer.className = "st-chatu8-preview-actions";
+  actionContainer.className = "zinao-chatu-preview-actions";
   const downloadButton = doc.createElement("button");
   downloadButton.innerHTML = '<i class="fa-solid fa-download"></i><span>\u4E0B\u8F7D\u5F53\u524D\u5A92\u4F53</span>';
-  downloadButton.className = "st-chatu8-preview-action-button";
+  downloadButton.className = "zinao-chatu-preview-action-button";
   downloadButton.title = "\u4E0B\u8F7D\u5F53\u524D\u5A92\u4F53";
   downloadButton.onclick = async () => {
     try {
@@ -34967,7 +34973,7 @@ function showImagePreview(img, button) {
   };
   const deleteButton = doc.createElement("button");
   deleteButton.innerHTML = '<i class="fa-solid fa-trash-can"></i><span>\u5220\u9664\u5F53\u524D\u5A92\u4F53</span>';
-  deleteButton.className = "st-chatu8-preview-action-button danger";
+  deleteButton.className = "zinao-chatu-preview-action-button danger";
   deleteButton.title = "\u5220\u9664\u5F53\u524D\u5A92\u4F53";
   actionContainer.appendChild(downloadButton);
   actionContainer.appendChild(deleteButton);
@@ -34990,8 +34996,8 @@ function showImagePreview(img, button) {
     const md5 = CryptoJS.MD5(tag).toString();
     const merged = await dbs.getMergedAndSortedImages(md5);
     if (merged.images.length === 0) {
-      const collapseWrapper = img.closest(".st-chatu8-collapse-wrapper");
-      const parentContainer = img.closest(".st-chatu8-image-container");
+      const collapseWrapper = img.closest(".zinao-chatu-collapse-wrapper");
+      const parentContainer = img.closest(".zinao-chatu-image-container");
       if (collapseWrapper) {
         collapseWrapper.remove();
       } else if (parentContainer) {
@@ -35077,7 +35083,7 @@ function showImagePreview(img, button) {
         thumb.src = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEyOCIgaGVpZ2h0PSIxMjgiIGZpbGw9IiMxYTFhMmUiLz48cG9seWdvbiBwb2ludHM9IjUwLDQwIDUwLDg4IDkwLDY0IiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNSkiLz48dGV4dCB4PSI2NCIgeT0iMTEwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41KSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+VklERU88L3RleHQ+PC9zdmc+";
         thumb.alt = "Video";
       }
-      thumb.className = "st-chatu8-preview-thumbnail";
+      thumb.className = "zinao-chatu-preview-thumbnail";
       thumb.dataset.index = String(index);
       thumb.onclick = () => updateLargeImage(index);
       thumbnailContainer.appendChild(thumb);
@@ -35093,8 +35099,8 @@ function showImagePreview(img, button) {
         const newIsVideo = isVideoNew || false;
         const originalIsVideo = img.tagName === "VIDEO";
         if (newIsVideo !== originalIsVideo) {
-          const collapseWrapper = img.closest(".st-chatu8-collapse-wrapper");
-          const imageContainer2 = img.closest(".st-chatu8-image-container");
+          const collapseWrapper = img.closest(".zinao-chatu-collapse-wrapper");
+          const imageContainer2 = img.closest(".zinao-chatu-image-container");
           const spanContainer = collapseWrapper ? collapseWrapper.parentElement : imageContainer2?.parentElement;
           if (spanContainer) {
             createAndShowImage(spanContainer, newImgSrc, "Generated Image", button, change, newIsVideo, origUrl || "");
@@ -35111,7 +35117,7 @@ function showImagePreview(img, button) {
   };
   function buildSlot(index) {
     const slot = doc.createElement("div");
-    slot.className = "st-chatu8-preview-slot";
+    slot.className = "zinao-chatu-preview-slot";
     slot.style.cssText = `
             flex: 0 0 33.3333%;
             width: 33.3333%;
@@ -35159,7 +35165,7 @@ function showImagePreview(img, button) {
                         \u{1F4E5} \u4E0B\u8F7D\u89C6\u9891
                     </a>
                 `;
-        fallback.className = "st-chatu8-preview-large-image";
+        fallback.className = "zinao-chatu-preview-large-image";
         fallback.dataset.index = String(index);
         if (el.parentNode) el.parentNode.replaceChild(fallback, el);
       };
@@ -35168,7 +35174,7 @@ function showImagePreview(img, button) {
       el.src = blobUrl;
       el.draggable = false;
     }
-    el.className = "st-chatu8-preview-large-image";
+    el.className = "zinao-chatu-preview-large-image";
     el.style.cssText = `
             max-width: 100%;
             max-height: 100%;
@@ -35249,7 +35255,7 @@ function showImagePreview(img, button) {
       } catch (_) {
       }
     }
-    const thumbnails = thumbnailContainer.querySelectorAll(".st-chatu8-preview-thumbnail");
+    const thumbnails = thumbnailContainer.querySelectorAll(".zinao-chatu-preview-thumbnail");
     thumbnails.forEach((thumb, i) => {
       thumb.classList.toggle("active", i === index);
     });
@@ -35331,7 +35337,7 @@ function showImagePreview(img, button) {
           thumb.src = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEyOCIgaGVpZ2h0PSIxMjgiIGZpbGw9IiMxYTFhMmUiLz48cG9seWdvbiBwb2ludHM9IjUwLDQwIDUwLDg4IDkwLDY0IiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNSkiLz48dGV4dCB4PSI2NCIgeT0iMTEwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41KSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+VklERU88L3RleHQ+PC9zdmc+";
           thumb.alt = "Video";
         }
-        thumb.className = "st-chatu8-preview-thumbnail";
+        thumb.className = "zinao-chatu-preview-thumbnail";
         thumb.dataset.index = String(index);
         thumb.onclick = () => updateLargeImage(index);
         thumbnailContainer.appendChild(thumb);
@@ -35541,7 +35547,7 @@ var init_iframe = __esm({
     window.zidongdianji = false;
     iframeObserverState = /* @__PURE__ */ new Map();
     mainDocumentObserver = null;
-    PLUGIN_MANAGED_SELECTOR = ".image-tag-button, .st-chatu8-image-button, .st-chatu8-image-span, .st-chatu8-image-container, .st-chatu8-collapse-wrapper";
+    PLUGIN_MANAGED_SELECTOR = ".image-tag-button, .zinao-chatu-image-button, .zinao-chatu-image-span, .zinao-chatu-image-container, .zinao-chatu-collapse-wrapper";
     setTriggerGeneration(triggerGeneration);
     setGorkTriggerGeneration(triggerGeneration);
     setShowImagePreview(showImagePreview);
@@ -36145,7 +36151,7 @@ async function onExportPreset() {
       console.error("[PersonaPreset] \u5BFC\u51FA\u5934\u50CF\u5931\u8D25:", error);
     }
   }
-  downloadJson(exportData, `st-chatu8-\u4EBA\u8BBE-${presetId}.json`);
+  downloadJson(exportData, `zinao-chatu-\u4EBA\u8BBE-${presetId}.json`);
   toastr.success(`\u4EBA\u8BBE\u9884\u8BBE\u300C${presetId}\u300D\u5DF2\u5BFC\u51FA\u3002`);
 }
 async function onExportAllPresets() {
@@ -36173,7 +36179,7 @@ async function onExportAllPresets() {
       }
     }
   }
-  downloadJson(exportData, "st-chatu8-\u4EBA\u8BBE-\u5168\u90E8.json");
+  downloadJson(exportData, "zinao-chatu-\u4EBA\u8BBE-\u5168\u90E8.json");
   toastr.success(`\u5DF2\u5BFC\u51FA\u5168\u90E8 ${Object.keys(profiles.presets).length} \u4E2A\u4EBA\u8BBE\u9884\u8BBE\u3002`);
 }
 async function onImportPreset(event) {
@@ -36556,19 +36562,19 @@ function setMarkedLoadPromise(val) {
 }
 function initDomRefs(dialog) {
   dom.dialog = dialog;
-  dom.triggerBtn = $("#st-chatu8-ai-trigger");
-  dom.chatBody = dialog.find("#st-chatu8-ai-chat-body");
-  dom.header = dialog.find(".st-chatu8-ai-dialog-header");
-  dom.closeBtn = dialog.find("#st-chatu8-ai-close");
-  dom.sendBtn = dialog.find("#st-chatu8-ai-send");
-  dom.inputArea = dialog.find("#st-chatu8-ai-input");
-  dom.imageBtn = dialog.find("#st-chatu8-ai-image-btn");
-  dom.imageInput = dialog.find("#st-chatu8-ai-image-input");
-  dom.imagePreview = dialog.find("#st-chatu8-ai-image-preview");
-  dom.settingsBtn = dialog.find("#st-chatu8-ai-settings-btn");
-  dom.settingsPanel = dialog.find("#st-chatu8-ai-settings-panel");
-  dom.settingsCloseBtn = dialog.find("#st-chatu8-ai-settings-close");
-  dom.saveSettingsBtn = dialog.find("#st-chatu8-ai-save-settings");
+  dom.triggerBtn = $("#zinao-chatu-ai-trigger");
+  dom.chatBody = dialog.find("#zinao-chatu-ai-chat-body");
+  dom.header = dialog.find(".zinao-chatu-ai-dialog-header");
+  dom.closeBtn = dialog.find("#zinao-chatu-ai-close");
+  dom.sendBtn = dialog.find("#zinao-chatu-ai-send");
+  dom.inputArea = dialog.find("#zinao-chatu-ai-input");
+  dom.imageBtn = dialog.find("#zinao-chatu-ai-image-btn");
+  dom.imageInput = dialog.find("#zinao-chatu-ai-image-input");
+  dom.imagePreview = dialog.find("#zinao-chatu-ai-image-preview");
+  dom.settingsBtn = dialog.find("#zinao-chatu-ai-settings-btn");
+  dom.settingsPanel = dialog.find("#zinao-chatu-ai-settings-panel");
+  dom.settingsCloseBtn = dialog.find("#zinao-chatu-ai-settings-close");
+  dom.saveSettingsBtn = dialog.find("#zinao-chatu-ai-save-settings");
   dom.inputApiUrl = dialog.find("#chatu8-ai-api-url");
   dom.inputApiKey = dialog.find("#chatu8-ai-api-key");
   dom.inputModel = dialog.find("#chatu8-ai-model");
@@ -36600,7 +36606,7 @@ function initDomRefs(dialog) {
   dom.ttsEdgePingBtn = dialog.find("#chatu8-ai-tts-edge-ping");
   dom.ttsEdgePingStatus = dialog.find("#chatu8-ai-tts-edge-ping-status");
   dom.asrSettingsPanel = dialog.find("#chatu8-ai-asr-settings");
-  dom.asrMicBtn = dialog.find("#st-chatu8-ai-mic-btn");
+  dom.asrMicBtn = dialog.find("#zinao-chatu-ai-mic-btn");
   dom.asrConvModeSelect = dialog.find("#chatu8-ai-asr-conv-mode");
   dom.asrSilenceSlider = dialog.find("#chatu8-ai-asr-silence-timeout");
   dom.asrSilenceVal = dialog.find("#chatu8-ai-asr-silence-timeout-val");
@@ -36620,22 +36626,22 @@ function initDomRefs(dialog) {
   dom.checkDesktopPet = dialog.find("#chatu8-ai-desktop-pet");
   dom.checkScreenShare = dialog.find("#chatu8-ai-screen-share");
   dom.checkBrowserCapture = dialog.find("#chatu8-ai-browser-capture");
-  dom.screenShareIndicator = dialog.find("#st-chatu8-ai-screen-share-indicator");
-  dom.browserCaptureIndicator = dialog.find("#st-chatu8-ai-browser-capture-indicator");
+  dom.screenShareIndicator = dialog.find("#zinao-chatu-ai-screen-share-indicator");
+  dom.browserCaptureIndicator = dialog.find("#zinao-chatu-ai-browser-capture-indicator");
   dom.checkFloorMessage = dialog.find("#chatu8-ai-floor-message");
   dom.floorStatus = dialog.find("#chatu8-ai-floor-status");
   dom.floorCount = dialog.find("#chatu8-ai-floor-count");
-  dom.floorIndicator = dialog.find("#st-chatu8-ai-floor-indicator");
-  dom.newChatBtn = dialog.find("#st-chatu8-ai-new-chat");
-  dom.historyBtn = dialog.find("#st-chatu8-ai-history-btn");
-  dom.historyPanel = dialog.find("#st-chatu8-ai-history-panel");
-  dom.historyCloseBtn = dialog.find("#st-chatu8-ai-history-close");
-  dom.historyList = dialog.find("#st-chatu8-ai-history-list");
-  dom.exportChatBtn = dialog.find("#st-chatu8-ai-export-chat");
-  dom.selectAllBtn = dialog.find("#st-chatu8-ai-select-all");
-  dom.deselectAllBtn = dialog.find("#st-chatu8-ai-deselect-all");
-  dom.summaryBtn = dialog.find("#st-chatu8-ai-summary-btn");
-  dom.summaryManager = dialog.find("#st-chatu8-summary-manager");
+  dom.floorIndicator = dialog.find("#zinao-chatu-ai-floor-indicator");
+  dom.newChatBtn = dialog.find("#zinao-chatu-ai-new-chat");
+  dom.historyBtn = dialog.find("#zinao-chatu-ai-history-btn");
+  dom.historyPanel = dialog.find("#zinao-chatu-ai-history-panel");
+  dom.historyCloseBtn = dialog.find("#zinao-chatu-ai-history-close");
+  dom.historyList = dialog.find("#zinao-chatu-ai-history-list");
+  dom.exportChatBtn = dialog.find("#zinao-chatu-ai-export-chat");
+  dom.selectAllBtn = dialog.find("#zinao-chatu-ai-select-all");
+  dom.deselectAllBtn = dialog.find("#zinao-chatu-ai-deselect-all");
+  dom.summaryBtn = dialog.find("#zinao-chatu-ai-summary-btn");
+  dom.summaryManager = dialog.find("#zinao-chatu-summary-manager");
 }
 var chatSessions, chatIndex, activeChat, v2Ready, initialized, isAiGenerating, refreshSettingsPanelFn, pendingImageGenerations, ttsAudioCache, ttsActiveMessageIndex, ttsCurrentRequestId, ttsButtonState, ttsCollectingBlobUrls, ttsCollectingTotalSegments, currentSystemMsgElement, currentSystemMsgContent, selectedImages2, pendingCommand, markedLoaded, markedLoadPromise, dom;
 var init_assistantContext = __esm({
@@ -36867,8 +36873,8 @@ function initSendData(settingsModal) {
     const fragment = document.createDocumentFragment();
     const searchTerm = worldSearchInput.val().toLowerCase();
     worldList.filter((worldName) => worldName.toLowerCase().includes(searchTerm)).forEach((worldName) => {
-      const worldItem = $("<div></div>").addClass("st-chatu8-list-item").data("worldName", worldName);
-      const checkboxWrapper = $("<span></span>").addClass("st-chatu8-world-checkbox").css({
+      const worldItem = $("<div></div>").addClass("zinao-chatu-list-item").data("worldName", worldName);
+      const checkboxWrapper = $("<span></span>").addClass("zinao-chatu-world-checkbox").css({
         position: "relative",
         marginRight: "10px",
         display: "inline-block",
@@ -36919,7 +36925,7 @@ function initSendData(settingsModal) {
         const entryKey = entry.uid;
         const displayName = entry.comment || `\u6761\u76EE ${entryKey}`;
         const isConstant = entry.constant === true;
-        const entryItem = $("<div></div>").addClass("st-chatu8-list-item").data("entryKey", entryKey).data("entryContent", entry.content || "");
+        const entryItem = $("<div></div>").addClass("zinao-chatu-list-item").data("entryKey", entryKey).data("entryContent", entry.content || "");
         const isNew = isNewEntry(activeWorld, entryKey);
         if (isNew) {
           entryItem.addClass("new-entry");
@@ -36928,13 +36934,13 @@ function initSendData(settingsModal) {
         if (isConstant) {
           entryItem.addClass("constant-entry");
         }
-        const textSpan = $("<span></span>").addClass("st-chatu8-entry-text").text(displayName);
+        const textSpan = $("<span></span>").addClass("zinao-chatu-entry-text").text(displayName);
         if (isNew) {
-          const newBadge = $("<span></span>").addClass("st-chatu8-new-badge").text("\u65B0");
+          const newBadge = $("<span></span>").addClass("zinao-chatu-new-badge").text("\u65B0");
           textSpan.append(newBadge);
         }
         if (isConstant) {
-          const constantBadge = $("<span></span>").addClass("st-chatu8-constant-badge").text("\u5E38\u5F00").css({
+          const constantBadge = $("<span></span>").addClass("zinao-chatu-constant-badge").text("\u5E38\u5F00").css({
             marginLeft: "6px",
             padding: "2px 6px",
             background: "rgba(255, 193, 7, 0.2)",
@@ -36949,7 +36955,7 @@ function initSendData(settingsModal) {
         const keys = Array.isArray(entry.key) ? entry.key : entry.key ? [entry.key] : [];
         if (keys.length > 0) {
           const keyDisplay = keys.slice(0, 3).join(", ") + (keys.length > 3 ? "..." : "");
-          const keyBadge = $("<span></span>").addClass("st-chatu8-key-badge").text("\u{1F511} " + keyDisplay).attr("title", keys.join(", ")).css({
+          const keyBadge = $("<span></span>").addClass("zinao-chatu-key-badge").text("\u{1F511} " + keyDisplay).attr("title", keys.join(", ")).css({
             marginLeft: "6px",
             padding: "2px 6px",
             background: "rgba(33, 150, 243, 0.15)",
@@ -36967,11 +36973,11 @@ function initSendData(settingsModal) {
           });
           textSpan.append(keyBadge);
         }
-        const eyeIcon = $("<i></i>").addClass("fa fa-eye st-chatu8-entry-view-icon").attr("title", "\u67E5\u770B\u5185\u5BB9").on("click", function(e) {
+        const eyeIcon = $("<i></i>").addClass("fa fa-eye zinao-chatu-entry-view-icon").attr("title", "\u67E5\u770B\u5185\u5BB9").on("click", function(e) {
           e.stopPropagation();
           showEntryContentModal(displayName, entry.content || "", entry.key || [], isConstant);
         });
-        const checkboxSpan = $("<span></span>").addClass("st-chatu8-entry-checkbox");
+        const checkboxSpan = $("<span></span>").addClass("zinao-chatu-entry-checkbox");
         entryItem.append(checkboxSpan).append(textSpan).append(eyeIcon);
         const entryState = currentWorldSelections[entryKey];
         if (entryState === "force") {
@@ -36993,11 +36999,11 @@ function initSendData(settingsModal) {
     }
   }
   function handleWorldClick(event) {
-    const target = $(event.target).closest(".st-chatu8-list-item");
+    const target = $(event.target).closest(".zinao-chatu-list-item");
     if (!target.length) return;
     const worldName = target.data("worldName");
     if (!worldName) return;
-    const checkboxArea = $(event.target).closest(".st-chatu8-world-checkbox");
+    const checkboxArea = $(event.target).closest(".zinao-chatu-world-checkbox");
     if (checkboxArea.length) {
       worldBookSelections[worldName] = !worldBookSelections[worldName];
       saveWorldBookConfig();
@@ -37014,10 +37020,10 @@ function initSendData(settingsModal) {
   let isLongPress2 = false;
   const LONG_PRESS_DURATION = 500;
   function handleEntryMouseDown(event) {
-    const target = $(event.target).closest(".st-chatu8-list-item");
+    const target = $(event.target).closest(".zinao-chatu-list-item");
     if (!target.length || !activeWorld) return;
-    if ($(event.target).closest(".st-chatu8-entry-view-icon").length) return;
-    if (!$(event.target).closest(".st-chatu8-entry-checkbox").length) return;
+    if ($(event.target).closest(".zinao-chatu-entry-view-icon").length) return;
+    if (!$(event.target).closest(".zinao-chatu-entry-checkbox").length) return;
     isLongPress2 = false;
     longPressTimer2 = setTimeout(() => {
       isLongPress2 = true;
@@ -37031,10 +37037,10 @@ function initSendData(settingsModal) {
     }
   }
   function handleEntryClick(event) {
-    const target = $(event.target).closest(".st-chatu8-list-item");
+    const target = $(event.target).closest(".zinao-chatu-list-item");
     if (!target.length || !activeWorld) return;
-    if ($(event.target).closest(".st-chatu8-entry-view-icon").length) return;
-    if (!$(event.target).closest(".st-chatu8-entry-checkbox").length) return;
+    if ($(event.target).closest(".zinao-chatu-entry-view-icon").length) return;
+    if (!$(event.target).closest(".zinao-chatu-entry-checkbox").length) return;
     const entryKey = target.data("entryKey");
     if (entryKey === void 0 || entryKey === null) return;
     if (event.type === "contextmenu") {
@@ -37186,7 +37192,7 @@ function initSendData(settingsModal) {
     }
   }
   function showEntryContentModal(title, content, keys = [], isConstant = false) {
-    document.querySelector(".st-chatu8-entry-content-backdrop")?.remove();
+    document.querySelector(".zinao-chatu-entry-content-backdrop")?.remove();
     let keywordsHtml = "";
     if (keys && keys.length > 0) {
       const keysList = Array.isArray(keys) ? keys : [keys];
@@ -37226,21 +37232,21 @@ function initSendData(settingsModal) {
             ">\u5E38\u5F00</span>`;
     }
     const backdrop = document.createElement("div");
-    backdrop.className = "st-chatu8-workflow-viz-backdrop st-chatu8-entry-content-backdrop";
+    backdrop.className = "zinao-chatu-workflow-viz-backdrop zinao-chatu-entry-content-backdrop";
     backdrop.innerHTML = `
-            <div class="st-chatu8-workflow-viz-dialog st-chatu8-entry-content-dialog">
-                <div class="st-chatu8-workflow-viz-header">
+            <div class="zinao-chatu-workflow-viz-dialog zinao-chatu-entry-content-dialog">
+                <div class="zinao-chatu-workflow-viz-header">
                     <h3>${$("<div>").text(title).html()}${constantBadge}</h3>
-                    <span class="st-chatu8-workflow-viz-close">&times;</span>
+                    <span class="zinao-chatu-workflow-viz-close">&times;</span>
                 </div>
                 ${keywordsHtml}
-                <div class="st-chatu8-entry-content-body">
-                    <pre class="st-chatu8-entry-content-text">${$("<div>").text(content || "(\u65E0\u5185\u5BB9)").html()}</pre>
+                <div class="zinao-chatu-entry-content-body">
+                    <pre class="zinao-chatu-entry-content-text">${$("<div>").text(content || "(\u65E0\u5185\u5BB9)").html()}</pre>
                 </div>
             </div>
         `;
     document.body.appendChild(backdrop);
-    const closeBtn = backdrop.querySelector(".st-chatu8-workflow-viz-close");
+    const closeBtn = backdrop.querySelector(".zinao-chatu-workflow-viz-close");
     closeBtn.onclick = () => backdrop.remove();
     const escHandler = (e) => {
       if (e.key === "Escape") {
@@ -37337,13 +37343,13 @@ function initSendData(settingsModal) {
 }
 async function handleTestTrigger() {
   const backdrop = document.createElement("div");
-  backdrop.className = "st-chatu8-workflow-viz-backdrop";
+  backdrop.className = "zinao-chatu-workflow-viz-backdrop";
   backdrop.style.zIndex = "10002";
   backdrop.innerHTML = `
-        <div class="st-chatu8-workflow-viz-dialog" style="width: 90%; max-width: 1000px; max-height: 85vh;">
-            <div class="st-chatu8-workflow-viz-header">
+        <div class="zinao-chatu-workflow-viz-dialog" style="width: 90%; max-width: 1000px; max-height: 85vh;">
+            <div class="zinao-chatu-workflow-viz-header">
                 <h3>\u{1F9EA} \u6D4B\u8BD5\u4E16\u754C\u4E66\u89E6\u53D1</h3>
-                <span class="st-chatu8-workflow-viz-close">&times;</span>
+                <span class="zinao-chatu-workflow-viz-close">&times;</span>
             </div>
             <div style="padding: 20px; display: flex; flex-direction: column; gap: 15px; overflow-y: auto; max-height: calc(85vh - 60px);">
                 <div>
@@ -37384,7 +37390,7 @@ async function handleTestTrigger() {
         </div>
     `;
   document.body.appendChild(backdrop);
-  const closeBtn = backdrop.querySelector(".st-chatu8-workflow-viz-close");
+  const closeBtn = backdrop.querySelector(".zinao-chatu-workflow-viz-close");
   closeBtn.onclick = () => backdrop.remove();
   const escHandler = (e) => {
     if (e.key === "Escape") {
@@ -37823,7 +37829,7 @@ function clearFloorTargetElement() {
 function cleanFloorText(text) {
   if (!text) return "";
   let cleaned = text;
-  cleaned = cleaned.replace(/\[st-chatu8-image[^\]]*\]/g, "");
+  cleaned = cleaned.replace(/\[zinao-chatu-image[^\]]*\]/g, "");
   cleaned = cleaned.replace(/\n{3,}/g, "\n\n");
   cleaned = cleaned.trim();
   return cleaned;
@@ -38170,7 +38176,7 @@ ${msg.text}`);
     const hasMore = msg.text.length > previewLength;
     const fullText = msg.text;
     return `
-        <div class="st-chatu8-floor-item" data-index="${index}" style="
+        <div class="zinao-chatu-floor-item" data-index="${index}" style="
             margin-bottom: 12px; 
             padding: 12px; 
             background: rgba(255,255,255,0.05); 
@@ -38256,7 +38262,7 @@ ${msg.text}`);
         `;
   }).join("");
   const panelHtml = `
-        <div id="st-chatu8-floor-info-panel" style="
+        <div id="zinao-chatu-floor-info-panel" style="
             position: fixed;
             top: ${panelTop};
             left: ${panelLeft};
@@ -38284,7 +38290,7 @@ ${msg.text}`);
                     \u697C\u5C42\u4FE1\u606F (${messages.length} \u6761)
                 </div>
                 <div style="display: flex; gap: 10px;">
-                    <button id="st-chatu8-floor-clear-btn" style="
+                    <button id="zinao-chatu-floor-clear-btn" style="
                         padding: 5px 15px;
                         background: rgba(244, 67, 54, 0.8);
                         border: none;
@@ -38293,7 +38299,7 @@ ${msg.text}`);
                         cursor: pointer;
                         font-size: 14px;
                     ">\u6E05\u9664\u5168\u90E8</button>
-                    <button id="st-chatu8-floor-close-btn" style="
+                    <button id="zinao-chatu-floor-close-btn" style="
                         padding: 5px 15px;
                         background: rgba(255, 255, 255, 0.1);
                         border: none;
@@ -38304,7 +38310,7 @@ ${msg.text}`);
                     ">\u5173\u95ED</button>
                 </div>
             </div>
-            <div id="st-chatu8-floor-content" style="
+            <div id="zinao-chatu-floor-content" style="
                 padding: 20px;
                 overflow-y: auto;
                 flex: 1;
@@ -38315,15 +38321,15 @@ ${msg.text}`);
                     <span>\u{1F4CB} \u697C\u5C42\u6D88\u606F</span>
                     <span style="font-size: 12px; color: #888; font-weight: normal;">(\u53EF\u62D6\u62FD\u6392\u5E8F)</span>
                 </div>
-                <div id="st-chatu8-floor-list">
+                <div id="zinao-chatu-floor-list">
                     ${floorContent}
                 </div>
             </div>
         </div>
     `;
-  $("#st-chatu8-floor-info-panel").remove();
+  $("#zinao-chatu-floor-info-panel").remove();
   $("body").append(panelHtml);
-  $("#st-chatu8-floor-content").on("click", ".wb-world-header", function() {
+  $("#zinao-chatu-floor-content").on("click", ".wb-world-header", function() {
     const worldId = $(this).data("world-id");
     const $content = $(`#${worldId}-content`);
     const $icon = $(this).find(".wb-world-icon");
@@ -38335,7 +38341,7 @@ ${msg.text}`);
       $icon.css("transform", "rotate(90deg)");
     }
   });
-  $("#st-chatu8-floor-content").on("click", ".wb-entry-toggle", function(e) {
+  $("#zinao-chatu-floor-content").on("click", ".wb-entry-toggle", function(e) {
     e.stopPropagation();
     const entryId = $(this).data("entry-id");
     const $item = $(this).closest(".wb-entry-item");
@@ -38354,7 +38360,7 @@ ${msg.text}`);
       $topBtn.show();
     }
   });
-  $("#st-chatu8-floor-content").on("click", ".wb-entry-toggle-top", function(e) {
+  $("#zinao-chatu-floor-content").on("click", ".wb-entry-toggle-top", function(e) {
     e.stopPropagation();
     const entryId = $(this).data("entry-id");
     const $item = $(this).closest(".wb-entry-item");
@@ -38366,7 +38372,7 @@ ${msg.text}`);
     $bottomBtn.html('<i class="fa-solid fa-chevron-down"></i> \u5C55\u5F00\u6761\u76EE');
     $(this).hide();
   });
-  $("#st-chatu8-floor-content").on("click", ".wb-entry-preview", function(e) {
+  $("#zinao-chatu-floor-content").on("click", ".wb-entry-preview", function(e) {
     const entryId = $(this).data("entry-id");
     if (!entryId) return;
     const $toggle = $(this).siblings(".wb-entry-toggle");
@@ -38374,7 +38380,7 @@ ${msg.text}`);
       $toggle.click();
     }
   });
-  $("#st-chatu8-floor-content").on("click", ".wb-entry-disable-btn", async function(e) {
+  $("#zinao-chatu-floor-content").on("click", ".wb-entry-disable-btn", async function(e) {
     e.stopPropagation();
     const worldName = $(this).data("world-name");
     const entryUid = $(this).data("entry-uid");
@@ -38424,8 +38430,8 @@ ${msg.text}`);
     $(".wb-entry-toggle").html('<i class="fa-solid fa-chevron-down"></i> \u5C55\u5F00\u6761\u76EE');
     $(".wb-entry-toggle-top").hide();
   });
-  $("#st-chatu8-floor-list").on("click", ".floor-toggle-btn", function() {
-    const $item = $(this).closest(".st-chatu8-floor-item");
+  $("#zinao-chatu-floor-list").on("click", ".floor-toggle-btn", function() {
+    const $item = $(this).closest(".zinao-chatu-floor-item");
     const $content = $item.find(".floor-text-content");
     const $preview = $content.find(".floor-text-preview");
     const $full = $content.find(".floor-text-full");
@@ -38442,8 +38448,8 @@ ${msg.text}`);
       $topBtn.show();
     }
   });
-  $("#st-chatu8-floor-list").on("click", ".floor-toggle-top-btn", function() {
-    const $item = $(this).closest(".st-chatu8-floor-item");
+  $("#zinao-chatu-floor-list").on("click", ".floor-toggle-top-btn", function() {
+    const $item = $(this).closest(".zinao-chatu-floor-item");
     const $content = $item.find(".floor-text-content");
     const $preview = $content.find(".floor-text-preview");
     const $full = $content.find(".floor-text-full");
@@ -38453,33 +38459,33 @@ ${msg.text}`);
     $bottomBtn.html('<i class="fa-solid fa-chevron-down"></i> \u5C55\u5F00');
     $(this).hide();
   });
-  $("#st-chatu8-floor-list").on("click", ".floor-remove-btn", function() {
+  $("#zinao-chatu-floor-list").on("click", ".floor-remove-btn", function() {
     const index = parseInt($(this).data("index"));
     if (floorCollectionMode === "manual" && manualCollectedMessages.length > 0) {
       manualCollectedMessages.splice(index, 1);
       console.log("[FloorMessage] \u5DF2\u79FB\u9664\u6D88\u606F\uFF0C\u5269\u4F59:", manualCollectedMessages.length);
       if (manualCollectedMessages.length === 0) {
         clearFloorTargetElement();
-        $("#st-chatu8-floor-info-panel").remove();
+        $("#zinao-chatu-floor-info-panel").remove();
         toastr.info("\u5DF2\u79FB\u9664\u6240\u6709\u697C\u5C42\u6D88\u606F");
         return;
       }
-      $("#st-chatu8-floor-info-panel").remove();
+      $("#zinao-chatu-floor-info-panel").remove();
       showFloorInfoPanel();
       toastr.success("\u5DF2\u79FB\u9664\u8BE5\u6D88\u606F");
     } else {
       toastr.warning("\u81EA\u52A8\u6A21\u5F0F\u4E0B\u4E0D\u652F\u6301\u5220\u9664\u5355\u6761\u6D88\u606F");
     }
   });
-  const floorList = document.getElementById("st-chatu8-floor-list");
+  const floorList = document.getElementById("zinao-chatu-floor-list");
   let draggedElement = null;
   let draggedIndex = null;
   let lastTargetElement = null;
-  floorList.querySelectorAll(".st-chatu8-floor-item").forEach((item) => {
+  floorList.querySelectorAll(".zinao-chatu-floor-item").forEach((item) => {
     item.draggable = true;
   });
   floorList.addEventListener("dragstart", function(e) {
-    const item = e.target.closest(".st-chatu8-floor-item");
+    const item = e.target.closest(".zinao-chatu-floor-item");
     if (!item) return;
     draggedElement = item;
     draggedIndex = parseInt(item.dataset.index);
@@ -38517,13 +38523,13 @@ ${msg.text}`);
     if (!draggedElement) return;
     draggedElement.classList.remove("dragging");
     draggedElement.style.opacity = "1";
-    const items = Array.from(floorList.querySelectorAll(".st-chatu8-floor-item"));
+    const items = Array.from(floorList.querySelectorAll(".zinao-chatu-floor-item"));
     const newIndex = items.indexOf(draggedElement);
     if (newIndex !== -1 && newIndex !== draggedIndex && floorCollectionMode === "manual") {
       const [movedItem] = manualCollectedMessages.splice(draggedIndex, 1);
       manualCollectedMessages.splice(newIndex, 0, movedItem);
       console.log("[FloorMessage] \u5DF2\u8C03\u6574\u987A\u5E8F:", draggedIndex, "->", newIndex);
-      $("#st-chatu8-floor-info-panel").remove();
+      $("#zinao-chatu-floor-info-panel").remove();
       showFloorInfoPanel();
       toastr.success("\u5DF2\u8C03\u6574\u987A\u5E8F");
     } else if (floorCollectionMode !== "manual") {
@@ -38538,7 +38544,7 @@ ${msg.text}`);
     e.stopPropagation();
   });
   function getDragAfterElement(container, y) {
-    const draggableElements = [...container.querySelectorAll(".st-chatu8-floor-item:not(.dragging)")];
+    const draggableElements = [...container.querySelectorAll(".zinao-chatu-floor-item:not(.dragging)")];
     return draggableElements.reduce((closest, child) => {
       const box = child.getBoundingClientRect();
       const offset = y - box.top - box.height / 2;
@@ -38549,30 +38555,30 @@ ${msg.text}`);
       }
     }, { offset: Number.NEGATIVE_INFINITY }).element;
   }
-  $("#st-chatu8-floor-close-btn").on("click", () => {
-    $("#st-chatu8-floor-info-panel").remove();
+  $("#zinao-chatu-floor-close-btn").on("click", () => {
+    $("#zinao-chatu-floor-info-panel").remove();
   });
-  $("#st-chatu8-floor-clear-btn").on("click", () => {
+  $("#zinao-chatu-floor-clear-btn").on("click", () => {
     clearFloorTargetElement();
-    $("#st-chatu8-floor-info-panel").remove();
+    $("#zinao-chatu-floor-info-panel").remove();
     toastr.success("\u5DF2\u6E05\u9664\u6240\u6709\u697C\u5C42\u4FE1\u606F");
     console.log("[FloorMessage] \u5DF2\u6E05\u9664\u697C\u5C42\u4FE1\u606F\u6536\u96C6");
   });
-  $("#st-chatu8-floor-info-panel").on("click", function(e) {
+  $("#zinao-chatu-floor-info-panel").on("click", function(e) {
     if (e.target === this) {
       $(this).remove();
     }
   });
   const style = document.createElement("style");
   style.textContent = `
-        .st-chatu8-floor-item {
+        .zinao-chatu-floor-item {
             cursor: move;
         }
-        .st-chatu8-floor-item:hover {
+        .zinao-chatu-floor-item:hover {
             background: rgba(255,255,255,0.08) !important;
             border-color: rgba(255,255,255,0.15) !important;
         }
-        .st-chatu8-floor-item.dragging {
+        .zinao-chatu-floor-item.dragging {
             opacity: 0.4 !important;
             border: 2px dashed rgba(76, 175, 80, 0.6) !important;
             background: rgba(76, 175, 80, 0.1) !important;
@@ -39009,9 +39015,9 @@ function showTypeSelectionPopup() {
       maxHeight = `${availableHeight}px`;
     }
     const overlay2 = document.createElement("div");
-    overlay2.className = "st-chatu8-popup-overlay";
+    overlay2.className = "zinao-chatu-popup-overlay";
     const bubble = document.createElement("div");
-    bubble.className = "st-chatu8-popup-bubble";
+    bubble.className = "zinao-chatu-popup-bubble";
     bubble.style.maxWidth = "400px";
     if (isMobile3) {
       bubble.classList.add("mobile");
@@ -39019,29 +39025,29 @@ function showTypeSelectionPopup() {
       bubble.style.maxHeight = maxHeight;
     }
     const title = document.createElement("div");
-    title.className = "st-chatu8-popup-title";
+    title.className = "zinao-chatu-popup-title";
     title.textContent = "\u9009\u62E9\u751F\u6210\u7C7B\u578B";
     bubble.appendChild(title);
     const hint = document.createElement("div");
-    hint.className = "st-chatu8-popup-hint";
+    hint.className = "zinao-chatu-popup-hint";
     hint.textContent = "\u8BF7\u9009\u62E9\u8981\u751F\u6210\u7684\u4EBA\u8BBE\u7C7B\u578B\uFF1A";
     bubble.appendChild(hint);
     const buttons = document.createElement("div");
-    buttons.className = "st-chatu8-popup-buttons";
+    buttons.className = "zinao-chatu-popup-buttons";
     buttons.style.flexDirection = "column";
     buttons.style.gap = "8px";
     const characterBtn = document.createElement("button");
-    characterBtn.className = "st-chatu8-popup-btn-confirm";
+    characterBtn.className = "zinao-chatu-popup-btn-confirm";
     characterBtn.innerHTML = "\u{1F3AD} \u89D2\u8272\u4EBA\u8BBE<br><small>\u5305\u542B\u6B21\u5143\u7A7F\u8D8A\u8BBE\u5B9A</small>";
     characterBtn.style.padding = "12px";
     buttons.appendChild(characterBtn);
     const userBtn = document.createElement("button");
-    userBtn.className = "st-chatu8-popup-btn-confirm";
+    userBtn.className = "zinao-chatu-popup-btn-confirm";
     userBtn.innerHTML = "\u{1F464} User \u4EBA\u8BBE<br><small>\u4E0D\u5305\u542B\u7A7F\u8D8A\u8BBE\u5B9A</small>";
     userBtn.style.padding = "12px";
     buttons.appendChild(userBtn);
     const cancelBtn = document.createElement("button");
-    cancelBtn.className = "st-chatu8-popup-btn-cancel";
+    cancelBtn.className = "zinao-chatu-popup-btn-cancel";
     cancelBtn.textContent = "\u53D6\u6D88";
     buttons.appendChild(cancelBtn);
     bubble.appendChild(buttons);
@@ -39075,41 +39081,41 @@ function showPersonaGenDemandPopup(messagePreview, generationType = "character")
       maxHeight = `${availableHeight}px`;
     }
     const overlay2 = document.createElement("div");
-    overlay2.className = "st-chatu8-popup-overlay";
+    overlay2.className = "zinao-chatu-popup-overlay";
     const bubble = document.createElement("div");
-    bubble.className = "st-chatu8-popup-bubble";
+    bubble.className = "zinao-chatu-popup-bubble";
     if (isMobile3) {
       bubble.classList.add("mobile");
       bubble.style.top = `${topOffset}px`;
       bubble.style.maxHeight = maxHeight;
     }
     const title = document.createElement("div");
-    title.className = "st-chatu8-popup-title";
+    title.className = "zinao-chatu-popup-title";
     title.textContent = generationType === "user" ? "User \u4EBA\u8BBE\u751F\u6210" : "\u89D2\u8272\u4EBA\u8BBE\u751F\u6210";
     bubble.appendChild(title);
     const hint = document.createElement("div");
-    hint.className = "st-chatu8-popup-hint";
+    hint.className = "zinao-chatu-popup-hint";
     hint.textContent = generationType === "user" ? "\u8BF7\u8F93\u5165 User \u4EBA\u8BBE\u751F\u6210\u9700\u6C42\uFF08\u53EF\u9009\uFF09\uFF0C\u7559\u7A7A\u5219\u6839\u636E\u4E0A\u4E0B\u6587\u81EA\u52A8\u751F\u6210" : "\u8BF7\u8F93\u5165\u89D2\u8272\u4EBA\u8BBE\u751F\u6210\u9700\u6C42\uFF08\u53EF\u9009\uFF09\uFF0C\u7559\u7A7A\u5219\u6839\u636E\u89D2\u8272\u5361\u4FE1\u606F\u81EA\u52A8\u751F\u6210";
     bubble.appendChild(hint);
     if (messagePreview) {
       const preview = document.createElement("div");
-      preview.className = "st-chatu8-popup-hint";
+      preview.className = "zinao-chatu-popup-hint";
       preview.style.cssText = "font-size:12px;opacity:0.6;margin-bottom:8px;max-height:60px;overflow:hidden;text-overflow:ellipsis;";
       preview.textContent = `\u{1F4DD} \u53C2\u8003\u6D88\u606F: ${messagePreview.substring(0, 100)}${messagePreview.length > 100 ? "..." : ""}`;
       bubble.appendChild(preview);
     }
     const textarea = document.createElement("textarea");
-    textarea.className = "st-chatu8-popup-textarea";
+    textarea.className = "zinao-chatu-popup-textarea";
     textarea.placeholder = "\u4F8B\u5982\uFF1A\u751F\u6210\u4E00\u4E2A\u6E29\u67D4\u7684\u732B\u5A18\u89D2\u8272\u4EBA\u8BBE\uFF0C\u6027\u683C\u5BB3\u7F9E\u4F46\u5185\u5FC3\u5584\u826F...";
     textarea.style.minHeight = "100px";
     bubble.appendChild(textarea);
     const imageSection = document.createElement("div");
-    imageSection.className = "st-chatu8-popup-upload-section";
+    imageSection.className = "zinao-chatu-popup-upload-section";
     const uploadHeader = document.createElement("div");
-    uploadHeader.className = "st-chatu8-popup-upload-header";
+    uploadHeader.className = "zinao-chatu-popup-upload-header";
     const uploadLabel = document.createElement("span");
     uploadLabel.textContent = "\u{1F4CE} \u53C2\u8003\u56FE\u7247\uFF08\u53EF\u9009\uFF09";
-    uploadLabel.className = "st-chatu8-popup-upload-label";
+    uploadLabel.className = "zinao-chatu-popup-upload-label";
     const fileInput = document.createElement("input");
     fileInput.type = "file";
     fileInput.accept = "image/*";
@@ -39117,36 +39123,36 @@ function showPersonaGenDemandPopup(messagePreview, generationType = "character")
     const uploadBtn = document.createElement("button");
     uploadBtn.type = "button";
     uploadBtn.innerHTML = '<i class="fa-solid fa-plus"></i> \u6DFB\u52A0\u56FE\u7247';
-    uploadBtn.className = "st-chatu8-popup-upload-btn";
+    uploadBtn.className = "zinao-chatu-popup-upload-btn";
     uploadBtn.addEventListener("click", () => fileInput.click());
     uploadHeader.appendChild(uploadLabel);
     uploadHeader.appendChild(uploadBtn);
     const imagePreviewContainer = document.createElement("div");
-    imagePreviewContainer.className = "st-chatu8-popup-preview-container";
+    imagePreviewContainer.className = "zinao-chatu-popup-preview-container";
     const emptyHint = document.createElement("div");
     emptyHint.textContent = "\u70B9\u51FB\u4E0A\u65B9\u6309\u94AE\u6DFB\u52A0\u53C2\u8003\u56FE\u7247";
-    emptyHint.className = "st-chatu8-popup-empty-hint";
+    emptyHint.className = "zinao-chatu-popup-empty-hint";
     imagePreviewContainer.appendChild(emptyHint);
     function updateImagePreviews() {
       imagePreviewContainer.innerHTML = "";
       if (uploadedImages.length === 0) {
         const h = document.createElement("div");
         h.textContent = "\u70B9\u51FB\u4E0A\u65B9\u6309\u94AE\u6DFB\u52A0\u53C2\u8003\u56FE\u7247";
-        h.className = "st-chatu8-popup-empty-hint";
+        h.className = "zinao-chatu-popup-empty-hint";
         imagePreviewContainer.appendChild(h);
         return;
       }
       uploadedImages.forEach((imgObj, index) => {
         const itemContainer = document.createElement("div");
-        itemContainer.className = "st-chatu8-popup-img-item";
+        itemContainer.className = "zinao-chatu-popup-img-item";
         const imgWrapper = document.createElement("div");
-        imgWrapper.className = "st-chatu8-popup-img-wrapper";
+        imgWrapper.className = "zinao-chatu-popup-img-wrapper";
         const img = document.createElement("img");
         img.src = imgObj.base64;
         const deleteBtn = document.createElement("button");
         deleteBtn.type = "button";
         deleteBtn.innerHTML = "\xD7";
-        deleteBtn.className = "st-chatu8-popup-img-delete";
+        deleteBtn.className = "zinao-chatu-popup-img-delete";
         deleteBtn.addEventListener("click", (e) => {
           e.stopPropagation();
           uploadedImages.splice(index, 1);
@@ -39158,7 +39164,7 @@ function showPersonaGenDemandPopup(messagePreview, generationType = "character")
         nameInput.type = "text";
         nameInput.placeholder = `\u56FE${index + 1}`;
         nameInput.value = imgObj.name || "";
-        nameInput.className = "st-chatu8-popup-img-name";
+        nameInput.className = "zinao-chatu-popup-img-name";
         nameInput.addEventListener("input", (e) => {
           uploadedImages[index].name = e.target.value;
         });
@@ -39168,7 +39174,7 @@ function showPersonaGenDemandPopup(messagePreview, generationType = "character")
       });
       const countLabel = document.createElement("div");
       countLabel.textContent = `\u5DF2\u6DFB\u52A0 ${uploadedImages.length} \u5F20\u56FE\u7247`;
-      countLabel.className = "st-chatu8-popup-img-count";
+      countLabel.className = "zinao-chatu-popup-img-count";
       imagePreviewContainer.appendChild(countLabel);
     }
     fileInput.addEventListener("change", async (e) => {
@@ -39193,13 +39199,13 @@ function showPersonaGenDemandPopup(messagePreview, generationType = "character")
     imageSection.appendChild(imagePreviewContainer);
     bubble.appendChild(imageSection);
     const buttons = document.createElement("div");
-    buttons.className = "st-chatu8-popup-buttons";
+    buttons.className = "zinao-chatu-popup-buttons";
     const cancelBtn = document.createElement("button");
-    cancelBtn.className = "st-chatu8-popup-btn-cancel";
+    cancelBtn.className = "zinao-chatu-popup-btn-cancel";
     cancelBtn.textContent = "\u53D6\u6D88";
     buttons.appendChild(cancelBtn);
     const confirmBtn = document.createElement("button");
-    confirmBtn.className = "st-chatu8-popup-btn-confirm";
+    confirmBtn.className = "zinao-chatu-popup-btn-confirm";
     confirmBtn.textContent = "\u5F00\u59CB\u751F\u6210";
     buttons.appendChild(confirmBtn);
     bubble.appendChild(buttons);
@@ -39844,7 +39850,7 @@ async function onExportPreset2() {
       console.error("[UserPreset] \u5BFC\u51FA\u5934\u50CF\u5931\u8D25:", error);
     }
   }
-  downloadJson2(exportData, `st-chatu8-user-${presetId}.json`);
+  downloadJson2(exportData, `zinao-chatu-user-${presetId}.json`);
   toastr.success(`User\u9884\u8BBE\u300C${presetId}\u300D\u5DF2\u5BFC\u51FA\u3002`);
 }
 async function onExportAllPresets2() {
@@ -39871,7 +39877,7 @@ async function onExportAllPresets2() {
       }
     }
   }
-  downloadJson2(exportData, "st-chatu8-user-\u5168\u90E8.json");
+  downloadJson2(exportData, "zinao-chatu-user-\u5168\u90E8.json");
   toastr.success(`\u5DF2\u5BFC\u51FA\u5168\u90E8 ${Object.keys(profiles.presets).length} \u4E2A\u9884\u8BBE\u3002`);
 }
 async function onImportPreset2(event) {
@@ -40410,7 +40416,7 @@ function generateAvatarHTML(avatarSrc, alt = "Avatar") {
 }
 function updateDialogTitle() {
   const name = getAssistantDisplayName();
-  const $title = $("#st-chatu8-ai-dialog-title");
+  const $title = $("#zinao-chatu-ai-dialog-title");
   if ($title.length) {
     $title.text(`${name} AI \u52A9\u624B`);
   }
@@ -40421,8 +40427,8 @@ async function updateChatAvatars(chatBody) {
   const userAvatar = await getCurrentUserAvatar();
   const charAvatarHTML = generateAvatarHTML(charAvatar, "\u667A\u7ED8\u59EC");
   const userAvatarHTML = generateAvatarHTML(userAvatar, "User");
-  chatBody.find(".st-chatu8-ai-msg.system-msg .msg-avatar").html(charAvatarHTML);
-  chatBody.find(".st-chatu8-ai-msg.user-msg .msg-avatar").html(userAvatarHTML);
+  chatBody.find(".zinao-chatu-ai-msg.system-msg .msg-avatar").html(charAvatarHTML);
+  chatBody.find(".zinao-chatu-ai-msg.user-msg .msg-avatar").html(userAvatarHTML);
 }
 function initAvatarUpdateListener(chatBody) {
   if (!chatBody || !chatBody.length) return;
@@ -40560,13 +40566,13 @@ function renderMarkdown(text) {
 function renderThinkingPanel(content) {
   const escapedContent = escapeHTML(content);
   return `
-        <details class="st-chatu8-ai-thinking-panel">
-            <summary class="st-chatu8-ai-thinking-summary">
+        <details class="zinao-chatu-ai-thinking-panel">
+            <summary class="zinao-chatu-ai-thinking-summary">
                 <span class="thinking-icon">\u{1F4AD}</span>
                 <span class="thinking-label">${getAssistantDisplayName()}\u7684\u601D\u8003\u8FC7\u7A0B</span>
                 <span class="thinking-toggle">\u25BC</span>
             </summary>
-            <div class="st-chatu8-ai-thinking-content">
+            <div class="zinao-chatu-ai-thinking-content">
                 ${escapedContent}
             </div>
         </details>
@@ -40586,7 +40592,7 @@ var init_aiPrompts = __esm({
     systemPrompts = {
       default: {
         name: "\u667A\u7ED8\u59EC (\u9ED8\u8BA4)",
-        prompt: `\u4F60\u662F\u667A\u7ED8\u59EC\uFF0CSillyTavern \u63D2\u4EF6 st-chatu8 \u7684\u4E13\u5C5EAI\u7BA1\u7406\u52A9\u624B\u3002
+        prompt: `\u4F60\u662F\u667A\u7ED8\u59EC\uFF0CSillyTavern \u63D2\u4EF6 zinao-chatu \u7684\u4E13\u5C5EAI\u7BA1\u7406\u52A9\u624B\u3002
 
 \u3010\u667A\u7ED8\u59EC \u2014\u2014 \u4F60\u7684\u89D2\u8272\u8BBE\u5B9A\u3011
 
@@ -42313,7 +42319,7 @@ async function processAudio(blob, duration) {
         duration
       });
       fillTextToInput(text, target);
-      if (conversationModeActive && conversationAutoSendFn && target === "#st-chatu8-ai-input" && config.autoSend !== false) {
+      if (conversationModeActive && conversationAutoSendFn && target === "#zinao-chatu-ai-input" && config.autoSend !== false) {
         log2("\u{1F504} \u591A\u8F6E\u5BF9\u8BDD\u6A21\u5F0F\uFF1A\u81EA\u52A8\u53D1\u9001");
         setTimeout(() => {
           if (conversationModeActive && conversationAutoSendFn) {
@@ -42814,7 +42820,7 @@ function initializeASR() {
           if (!conversationModeActive || conversationMuted) return;
           if (state2 === "idle") {
             log2("\u{1F399}\uFE0F \u591A\u8F6E\u5BF9\u8BDD\uFF1A\u81EA\u52A8\u6062\u590D\u5F55\u97F3");
-            currentTargetInput = "#st-chatu8-ai-input";
+            currentTargetInput = "#zinao-chatu-ai-input";
             startRecording();
           } else if (state2 === "processing") {
             log2("\u{1F399}\uFE0F \u591A\u8F6E\u5BF9\u8BDD\uFF1AASR \u6B63\u5728\u5904\u7406\u4E2D\uFF0C\u7B49\u5F85\u5904\u7406\u5B8C\u6210\u540E\u81EA\u52A8\u6062\u590D");
@@ -42865,7 +42871,7 @@ function startConversationMode(autoSendFn, startMuted = false) {
     log2("\u{1F5E3}\uFE0F \u591A\u8F6E\u5BF9\u8BDD\u6A21\u5F0F\u5DF2\u5F00\u542F\uFF08\u7B49\u5F85\u4E2D\uFF1AAI\u751F\u6210\u6216TTS\u64AD\u653E\u5C1A\u672A\u7ED3\u675F\uFF09");
   } else {
     log2("\u{1F5E3}\uFE0F \u591A\u8F6E\u5BF9\u8BDD\u6A21\u5F0F\u5DF2\u5F00\u542F");
-    currentTargetInput = "#st-chatu8-ai-input";
+    currentTargetInput = "#zinao-chatu-ai-input";
     if (state2 === "idle") {
       startRecording();
     }
@@ -42907,7 +42913,7 @@ function notifyAiGenerationDone() {
     conversationResumeTimer = setTimeout(() => {
       conversationResumeTimer = null;
       if (conversationModeActive && !conversationMuted && state2 === "idle") {
-        currentTargetInput = "#st-chatu8-ai-input";
+        currentTargetInput = "#zinao-chatu-ai-input";
         startRecording();
       }
     }, 500);
@@ -42941,7 +42947,7 @@ function startWatchdog() {
       conversationMuted = false;
       clearWatchdog();
       if (state2 === "idle") {
-        currentTargetInput = "#st-chatu8-ai-input";
+        currentTargetInput = "#zinao-chatu-ai-input";
         startRecording();
       }
     }
@@ -43456,7 +43462,7 @@ var init_sdSettingsModule = __esm({
 <SystemQuery>{"type": "write", "path": "sdUrl", "value": "http://127.0.0.1:7860"}</SystemQuery>
 
 \u8BBE\u7F6E SD \u8EAB\u4EFD\u9A8C\u8BC1\uFF08\u683C\u5F0F\uFF1A\u7528\u6237\u540D:\u5BC6\u7801\uFF09\uFF1A
-<SystemQuery>{"type": "write", "path": "st_chatu8_sd_auth", "value": "username:password"}</SystemQuery>
+<SystemQuery>{"type": "write", "path": "zinao_chatu_sd_auth", "value": "username:password"}</SystemQuery>
 
 \u8FDE\u63A5\u5E76\u5237\u65B0 SD \u6570\u636E\uFF08\u83B7\u53D6\u6A21\u578B\u3001\u91C7\u6837\u5668\u7B49\u5217\u8868\uFF09\uFF1A
 <SystemQuery>{"type": "ui_action", "action": "click_button", "selector": "#testSd"}</SystemQuery>
@@ -43553,7 +43559,7 @@ var init_sdSettingsModule = __esm({
 
 \u25A0 API \u8FDE\u63A5\u533A\u57DF
 - sdUrl\uFF1ASD WebUI \u7684 API \u5730\u5740\uFF0C\u901A\u5E38\u4E3A http://127.0.0.1:7860
-- st_chatu8_sd_auth\uFF1A\u5982\u679C SD WebUI \u5F00\u542F\u4E86\u8EAB\u4EFD\u9A8C\u8BC1\uFF0C\u9700\u8981\u586B\u5199"\u7528\u6237\u540D:\u5BC6\u7801"\u683C\u5F0F
+- zinao_chatu_sd_auth\uFF1A\u5982\u679C SD WebUI \u5F00\u542F\u4E86\u8EAB\u4EFD\u9A8C\u8BC1\uFF0C\u9700\u8981\u586B\u5199"\u7528\u6237\u540D:\u5BC6\u7801"\u683C\u5F0F
 - \u8FDE\u63A5\u5237\u65B0\u6570\u636E\u6309\u94AE\uFF1A\u70B9\u51FB\u540E\u4F1A\u8FDE\u63A5 SD API \u5E76\u83B7\u53D6\u53EF\u7528\u7684\u6A21\u578B\u3001VAE\u3001\u91C7\u6837\u5668\u3001\u653E\u5927\u5668\u7B49\u5217\u8868\uFF1B\uFF08\u5982\u679C\u5931\u8D25\u90A3\u4E48\u53EF\u4EE5\u8C03\u7528\u8BCA\u65AD\u4E0E\u65E5\u5FD7\u6A21\u5757\u8BFB\u53D6\u9519\u8BEF\u4FE1\u606F\uFF09
 
 \u25A0 \u63D0\u793A\u8BCD\u9884\u8BBE\u533A\u57DF
@@ -43620,7 +43626,7 @@ var init_sdSettingsModule = __esm({
 3. \u8BBE\u7F6E SD API \u5730\u5740\uFF08\u5982\u679C\u7528\u6237\u672A\u63D0\u4F9B\uFF0C\u4F7F\u7528\u9ED8\u8BA4\u503C\uFF09\uFF1A
    <SystemQuery>{"type": "write", "path": "sdUrl", "value": "http://127.0.0.1:7860"}</SystemQuery>
 4. \u5982\u679C\u9700\u8981\u8EAB\u4EFD\u9A8C\u8BC1\uFF0C\u8BBE\u7F6E\u8BA4\u8BC1\u4FE1\u606F\uFF1A
-   <SystemQuery>{"type": "write", "path": "st_chatu8_sd_auth", "value": "\u7528\u6237\u540D:\u5BC6\u7801"}</SystemQuery>
+   <SystemQuery>{"type": "write", "path": "zinao_chatu_sd_auth", "value": "\u7528\u6237\u540D:\u5BC6\u7801"}</SystemQuery>
 5. \u70B9\u51FB\u8FDE\u63A5\u5237\u65B0\u6570\u636E\u6309\u94AE\uFF0C\u83B7\u53D6\u53EF\u7528\u7684\u6A21\u578B\u548C\u53C2\u6570\u5217\u8868\uFF1A
    <SystemQuery>{"type": "ui_action", "action": "click_button", "selector": "#testSd"}</SystemQuery>
 6. \u7B49\u5F85\u5237\u65B0\u5B8C\u6210\u540E\uFF0C\u9009\u62E9\u6A21\u578B\uFF08\u9700\u8981\u7528\u6237\u786E\u8BA4\u6216\u4ECE\u5217\u8868\u4E2D\u9009\u62E9\uFF09
@@ -43685,7 +43691,7 @@ var init_sdSettingsModule = __esm({
 
 \u25A0 \u8FDE\u63A5\u95EE\u9898
 - \u65E0\u6CD5\u8FDE\u63A5 SD API\uFF1A\u68C0\u67E5 sdUrl \u662F\u5426\u6B63\u786E\uFF0CSD WebUI \u662F\u5426\u5DF2\u542F\u52A8\uFF0C\u662F\u5426\u5F00\u542F\u4E86 --api \u53C2\u6570 \uFF08\u5982\u679C\u5931\u8D25\u90A3\u4E48\u53EF\u4EE5\u8C03\u7528\u8BCA\u65AD\u4E0E\u65E5\u5FD7\u6A21\u5757\u8BFB\u53D6\u9519\u8BEF\u4FE1\u606F\uFF09
-- \u8EAB\u4EFD\u9A8C\u8BC1\u5931\u8D25\uFF1A\u786E\u8BA4 st_chatu8_sd_auth \u683C\u5F0F\u4E3A"\u7528\u6237\u540D:\u5BC6\u7801"\uFF0C\u4E0E SD WebUI \u7684\u8BA4\u8BC1\u8BBE\u7F6E\u4E00\u81F4
+- \u8EAB\u4EFD\u9A8C\u8BC1\u5931\u8D25\uFF1A\u786E\u8BA4 zinao_chatu_sd_auth \u683C\u5F0F\u4E3A"\u7528\u6237\u540D:\u5BC6\u7801"\uFF0C\u4E0E SD WebUI \u7684\u8BA4\u8BC1\u8BBE\u7F6E\u4E00\u81F4
 - \u8DE8\u57DF\u9519\u8BEF\uFF1ASD WebUI \u9700\u8981\u6DFB\u52A0 --cors-allow-origins \u53C2\u6570\u5141\u8BB8\u8DE8\u57DF\u8BBF\u95EE
 - \u8FDE\u63A5\u8D85\u65F6\uFF1A\u68C0\u67E5\u9632\u706B\u5899\u8BBE\u7F6E\uFF0C\u786E\u4FDD\u7AEF\u53E3\u672A\u88AB\u5360\u7528
 
@@ -45988,24 +45994,24 @@ var init_themeSettingsModule = __esm({
   * \u81EA\u52A8\u5E94\u7528\uFF1A\u9009\u62E9\u540E\u7ACB\u5373\u751F\u6548
 
 \u25A0 \u989C\u8272\u81EA\u5B9A\u4E49\u533A\u57DF
-- \u4E3B\u80CC\u666F\u8272\uFF08--st-chatu8-bg-primary\uFF09\uFF1A\u8BBE\u7F6E\u9762\u677F\u7684\u4E3B\u8981\u80CC\u666F\u989C\u8272
-- \u6B21\u80CC\u666F\u8272\uFF08--st-chatu8-bg-secondary\uFF09\uFF1A\u5361\u7247\u3001\u8F93\u5165\u6846\u7B49\u6B21\u8981\u533A\u57DF\u7684\u80CC\u666F\u8272
-- \u4E09\u7EA7\u80CC\u666F\u8272\uFF08--st-chatu8-bg-tertiary\uFF09\uFF1A\u66F4\u6DF1\u5C42\u6B21\u7684\u80CC\u666F\u8272
-- \u4E3B\u6587\u672C\u989C\u8272\uFF08--st-chatu8-text-primary\uFF09\uFF1A\u4E3B\u8981\u6587\u5B57\u7684\u989C\u8272
-- \u6B21\u6587\u672C\u989C\u8272\uFF08--st-chatu8-text-secondary\uFF09\uFF1A\u6B21\u8981\u6587\u5B57\u3001\u63D0\u793A\u6587\u5B57\u7684\u989C\u8272
-- \u4E3B\u5F3A\u8C03\u8272\uFF08--st-chatu8-accent-primary\uFF09\uFF1A\u6309\u94AE\u3001\u94FE\u63A5\u7B49\u5F3A\u8C03\u5143\u7D20\u7684\u989C\u8272
-- \u6B21\u5F3A\u8C03\u8272\uFF08--st-chatu8-accent-secondary\uFF09\uFF1A\u5F3A\u8C03\u5143\u7D20\u7684\u60AC\u505C/\u6FC0\u6D3B\u72B6\u6001\u989C\u8272
-- \u5371\u9669/\u5220\u9664\u6309\u94AE\u8272\uFF08--st-chatu8-danger-primary\uFF09\uFF1A\u5220\u9664\u3001\u5371\u9669\u64CD\u4F5C\u6309\u94AE\u7684\u989C\u8272
-- \u5371\u9669/\u5220\u9664\u6309\u94AE\u60AC\u505C\u8272\uFF08--st-chatu8-danger-secondary\uFF09\uFF1A\u5371\u9669\u6309\u94AE\u60AC\u505C\u65F6\u7684\u989C\u8272
-- \u5371\u9669/\u5220\u9664\u6309\u94AE\u6587\u672C\u8272\uFF08--st-chatu8-danger-text\uFF09\uFF1A\u5371\u9669\u6309\u94AE\u4E0A\u6587\u5B57\u7684\u989C\u8272
-- \u8FB9\u6846\u989C\u8272\uFF08--st-chatu8-border-color\uFF09\uFF1A\u5404\u79CD\u8FB9\u6846\u3001\u5206\u9694\u7EBF\u7684\u989C\u8272
-- \u4E0B\u62C9\u6846\u80CC\u666F\u8272\uFF08--st-chatu8-dropdown-bg\uFF09\uFF1A\u4E0B\u62C9\u9009\u62E9\u6846\u7684\u80CC\u666F\u8272
-- \u4E0B\u62C9\u5217\u8868\u6587\u672C\u989C\u8272\uFF08--st-chatu8-dropdown-text\uFF09\uFF1A\u4E0B\u62C9\u6846\u6587\u5B57\u989C\u8272
-- \u4E0B\u62C9\u9009\u9879\u80CC\u666F\u8272\uFF08--st-chatu8-dropdown-list-bg\uFF09\uFF1A\u4E0B\u62C9\u9009\u9879\u7684\u80CC\u666F\u8272
-- \u9AD8\u4EAE\u6587\u672C\u989C\u8272\uFF08--st-chatu8-text-highlight\uFF09\uFF1A\u9AD8\u4EAE\u663E\u793A\u7684\u6587\u672C\u989C\u8272
-- \u8F93\u5165\u6846\u80CC\u666F\u8272\uFF08--st-chatu8-input-bg\uFF09\uFF1A\u6587\u672C\u8F93\u5165\u6846\u7684\u80CC\u666F\u8272
-- \u8F93\u5165\u6846\u6587\u672C\u989C\u8272\uFF08--st-chatu8-input-text\uFF09\uFF1A\u8F93\u5165\u6846\u5185\u6587\u5B57\u7684\u989C\u8272
-- \u8F93\u5165\u6846\u8FB9\u6846\u989C\u8272\uFF08--st-chatu8-input-border\uFF09\uFF1A\u8F93\u5165\u6846\u8FB9\u6846\u7684\u989C\u8272
+- \u4E3B\u80CC\u666F\u8272\uFF08--zinao-chatu-bg-primary\uFF09\uFF1A\u8BBE\u7F6E\u9762\u677F\u7684\u4E3B\u8981\u80CC\u666F\u989C\u8272
+- \u6B21\u80CC\u666F\u8272\uFF08--zinao-chatu-bg-secondary\uFF09\uFF1A\u5361\u7247\u3001\u8F93\u5165\u6846\u7B49\u6B21\u8981\u533A\u57DF\u7684\u80CC\u666F\u8272
+- \u4E09\u7EA7\u80CC\u666F\u8272\uFF08--zinao-chatu-bg-tertiary\uFF09\uFF1A\u66F4\u6DF1\u5C42\u6B21\u7684\u80CC\u666F\u8272
+- \u4E3B\u6587\u672C\u989C\u8272\uFF08--zinao-chatu-text-primary\uFF09\uFF1A\u4E3B\u8981\u6587\u5B57\u7684\u989C\u8272
+- \u6B21\u6587\u672C\u989C\u8272\uFF08--zinao-chatu-text-secondary\uFF09\uFF1A\u6B21\u8981\u6587\u5B57\u3001\u63D0\u793A\u6587\u5B57\u7684\u989C\u8272
+- \u4E3B\u5F3A\u8C03\u8272\uFF08--zinao-chatu-accent-primary\uFF09\uFF1A\u6309\u94AE\u3001\u94FE\u63A5\u7B49\u5F3A\u8C03\u5143\u7D20\u7684\u989C\u8272
+- \u6B21\u5F3A\u8C03\u8272\uFF08--zinao-chatu-accent-secondary\uFF09\uFF1A\u5F3A\u8C03\u5143\u7D20\u7684\u60AC\u505C/\u6FC0\u6D3B\u72B6\u6001\u989C\u8272
+- \u5371\u9669/\u5220\u9664\u6309\u94AE\u8272\uFF08--zinao-chatu-danger-primary\uFF09\uFF1A\u5220\u9664\u3001\u5371\u9669\u64CD\u4F5C\u6309\u94AE\u7684\u989C\u8272
+- \u5371\u9669/\u5220\u9664\u6309\u94AE\u60AC\u505C\u8272\uFF08--zinao-chatu-danger-secondary\uFF09\uFF1A\u5371\u9669\u6309\u94AE\u60AC\u505C\u65F6\u7684\u989C\u8272
+- \u5371\u9669/\u5220\u9664\u6309\u94AE\u6587\u672C\u8272\uFF08--zinao-chatu-danger-text\uFF09\uFF1A\u5371\u9669\u6309\u94AE\u4E0A\u6587\u5B57\u7684\u989C\u8272
+- \u8FB9\u6846\u989C\u8272\uFF08--zinao-chatu-border-color\uFF09\uFF1A\u5404\u79CD\u8FB9\u6846\u3001\u5206\u9694\u7EBF\u7684\u989C\u8272
+- \u4E0B\u62C9\u6846\u80CC\u666F\u8272\uFF08--zinao-chatu-dropdown-bg\uFF09\uFF1A\u4E0B\u62C9\u9009\u62E9\u6846\u7684\u80CC\u666F\u8272
+- \u4E0B\u62C9\u5217\u8868\u6587\u672C\u989C\u8272\uFF08--zinao-chatu-dropdown-text\uFF09\uFF1A\u4E0B\u62C9\u6846\u6587\u5B57\u989C\u8272
+- \u4E0B\u62C9\u9009\u9879\u80CC\u666F\u8272\uFF08--zinao-chatu-dropdown-list-bg\uFF09\uFF1A\u4E0B\u62C9\u9009\u9879\u7684\u80CC\u666F\u8272
+- \u9AD8\u4EAE\u6587\u672C\u989C\u8272\uFF08--zinao-chatu-text-highlight\uFF09\uFF1A\u9AD8\u4EAE\u663E\u793A\u7684\u6587\u672C\u989C\u8272
+- \u8F93\u5165\u6846\u80CC\u666F\u8272\uFF08--zinao-chatu-input-bg\uFF09\uFF1A\u6587\u672C\u8F93\u5165\u6846\u7684\u80CC\u666F\u8272
+- \u8F93\u5165\u6846\u6587\u672C\u989C\u8272\uFF08--zinao-chatu-input-text\uFF09\uFF1A\u8F93\u5165\u6846\u5185\u6587\u5B57\u7684\u989C\u8272
+- \u8F93\u5165\u6846\u8FB9\u6846\u989C\u8272\uFF08--zinao-chatu-input-border\uFF09\uFF1A\u8F93\u5165\u6846\u8FB9\u6846\u7684\u989C\u8272
 
 \u25A0 \u6309\u94AE\u6837\u5F0F\u533A\u57DF
 - generate_btn_style\uFF08\u751F\u6210\u6309\u94AE\u6837\u5F0F\uFF09\uFF1A\u8BBE\u7F6E\u56FE\u7247\u751F\u6210\u6309\u94AE\u7684\u5916\u89C2\u6837\u5F0F
@@ -47155,7 +47161,7 @@ jiuguanchucun\uFF08\u9152\u9986\u5B58\u50A8\u5F00\u5173\uFF09\uFF1A
 5. \u70B9\u51FB"\u4E0B\u8F7D\u9009\u4E2D"\u6309\u94AE
 6. \u7B49\u5F85\u6253\u5305\uFF08\u663E\u793A\u8FDB\u5EA6\u63D0\u793A\uFF09
 7. ZIP \u6587\u4EF6\u81EA\u52A8\u4E0B\u8F7D
-8. \u6587\u4EF6\u540D\u683C\u5F0F\uFF1Ast-chatu8-media-YYYY-MM-DD.zip
+8. \u6587\u4EF6\u540D\u683C\u5F0F\uFF1Azinao-chatu-media-YYYY-MM-DD.zip
 
 \u25A0 \u6279\u91CF\u5220\u9664\u5A92\u4F53\u6D41\u7A0B\uFF1A
 1. \u5207\u6362\u5230\u56FE\u7247\u7F13\u5B58\u9875\u9762
@@ -48242,7 +48248,7 @@ var init_logSettingsModule = __esm({
 2. \u6267\u884C\u5BFC\u51FA\u547D\u4EE4\uFF1A
    <SystemQuery>{"type": "ui_action", "action": "export_log"}</SystemQuery>
 3. \u6D4F\u89C8\u5668\u4F1A\u81EA\u52A8\u4E0B\u8F7D\u65E5\u5FD7\u6587\u4EF6
-4. \u6587\u4EF6\u540D\u683C\u5F0F\uFF1Ast-chatu8-log-YYYY-MM-DDTHH-MM-SS.txt
+4. \u6587\u4EF6\u540D\u683C\u5F0F\uFF1Azinao-chatu-log-YYYY-MM-DDTHH-MM-SS.txt
 
 \u25A0 \u6E05\u7A7A\u65E5\u5FD7\u6D41\u7A0B
 1. \u5207\u6362\u5230\u65E5\u5FD7\u9875\u9762
@@ -48263,7 +48269,7 @@ var init_logSettingsModule = __esm({
 2. \u6267\u884C\u4E0B\u8F7D\u547D\u4EE4\uFF1A
    <SystemQuery>{"type": "ui_action", "action": "download_debug_log"}</SystemQuery>
 3. \u6D4F\u89C8\u5668\u4F1A\u81EA\u52A8\u4E0B\u8F7D\u8C03\u8BD5\u65E5\u5FD7\u6587\u4EF6
-4. \u6587\u4EF6\u540D\u683C\u5F0F\uFF1Ast-chatu8-debug-YYYY-MM-DDTHH-MM-SS.txt
+4. \u6587\u4EF6\u540D\u683C\u5F0F\uFF1Azinao-chatu-debug-YYYY-MM-DDTHH-MM-SS.txt
 
 \u25A0 \u95EE\u9898\u6392\u67E5\u6D41\u7A0B
 1. \u7528\u6237\u9047\u5230\u529F\u80FD\u5F02\u5E38
@@ -49705,7 +49711,7 @@ var init_configDescriptions = __esm({
       sd_cclip_skip: "SD CLIP Skip \u5C42\u6570\uFF08\u5E38\u7528 '1' \u6216 '2'\uFF09",
       sd_cadetailer: "SD \u662F\u5426\u542F\u7528 ADetailer \u9762\u90E8\u7EC6\u8282\u4FEE\u590D (\u5E03\u5C14\u5B57\u7B26\u4E32 'true'/'false')",
       restoreFaces: "SD \u662F\u5426\u542F\u7528\u5185\u7F6E\u9762\u90E8\u4FEE\u590D Restore Faces (\u5E03\u5C14\u5B57\u7B26\u4E32 'true'/'false')",
-      st_chatu8_sd_auth: "SD WebUI \u7684\u8BA4\u8BC1\u4FE1\u606F\uFF08\u7528\u6237\u540D:\u5BC6\u7801\u683C\u5F0F\uFF0C\u7528\u4E8E\u9700\u8981\u8EAB\u4EFD\u9A8C\u8BC1\u7684\u60C5\u51B5\uFF09",
+      zinao_chatu_sd_auth: "SD WebUI \u7684\u8BA4\u8BC1\u4FE1\u606F\uFF08\u7528\u6237\u540D:\u5BC6\u7801\u683C\u5F0F\uFF0C\u7528\u4E8E\u9700\u8981\u8EAB\u4EFD\u9A8C\u8BC1\u7684\u60C5\u51B5\uFF09",
       novelaimode: "NAI \u751F\u56FE\u6A21\u578B\u7248\u672C\uFF0C\u5982 'nai-diffusion-4-5-full'",
       novelai_sampler: "k_dpmpp_2m_sde",
       // NAI Vibe Transfer / 风格参考参数
@@ -49830,7 +49836,7 @@ var init_configDescriptions = __esm({
       lastTab: "\u8BB0\u4F4F\u4E0A\u6B21\u6253\u5F00\u7684\u8BBE\u7F6E\u6807\u7B7E\u9875\u540D\u79F0"
     };
     ProjectDescription = `
-\u3010\u9879\u76EE\u540D\u79F0\u3011st-chatu8 (\u667A\u7ED8\u59EC)
+\u3010\u9879\u76EE\u540D\u79F0\u3011zinao-chatu (\u667A\u7ED8\u59EC)
 \u3010\u9879\u76EE\u7C7B\u578B\u3011SillyTavern (\u9152\u9986) \u7B2C\u4E09\u65B9\u6269\u5C55\u63D2\u4EF6
 \u3010\u6838\u5FC3\u529F\u80FD\u3011\u5728 SillyTavern \u804A\u5929\u8FC7\u7A0B\u4E2D\u81EA\u52A8/\u624B\u52A8\u751F\u6210\u56FE\u7247\uFF08AI\u7ED8\u56FE\uFF09
 
@@ -50573,7 +50579,7 @@ function refreshCharacterCommonPresetSelector(settings3) {
 }
 function refreshBananaConversationPresetSelector(settings3) {
   if (!settings3.banana?.conversationPresets) return;
-  const select = document.getElementById("st-chatu8-banana-conversation-preset-id");
+  const select = document.getElementById("zinao-chatu-banana-conversation-preset-id");
   if (select) {
     const currentValue = select.value;
     select.innerHTML = "";
@@ -50613,7 +50619,7 @@ function refreshInputFields(changedSettings, settings3) {
     "imageGenInterval": "imageGenInterval",
     // SD 设置页面
     "sdUrl": "sdUrl",
-    "st_chatu8_sd_auth": "st_chatu8_sd_auth",
+    "zinao_chatu_sd_auth": "zinao_chatu_sd_auth",
     "AQT_sd": "fixedPrompt",
     "fixedPrompt_end_sd": "fixedPrompt_end",
     "UCP_sd": "negativePrompt",
@@ -50660,8 +50666,8 @@ function refreshInputFields(changedSettings, settings3) {
     "inpaint_positive_prompt": "inpaint_positive_prompt",
     "inpaint_negative_prompt": "inpaint_negative_prompt",
     // Banana 设置页面
-    "banana.apiUrl": "st-chatu8-banana-api-url",
-    "banana.apiKey": "st-chatu8-banana-api-key",
+    "banana.apiUrl": "zinao-chatu-banana-api-url",
+    "banana.apiKey": "zinao-chatu-banana-api-key",
     // LLM 设置页面
     "translation_system_prompt": "translation_system_prompt",
     "ai_temperature": "ch-llm_temperature_value",
@@ -50722,14 +50728,14 @@ function refreshInputFields(changedSettings, settings3) {
     }
     if (key === "banana" && typeof value === "object") {
       if (value.apiUrl !== void 0) {
-        const element = document.getElementById("st-chatu8-banana-api-url");
+        const element = document.getElementById("zinao-chatu-banana-api-url");
         if (element && document.activeElement !== element) {
           element.value = value.apiUrl ?? "";
           refreshCount++;
         }
       }
       if (value.apiKey !== void 0) {
-        const element = document.getElementById("st-chatu8-banana-api-key");
+        const element = document.getElementById("zinao-chatu-banana-api-key");
         if (element && document.activeElement !== element) {
           element.value = value.apiKey ?? "";
           refreshCount++;
@@ -50843,7 +50849,7 @@ function updateSettingSafely(newSettings) {
   }
   if (isModified) {
     saveSettingsDebounced54();
-    document.dispatchEvent(new CustomEvent("st-chatu8-config-updated", { detail: { changed: newSettings } }));
+    document.dispatchEvent(new CustomEvent("zinao-chatu-config-updated", { detail: { changed: newSettings } }));
     refreshAffectedUI(newSettings);
     return true;
   }
@@ -51115,7 +51121,7 @@ function writeConfigPath(dotPath, newValue) {
   const oldValue = isNewKey ? void 0 : parent[lastKey];
   parent[lastKey] = newValue;
   saveSettingsDebounced55();
-  document.dispatchEvent(new CustomEvent("st-chatu8-config-updated", {
+  document.dispatchEvent(new CustomEvent("zinao-chatu-config-updated", {
     detail: { changed: { [dotPath]: newValue } }
   }));
   if (typeof window.loadSilterTavernChatu8Settings === "function") {
@@ -51217,7 +51223,7 @@ function getCurrentUIContext() {
     log: "\u65E5\u5FD7",
     send_data: "\u53D1\u9001\u6570\u636E"
   };
-  const activeTab = $(".st-chatu8-nav-link.active").data("tab") || "\u672A\u77E5";
+  const activeTab = $(".zinao-chatu-nav-link.active").data("tab") || "\u672A\u77E5";
   const tabLabel = tabNameMap[activeTab] || activeTab;
   const panelOpen = $("#ch-settings-modal").is(":visible");
   let result = `\u5F53\u524D\u6807\u7B7E\u9875: ${tabLabel} (${activeTab})`;
@@ -51237,31 +51243,31 @@ var init_configBrowseAPI = __esm({
     init_configDescriptions();
     UIActionRegistry = {
       // === 左侧导航栏 - 切换设置标签页 ===
-      "switch_tab_main": { selector: '.st-chatu8-nav-link[data-tab="main"]', desc: "\u5207\u6362\u5230\u300C\u4E3B\u8981\u8BBE\u7F6E\u300D\u9875 \u2014 \u540E\u7AEF\u6A21\u5F0F\u9009\u62E9\u3001\u5F00\u5173\u3001\u6807\u8BB0\u3001\u7F13\u5B58\u7BA1\u7406" },
-      "switch_tab_sd": { selector: '.st-chatu8-nav-link[data-tab="sd"]', desc: "\u5207\u6362\u5230\u300CSD\u300D\u8BBE\u7F6E\u9875 \u2014 Stable Diffusion WebUI \u7684\u63D0\u793A\u8BCD\u3001API\u5730\u5740\u3001\u6A21\u578B\u3001\u751F\u6210\u53C2\u6570" },
-      "switch_tab_novelai": { selector: '.st-chatu8-nav-link[data-tab="novelai"]', desc: "\u5207\u6362\u5230\u300CNovelAI\u300D\u8BBE\u7F6E\u9875 \u2014 NAI API Key\u3001\u6A21\u578B\u3001\u91C7\u6837\u5668\u3001Vibe\u53C2\u8003\u56FE\u7B49" },
-      "switch_tab_comfyui": { selector: '.st-chatu8-nav-link[data-tab="comfyui"]', desc: "\u5207\u6362\u5230\u300CComfyUI\u300D\u8BBE\u7F6E\u9875 \u2014 ComfyUI API\u5730\u5740\u3001\u5DE5\u4F5C\u6D41\u3001\u6A21\u578B\u3001\u91C7\u6837\u5668\u3001\u751F\u6210\u53C2\u6570" },
-      "switch_tab_banana": { selector: '.st-chatu8-nav-link[data-tab="banana"]', desc: "\u5207\u6362\u5230\u300CBanana/grok\u300D\u8BBE\u7F6E\u9875 \u2014 Banana API\u914D\u7F6E\u3001\u6A21\u578B\u3001\u591A\u8F6E\u5BF9\u8BDD\u9884\u8BBE" },
-      "switch_tab_llm": { selector: '.st-chatu8-nav-link[data-tab="llm"]', desc: "\u5207\u6362\u5230\u300CLLM\u300D\u8BBE\u7F6E\u9875 \u2014 \u5927\u8BED\u8A00\u6A21\u578BAPI\u914D\u7F6E\u3001\u4E0A\u4E0B\u6587\u9884\u8BBE\u3001\u8BF7\u6C42\u7C7B\u578B\u5206\u914D" },
-      "switch_tab_vocabulary": { selector: '.st-chatu8-nav-link[data-tab="vocabulary"]', desc: "\u5207\u6362\u5230\u300C\u8BCD\u5E93\u300D\u8BBE\u7F6E\u9875 \u2014 \u81EA\u52A8\u5B8C\u6210\u8BCD\u5E93\u641C\u7D22\u8BBE\u7F6E" },
-      "switch_tab_knowledgeBase": { selector: '.st-chatu8-nav-link[data-tab="knowledgeBase"]', desc: "\u5207\u6362\u5230\u300C\u8D44\u6599\u5E93\u300D\u8BBE\u7F6E\u9875 \u2014 \u7528\u6237\u81EA\u5B9A\u4E49\u77E5\u8BC6\u8D44\u6599\u5E93\u7BA1\u7406" },
-      "switch_tab_character": { selector: '.st-chatu8-nav-link[data-tab="character"]', desc: "\u5207\u6362\u5230\u300C\u89D2\u8272\u7BA1\u7406\u300D\u8BBE\u7F6E\u9875 \u2014 \u89D2\u8272\u8BBE\u8BA1\u548C\u670D\u88C5\u7BA1\u7406" },
-      "switch_tab_theme": { selector: '.st-chatu8-nav-link[data-tab="theme"]', desc: "\u5207\u6362\u5230\u300C\u4E3B\u9898\u8BBE\u7F6E\u300D\u9875 \u2014 UI\u5916\u89C2\u4E3B\u9898\u5207\u6362" },
-      "switch_tab_fab": { selector: '.st-chatu8-nav-link[data-tab="fab"]', desc: "\u5207\u6362\u5230\u300C\u60AC\u6D6E\u7403\u300D\u8BBE\u7F6E\u9875 \u2014 \u5FEB\u6377\u64CD\u4F5C\u6D6E\u52A8\u6309\u94AE\u7684\u5916\u89C2\u548C\u884C\u4E3A" },
-      "switch_tab_image_cache": { selector: '.st-chatu8-nav-link[data-tab="image-cache"]', desc: "\u5207\u6362\u5230\u300C\u56FE\u7247\u7F13\u5B58\u300D\u8BBE\u7F6E\u9875 \u2014 \u56FE\u7247\u7F13\u5B58\u67E5\u770B\u548C\u7BA1\u7406" },
-      "switch_tab_regex": { selector: '.st-chatu8-nav-link[data-tab="regex"]', desc: "\u5207\u6362\u5230\u300C\u6B63\u5219\u300D\u8BBE\u7F6E\u9875 \u2014 \u6B63\u5219\u8868\u8FBE\u5F0F\u66FF\u6362\u89C4\u5219\u7BA1\u7406" },
-      "switch_tab_about": { selector: '.st-chatu8-nav-link[data-tab="about"]', desc: "\u5207\u6362\u5230\u300C\u5173\u4E8E\u300D\u9875 \u2014 \u7248\u672C\u4FE1\u606F\u3001\u66F4\u65B0\u68C0\u67E5" },
-      "switch_tab_log": { selector: '.st-chatu8-nav-link[data-tab="log"]', desc: "\u5207\u6362\u5230\u300C\u65E5\u5FD7\u300D\u9875 \u2014 \u8FD0\u884C\u65E5\u5FD7\u67E5\u770B" },
-      "switch_tab_send_data": { selector: '.st-chatu8-nav-link[data-tab="send_data"]', desc: "\u5207\u6362\u5230\u300C\u53D1\u9001\u6570\u636E\u300D\u9875 \u2014 \u67E5\u770B\u6700\u8FD1\u53D1\u9001\u7684\u8BF7\u6C42\u6570\u636E" },
+      "switch_tab_main": { selector: '.zinao-chatu-nav-link[data-tab="main"]', desc: "\u5207\u6362\u5230\u300C\u4E3B\u8981\u8BBE\u7F6E\u300D\u9875 \u2014 \u540E\u7AEF\u6A21\u5F0F\u9009\u62E9\u3001\u5F00\u5173\u3001\u6807\u8BB0\u3001\u7F13\u5B58\u7BA1\u7406" },
+      "switch_tab_sd": { selector: '.zinao-chatu-nav-link[data-tab="sd"]', desc: "\u5207\u6362\u5230\u300CSD\u300D\u8BBE\u7F6E\u9875 \u2014 Stable Diffusion WebUI \u7684\u63D0\u793A\u8BCD\u3001API\u5730\u5740\u3001\u6A21\u578B\u3001\u751F\u6210\u53C2\u6570" },
+      "switch_tab_novelai": { selector: '.zinao-chatu-nav-link[data-tab="novelai"]', desc: "\u5207\u6362\u5230\u300CNovelAI\u300D\u8BBE\u7F6E\u9875 \u2014 NAI API Key\u3001\u6A21\u578B\u3001\u91C7\u6837\u5668\u3001Vibe\u53C2\u8003\u56FE\u7B49" },
+      "switch_tab_comfyui": { selector: '.zinao-chatu-nav-link[data-tab="comfyui"]', desc: "\u5207\u6362\u5230\u300CComfyUI\u300D\u8BBE\u7F6E\u9875 \u2014 ComfyUI API\u5730\u5740\u3001\u5DE5\u4F5C\u6D41\u3001\u6A21\u578B\u3001\u91C7\u6837\u5668\u3001\u751F\u6210\u53C2\u6570" },
+      "switch_tab_banana": { selector: '.zinao-chatu-nav-link[data-tab="banana"]', desc: "\u5207\u6362\u5230\u300CBanana/grok\u300D\u8BBE\u7F6E\u9875 \u2014 Banana API\u914D\u7F6E\u3001\u6A21\u578B\u3001\u591A\u8F6E\u5BF9\u8BDD\u9884\u8BBE" },
+      "switch_tab_llm": { selector: '.zinao-chatu-nav-link[data-tab="llm"]', desc: "\u5207\u6362\u5230\u300CLLM\u300D\u8BBE\u7F6E\u9875 \u2014 \u5927\u8BED\u8A00\u6A21\u578BAPI\u914D\u7F6E\u3001\u4E0A\u4E0B\u6587\u9884\u8BBE\u3001\u8BF7\u6C42\u7C7B\u578B\u5206\u914D" },
+      "switch_tab_vocabulary": { selector: '.zinao-chatu-nav-link[data-tab="vocabulary"]', desc: "\u5207\u6362\u5230\u300C\u8BCD\u5E93\u300D\u8BBE\u7F6E\u9875 \u2014 \u81EA\u52A8\u5B8C\u6210\u8BCD\u5E93\u641C\u7D22\u8BBE\u7F6E" },
+      "switch_tab_knowledgeBase": { selector: '.zinao-chatu-nav-link[data-tab="knowledgeBase"]', desc: "\u5207\u6362\u5230\u300C\u8D44\u6599\u5E93\u300D\u8BBE\u7F6E\u9875 \u2014 \u7528\u6237\u81EA\u5B9A\u4E49\u77E5\u8BC6\u8D44\u6599\u5E93\u7BA1\u7406" },
+      "switch_tab_character": { selector: '.zinao-chatu-nav-link[data-tab="character"]', desc: "\u5207\u6362\u5230\u300C\u89D2\u8272\u7BA1\u7406\u300D\u8BBE\u7F6E\u9875 \u2014 \u89D2\u8272\u8BBE\u8BA1\u548C\u670D\u88C5\u7BA1\u7406" },
+      "switch_tab_theme": { selector: '.zinao-chatu-nav-link[data-tab="theme"]', desc: "\u5207\u6362\u5230\u300C\u4E3B\u9898\u8BBE\u7F6E\u300D\u9875 \u2014 UI\u5916\u89C2\u4E3B\u9898\u5207\u6362" },
+      "switch_tab_fab": { selector: '.zinao-chatu-nav-link[data-tab="fab"]', desc: "\u5207\u6362\u5230\u300C\u60AC\u6D6E\u7403\u300D\u8BBE\u7F6E\u9875 \u2014 \u5FEB\u6377\u64CD\u4F5C\u6D6E\u52A8\u6309\u94AE\u7684\u5916\u89C2\u548C\u884C\u4E3A" },
+      "switch_tab_image_cache": { selector: '.zinao-chatu-nav-link[data-tab="image-cache"]', desc: "\u5207\u6362\u5230\u300C\u56FE\u7247\u7F13\u5B58\u300D\u8BBE\u7F6E\u9875 \u2014 \u56FE\u7247\u7F13\u5B58\u67E5\u770B\u548C\u7BA1\u7406" },
+      "switch_tab_regex": { selector: '.zinao-chatu-nav-link[data-tab="regex"]', desc: "\u5207\u6362\u5230\u300C\u6B63\u5219\u300D\u8BBE\u7F6E\u9875 \u2014 \u6B63\u5219\u8868\u8FBE\u5F0F\u66FF\u6362\u89C4\u5219\u7BA1\u7406" },
+      "switch_tab_about": { selector: '.zinao-chatu-nav-link[data-tab="about"]', desc: "\u5207\u6362\u5230\u300C\u5173\u4E8E\u300D\u9875 \u2014 \u7248\u672C\u4FE1\u606F\u3001\u66F4\u65B0\u68C0\u67E5" },
+      "switch_tab_log": { selector: '.zinao-chatu-nav-link[data-tab="log"]', desc: "\u5207\u6362\u5230\u300C\u65E5\u5FD7\u300D\u9875 \u2014 \u8FD0\u884C\u65E5\u5FD7\u67E5\u770B" },
+      "switch_tab_send_data": { selector: '.zinao-chatu-nav-link[data-tab="send_data"]', desc: "\u5207\u6362\u5230\u300C\u53D1\u9001\u6570\u636E\u300D\u9875 \u2014 \u67E5\u770B\u6700\u8FD1\u53D1\u9001\u7684\u8BF7\u6C42\u6570\u636E" },
       // === 后端连接 / 获取数据按钮 ===
       "connect_sd": { selector: "#testSd", desc: "\u8FDE\u63A5 SD WebUI \u5E76\u5237\u65B0\u6A21\u578B/\u91C7\u6837\u5668\u6570\u636E\uFF08\u9700\u5148\u5207\u5230SD\u9875\u9762\uFF09" },
       "connect_comfyui": { selector: "#testComfyui", desc: "\u8FDE\u63A5 ComfyUI \u5E76\u5237\u65B0\u6A21\u578B/\u91C7\u6837\u5668\u6570\u636E\uFF08\u9700\u5148\u5207\u5230ComfyUI\u9875\u9762\uFF09" },
       "llm_fetch_models": { selector: "#ch-llm_fetch_models_button", desc: "\u8FDE\u63A5 LLM API \u5E76\u83B7\u53D6\u53EF\u7528\u6A21\u578B\u5217\u8868\uFF08\u9700\u5148\u5207\u5230LLM\u9875\u9762\uFF09" },
       "ai_fetch_models": { selector: "#chatu8-ai-fetch-models", desc: "\u83B7\u53D6\u667A\u7ED8\u59EC AI \u52A9\u624B\u53EF\u7528\u6A21\u578B\u5217\u8868" },
-      "banana_fetch_models": { selector: "#st-chatu8-banana-fetch-models", desc: "\u83B7\u53D6 Banana \u53EF\u7528\u56FE\u50CF\u6A21\u578B\u5217\u8868\uFF08\u9700\u5148\u5207\u5230Banana\u9875\u9762\uFF09" },
+      "banana_fetch_models": { selector: "#zinao-chatu-banana-fetch-models", desc: "\u83B7\u53D6 Banana \u53EF\u7528\u56FE\u50CF\u6A21\u578B\u5217\u8868\uFF08\u9700\u5148\u5207\u5230Banana\u9875\u9762\uFF09" },
       // === 保存按钮 ===
       "llm_save_profile": { selector: "#ch-save_llm_profile_button", desc: "\u4FDD\u5B58\u5F53\u524D LLM \u914D\u7F6E\u9884\u8BBE" },
-      "ai_save_settings": { selector: "#st-chatu8-ai-save-settings", desc: "\u4FDD\u5B58\u667A\u7ED8\u59EC AI \u52A9\u624B\u914D\u7F6E" },
+      "ai_save_settings": { selector: "#zinao-chatu-ai-save-settings", desc: "\u4FDD\u5B58\u667A\u7ED8\u59EC AI \u52A9\u624B\u914D\u7F6E" },
       // === 测试按钮 ===
       "ai_test_connection": { selector: "#ai-test-connection", desc: "\u6D4B\u8BD5 AI \u6838\u5FC3\u8BBE\u7F6E\u9875\u9762\u7684 API \u8FDE\u63A5" },
       "llm_test_request": { selector: "#ch-llm_test_button", desc: "\u53D1\u9001 LLM \u6D4B\u8BD5\u8BF7\u6C42" },
@@ -52849,12 +52855,12 @@ function injectTTSStyleInstruction(systemPromptStr) {
 `;
 }
 function updateTTSButtonIcon(messageIndex, newState) {
-  const dialog = $("#st-chatu8-ai-dialog");
+  const dialog = $("#zinao-chatu-ai-dialog");
   let buttons;
   if (messageIndex >= 0) {
-    buttons = dialog.find(`.st-chatu8-ai-msg-tts[data-index="${messageIndex}"]`);
+    buttons = dialog.find(`.zinao-chatu-ai-msg-tts[data-index="${messageIndex}"]`);
   } else {
-    buttons = dialog.find(".st-chatu8-ai-msg-tts");
+    buttons = dialog.find(".zinao-chatu-ai-msg-tts");
   }
   buttons.each(function() {
     const $btn = $(this);
@@ -53257,7 +53263,7 @@ async function loadMoreMessages(messages, appendMessage2) {
       console.error("[ScrollManager] \u52A0\u8F7D\u56FE\u7247\u5931\u8D25:", err);
     }
   }
-  const $loadMoreIndicator = dom.chatBody.find(".st-chatu8-ai-load-more-indicator");
+  const $loadMoreIndicator = dom.chatBody.find(".zinao-chatu-ai-load-more-indicator");
   const $newElements = [];
   for (const [relativeIndex, msg] of newMessages.entries()) {
     const absoluteIndex = newStart + relativeIndex;
@@ -53336,11 +53342,11 @@ function isNearBottom(threshold = 100) {
   return scrollHeight - scrollTop - clientHeight < threshold;
 }
 function prependLoadMoreIndicator() {
-  if (dom.chatBody.find(".st-chatu8-ai-load-more-indicator").length > 0) {
+  if (dom.chatBody.find(".zinao-chatu-ai-load-more-indicator").length > 0) {
     return;
   }
   const $indicator = $(`
-        <div class="st-chatu8-ai-load-more-indicator">
+        <div class="zinao-chatu-ai-load-more-indicator">
             <i class="fa-solid fa-arrow-up"></i>
             <span>\u5411\u4E0A\u6EDA\u52A8\u52A0\u8F7D\u66F4\u591A\u5386\u53F2\u6D88\u606F...</span>
         </div>
@@ -53348,17 +53354,17 @@ function prependLoadMoreIndicator() {
   dom.chatBody.prepend($indicator);
 }
 function updateLoadMoreIndicator(text) {
-  const $indicator = dom.chatBody.find(".st-chatu8-ai-load-more-indicator span");
+  const $indicator = dom.chatBody.find(".zinao-chatu-ai-load-more-indicator span");
   if ($indicator.length) {
     $indicator.text(text);
   }
 }
 function initScrollToBottomButton() {
-  if ($("#st-chatu8-ai-scroll-to-bottom").length > 0) {
+  if ($("#zinao-chatu-ai-scroll-to-bottom").length > 0) {
     return;
   }
   const $button = $(`
-        <button id="st-chatu8-ai-scroll-to-bottom" class="st-chatu8-ai-scroll-to-bottom" style="display: none;">
+        <button id="zinao-chatu-ai-scroll-to-bottom" class="zinao-chatu-ai-scroll-to-bottom" style="display: none;">
             <i class="fa-solid fa-arrow-down"></i>
             <span class="unread-badge" style="display: none;">0</span>
         </button>
@@ -53370,7 +53376,7 @@ function initScrollToBottomButton() {
   console.log('[ScrollManager] "\u56DE\u5230\u5E95\u90E8"\u6309\u94AE\u5DF2\u521D\u59CB\u5316');
 }
 function updateScrollToBottomButton(distanceFromBottom) {
-  const $button = $("#st-chatu8-ai-scroll-to-bottom");
+  const $button = $("#zinao-chatu-ai-scroll-to-bottom");
   if (!$button.length) return;
   const avgMessageHeight = 80;
   const messagesFromBottom = Math.floor(distanceFromBottom / avgMessageHeight);
@@ -53381,7 +53387,7 @@ function updateScrollToBottomButton(distanceFromBottom) {
   }
 }
 function updateUnreadBadge(count) {
-  const $badge = $("#st-chatu8-ai-scroll-to-bottom .unread-badge");
+  const $badge = $("#zinao-chatu-ai-scroll-to-bottom .unread-badge");
   if (!$badge.length) return;
   if (count > 0) {
     $badge.text(count).show();
@@ -53492,14 +53498,14 @@ function renderImagePreview() {
   dom.imagePreview.show();
   selectedImages2.forEach((img, index) => {
     const previewItem = $(`
-            <div class="st-chatu8-ai-image-preview-item">
+            <div class="zinao-chatu-ai-image-preview-item">
                 <img src="${img.data}" alt="${escapeHTML(img.name)}" />
-                <button class="st-chatu8-ai-image-remove" data-index="${index}" title="\u79FB\u9664\u56FE\u7247">
+                <button class="zinao-chatu-ai-image-remove" data-index="${index}" title="\u79FB\u9664\u56FE\u7247">
                     <i class="fa-solid fa-times"></i>
                 </button>
             </div>
         `);
-    previewItem.find(".st-chatu8-ai-image-remove").on("click", function() {
+    previewItem.find(".zinao-chatu-ai-image-remove").on("click", function() {
       const idx = parseInt($(this).data("index"));
       selectedImages2.splice(idx, 1);
       renderImagePreview();
@@ -53607,20 +53613,20 @@ function parseAndRenderAskChoice(text) {
   }
   const cleanedText = text.replace(/<AskChoice>[\s\S]*?<\/AskChoice>/gi, "").trim();
   if (options.length === 0) return { cleanedText, choiceHtml: "" };
-  let choiceHtml = '<div class="st-chatu8-ai-ask-choice">';
-  choiceHtml += '<div class="st-chatu8-ai-ask-choice-label"><i class="fa-solid fa-hand-pointer"></i> \u8BF7\u9009\u62E9\uFF1A</div>';
-  choiceHtml += '<div class="st-chatu8-ai-ask-choice-options">';
+  let choiceHtml = '<div class="zinao-chatu-ai-ask-choice">';
+  choiceHtml += '<div class="zinao-chatu-ai-ask-choice-label"><i class="fa-solid fa-hand-pointer"></i> \u8BF7\u9009\u62E9\uFF1A</div>';
+  choiceHtml += '<div class="zinao-chatu-ai-ask-choice-options">';
   options.forEach((opt, idx) => {
     const label = typeof opt === "object" ? opt.label || opt.text || JSON.stringify(opt) : String(opt);
-    choiceHtml += `<button class="st-chatu8-ai-ask-choice-btn" data-choice-index="${idx}" data-choice-value="${escapeHTML(label)}">${escapeHTML(label)}</button>`;
+    choiceHtml += `<button class="zinao-chatu-ai-ask-choice-btn" data-choice-index="${idx}" data-choice-value="${escapeHTML(label)}">${escapeHTML(label)}</button>`;
   });
   choiceHtml += "</div>";
-  choiceHtml += '<div class="st-chatu8-ai-ask-choice-hint">\u70B9\u51FB\u9009\u9879\u53D1\u9001\uFF0C\u6216\u76F4\u63A5\u8F93\u5165\u6D88\u606F\u53D6\u6D88\u9009\u62E9</div>';
+  choiceHtml += '<div class="zinao-chatu-ai-ask-choice-hint">\u70B9\u51FB\u9009\u9879\u53D1\u9001\uFF0C\u6216\u76F4\u63A5\u8F93\u5165\u6D88\u606F\u53D6\u6D88\u9009\u62E9</div>';
   choiceHtml += "</div>";
   return { cleanedText, choiceHtml };
 }
 function dismissAskChoices() {
-  dom.chatBody.find(".st-chatu8-ai-ask-choice").addClass("dismissed");
+  dom.chatBody.find(".zinao-chatu-ai-ask-choice").addClass("dismissed");
 }
 async function appendSystemEmptyMessage() {
   console.log("[DEBUG-MSG] \u25B6 appendSystemEmptyMessage() \u5F00\u59CB");
@@ -53628,7 +53634,7 @@ async function appendSystemEmptyMessage() {
   const charAvatar = await getCurrentCharAvatar();
   const icon = generateAvatarHTML(charAvatar, getAssistantDisplayName());
   const html = `
-        <div class="st-chatu8-ai-msg system-msg">
+        <div class="zinao-chatu-ai-msg system-msg">
             <div class="msg-avatar">${icon}</div>
             <div class="msg-content"></div>
         </div>
@@ -53647,30 +53653,30 @@ async function appendSystemEmptyMessage() {
 function finalizeAssistantMessage(messageIndex, handleRegenerateMessage2) {
   if (!currentSystemMsgElement) return;
   currentSystemMsgElement.attr("data-msg-index", messageIndex);
-  if (!currentSystemMsgElement.find(".st-chatu8-ai-msg-floor").length) {
-    currentSystemMsgElement.prepend(`<span class="st-chatu8-ai-msg-floor">#${messageIndex + 1}</span>`);
+  if (!currentSystemMsgElement.find(".zinao-chatu-ai-msg-floor").length) {
+    currentSystemMsgElement.prepend(`<span class="zinao-chatu-ai-msg-floor">#${messageIndex + 1}</span>`);
   }
   const actionButtons = `
-        <div class="st-chatu8-ai-msg-actions">
-            <button class="st-chatu8-ai-msg-tts" data-index="${messageIndex}" title="\u6717\u8BFB\u6B64\u56DE\u590D">
+        <div class="zinao-chatu-ai-msg-actions">
+            <button class="zinao-chatu-ai-msg-tts" data-index="${messageIndex}" title="\u6717\u8BFB\u6B64\u56DE\u590D">
                 <i class="fa-solid fa-volume-up"></i>
             </button>
-            <button class="st-chatu8-ai-msg-regenerate" data-index="${messageIndex}" title="\u91CD\u65B0\u751F\u6210\u6B64\u56DE\u590D">
+            <button class="zinao-chatu-ai-msg-regenerate" data-index="${messageIndex}" title="\u91CD\u65B0\u751F\u6210\u6B64\u56DE\u590D">
                 <i class="fa-solid fa-rotate-right"></i>
             </button>
         </div>
     `;
   currentSystemMsgElement.append(actionButtons);
-  currentSystemMsgElement.find(".st-chatu8-ai-msg-regenerate").on("click", function() {
+  currentSystemMsgElement.find(".zinao-chatu-ai-msg-regenerate").on("click", function() {
     handleRegenerateMessage2(messageIndex);
   });
-  currentSystemMsgElement.find(".st-chatu8-ai-msg-tts").on("click", function() {
+  currentSystemMsgElement.find(".zinao-chatu-ai-msg-tts").on("click", function() {
     handleTTSButtonClick(messageIndex);
   });
 }
 function showImageFullscreen(imageUrl) {
   const overlay2 = $(`
-        <div class="st-chatu8-ai-image-fullscreen-overlay" style="
+        <div class="zinao-chatu-ai-image-fullscreen-overlay" style="
             position: fixed;
             top: 0;
             left: 0;
@@ -53707,14 +53713,14 @@ function showImageFullscreen(imageUrl) {
                 align-items: center;
                 justify-content: center;
                 transition: background 0.2s;
-            " class="st-chatu8-ai-fullscreen-close">
+            " class="zinao-chatu-ai-fullscreen-close">
                 <i class="fa-solid fa-times"></i>
             </div>
         </div>
     `);
-  if (!$("#st-chatu8-ai-fullscreen-styles").length) {
+  if (!$("#zinao-chatu-ai-fullscreen-styles").length) {
     $("head").append(`
-            <style id="st-chatu8-ai-fullscreen-styles">
+            <style id="zinao-chatu-ai-fullscreen-styles">
                 @keyframes fadeIn {
                     from { opacity: 0; }
                     to { opacity: 1; }
@@ -53723,14 +53729,14 @@ function showImageFullscreen(imageUrl) {
                     from { transform: scale(0.8); opacity: 0; }
                     to { transform: scale(1); opacity: 1; }
                 }
-                .st-chatu8-ai-fullscreen-close:hover {
+                .zinao-chatu-ai-fullscreen-close:hover {
                     background: rgba(255, 255, 255, 0.2) !important;
                 }
             </style>
         `);
   }
   overlay2.on("click", function(e) {
-    if (e.target === this || $(e.target).closest(".st-chatu8-ai-fullscreen-close").length) {
+    if (e.target === this || $(e.target).closest(".zinao-chatu-ai-fullscreen-close").length) {
       overlay2.fadeOut(200, () => overlay2.remove());
     }
   });
@@ -53754,9 +53760,9 @@ async function appendMessage(role, text, images = null, messageIndex = null, ski
   const cssClass = role === "system" || role === "assistant" ? "system-msg" : "user-msg";
   let innerContent = "";
   if (images && images.length > 0) {
-    innerContent += '<div class="st-chatu8-ai-message-images">';
+    innerContent += '<div class="zinao-chatu-ai-message-images">';
     images.forEach((img) => {
-      innerContent += `<img src="${img.data}" alt="${escapeHTML(img.name)}" class="st-chatu8-ai-message-image" style="cursor: zoom-in;" data-fullscreen-url="${img.data}" />`;
+      innerContent += `<img src="${img.data}" alt="${escapeHTML(img.name)}" class="zinao-chatu-ai-message-image" style="cursor: zoom-in;" data-fullscreen-url="${img.data}" />`;
     });
     innerContent += "</div>";
   }
@@ -53772,9 +53778,9 @@ async function appendMessage(role, text, images = null, messageIndex = null, ski
   if (role === "user" && typeof text === "string" && (text.includes("\u3010\u7CFB\u7EDF\u81EA\u52A8\u56DE\u590D\u68C0\u7D22\u3011") || text.includes("\u3010\u7CFB\u7EDF\u81EA\u52A8\u56DE\u590D"))) {
     const summaryTitle = "\u{1F527} \u5185\u90E8\u5DE5\u5177\u67E5\u8BE2\u4E0E\u6267\u884C\u7ED3\u679C (\u70B9\u51FB\u5C55\u5F00)";
     innerContent += `
-            <details class="st-chatu8-ai-query-details">
-                <summary class="st-chatu8-ai-query-summary"><i class="fa-solid fa-code" style="margin-right: 5px;"></i> ${summaryTitle}</summary>
-                <pre class="st-chatu8-ai-query-content">${escapeHTML(text)}</pre>
+            <details class="zinao-chatu-ai-query-details">
+                <summary class="zinao-chatu-ai-query-summary"><i class="fa-solid fa-code" style="margin-right: 5px;"></i> ${summaryTitle}</summary>
+                <pre class="zinao-chatu-ai-query-content">${escapeHTML(text)}</pre>
             </details>
         `;
   } else if (role === "assistant" && typeof text === "string") {
@@ -53790,15 +53796,15 @@ async function appendMessage(role, text, images = null, messageIndex = null, ski
     const queryMatch = text.match(/<SystemQuery>([\s\S]*?)<\/SystemQuery>/gi);
     const updateMatch = text.match(/<UpdateSettings>([\s\S]*?)<\/UpdateSettings>/gi);
     if (queryMatch || updateMatch) {
-      let displayHtml = `<i><span style="color:var(--st-chatu8-text-secondary);">${getAssistantDisplayName()}\u8C03\u7528\u4E86\u5185\u90E8\u5DE5\u5177...</span></i>
+      let displayHtml = `<i><span style="color:var(--zinao-chatu-text-secondary);">${getAssistantDisplayName()}\u8C03\u7528\u4E86\u5185\u90E8\u5DE5\u5177...</span></i>
 `;
       let rawCode = "";
       if (queryMatch) rawCode += queryMatch.join("\n");
       if (updateMatch) rawCode += updateMatch.join("\n");
       displayHtml += `
-                <details class="st-chatu8-ai-query-details">
-                    <summary class="st-chatu8-ai-query-summary"><i class="fa-solid fa-microchip" style="margin-right:5px"></i> \u6267\u884C\u5185\u90E8\u547D\u4EE4</summary>
-                    <pre class="st-chatu8-ai-query-content">${escapeHTML(rawCode)}</pre>
+                <details class="zinao-chatu-ai-query-details">
+                    <summary class="zinao-chatu-ai-query-summary"><i class="fa-solid fa-microchip" style="margin-right:5px"></i> \u6267\u884C\u5185\u90E8\u547D\u4EE4</summary>
+                    <pre class="zinao-chatu-ai-query-content">${escapeHTML(rawCode)}</pre>
                 </details>
             `;
       let textWithoutTags = text.replace(/<SystemQuery>[\s\S]*?<\/SystemQuery>/gi, "").replace(/<UpdateSettings>[\s\S]*?<\/UpdateSettings>/gi, "").trim();
@@ -53820,30 +53826,30 @@ async function appendMessage(role, text, images = null, messageIndex = null, ski
   let actionButtons = "";
   if (role === "user" && messageIndex !== null) {
     actionButtons = `
-            <div class="st-chatu8-ai-msg-actions">
-                <button class="st-chatu8-ai-msg-edit" data-index="${messageIndex}" title="\u7F16\u8F91\u6B64\u6D88\u606F">
+            <div class="zinao-chatu-ai-msg-actions">
+                <button class="zinao-chatu-ai-msg-edit" data-index="${messageIndex}" title="\u7F16\u8F91\u6B64\u6D88\u606F">
                     <i class="fa-solid fa-pen"></i>
                 </button>
-                <button class="st-chatu8-ai-msg-continue" data-index="${messageIndex}" title="\u4ECE\u6B64\u5904\u7EE7\u7EED\u5BF9\u8BDD">
+                <button class="zinao-chatu-ai-msg-continue" data-index="${messageIndex}" title="\u4ECE\u6B64\u5904\u7EE7\u7EED\u5BF9\u8BDD">
                     <i class="fa-solid fa-play"></i>
                 </button>
             </div>
         `;
   } else if ((role === "assistant" || role === "system") && messageIndex !== null) {
     actionButtons = `
-            <div class="st-chatu8-ai-msg-actions">
-                <button class="st-chatu8-ai-msg-tts" data-index="${messageIndex}" title="\u6717\u8BFB\u6B64\u56DE\u590D">
+            <div class="zinao-chatu-ai-msg-actions">
+                <button class="zinao-chatu-ai-msg-tts" data-index="${messageIndex}" title="\u6717\u8BFB\u6B64\u56DE\u590D">
                     <i class="fa-solid fa-volume-up"></i>
                 </button>
-                <button class="st-chatu8-ai-msg-regenerate" data-index="${messageIndex}" title="\u91CD\u65B0\u751F\u6210\u6B64\u56DE\u590D">
+                <button class="zinao-chatu-ai-msg-regenerate" data-index="${messageIndex}" title="\u91CD\u65B0\u751F\u6210\u6B64\u56DE\u590D">
                     <i class="fa-solid fa-rotate-right"></i>
                 </button>
             </div>
         `;
   }
-  const floorBadge = messageIndex !== null ? `<span class="st-chatu8-ai-msg-floor">#${messageIndex + 1}</span>` : "";
+  const floorBadge = messageIndex !== null ? `<span class="zinao-chatu-ai-msg-floor">#${messageIndex + 1}</span>` : "";
   const html = `
-        <div class="st-chatu8-ai-msg ${cssClass}" data-msg-index="${messageIndex !== null ? messageIndex : ""}">
+        <div class="zinao-chatu-ai-msg ${cssClass}" data-msg-index="${messageIndex !== null ? messageIndex : ""}">
             ${floorBadge}
             <div class="msg-avatar">${icon}</div>
             <div class="msg-content">${innerContent}</div>
@@ -53852,30 +53858,30 @@ async function appendMessage(role, text, images = null, messageIndex = null, ski
     `;
   const $msgElement = $(html);
   dom.chatBody.append($msgElement);
-  $msgElement.find(".st-chatu8-ai-message-image").on("click", function() {
+  $msgElement.find(".zinao-chatu-ai-message-image").on("click", function() {
     const imageUrl = $(this).attr("data-fullscreen-url") || $(this).attr("src");
     showImageFullscreen(imageUrl);
   });
   if (role === "user" && messageIndex !== null) {
-    $msgElement.find(".st-chatu8-ai-msg-edit").on("click", function() {
+    $msgElement.find(".zinao-chatu-ai-msg-edit").on("click", function() {
       if (callbacks.handleEditMessage) callbacks.handleEditMessage(messageIndex);
     });
-    $msgElement.find(".st-chatu8-ai-msg-continue").on("click", function() {
+    $msgElement.find(".zinao-chatu-ai-msg-continue").on("click", function() {
       if (callbacks.handleContinueFromMessage) callbacks.handleContinueFromMessage(messageIndex);
     });
   } else if ((role === "assistant" || role === "system") && messageIndex !== null) {
-    $msgElement.find(".st-chatu8-ai-msg-regenerate").on("click", function() {
+    $msgElement.find(".zinao-chatu-ai-msg-regenerate").on("click", function() {
       if (callbacks.handleRegenerateMessage) callbacks.handleRegenerateMessage(messageIndex);
     });
-    $msgElement.find(".st-chatu8-ai-msg-tts").on("click", function() {
+    $msgElement.find(".zinao-chatu-ai-msg-tts").on("click", function() {
       handleTTSButtonClick(messageIndex);
     });
   }
-  $msgElement.find(".st-chatu8-ai-ask-choice-btn").on("click", function() {
+  $msgElement.find(".zinao-chatu-ai-ask-choice-btn").on("click", function() {
     const choiceValue = $(this).attr("data-choice-value");
     if (!choiceValue) return;
     $(this).addClass("selected");
-    $(this).closest(".st-chatu8-ai-ask-choice").addClass("answered");
+    $(this).closest(".zinao-chatu-ai-ask-choice").addClass("answered");
     dom.inputArea.val(choiceValue);
     if (callbacks.handleSend) callbacks.handleSend();
   });
@@ -53915,8 +53921,8 @@ async function handleEditMessage(messageIndex) {
     setSelectedImages([...message.images]);
     renderImagePreviewFromMessage();
   }
-  dom.chatBody.find(".st-chatu8-ai-msg").removeClass("editing");
-  dom.chatBody.find(`.st-chatu8-ai-msg[data-msg-index="${messageIndex}"]`).addClass("editing");
+  dom.chatBody.find(".zinao-chatu-ai-msg").removeClass("editing");
+  dom.chatBody.find(`.zinao-chatu-ai-msg[data-msg-index="${messageIndex}"]`).addClass("editing");
   dom.inputArea.focus();
   toastr?.info("\u6D88\u606F\u5DF2\u52A0\u8F7D\u5230\u8F93\u5165\u6846\uFF0C\u4FEE\u6539\u540E\u53D1\u9001\u5C06\u66FF\u6362\u539F\u6D88\u606F\u5E76\u91CD\u65B0\u751F\u6210\u540E\u7EED\u5BF9\u8BDD");
   dom.inputArea.data("editing-index", messageIndex);
@@ -53965,9 +53971,9 @@ function reattachMessageElement() {
   if (!chatBody || !chatBody.length || !$.contains(document, chatBody[0])) {
     console.warn("[FIX-REATTACH] Step2: dom.chatBody \u4E5F\u5DF2\u8131\u79BB DOM\uFF0C\u5C1D\u8BD5\u91CD\u65B0\u67E5\u627E...");
     const selectors = [
-      "#st-chatu8-ai-chat-body",
-      ".st-chatu8-ai-dialog #st-chatu8-ai-chat-body",
-      '[id="st-chatu8-ai-chat-body"]'
+      "#zinao-chatu-ai-chat-body",
+      ".zinao-chatu-ai-dialog #zinao-chatu-ai-chat-body",
+      '[id="zinao-chatu-ai-chat-body"]'
     ];
     let found = false;
     for (const sel of selectors) {
@@ -54034,15 +54040,15 @@ function createThrottledUIUpdater(handleSendFn) {
     const queryMatch = textWithoutThink.match(/<SystemQuery>([\s\S]*?)<\/SystemQuery>/gi);
     const updateMatch = textWithoutThink.match(/<UpdateSettings>([\s\S]*?)<\/UpdateSettings>/gi);
     if (queryMatch || updateMatch) {
-      displayHtml += `<i><span style="color:var(--st-chatu8-text-secondary);">${getAssistantDisplayName()}\u8C03\u7528\u4E86\u5185\u90E8\u5DE5\u5177...</span></i>
+      displayHtml += `<i><span style="color:var(--zinao-chatu-text-secondary);">${getAssistantDisplayName()}\u8C03\u7528\u4E86\u5185\u90E8\u5DE5\u5177...</span></i>
 `;
       let rawCode = "";
       if (queryMatch) rawCode += queryMatch.join("\n");
       if (updateMatch) rawCode += updateMatch.join("\n");
       displayHtml += `
-                <details class="st-chatu8-ai-query-details">
-                    <summary class="st-chatu8-ai-query-summary"><i class="fa-solid fa-microchip" style="margin-right:5px"></i> \u6267\u884C\u5185\u90E8\u547D\u4EE4</summary>
-                    <pre class="st-chatu8-ai-query-content">${escapeHTML(rawCode)}</pre>
+                <details class="zinao-chatu-ai-query-details">
+                    <summary class="zinao-chatu-ai-query-summary"><i class="fa-solid fa-microchip" style="margin-right:5px"></i> \u6267\u884C\u5185\u90E8\u547D\u4EE4</summary>
+                    <pre class="zinao-chatu-ai-query-content">${escapeHTML(rawCode)}</pre>
                 </details>
             `;
       let textWithoutTags = textWithoutThink.replace(/<SystemQuery>[\s\S]*?<\/SystemQuery>/gi, "").replace(/<UpdateSettings>[\s\S]*?<\/UpdateSettings>/gi, "").trim();
@@ -54112,15 +54118,15 @@ function createThrottledUIUpdater(handleSendFn) {
     const queryMatch = textWithoutThink.match(/<SystemQuery>([\s\S]*?)<\/SystemQuery>/gi);
     const updateMatch = textWithoutThink.match(/<UpdateSettings>([\s\S]*?)<\/UpdateSettings>/gi);
     if (queryMatch || updateMatch) {
-      displayHtml += `<i><span style="color:var(--st-chatu8-text-secondary);">${getAssistantDisplayName()}\u8C03\u7528\u4E86\u5185\u90E8\u5DE5\u5177...</span></i>
+      displayHtml += `<i><span style="color:var(--zinao-chatu-text-secondary);">${getAssistantDisplayName()}\u8C03\u7528\u4E86\u5185\u90E8\u5DE5\u5177...</span></i>
 `;
       let rawCode = "";
       if (queryMatch) rawCode += queryMatch.join("\n");
       if (updateMatch) rawCode += updateMatch.join("\n");
       displayHtml += `
-                <details class="st-chatu8-ai-query-details">
-                    <summary class="st-chatu8-ai-query-summary"><i class="fa-solid fa-microchip" style="margin-right:5px"></i> \u6267\u884C\u5185\u90E8\u547D\u4EE4</summary>
-                    <pre class="st-chatu8-ai-query-content">${escapeHTML(rawCode)}</pre>
+                <details class="zinao-chatu-ai-query-details">
+                    <summary class="zinao-chatu-ai-query-summary"><i class="fa-solid fa-microchip" style="margin-right:5px"></i> \u6267\u884C\u5185\u90E8\u547D\u4EE4</summary>
+                    <pre class="zinao-chatu-ai-query-content">${escapeHTML(rawCode)}</pre>
                 </details>
             `;
       let textWithoutTags = textWithoutThink.replace(/<SystemQuery>[\s\S]*?<\/SystemQuery>/gi, "").replace(/<UpdateSettings>[\s\S]*?<\/UpdateSettings>/gi, "").trim();
@@ -54139,11 +54145,11 @@ function createThrottledUIUpdater(handleSendFn) {
     }
     currentSystemMsgContent.html(displayHtml);
     if (askChoiceResult.choiceHtml) {
-      currentSystemMsgContent.find(".st-chatu8-ai-ask-choice-btn").on("click", function() {
+      currentSystemMsgContent.find(".zinao-chatu-ai-ask-choice-btn").on("click", function() {
         const choiceValue = $(this).attr("data-choice-value");
         if (!choiceValue) return;
         $(this).addClass("selected");
-        $(this).closest(".st-chatu8-ai-ask-choice").addClass("answered");
+        $(this).closest(".zinao-chatu-ai-ask-choice").addClass("answered");
         dom.inputArea.val(choiceValue);
         if (handleSendFn) handleSendFn();
       });
@@ -54187,7 +54193,7 @@ function _abortAndCleanupGeneration() {
 }
 function _clearEditingState() {
   dom.inputArea?.removeData("editing-index");
-  dom.chatBody?.find(".st-chatu8-ai-msg").removeClass("editing");
+  dom.chatBody?.find(".zinao-chatu-ai-msg").removeClass("editing");
 }
 function _sanitizeChatMessages(chatData, source = "") {
   const rawMessages = Array.isArray(chatData?.messages) ? chatData.messages : [];
@@ -54445,9 +54451,9 @@ async function initChatSession(appendMessage2) {
   }
 }
 function _startRenameInline($titleSpan, entry, appendMessage2) {
-  if ($titleSpan.parent().find(".st-chatu8-ai-history-rename-input").length > 0) return;
+  if ($titleSpan.parent().find(".zinao-chatu-ai-history-rename-input").length > 0) return;
   const currentTitle = entry.title || "\u65B0\u5BF9\u8BDD";
-  const $input = $(`<input type="text" class="st-chatu8-ai-history-rename-input" />`);
+  const $input = $(`<input type="text" class="zinao-chatu-ai-history-rename-input" />`);
   $input.val(currentTitle);
   $titleSpan.hide().after($input);
   $input.focus().select();
@@ -54514,52 +54520,52 @@ function renderHistoryList(appendMessage2) {
   dom.historyList.empty();
   const chatArray = [...chatIndex.chatList].sort((a, b) => (b.updatedAt || 0) - (a.updatedAt || 0));
   if (chatArray.length === 0) {
-    dom.historyList.append('<div style="text-align: center; color: var(--st-chatu8-text-secondary); margin-top: 20px;">\u6682\u65E0\u804A\u5929\u8BB0\u5F55</div>');
+    dom.historyList.append('<div style="text-align: center; color: var(--zinao-chatu-text-secondary); margin-top: 20px;">\u6682\u65E0\u804A\u5929\u8BB0\u5F55</div>');
     return;
   }
   chatArray.forEach((entry) => {
     const isActive = entry.id === chatIndex.activeChatId ? "active-chat" : "";
     const html = `
-            <div class="st-chatu8-ai-history-item ${isActive}" data-id="${entry.id}">
-                <div class="st-chatu8-ai-history-content">
-                    <input type="checkbox" class="st-chatu8-ai-history-checkbox" data-id="${entry.id}">
-                    <div class="st-chatu8-ai-history-info">
-                        <span class="st-chatu8-ai-history-title">${escapeHTML(entry.title)}</span>
-                        <span class="st-chatu8-ai-history-time">${formatDate(entry.updatedAt)}${entry.messageCount != null ? ` \xB7 ${entry.messageCount}\u6761` : ""}</span>
+            <div class="zinao-chatu-ai-history-item ${isActive}" data-id="${entry.id}">
+                <div class="zinao-chatu-ai-history-content">
+                    <input type="checkbox" class="zinao-chatu-ai-history-checkbox" data-id="${entry.id}">
+                    <div class="zinao-chatu-ai-history-info">
+                        <span class="zinao-chatu-ai-history-title">${escapeHTML(entry.title)}</span>
+                        <span class="zinao-chatu-ai-history-time">${formatDate(entry.updatedAt)}${entry.messageCount != null ? ` \xB7 ${entry.messageCount}\u6761` : ""}</span>
                     </div>
                 </div>
-                <div class="st-chatu8-ai-history-actions">
-                    <i class="fa-solid fa-pen st-chatu8-ai-history-rename" data-id="${entry.id}" title="\u91CD\u547D\u540D"></i>
-                    <i class="fa-solid fa-trash-can st-chatu8-ai-history-delete" data-id="${entry.id}" title="\u5220\u9664\u6B64\u5BF9\u8BDD"></i>
+                <div class="zinao-chatu-ai-history-actions">
+                    <i class="fa-solid fa-pen zinao-chatu-ai-history-rename" data-id="${entry.id}" title="\u91CD\u547D\u540D"></i>
+                    <i class="fa-solid fa-trash-can zinao-chatu-ai-history-delete" data-id="${entry.id}" title="\u5220\u9664\u6B64\u5BF9\u8BDD"></i>
                 </div>
             </div>
         `;
     const $item = $(html);
-    $item.find(".st-chatu8-ai-history-info").on("click", function(e) {
+    $item.find(".zinao-chatu-ai-history-info").on("click", function(e) {
       e.stopPropagation();
-      if ($(this).find(".st-chatu8-ai-history-rename-input").length > 0) return;
+      if ($(this).find(".zinao-chatu-ai-history-rename-input").length > 0) return;
       switchChat(entry.id, appendMessage2);
     });
-    $item.find(".st-chatu8-ai-history-title").on("dblclick", function(e) {
+    $item.find(".zinao-chatu-ai-history-title").on("dblclick", function(e) {
       e.stopPropagation();
       _startRenameInline($(this), entry, appendMessage2);
     });
-    $item.find(".st-chatu8-ai-history-checkbox").on("click", function(e) {
+    $item.find(".zinao-chatu-ai-history-checkbox").on("click", function(e) {
       e.stopPropagation();
       const $checkbox = $(this);
-      const $historyItem = $checkbox.closest(".st-chatu8-ai-history-item");
+      const $historyItem = $checkbox.closest(".zinao-chatu-ai-history-item");
       if ($checkbox.is(":checked")) {
         $historyItem.addClass("selected");
       } else {
         $historyItem.removeClass("selected");
       }
     });
-    $item.find(".st-chatu8-ai-history-rename").on("click", function(e) {
+    $item.find(".zinao-chatu-ai-history-rename").on("click", function(e) {
       e.stopPropagation();
-      const $titleSpan = $item.find(".st-chatu8-ai-history-title");
+      const $titleSpan = $item.find(".zinao-chatu-ai-history-title");
       _startRenameInline($titleSpan, entry, appendMessage2);
     });
-    $item.find(".st-chatu8-ai-history-delete").on("click", async function(e) {
+    $item.find(".zinao-chatu-ai-history-delete").on("click", async function(e) {
       e.stopPropagation();
       if (confirm("\u786E\u5B9A\u8981\u6C38\u4E45\u5220\u9664\u8FD9\u6761\u804A\u5929\u8BB0\u5F55\u5417\uFF1F")) {
         const deleteId = entry.id;
@@ -54601,8 +54607,8 @@ function initSessionEvents(appendMessage2) {
     inputArea
   } = dom;
   let isRendering = false;
-  $(document).off("click", "#st-chatu8-ai-trigger");
-  $(document).on("click", "#st-chatu8-ai-trigger", async function(e) {
+  $(document).off("click", "#zinao-chatu-ai-trigger");
+  $(document).on("click", "#zinao-chatu-ai-trigger", async function(e) {
     const wasActive = dialog.hasClass("active");
     dialog.toggleClass("active");
     if (dialog.hasClass("active") && !wasActive) {
@@ -54659,16 +54665,16 @@ function initSessionEvents(appendMessage2) {
     historyPanel.removeClass("active");
   });
   selectAllBtn.on("click", function() {
-    historyList.find(".st-chatu8-ai-history-checkbox").prop("checked", true).trigger("change");
-    historyList.find(".st-chatu8-ai-history-item").addClass("selected");
+    historyList.find(".zinao-chatu-ai-history-checkbox").prop("checked", true).trigger("change");
+    historyList.find(".zinao-chatu-ai-history-item").addClass("selected");
   });
   deselectAllBtn.on("click", function() {
-    historyList.find(".st-chatu8-ai-history-checkbox").prop("checked", false).trigger("change");
-    historyList.find(".st-chatu8-ai-history-item").removeClass("selected");
+    historyList.find(".zinao-chatu-ai-history-checkbox").prop("checked", false).trigger("change");
+    historyList.find(".zinao-chatu-ai-history-item").removeClass("selected");
   });
   exportChatBtn.on("click", async function() {
     try {
-      const selectedCheckboxes = historyList.find(".st-chatu8-ai-history-checkbox:checked");
+      const selectedCheckboxes = historyList.find(".zinao-chatu-ai-history-checkbox:checked");
       if (selectedCheckboxes.length === 0) {
         toastr?.warning("\u8BF7\u5148\u9009\u62E9\u8981\u5BFC\u51FA\u7684\u804A\u5929\u8BB0\u5F55\uFF01");
         return;
@@ -54812,11 +54818,11 @@ function clearPendingCommand() {
 }
 function renderExecuteButton(messageElement) {
   const button = $(`
-        <div class="st-chatu8-ai-execute-command-btn">
-            <button class="st-chatu8-ai-btn st-chatu8-ai-execute-btn">
+        <div class="zinao-chatu-ai-execute-command-btn">
+            <button class="zinao-chatu-ai-btn zinao-chatu-ai-execute-btn">
                 <i class="fa-solid fa-play"></i> \u6267\u884C\u547D\u4EE4
             </button>
-            <span class="st-chatu8-ai-execute-hint">
+            <span class="zinao-chatu-ai-execute-hint">
                 \u6216\u53D1\u9001\u65B0\u6D88\u606F\u53D6\u6D88
             </span>
         </div>
@@ -54829,7 +54835,7 @@ async function parseQueryWithProgress(accumulatedReply) {
   const hasImageGeneration = accumulatedReply.includes('"type": "generate_image"') || accumulatedReply.includes('"type":"generate_image"');
   if (hasImageGeneration && currentSystemMsgContent) {
     const loadingHtml = `
-            <div class="st-chatu8-ai-image-generating" style="margin-top: 10px; padding: 10px; background: rgba(100, 150, 255, 0.1); border-left: 3px solid #6496ff; border-radius: 4px;">
+            <div class="zinao-chatu-ai-image-generating" style="margin-top: 10px; padding: 10px; background: rgba(100, 150, 255, 0.1); border-left: 3px solid #6496ff; border-radius: 4px;">
                 <i class="fa-solid fa-spinner fa-spin"></i> \u6B63\u5728\u751F\u6210\u56FE\u7247\uFF0C\u8BF7\u7A0D\u5019...
             </div>
         `;
@@ -54841,7 +54847,7 @@ async function parseQueryWithProgress(accumulatedReply) {
     return queryResult;
   } finally {
     if (hasImageGeneration && currentSystemMsgContent) {
-      currentSystemMsgContent.find(".st-chatu8-ai-image-generating").remove();
+      currentSystemMsgContent.find(".zinao-chatu-ai-image-generating").remove();
     }
   }
 }
@@ -54865,7 +54871,7 @@ async function executePendingCommand(command, boundAppendMessage, handleRegenera
       setCurrentSystemMsgContent(null);
       await appendSystemEmptyMessage();
       if (currentSystemMsgContent) {
-        currentSystemMsgContent.html('<i><span style="color:var(--st-chatu8-text-secondary);">\u5DF2\u83B7\u53D6\u6700\u65B0\u7CFB\u7EDF\u53C2\u6570\uFF0C\u601D\u8003\u4E2D...</span></i>');
+        currentSystemMsgContent.html('<i><span style="color:var(--zinao-chatu-text-secondary);">\u5DF2\u83B7\u53D6\u6700\u65B0\u7CFB\u7EDF\u53C2\u6570\uFF0C\u601D\u8003\u4E2D...</span></i>');
       }
       setPendingCommand(null);
       const { generateAiResponse: generateAiResponse2 } = await Promise.resolve().then(() => (init_assistantLLM(), assistantLLM_exports));
@@ -55211,21 +55217,21 @@ function bindBrowserCaptureToggle() {
   });
 }
 function updateScreenShareIndicator(active) {
-  const indicator = document.getElementById("st-chatu8-ai-screen-share-indicator");
+  const indicator = document.getElementById("zinao-chatu-ai-screen-share-indicator");
   if (indicator) {
     indicator.style.display = active ? "inline-flex" : "none";
     indicator.title = active ? "\u7535\u8111\u5C4F\u5E55\u5171\u4EAB\u4E2D\uFF08\u70B9\u51FB\u5173\u95ED\uFF09" : "";
   }
 }
 function updateBrowserCaptureIndicator(active) {
-  const indicator = document.getElementById("st-chatu8-ai-browser-capture-indicator");
+  const indicator = document.getElementById("zinao-chatu-ai-browser-capture-indicator");
   if (indicator) {
     indicator.style.display = active ? "inline-flex" : "none";
     indicator.title = active ? "\u6D4F\u89C8\u5668\u754C\u9762\u5171\u4EAB\u4E2D\uFF08\u70B9\u51FB\u5173\u95ED\uFF09" : "";
   }
 }
 function bindIndicatorClickEvents() {
-  const screenIndicator = document.getElementById("st-chatu8-ai-screen-share-indicator");
+  const screenIndicator = document.getElementById("zinao-chatu-ai-screen-share-indicator");
   if (screenIndicator) {
     screenIndicator.addEventListener("click", () => {
       stopScreenShare();
@@ -55234,7 +55240,7 @@ function bindIndicatorClickEvents() {
       if (checkbox) checkbox.checked = false;
     });
   }
-  const browserIndicator = document.getElementById("st-chatu8-ai-browser-capture-indicator");
+  const browserIndicator = document.getElementById("zinao-chatu-ai-browser-capture-indicator");
   if (browserIndicator) {
     browserIndicator.addEventListener("click", () => {
       stopBrowserCapture();
@@ -55472,7 +55478,7 @@ async function parseQueryWithProgress2(accumulatedReply) {
   const hasImageGeneration = accumulatedReply.includes('"type": "generate_image"') || accumulatedReply.includes('"type":"generate_image"');
   if (hasImageGeneration && currentSystemMsgContent) {
     const loadingHtml = `
-            <div class="st-chatu8-ai-image-generating" style="margin-top: 10px; padding: 10px; background: rgba(100, 150, 255, 0.1); border-left: 3px solid #6496ff; border-radius: 4px;">
+            <div class="zinao-chatu-ai-image-generating" style="margin-top: 10px; padding: 10px; background: rgba(100, 150, 255, 0.1); border-left: 3px solid #6496ff; border-radius: 4px;">
                 <i class="fa-solid fa-spinner fa-spin"></i> \u6B63\u5728\u751F\u6210\u56FE\u7247\uFF0C\u8BF7\u7A0D\u5019...
             </div>
         `;
@@ -55485,7 +55491,7 @@ async function parseQueryWithProgress2(accumulatedReply) {
     return queryResult;
   } finally {
     if (hasImageGeneration && currentSystemMsgContent) {
-      currentSystemMsgContent.find(".st-chatu8-ai-image-generating").remove();
+      currentSystemMsgContent.find(".zinao-chatu-ai-image-generating").remove();
       console.log("[AI Assistant] \u5DF2\u79FB\u9664\u751F\u56FE\u8FDB\u5EA6\u63D0\u793A");
     }
   }
@@ -55496,7 +55502,7 @@ function detectImageGenerationRequest(messageElement, aiReply) {
     const generationId = idMatch[1];
     pendingImageGenerations.set(generationId, messageElement);
     const loadingHtml = `
-            <div class="st-chatu8-ai-image-loading" data-gen-id="${generationId}" style="margin-top: 10px; text-align: center; color: var(--st-chatu8-text-secondary);">
+            <div class="zinao-chatu-ai-image-loading" data-gen-id="${generationId}" style="margin-top: 10px; text-align: center; color: var(--zinao-chatu-text-secondary);">
                 <i class="fa-solid fa-spinner fa-spin"></i> \u6B63\u5728\u751F\u6210\u56FE\u7247...
             </div>
         `;
@@ -55866,7 +55872,7 @@ async function runLlmChain(activeChatRef, profileData, requestId, iterState, han
           setCurrentSystemMsgContent(null);
           await appendSystemEmptyMessage();
           if (currentSystemMsgContent) {
-            currentSystemMsgContent.html('<i><span style="color:var(--st-chatu8-text-secondary);">\u5DF2\u83B7\u53D6\u6700\u65B0\u7CFB\u7EDF\u53C2\u6570\uFF0C\u601D\u8003\u4E2D...</span></i>');
+            currentSystemMsgContent.html('<i><span style="color:var(--zinao-chatu-text-secondary);">\u5DF2\u83B7\u53D6\u6700\u65B0\u7CFB\u7EDF\u53C2\u6570\uFF0C\u601D\u8003\u4E2D...</span></i>');
           }
           console.log("[AI Assistant] \u53D1\u751F\u5185\u90E8\u7CFB\u7EDF\u8C03\u7528, \u91CD\u5B9A\u5411\u4E8C\u6B21\u67E5\u8BE2...", queryResult);
           tryPlayTTS(accumulatedReply, activeChatRef.messages.length - 2);
@@ -55947,10 +55953,10 @@ async function handleSend(handleSendFn, handleRegenerateFn, boundAppendMessage, 
     if (!activeChat || !Number.isInteger(editingIndex) || editingIndex < 0 || editingIndex >= (activeChat.messages?.length || 0)) {
       console.warn("[AI Assistant] \u68C0\u6D4B\u5230\u5931\u6548\u7684 editing-index\uFF0C\u5DF2\u964D\u7EA7\u4E3A\u666E\u901A\u53D1\u9001:", editingIndex);
       dom.inputArea.removeData("editing-index");
-      dom.chatBody.find(".st-chatu8-ai-msg").removeClass("editing");
+      dom.chatBody.find(".zinao-chatu-ai-msg").removeClass("editing");
     } else {
       dom.inputArea.removeData("editing-index");
-      dom.chatBody.find(".st-chatu8-ai-msg").removeClass("editing");
+      dom.chatBody.find(".zinao-chatu-ai-msg").removeClass("editing");
       await handleEditAndRegenerate(editingIndex, text, handleSendFn, handleRegenerateFn, boundAppendMessage, switchChatFn);
       return;
     }
@@ -56057,7 +56063,7 @@ async function handleEditAndRegenerate(editingIndex, newText, handleSendFn, hand
   currentChat.messages = currentChat.messages.slice(0, editingIndex + 1);
   currentChat.updatedAt = Date.now();
   await syncAndSave(currentChat);
-  dom.chatBody.find(".st-chatu8-ai-msg").filter(function() {
+  dom.chatBody.find(".zinao-chatu-ai-msg").filter(function() {
     const idx = parseInt($(this).attr("data-msg-index"));
     return !isNaN(idx) && idx >= editingIndex;
   }).remove();
@@ -56315,7 +56321,7 @@ function showSummaryPanel() {
     });
   }
   if (!$summaryOverlay) {
-    $summaryOverlay = $('<div class="st-chatu8-summary-overlay"></div>');
+    $summaryOverlay = $('<div class="zinao-chatu-summary-overlay"></div>');
     $summaryOverlay.on("click", function() {
       hideSummaryPanel();
     });
@@ -57394,7 +57400,7 @@ function makeDraggable(element, handle, excludeSelector) {
   return () => hasMoved;
 }
 function makeResizable(element) {
-  const resizeHandle = $('<div class="st-chatu8-ai-resize-handle"><i class="fa-solid fa-grip-lines"></i></div>');
+  const resizeHandle = $('<div class="zinao-chatu-ai-resize-handle"><i class="fa-solid fa-grip-lines"></i></div>');
   element.append(resizeHandle);
   let isResizing = false;
   let startX, startY, startWidth, startHeight;
@@ -57702,7 +57708,7 @@ function initDialogEvents() {
   Object.entries(systemPrompts).forEach(([key, value]) => {
     selectSystemPrompt.append(new Option(value.name, key));
   });
-  makeDraggable(dialog, header, "#st-chatu8-ai-close, #st-chatu8-ai-settings-btn, #st-chatu8-ai-new-chat, #st-chatu8-ai-history-btn, #st-chatu8-ai-summary-btn");
+  makeDraggable(dialog, header, "#zinao-chatu-ai-close, #zinao-chatu-ai-settings-btn, #zinao-chatu-ai-new-chat, #zinao-chatu-ai-history-btn, #zinao-chatu-ai-summary-btn");
   makeResizable(dialog);
   setRefreshSettingsPanelFn(refreshSettingsPanel);
   dom.summaryBtn.on("click", function() {
@@ -57734,7 +57740,7 @@ function initDialogEvents() {
     if ($(this).val() === "custom" && !isKnowledgeBaseEnabled()) {
       setKnowledgeBaseEnabled(true);
       checkKnowledgeBase.prop("checked", true);
-      const $kbNavLink = $('.st-chatu8-nav-link[data-tab="knowledgeBase"]');
+      const $kbNavLink = $('.zinao-chatu-nav-link[data-tab="knowledgeBase"]');
       if ($kbNavLink.length) {
         $kbNavLink.show();
       }
@@ -57869,7 +57875,7 @@ function initDialogEvents() {
       if ($btn.hasClass("asr-recording")) {
         eventSource36.emit(eventNames.ASR_STOP);
       } else {
-        eventSource36.emit(eventNames.ASR_START, { mode: "vad", targetInput: "#st-chatu8-ai-input" });
+        eventSource36.emit(eventNames.ASR_START, { mode: "vad", targetInput: "#zinao-chatu-ai-input" });
       }
     }
   });
@@ -58005,7 +58011,7 @@ function initDialogEvents() {
           $(this).prop("checked", false);
           return;
         }
-        const glCanvas = document.getElementById("st-chatu8-fab-video-canvas");
+        const glCanvas = document.getElementById("zinao-chatu-fab-video-canvas");
         if (!glCanvas) {
           toastr.error("\u672A\u627E\u5230\u89C6\u9891\u753B\u5E03\u5143\u7D20\uFF0C\u8BF7\u5148\u5728\u60AC\u6D6E\u7403\u8BBE\u7F6E\u4E2D\u542F\u7528\u89C6\u9891\u5F62\u8C61", "\u72EC\u7ACB\u7A97\u53E3");
           $(this).prop("checked", false);
@@ -58014,7 +58020,7 @@ function initDialogEvents() {
         videoPlayer.setPipBackground(true);
         const stream = glCanvas.captureStream(30);
         pipVideoElement = document.createElement("video");
-        pipVideoElement.id = "st-chatu8-pip-video-assistant";
+        pipVideoElement.id = "zinao-chatu-pip-video-assistant";
         pipVideoElement.srcObject = stream;
         pipVideoElement.muted = true;
         pipVideoElement.autoplay = true;
@@ -58040,7 +58046,7 @@ function initDialogEvents() {
         });
         toastr.success("\u667A\u7ED8\u59EC\u5DF2\u5F39\u51FA\u5230\u753B\u4E2D\u753B\u7A97\u53E3\uFF0C\u53EF\u7F6E\u9876\u663E\u793A\u5728\u5176\u4ED6\u5E94\u7528\u4E0A\u65B9", "\u72EC\u7ACB\u7A97\u53E3");
       } catch (err) {
-        console.error("[st-chatu8] \u667A\u7ED8\u59ECAI\u52A9\u624B\u521B\u5EFA\u753B\u4E2D\u753B\u5931\u8D25:", err);
+        console.error("[zinao-chatu] \u667A\u7ED8\u59ECAI\u52A9\u624B\u521B\u5EFA\u753B\u4E2D\u753B\u5931\u8D25:", err);
         const vp = getGlobalVideoPlayer();
         if (vp && vp.setPipBackground) {
           vp.setPipBackground(false);
@@ -58083,7 +58089,7 @@ function initDialogEvents() {
   checkKnowledgeBase.on("change", function() {
     const enabled = $(this).prop("checked");
     setKnowledgeBaseEnabled(enabled);
-    const $kbNavLink = $('.st-chatu8-nav-link[data-tab="knowledgeBase"]');
+    const $kbNavLink = $('.zinao-chatu-nav-link[data-tab="knowledgeBase"]');
     if ($kbNavLink.length) {
       $kbNavLink.toggle(enabled);
     }
@@ -58091,12 +58097,12 @@ function initDialogEvents() {
       toastr?.success("\u8D44\u6599\u5E93\u529F\u80FD\u5DF2\u5F00\u542F\uFF01\u8BF7\u524D\u5F80\u5DE6\u4FA7\u8BBE\u7F6E\u9762\u677F\u7684\u300C\u8D44\u6599\u5E93\u300D\u9875\u9762\u6DFB\u52A0\u548C\u7BA1\u7406\u4F60\u7684\u53C2\u8003\u8D44\u6599\u3002");
     }
   });
-  settingsPanel.on("click", ".st-chatu8-ai-settings-tab", function() {
+  settingsPanel.on("click", ".zinao-chatu-ai-settings-tab", function() {
     const tabName = $(this).data("settings-tab");
-    settingsPanel.find(".st-chatu8-ai-settings-tab").removeClass("active");
+    settingsPanel.find(".zinao-chatu-ai-settings-tab").removeClass("active");
     $(this).addClass("active");
-    settingsPanel.find(".st-chatu8-ai-settings-tab-content").removeClass("active");
-    settingsPanel.find(`.st-chatu8-ai-settings-tab-content[data-settings-tab-content="${tabName}"]`).addClass("active");
+    settingsPanel.find(".zinao-chatu-ai-settings-tab-content").removeClass("active");
+    settingsPanel.find(`.zinao-chatu-ai-settings-tab-content[data-settings-tab-content="${tabName}"]`).addClass("active");
   });
   inputMaxTokens.on("input", autoSaveSettings);
   inputTemperature.on("input", autoSaveSettings);
@@ -58212,7 +58218,7 @@ function initAiAssistant(modal) {
   refreshAllKnowledgeBaseCaches().catch((err) => {
     console.warn("[AI Assistant] \u5237\u65B0\u8D44\u6599\u5E93\u7F13\u5B58\u5931\u8D25:", err);
   });
-  const dialog = $("#st-chatu8-ai-dialog");
+  const dialog = $("#zinao-chatu-ai-dialog");
   initDomRefs(dialog);
   setupTTSEventListeners();
   window.addEventListener("ai-show-generated-image", async (event) => {
@@ -58223,12 +58229,12 @@ function initAiAssistant(modal) {
       return;
     }
     const chatBody = dom.chatBody;
-    const icon = '<img src="/scripts/extensions/third-party/st-chatu8/html/settings/\u667A\u7ED8\u59EC\u5934\u50CF.png" alt="\u667A\u7ED8\u59EC" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">';
+    const icon = '<img src="/scripts/extensions/third-party/zinao-chatu/html/settings/\u667A\u7ED8\u59EC\u5934\u50CF.png" alt="\u667A\u7ED8\u59EC" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">';
     const messageHtml = `
-            <div class="st-chatu8-ai-msg system-msg">
+            <div class="zinao-chatu-ai-msg system-msg">
                 <div class="msg-avatar">${icon}</div>
                 <div class="msg-content">
-                    <div class="st-chatu8-ai-generated-image" style="margin-top: 10px;">
+                    <div class="zinao-chatu-ai-generated-image" style="margin-top: 10px;">
                         <img src="${imageUrl}" alt="AI\u751F\u6210\u7684\u56FE\u7247" style="max-width: 100%; border-radius: 8px; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
                         <div style="margin-top: 5px; font-size: 12px; color: #666;">\u63D0\u793A\u8BCD: ${escapeHTML(prompt2)}</div>
                     </div>
@@ -58690,11 +58696,11 @@ function getRecommendedPlaceholder(inputName) {
 }
 function wrapWithPlaceholderButton(inputElement, inputName, onChange, defaultValue = "") {
   const wrapper = document.createElement("div");
-  wrapper.className = "st-chatu8-workflow-viz-input-wrapper";
+  wrapper.className = "zinao-chatu-workflow-viz-input-wrapper";
   wrapper.appendChild(inputElement);
   const placeholderBtn = document.createElement("button");
   placeholderBtn.type = "button";
-  placeholderBtn.className = "st-chatu8-placeholder-btn";
+  placeholderBtn.className = "zinao-chatu-placeholder-btn";
   placeholderBtn.innerHTML = '<i class="fa-solid fa-code"></i>';
   placeholderBtn.title = "\u66FF\u6362\u4E3A\u5360\u4F4D\u7B26";
   const recommendedPlaceholder = getRecommendedPlaceholder(inputName);
@@ -58707,13 +58713,13 @@ function wrapWithPlaceholderButton(inputElement, inputName, onChange, defaultVal
 }
 function showPlaceholderMenu(buttonElement, inputElement, inputName, recommendedPlaceholder, onChange, defaultValue = "") {
   if (!buttonElement) return;
-  const existingMenu = document.querySelector(".st-chatu8-placeholder-menu");
+  const existingMenu = document.querySelector(".zinao-chatu-placeholder-menu");
   if (existingMenu) existingMenu.remove();
   const menu = document.createElement("div");
-  menu.className = "st-chatu8-placeholder-menu";
+  menu.className = "zinao-chatu-placeholder-menu";
   PLACEHOLDER_MAP.forEach((item) => {
     const menuItem = document.createElement("div");
-    menuItem.className = "st-chatu8-placeholder-menu-item";
+    menuItem.className = "zinao-chatu-placeholder-menu-item";
     if (item.placeholder === recommendedPlaceholder) {
       menuItem.classList.add("recommended");
     }
@@ -58722,7 +58728,7 @@ function showPlaceholderMenu(buttonElement, inputElement, inputName, recommended
             <span class="placeholder-label">${item.label}</span>
         `;
     menuItem.onclick = () => {
-      const wrapper = inputElement.closest(".st-chatu8-workflow-viz-input-wrapper");
+      const wrapper = inputElement.closest(".zinao-chatu-workflow-viz-input-wrapper");
       if (inputElement.tagName === "SELECT" || inputElement.tagName === "INPUT" && inputElement.type === "number") {
         const newInput = document.createElement("input");
         newInput.type = "text";
@@ -58744,7 +58750,7 @@ function showPlaceholderMenu(buttonElement, inputElement, inputName, recommended
     menu.appendChild(menuItem);
   });
   const clearItem = document.createElement("div");
-  clearItem.className = "st-chatu8-placeholder-menu-item st-chatu8-placeholder-clear";
+  clearItem.className = "zinao-chatu-placeholder-menu-item zinao-chatu-placeholder-clear";
   clearItem.innerHTML = `
         <span class="placeholder-code" style="color: #e74c3c;">\u{1F5D1}\uFE0F \u6E05\u9664\u5360\u4F4D\u7B26</span>
         <span class="placeholder-label">\u6062\u590D\u4E3A\u9ED8\u8BA4\u503C${defaultValue ? ": " + defaultValue : ""}</span>
@@ -58930,7 +58936,7 @@ function worker_export_current() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `st-chatu8-workflow-${selectedId}.json`;
+  a.download = `zinao-chatu-workflow-${selectedId}.json`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -58947,7 +58953,7 @@ function worker_export_all() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = "st-chatu8-workflows-all.json";
+  a.download = "zinao-chatu-workflows-all.json";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -59078,18 +59084,18 @@ function renderNodeProperties(panel, node, workflow, objectInfo, connections, on
   const skipCheck = checkNodeSkippable(node.id, workflow, connections, objectInfo);
   const isSkipped = workflow[node.id]._skip === true;
   panel.innerHTML = `
-        <div class="st-chatu8-workflow-viz-properties-header">
+        <div class="zinao-chatu-workflow-viz-properties-header">
             <h4>${displayName}</h4>
             <span class="node-id">#${node.id} \xB7 ${node.classType}</span>
         </div>
-        <div class="st-chatu8-workflow-viz-skip-section" id="viz-skip-section"></div>
-        <div class="st-chatu8-workflow-viz-properties-content" id="viz-properties-inputs"></div>
+        <div class="zinao-chatu-workflow-viz-skip-section" id="viz-skip-section"></div>
+        <div class="zinao-chatu-workflow-viz-properties-content" id="viz-properties-inputs"></div>
     `;
   const skipSection = panel.querySelector("#viz-skip-section");
   const skipGroup = document.createElement("div");
-  skipGroup.className = "st-chatu8-workflow-viz-skip-group";
+  skipGroup.className = "zinao-chatu-workflow-viz-skip-group";
   const skipLabel = document.createElement("label");
-  skipLabel.className = "st-chatu8-workflow-viz-skip-label";
+  skipLabel.className = "zinao-chatu-workflow-viz-skip-label";
   const skipCheckbox = document.createElement("input");
   skipCheckbox.type = "checkbox";
   skipCheckbox.checked = isSkipped;
@@ -59100,7 +59106,7 @@ function renderNodeProperties(panel, node, workflow, objectInfo, connections, on
   skipLabel.appendChild(skipText);
   skipGroup.appendChild(skipLabel);
   const skipStatus = document.createElement("div");
-  skipStatus.className = "st-chatu8-workflow-viz-skip-status";
+  skipStatus.className = "zinao-chatu-workflow-viz-skip-status";
   if (!skipCheck.canSkip && !isSkipped) {
     skipStatus.className += " not-skippable";
     skipStatus.innerHTML = `<i class="fa-solid fa-circle-info"></i> ${skipCheck.reason}`;
@@ -59129,7 +59135,7 @@ function renderNodeProperties(panel, node, workflow, objectInfo, connections, on
     const currentValue = node.inputs[inputName];
     const isConnection = Array.isArray(currentValue) && currentValue.length === 2 && typeof currentValue[0] === "string";
     const group = document.createElement("div");
-    group.className = "st-chatu8-workflow-viz-property-group";
+    group.className = "zinao-chatu-workflow-viz-property-group";
     const label = document.createElement("label");
     label.textContent = inputName;
     if (isConnection) {
@@ -59158,7 +59164,7 @@ function renderNodeProperties(panel, node, workflow, objectInfo, connections, on
     for (const [inputName, currentValue] of Object.entries(node.inputs)) {
       const isConnection = Array.isArray(currentValue) && currentValue.length === 2 && typeof currentValue[0] === "string";
       const group = document.createElement("div");
-      group.className = "st-chatu8-workflow-viz-property-group";
+      group.className = "zinao-chatu-workflow-viz-property-group";
       const label = document.createElement("label");
       label.textContent = inputName;
       if (isConnection) {
@@ -59326,28 +59332,28 @@ async function visualizeWorkflow() {
     return;
   }
   const backdrop = document.createElement("div");
-  backdrop.className = "st-chatu8-workflow-viz-backdrop";
+  backdrop.className = "zinao-chatu-workflow-viz-backdrop";
   backdrop.innerHTML = `
-        <div class="st-chatu8-workflow-viz-dialog">
-            <div class="st-chatu8-workflow-viz-header">
+        <div class="zinao-chatu-workflow-viz-dialog">
+            <div class="zinao-chatu-workflow-viz-header">
                 <h3>\u5DE5\u4F5C\u6D41\u53EF\u89C6\u5316</h3>
-                <span class="st-chatu8-workflow-viz-close">&times;</span>
+                <span class="zinao-chatu-workflow-viz-close">&times;</span>
             </div>
-            <div class="st-chatu8-workflow-viz-toolbar">
-                <button class="st-chatu8-btn" id="viz-zoom-in"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
-                <button class="st-chatu8-btn" id="viz-zoom-out"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
-                <button class="st-chatu8-btn" id="viz-zoom-reset"><i class="fa-solid fa-expand"></i> \u91CD\u7F6E</button>
-                <button class="st-chatu8-btn" id="viz-save-workflow"><i class="fa-solid fa-save"></i> \u4FDD\u5B58\u4FEE\u6539</button>
-                <span class="st-chatu8-workflow-viz-stats"></span>
+            <div class="zinao-chatu-workflow-viz-toolbar">
+                <button class="zinao-chatu-btn" id="viz-zoom-in"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+                <button class="zinao-chatu-btn" id="viz-zoom-out"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+                <button class="zinao-chatu-btn" id="viz-zoom-reset"><i class="fa-solid fa-expand"></i> \u91CD\u7F6E</button>
+                <button class="zinao-chatu-btn" id="viz-save-workflow"><i class="fa-solid fa-save"></i> \u4FDD\u5B58\u4FEE\u6539</button>
+                <span class="zinao-chatu-workflow-viz-stats"></span>
             </div>
-            <div class="st-chatu8-workflow-viz-body">
-                <div class="st-chatu8-workflow-viz-container">
-                    <div class="st-chatu8-workflow-viz-svg-wrapper">
-                        <svg class="st-chatu8-workflow-viz-svg"></svg>
+            <div class="zinao-chatu-workflow-viz-body">
+                <div class="zinao-chatu-workflow-viz-container">
+                    <div class="zinao-chatu-workflow-viz-svg-wrapper">
+                        <svg class="zinao-chatu-workflow-viz-svg"></svg>
                     </div>
                 </div>
-                <div class="st-chatu8-workflow-viz-properties" id="viz-properties-panel">
-                    <div class="st-chatu8-workflow-viz-properties-placeholder">
+                <div class="zinao-chatu-workflow-viz-properties" id="viz-properties-panel">
+                    <div class="zinao-chatu-workflow-viz-properties-placeholder">
                         <i class="fa-solid fa-mouse-pointer"></i>
                         <p>\u70B9\u51FB\u8282\u70B9\u67E5\u770B\u5C5E\u6027</p>
                     </div>
@@ -59356,11 +59362,11 @@ async function visualizeWorkflow() {
         </div>
     `;
   document.body.appendChild(backdrop);
-  const closeBtn = backdrop.querySelector(".st-chatu8-workflow-viz-close");
-  const container = backdrop.querySelector(".st-chatu8-workflow-viz-container");
-  const svgWrapper = backdrop.querySelector(".st-chatu8-workflow-viz-svg-wrapper");
-  const svg = backdrop.querySelector(".st-chatu8-workflow-viz-svg");
-  const statsEl = backdrop.querySelector(".st-chatu8-workflow-viz-stats");
+  const closeBtn = backdrop.querySelector(".zinao-chatu-workflow-viz-close");
+  const container = backdrop.querySelector(".zinao-chatu-workflow-viz-container");
+  const svgWrapper = backdrop.querySelector(".zinao-chatu-workflow-viz-svg-wrapper");
+  const svg = backdrop.querySelector(".zinao-chatu-workflow-viz-svg");
+  const statsEl = backdrop.querySelector(".zinao-chatu-workflow-viz-stats");
   const propertiesPanel = backdrop.querySelector("#viz-properties-panel");
   const { getComfyuiCache: getComfyuiCache2 } = await Promise.resolve().then(() => (init_configDatabase(), configDatabase_exports));
   const objectInfo = await getComfyuiCache2("objectinfo") || {};
@@ -59370,10 +59376,10 @@ async function visualizeWorkflow() {
   const isMobile3 = window.innerWidth <= 768;
   const addMobileCloseButton = () => {
     if (!isMobile3) return;
-    const existing = propertiesPanel.querySelector(".st-chatu8-workflow-viz-properties-close-mobile");
+    const existing = propertiesPanel.querySelector(".zinao-chatu-workflow-viz-properties-close-mobile");
     if (existing) existing.remove();
     const mobileCloseBtn = document.createElement("span");
-    mobileCloseBtn.className = "st-chatu8-workflow-viz-properties-close-mobile";
+    mobileCloseBtn.className = "zinao-chatu-workflow-viz-properties-close-mobile";
     mobileCloseBtn.innerHTML = "&times;";
     mobileCloseBtn.onclick = (e) => {
       e.stopPropagation();
@@ -59509,14 +59515,14 @@ async function visualizeWorkflow() {
     path.setAttribute("stroke-width", "2");
     path.setAttribute("fill", "none");
     path.setAttribute("marker-end", "url(#arrowhead)");
-    path.classList.add("st-chatu8-workflow-viz-connection");
+    path.classList.add("zinao-chatu-workflow-viz-connection");
     svg.appendChild(path);
   });
   nodes.forEach((node) => {
     const pos = positions[node.id];
     if (!pos) return;
     const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
-    g.classList.add("st-chatu8-workflow-viz-node");
+    g.classList.add("zinao-chatu-workflow-viz-node");
     g.setAttribute("transform", `translate(${pos.x}, ${pos.y})`);
     const isSkipped = workflow[node.id]._skip === true;
     if (isSkipped) {
@@ -59568,7 +59574,7 @@ ${inputDetails || "  \u65E0"}`;
     g.setAttribute("data-node-id", node.id);
     g.onclick = (e) => {
       e.stopPropagation();
-      svg.querySelectorAll(".st-chatu8-workflow-viz-node.selected").forEach((el) => {
+      svg.querySelectorAll(".zinao-chatu-workflow-viz-node.selected").forEach((el) => {
         el.classList.remove("selected");
       });
       g.classList.add("selected");
@@ -59632,7 +59638,7 @@ ${inputDetails || "  \u65E0"}`;
   let scrollStartX = 0;
   let scrollStartY = 0;
   container.addEventListener("mousedown", (e) => {
-    const clickedNode = e.target.closest(".st-chatu8-workflow-viz-node");
+    const clickedNode = e.target.closest(".zinao-chatu-workflow-viz-node");
     if (!clickedNode) {
       isDragging = true;
       dragStartX = e.clientX;
@@ -59910,7 +59916,7 @@ function editWorker_export_current() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `st-chatu8-edit-workflow-${selectedId}.json`;
+  a.download = `zinao-chatu-edit-workflow-${selectedId}.json`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -61497,7 +61503,7 @@ function handleCancelBananaTask(data) {
 }
 function initializeBananaListener() {
   eventSource24.on(EventType.GENERATE_IMAGE_REQUEST, bananaGenerate);
-  eventSource24.on("st_chatu8_cancel_banana_task", handleCancelBananaTask);
+  eventSource24.on("zinao_chatu_cancel_banana_task", handleCancelBananaTask);
   addLog("banana \u751F\u56FE\u4E8B\u4EF6\u76D1\u542C\u5668\u5DF2\u521D\u59CB\u5316\u3002");
 }
 async function replaceWithBanana() {
@@ -61510,7 +61516,7 @@ async function replaceWithBanana() {
   } else {
     if (window.initializeBananaListener) {
       eventSource24.removeListener(EventType.GENERATE_IMAGE_REQUEST, bananaGenerate);
-      eventSource24.removeListener("st_chatu8_cancel_banana_task", handleCancelBananaTask);
+      eventSource24.removeListener("zinao_chatu_cancel_banana_task", handleCancelBananaTask);
       window.initializeBananaListener = false;
       addLog("[Banana] \u751F\u56FE\u4E8B\u4EF6\u76D1\u542C\u5668\u5DF2\u5173\u95ED\u3002");
     }
@@ -61647,7 +61653,7 @@ async function generateSDImage({ prompt: link, width: Xwidth, height: Xheight, c
       const readmodel = await fetch("/api/sd/get-model", {
         method: "POST",
         body: JSON.stringify({
-          auth: extension_settingss.st_chatu8_sd_auth ? extension_settingss.st_chatu8_sd_auth : "",
+          auth: extension_settingss.zinao_chatu_sd_auth ? extension_settingss.zinao_chatu_sd_auth : "",
           url
         }),
         headers: getRequestHeaders(window.token)
@@ -61669,7 +61675,7 @@ async function generateSDImage({ prompt: link, width: Xwidth, height: Xheight, c
         const response = await fetch("/api/sd/set-model", {
           method: "POST",
           body: JSON.stringify({
-            auth: extension_settingss.st_chatu8_sd_auth ? extension_settingss.st_chatu8_sd_auth : "",
+            auth: extension_settingss.zinao_chatu_sd_auth ? extension_settingss.zinao_chatu_sd_auth : "",
             url,
             model: extension_settingss.sd_cchatu_8_model
           }),
@@ -61787,8 +61793,8 @@ async function generateSDImage({ prompt: link, width: Xwidth, height: Xheight, c
       window.xiancheng = false;
       lockAcquired = true;
       payload.url = url;
-      console.log("payst_chatu8_sd_authload", extension_settingss.st_chatu8_sd_auth);
-      payload.auth = extension_settingss.st_chatu8_sd_auth ? extension_settingss.st_chatu8_sd_auth : "";
+      console.log("payzinao_chatu_sd_authload", extension_settingss.zinao_chatu_sd_auth);
+      payload.auth = extension_settingss.zinao_chatu_sd_auth ? extension_settingss.zinao_chatu_sd_auth : "";
       const result = await fetch("/api/sd/generate", {
         method: "POST",
         headers: getRequestHeaders(window.token),
@@ -62410,56 +62416,56 @@ function ensureVibeGroupPresets() {
   return settings3.vibeGroups;
 }
 function showVibeGroupEditorDialog() {
-  const parent = document.getElementById("st-chatu8-settings") || document.body;
+  const parent = document.getElementById("zinao-chatu-settings") || document.body;
   const settings3 = extension_settings50[extensionName];
   ensureVibeGroupPresets();
   void warmMissingVibePresetThumbnails();
   const backdrop = document.createElement("div");
-  backdrop.className = "st-chatu8-workflow-viz-backdrop";
+  backdrop.className = "zinao-chatu-workflow-viz-backdrop";
   backdrop.innerHTML = `
-        <div class="st-chatu8-workflow-viz-dialog st-chatu8-vibe-group-editor-dialog">
-            <div class="st-chatu8-workflow-viz-header">
+        <div class="zinao-chatu-workflow-viz-dialog zinao-chatu-vibe-group-editor-dialog">
+            <div class="zinao-chatu-workflow-viz-header">
                 <h3>Vibe \u7EC4\u7F16\u8F91\u5668</h3>
-                <span class="st-chatu8-workflow-viz-close">&times;</span>
+                <span class="zinao-chatu-workflow-viz-close">&times;</span>
             </div>
-            <div class="st-chatu8-workflow-viz-body" style="padding: 2rem;">
-                <div class="st-chatu8-vibe-group-editor-content">
+            <div class="zinao-chatu-workflow-viz-body" style="padding: 2rem;">
+                <div class="zinao-chatu-vibe-group-editor-content">
                     <!-- Group Preset Selector -->
-                    <div class="st-chatu8-field" style="margin-bottom: 1.2rem;">
+                    <div class="zinao-chatu-field" style="margin-bottom: 1.2rem;">
                         <label for="vibe-group-select">Vibe \u7EC4\u9884\u8BBE</label>
-                        <div class="st-chatu8-profile-controls">
-                            <select id="vibe-group-select" class="st-chatu8-select"></select>
-                            <button class="st-chatu8-icon-btn" id="vibe-group-visual-select" title="\u53EF\u89C6\u5316\u9009\u62E9">
+                        <div class="zinao-chatu-profile-controls">
+                            <select id="vibe-group-select" class="zinao-chatu-select"></select>
+                            <button class="zinao-chatu-icon-btn" id="vibe-group-visual-select" title="\u53EF\u89C6\u5316\u9009\u62E9">
                                 <i class="fa-solid fa-grip"></i>
                             </button>
-                            <button class="st-chatu8-icon-btn" id="vibe-group-new" title="\u65B0\u5EFA\u7EC4">
+                            <button class="zinao-chatu-icon-btn" id="vibe-group-new" title="\u65B0\u5EFA\u7EC4">
                                 <i class="fa-solid fa-plus"></i>
                             </button>
-                            <button class="st-chatu8-icon-btn" id="vibe-group-save" title="\u4FDD\u5B58\u5F53\u524D\u7EC4">
+                            <button class="zinao-chatu-icon-btn" id="vibe-group-save" title="\u4FDD\u5B58\u5F53\u524D\u7EC4">
                                 <i class="fa-solid fa-save"></i>
                             </button>
-                            <button class="st-chatu8-icon-btn" id="vibe-group-export-current" title="\u5BFC\u51FA\u5F53\u524D\u7EC4">
+                            <button class="zinao-chatu-icon-btn" id="vibe-group-export-current" title="\u5BFC\u51FA\u5F53\u524D\u7EC4">
                                 <i class="fa-solid fa-upload"></i>
                             </button>
-                            <button class="st-chatu8-icon-btn" id="vibe-group-export-all" title="\u5BFC\u51FA\u5168\u90E8\u7EC4">
+                            <button class="zinao-chatu-icon-btn" id="vibe-group-export-all" title="\u5BFC\u51FA\u5168\u90E8\u7EC4">
                                 <i class="fa-solid fa-file-export"></i>
                             </button>
-                            <button class="st-chatu8-icon-btn" id="vibe-group-import" title="\u5BFC\u5165\u7EC4">
+                            <button class="zinao-chatu-icon-btn" id="vibe-group-import" title="\u5BFC\u5165\u7EC4">
                                 <i class="fa-solid fa-download"></i>
                             </button>
-                            <button class="st-chatu8-icon-btn danger" id="vibe-group-delete" title="\u5220\u9664\u5F53\u524D\u7EC4">
+                            <button class="zinao-chatu-icon-btn danger" id="vibe-group-delete" title="\u5220\u9664\u5F53\u524D\u7EC4">
                                 <i class="fa-solid fa-trash"></i>
                             </button>
                         </div>
                     </div>
 
                     <!-- Add Vibe Button -->
-                    <button type="button" class="st-chatu8-btn" id="vibe-group-add-vibe" style="width: 100%; padding: 1rem; font-size: 16px; font-weight: 600; margin-bottom: 1.5rem;">
+                    <button type="button" class="zinao-chatu-btn" id="vibe-group-add-vibe" style="width: 100%; padding: 1rem; font-size: 16px; font-weight: 600; margin-bottom: 1.5rem;">
                         <i class="fa-solid fa-plus"></i> \u6DFB\u52A0 Vibe (0/4)
                     </button>
 
                     <!-- Vibe Slots Container -->
-                    <div id="vibe-slots-container" class="st-chatu8-vibe-slots">
+                    <div id="vibe-slots-container" class="zinao-chatu-vibe-slots">
                         <!-- Dynamically rendered slots (0-4) -->
                     </div>
 
@@ -62470,7 +62476,7 @@ function showVibeGroupEditorDialog() {
         </div>
     `;
   parent.appendChild(backdrop);
-  const closeBtn = backdrop.querySelector(".st-chatu8-workflow-viz-close");
+  const closeBtn = backdrop.querySelector(".zinao-chatu-workflow-viz-close");
   closeBtn.onclick = () => parent.removeChild(backdrop);
   backdrop.onclick = (e) => {
     if (e.target === backdrop) {
@@ -63163,7 +63169,7 @@ function warmMissingVibePresetThumbnails() {
 async function updateVibeSlot(slotsContainer, slotIndex, vibeRef, groupSelect, addVibeBtn) {
   const { vibeDataId, strength } = vibeRef;
   const slotDiv = document.createElement("div");
-  slotDiv.className = "st-chatu8-vibe-slot";
+  slotDiv.className = "zinao-chatu-vibe-slot";
   slotDiv.dataset.slotIndex = slotIndex;
   slotDiv.style.cssText = `
         border: 1px solid rgba(255, 255, 255, 0.1);
@@ -63173,7 +63179,7 @@ async function updateVibeSlot(slotsContainer, slotIndex, vibeRef, groupSelect, a
         background: rgba(0, 0, 0, 0.2);
     `;
   const headerDiv = document.createElement("div");
-  headerDiv.className = "st-chatu8-vibe-slot-header";
+  headerDiv.className = "zinao-chatu-vibe-slot-header";
   headerDiv.style.cssText = `
         display: flex;
         justify-content: space-between;
@@ -63181,21 +63187,21 @@ async function updateVibeSlot(slotsContainer, slotIndex, vibeRef, groupSelect, a
         margin-bottom: 0.8rem;
     `;
   const titleSpan = document.createElement("span");
-  titleSpan.className = "st-chatu8-vibe-slot-title";
+  titleSpan.className = "zinao-chatu-vibe-slot-title";
   titleSpan.textContent = `Vibe ${slotIndex + 1}`;
   titleSpan.style.cssText = `
         font-weight: 600;
         font-size: 1rem;
     `;
   const removeBtn = document.createElement("button");
-  removeBtn.className = "st-chatu8-icon-btn danger st-chatu8-vibe-slot-remove";
+  removeBtn.className = "zinao-chatu-icon-btn danger zinao-chatu-vibe-slot-remove";
   removeBtn.innerHTML = '<i class="fa-solid fa-times"></i>';
   removeBtn.title = "\u79FB\u9664\u6B64 Vibe";
   removeBtn.onclick = () => removeVibeFromSlot(slotIndex, slotsContainer, groupSelect, addVibeBtn);
   headerDiv.appendChild(titleSpan);
   headerDiv.appendChild(removeBtn);
   const previewDiv = document.createElement("div");
-  previewDiv.className = "st-chatu8-vibe-slot-preview";
+  previewDiv.className = "zinao-chatu-vibe-slot-preview";
   previewDiv.style.cssText = `
         width: 100%;
         height: 200px;
@@ -63253,12 +63259,12 @@ async function updateVibeSlot(slotsContainer, slotIndex, vibeRef, groupSelect, a
     });
   }
   const fieldDiv = document.createElement("div");
-  fieldDiv.className = "st-chatu8-field";
+  fieldDiv.className = "zinao-chatu-field";
   fieldDiv.style.marginBottom = "0";
   const label = document.createElement("label");
   label.innerHTML = `Reference Strength: <span class="strength-value">${strength.toFixed(2)}</span>`;
   const rangeContainer = document.createElement("div");
-  rangeContainer.className = "st-chatu8-range-container";
+  rangeContainer.className = "zinao-chatu-range-container";
   rangeContainer.style.cssText = `
         display: flex;
         gap: 0.5rem;
@@ -63267,7 +63273,7 @@ async function updateVibeSlot(slotsContainer, slotIndex, vibeRef, groupSelect, a
     `;
   const rangeSlider = document.createElement("input");
   rangeSlider.type = "range";
-  rangeSlider.className = "st-chatu8-range-slider vibe-strength-range";
+  rangeSlider.className = "zinao-chatu-range-slider vibe-strength-range";
   rangeSlider.min = "0";
   rangeSlider.max = "1";
   rangeSlider.step = "0.01";
@@ -63275,7 +63281,7 @@ async function updateVibeSlot(slotsContainer, slotIndex, vibeRef, groupSelect, a
   rangeSlider.style.flex = "1";
   const numberInput = document.createElement("input");
   numberInput.type = "number";
-  numberInput.className = "st-chatu8-range-input vibe-strength-num";
+  numberInput.className = "zinao-chatu-range-input vibe-strength-num";
   numberInput.min = "0";
   numberInput.max = "1";
   numberInput.step = "0.01";
@@ -63357,7 +63363,7 @@ function removeVibeFromSlot(slotIndex, slotsContainer, groupSelect, addVibeBtn) 
   console.log("[VibeGroup] Removed Vibe from slot", slotIndex);
 }
 async function showVibeVisualSelector(onSelect) {
-  const parent = document.getElementById("st-chatu8-settings") || document.body;
+  const parent = document.getElementById("zinao-chatu-settings") || document.body;
   const settings3 = extension_settings50[extensionName];
   const vibePresets = settings3.vibePresets || {};
   void warmMissingVibePresetThumbnails();
@@ -63367,36 +63373,36 @@ async function showVibeVisualSelector(onSelect) {
   let searchQuery = "";
   let renderSerial = 0;
   const backdrop = document.createElement("div");
-  backdrop.className = "st-chatu8-workflow-viz-backdrop";
+  backdrop.className = "zinao-chatu-workflow-viz-backdrop";
   backdrop.innerHTML = `
-        <div class="st-chatu8-workflow-viz-dialog st-chatu8-vibe-visual-selector-dialog">
-            <div class="st-chatu8-workflow-viz-header">
+        <div class="zinao-chatu-workflow-viz-dialog zinao-chatu-vibe-visual-selector-dialog">
+            <div class="zinao-chatu-workflow-viz-header">
                 <h3>\u9009\u62E9 Vibe \u9884\u8BBE</h3>
-                <span class="st-chatu8-workflow-viz-close">&times;</span>
+                <span class="zinao-chatu-workflow-viz-close">&times;</span>
             </div>
-            <div class="st-chatu8-workflow-viz-toolbar" style="justify-content: space-between; align-items: center; gap: 15px; padding: 12px 20px; background: rgba(30, 30, 46, 0.6); border-bottom: 1px solid rgba(255,255,255,0.05);">
-                <div class="st-chatu8-viz-search-container" style="position: relative; flex-grow: 1; max-width: 300px;">
+            <div class="zinao-chatu-workflow-viz-toolbar" style="justify-content: space-between; align-items: center; gap: 15px; padding: 12px 20px; background: rgba(30, 30, 46, 0.6); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <div class="zinao-chatu-viz-search-container" style="position: relative; flex-grow: 1; max-width: 300px;">
                     <i class="fa-solid fa-search" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #aaa; pointer-events: none;"></i>
-                    <input type="text" class="st-chatu8-viz-search-input" placeholder="\u641C\u7D22 Vibe..." style="width: 100%; padding: 8px 12px 8px 36px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; color: white; outline: none; transition: all 0.3s;">
+                    <input type="text" class="zinao-chatu-viz-search-input" placeholder="\u641C\u7D22 Vibe..." style="width: 100%; padding: 8px 12px 8px 36px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; color: white; outline: none; transition: all 0.3s;">
                 </div>
             </div>
-            <div class="st-chatu8-pagination-container">
-                <button class="st-chatu8-pagination-btn st-chatu8-pagination-prev" title="\u4E0A\u4E00\u9875">
+            <div class="zinao-chatu-pagination-container">
+                <button class="zinao-chatu-pagination-btn zinao-chatu-pagination-prev" title="\u4E0A\u4E00\u9875">
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
-                <div class="st-chatu8-pagination-info">
-                    <span class="st-chatu8-pagination-current">1</span>
+                <div class="zinao-chatu-pagination-info">
+                    <span class="zinao-chatu-pagination-current">1</span>
                     <span>/</span>
-                    <span class="st-chatu8-pagination-total">1</span>
+                    <span class="zinao-chatu-pagination-total">1</span>
                     <span style="margin-left: 8px; color: #666;">|</span>
-                    <span style="margin-left: 8px;">\u5171 <span class="st-chatu8-pagination-count">0</span> \u4E2A</span>
+                    <span style="margin-left: 8px;">\u5171 <span class="zinao-chatu-pagination-count">0</span> \u4E2A</span>
                 </div>
-                <button class="st-chatu8-pagination-btn st-chatu8-pagination-next" title="\u4E0B\u4E00\u9875">
+                <button class="zinao-chatu-pagination-btn zinao-chatu-pagination-next" title="\u4E0B\u4E00\u9875">
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
-                <div class="st-chatu8-pagination-size-container">
-                    <span class="st-chatu8-pagination-size-label">\u6BCF\u9875</span>
-                    <select class="st-chatu8-pagination-size">
+                <div class="zinao-chatu-pagination-size-container">
+                    <span class="zinao-chatu-pagination-size-label">\u6BCF\u9875</span>
+                    <select class="zinao-chatu-pagination-size">
                         <option value="8">8</option>
                         <option value="12" selected>12</option>
                         <option value="16">16</option>
@@ -63404,29 +63410,29 @@ async function showVibeVisualSelector(onSelect) {
                     </select>
                 </div>
             </div>
-            <div class="st-chatu8-workflow-viz-body">
-                <div class="st-chatu8-vibe-visual-selector-grid">
+            <div class="zinao-chatu-workflow-viz-body">
+                <div class="zinao-chatu-vibe-visual-selector-grid">
                     <!-- Vibe cards will be inserted here -->
                 </div>
             </div>
         </div>
     `;
   parent.appendChild(backdrop);
-  const closeBtn = backdrop.querySelector(".st-chatu8-workflow-viz-close");
+  const closeBtn = backdrop.querySelector(".zinao-chatu-workflow-viz-close");
   closeBtn.onclick = () => parent.removeChild(backdrop);
   backdrop.onclick = (e) => {
     if (e.target === backdrop) {
       parent.removeChild(backdrop);
     }
   };
-  const gridContainer = backdrop.querySelector(".st-chatu8-vibe-visual-selector-grid");
-  const searchInput = backdrop.querySelector(".st-chatu8-viz-search-input");
-  const paginationPrev = backdrop.querySelector(".st-chatu8-pagination-prev");
-  const paginationNext = backdrop.querySelector(".st-chatu8-pagination-next");
-  const paginationCurrent = backdrop.querySelector(".st-chatu8-pagination-current");
-  const paginationTotal = backdrop.querySelector(".st-chatu8-pagination-total");
-  const paginationCount = backdrop.querySelector(".st-chatu8-pagination-count");
-  const paginationSizeSelect = backdrop.querySelector(".st-chatu8-pagination-size");
+  const gridContainer = backdrop.querySelector(".zinao-chatu-vibe-visual-selector-grid");
+  const searchInput = backdrop.querySelector(".zinao-chatu-viz-search-input");
+  const paginationPrev = backdrop.querySelector(".zinao-chatu-pagination-prev");
+  const paginationNext = backdrop.querySelector(".zinao-chatu-pagination-next");
+  const paginationCurrent = backdrop.querySelector(".zinao-chatu-pagination-current");
+  const paginationTotal = backdrop.querySelector(".zinao-chatu-pagination-total");
+  const paginationCount = backdrop.querySelector(".zinao-chatu-pagination-count");
+  const paginationSizeSelect = backdrop.querySelector(".zinao-chatu-pagination-size");
   const allPresetNames = Object.keys(vibePresets).filter((name) => vibePresets[name].vibeDataId).sort((a, b) => {
     if (a === "\u9ED8\u8BA4") return -1;
     if (b === "\u9ED8\u8BA4") return 1;
@@ -63462,7 +63468,7 @@ async function showVibeVisualSelector(onSelect) {
   }
   function setVibeCardPlaceholder(thumbnailDiv, label = "\u52A0\u8F7D\u4E2D...") {
     thumbnailDiv.innerHTML = `
-            <div class="st-chatu8-vibe-card-placeholder">
+            <div class="zinao-chatu-vibe-card-placeholder">
                 <i class="fa-solid fa-image"></i>
                 <div>${label}</div>
             </div>
@@ -63521,21 +63527,21 @@ async function showVibeVisualSelector(onSelect) {
     for (const presetName of pagePresets) {
       const preset = vibePresets[presetName];
       const card = document.createElement("div");
-      card.className = "st-chatu8-vibe-card";
+      card.className = "zinao-chatu-vibe-card";
       const thumbnailDiv = document.createElement("div");
-      thumbnailDiv.className = "st-chatu8-vibe-card-thumbnail";
+      thumbnailDiv.className = "zinao-chatu-vibe-card-thumbnail";
       if (preset.thumbnail) {
         setVibeCardImage(thumbnailDiv, preset.thumbnail, presetName);
       } else {
         setVibeCardPlaceholder(thumbnailDiv);
       }
       const infoDiv = document.createElement("div");
-      infoDiv.className = "st-chatu8-vibe-card-info";
+      infoDiv.className = "zinao-chatu-vibe-card-info";
       const nameDiv = document.createElement("div");
-      nameDiv.className = "st-chatu8-vibe-card-name";
+      nameDiv.className = "zinao-chatu-vibe-card-name";
       nameDiv.textContent = presetName;
       const modelDiv = document.createElement("div");
-      modelDiv.className = "st-chatu8-vibe-card-model";
+      modelDiv.className = "zinao-chatu-vibe-card-model";
       const modelName = preset.model || "Unknown";
       const modelDisplay = modelName.replace("nai-diffusion-", "V").replace("-", " ");
       modelDiv.textContent = modelDisplay;
@@ -63560,7 +63566,7 @@ async function showVibeVisualSelector(onSelect) {
         }).catch((error) => {
           if (renderId !== renderSerial || !thumbnailDiv.isConnected) return;
           thumbnailDiv.innerHTML = `
-                            <div class="st-chatu8-vibe-card-error">
+                            <div class="zinao-chatu-vibe-card-error">
                                 <i class="fa-solid fa-exclamation-triangle"></i>
                                 <div>\u52A0\u8F7D\u5931\u8D25</div>
                             </div>
@@ -64252,7 +64258,7 @@ async function saveVibeDataWithDuplicatePrevention(vibeData) {
   }
 }
 async function showVibeGroupVisualSelector(onSelect) {
-  const parent = document.getElementById("st-chatu8-settings") || document.body;
+  const parent = document.getElementById("zinao-chatu-settings") || document.body;
   const settings3 = extension_settings50[extensionName];
   ensureVibeGroupPresets();
   let currentPage = 1;
@@ -64262,44 +64268,44 @@ async function showVibeGroupVisualSelector(onSelect) {
   let isBulkDeleteMode = false;
   let selectedForDelete = /* @__PURE__ */ new Set();
   const backdrop = document.createElement("div");
-  backdrop.className = "st-chatu8-workflow-viz-backdrop st-chatu8-preset-viz-dialog-wrapper";
+  backdrop.className = "zinao-chatu-workflow-viz-backdrop zinao-chatu-preset-viz-dialog-wrapper";
   backdrop.innerHTML = `
-        <div class="st-chatu8-workflow-viz-dialog st-chatu8-vibe-group-visual-selector-dialog">
-            <div class="st-chatu8-workflow-viz-header">
+        <div class="zinao-chatu-workflow-viz-dialog zinao-chatu-vibe-group-visual-selector-dialog">
+            <div class="zinao-chatu-workflow-viz-header">
                 <h3>\u9009\u62E9 Vibe \u7EC4\u9884\u8BBE</h3>
-                <span class="st-chatu8-workflow-viz-close">&times;</span>
+                <span class="zinao-chatu-workflow-viz-close">&times;</span>
             </div>
-            <div class="st-chatu8-workflow-viz-toolbar" style="justify-content: space-between; align-items: center; gap: 15px; padding: 12px 20px; background: rgba(30, 30, 46, 0.6); border-bottom: 1px solid rgba(255,255,255,0.05);">
-                <div class="st-chatu8-viz-search-container" style="position: relative; flex-grow: 1; max-width: 300px;">
+            <div class="zinao-chatu-workflow-viz-toolbar" style="justify-content: space-between; align-items: center; gap: 15px; padding: 12px 20px; background: rgba(30, 30, 46, 0.6); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <div class="zinao-chatu-viz-search-container" style="position: relative; flex-grow: 1; max-width: 300px;">
                     <i class="fa-solid fa-search" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #aaa; pointer-events: none;"></i>
-                    <input type="text" class="st-chatu8-viz-search-input" placeholder="\u641C\u7D22 Vibe \u7EC4..." style="width: 100%; padding: 8px 12px 8px 36px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; color: white; outline: none; transition: all 0.3s;">
+                    <input type="text" class="zinao-chatu-viz-search-input" placeholder="\u641C\u7D22 Vibe \u7EC4..." style="width: 100%; padding: 8px 12px 8px 36px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; color: white; outline: none; transition: all 0.3s;">
                 </div>
-                <div class="st-chatu8-viz-mode-controls" style="display: flex; gap: 8px;">
-                    <button class="st-chatu8-btn st-chatu8-btn-secondary st-chatu8-mode-toggle-manage" title="\u7BA1\u7406\u6A21\u5F0F">
+                <div class="zinao-chatu-viz-mode-controls" style="display: flex; gap: 8px;">
+                    <button class="zinao-chatu-btn zinao-chatu-btn-secondary zinao-chatu-mode-toggle-manage" title="\u7BA1\u7406\u6A21\u5F0F">
                         <i class="fa-solid fa-cog"></i> \u7BA1\u7406
                     </button>
-                    <button class="st-chatu8-btn st-chatu8-btn-danger st-chatu8-mode-toggle-bulk-delete" title="\u6279\u91CF\u5220\u9664\u6A21\u5F0F">
+                    <button class="zinao-chatu-btn zinao-chatu-btn-danger zinao-chatu-mode-toggle-bulk-delete" title="\u6279\u91CF\u5220\u9664\u6A21\u5F0F">
                         <i class="fa-solid fa-trash"></i> \u6279\u91CF\u5220\u9664
                     </button>
                 </div>
             </div>
-            <div class="st-chatu8-pagination-container">
-                <button class="st-chatu8-pagination-btn st-chatu8-pagination-prev" title="\u4E0A\u4E00\u9875">
+            <div class="zinao-chatu-pagination-container">
+                <button class="zinao-chatu-pagination-btn zinao-chatu-pagination-prev" title="\u4E0A\u4E00\u9875">
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
-                <div class="st-chatu8-pagination-info">
-                    <span class="st-chatu8-pagination-current">1</span>
+                <div class="zinao-chatu-pagination-info">
+                    <span class="zinao-chatu-pagination-current">1</span>
                     <span>/</span>
-                    <span class="st-chatu8-pagination-total">1</span>
+                    <span class="zinao-chatu-pagination-total">1</span>
                     <span style="margin-left: 8px; color: #666;">|</span>
-                    <span style="margin-left: 8px;">\u5171 <span class="st-chatu8-pagination-count">0</span> \u4E2A</span>
+                    <span style="margin-left: 8px;">\u5171 <span class="zinao-chatu-pagination-count">0</span> \u4E2A</span>
                 </div>
-                <button class="st-chatu8-pagination-btn st-chatu8-pagination-next" title="\u4E0B\u4E00\u9875">
+                <button class="zinao-chatu-pagination-btn zinao-chatu-pagination-next" title="\u4E0B\u4E00\u9875">
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
-                <div class="st-chatu8-pagination-size-container">
-                    <span class="st-chatu8-pagination-size-label">\u6BCF\u9875</span>
-                    <select class="st-chatu8-pagination-size">
+                <div class="zinao-chatu-pagination-size-container">
+                    <span class="zinao-chatu-pagination-size-label">\u6BCF\u9875</span>
+                    <select class="zinao-chatu-pagination-size">
                         <option value="8">8</option>
                         <option value="12" selected>12</option>
                         <option value="16">16</option>
@@ -64307,15 +64313,15 @@ async function showVibeGroupVisualSelector(onSelect) {
                     </select>
                 </div>
             </div>
-            <div class="st-chatu8-workflow-viz-body">
-                <div class="st-chatu8-preset-grid">
+            <div class="zinao-chatu-workflow-viz-body">
+                <div class="zinao-chatu-preset-grid">
                     <!-- Vibe group preset cards will be inserted here -->
                 </div>
             </div>
         </div>
     `;
   parent.appendChild(backdrop);
-  const closeBtn = backdrop.querySelector(".st-chatu8-workflow-viz-close");
+  const closeBtn = backdrop.querySelector(".zinao-chatu-workflow-viz-close");
   closeBtn.onclick = () => parent.removeChild(backdrop);
   backdrop.onclick = (e) => {
     if (e.target === backdrop) {
@@ -64340,11 +64346,11 @@ async function showVibeGroupVisualSelector(onSelect) {
     console.log("[VibeGroupVisualSelector] Filtered presets:", filteredPresetNames.length, "of", Object.keys(vibeGroups).length);
   }
   function updatePaginationUI() {
-    const paginationCurrent = backdrop.querySelector(".st-chatu8-pagination-current");
-    const paginationTotal = backdrop.querySelector(".st-chatu8-pagination-total");
-    const paginationCount = backdrop.querySelector(".st-chatu8-pagination-count");
-    const paginationPrev2 = backdrop.querySelector(".st-chatu8-pagination-prev");
-    const paginationNext2 = backdrop.querySelector(".st-chatu8-pagination-next");
+    const paginationCurrent = backdrop.querySelector(".zinao-chatu-pagination-current");
+    const paginationTotal = backdrop.querySelector(".zinao-chatu-pagination-total");
+    const paginationCount = backdrop.querySelector(".zinao-chatu-pagination-count");
+    const paginationPrev2 = backdrop.querySelector(".zinao-chatu-pagination-prev");
+    const paginationNext2 = backdrop.querySelector(".zinao-chatu-pagination-next");
     const totalPages = Math.max(1, Math.ceil(filteredPresetNames.length / pageSize));
     if (currentPage > totalPages) {
       currentPage = totalPages;
@@ -64380,19 +64386,19 @@ async function showVibeGroupVisualSelector(onSelect) {
       pageSize
     });
   }
-  const paginationPrev = backdrop.querySelector(".st-chatu8-pagination-prev");
-  const paginationNext = backdrop.querySelector(".st-chatu8-pagination-next");
-  const paginationSizeSelect = backdrop.querySelector(".st-chatu8-pagination-size");
+  const paginationPrev = backdrop.querySelector(".zinao-chatu-pagination-prev");
+  const paginationNext = backdrop.querySelector(".zinao-chatu-pagination-next");
+  const paginationSizeSelect = backdrop.querySelector(".zinao-chatu-pagination-size");
   async function createVibeGroupPresetCard(config) {
     const { presetName, preset, isSelected, onCardClick, onRefreshGrid } = config;
     const card = document.createElement("div");
-    card.className = "st-chatu8-preset-card";
+    card.className = "zinao-chatu-preset-card";
     card.dataset.presetName = presetName;
     if (isSelected) {
       card.classList.add("selected");
     }
     const imageContainer = document.createElement("div");
-    imageContainer.className = "st-chatu8-preset-card-image";
+    imageContainer.className = "zinao-chatu-preset-card-image";
     if (preset.coverImageId) {
       try {
         const imageData = await getConfigImage(preset.coverImageId);
@@ -64408,7 +64414,7 @@ async function showVibeGroupVisualSelector(onSelect) {
           imageContainer.appendChild(img);
         } else {
           imageContainer.innerHTML = `
-                        <div class="st-chatu8-preset-card-placeholder">
+                        <div class="zinao-chatu-preset-card-placeholder">
                             <i class="fa-solid fa-image"></i>
                             <div>\u56FE\u50CF\u672A\u627E\u5230</div>
                         </div>
@@ -64425,7 +64431,7 @@ async function showVibeGroupVisualSelector(onSelect) {
           errorMessage = "\u6570\u636E\u5E93\u9519\u8BEF";
         }
         imageContainer.innerHTML = `
-                    <div class="st-chatu8-preset-card-error">
+                    <div class="zinao-chatu-preset-card-error">
                         <i class="fa-solid fa-exclamation-triangle"></i>
                         <div>${errorMessage}</div>
                     </div>
@@ -64440,14 +64446,14 @@ async function showVibeGroupVisualSelector(onSelect) {
       }
     } else {
       imageContainer.innerHTML = `
-                <div class="st-chatu8-preset-card-placeholder">
+                <div class="zinao-chatu-preset-card-placeholder">
                     <i class="fa-solid fa-image"></i>
                     <div>\u65E0\u56FE\u50CF</div>
                 </div>
             `;
     }
     const nameLabel = document.createElement("div");
-    nameLabel.className = "st-chatu8-preset-card-name";
+    nameLabel.className = "zinao-chatu-preset-card-name";
     nameLabel.textContent = presetName;
     nameLabel.title = presetName;
     card.appendChild(imageContainer);
@@ -64461,9 +64467,9 @@ async function showVibeGroupVisualSelector(onSelect) {
   }
   function createActionButtons(presetName, preset, imageContainer, onRefreshGrid) {
     const actionsDiv = document.createElement("div");
-    actionsDiv.className = "st-chatu8-preset-card-actions";
+    actionsDiv.className = "zinao-chatu-preset-card-actions";
     const uploadBtn = document.createElement("button");
-    uploadBtn.className = "st-chatu8-preset-action-btn st-chatu8-preset-action-upload";
+    uploadBtn.className = "zinao-chatu-preset-action-btn zinao-chatu-preset-action-upload";
     uploadBtn.innerHTML = '<i class="fa-solid fa-camera"></i>';
     uploadBtn.title = "\u4E0A\u4F20\u5C01\u9762\u56FE";
     uploadBtn.onclick = (e) => {
@@ -64471,7 +64477,7 @@ async function showVibeGroupVisualSelector(onSelect) {
       handleCoverImageUpload(presetName, imageContainer, onRefreshGrid);
     };
     const deleteImageBtn = document.createElement("button");
-    deleteImageBtn.className = "st-chatu8-preset-action-btn st-chatu8-preset-action-delete-image";
+    deleteImageBtn.className = "zinao-chatu-preset-action-btn zinao-chatu-preset-action-delete-image";
     deleteImageBtn.innerHTML = '<i class="fa-solid fa-image-slash"></i>';
     deleteImageBtn.title = "\u5220\u9664\u5C01\u9762\u56FE";
     deleteImageBtn.onclick = (e) => {
@@ -64482,7 +64488,7 @@ async function showVibeGroupVisualSelector(onSelect) {
       deleteImageBtn.style.display = "none";
     }
     const renameBtn = document.createElement("button");
-    renameBtn.className = "st-chatu8-preset-action-btn st-chatu8-preset-action-rename";
+    renameBtn.className = "zinao-chatu-preset-action-btn zinao-chatu-preset-action-rename";
     renameBtn.innerHTML = '<i class="fa-solid fa-pen"></i>';
     renameBtn.title = "\u91CD\u547D\u540D";
     renameBtn.onclick = (e) => {
@@ -64490,7 +64496,7 @@ async function showVibeGroupVisualSelector(onSelect) {
       handlePresetRename(presetName, onRefreshGrid);
     };
     const deleteBtn = document.createElement("button");
-    deleteBtn.className = "st-chatu8-preset-action-btn st-chatu8-preset-action-delete";
+    deleteBtn.className = "zinao-chatu-preset-action-btn zinao-chatu-preset-action-delete";
     deleteBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
     deleteBtn.title = "\u5220\u9664\u9884\u8BBE";
     deleteBtn.onclick = (e) => {
@@ -64711,7 +64717,7 @@ async function showVibeGroupVisualSelector(onSelect) {
     }
   }
   async function refreshCardImage3(container, imageData) {
-    const actions = container.querySelector(".st-chatu8-preset-card-actions");
+    const actions = container.querySelector(".zinao-chatu-preset-card-actions");
     container.innerHTML = "";
     if (imageData) {
       const img = document.createElement("img");
@@ -64725,7 +64731,7 @@ async function showVibeGroupVisualSelector(onSelect) {
       container.appendChild(img);
     } else {
       container.innerHTML = `
-                <div class="st-chatu8-preset-card-placeholder">
+                <div class="zinao-chatu-preset-card-placeholder">
                     <i class="fa-solid fa-image"></i>
                     <div>\u65E0\u56FE\u50CF</div>
                 </div>
@@ -64737,7 +64743,7 @@ async function showVibeGroupVisualSelector(onSelect) {
     console.log("[VibeGroupVisualSelector] Card image refreshed");
   }
   async function renderCurrentPage() {
-    const gridContainer = backdrop.querySelector(".st-chatu8-preset-grid");
+    const gridContainer = backdrop.querySelector(".zinao-chatu-preset-grid");
     const vibeGroups = settings3.vibeGroups || {};
     const currentGroupId = settings3.vibeGroupId;
     gridContainer.style.opacity = "0";
@@ -64774,7 +64780,7 @@ async function showVibeGroupVisualSelector(onSelect) {
         preset,
         isSelected,
         onCardClick: (name, cardElement) => {
-          const isManagementMode3 = backdrop.classList.contains("st-chatu8-mode-manage");
+          const isManagementMode3 = backdrop.classList.contains("zinao-chatu-mode-manage");
           if (isBulkDeleteMode) {
             if (selectedForDelete.has(name)) {
               selectedForDelete.delete(name);
@@ -64785,7 +64791,7 @@ async function showVibeGroupVisualSelector(onSelect) {
               cardElement.classList.add("bulk-selected");
               console.log("[VibeGroupVisualSelector] Selected for bulk delete:", name);
             }
-            const bulkDeleteBtn2 = backdrop.querySelector(".st-chatu8-mode-toggle-bulk-delete");
+            const bulkDeleteBtn2 = backdrop.querySelector(".zinao-chatu-mode-toggle-bulk-delete");
             if (bulkDeleteBtn2 && selectedForDelete.size > 0) {
               bulkDeleteBtn2.innerHTML = `<i class="fa-solid fa-trash"></i> \u786E\u8BA4\u5220\u9664 (${selectedForDelete.size})`;
             } else if (bulkDeleteBtn2) {
@@ -64813,9 +64819,9 @@ async function showVibeGroupVisualSelector(onSelect) {
           renderCurrentPage();
         }
       });
-      const isManagementMode2 = backdrop.classList.contains("st-chatu8-mode-manage");
+      const isManagementMode2 = backdrop.classList.contains("zinao-chatu-mode-manage");
       if (isManagementMode2) {
-        const imageContainer = card.querySelector(".st-chatu8-preset-card-image");
+        const imageContainer = card.querySelector(".zinao-chatu-preset-card-image");
         const actionButtons = createActionButtons(presetName, preset, imageContainer, () => {
           updateFilteredPresets();
           updatePaginationUI();
@@ -64856,7 +64862,7 @@ async function showVibeGroupVisualSelector(onSelect) {
   updateFilteredPresets();
   updatePaginationUI();
   renderCurrentPage();
-  const searchInput = backdrop.querySelector(".st-chatu8-viz-search-input");
+  const searchInput = backdrop.querySelector(".zinao-chatu-viz-search-input");
   searchInput.oninput = (e) => {
     searchQuery = e.target.value.trim();
     currentPage = 1;
@@ -64865,18 +64871,18 @@ async function showVibeGroupVisualSelector(onSelect) {
     renderCurrentPage();
     console.log("[VibeGroupVisualSelector] Search query changed:", searchQuery);
   };
-  const manageModeBtn = backdrop.querySelector(".st-chatu8-mode-toggle-manage");
+  const manageModeBtn = backdrop.querySelector(".zinao-chatu-mode-toggle-manage");
   let isManagementMode = false;
   manageModeBtn.onclick = () => {
     isManagementMode = !isManagementMode;
     if (isManagementMode) {
-      backdrop.classList.add("st-chatu8-mode-manage");
+      backdrop.classList.add("zinao-chatu-mode-manage");
       manageModeBtn.classList.add("active");
       manageModeBtn.style.backgroundColor = "rgba(33, 150, 243, 0.2)";
       manageModeBtn.style.borderColor = "#2196f3";
       console.log("[VibeGroupVisualSelector] Entered management mode");
     } else {
-      backdrop.classList.remove("st-chatu8-mode-manage");
+      backdrop.classList.remove("zinao-chatu-mode-manage");
       manageModeBtn.classList.remove("active");
       manageModeBtn.style.backgroundColor = "";
       manageModeBtn.style.borderColor = "";
@@ -64884,9 +64890,9 @@ async function showVibeGroupVisualSelector(onSelect) {
     }
     if (isBulkDeleteMode) {
       isBulkDeleteMode = false;
-      backdrop.classList.remove("st-chatu8-mode-bulk-delete");
+      backdrop.classList.remove("zinao-chatu-mode-bulk-delete");
       selectedForDelete.clear();
-      const bulkDeleteBtn2 = backdrop.querySelector(".st-chatu8-mode-toggle-bulk-delete");
+      const bulkDeleteBtn2 = backdrop.querySelector(".zinao-chatu-mode-toggle-bulk-delete");
       if (bulkDeleteBtn2) {
         bulkDeleteBtn2.classList.remove("active");
         bulkDeleteBtn2.style.backgroundColor = "";
@@ -64897,7 +64903,7 @@ async function showVibeGroupVisualSelector(onSelect) {
     }
     renderCurrentPage();
   };
-  const bulkDeleteBtn = backdrop.querySelector(".st-chatu8-mode-toggle-bulk-delete");
+  const bulkDeleteBtn = backdrop.querySelector(".zinao-chatu-mode-toggle-bulk-delete");
   bulkDeleteBtn.onclick = () => {
     if (isBulkDeleteMode && selectedForDelete.size > 0) {
       handleBulkDelete(selectedForDelete, () => {
@@ -64908,14 +64914,14 @@ async function showVibeGroupVisualSelector(onSelect) {
     } else {
       isBulkDeleteMode = !isBulkDeleteMode;
       if (isBulkDeleteMode) {
-        backdrop.classList.add("st-chatu8-mode-bulk-delete");
+        backdrop.classList.add("zinao-chatu-mode-bulk-delete");
         bulkDeleteBtn.classList.add("active");
         bulkDeleteBtn.style.backgroundColor = "rgba(244, 67, 54, 0.2)";
         bulkDeleteBtn.style.borderColor = "#f44336";
         selectedForDelete.clear();
         console.log("[VibeGroupVisualSelector] Entered bulk delete mode");
       } else {
-        backdrop.classList.remove("st-chatu8-mode-bulk-delete");
+        backdrop.classList.remove("zinao-chatu-mode-bulk-delete");
         bulkDeleteBtn.classList.remove("active");
         bulkDeleteBtn.style.backgroundColor = "";
         bulkDeleteBtn.style.borderColor = "";
@@ -64925,7 +64931,7 @@ async function showVibeGroupVisualSelector(onSelect) {
       }
       if (isManagementMode) {
         isManagementMode = false;
-        backdrop.classList.remove("st-chatu8-mode-manage");
+        backdrop.classList.remove("zinao-chatu-mode-manage");
         manageModeBtn.classList.remove("active");
         manageModeBtn.style.backgroundColor = "";
         manageModeBtn.style.borderColor = "";
@@ -66594,7 +66600,7 @@ async function novelaigenerate(requestData) {
 }
 function initializeNovelAIListener() {
   eventSource26.on(EventType.GENERATE_IMAGE_REQUEST, novelaigenerate);
-  eventSource26.on("st_chatu8_cancel_novelai_task", ({ taskId }) => {
+  eventSource26.on("zinao_chatu_cancel_novelai_task", ({ taskId }) => {
     if (currentTaskId4 === taskId && currentAbortController2) {
       addLog(`\u6536\u5230\u53D6\u6D88\u8BF7\u6C42\uFF0C\u6B63\u5728\u4E2D\u65AD NovelAI \u4EFB\u52A1: ${taskId}`);
       currentAbortController2.abort();
@@ -66646,7 +66652,7 @@ function syncAllPromptReplaceFields(force = false) {
     const replaceSelect = document.getElementById("prompt_replace_id" + suffix);
     if (replaceSelect) replaceSelect.value = presetName;
     const textarea = document.getElementById("prompt_replace_text" + suffix);
-    const warning = textarea.closest(".st-chatu8-field-col").querySelector(".st-chatu8-unsaved-warning");
+    const warning = textarea.closest(".zinao-chatu-field-col").querySelector(".zinao-chatu-unsaved-warning");
     let isDirty = textarea.value !== (currentPreset.text ?? "");
     if (force || !isDirty) {
       textarea.value = currentPreset.text ?? "";
@@ -66761,7 +66767,7 @@ function prompt_replace_update(mode) {
       settings3.prompt_replace[presetName] = { "text": text };
       saveSettingsDebounced30();
       const textarea = document.getElementById("prompt_replace_text" + suffix);
-      const warning = textarea.closest(".st-chatu8-field-col").querySelector(".st-chatu8-unsaved-warning");
+      const warning = textarea.closest(".zinao-chatu-field-col").querySelector(".zinao-chatu-unsaved-warning");
       if (warning) $(warning).hide();
     }
   });
@@ -66803,7 +66809,7 @@ function prompt_replace_export_current() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `st-chatu8-prompt-replace-${selectedId}.json`;
+  a.download = `zinao-chatu-prompt-replace-${selectedId}.json`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -66820,7 +66826,7 @@ function prompt_replace_export_all() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = "st-chatu8-prompt-replace-all.json";
+  a.download = "zinao-chatu-prompt-replace-all.json";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -66882,7 +66888,7 @@ function initPromptReplaceControls(settingsModal) {
       const presetName = settings3.prompt_replace_id;
       const currentPreset = settings3.prompt_replace[presetName] || {};
       const isDirty = $(this).val() !== (currentPreset.text ?? "");
-      const warning = $(this).closest(".st-chatu8-field-col").find(".st-chatu8-unsaved-warning");
+      const warning = $(this).closest(".zinao-chatu-field-col").find(".zinao-chatu-unsaved-warning");
       if (isDirty) {
         $(warning).show();
       } else {
@@ -66929,7 +66935,7 @@ function renderTaskList(tasks) {
   const container = document.getElementById("ch-task-list");
   if (!container) return;
   if (tasks.length === 0) {
-    container.innerHTML = '<div class="st-chatu8-task-empty">\u6682\u65E0\u4EFB\u52A1</div>';
+    container.innerHTML = '<div class="zinao-chatu-task-empty">\u6682\u65E0\u4EFB\u52A1</div>';
     return;
   }
   const html = tasks.map((task) => {
@@ -66938,7 +66944,7 @@ function renderTaskList(tasks) {
     const typeText = typeTexts[task.type] || task.type;
     const canCancel = task.status === TaskStatus.QUEUED || task.status === TaskStatus.RUNNING;
     return `
-            <div class="st-chatu8-task-item" data-task-id="${task.id}">
+            <div class="zinao-chatu-task-item" data-task-id="${task.id}">
                 <span class="task-icon">${icon}</span>
                 <span class="task-info">
                     <span class="task-name" title="${task.prompt || task.name}">${task.name}</span>
@@ -66966,19 +66972,19 @@ function handleCancelTask(taskId) {
       window.zidongdianji = false;
       console.log("[TaskManager] \u5DF2\u505C\u6B62\u81EA\u52A8\u70B9\u51FB\u4EFB\u52A1");
     } else if (task.type === TaskType.LLM) {
-      eventSource27.emit("st_chatu8_cancel_llm_task", { taskId });
+      eventSource27.emit("zinao_chatu_cancel_llm_task", { taskId });
       console.log("[TaskManager] \u5DF2\u89E6\u53D1 LLM \u53D6\u6D88\u4E8B\u4EF6");
     } else if (task.type === TaskType.NOVELAI) {
-      eventSource27.emit("st_chatu8_cancel_novelai_task", { taskId });
+      eventSource27.emit("zinao_chatu_cancel_novelai_task", { taskId });
       console.log("[TaskManager] \u5DF2\u89E6\u53D1 NovelAI \u53D6\u6D88\u4E8B\u4EF6");
     } else if (task.type === TaskType.BANANA) {
-      eventSource27.emit("st_chatu8_cancel_banana_task", { taskId });
+      eventSource27.emit("zinao_chatu_cancel_banana_task", { taskId });
       console.log("[TaskManager] \u5DF2\u89E6\u53D1 Banana \u53D6\u6D88\u4E8B\u4EF6");
     } else if (extension_settings53[extensionName]?.client === "jiuguan") {
       eventSource27.emit("sd_stop_generation");
       console.log("[TaskManager] \u5DF2\u901A\u77E5\u9152\u9986\u53D6\u6D88\u4EFB\u52A1");
     } else {
-      eventSource27.emit("st_chatu8_cancel_task", { taskId });
+      eventSource27.emit("zinao_chatu_cancel_task", { taskId });
       console.log("[TaskManager] \u5DF2\u89E6\u53D1\u76F4\u8FDE\u53D6\u6D88\u4E8B\u4EF6");
     }
   }
@@ -67052,8 +67058,8 @@ async function handleExportLog() {
     return;
   }
   const { extension_settings: extension_settings101 } = await import("../../../extensions.js");
-  const settings3 = extension_settings101["st-chatu8"] || {};
-  let settingsInfo = "========== st-chatu8 \u63D2\u4EF6\u8BBE\u7F6E\u4FE1\u606F ==========\n";
+  const settings3 = extension_settings101["zinao-chatu"] || {};
+  let settingsInfo = "========== zinao-chatu \u63D2\u4EF6\u8BBE\u7F6E\u4FE1\u606F ==========\n";
   settingsInfo += `1. \u667A\u6167\u59EC\u7684\u7248\u672C: 2.7.8 (\u6839\u636Emanifest.json)
 
 `;
@@ -67316,7 +67322,7 @@ async function handleExportLog() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `st-chatu8-log-${(/* @__PURE__ */ new Date()).toISOString().slice(0, 19).replace(/:/g, "-")}.txt`;
+  a.download = `zinao-chatu-log-${(/* @__PURE__ */ new Date()).toISOString().slice(0, 19).replace(/:/g, "-")}.txt`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -67707,7 +67713,7 @@ function handleDownloadDebugLog() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `st-chatu8-debug-${(/* @__PURE__ */ new Date()).toISOString().slice(0, 19).replace(/:/g, "-")}.txt`;
+  a.download = `zinao-chatu-debug-${(/* @__PURE__ */ new Date()).toISOString().slice(0, 19).replace(/:/g, "-")}.txt`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -67794,7 +67800,7 @@ async function handleDownloadErrors() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `st-chatu8-diagnostics-${(/* @__PURE__ */ new Date()).toISOString().slice(0, 19).replace(/:/g, "-")}.txt`;
+  a.download = `zinao-chatu-diagnostics-${(/* @__PURE__ */ new Date()).toISOString().slice(0, 19).replace(/:/g, "-")}.txt`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -67874,7 +67880,7 @@ function parseChangelog(rawText) {
 }
 function renderChangelog(entries, currentVersion) {
   if (!entries || entries.length === 0) {
-    return '<div class="st-chatu8-changelog-empty">\u6682\u65E0\u66F4\u65B0\u65E5\u5FD7</div>';
+    return '<div class="zinao-chatu-changelog-empty">\u6682\u65E0\u66F4\u65B0\u65E5\u5FD7</div>';
   }
   let html = "";
   for (let i = 0; i < entries.length; i++) {
@@ -67883,9 +67889,9 @@ function renderChangelog(entries, currentVersion) {
     const isCurrent = currentVersion && (entry.version === `v.${currentVersion}` || entry.version === `v${currentVersion}` || entry.version === currentVersion);
     let badgeHtml = "";
     if (isLatest) {
-      badgeHtml = '<span class="st-chatu8-changelog-badge latest">\u6700\u65B0</span>';
+      badgeHtml = '<span class="zinao-chatu-changelog-badge latest">\u6700\u65B0</span>';
     } else if (isCurrent) {
-      badgeHtml = '<span class="st-chatu8-changelog-badge current">\u5F53\u524D</span>';
+      badgeHtml = '<span class="zinao-chatu-changelog-badge current">\u5F53\u524D</span>';
     }
     const changesHtml = entry.changes.map((change) => {
       let icon = "\u2022";
@@ -67903,15 +67909,15 @@ function renderChangelog(entries, currentVersion) {
       } else if (/^(更名|重命名|rename)/.test(change)) {
         icon = "\u{1F4DD}";
       }
-      return `<li><span class="st-chatu8-changelog-icon">${icon}</span><span>${escapeHtml3(change)}</span></li>`;
+      return `<li><span class="zinao-chatu-changelog-icon">${icon}</span><span>${escapeHtml3(change)}</span></li>`;
     }).join("");
     html += `
-        <div class="st-chatu8-changelog-entry${isLatest ? " latest" : ""}${isCurrent ? " current" : ""}">
-            <div class="st-chatu8-changelog-version-row">
-                <span class="st-chatu8-changelog-version">${escapeHtml3(entry.version)}</span>
+        <div class="zinao-chatu-changelog-entry${isLatest ? " latest" : ""}${isCurrent ? " current" : ""}">
+            <div class="zinao-chatu-changelog-version-row">
+                <span class="zinao-chatu-changelog-version">${escapeHtml3(entry.version)}</span>
                 ${badgeHtml}
             </div>
-            ${entry.changes.length > 0 ? `<ul class="st-chatu8-changelog-changes">${changesHtml}</ul>` : ""}
+            ${entry.changes.length > 0 ? `<ul class="zinao-chatu-changelog-changes">${changesHtml}</ul>` : ""}
         </div>`;
   }
   return html;
@@ -67925,7 +67931,7 @@ function displayChangelog(rawText, currentVersion) {
   const container = document.getElementById("ch-update-notes");
   if (!container) return;
   if (!rawText) {
-    container.innerHTML = '<div class="st-chatu8-changelog-empty">\u65E0\u6CD5\u83B7\u53D6\u66F4\u65B0\u65E5\u5FD7\uFF0C\u8BF7\u70B9\u51FB"\u68C0\u67E5\u66F4\u65B0"\u6309\u94AE\u91CD\u8BD5\u3002</div>';
+    container.innerHTML = '<div class="zinao-chatu-changelog-empty">\u65E0\u6CD5\u83B7\u53D6\u66F4\u65B0\u65E5\u5FD7\uFF0C\u8BF7\u70B9\u51FB"\u68C0\u67E5\u66F4\u65B0"\u6309\u94AE\u91CD\u8BD5\u3002</div>';
     return;
   }
   const entries = parseChangelog(rawText);
@@ -67947,14 +67953,14 @@ async function checkForUpdates() {
   const updateStatusElement = document.getElementById("ch-update-status");
   console.log("Checking for updates...");
   try {
-    const remoteManifestUrl = `https://raw.githubusercontent.com/damoshen123/st-chatu8/master/manifest.json?t=${(/* @__PURE__ */ new Date()).getTime()}`;
+    const remoteManifestUrl = `https://raw.githubusercontent.com/damoshen123/zinao-chatu/master/manifest.json?t=${(/* @__PURE__ */ new Date()).getTime()}`;
     const response = await fetch(remoteManifestUrl, { cache: "no-cache" });
     if (!response.ok) {
       console.error("Failed to fetch remote manifest for update check.");
       displayChangelog(null);
       if (updateStatusElement) {
         updateStatusElement.textContent = "\u274C \u65E0\u6CD5\u8FDE\u63A5\u5230\u66F4\u65B0\u670D\u52A1\u5668";
-        updateStatusElement.className = "st-chatu8-update-status error";
+        updateStatusElement.className = "zinao-chatu-update-status error";
       }
       window.chatu8UpdateAvailable = false;
       return;
@@ -67971,14 +67977,14 @@ async function checkForUpdates() {
         window.chatu8UpdateAvailable = true;
         if (updateStatusElement) {
           updateStatusElement.textContent = `\u{1F389} \u53D1\u73B0\u65B0\u7248\u672C v${remoteVersion}\uFF08\u5F53\u524D v${window.chatu8LocalVersion}\uFF09`;
-          updateStatusElement.className = "st-chatu8-update-status available";
+          updateStatusElement.className = "zinao-chatu-update-status available";
         }
       } else {
         console.log("Extension is up to date.");
         window.chatu8UpdateAvailable = false;
         if (updateStatusElement) {
           updateStatusElement.textContent = `\u2705 \u5DF2\u662F\u6700\u65B0\u7248\u672C v${window.chatu8LocalVersion}`;
-          updateStatusElement.className = "st-chatu8-update-status uptodate";
+          updateStatusElement.className = "zinao-chatu-update-status uptodate";
         }
       }
     } else {
@@ -67989,7 +67995,7 @@ async function checkForUpdates() {
     displayChangelog(null);
     if (updateStatusElement) {
       updateStatusElement.textContent = "\u274C \u68C0\u67E5\u66F4\u65B0\u5931\u8D25\uFF0C\u8BF7\u7A0D\u540E\u91CD\u8BD5";
-      updateStatusElement.className = "st-chatu8-update-status error";
+      updateStatusElement.className = "zinao-chatu-update-status error";
     }
     window.chatu8UpdateAvailable = false;
   }
@@ -68017,7 +68023,7 @@ async function initUpdateCheck(settingsModal, check_update_func) {
     const statusEl = document.getElementById("ch-update-status");
     if (statusEl) {
       statusEl.textContent = "\u23F3 \u6B63\u5728\u68C0\u67E5\u66F4\u65B0...";
-      statusEl.className = "st-chatu8-update-status checking";
+      statusEl.className = "zinao-chatu-update-status checking";
     }
     try {
       await check_update_func();
@@ -68058,9 +68064,9 @@ init_ui_common();
 
 
 async function showPresetVisualSelector(mode, settings3, onSelect) {
-  const parent = document.getElementById("st-chatu8-settings") || document.body;
+  const parent = document.getElementById("zinao-chatu-settings") || document.body;
   const backdrop = document.createElement("div");
-  backdrop.className = "st-chatu8-workflow-viz-backdrop";
+  backdrop.className = "zinao-chatu-workflow-viz-backdrop";
   const selectedForDelete = /* @__PURE__ */ new Set();
   let isBulkDeleteMode = false;
   let currentPage = 1;
@@ -68068,45 +68074,45 @@ async function showPresetVisualSelector(mode, settings3, onSelect) {
   let filteredPresets = [];
   let gridColumns = settings3.presetVisualGridColumns || 6;
   backdrop.innerHTML = `
-        <div class="st-chatu8-workflow-viz-dialog st-chatu8-preset-viz-dialog-wrapper">
-            <div class="st-chatu8-workflow-viz-header">
+        <div class="zinao-chatu-workflow-viz-dialog zinao-chatu-preset-viz-dialog-wrapper">
+            <div class="zinao-chatu-workflow-viz-header">
                 <h3>\u9009\u62E9\u63D0\u793A\u8BCD\u9884\u8BBE</h3>
-                <span class="st-chatu8-workflow-viz-close">&times;</span>
+                <span class="zinao-chatu-workflow-viz-close">&times;</span>
             </div>
-            <div class="st-chatu8-workflow-viz-toolbar" style="justify-content: space-between; align-items: center; gap: 15px;">
-                <div class="st-chatu8-viz-search-container" style="position: relative; flex-grow: 1; max-width: 300px;">
+            <div class="zinao-chatu-workflow-viz-toolbar" style="justify-content: space-between; align-items: center; gap: 15px;">
+                <div class="zinao-chatu-viz-search-container" style="position: relative; flex-grow: 1; max-width: 300px;">
                     <i class="fa-solid fa-search" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #aaa; pointer-events: none;"></i>
-                    <input type="text" class="st-chatu8-viz-search-input" placeholder="\u641C\u7D22\u9884\u8BBE..." style="width: 100%; padding: 8px 12px 8px 36px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; color: white; outline: none; transition: all 0.3s;">
+                    <input type="text" class="zinao-chatu-viz-search-input" placeholder="\u641C\u7D22\u9884\u8BBE..." style="width: 100%; padding: 8px 12px 8px 36px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; color: white; outline: none; transition: all 0.3s;">
                 </div>
                 <div style="display: flex; gap: 10px;">
-                    <div class="st-chatu8-viz-bulk-delete" style="cursor: pointer; padding: 6px 14px; background: rgba(255,255,255,0.1); border-radius: 20px; font-size: 0.9em; user-select: none; white-space: nowrap; display: flex; align-items: center; gap: 6px; transition: all 0.3s;">
+                    <div class="zinao-chatu-viz-bulk-delete" style="cursor: pointer; padding: 6px 14px; background: rgba(255,255,255,0.1); border-radius: 20px; font-size: 0.9em; user-select: none; white-space: nowrap; display: flex; align-items: center; gap: 6px; transition: all 0.3s;">
                         <i class="fa-solid fa-trash-can"></i> <span>\u6279\u91CF\u5220\u9664</span>
                     </div>
-                     <div class="st-chatu8-viz-confirm-delete" style="display: none; cursor: pointer; padding: 6px 14px; background: var(--st-chatu8-danger-primary, #d9534f); border-radius: 20px; font-size: 0.9em; user-select: none; white-space: nowrap; align-items: center; gap: 6px; transition: all 0.3s; color: white;">
+                     <div class="zinao-chatu-viz-confirm-delete" style="display: none; cursor: pointer; padding: 6px 14px; background: var(--zinao-chatu-danger-primary, #d9534f); border-radius: 20px; font-size: 0.9em; user-select: none; white-space: nowrap; align-items: center; gap: 6px; transition: all 0.3s; color: white;">
                         <i class="fa-solid fa-check"></i> <span>\u786E\u8BA4\u5220\u9664 (0)</span>
                     </div>
-                    <div class="st-chatu8-viz-mode-toggle" style="cursor: pointer; padding: 6px 14px; background: rgba(255,255,255,0.1); border-radius: 20px; font-size: 0.9em; user-select: none; white-space: nowrap; display: flex; align-items: center; gap: 6px; transition: all 0.3s;">
+                    <div class="zinao-chatu-viz-mode-toggle" style="cursor: pointer; padding: 6px 14px; background: rgba(255,255,255,0.1); border-radius: 20px; font-size: 0.9em; user-select: none; white-space: nowrap; display: flex; align-items: center; gap: 6px; transition: all 0.3s;">
                         <i class="fa-solid fa-pen-to-square"></i> <span>\u7BA1\u7406</span>
                     </div>
                 </div>
             </div>
-            <div class="st-chatu8-pagination-container" style="display: flex; justify-content: center; align-items: center; gap: 12px; padding: 12px 20px; background: rgba(30, 30, 46, 0.6); border-bottom: 1px solid rgba(255,255,255,0.05);">
-                <button class="st-chatu8-pagination-btn st-chatu8-pagination-prev" title="\u4E0A\u4E00\u9875" style="padding: 6px 12px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; color: #ccc; cursor: pointer; transition: all 0.2s;">
+            <div class="zinao-chatu-pagination-container" style="display: flex; justify-content: center; align-items: center; gap: 12px; padding: 12px 20px; background: rgba(30, 30, 46, 0.6); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <button class="zinao-chatu-pagination-btn zinao-chatu-pagination-prev" title="\u4E0A\u4E00\u9875" style="padding: 6px 12px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; color: #ccc; cursor: pointer; transition: all 0.2s;">
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
-                <div class="st-chatu8-pagination-info" style="display: flex; align-items: center; gap: 8px; color: #aaa; font-size: 0.9em;">
-                    <span class="st-chatu8-pagination-current">1</span>
+                <div class="zinao-chatu-pagination-info" style="display: flex; align-items: center; gap: 8px; color: #aaa; font-size: 0.9em;">
+                    <span class="zinao-chatu-pagination-current">1</span>
                     <span>/</span>
-                    <span class="st-chatu8-pagination-total">1</span>
+                    <span class="zinao-chatu-pagination-total">1</span>
                     <span style="margin-left: 8px; color: #666;">|</span>
-                    <span style="margin-left: 8px;">\u5171 <span class="st-chatu8-pagination-count">0</span> \u4E2A</span>
+                    <span style="margin-left: 8px;">\u5171 <span class="zinao-chatu-pagination-count">0</span> \u4E2A</span>
                 </div>
-                <button class="st-chatu8-pagination-btn st-chatu8-pagination-next" title="\u4E0B\u4E00\u9875" style="padding: 6px 12px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; color: #ccc; cursor: pointer; transition: all 0.2s;">
+                <button class="zinao-chatu-pagination-btn zinao-chatu-pagination-next" title="\u4E0B\u4E00\u9875" style="padding: 6px 12px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; color: #ccc; cursor: pointer; transition: all 0.2s;">
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
                 <div style="margin-left: 16px; display: flex; align-items: center; gap: 6px;">
                     <span style="color: #888; font-size: 0.85em;">\u6BCF\u9875</span>
-                    <select class="st-chatu8-pagination-size" style="padding: 4px 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; color: #ccc; cursor: pointer; font-size: 0.85em;">
+                    <select class="zinao-chatu-pagination-size" style="padding: 4px 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; color: #ccc; cursor: pointer; font-size: 0.85em;">
                         <option value="8" ${pageSize === 8 ? "selected" : ""}>8</option>
                         <option value="12" ${pageSize === 12 ? "selected" : ""}>12</option>
                         <option value="16" ${pageSize === 16 ? "selected" : ""}>16</option>
@@ -68116,28 +68122,28 @@ async function showPresetVisualSelector(mode, settings3, onSelect) {
                 </div>
                 <div style="margin-left: 16px; display: flex; align-items: center; gap: 6px;">
                     <span style="color: #888; font-size: 0.85em;">\u6BCF\u884C</span>
-                    <select class="st-chatu8-grid-columns-select" style="padding: 4px 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; color: #ccc; cursor: pointer; font-size: 0.85em;">
+                    <select class="zinao-chatu-grid-columns-select" style="padding: 4px 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; color: #ccc; cursor: pointer; font-size: 0.85em;">
                         <option value="4" ${gridColumns === 4 ? "selected" : ""}>4</option>
                         <option value="6" ${gridColumns === 6 ? "selected" : ""}>6</option>
                         <option value="8" ${gridColumns === 8 ? "selected" : ""}>8</option>
                     </select>
                 </div>
             </div>
-            <div class="st-chatu8-workflow-viz-body">
-                <div class="st-chatu8-workflow-viz-container st-chatu8-preset-viz-container">
-                    <div class="st-chatu8-preset-grid"></div>
+            <div class="zinao-chatu-workflow-viz-body">
+                <div class="zinao-chatu-workflow-viz-container zinao-chatu-preset-viz-container">
+                    <div class="zinao-chatu-preset-grid"></div>
                 </div>
             </div>
         </div>
     `;
-  const closeBtn = backdrop.querySelector(".st-chatu8-workflow-viz-close");
+  const closeBtn = backdrop.querySelector(".zinao-chatu-workflow-viz-close");
   closeBtn.onclick = () => parent.removeChild(backdrop);
   backdrop.onclick = (e) => {
     if (e.target === backdrop) {
       parent.removeChild(backdrop);
     }
   };
-  const searchInput = backdrop.querySelector(".st-chatu8-viz-search-input");
+  const searchInput = backdrop.querySelector(".zinao-chatu-viz-search-input");
   let searchQuery = "";
   searchInput.oninput = (e) => {
     searchQuery = e.target.value.toLowerCase();
@@ -68145,40 +68151,40 @@ async function showPresetVisualSelector(mode, settings3, onSelect) {
     updateFilteredPresets();
     renderCurrentPage();
   };
-  const wrapper = backdrop.querySelector(".st-chatu8-preset-viz-dialog-wrapper");
-  const bulkDeleteBtn = backdrop.querySelector(".st-chatu8-viz-bulk-delete");
-  const confirmDeleteBtn = backdrop.querySelector(".st-chatu8-viz-confirm-delete");
-  const toggleBtn = backdrop.querySelector(".st-chatu8-viz-mode-toggle");
+  const wrapper = backdrop.querySelector(".zinao-chatu-preset-viz-dialog-wrapper");
+  const bulkDeleteBtn = backdrop.querySelector(".zinao-chatu-viz-bulk-delete");
+  const confirmDeleteBtn = backdrop.querySelector(".zinao-chatu-viz-confirm-delete");
+  const toggleBtn = backdrop.querySelector(".zinao-chatu-viz-mode-toggle");
   toggleBtn.onclick = () => {
     if (isBulkDeleteMode) {
       exitBulkDeleteMode();
     }
-    wrapper.classList.toggle("st-chatu8-mode-manage");
-    const isManage = wrapper.classList.contains("st-chatu8-mode-manage");
-    toggleBtn.style.background = isManage ? "var(--st-chatu8-accent-primary)" : "rgba(255,255,255,0.1)";
+    wrapper.classList.toggle("zinao-chatu-mode-manage");
+    const isManage = wrapper.classList.contains("zinao-chatu-mode-manage");
+    toggleBtn.style.background = isManage ? "var(--zinao-chatu-accent-primary)" : "rgba(255,255,255,0.1)";
     toggleBtn.style.color = isManage ? "white" : "inherit";
   };
   function exitBulkDeleteMode() {
     isBulkDeleteMode = false;
     selectedForDelete.clear();
-    wrapper.classList.remove("st-chatu8-mode-bulk-delete");
+    wrapper.classList.remove("zinao-chatu-mode-bulk-delete");
     bulkDeleteBtn.style.background = "rgba(255,255,255,0.1)";
     bulkDeleteBtn.style.color = "inherit";
     bulkDeleteBtn.querySelector("span").textContent = "\u6279\u91CF\u5220\u9664";
     confirmDeleteBtn.style.display = "none";
-    const cards = backdrop.querySelectorAll(".st-chatu8-preset-card");
+    const cards = backdrop.querySelectorAll(".zinao-chatu-preset-card");
     cards.forEach((card) => card.classList.remove("selected-for-delete"));
   }
   bulkDeleteBtn.onclick = () => {
-    if (wrapper.classList.contains("st-chatu8-mode-manage")) {
-      wrapper.classList.remove("st-chatu8-mode-manage");
+    if (wrapper.classList.contains("zinao-chatu-mode-manage")) {
+      wrapper.classList.remove("zinao-chatu-mode-manage");
       toggleBtn.style.background = "rgba(255,255,255,0.1)";
       toggleBtn.style.color = "inherit";
     }
     isBulkDeleteMode = !isBulkDeleteMode;
     if (isBulkDeleteMode) {
-      wrapper.classList.add("st-chatu8-mode-bulk-delete");
-      bulkDeleteBtn.style.background = "var(--st-chatu8-danger-primary, #d9534f)";
+      wrapper.classList.add("zinao-chatu-mode-bulk-delete");
+      bulkDeleteBtn.style.background = "var(--zinao-chatu-danger-primary, #d9534f)";
       bulkDeleteBtn.style.color = "white";
       bulkDeleteBtn.querySelector("span").textContent = "\u53D6\u6D88\u5220\u9664";
       confirmDeleteBtn.style.display = "flex";
@@ -68225,19 +68231,19 @@ async function showPresetVisualSelector(mode, settings3, onSelect) {
     }
   };
   parent.appendChild(backdrop);
-  const grid = backdrop.querySelector(".st-chatu8-preset-grid");
+  const grid = backdrop.querySelector(".zinao-chatu-preset-grid");
   const suffix = getSuffix(mode);
   const yusheIdKey = `yusheid${mode === "sd" ? "_sd" : suffix}`;
   const currentPresetId = settings3[yusheIdKey];
   const presets = settings3.yushe || {};
   const allPresetNames = Object.keys(presets);
-  const paginationPrev = backdrop.querySelector(".st-chatu8-pagination-prev");
-  const paginationNext = backdrop.querySelector(".st-chatu8-pagination-next");
-  const paginationCurrent = backdrop.querySelector(".st-chatu8-pagination-current");
-  const paginationTotal = backdrop.querySelector(".st-chatu8-pagination-total");
-  const paginationCount = backdrop.querySelector(".st-chatu8-pagination-count");
-  const paginationSizeSelect = backdrop.querySelector(".st-chatu8-pagination-size");
-  const gridColumnsSelect = backdrop.querySelector(".st-chatu8-grid-columns-select");
+  const paginationPrev = backdrop.querySelector(".zinao-chatu-pagination-prev");
+  const paginationNext = backdrop.querySelector(".zinao-chatu-pagination-next");
+  const paginationCurrent = backdrop.querySelector(".zinao-chatu-pagination-current");
+  const paginationTotal = backdrop.querySelector(".zinao-chatu-pagination-total");
+  const paginationCount = backdrop.querySelector(".zinao-chatu-pagination-count");
+  const paginationSizeSelect = backdrop.querySelector(".zinao-chatu-pagination-size");
+  const gridColumnsSelect = backdrop.querySelector(".zinao-chatu-grid-columns-select");
   function updateFilteredPresets() {
     if (searchQuery) {
       filteredPresets = allPresetNames.filter(
@@ -68339,9 +68345,9 @@ async function showPresetVisualSelector(mode, settings3, onSelect) {
 }
 async function createPresetCard2(presetName, preset, isSelected, settings3, mode, onClick) {
   const card = document.createElement("div");
-  card.className = "st-chatu8-preset-card" + (isSelected ? " selected" : "");
+  card.className = "zinao-chatu-preset-card" + (isSelected ? " selected" : "");
   const imageContainer = document.createElement("div");
-  imageContainer.className = "st-chatu8-preset-card-image";
+  imageContainer.className = "zinao-chatu-preset-card-image";
   const previewImageId = preset.previewImageId;
   if (previewImageId) {
     try {
@@ -68362,9 +68368,9 @@ async function createPresetCard2(presetName, preset, isSelected, settings3, mode
     addPlaceholder2(imageContainer);
   }
   const actions = document.createElement("div");
-  actions.className = "st-chatu8-preset-card-actions";
+  actions.className = "zinao-chatu-preset-card-actions";
   const uploadBtn = document.createElement("button");
-  uploadBtn.className = "st-chatu8-preset-action-btn";
+  uploadBtn.className = "zinao-chatu-preset-action-btn";
   uploadBtn.title = "\u4E0A\u4F20/\u4FEE\u6539\u9884\u89C8\u56FE (Upload Preview)";
   uploadBtn.innerHTML = '<i class="fa-solid fa-image"></i>';
   uploadBtn.onclick = (e) => {
@@ -68374,7 +68380,7 @@ async function createPresetCard2(presetName, preset, isSelected, settings3, mode
   actions.appendChild(uploadBtn);
   if (previewImageId) {
     const deleteImgBtn = document.createElement("button");
-    deleteImgBtn.className = "st-chatu8-preset-action-btn danger";
+    deleteImgBtn.className = "zinao-chatu-preset-action-btn danger";
     deleteImgBtn.title = "\u5220\u9664\u9884\u89C8\u56FE (Delete Preview)";
     deleteImgBtn.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
     deleteImgBtn.onclick = async (e) => {
@@ -68389,7 +68395,7 @@ async function createPresetCard2(presetName, preset, isSelected, settings3, mode
     actions.appendChild(deleteImgBtn);
   }
   const renameBtn = document.createElement("button");
-  renameBtn.className = "st-chatu8-preset-action-btn";
+  renameBtn.className = "zinao-chatu-preset-action-btn";
   renameBtn.title = "\u91CD\u547D\u540D\u9884\u8BBE (Rename Preset)";
   renameBtn.innerHTML = '<i class="fa-solid fa-pen-nib"></i>';
   renameBtn.onclick = (e) => {
@@ -68408,7 +68414,7 @@ async function createPresetCard2(presetName, preset, isSelected, settings3, mode
         settings3[yusheIdKey] = newName;
       }
       saveSettingsDebounced32();
-      const backdrop = document.querySelector(".st-chatu8-workflow-viz-backdrop");
+      const backdrop = document.querySelector(".zinao-chatu-workflow-viz-backdrop");
       if (backdrop) backdrop.parentNode.removeChild(backdrop);
       showPresetVisualSelector(mode, settings3, (name) => onClick(name, null)).then(() => {
       });
@@ -68416,7 +68422,7 @@ async function createPresetCard2(presetName, preset, isSelected, settings3, mode
   };
   actions.appendChild(renameBtn);
   const deletePresetBtn = document.createElement("button");
-  deletePresetBtn.className = "st-chatu8-preset-action-btn danger";
+  deletePresetBtn.className = "zinao-chatu-preset-action-btn danger";
   deletePresetBtn.title = "\u5220\u9664\u6B64\u9884\u8BBE (Delete Preset)";
   deletePresetBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
   deletePresetBtn.onclick = (e) => {
@@ -68433,7 +68439,7 @@ async function createPresetCard2(presetName, preset, isSelected, settings3, mode
         settings3[yusheIdKey] = "\u9ED8\u8BA4";
       }
       saveSettingsDebounced32();
-      const backdrop = document.querySelector(".st-chatu8-workflow-viz-backdrop");
+      const backdrop = document.querySelector(".zinao-chatu-workflow-viz-backdrop");
       if (backdrop) backdrop.parentNode.removeChild(backdrop);
       if (isDeletingCurrentPreset && typeof window.loadSilterTavernChatu8Settings === "function") {
         window.loadSilterTavernChatu8Settings();
@@ -68444,7 +68450,7 @@ async function createPresetCard2(presetName, preset, isSelected, settings3, mode
   imageContainer.appendChild(actions);
   card.appendChild(imageContainer);
   const nameLabel = document.createElement("div");
-  nameLabel.className = "st-chatu8-preset-card-name";
+  nameLabel.className = "zinao-chatu-preset-card-name";
   nameLabel.textContent = presetName;
   card.appendChild(nameLabel);
   card.onclick = () => onClick(presetName, card);
@@ -68452,12 +68458,12 @@ async function createPresetCard2(presetName, preset, isSelected, settings3, mode
 }
 function addPlaceholder2(container) {
   const placeholder = document.createElement("div");
-  placeholder.className = "st-chatu8-preset-card-placeholder";
+  placeholder.className = "zinao-chatu-preset-card-placeholder";
   placeholder.innerHTML = '<i class="fa-solid fa-image"></i>';
   container.appendChild(placeholder);
 }
 async function refreshCardImage2(container, imageId) {
-  const actions = container.querySelector(".st-chatu8-preset-card-actions");
+  const actions = container.querySelector(".zinao-chatu-preset-card-actions");
   container.innerHTML = "";
   if (imageId) {
     try {
@@ -68728,22 +68734,22 @@ function handleResultClick3(inputEl, resultsEl, tag) {
 }
 function initPromptSettings(settingsModal, settings3) {
   document.addEventListener("click", (event) => {
-    if (!event.target.closest(".st-chatu8-field-col")) {
+    if (!event.target.closest(".zinao-chatu-field-col")) {
       $(".ch-autocomplete-results").hide();
     }
   });
   generationTabs2.forEach((mode) => {
     const suffix = getSuffix(mode);
-    settingsModal.find(`#yusheid${suffix}`).on("change", () => st_chatu8_tishici_change(mode, settings3));
-    settingsModal.find(`#st_chatu8_tishici_new${suffix}`).on("click", () => st_chatu8_tishici_new(mode, settings3));
-    settingsModal.find(`#st_chatu8_tishici_rename${suffix}`).on("click", () => st_chatu8_tishici_rename(mode, settings3));
-    settingsModal.find(`#st_chatu8_tishici_save_style${suffix}`).on("click", () => st_chatu8_tishici_save(mode, settings3));
-    settingsModal.find(`#st_chatu8_tishici_update_style${suffix}`).on("click", () => st_chatu8_tishici_update(mode, settings3));
-    settingsModal.find(`#st_chatu8_tishici_delete_style${suffix}`).on("click", () => st_chatu8_tishici_delete(mode, settings3));
-    settingsModal.find(`#st_chatu8_tishici_export_current${suffix}`).on("click", () => st_chatu8_tishici_export_current(settings3));
-    settingsModal.find(`#st_chatu8_tishici_export_all${suffix}`).on("click", () => st_chatu8_tishici_export_all(settings3));
-    settingsModal.find(`#st_chatu8_tishici_import${suffix}`).on("click", () => st_chatu8_tishici_import(settings3));
-    settingsModal.find(`#st_chatu8_tishici_visual_select${suffix}`).on("click", () => {
+    settingsModal.find(`#yusheid${suffix}`).on("change", () => zinao_chatu_tishici_change(mode, settings3));
+    settingsModal.find(`#zinao_chatu_tishici_new${suffix}`).on("click", () => zinao_chatu_tishici_new(mode, settings3));
+    settingsModal.find(`#zinao_chatu_tishici_rename${suffix}`).on("click", () => zinao_chatu_tishici_rename(mode, settings3));
+    settingsModal.find(`#zinao_chatu_tishici_save_style${suffix}`).on("click", () => zinao_chatu_tishici_save(mode, settings3));
+    settingsModal.find(`#zinao_chatu_tishici_update_style${suffix}`).on("click", () => zinao_chatu_tishici_update(mode, settings3));
+    settingsModal.find(`#zinao_chatu_tishici_delete_style${suffix}`).on("click", () => zinao_chatu_tishici_delete(mode, settings3));
+    settingsModal.find(`#zinao_chatu_tishici_export_current${suffix}`).on("click", () => zinao_chatu_tishici_export_current(settings3));
+    settingsModal.find(`#zinao_chatu_tishici_export_all${suffix}`).on("click", () => zinao_chatu_tishici_export_all(settings3));
+    settingsModal.find(`#zinao_chatu_tishici_import${suffix}`).on("click", () => zinao_chatu_tishici_import(settings3));
+    settingsModal.find(`#zinao_chatu_tishici_visual_select${suffix}`).on("click", () => {
       showPresetVisualSelector(mode, settings3, (presetName) => {
         const selectElement = document.getElementById("yusheid" + suffix);
         if (selectElement) {
@@ -68765,7 +68771,7 @@ function initPromptSettings(settingsModal, settings3) {
       const yusheIdKey = `yusheid${mode === "sd" ? "_sd" : suffix}`;
       const presetName = settings3[yusheIdKey];
       const field = $(this).attr("id").replace(suffix, "");
-      const warning = $(this).closest(".st-chatu8-field-col").find(".st-chatu8-unsaved-warning");
+      const warning = $(this).closest(".zinao-chatu-field-col").find(".zinao-chatu-unsaved-warning");
       $(warning).hide();
       if (presetName && settings3.yushe[presetName]) {
         settings3.yushe[presetName][field] = $(this).val();
@@ -68817,7 +68823,7 @@ function initPromptSettings(settingsModal, settings3) {
     }
   });
 }
-function st_chatu8_tishici_change(mode, settings3) {
+function zinao_chatu_tishici_change(mode, settings3) {
   const suffix = getSuffix(mode);
   const selectElement = document.getElementById("yusheid" + suffix);
   const newPresetId = selectElement.value;
@@ -68839,7 +68845,7 @@ function st_chatu8_tishici_change(mode, settings3) {
     const fields = ["fixedPrompt", "fixedPrompt_end", "negativePrompt"];
     fields.forEach((field) => {
       const textarea = document.getElementById(field + suffix);
-      const warning = textarea.closest(".st-chatu8-field-col").querySelector(".st-chatu8-unsaved-warning");
+      const warning = textarea.closest(".zinao-chatu-field-col").querySelector(".zinao-chatu-unsaved-warning");
       if (warning) $(warning).hide();
     });
     if (mode === "novelai") {
@@ -68858,7 +68864,7 @@ function st_chatu8_tishici_change(mode, settings3) {
     switchPreset();
   }
 }
-function st_chatu8_tishici_new(mode, settings3) {
+function zinao_chatu_tishici_new(mode, settings3) {
   const suffix = getSuffix(mode);
   const yusheIdKey = `yusheid${mode === "sd" ? "_sd" : suffix}`;
   stylInput("\u8BF7\u8F93\u5165\u65B0\u9884\u8BBE\u7684\u540D\u79F0").then((newName) => {
@@ -68875,7 +68881,7 @@ function st_chatu8_tishici_new(mode, settings3) {
     }
   });
 }
-function st_chatu8_tishici_rename(mode, settings3) {
+function zinao_chatu_tishici_rename(mode, settings3) {
   const suffix = getSuffix(mode);
   const yusheIdKey = `yusheid${mode === "sd" ? "_sd" : suffix}`;
   const currentName = settings3[yusheIdKey];
@@ -68898,7 +68904,7 @@ function st_chatu8_tishici_rename(mode, settings3) {
     }
   });
 }
-function st_chatu8_tishici_save(mode, settings3) {
+function zinao_chatu_tishici_save(mode, settings3) {
   const suffix = getSuffix(mode);
   stylInput("\u8BF7\u8F93\u5165\u65B0\u914D\u7F6E\u7684\u540D\u79F0").then((result) => {
     if (result && result.trim() !== "") {
@@ -68914,7 +68920,7 @@ function st_chatu8_tishici_save(mode, settings3) {
     }
   });
 }
-function st_chatu8_tishici_update(mode, settings3) {
+function zinao_chatu_tishici_update(mode, settings3) {
   const suffix = getSuffix(mode);
   const yusheIdKey = `yusheid${mode === "sd" ? "_sd" : suffix}`;
   const presetName = settings3[yusheIdKey];
@@ -68932,13 +68938,13 @@ function st_chatu8_tishici_update(mode, settings3) {
       const fields = ["fixedPrompt", "fixedPrompt_end", "negativePrompt"];
       fields.forEach((field) => {
         const textarea = document.getElementById(field + suffix);
-        const warning = textarea.closest(".st-chatu8-field-col").querySelector(".st-chatu8-unsaved-warning");
+        const warning = textarea.closest(".zinao-chatu-field-col").querySelector(".zinao-chatu-unsaved-warning");
         if (warning) $(warning).hide();
       });
     }
   });
 }
-function st_chatu8_tishici_delete(mode, settings3) {
+function zinao_chatu_tishici_delete(mode, settings3) {
   const suffix = getSuffix(mode);
   const selectElement = document.getElementById("yusheid" + suffix);
   const valueToDelete = selectElement.value;
@@ -68974,8 +68980,8 @@ function st_chatu8_tishici_delete(mode, settings3) {
     }
   });
 }
-async function st_chatu8_tishici_export_current(settings3) {
-  const activeTabId = document.querySelector(".st-chatu8-tab-content.active").id.replace("ch-tab-", "");
+async function zinao_chatu_tishici_export_current(settings3) {
+  const activeTabId = document.querySelector(".zinao-chatu-tab-content.active").id.replace("ch-tab-", "");
   const suffix = getSuffix(activeTabId);
   let yusheIdKey = "";
   if (suffix.includes("sd")) {
@@ -69012,13 +69018,13 @@ async function st_chatu8_tishici_export_current(settings3) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `st-chatu8-prompt-preset-${selectedId}.json`;
+  a.download = `zinao-chatu-prompt-preset-${selectedId}.json`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
-async function st_chatu8_tishici_export_all(settings3) {
+async function zinao_chatu_tishici_export_all(settings3) {
   if (!settings3.yushe || Object.keys(settings3.yushe).length === 0) {
     alert("\u6CA1\u6709\u9884\u8BBE\u53EF\u5BFC\u51FA\u3002");
     return;
@@ -69052,13 +69058,13 @@ async function st_chatu8_tishici_export_all(settings3) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = "st-chatu8-prompt-presets-all.json";
+  a.download = "zinao-chatu-prompt-presets-all.json";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
-function st_chatu8_tishici_import(settings3) {
+function zinao_chatu_tishici_import(settings3) {
   const input = document.createElement("input");
   input.type = "file";
   input.accept = ".json";
@@ -69139,7 +69145,7 @@ var nai3CharRefImageMimeType = "image/png";
 var comfyuiImageObjectURL = null;
 function updateNovelaiImagePreview(src) {
   const previewImg = document.getElementById("previewImage_novelai");
-  const placeholder = document.querySelector("#novelai-image-preview-container .st-chatu8-image-placeholder");
+  const placeholder = document.querySelector("#novelai-image-preview-container .zinao-chatu-image-placeholder");
   const removeBtn = document.getElementById("novelai-remove-image-btn");
   if (src && src.startsWith("data:image")) {
     previewImg.src = src;
@@ -69176,7 +69182,7 @@ async function handleNovelaiImageUpload(event) {
 }
 function updateNovelaiCharRefImagePreview(src) {
   const previewImg = document.getElementById("previewImage_nai_char_ref");
-  const placeholder = document.querySelector("#novelai-char-ref-image-preview-container .st-chatu8-image-placeholder");
+  const placeholder = document.querySelector("#novelai-char-ref-image-preview-container .zinao-chatu-image-placeholder");
   const removeBtn = document.getElementById("novelai-remove-char-ref-image-btn");
   if (!previewImg || !placeholder || !removeBtn) {
     console.log("[CharRef] Old character reference UI elements not found - using new system");
@@ -69217,7 +69223,7 @@ async function handleNovelaiCharRefImageUpload(event) {
 }
 function updateComfyUIImagePreview(src) {
   const previewImg = document.getElementById("previewImage2");
-  const placeholder = document.querySelector("#comfyui-image-preview-container .st-chatu8-image-placeholder");
+  const placeholder = document.querySelector("#comfyui-image-preview-container .zinao-chatu-image-placeholder");
   const removeBtn = document.getElementById("comfyui-remove-image-btn");
   if (previewImg.src && previewImg.src.startsWith("blob:") && previewImg.src !== src) {
     URL.revokeObjectURL(previewImg.src);
@@ -69578,7 +69584,7 @@ async function testSd() {
     try {
       const responses = await Promise.all(Object.values(endpoints).map((endpoint) => fetch(endpoint, {
         method: "POST",
-        body: JSON.stringify({ url: baseUrl, auth: settings3.st_chatu8_sd_auth || "" }),
+        body: JSON.stringify({ url: baseUrl, auth: settings3.zinao_chatu_sd_auth || "" }),
         headers: getRequestHeaders(window.token)
       })));
       for (const response of responses) {
@@ -69658,7 +69664,7 @@ init_config();
 
 
 function ComfyuiaddLORA() {
-  const activeTab = $(".st-chatu8-tab-content.active");
+  const activeTab = $(".zinao-chatu-tab-content.active");
   const fixedPrompt = activeTab.find("#fixedPrompt_comfyui");
   const loraSelect = document.getElementById("ComfyuiLORA");
   if (!loraSelect.value || loraSelect.value.trim() === "" || loraSelect.disabled) {
@@ -69675,7 +69681,7 @@ function ComfyuiaddLORA() {
   fixedPrompt.trigger("input");
 }
 function sd_add_lora() {
-  const activeTab = $(".st-chatu8-tab-content.active");
+  const activeTab = $(".zinao-chatu-tab-content.active");
   const fixedPrompt = activeTab.find("#fixedPrompt");
   const loraSelect = document.getElementById("sd_cchatu_8_lora");
   if (!loraSelect.value || loraSelect.value.trim() === "" || loraSelect.disabled) {
@@ -69796,7 +69802,7 @@ function showCacheImagePreview(initialUUID) {
   let currentIndex = allCachedImages.findIndex((img) => img.uuid === initialUUID);
   if (currentIndex === -1) currentIndex = 0;
   const backdrop = doc.createElement("div");
-  backdrop.className = "st-chatu8-preview-backdrop";
+  backdrop.className = "zinao-chatu-preview-backdrop";
   backdrop.style.cssText = `
         position: fixed;
         top: 0;
@@ -69811,7 +69817,7 @@ function showCacheImagePreview(initialUUID) {
         z-index: 10000;
     `;
   const dialog = doc.createElement("div");
-  dialog.className = "st-chatu8-preview-dialog";
+  dialog.className = "zinao-chatu-preview-dialog";
   dialog.addEventListener("click", (e) => e.stopPropagation());
   dialog.style.cssText = `
         display: flex;
@@ -69829,7 +69835,7 @@ function showCacheImagePreview(initialUUID) {
         overflow: hidden;
     `;
   const closeButton = doc.createElement("div");
-  closeButton.className = "st-chatu8-preview-close";
+  closeButton.className = "zinao-chatu-preview-close";
   closeButton.innerHTML = "&times;";
   closeButton.onclick = () => {
     doc.removeEventListener("keydown", handleKeyDown);
@@ -69839,7 +69845,7 @@ function showCacheImagePreview(initialUUID) {
     backdrop.remove();
   };
   const imageContainer = doc.createElement("div");
-  imageContainer.className = "st-chatu8-preview-image-container";
+  imageContainer.className = "zinao-chatu-preview-image-container";
   imageContainer.style.cssText = `
         position: relative;
         flex: 1;
@@ -69868,7 +69874,7 @@ function showCacheImagePreview(initialUUID) {
         user-select: none;
     `;
   const prevButton = doc.createElement("div");
-  prevButton.className = "st-chatu8-preview-nav prev";
+  prevButton.className = "zinao-chatu-preview-nav prev";
   prevButton.innerHTML = "&#10094;";
   prevButton.style.cssText = navButtonStyle + "left: 10px;";
   prevButton.title = "\u4E0A\u4E00\u5F20 (\u2190)";
@@ -69880,7 +69886,7 @@ function showCacheImagePreview(initialUUID) {
   };
   prevButton.onclick = () => navigateTo(currentIndex - 1);
   const nextButton = doc.createElement("div");
-  nextButton.className = "st-chatu8-preview-nav next";
+  nextButton.className = "zinao-chatu-preview-nav next";
   nextButton.innerHTML = "&#10095;";
   nextButton.style.cssText = navButtonStyle + "right: 10px;";
   nextButton.title = "\u4E0B\u4E00\u5F20 (\u2192)";
@@ -69892,7 +69898,7 @@ function showCacheImagePreview(initialUUID) {
   };
   nextButton.onclick = () => navigateTo(currentIndex + 1);
   const largeMediaWrapper = doc.createElement("div");
-  largeMediaWrapper.className = "st-chatu8-preview-large-wrapper";
+  largeMediaWrapper.className = "zinao-chatu-preview-large-wrapper";
   largeMediaWrapper.style.cssText = `
         display: flex;
         justify-content: center;
@@ -69904,7 +69910,7 @@ function showCacheImagePreview(initialUUID) {
     `;
   let largeMedia = null;
   const indexIndicator = doc.createElement("div");
-  indexIndicator.className = "st-chatu8-preview-counter";
+  indexIndicator.className = "zinao-chatu-preview-counter";
   indexIndicator.style.cssText = `
         position: absolute;
         top: 8px;
@@ -69925,7 +69931,7 @@ function showCacheImagePreview(initialUUID) {
   imageContainer.appendChild(nextButton);
   imageContainer.appendChild(indexIndicator);
   const actionContainer = doc.createElement("div");
-  actionContainer.className = "st-chatu8-preview-actions";
+  actionContainer.className = "zinao-chatu-preview-actions";
   actionContainer.style.cssText = `
         display: flex;
         justify-content: center;
@@ -69935,7 +69941,7 @@ function showCacheImagePreview(initialUUID) {
     `;
   const downloadButton = doc.createElement("button");
   downloadButton.textContent = "\u4E0B\u8F7D\u5F53\u524D\u5A92\u4F53";
-  downloadButton.className = "st-chatu8-preview-action-button";
+  downloadButton.className = "zinao-chatu-preview-action-button";
   downloadButton.onclick = async () => {
     const uuid = largeMedia?.dataset.uuid;
     const source = largeMedia?.dataset.source;
@@ -69970,7 +69976,7 @@ function showCacheImagePreview(initialUUID) {
   };
   const deleteButton = doc.createElement("button");
   deleteButton.textContent = "\u5220\u9664\u5F53\u524D\u5A92\u4F53";
-  deleteButton.className = "st-chatu8-preview-action-button danger";
+  deleteButton.className = "zinao-chatu-preview-action-button danger";
   actionContainer.appendChild(downloadButton);
   actionContainer.appendChild(deleteButton);
   dialog.appendChild(closeButton);
@@ -70058,7 +70064,7 @@ function showCacheImagePreview(initialUUID) {
     if (!uuidToDelete) return;
     await deleteImagesByUuids([uuidToDelete]);
     toastr.success("\u5A92\u4F53\u5DF2\u5220\u9664");
-    const itemInGrid = doc.querySelector(`.st-chatu8-image-cache-item[data-uuid="${uuidToDelete}"]`);
+    const itemInGrid = doc.querySelector(`.zinao-chatu-image-cache-item[data-uuid="${uuidToDelete}"]`);
     if (itemInGrid) itemInGrid.remove();
     const indexInAll = allCachedImages.findIndex((img) => img.uuid === uuidToDelete);
     if (indexInAll > -1) {
@@ -70138,7 +70144,7 @@ function showCacheImagePreview(initialUUID) {
                                 \u{1F4E5} \u4E0B\u8F7D\u89C6\u9891
                             </a>
                         `;
-            fallback.className = "st-chatu8-preview-large-image";
+            fallback.className = "zinao-chatu-preview-large-image";
             fallback.dataset.uuid = uuid;
             fallback.dataset.isVideo = "true";
             if (imageInfo) {
@@ -70162,7 +70168,7 @@ function showCacheImagePreview(initialUUID) {
                         border-radius: 8px;
                     `;
         }
-        largeMedia.className = "st-chatu8-preview-large-image";
+        largeMedia.className = "zinao-chatu-preview-large-image";
         largeMedia.dataset.uuid = uuid;
         largeMedia.dataset.isVideo = isVideo ? "true" : "false";
         if (imageInfo) {
@@ -70205,7 +70211,7 @@ function showCacheImagePreview(initialUUID) {
                 <div style="margin-bottom: 15px; opacity: 0.8;">\u5A92\u4F53\u6570\u636E\u5DF2\u635F\u574F\uFF0C\u65E0\u6CD5\u52A0\u8F7D</div>
                 <div style="font-size: 12px; opacity: 0.5;">\u53EF\u70B9\u51FB\u4E0B\u65B9"\u5220\u9664\u5F53\u524D\u5A92\u4F53"\u6309\u94AE\u6E05\u7406\u6B64\u6761\u76EE</div>
             `;
-      fallback.className = "st-chatu8-preview-large-image";
+      fallback.className = "zinao-chatu-preview-large-image";
       fallback.dataset.uuid = uuid;
       fallback.dataset.isVideo = "false";
       largeMedia = fallback;
@@ -70262,7 +70268,7 @@ function displayCachePage(page) {
   }, { rootMargin: "200px" });
   pageItems.forEach((imageMeta) => {
     const item = document.createElement("div");
-    item.className = "st-chatu8-image-cache-item";
+    item.className = "zinao-chatu-image-cache-item";
     item.dataset.uuid = imageMeta.uuid;
     item.dataset.md5 = imageMeta.md5;
     item.dataset.source = imageMeta.source;
@@ -70280,14 +70286,14 @@ function displayCachePage(page) {
     img.dataset.src = "placeholder";
     if (imageMeta.isVideo) {
       const videoIcon = document.createElement("div");
-      videoIcon.className = "st-chatu8-video-icon";
+      videoIcon.className = "zinao-chatu-video-icon";
       videoIcon.innerHTML = '<i class="fa-solid fa-video"></i>';
       videoIcon.style.cssText = "position: absolute; top: 5px; right: 5px; background: rgba(0,0,0,0.7); color: white; padding: 4px 6px; border-radius: 4px; font-size: 12px;";
       item.style.position = "relative";
       item.appendChild(videoIcon);
     }
     const info = document.createElement("div");
-    info.className = "st-chatu8-image-info";
+    info.className = "zinao-chatu-image-info";
     info.textContent = new Date(imageMeta.timestamp).toLocaleString();
     item.appendChild(img);
     item.appendChild(info);
@@ -70329,7 +70335,7 @@ function updateImageCachePagination() {
   jumpInput.max = totalPages;
   jumpInput.value = imageCacheCurrentPage;
   const prevButton = document.createElement("button");
-  prevButton.className = "st-chatu8-btn";
+  prevButton.className = "zinao-chatu-btn";
   prevButton.innerHTML = '<i class="fa-solid fa-arrow-left"></i>';
   prevButton.disabled = imageCacheCurrentPage === 1;
   prevButton.addEventListener("click", () => {
@@ -70339,7 +70345,7 @@ function updateImageCachePagination() {
     }
   });
   const nextButton = document.createElement("button");
-  nextButton.className = "st-chatu8-btn";
+  nextButton.className = "zinao-chatu-btn";
   nextButton.innerHTML = '<i class="fa-solid fa-arrow-right"></i>';
   nextButton.disabled = imageCacheCurrentPage === totalPages;
   nextButton.addEventListener("click", () => {
@@ -70504,13 +70510,13 @@ function initImageCache(settingsModal) {
       button.removeClass("active");
       grid.classList.remove("multi-select-mode");
       selectedImages.clear();
-      grid.querySelectorAll(".st-chatu8-image-cache-item.selected").forEach((item) => item.classList.remove("selected"));
+      grid.querySelectorAll(".zinao-chatu-image-cache-item.selected").forEach((item) => item.classList.remove("selected"));
       updateImageCacheInfo();
     }
   });
   $("#image-cache-select-all").on("click", () => {
     const grid = document.getElementById("image-cache-grid");
-    grid.querySelectorAll(".st-chatu8-image-cache-item").forEach((item) => {
+    grid.querySelectorAll(".zinao-chatu-image-cache-item").forEach((item) => {
       selectedImages.add(item.dataset.uuid);
       item.classList.add("selected");
     });
@@ -70519,7 +70525,7 @@ function initImageCache(settingsModal) {
   $("#image-cache-deselect-all").on("click", () => {
     const grid = document.getElementById("image-cache-grid");
     selectedImages.clear();
-    grid.querySelectorAll(".st-chatu8-image-cache-item").forEach((item) => item.classList.remove("selected"));
+    grid.querySelectorAll(".zinao-chatu-image-cache-item").forEach((item) => item.classList.remove("selected"));
     updateImageCacheInfo();
   });
   $("#image-cache-delete-selected").on("click", async () => {
@@ -70544,7 +70550,7 @@ function initImageCache(settingsModal) {
     const uuids = Array.from(selectedImages);
     const JSZipConstructor = window.stChatu8JSZip || window.JSZip;
     if (typeof JSZipConstructor !== "function") {
-      console.error("[st-chatu8] JSZip is unavailable when downloading selected media", {
+      console.error("[zinao-chatu] JSZip is unavailable when downloading selected media", {
         hasPluginScopedJSZip: typeof window.stChatu8JSZip === "function",
         hasWindowJSZip: typeof window.JSZip === "function"
       });
@@ -70610,7 +70616,7 @@ function initImageCache(settingsModal) {
       const url = URL.createObjectURL(content);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `st-chatu8-media-${(/* @__PURE__ */ new Date()).toISOString().slice(0, 10)}.zip`;
+      a.download = `zinao-chatu-media-${(/* @__PURE__ */ new Date()).toISOString().slice(0, 10)}.zip`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -70629,9 +70635,9 @@ init_config();
 
 function updateNai3OptionsVisibility() {
   const novelaiModeSelect = document.getElementById("novelaimode");
-  const smField = document.getElementById("st-chatu8-nai3-sm-field");
-  const dynField = document.getElementById("st-chatu8-nai3-dyn-field");
-  const deceispField = document.getElementById("st-chatu8-nai3-deceisp-field");
+  const smField = document.getElementById("zinao-chatu-nai3-sm-field");
+  const dynField = document.getElementById("zinao-chatu-nai3-dyn-field");
+  const deceispField = document.getElementById("zinao-chatu-nai3-deceisp-field");
   if (!novelaiModeSelect || !smField || !dynField || !deceispField) return;
   const selectedModel = novelaiModeSelect.value;
   const isNai3 = selectedModel === "nai-diffusion-3";
@@ -70729,7 +70735,7 @@ function updateNovelaiOtherSiteVisibility() {
 }
 function updateNovelaiScheduleVisibility() {
   const sampler = document.getElementById("novelai_sampler");
-  const scheduleField = document.querySelector("#Schedule")?.closest(".st-chatu8-field");
+  const scheduleField = document.querySelector("#Schedule")?.closest(".zinao-chatu-field");
   const scheduleSelect = document.getElementById("Schedule");
   if (!sampler || !scheduleField || !scheduleSelect) return;
   const selectedSampler = sampler.value;
@@ -70905,73 +70911,73 @@ function ensureVibePresets() {
   return settings3.vibePresets;
 }
 function showVibeGeneratorDialog() {
-  const parent = document.getElementById("st-chatu8-settings") || document.body;
+  const parent = document.getElementById("zinao-chatu-settings") || document.body;
   const settings3 = extension_settings64[extensionName];
   ensureVibePresets();
   const backdrop = document.createElement("div");
-  backdrop.className = "st-chatu8-workflow-viz-backdrop";
+  backdrop.className = "zinao-chatu-workflow-viz-backdrop";
   backdrop.innerHTML = `
-        <div class="st-chatu8-workflow-viz-dialog st-chatu8-vibe-generator-dialog">
-            <div class="st-chatu8-workflow-viz-header">
+        <div class="zinao-chatu-workflow-viz-dialog zinao-chatu-vibe-generator-dialog">
+            <div class="zinao-chatu-workflow-viz-header">
                 <h3>Vibe \u6587\u4EF6\u751F\u6210\u5668 (.naiv4vibe)</h3>
-                <span class="st-chatu8-workflow-viz-close">&times;</span>
+                <span class="zinao-chatu-workflow-viz-close">&times;</span>
             </div>
-            <div class="st-chatu8-workflow-viz-body" style="padding: 2rem;">
-                <div class="st-chatu8-vibe-generator-content">
+            <div class="zinao-chatu-workflow-viz-body" style="padding: 2rem;">
+                <div class="zinao-chatu-vibe-generator-content">
                     <!-- \u9884\u8BBE\u9009\u62E9\u5668 -->
-                    <div class="st-chatu8-field" style="margin-bottom: 1.2rem;">
+                    <div class="zinao-chatu-field" style="margin-bottom: 1.2rem;">
                         <label for="vibe-preset-select">\u6C1B\u56F4\u8F6C\u79FB\u9884\u8BBE</label>
-                        <div class="st-chatu8-profile-controls">
-                            <select id="vibe-preset-select" class="st-chatu8-select"></select>
-                            <button class="st-chatu8-icon-btn" id="vibe-preset-new" title="\u65B0\u5EFA\u9884\u8BBE">
+                        <div class="zinao-chatu-profile-controls">
+                            <select id="vibe-preset-select" class="zinao-chatu-select"></select>
+                            <button class="zinao-chatu-icon-btn" id="vibe-preset-new" title="\u65B0\u5EFA\u9884\u8BBE">
                                 <i class="fa-solid fa-plus"></i>
                             </button>
-                            <button class="st-chatu8-icon-btn" id="vibe-preset-save" title="\u4FDD\u5B58\u5F53\u524D\u9884\u8BBE">
+                            <button class="zinao-chatu-icon-btn" id="vibe-preset-save" title="\u4FDD\u5B58\u5F53\u524D\u9884\u8BBE">
                                 <i class="fa-solid fa-save"></i>
                             </button>
-                            <button class="st-chatu8-icon-btn" id="vibe-preset-export-current" title="\u5BFC\u51FA\u5F53\u524D\u9884\u8BBE">
+                            <button class="zinao-chatu-icon-btn" id="vibe-preset-export-current" title="\u5BFC\u51FA\u5F53\u524D\u9884\u8BBE">
                                 <i class="fa-solid fa-upload"></i>
                             </button>
-                            <button class="st-chatu8-icon-btn" id="vibe-preset-export-all" title="\u5BFC\u51FA\u5168\u90E8\u9884\u8BBE">
+                            <button class="zinao-chatu-icon-btn" id="vibe-preset-export-all" title="\u5BFC\u51FA\u5168\u90E8\u9884\u8BBE">
                                 <i class="fa-solid fa-file-export"></i>
                             </button>
-                            <button class="st-chatu8-icon-btn" id="vibe-preset-import" title="\u5BFC\u5165\u9884\u8BBE">
+                            <button class="zinao-chatu-icon-btn" id="vibe-preset-import" title="\u5BFC\u5165\u9884\u8BBE">
                                 <i class="fa-solid fa-download"></i>
                             </button>
-                            <button class="st-chatu8-icon-btn danger" id="vibe-preset-delete" title="\u5220\u9664\u5F53\u524D\u9884\u8BBE">
+                            <button class="zinao-chatu-icon-btn danger" id="vibe-preset-delete" title="\u5220\u9664\u5F53\u524D\u9884\u8BBE">
                                 <i class="fa-solid fa-trash"></i>
                             </button>
                         </div>
                     </div>
 
                     <!-- \u56FE\u7247\u9884\u89C8 -->
-                    <div class="st-chatu8-field-col" style="margin-bottom: 1.2rem;">
+                    <div class="zinao-chatu-field-col" style="margin-bottom: 1.2rem;">
                         <label>\u53C2\u8003\u56FE\u7247\u9884\u89C8</label>
-                        <div class="st-chatu8-image-preview-container" id="vibe-image-preview-container">
-                            <div class="st-chatu8-image-placeholder">
+                        <div class="zinao-chatu-image-preview-container" id="vibe-image-preview-container">
+                            <div class="zinao-chatu-image-placeholder">
                                 <i class="fa-solid fa-image"></i>
                                 <span>\u6CA1\u6709\u9009\u62E9\u56FE\u7247</span>
                             </div>
                             <img id="vibe-preview-image" src="" alt="\u53C2\u8003\u56FE\u9884\u89C8" style="display: none;">
                         </div>
-                        <div class="st-chatu8-image-controls" style="margin-top: 0.5rem;">
+                        <div class="zinao-chatu-image-controls" style="margin-top: 0.5rem;">
                             <input type="file" id="vibe-image-input" accept="image/png, image/jpeg, image/webp" style="display:none;">
                             <input type="file" id="vibe-file-input" accept=".naiv4vibe" style="display:none;">
-                            <button type="button" class="st-chatu8-btn" id="vibe-select-image-btn">
+                            <button type="button" class="zinao-chatu-btn" id="vibe-select-image-btn">
                                 <i class="fa-solid fa-upload"></i> \u9009\u62E9\u56FE\u7247
                             </button>
-                            <button type="button" class="st-chatu8-btn" id="vibe-upload-file-btn">
+                            <button type="button" class="zinao-chatu-btn" id="vibe-upload-file-btn">
                                 <i class="fa-solid fa-file-import"></i> \u4E0A\u4F20 Vibe \u6587\u4EF6
                             </button>
-                            <button type="button" class="st-chatu8-btn danger" id="vibe-remove-image-btn" style="display: none;">
+                            <button type="button" class="zinao-chatu-btn danger" id="vibe-remove-image-btn" style="display: none;">
                                 <i class="fa-solid fa-trash"></i> \u79FB\u9664\u56FE\u7247
                             </button>
                         </div>
                     </div>
 
-                    <div class="st-chatu8-field" style="margin-bottom: 1.2rem;">
+                    <div class="zinao-chatu-field" style="margin-bottom: 1.2rem;">
                         <label for="vibe-model-select">\u6A21\u578B (Model)</label>
-                        <select id="vibe-model-select" class="st-chatu8-select">
+                        <select id="vibe-model-select" class="zinao-chatu-select">
                             <option value="nai-diffusion-4-5-full">V4.5 Full</option>
                             <option value="nai-diffusion-4-5-curated">V4.5 Curated</option>
                             <option value="nai-diffusion-4-full">V4 Full</option>
@@ -70979,19 +70985,19 @@ function showVibeGeneratorDialog() {
                         </select>
                     </div>
                     
-                    <div class="st-chatu8-field" style="margin-bottom: 1.5rem;">
+                    <div class="zinao-chatu-field" style="margin-bottom: 1.5rem;">
                         <label for="vibe-strength-ref">\u9ED8\u8BA4\u53C2\u8003\u5F3A\u5EA6: <span id="vibe-strength-val">0.6</span></label>
-                        <div class="st-chatu8-range-container">
-                            <input type="range" id="vibe-strength-ref" class="st-chatu8-range-slider" min="0" max="1" step="0.01" value="0.6">
-                            <input type="number" id="vibe-strength-ref-num" class="st-chatu8-range-input" min="0" max="1" step="0.01" value="0.6">
+                        <div class="zinao-chatu-range-container">
+                            <input type="range" id="vibe-strength-ref" class="zinao-chatu-range-slider" min="0" max="1" step="0.01" value="0.6">
+                            <input type="number" id="vibe-strength-ref-num" class="zinao-chatu-range-input" min="0" max="1" step="0.01" value="0.6">
                         </div>
                     </div>
 
-                    <button type="button" class="st-chatu8-btn" id="vibe-submit-btn" style="width: 100%; padding: 1rem; font-size: 16px; font-weight: 600;">
+                    <button type="button" class="zinao-chatu-btn" id="vibe-submit-btn" style="width: 100%; padding: 1rem; font-size: 16px; font-weight: 600;">
                         <i class="fa-solid fa-wand-magic-sparkles"></i> \u751F\u6210\u5E76\u4FDD\u5B58\u5230\u9884\u8BBE
                     </button>
                     
-                    <button type="button" class="st-chatu8-btn" id="vibe-download-btn" style="width: 100%; padding: 1rem; font-size: 16px; font-weight: 600; margin-top: 0.5rem; background: #000; border: 1px solid #333;" title="\u8BF7\u5148\u751F\u6210\u6216\u4E0A\u4F20 Vibe \u6570\u636E">
+                    <button type="button" class="zinao-chatu-btn" id="vibe-download-btn" style="width: 100%; padding: 1rem; font-size: 16px; font-weight: 600; margin-top: 0.5rem; background: #000; border: 1px solid #333;" title="\u8BF7\u5148\u751F\u6210\u6216\u4E0A\u4F20 Vibe \u6570\u636E">
                         <i class="fa-solid fa-circle-exclamation"></i> \u8BF7\u5148\u751F\u6210\u6216\u4E0A\u4F20 Vibe \u6570\u636E
                     </button>
                     
@@ -71001,7 +71007,7 @@ function showVibeGeneratorDialog() {
         </div>
     `;
   parent.appendChild(backdrop);
-  const closeBtn = backdrop.querySelector(".st-chatu8-workflow-viz-close");
+  const closeBtn = backdrop.querySelector(".zinao-chatu-workflow-viz-close");
   closeBtn.onclick = () => parent.removeChild(backdrop);
   backdrop.onclick = (e) => {
     if (e.target === backdrop) {
@@ -71063,7 +71069,7 @@ function showVibeGeneratorDialog() {
   function showImagePreview2(src, showRemoveButton = true) {
     previewImage.src = src;
     previewImage.style.display = "block";
-    previewContainer.querySelector(".st-chatu8-image-placeholder").style.display = "none";
+    previewContainer.querySelector(".zinao-chatu-image-placeholder").style.display = "none";
     removeImageBtn.style.display = showRemoveButton ? "inline-block" : "none";
   }
   async function loadCurrentPreset() {
@@ -71109,7 +71115,7 @@ function showVibeGeneratorDialog() {
     imageInput.value = "";
     previewImage.src = "";
     previewImage.style.display = "none";
-    previewContainer.querySelector(".st-chatu8-image-placeholder").style.display = "flex";
+    previewContainer.querySelector(".zinao-chatu-image-placeholder").style.display = "flex";
     removeImageBtn.style.display = "none";
   }
   loadPresetList();
@@ -71159,7 +71165,7 @@ function showVibeGeneratorDialog() {
       saveSettingsDebounced40();
       previewImage.src = imageData;
       previewImage.style.display = "block";
-      previewContainer.querySelector(".st-chatu8-image-placeholder").style.display = "none";
+      previewContainer.querySelector(".zinao-chatu-image-placeholder").style.display = "none";
       removeImageBtn.style.display = "inline-block";
       showStatus3("\u56FE\u7247\u5DF2\u81EA\u52A8\u4FDD\u5B58\uFF01", "success");
     } catch (error) {
@@ -71819,58 +71825,58 @@ function ensureCharRefPresets() {
   return settings3.charRefPresets;
 }
 function showCharRefUploadDialog() {
-  const parent = document.getElementById("st-chatu8-settings") || document.body;
+  const parent = document.getElementById("zinao-chatu-settings") || document.body;
   const settings3 = extension_settings65[extensionName];
   ensureCharRefPresets();
   const backdrop = document.createElement("div");
-  backdrop.className = "st-chatu8-workflow-viz-backdrop";
+  backdrop.className = "zinao-chatu-workflow-viz-backdrop";
   backdrop.innerHTML = `
-        <div class="st-chatu8-workflow-viz-dialog st-chatu8-char-ref-upload-dialog">
-            <div class="st-chatu8-workflow-viz-header">
+        <div class="zinao-chatu-workflow-viz-dialog zinao-chatu-char-ref-upload-dialog">
+            <div class="zinao-chatu-workflow-viz-header">
                 <h3>\u89D2\u8272\u53C2\u8003\u56FE\u9884\u8BBE</h3>
-                <span class="st-chatu8-workflow-viz-close">&times;</span>
+                <span class="zinao-chatu-workflow-viz-close">&times;</span>
             </div>
-            <div class="st-chatu8-workflow-viz-body" style="padding: 2rem;">
-                <div class="st-chatu8-char-ref-upload-content">
+            <div class="zinao-chatu-workflow-viz-body" style="padding: 2rem;">
+                <div class="zinao-chatu-char-ref-upload-content">
                     <!-- Preset Selector -->
-                    <div class="st-chatu8-field" style="margin-bottom: 1.2rem;">
+                    <div class="zinao-chatu-field" style="margin-bottom: 1.2rem;">
                         <label for="char-ref-preset-select">\u53C2\u8003\u56FE\u9884\u8BBE</label>
-                        <div class="st-chatu8-profile-controls">
-                            <select id="char-ref-preset-select" class="st-chatu8-select"></select>
-                            <button class="st-chatu8-icon-btn" id="char-ref-preset-new" title="\u65B0\u5EFA\u9884\u8BBE">
+                        <div class="zinao-chatu-profile-controls">
+                            <select id="char-ref-preset-select" class="zinao-chatu-select"></select>
+                            <button class="zinao-chatu-icon-btn" id="char-ref-preset-new" title="\u65B0\u5EFA\u9884\u8BBE">
                                 <i class="fa-solid fa-plus"></i>
                             </button>
-                            <button class="st-chatu8-icon-btn" id="char-ref-preset-export-current" title="\u5BFC\u51FA\u5F53\u524D\u9884\u8BBE">
+                            <button class="zinao-chatu-icon-btn" id="char-ref-preset-export-current" title="\u5BFC\u51FA\u5F53\u524D\u9884\u8BBE">
                                 <i class="fa-solid fa-upload"></i>
                             </button>
-                            <button class="st-chatu8-icon-btn" id="char-ref-preset-export-all" title="\u5BFC\u51FA\u5168\u90E8\u9884\u8BBE">
+                            <button class="zinao-chatu-icon-btn" id="char-ref-preset-export-all" title="\u5BFC\u51FA\u5168\u90E8\u9884\u8BBE">
                                 <i class="fa-solid fa-file-export"></i>
                             </button>
-                            <button class="st-chatu8-icon-btn" id="char-ref-preset-import" title="\u5BFC\u5165\u9884\u8BBE">
+                            <button class="zinao-chatu-icon-btn" id="char-ref-preset-import" title="\u5BFC\u5165\u9884\u8BBE">
                                 <i class="fa-solid fa-download"></i>
                             </button>
-                            <button class="st-chatu8-icon-btn danger" id="char-ref-preset-delete" title="\u5220\u9664\u5F53\u524D\u9884\u8BBE">
+                            <button class="zinao-chatu-icon-btn danger" id="char-ref-preset-delete" title="\u5220\u9664\u5F53\u524D\u9884\u8BBE">
                                 <i class="fa-solid fa-trash"></i>
                             </button>
                         </div>
                     </div>
 
                     <!-- Image Preview -->
-                    <div class="st-chatu8-field-col" style="margin-bottom: 1.2rem;">
+                    <div class="zinao-chatu-field-col" style="margin-bottom: 1.2rem;">
                         <label>\u53C2\u8003\u56FE\u7247\u9884\u89C8</label>
-                        <div class="st-chatu8-image-preview-container" id="char-ref-upload-preview-container">
-                            <div class="st-chatu8-image-placeholder">
+                        <div class="zinao-chatu-image-preview-container" id="char-ref-upload-preview-container">
+                            <div class="zinao-chatu-image-placeholder">
                                 <i class="fa-solid fa-image"></i>
                                 <span>\u6CA1\u6709\u9009\u62E9\u56FE\u7247</span>
                             </div>
                             <img id="char-ref-upload-preview" src="" alt="\u53C2\u8003\u56FE\u9884\u89C8" style="display: none;">
                         </div>
-                        <div class="st-chatu8-image-controls" style="margin-top: 0.5rem;">
+                        <div class="zinao-chatu-image-controls" style="margin-top: 0.5rem;">
                             <input type="file" id="char-ref-upload-input" accept="image/png, image/jpeg, image/webp" style="display:none;">
-                            <button type="button" class="st-chatu8-btn" id="char-ref-select-btn">
+                            <button type="button" class="zinao-chatu-btn" id="char-ref-select-btn">
                                 <i class="fa-solid fa-upload"></i> \u9009\u62E9\u56FE\u7247
                             </button>
-                            <button type="button" class="st-chatu8-btn danger" id="char-ref-remove-preview-btn" style="display: none;">
+                            <button type="button" class="zinao-chatu-btn danger" id="char-ref-remove-preview-btn" style="display: none;">
                                 <i class="fa-solid fa-trash"></i> \u79FB\u9664\u56FE\u7247
                             </button>
                         </div>
@@ -71882,7 +71888,7 @@ function showCharRefUploadDialog() {
         </div>
     `;
   parent.appendChild(backdrop);
-  const closeBtn = backdrop.querySelector(".st-chatu8-workflow-viz-close");
+  const closeBtn = backdrop.querySelector(".zinao-chatu-workflow-viz-close");
   closeBtn.onclick = () => parent.removeChild(backdrop);
   backdrop.onclick = (e) => {
     if (e.target === backdrop) {
@@ -71927,7 +71933,7 @@ function showCharRefUploadDialog() {
         if (imageData) {
           previewImage.src = imageData;
           previewImage.style.display = "block";
-          previewContainer.querySelector(".st-chatu8-image-placeholder").style.display = "none";
+          previewContainer.querySelector(".zinao-chatu-image-placeholder").style.display = "none";
           removePreviewBtn.style.display = "inline-block";
         } else {
           resetImagePreview();
@@ -71945,7 +71951,7 @@ function showCharRefUploadDialog() {
     imageInput.value = "";
     previewImage.src = "";
     previewImage.style.display = "none";
-    previewContainer.querySelector(".st-chatu8-image-placeholder").style.display = "flex";
+    previewContainer.querySelector(".zinao-chatu-image-placeholder").style.display = "flex";
     removePreviewBtn.style.display = "none";
   }
   loadPresetList();
@@ -71993,7 +71999,7 @@ function showCharRefUploadDialog() {
       saveSettingsDebounced41();
       previewImage.src = imageData;
       previewImage.style.display = "block";
-      previewContainer.querySelector(".st-chatu8-image-placeholder").style.display = "none";
+      previewContainer.querySelector(".zinao-chatu-image-placeholder").style.display = "none";
       removePreviewBtn.style.display = "inline-block";
       showCharRefStatus(statusDiv, "\u56FE\u7247\u5DF2\u4FDD\u5B58\uFF01", "success");
       console.log("[CharRef] Image saved with ID:", newImageId);
@@ -72342,43 +72348,43 @@ async function deleteCharRefGroup(selectElement, statusDiv) {
   console.log("[CharRef] Deleted group:", currentGroupId);
 }
 function showCharRefGroupEditorDialog() {
-  const parent = document.getElementById("st-chatu8-settings") || document.body;
+  const parent = document.getElementById("zinao-chatu-settings") || document.body;
   const settings3 = extension_settings65[extensionName];
   ensureCharRefGroups();
   const backdrop = document.createElement("div");
-  backdrop.className = "st-chatu8-workflow-viz-backdrop";
+  backdrop.className = "zinao-chatu-workflow-viz-backdrop";
   backdrop.innerHTML = `
-        <div class="st-chatu8-workflow-viz-dialog st-chatu8-char-ref-group-editor-dialog">
-            <div class="st-chatu8-workflow-viz-header">
+        <div class="zinao-chatu-workflow-viz-dialog zinao-chatu-char-ref-group-editor-dialog">
+            <div class="zinao-chatu-workflow-viz-header">
                 <h3>\u89D2\u8272\u7EC4\u7F16\u8F91\u5668</h3>
-                <span class="st-chatu8-workflow-viz-close">&times;</span>
+                <span class="zinao-chatu-workflow-viz-close">&times;</span>
             </div>
-            <div class="st-chatu8-workflow-viz-body" style="padding: 2rem;">
-                <div class="st-chatu8-char-ref-group-editor-content">
+            <div class="zinao-chatu-workflow-viz-body" style="padding: 2rem;">
+                <div class="zinao-chatu-char-ref-group-editor-content">
                     <!-- Group Preset Selector -->
-                    <div class="st-chatu8-field" style="margin-bottom: 1.2rem;">
+                    <div class="zinao-chatu-field" style="margin-bottom: 1.2rem;">
                         <label for="char-ref-group-select">\u89D2\u8272\u7EC4\u9884\u8BBE</label>
-                        <div class="st-chatu8-profile-controls">
-                            <select id="char-ref-group-select" class="st-chatu8-select"></select>
-                            <button class="st-chatu8-icon-btn" id="char-ref-group-new" title="\u65B0\u5EFA\u7EC4">
+                        <div class="zinao-chatu-profile-controls">
+                            <select id="char-ref-group-select" class="zinao-chatu-select"></select>
+                            <button class="zinao-chatu-icon-btn" id="char-ref-group-new" title="\u65B0\u5EFA\u7EC4">
                                 <i class="fa-solid fa-plus"></i>
                             </button>
-                            <button class="st-chatu8-icon-btn" id="char-ref-group-save" title="\u4FDD\u5B58\u5F53\u524D\u7EC4">
+                            <button class="zinao-chatu-icon-btn" id="char-ref-group-save" title="\u4FDD\u5B58\u5F53\u524D\u7EC4">
                                 <i class="fa-solid fa-save"></i>
                             </button>
-                            <button class="st-chatu8-icon-btn danger" id="char-ref-group-delete" title="\u5220\u9664\u5F53\u524D\u7EC4">
+                            <button class="zinao-chatu-icon-btn danger" id="char-ref-group-delete" title="\u5220\u9664\u5F53\u524D\u7EC4">
                                 <i class="fa-solid fa-trash"></i>
                             </button>
                         </div>
                     </div>
 
                     <!-- Add Reference Button -->
-                    <button type="button" class="st-chatu8-btn" id="char-ref-group-add-ref" style="width: 100%; padding: 1rem; font-size: 16px; font-weight: 600; margin-bottom: 1.5rem;">
+                    <button type="button" class="zinao-chatu-btn" id="char-ref-group-add-ref" style="width: 100%; padding: 1rem; font-size: 16px; font-weight: 600; margin-bottom: 1.5rem;">
                         <i class="fa-solid fa-plus"></i> \u6DFB\u52A0\u89D2\u8272\u53C2\u8003 (0/4)
                     </button>
 
                     <!-- Reference Slots Container -->
-                    <div id="char-ref-slots-container" class="st-chatu8-char-ref-slots">
+                    <div id="char-ref-slots-container" class="zinao-chatu-char-ref-slots">
                         <!-- Dynamically rendered slots (0-4) -->
                     </div>
 
@@ -72389,7 +72395,7 @@ function showCharRefGroupEditorDialog() {
         </div>
     `;
   parent.appendChild(backdrop);
-  const closeBtn = backdrop.querySelector(".st-chatu8-workflow-viz-close");
+  const closeBtn = backdrop.querySelector(".zinao-chatu-workflow-viz-close");
   closeBtn.onclick = () => parent.removeChild(backdrop);
   backdrop.onclick = (e) => {
     if (e.target === backdrop) {
@@ -72459,7 +72465,7 @@ async function renderCharRefSlots(slotsContainer, groupSelect, addRefBtn) {
   for (let i = 0; i < references.length; i++) {
     const ref = references[i];
     const slotDiv = document.createElement("div");
-    slotDiv.className = "st-chatu8-char-ref-slot";
+    slotDiv.className = "zinao-chatu-char-ref-slot";
     slotDiv.style.cssText = "border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; background: rgba(0, 0, 0, 0.2);";
     let imageDataUrl = "";
     try {
@@ -72482,9 +72488,9 @@ async function renderCharRefSlots(slotsContainer, groupSelect, addRefBtn) {
                 <!-- Controls -->
                 <div style="flex: 1; display: flex; flex-direction: column; gap: 1rem;">
                     <!-- Reference Type -->
-                    <div class="st-chatu8-field">
+                    <div class="zinao-chatu-field">
                         <label for="char-ref-type-${i}">\u53C2\u8003\u7C7B\u578B</label>
-                        <select id="char-ref-type-${i}" class="st-chatu8-select char-ref-type-select" data-index="${i}">
+                        <select id="char-ref-type-${i}" class="zinao-chatu-select char-ref-type-select" data-index="${i}">
                             <option value="character" ${ref.type === "character" ? "selected" : ""}>Character</option>
                             <option value="character_style" ${ref.type === "character_style" ? "selected" : ""}>Character & Style</option>
                             <option value="style" ${ref.type === "style" ? "selected" : ""}>Style</option>
@@ -72492,29 +72498,29 @@ async function renderCharRefSlots(slotsContainer, groupSelect, addRefBtn) {
                     </div>
 
                     <!-- Strength Slider -->
-                    <div class="st-chatu8-field">
+                    <div class="zinao-chatu-field">
                         <label for="char-ref-strength-${i}">Strength: <span id="char-ref-strength-val-${i}">${ref.strength ?? 0.6}</span></label>
-                        <div class="st-chatu8-range-container">
-                            <input type="range" id="char-ref-strength-range-${i}" class="st-chatu8-range-slider char-ref-strength-range" 
+                        <div class="zinao-chatu-range-container">
+                            <input type="range" id="char-ref-strength-range-${i}" class="zinao-chatu-range-slider char-ref-strength-range" 
                                    data-index="${i}" min="0" max="2" step="0.01" value="${ref.strength ?? 0.6}">
-                            <input type="number" id="char-ref-strength-${i}" class="st-chatu8-range-input char-ref-strength-input" 
+                            <input type="number" id="char-ref-strength-${i}" class="zinao-chatu-range-input char-ref-strength-input" 
                                    data-index="${i}" min="0" step="0.01" value="${ref.strength ?? 0.6}">
                         </div>
                     </div>
 
                     <!-- Fidelity Slider -->
-                    <div class="st-chatu8-field">
+                    <div class="zinao-chatu-field">
                         <label for="char-ref-fidelity-${i}">Fidelity: <span id="char-ref-fidelity-val-${i}">${ref.fidelity ?? 0.6}</span></label>
-                        <div class="st-chatu8-range-container">
-                            <input type="range" id="char-ref-fidelity-range-${i}" class="st-chatu8-range-slider char-ref-fidelity-range" 
+                        <div class="zinao-chatu-range-container">
+                            <input type="range" id="char-ref-fidelity-range-${i}" class="zinao-chatu-range-slider char-ref-fidelity-range" 
                                    data-index="${i}" min="0" max="2" step="0.01" value="${ref.fidelity ?? 0.6}">
-                            <input type="number" id="char-ref-fidelity-${i}" class="st-chatu8-range-input char-ref-fidelity-input" 
+                            <input type="number" id="char-ref-fidelity-${i}" class="zinao-chatu-range-input char-ref-fidelity-input" 
                                    data-index="${i}" min="0" step="0.01" value="${ref.fidelity ?? 0.6}">
                         </div>
                     </div>
 
                     <!-- Remove Button -->
-                    <button type="button" class="st-chatu8-btn danger char-ref-remove-btn" data-index="${i}" 
+                    <button type="button" class="zinao-chatu-btn danger char-ref-remove-btn" data-index="${i}" 
                             style="align-self: flex-start;">
                         <i class="fa-solid fa-trash"></i> \u79FB\u9664
                     </button>
@@ -72527,7 +72533,7 @@ async function renderCharRefSlots(slotsContainer, groupSelect, addRefBtn) {
   console.log("[CharRef] Rendered", refCount, "reference slots");
 }
 async function showCharRefImageLibrary(onSelect) {
-  const parent = document.getElementById("st-chatu8-settings") || document.body;
+  const parent = document.getElementById("zinao-chatu-settings") || document.body;
   const settings3 = extension_settings65[extensionName];
   ensureCharRefPresets();
   const charRefPresets = settings3.charRefPresets || {};
@@ -72536,36 +72542,36 @@ async function showCharRefImageLibrary(onSelect) {
   let filteredPresets = [];
   let searchQuery = "";
   const backdrop = document.createElement("div");
-  backdrop.className = "st-chatu8-workflow-viz-backdrop";
+  backdrop.className = "zinao-chatu-workflow-viz-backdrop";
   backdrop.innerHTML = `
-        <div class="st-chatu8-workflow-viz-dialog st-chatu8-vibe-visual-selector-dialog">
-            <div class="st-chatu8-workflow-viz-header">
+        <div class="zinao-chatu-workflow-viz-dialog zinao-chatu-vibe-visual-selector-dialog">
+            <div class="zinao-chatu-workflow-viz-header">
                 <h3>\u9009\u62E9\u89D2\u8272\u53C2\u8003\u56FE</h3>
-                <span class="st-chatu8-workflow-viz-close">&times;</span>
+                <span class="zinao-chatu-workflow-viz-close">&times;</span>
             </div>
-            <div class="st-chatu8-workflow-viz-toolbar" style="justify-content: space-between; align-items: center; gap: 15px; padding: 12px 20px; background: rgba(30, 30, 46, 0.6); border-bottom: 1px solid rgba(255,255,255,0.05);">
-                <div class="st-chatu8-viz-search-container" style="position: relative; flex-grow: 1; max-width: 300px;">
+            <div class="zinao-chatu-workflow-viz-toolbar" style="justify-content: space-between; align-items: center; gap: 15px; padding: 12px 20px; background: rgba(30, 30, 46, 0.6); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <div class="zinao-chatu-viz-search-container" style="position: relative; flex-grow: 1; max-width: 300px;">
                     <i class="fa-solid fa-search" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #aaa; pointer-events: none;"></i>
-                    <input type="text" class="st-chatu8-viz-search-input" placeholder="\u641C\u7D22\u53C2\u8003\u56FE..." style="width: 100%; padding: 8px 12px 8px 36px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; color: white; outline: none; transition: all 0.3s;">
+                    <input type="text" class="zinao-chatu-viz-search-input" placeholder="\u641C\u7D22\u53C2\u8003\u56FE..." style="width: 100%; padding: 8px 12px 8px 36px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; color: white; outline: none; transition: all 0.3s;">
                 </div>
             </div>
-            <div class="st-chatu8-pagination-container">
-                <button class="st-chatu8-pagination-btn st-chatu8-pagination-prev" title="\u4E0A\u4E00\u9875">
+            <div class="zinao-chatu-pagination-container">
+                <button class="zinao-chatu-pagination-btn zinao-chatu-pagination-prev" title="\u4E0A\u4E00\u9875">
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
-                <div class="st-chatu8-pagination-info">
-                    <span class="st-chatu8-pagination-current">1</span>
+                <div class="zinao-chatu-pagination-info">
+                    <span class="zinao-chatu-pagination-current">1</span>
                     <span>/</span>
-                    <span class="st-chatu8-pagination-total">1</span>
+                    <span class="zinao-chatu-pagination-total">1</span>
                     <span style="margin-left: 8px; color: #666;">|</span>
-                    <span style="margin-left: 8px;">\u5171 <span class="st-chatu8-pagination-count">0</span> \u4E2A</span>
+                    <span style="margin-left: 8px;">\u5171 <span class="zinao-chatu-pagination-count">0</span> \u4E2A</span>
                 </div>
-                <button class="st-chatu8-pagination-btn st-chatu8-pagination-next" title="\u4E0B\u4E00\u9875">
+                <button class="zinao-chatu-pagination-btn zinao-chatu-pagination-next" title="\u4E0B\u4E00\u9875">
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
-                <div class="st-chatu8-pagination-size-container">
-                    <span class="st-chatu8-pagination-size-label">\u6BCF\u9875</span>
-                    <select class="st-chatu8-pagination-size">
+                <div class="zinao-chatu-pagination-size-container">
+                    <span class="zinao-chatu-pagination-size-label">\u6BCF\u9875</span>
+                    <select class="zinao-chatu-pagination-size">
                         <option value="8">8</option>
                         <option value="12" selected>12</option>
                         <option value="16">16</option>
@@ -72573,29 +72579,29 @@ async function showCharRefImageLibrary(onSelect) {
                     </select>
                 </div>
             </div>
-            <div class="st-chatu8-workflow-viz-body">
-                <div class="st-chatu8-vibe-visual-selector-grid">
+            <div class="zinao-chatu-workflow-viz-body">
+                <div class="zinao-chatu-vibe-visual-selector-grid">
                     <!-- Character reference cards will be inserted here -->
                 </div>
             </div>
         </div>
     `;
   parent.appendChild(backdrop);
-  const closeBtn = backdrop.querySelector(".st-chatu8-workflow-viz-close");
+  const closeBtn = backdrop.querySelector(".zinao-chatu-workflow-viz-close");
   closeBtn.onclick = () => parent.removeChild(backdrop);
   backdrop.onclick = (e) => {
     if (e.target === backdrop) {
       parent.removeChild(backdrop);
     }
   };
-  const gridContainer = backdrop.querySelector(".st-chatu8-vibe-visual-selector-grid");
-  const searchInput = backdrop.querySelector(".st-chatu8-viz-search-input");
-  const paginationPrev = backdrop.querySelector(".st-chatu8-pagination-prev");
-  const paginationNext = backdrop.querySelector(".st-chatu8-pagination-next");
-  const paginationCurrent = backdrop.querySelector(".st-chatu8-pagination-current");
-  const paginationTotal = backdrop.querySelector(".st-chatu8-pagination-total");
-  const paginationCount = backdrop.querySelector(".st-chatu8-pagination-count");
-  const paginationSizeSelect = backdrop.querySelector(".st-chatu8-pagination-size");
+  const gridContainer = backdrop.querySelector(".zinao-chatu-vibe-visual-selector-grid");
+  const searchInput = backdrop.querySelector(".zinao-chatu-viz-search-input");
+  const paginationPrev = backdrop.querySelector(".zinao-chatu-pagination-prev");
+  const paginationNext = backdrop.querySelector(".zinao-chatu-pagination-next");
+  const paginationCurrent = backdrop.querySelector(".zinao-chatu-pagination-current");
+  const paginationTotal = backdrop.querySelector(".zinao-chatu-pagination-total");
+  const paginationCount = backdrop.querySelector(".zinao-chatu-pagination-count");
+  const paginationSizeSelect = backdrop.querySelector(".zinao-chatu-pagination-size");
   const allPresetNames = Object.keys(charRefPresets).filter((name) => charRefPresets[name].imageId).sort((a, b) => {
     if (a === "\u9ED8\u8BA4") return -1;
     if (b === "\u9ED8\u8BA4") return 1;
@@ -72652,9 +72658,9 @@ async function showCharRefImageLibrary(onSelect) {
     for (const presetName of pagePresets) {
       const preset = charRefPresets[presetName];
       const card = document.createElement("div");
-      card.className = "st-chatu8-vibe-card";
+      card.className = "zinao-chatu-vibe-card";
       const thumbnailDiv = document.createElement("div");
-      thumbnailDiv.className = "st-chatu8-vibe-card-thumbnail";
+      thumbnailDiv.className = "zinao-chatu-vibe-card-thumbnail";
       try {
         const imageData = await getConfigImage(preset.imageId);
         if (imageData) {
@@ -72664,7 +72670,7 @@ async function showCharRefImageLibrary(onSelect) {
           thumbnailDiv.appendChild(img);
         } else {
           thumbnailDiv.innerHTML = `
-                        <div class="st-chatu8-vibe-card-placeholder">
+                        <div class="zinao-chatu-vibe-card-placeholder">
                             <i class="fa-solid fa-image"></i>
                             <div>\u65E0\u56FE\u50CF</div>
                         </div>
@@ -72672,7 +72678,7 @@ async function showCharRefImageLibrary(onSelect) {
         }
       } catch (error) {
         thumbnailDiv.innerHTML = `
-                    <div class="st-chatu8-vibe-card-error">
+                    <div class="zinao-chatu-vibe-card-error">
                         <i class="fa-solid fa-exclamation-triangle"></i>
                         <div>\u52A0\u8F7D\u5931\u8D25</div>
                     </div>
@@ -72681,9 +72687,9 @@ async function showCharRefImageLibrary(onSelect) {
         console.error("[CharRef] Failed to load image:", preset.imageId, error);
       }
       const infoDiv = document.createElement("div");
-      infoDiv.className = "st-chatu8-vibe-card-info";
+      infoDiv.className = "zinao-chatu-vibe-card-info";
       const nameDiv = document.createElement("div");
-      nameDiv.className = "st-chatu8-vibe-card-name";
+      nameDiv.className = "zinao-chatu-vibe-card-name";
       nameDiv.textContent = presetName;
       infoDiv.appendChild(nameDiv);
       card.appendChild(thumbnailDiv);
@@ -73019,46 +73025,46 @@ async function buildTagTree() {
       return acc;
     }, {});
     const tree = document.createElement("ul");
-    tree.className = "st-chatu8-tree";
+    tree.className = "zinao-chatu-tree";
     tag_groups.forEach((group) => {
       const groupItem = document.createElement("li");
-      groupItem.className = "st-chatu8-tree-item";
+      groupItem.className = "zinao-chatu-tree-item";
       const groupToggle = document.createElement("span");
-      groupToggle.className = "st-chatu8-tree-toggle";
+      groupToggle.className = "zinao-chatu-tree-toggle";
       groupToggle.textContent = "\u25B6 ";
       const groupName = document.createElement("span");
       groupName.textContent = group.name;
-      groupName.className = "st-chatu8-tree-group";
+      groupName.className = "zinao-chatu-tree-group";
       const groupContent = document.createElement("div");
-      groupContent.className = "st-chatu8-tree-content";
+      groupContent.className = "zinao-chatu-tree-content";
       groupContent.appendChild(groupToggle);
       groupContent.appendChild(groupName);
       groupItem.appendChild(groupContent);
       const subgroupList = document.createElement("ul");
-      subgroupList.className = "st-chatu8-tree-sublist";
+      subgroupList.className = "zinao-chatu-tree-sublist";
       subgroupList.style.display = "none";
       if (group.subgroups && group.subgroups.length > 0) {
         group.subgroups.forEach((subgroup) => {
           const subgroupItem = document.createElement("li");
-          subgroupItem.className = "st-chatu8-tree-item";
+          subgroupItem.className = "zinao-chatu-tree-item";
           const subgroupToggle = document.createElement("span");
-          subgroupToggle.className = "st-chatu8-tree-toggle";
+          subgroupToggle.className = "zinao-chatu-tree-toggle";
           subgroupToggle.textContent = "\u25B6 ";
           const subgroupName = document.createElement("span");
           subgroupName.textContent = subgroup.name;
-          subgroupName.className = "st-chatu8-tree-subgroup";
+          subgroupName.className = "zinao-chatu-tree-subgroup";
           const subgroupContent = document.createElement("div");
-          subgroupContent.className = "st-chatu8-tree-content";
+          subgroupContent.className = "zinao-chatu-tree-content";
           subgroupContent.appendChild(subgroupToggle);
           subgroupContent.appendChild(subgroupName);
           subgroupItem.appendChild(subgroupContent);
           const tagList = document.createElement("ul");
-          tagList.className = "st-chatu8-tree-taglist";
+          tagList.className = "zinao-chatu-tree-taglist";
           tagList.style.display = "none";
           const tags = tagsBySubgroupId[subgroup.id_index] || [];
           tags.forEach((tag) => {
             const tagItem = document.createElement("li");
-            tagItem.className = "st-chatu8-tree-tag";
+            tagItem.className = "zinao-chatu-tree-tag";
             tagItem.textContent = `${tag.text} (${tag.desc})`;
             tagItem.onclick = () => {
               const currentTags = VOCABULARY_SELECTED_TAGS.value.trim();
@@ -73150,30 +73156,30 @@ async function renderVocabularyList() {
     return;
   }
   const ul = document.createElement("ul");
-  ul.className = "st-chatu8-vocabulary-ul";
+  ul.className = "zinao-chatu-vocabulary-ul";
   files.forEach((file) => {
     const li = document.createElement("li");
-    li.className = "st-chatu8-vocabulary-item";
+    li.className = "zinao-chatu-vocabulary-item";
     const fileNameSpan = document.createElement("span");
     fileNameSpan.textContent = file.name;
     li.appendChild(fileNameSpan);
     const actionsDiv = document.createElement("div");
-    actionsDiv.className = "st-chatu8-vocabulary-actions";
+    actionsDiv.className = "zinao-chatu-vocabulary-actions";
     if (installedFiles.has(file.name)) {
       const tagCount = installed.find((i) => i.fileName === file.name)?.tagCount || 0;
       const installedSpan = document.createElement("span");
       installedSpan.textContent = `\u5DF2\u5B89\u88C5 (${tagCount} tags)`;
-      installedSpan.className = "st-chatu8-installed-label";
+      installedSpan.className = "zinao-chatu-installed-label";
       actionsDiv.appendChild(installedSpan);
       const uninstallBtn = document.createElement("button");
       uninstallBtn.textContent = "\u5378\u8F7D";
-      uninstallBtn.className = "st-chatu8-btn danger small";
+      uninstallBtn.className = "zinao-chatu-btn danger small";
       uninstallBtn.onclick = () => uninstallVocabulary2(file.name);
       actionsDiv.appendChild(uninstallBtn);
     } else {
       const installBtn = document.createElement("button");
       installBtn.textContent = "\u5B89\u88C5";
-      installBtn.className = "st-chatu8-btn small";
+      installBtn.className = "zinao-chatu-btn small";
       installBtn.onclick = () => installVocabulary2(file.name);
       actionsDiv.appendChild(installBtn);
     }
@@ -73280,7 +73286,7 @@ async function searchTags2() {
         const div = document.createElement("div");
         const tagName = typeof tag === "object" ? `${tag.name} (${tag.translation || "\u65E0\u7FFB\u8BD1"})` : tag;
         div.textContent = tagName;
-        div.className = "st-chatu8-search-result-item";
+        div.className = "zinao-chatu-search-result-item";
         div.onclick = () => {
           navigator.clipboard.writeText(tag.name).then(() => {
             showToast(`\u5DF2\u590D\u5236: ${tag.name}`, "success");
@@ -73372,18 +73378,18 @@ async function renderManualTags() {
       return;
     }
     const ul = document.createElement("ul");
-    ul.className = "st-chatu8-vocabulary-ul";
+    ul.className = "zinao-chatu-vocabulary-ul";
     manualTags.forEach((tag) => {
       const li = document.createElement("li");
-      li.className = "st-chatu8-vocabulary-item";
+      li.className = "zinao-chatu-vocabulary-item";
       const tagInfoSpan = document.createElement("span");
       tagInfoSpan.textContent = `${tag.name} -> ${tag.translation || "(\u65E0\u7FFB\u8BD1)"}`;
       li.appendChild(tagInfoSpan);
       const actionsDiv = document.createElement("div");
-      actionsDiv.className = "st-chatu8-vocabulary-actions";
+      actionsDiv.className = "zinao-chatu-vocabulary-actions";
       const deleteBtn = document.createElement("button");
       deleteBtn.textContent = "\u5220\u9664";
-      deleteBtn.className = "st-chatu8-btn danger small";
+      deleteBtn.className = "zinao-chatu-btn danger small";
       deleteBtn.onclick = async () => {
         if (confirm(`\u786E\u5B9A\u8981\u5220\u9664\u6807\u7B7E "${tag.name}" \u5417\uFF1F`)) {
           try {
@@ -73441,7 +73447,7 @@ async function handleManualTagsExport() {
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportData, null, 2));
     const downloadAnchorNode = document.createElement("a");
     downloadAnchorNode.setAttribute("href", dataStr);
-    downloadAnchorNode.setAttribute("download", "st-chatu8_manual_tags.json");
+    downloadAnchorNode.setAttribute("download", "zinao-chatu_manual_tags.json");
     document.body.appendChild(downloadAnchorNode);
     downloadAnchorNode.click();
     downloadAnchorNode.remove();
@@ -73613,11 +73619,11 @@ async function migratePresetIfNeeded(preset) {
 }
 var setupImageUpload = (role, index) => {
   const i = index + 1;
-  const container = document.getElementById(`st-chatu8-banana-${role}-image-container-${i}`);
-  const img = document.getElementById(`st-chatu8-banana-${role}-image-${i}`);
-  const placeholder = container.querySelector(".st-chatu8-image-placeholder");
-  const removeBtn = document.getElementById(`st-chatu8-banana-${role}-image-remove-${i}`);
-  const input = document.getElementById(`st-chatu8-banana-${role}-image-input-${i}`);
+  const container = document.getElementById(`zinao-chatu-banana-${role}-image-container-${i}`);
+  const img = document.getElementById(`zinao-chatu-banana-${role}-image-${i}`);
+  const placeholder = container.querySelector(".zinao-chatu-image-placeholder");
+  const removeBtn = document.getElementById(`zinao-chatu-banana-${role}-image-remove-${i}`);
+  const input = document.getElementById(`zinao-chatu-banana-${role}-image-input-${i}`);
   if (!container || !img || !placeholder || !removeBtn || !input) return;
   container.addEventListener("click", (event) => {
     if (event.target !== removeBtn && !removeBtn.contains(event.target)) {
@@ -73646,11 +73652,11 @@ var setupImageUpload = (role, index) => {
 };
 var updateImageUI = (role, index, imageData) => {
   const i = index + 1;
-  const img = document.getElementById(`st-chatu8-banana-${role}-image-${i}`);
-  const container = document.getElementById(`st-chatu8-banana-${role}-image-container-${i}`);
+  const img = document.getElementById(`zinao-chatu-banana-${role}-image-${i}`);
+  const container = document.getElementById(`zinao-chatu-banana-${role}-image-container-${i}`);
   if (!img || !container) return;
-  const placeholder = container.querySelector(".st-chatu8-image-placeholder");
-  const removeBtn = document.getElementById(`st-chatu8-banana-${role}-image-remove-${i}`);
+  const placeholder = container.querySelector(".zinao-chatu-image-placeholder");
+  const removeBtn = document.getElementById(`zinao-chatu-banana-${role}-image-remove-${i}`);
   if (imageData) {
     img.src = imageData;
     img.style.display = "block";
@@ -73665,26 +73671,26 @@ var updateImageUI = (role, index, imageData) => {
 };
 function initBananaUI(settingsModal) {
   const getBananaSettings = () => extension_settings67[extensionName].banana;
-  const presetSelect = document.getElementById("st-chatu8-banana-conversation-preset-id");
-  const saveButton = document.getElementById("st-chatu8-banana-conversation-save");
-  const saveAsButton = document.getElementById("st-chatu8-banana-conversation-save-as");
-  const newButton = document.getElementById("st-chatu8-banana-conversation-new");
-  const renameButton = document.getElementById("st-chatu8-banana-conversation-rename");
-  const deleteButton = document.getElementById("st-chatu8-banana-conversation-delete");
-  const importButton = document.getElementById("st-chatu8-banana-conversation-import");
-  const exportButton = document.getElementById("st-chatu8-banana-conversation-export");
-  const fixedPromptInput = document.getElementById("st-chatu8-banana-fixed-prompt");
-  const postfixPromptInput = document.getElementById("st-chatu8-banana-postfix-prompt");
-  const modelSelect2 = document.getElementById("st-chatu8-banana-model-select");
-  const editModelSelect = document.getElementById("st-chatu8-banana-edit-model-select");
-  const multimodalSection = document.getElementById("st-chatu8-banana-multimodal-section");
-  const apiUrlInput2 = document.getElementById("st-chatu8-banana-api-url");
-  const apiKeyInput2 = document.getElementById("st-chatu8-banana-api-key");
-  const aspectRatioSelect = document.getElementById("st-chatu8-banana-aspect-ratio");
-  const useGrokFormatCheckbox = document.getElementById("st-chatu8-banana-use-grok-format");
-  const editPresetSelect = document.getElementById("st-chatu8-banana-edit-preset");
-  const videoModelSelect = document.getElementById("st-chatu8-banana-video-model-select");
-  const videoPresetSelect = document.getElementById("st-chatu8-banana-video-preset");
+  const presetSelect = document.getElementById("zinao-chatu-banana-conversation-preset-id");
+  const saveButton = document.getElementById("zinao-chatu-banana-conversation-save");
+  const saveAsButton = document.getElementById("zinao-chatu-banana-conversation-save-as");
+  const newButton = document.getElementById("zinao-chatu-banana-conversation-new");
+  const renameButton = document.getElementById("zinao-chatu-banana-conversation-rename");
+  const deleteButton = document.getElementById("zinao-chatu-banana-conversation-delete");
+  const importButton = document.getElementById("zinao-chatu-banana-conversation-import");
+  const exportButton = document.getElementById("zinao-chatu-banana-conversation-export");
+  const fixedPromptInput = document.getElementById("zinao-chatu-banana-fixed-prompt");
+  const postfixPromptInput = document.getElementById("zinao-chatu-banana-postfix-prompt");
+  const modelSelect2 = document.getElementById("zinao-chatu-banana-model-select");
+  const editModelSelect = document.getElementById("zinao-chatu-banana-edit-model-select");
+  const multimodalSection = document.getElementById("zinao-chatu-banana-multimodal-section");
+  const apiUrlInput2 = document.getElementById("zinao-chatu-banana-api-url");
+  const apiKeyInput2 = document.getElementById("zinao-chatu-banana-api-key");
+  const aspectRatioSelect = document.getElementById("zinao-chatu-banana-aspect-ratio");
+  const useGrokFormatCheckbox = document.getElementById("zinao-chatu-banana-use-grok-format");
+  const editPresetSelect = document.getElementById("zinao-chatu-banana-edit-preset");
+  const videoModelSelect = document.getElementById("zinao-chatu-banana-video-model-select");
+  const videoPresetSelect = document.getElementById("zinao-chatu-banana-video-preset");
   const populateEditPresetDropdown = () => {
     const bananaSettings2 = getBananaSettings();
     const presets = bananaSettings2.conversationPresets || {};
@@ -73747,8 +73753,8 @@ function initBananaUI(settingsModal) {
     fixedPromptInput.value = preset.fixedPrompt || "";
     postfixPromptInput.value = preset.postfixPrompt || "";
     for (let i = 0; i < 3; i++) {
-      const userTextEl = document.getElementById(`st-chatu8-banana-user-text-${i + 1}`);
-      const modelTextEl = document.getElementById(`st-chatu8-banana-model-text-${i + 1}`);
+      const userTextEl = document.getElementById(`zinao-chatu-banana-user-text-${i + 1}`);
+      const modelTextEl = document.getElementById(`zinao-chatu-banana-model-text-${i + 1}`);
       const turn = preset.conversation?.[i] || { user: { text: "" }, model: { text: "" } };
       if (userTextEl) userTextEl.value = turn.user?.text || "";
       if (modelTextEl) modelTextEl.value = turn.model?.text || "";
@@ -73765,8 +73771,8 @@ function initBananaUI(settingsModal) {
       const isImagen = selectedModel.startsWith("imagen");
       multimodalSection.style.display = "block";
       const titleElement = multimodalSection.querySelector("h3");
-      const conversationGroups = multimodalSection.querySelectorAll(".st-chatu8-banana-conversation-group");
-      const presetLabel = document.querySelector('label[for="st-chatu8-banana-conversation-preset-id"]');
+      const conversationGroups = multimodalSection.querySelectorAll(".zinao-chatu-banana-conversation-group");
+      const presetLabel = document.querySelector('label[for="zinao-chatu-banana-conversation-preset-id"]');
       if (isImagen) {
         if (titleElement) titleElement.textContent = "\u63D0\u793A\u8BCD\u9884\u8BBE (Imagen)";
         if (presetLabel) presetLabel.textContent = "\u63D0\u793A\u8BCD\u9884\u8BBE";
@@ -73788,8 +73794,8 @@ function initBananaUI(settingsModal) {
     const existingPreset = bananaSettings2.conversationPresets[presetId];
     const conversation = [];
     for (let i = 0; i < 3; i++) {
-      const userImgSrc = document.getElementById(`st-chatu8-banana-user-image-${i + 1}`).src;
-      const modelImgSrc = document.getElementById(`st-chatu8-banana-model-image-${i + 1}`).src;
+      const userImgSrc = document.getElementById(`zinao-chatu-banana-user-image-${i + 1}`).src;
+      const modelImgSrc = document.getElementById(`zinao-chatu-banana-model-image-${i + 1}`).src;
       const existingTurn = existingPreset?.conversation?.[i];
       const existingUserImageId = existingTurn?.user?.imageId || "";
       const existingModelImageId = existingTurn?.model?.imageId || "";
@@ -73797,11 +73803,11 @@ function initBananaUI(settingsModal) {
       const modelImageId = await saveImageAndGetId(modelImgSrc, existingModelImageId);
       conversation.push({
         user: {
-          text: document.getElementById(`st-chatu8-banana-user-text-${i + 1}`).value,
+          text: document.getElementById(`zinao-chatu-banana-user-text-${i + 1}`).value,
           imageId: userImageId
         },
         model: {
-          text: document.getElementById(`st-chatu8-banana-model-text-${i + 1}`).value,
+          text: document.getElementById(`zinao-chatu-banana-model-text-${i + 1}`).value,
           imageId: modelImageId
         }
       });
@@ -73831,17 +73837,17 @@ function initBananaUI(settingsModal) {
     }
     const conversation = [];
     for (let i = 0; i < 3; i++) {
-      const userImgSrc = document.getElementById(`st-chatu8-banana-user-image-${i + 1}`).src;
-      const modelImgSrc = document.getElementById(`st-chatu8-banana-model-image-${i + 1}`).src;
+      const userImgSrc = document.getElementById(`zinao-chatu-banana-user-image-${i + 1}`).src;
+      const modelImgSrc = document.getElementById(`zinao-chatu-banana-model-image-${i + 1}`).src;
       const userImageId = await saveImageAndGetId(userImgSrc);
       const modelImageId = await saveImageAndGetId(modelImgSrc);
       conversation.push({
         user: {
-          text: document.getElementById(`st-chatu8-banana-user-text-${i + 1}`).value,
+          text: document.getElementById(`zinao-chatu-banana-user-text-${i + 1}`).value,
           imageId: userImageId
         },
         model: {
-          text: document.getElementById(`st-chatu8-banana-model-text-${i + 1}`).value,
+          text: document.getElementById(`zinao-chatu-banana-model-text-${i + 1}`).value,
           imageId: modelImageId
         }
       });
@@ -74045,7 +74051,7 @@ function initBananaUI(settingsModal) {
     getBananaSettings().apiKey = apiKeyInput2.value;
     saveSettingsDebounced43();
   });
-  const apiKeyToggle = document.getElementById("st-chatu8-banana-api-key-toggle");
+  const apiKeyToggle = document.getElementById("zinao-chatu-banana-api-key-toggle");
   if (apiKeyToggle) {
     apiKeyToggle.addEventListener("click", () => {
       const icon = apiKeyToggle.querySelector("i");
@@ -74099,7 +74105,7 @@ function initBananaUI(settingsModal) {
       toastr.success(`\u89C6\u9891\u9884\u8BBE\u5DF2\u8BBE\u7F6E\u4E3A: "${videoPresetSelect.value}"`);
     });
   }
-  const fetchModelsButton2 = document.getElementById("st-chatu8-banana-fetch-models");
+  const fetchModelsButton2 = document.getElementById("zinao-chatu-banana-fetch-models");
   if (fetchModelsButton2) {
     fetchModelsButton2.addEventListener("click", async () => {
       const bananaSettings2 = getBananaSettings();
@@ -74279,16 +74285,16 @@ function initBananaUI(settingsModal) {
 }
 function initBananaPromptReplace() {
   const getBananaSettings = () => extension_settings67[extensionName].banana;
-  const presetSelect = document.getElementById("st-chatu8-banana-prompt-replace-id");
-  const textarea = document.getElementById("st-chatu8-banana-prompt-replace-text");
-  const saveBtn = document.getElementById("st-chatu8-banana-prompt-replace-save");
-  const saveAsBtn = document.getElementById("st-chatu8-banana-prompt-replace-save-as");
-  const newBtn = document.getElementById("st-chatu8-banana-prompt-replace-new");
-  const renameBtn = document.getElementById("st-chatu8-banana-prompt-replace-rename");
-  const deleteBtn = document.getElementById("st-chatu8-banana-prompt-replace-delete");
-  const importBtn = document.getElementById("st-chatu8-banana-prompt-replace-import");
-  const exportBtn = document.getElementById("st-chatu8-banana-prompt-replace-export");
-  const unsavedWarning = textarea?.closest(".st-chatu8-field-col")?.querySelector(".st-chatu8-unsaved-warning");
+  const presetSelect = document.getElementById("zinao-chatu-banana-prompt-replace-id");
+  const textarea = document.getElementById("zinao-chatu-banana-prompt-replace-text");
+  const saveBtn = document.getElementById("zinao-chatu-banana-prompt-replace-save");
+  const saveAsBtn = document.getElementById("zinao-chatu-banana-prompt-replace-save-as");
+  const newBtn = document.getElementById("zinao-chatu-banana-prompt-replace-new");
+  const renameBtn = document.getElementById("zinao-chatu-banana-prompt-replace-rename");
+  const deleteBtn = document.getElementById("zinao-chatu-banana-prompt-replace-delete");
+  const importBtn = document.getElementById("zinao-chatu-banana-prompt-replace-import");
+  const exportBtn = document.getElementById("zinao-chatu-banana-prompt-replace-export");
+  const unsavedWarning = textarea?.closest(".zinao-chatu-field-col")?.querySelector(".zinao-chatu-unsaved-warning");
   if (!presetSelect || !textarea) {
     console.warn("[BananaUI] \u66FF\u6362\u8BCD\u8BBE\u7F6E\u5143\u7D20\u672A\u627E\u5230");
     return;
@@ -75269,7 +75275,7 @@ function collectElementInfo(element, label) {
     \u6587\u672C\u9884\u89C8: textPreview,
     \u5B50\u5143\u7D20\u6570\u91CF: element.children?.length || 0,
     \u542B\u56FE\u7247\u6570\u91CF: element.querySelectorAll?.("img")?.length || 0,
-    \u542Bst_chatu8\u56FE\u7247: element.querySelectorAll?.(".st-chatu8-image-container, [data-st-chatu8]")?.length || 0
+    \u542Bzinao_chatu\u56FE\u7247: element.querySelectorAll?.(".zinao-chatu-image-container, [data-zinao-chatu]")?.length || 0
   };
 }
 function logElementDetails(prefix, element, label, extra) {
@@ -75292,7 +75298,7 @@ function logElementDetails(prefix, element, label, extra) {
     \u6587\u672C\u957F\u5EA6: info.\u6587\u672C\u957F\u5EA6,
     \u5B50\u5143\u7D20\u6570\u91CF: info.\u5B50\u5143\u7D20\u6570\u91CF,
     \u542B\u56FE\u7247\u6570\u91CF: info.\u542B\u56FE\u7247\u6570\u91CF,
-    \u542Bst_chatu8\u56FE\u7247: info.\u542Bst_chatu8\u56FE\u7247,
+    \u542Bzinao_chatu\u56FE\u7247: info.\u542Bzinao_chatu\u56FE\u7247,
     \u6587\u672C\u9884\u89C8: info.\u6587\u672C\u9884\u89C8
   });
   if (extra) {
@@ -75362,13 +75368,13 @@ function closeActionBubble() {
 function showClickActionBubble(point, targetElement) {
   closeActionBubble();
   const overlay2 = document.createElement("div");
-  overlay2.className = "st-chatu8-click-trigger-overlay";
+  overlay2.className = "zinao-chatu-click-trigger-overlay";
   currentOverlay = overlay2;
   const bubble = document.createElement("div");
-  bubble.className = "st-chatu8-click-trigger-bubble";
+  bubble.className = "zinao-chatu-click-trigger-bubble";
   currentBubble = bubble;
   const title = document.createElement("div");
-  title.className = "st-chatu8-click-trigger-title";
+  title.className = "zinao-chatu-click-trigger-title";
   title.textContent = "\u9009\u62E9\u64CD\u4F5C";
   bubble.appendChild(title);
   const buttons = [
@@ -75466,7 +75472,7 @@ function showClickActionBubble(point, targetElement) {
   ];
   buttons.forEach((btnInfo) => {
     const button = document.createElement("button");
-    button.className = "st-chatu8-click-trigger-button";
+    button.className = "zinao-chatu-click-trigger-button";
     if (btnInfo.isCancel) {
       button.classList.add("cancel");
     }
@@ -75930,7 +75936,7 @@ function executeRegexWithWarning(regexFn, regexDesc = "\u672A\u77E5\u6B63\u5219"
     const result = regexFn();
     const elapsed = performance.now() - startTime;
     if (elapsed > REGEX_TIMEOUT_MS) {
-      console.warn(`[st-chatu8] \u6B63\u5219\u6267\u884C\u65F6\u95F4\u8FC7\u957F (${elapsed.toFixed(2)}ms): ${regexDesc}`);
+      console.warn(`[zinao-chatu] \u6B63\u5219\u6267\u884C\u65F6\u95F4\u8FC7\u957F (${elapsed.toFixed(2)}ms): ${regexDesc}`);
       debugLog("regex.timeout", `\u6B63\u5219\u6267\u884C\u6162: ${regexDesc}`, { \u8017\u65F6: elapsed.toFixed(2) + "ms" });
     }
     return result;
@@ -76035,36 +76041,36 @@ function validateRegexEntry(entry) {
 }
 function getRegexEntryEditModalHTML() {
   return `
-        <div class="st-chatu8-entry-edit-modal-backdrop" id="ch-regex-entry-edit-modal">
-            <div class="st-chatu8-entry-edit-modal">
-                <div class="st-chatu8-entry-edit-modal-header">
+        <div class="zinao-chatu-entry-edit-modal-backdrop" id="ch-regex-entry-edit-modal">
+            <div class="zinao-chatu-entry-edit-modal">
+                <div class="zinao-chatu-entry-edit-modal-header">
                     <h4>\u7F16\u8F91\u6B63\u5219\u6761\u76EE</h4>
-                    <span class="st-chatu8-entry-edit-modal-close">&times;</span>
+                    <span class="zinao-chatu-entry-edit-modal-close">&times;</span>
                 </div>
-                <div class="st-chatu8-entry-edit-modal-body">
-                    <div class="st-chatu8-modal-field">
+                <div class="zinao-chatu-entry-edit-modal-body">
+                    <div class="zinao-chatu-modal-field">
                         <label>\u811A\u672C\u540D\u79F0</label>
-                        <input type="text" id="ch-regex-modal-script-name" class="st-chatu8-text-input" placeholder="\u811A\u672C\u540D\u79F0" />
+                        <input type="text" id="ch-regex-modal-script-name" class="zinao-chatu-text-input" placeholder="\u811A\u672C\u540D\u79F0" />
                     </div>
-                    <div class="st-chatu8-modal-field st-chatu8-modal-toggle-field">
+                    <div class="zinao-chatu-modal-field zinao-chatu-modal-toggle-field">
                         <label>\u542F\u7528</label>
-                        <div class="st-chatu8-toggle">
+                        <div class="zinao-chatu-toggle">
                             <input id="ch-regex-modal-enabled" type="checkbox" checked />
-                            <span class="st-chatu8-slider"></span>
+                            <span class="zinao-chatu-slider"></span>
                         </div>
                     </div>
-                    <div class="st-chatu8-modal-field">
+                    <div class="zinao-chatu-modal-field">
                         <label>\u67E5\u627E\u6B63\u5219 (findRegex)</label>
-                        <textarea id="ch-regex-modal-find-regex" class="st-chatu8-textarea" rows="4" placeholder="\u8F93\u5165\u6B63\u5219\u8868\u8FBE\u5F0F..."></textarea>
+                        <textarea id="ch-regex-modal-find-regex" class="zinao-chatu-textarea" rows="4" placeholder="\u8F93\u5165\u6B63\u5219\u8868\u8FBE\u5F0F..."></textarea>
                     </div>
-                    <div class="st-chatu8-modal-field">
+                    <div class="zinao-chatu-modal-field">
                         <label>\u66FF\u6362\u5B57\u7B26\u4E32 (replaceString)</label>
-                        <textarea id="ch-regex-modal-replace-string" class="st-chatu8-textarea" rows="4" placeholder="\u8F93\u5165\u66FF\u6362\u5B57\u7B26\u4E32..."></textarea>
+                        <textarea id="ch-regex-modal-replace-string" class="zinao-chatu-textarea" rows="4" placeholder="\u8F93\u5165\u66FF\u6362\u5B57\u7B26\u4E32..."></textarea>
                     </div>
                 </div>
-                <div class="st-chatu8-entry-edit-modal-footer">
-                    <button class="st-chatu8-btn st-chatu8-modal-cancel-btn">\u53D6\u6D88</button>
-                    <button class="st-chatu8-btn st-chatu8-btn-primary st-chatu8-modal-save-btn">\u4FDD\u5B58</button>
+                <div class="zinao-chatu-entry-edit-modal-footer">
+                    <button class="zinao-chatu-btn zinao-chatu-modal-cancel-btn">\u53D6\u6D88</button>
+                    <button class="zinao-chatu-btn zinao-chatu-btn-primary zinao-chatu-modal-save-btn">\u4FDD\u5B58</button>
                 </div>
             </div>
         </div>
@@ -76080,16 +76086,16 @@ function renderRegexEntries(entriesData = []) {
   const containerInDocument = regexEntriesContainer && $.contains(document, regexEntriesContainer[0]);
   if (!containerInDocument) {
     regexEntriesContainer = $("#ch-regex-entries-container");
-    console.log("[st-chatu8] renderRegexEntries: \u5237\u65B0\u5BB9\u5668\u5F15\u7528");
+    console.log("[zinao-chatu] renderRegexEntries: \u5237\u65B0\u5BB9\u5668\u5F15\u7528");
   }
   if (!regexEntriesContainer || regexEntriesContainer.length === 0) {
-    console.warn("[st-chatu8] renderRegexEntries: \u5BB9\u5668\u4E0D\u5B58\u5728\uFF0C\u65E0\u6CD5\u6E32\u67D3");
+    console.warn("[zinao-chatu] renderRegexEntries: \u5BB9\u5668\u4E0D\u5B58\u5728\uFF0C\u65E0\u6CD5\u6E32\u67D3");
     return;
   }
   regexEntriesContainer.empty();
   if (entriesData.length === 0) {
     regexEntriesContainer.html(`
-            <div class="st-chatu8-entries-empty">
+            <div class="zinao-chatu-entries-empty">
                 <i class="fa-solid fa-inbox"></i>
                 <p>\u6682\u65E0\u6B63\u5219\u6761\u76EE\uFF0C\u70B9\u51FB\u4E0A\u65B9\u6309\u94AE\u6DFB\u52A0</p>
             </div>
@@ -76099,7 +76105,7 @@ function renderRegexEntries(entriesData = []) {
   entriesData.forEach((entry, index) => {
     addRegexEntryDOM(entry, index);
   });
-  console.log("[st-chatu8] \u6E32\u67D3\u6B63\u5219\u6761\u76EE:", {
+  console.log("[zinao-chatu] \u6E32\u67D3\u6B63\u5219\u6761\u76EE:", {
     \u5BB9\u5668ID: regexEntriesContainer.attr("id"),
     \u6761\u76EE\u6570: entriesData.length,
     \u6761\u76EE\u540D\u79F0: entriesData.map((e) => e.scriptName || "(\u65E0\u540D\u79F0)")
@@ -76109,10 +76115,10 @@ function addRegexEntryDOM(entry, index = -1) {
   const containerInDocument = regexEntriesContainer && $.contains(document, regexEntriesContainer[0]);
   if (!containerInDocument) {
     regexEntriesContainer = $("#ch-regex-entries-container");
-    console.log("[st-chatu8] addRegexEntryDOM: \u5237\u65B0\u5BB9\u5668\u5F15\u7528");
+    console.log("[zinao-chatu] addRegexEntryDOM: \u5237\u65B0\u5BB9\u5668\u5F15\u7528");
   }
   if (!regexEntriesContainer || regexEntriesContainer.length === 0) {
-    console.warn("[st-chatu8] addRegexEntryDOM: \u5BB9\u5668\u4E0D\u5B58\u5728\uFF0C\u65E0\u6CD5\u6DFB\u52A0\u6761\u76EE");
+    console.warn("[zinao-chatu] addRegexEntryDOM: \u5BB9\u5668\u4E0D\u5B58\u5728\uFF0C\u65E0\u6CD5\u6DFB\u52A0\u6761\u76EE");
     return false;
   }
   const entryId = entry.id || generateRegexEntryId();
@@ -76123,36 +76129,36 @@ function addRegexEntryDOM(entry, index = -1) {
   const disabledClass = entryDisabled ? "disabled" : "";
   const regexPreview = findRegex.length > 40 ? findRegex.substring(0, 40) + "..." : findRegex || "(\u7A7A)";
   const hasLongReplaceString = replaceString.length > 100;
-  const warningHtml = hasLongReplaceString ? `<span class="st-chatu8-entry-warning" title="\u66FF\u6362\u5B57\u7B26\u4E32\u8D85\u8FC7100\u5B57\u7B26 (${replaceString.length}\u5B57\u7B26)"><i class="fa-solid fa-triangle-exclamation"></i></span>` : "";
+  const warningHtml = hasLongReplaceString ? `<span class="zinao-chatu-entry-warning" title="\u66FF\u6362\u5B57\u7B26\u4E32\u8D85\u8FC7100\u5B57\u7B26 (${replaceString.length}\u5B57\u7B26)"><i class="fa-solid fa-triangle-exclamation"></i></span>` : "";
   const dangerResult = detectDangerousRegex(findRegex);
   const dangerHtml = generateDangerousRegexWarningHTML(dangerResult.warnings);
   const entryElement = $(`
-        <div class="st-chatu8-preset-entry st-chatu8-preset-entry-collapsed ${disabledClass}" 
+        <div class="zinao-chatu-preset-entry zinao-chatu-preset-entry-collapsed ${disabledClass}" 
              data-entry-id="${entryId}" 
              data-find-regex="${escapeHtmlForRegex(findRegex)}"
              data-replace-string="${escapeHtmlForRegex(replaceString)}"
              draggable="true">
-            <div class="st-chatu8-entry-header">
-                <span class="st-chatu8-entry-drag-handle" title="\u62D6\u62FD\u6392\u5E8F">
+            <div class="zinao-chatu-entry-header">
+                <span class="zinao-chatu-entry-drag-handle" title="\u62D6\u62FD\u6392\u5E8F">
                     <i class="fa-solid fa-grip-vertical"></i>
                 </span>
-                <span class="st-chatu8-entry-role-badge" data-role="regex">REG</span>
-                <input type="text" class="st-chatu8-entry-name" value="${escapeHtmlForRegex(scriptName)}" placeholder="\u811A\u672C\u540D\u79F0" readonly />
+                <span class="zinao-chatu-entry-role-badge" data-role="regex">REG</span>
+                <input type="text" class="zinao-chatu-entry-name" value="${escapeHtmlForRegex(scriptName)}" placeholder="\u811A\u672C\u540D\u79F0" readonly />
                 ${dangerHtml}
                 ${warningHtml}
-                <span class="st-chatu8-entry-preview">${escapeHtmlForRegex(regexPreview)}</span>
-                <div class="st-chatu8-entry-actions">
-                    <div class="st-chatu8-entry-toggle" title="\u542F\u7528/\u7981\u7528">
+                <span class="zinao-chatu-entry-preview">${escapeHtmlForRegex(regexPreview)}</span>
+                <div class="zinao-chatu-entry-actions">
+                    <div class="zinao-chatu-entry-toggle" title="\u542F\u7528/\u7981\u7528">
                         <input type="checkbox" ${!entryDisabled ? "checked" : ""} />
-                        <span class="st-chatu8-slider"></span>
+                        <span class="zinao-chatu-slider"></span>
                     </div>
-                    <button class="st-chatu8-icon-btn st-chatu8-entry-edit" title="\u7F16\u8F91">
+                    <button class="zinao-chatu-icon-btn zinao-chatu-entry-edit" title="\u7F16\u8F91">
                         <i class="fa-solid fa-pen"></i>
                     </button>
-                    <button class="st-chatu8-icon-btn st-chatu8-entry-export" title="\u5BFC\u51FA">
+                    <button class="zinao-chatu-icon-btn zinao-chatu-entry-export" title="\u5BFC\u51FA">
                         <i class="fa-solid fa-file-export"></i>
                     </button>
-                    <button class="st-chatu8-icon-btn danger st-chatu8-entry-delete" title="\u5220\u9664\u6761\u76EE">
+                    <button class="zinao-chatu-icon-btn danger zinao-chatu-entry-delete" title="\u5220\u9664\u6761\u76EE">
                         <i class="fa-solid fa-trash"></i>
                     </button>
                 </div>
@@ -76168,12 +76174,12 @@ function showRegexEntryEditModal($entryElement) {
   if (!$modal.length) {
     $("body").append(getRegexEntryEditModalHTML());
     $modal = $("#ch-regex-entry-edit-modal");
-    $modal.find(".st-chatu8-entry-edit-modal-close").on("click", closeRegexEntryEditModal);
-    $modal.find(".st-chatu8-modal-cancel-btn").on("click", closeRegexEntryEditModal);
-    $modal.find(".st-chatu8-modal-save-btn").on("click", saveRegexEntryFromModal);
+    $modal.find(".zinao-chatu-entry-edit-modal-close").on("click", closeRegexEntryEditModal);
+    $modal.find(".zinao-chatu-modal-cancel-btn").on("click", closeRegexEntryEditModal);
+    $modal.find(".zinao-chatu-modal-save-btn").on("click", saveRegexEntryFromModal);
   }
   const entryData = $entryElement.data("entryData") || {};
-  $modal.find("#ch-regex-modal-script-name").val(entryData.scriptName || $entryElement.find(".st-chatu8-entry-name").val());
+  $modal.find("#ch-regex-modal-script-name").val(entryData.scriptName || $entryElement.find(".zinao-chatu-entry-name").val());
   $modal.find("#ch-regex-modal-enabled").prop("checked", !$entryElement.hasClass("disabled"));
   $modal.find("#ch-regex-modal-find-regex").val(entryData.findRegex || "");
   $modal.find("#ch-regex-modal-replace-string").val(entryData.replaceString || "");
@@ -76200,32 +76206,32 @@ function saveRegexEntryFromModal() {
   entryData.disabled = !enabled;
   entryData.findRegex = findRegex;
   entryData.replaceString = replaceString;
-  $entry.find(".st-chatu8-entry-name").val(scriptName);
+  $entry.find(".zinao-chatu-entry-name").val(scriptName);
   $entry.attr("data-find-regex", findRegex);
   $entry.attr("data-replace-string", replaceString);
-  $entry.find(".st-chatu8-entry-toggle input").prop("checked", enabled);
+  $entry.find(".zinao-chatu-entry-toggle input").prop("checked", enabled);
   if (enabled) {
     $entry.removeClass("disabled");
   } else {
     $entry.addClass("disabled");
   }
   const regexPreview = findRegex.length > 40 ? findRegex.substring(0, 40) + "..." : findRegex || "(\u7A7A)";
-  $entry.find(".st-chatu8-entry-preview").text(regexPreview);
+  $entry.find(".zinao-chatu-entry-preview").text(regexPreview);
   const hasLongReplaceString = replaceString.length > 100;
-  $entry.find(".st-chatu8-entry-warning").remove();
-  $entry.find(".st-chatu8-entry-danger-warning").remove();
+  $entry.find(".zinao-chatu-entry-warning").remove();
+  $entry.find(".zinao-chatu-entry-danger-warning").remove();
   const dangerResult = detectDangerousRegex(findRegex);
   if (dangerResult.isDangerous) {
     const dangerHtml = generateDangerousRegexWarningHTML(dangerResult.warnings);
-    $entry.find(".st-chatu8-entry-name").after(dangerHtml);
+    $entry.find(".zinao-chatu-entry-name").after(dangerHtml);
   }
   if (hasLongReplaceString) {
-    const warningHtml = `<span class="st-chatu8-entry-warning" title="\u66FF\u6362\u5B57\u7B26\u4E32\u8D85\u8FC7100\u5B57\u7B26 (${replaceString.length}\u5B57\u7B26)"><i class="fa-solid fa-triangle-exclamation"></i></span>`;
-    const $dangerWarning = $entry.find(".st-chatu8-entry-danger-warning");
+    const warningHtml = `<span class="zinao-chatu-entry-warning" title="\u66FF\u6362\u5B57\u7B26\u4E32\u8D85\u8FC7100\u5B57\u7B26 (${replaceString.length}\u5B57\u7B26)"><i class="fa-solid fa-triangle-exclamation"></i></span>`;
+    const $dangerWarning = $entry.find(".zinao-chatu-entry-danger-warning");
     if ($dangerWarning.length) {
       $dangerWarning.after(warningHtml);
     } else {
-      $entry.find(".st-chatu8-entry-name").after(warningHtml);
+      $entry.find(".zinao-chatu-entry-name").after(warningHtml);
     }
   }
   $entry.data("entryData", entryData);
@@ -76250,7 +76256,7 @@ function addNewRegexEntry() {
     regexEntriesContainer = $("#ch-regex-entries-container");
   }
   if (regexEntriesContainer && regexEntriesContainer.length > 0) {
-    regexEntriesContainer.find(".st-chatu8-entries-empty").remove();
+    regexEntriesContainer.find(".zinao-chatu-entries-empty").remove();
   }
   const newEntry = createNewRegexEntry();
   addRegexEntryDOM(newEntry);
@@ -76258,7 +76264,7 @@ function addNewRegexEntry() {
     const container = regexEntriesContainer[0];
     container.scrollTop = container.scrollHeight;
   }
-  const $newEntry = regexEntriesContainer.find(".st-chatu8-preset-entry").last();
+  const $newEntry = regexEntriesContainer.find(".zinao-chatu-preset-entry").last();
   showRegexEntryEditModal($newEntry);
 }
 function deleteRegexEntry($entryElement) {
@@ -76271,10 +76277,10 @@ function deleteRegexEntry($entryElement) {
   if (!regexEntriesContainer || regexEntriesContainer.length === 0) {
     return;
   }
-  const $entries = regexEntriesContainer.find(".st-chatu8-preset-entry");
+  const $entries = regexEntriesContainer.find(".zinao-chatu-preset-entry");
   if ($entries.length === 0) {
     regexEntriesContainer.html(`
-            <div class="st-chatu8-entries-empty">
+            <div class="zinao-chatu-entries-empty">
                 <i class="fa-solid fa-inbox"></i>
                 <p>\u6682\u65E0\u6B63\u5219\u6761\u76EE\uFF0C\u70B9\u51FB\u4E0A\u65B9\u6309\u94AE\u6DFB\u52A0</p>
             </div>
@@ -76331,7 +76337,7 @@ function importRegexEntries() {
             const data = JSON.parse(e.target.result);
             const entry = parseSTRegexFormat(data);
             if (entry && validateRegexEntry(entry)) {
-              regexEntriesContainer.find(".st-chatu8-entries-empty").remove();
+              regexEntriesContainer.find(".zinao-chatu-entries-empty").remove();
               addRegexEntryDOM(entry);
               importedCount++;
             }
@@ -76398,7 +76404,7 @@ async function importRegexEntriesFromEngine() {
     }
     const selectedScripts = await showRegexEntrySelectionDialog(scriptsByType);
     if (selectedScripts.length > 0) {
-      regexEntriesContainer.find(".st-chatu8-entries-empty").remove();
+      regexEntriesContainer.find(".zinao-chatu-entries-empty").remove();
       selectedScripts.forEach((script) => {
         const entry = parseSTRegexFormat(script);
         if (entry) {
@@ -76417,28 +76423,28 @@ async function importRegexEntriesFromEngine() {
 }
 function getRegexEntryImportModalHTML(listHtml) {
   return `
-        <div class="st-chatu8-entry-edit-modal-backdrop" id="ch-regex-entry-import-modal">
-            <div class="st-chatu8-entry-edit-modal">
-                <div class="st-chatu8-entry-edit-modal-header">
+        <div class="zinao-chatu-entry-edit-modal-backdrop" id="ch-regex-entry-import-modal">
+            <div class="zinao-chatu-entry-edit-modal">
+                <div class="zinao-chatu-entry-edit-modal-header">
                     <h4>\u9009\u62E9\u8981\u5BFC\u5165\u7684\u6B63\u5219\u6761\u76EE</h4>
-                    <span class="st-chatu8-entry-edit-modal-close">&times;</span>
+                    <span class="zinao-chatu-entry-edit-modal-close">&times;</span>
                 </div>
-                <div class="st-chatu8-entry-edit-modal-body">
-                    <div class="st-chatu8-modal-field st-chatu8-import-toolbar">
-                        <button type="button" class="st-chatu8-btn" id="st-regex-entry-select-all">
+                <div class="zinao-chatu-entry-edit-modal-body">
+                    <div class="zinao-chatu-modal-field zinao-chatu-import-toolbar">
+                        <button type="button" class="zinao-chatu-btn" id="st-regex-entry-select-all">
                             <i class="fa-solid fa-check-double"></i> \u5168\u9009
                         </button>
-                        <button type="button" class="st-chatu8-btn" id="st-regex-entry-deselect-all">
+                        <button type="button" class="zinao-chatu-btn" id="st-regex-entry-deselect-all">
                             <i class="fa-solid fa-xmark"></i> \u53D6\u6D88\u5168\u9009
                         </button>
                     </div>
-                    <div class="st-chatu8-modal-field st-chatu8-import-list">
+                    <div class="zinao-chatu-modal-field zinao-chatu-import-list">
                         ${listHtml}
                     </div>
                 </div>
-                <div class="st-chatu8-entry-edit-modal-footer">
-                    <button class="st-chatu8-btn st-chatu8-modal-cancel-btn">\u53D6\u6D88</button>
-                    <button class="st-chatu8-btn st-chatu8-btn-primary st-chatu8-modal-save-btn">
+                <div class="zinao-chatu-entry-edit-modal-footer">
+                    <button class="zinao-chatu-btn zinao-chatu-modal-cancel-btn">\u53D6\u6D88</button>
+                    <button class="zinao-chatu-btn zinao-chatu-btn-primary zinao-chatu-modal-save-btn">
                         <i class="fa-solid fa-file-import"></i> \u5BFC\u5165\u9009\u4E2D
                     </button>
                 </div>
@@ -76457,18 +76463,18 @@ function showRegexEntrySelectionDialog(scriptsByType) {
     for (const [type, scripts] of Object.entries(scriptsByType)) {
       if (scripts.length === 0) continue;
       listHtml += `
-                <div class="st-chatu8-import-type-group">
-                    <h5 class="st-chatu8-import-type-header">${typeLabels[type] || type} <span class="st-chatu8-import-count">(${scripts.length})</span></h5>
+                <div class="zinao-chatu-import-type-group">
+                    <h5 class="zinao-chatu-import-type-header">${typeLabels[type] || type} <span class="zinao-chatu-import-count">(${scripts.length})</span></h5>
             `;
       scripts.forEach((script, index) => {
         const scriptId = `st-regex-entry-${type}-${index}`;
         const scriptName = script.scriptName || `\u672A\u547D\u540D\u6B63\u5219 ${index + 1}`;
         listHtml += `
-                    <div class="st-chatu8-import-item">
-                        <label class="st-chatu8-import-label">
-                            <input type="checkbox" class="st-chatu8-import-checkbox" id="${scriptId}" 
+                    <div class="zinao-chatu-import-item">
+                        <label class="zinao-chatu-import-label">
+                            <input type="checkbox" class="zinao-chatu-import-checkbox" id="${scriptId}" 
                                    data-type="${type}" data-index="${index}" checked>
-                            <span class="st-chatu8-import-name">${escapeHtmlForRegex(scriptName)}</span>
+                            <span class="zinao-chatu-import-name">${escapeHtmlForRegex(scriptName)}</span>
                         </label>
                     </div>
                 `;
@@ -76479,14 +76485,14 @@ function showRegexEntrySelectionDialog(scriptsByType) {
     $("body").append(getRegexEntryImportModalHTML(listHtml));
     const $modal = $("#ch-regex-entry-import-modal");
     $modal.find("#st-regex-entry-select-all").on("click", () => {
-      $modal.find(".st-chatu8-import-checkbox").prop("checked", true);
+      $modal.find(".zinao-chatu-import-checkbox").prop("checked", true);
     });
     $modal.find("#st-regex-entry-deselect-all").on("click", () => {
-      $modal.find(".st-chatu8-import-checkbox").prop("checked", false);
+      $modal.find(".zinao-chatu-import-checkbox").prop("checked", false);
     });
-    $modal.find(".st-chatu8-modal-save-btn").on("click", () => {
+    $modal.find(".zinao-chatu-modal-save-btn").on("click", () => {
       const selectedScripts = [];
-      $modal.find(".st-chatu8-import-checkbox:checked").each(function() {
+      $modal.find(".zinao-chatu-import-checkbox:checked").each(function() {
         const type = $(this).data("type");
         const index = $(this).data("index");
         const script = scriptsByType[type][index];
@@ -76497,12 +76503,12 @@ function showRegexEntrySelectionDialog(scriptsByType) {
       $modal.fadeOut(200, () => $modal.remove());
       resolve(selectedScripts);
     });
-    $modal.find(".st-chatu8-modal-cancel-btn, .st-chatu8-entry-edit-modal-close").on("click", () => {
+    $modal.find(".zinao-chatu-modal-cancel-btn, .zinao-chatu-entry-edit-modal-close").on("click", () => {
       $modal.fadeOut(200, () => $modal.remove());
       resolve([]);
     });
     $modal.on("click", (e) => {
-      if ($(e.target).hasClass("st-chatu8-entry-edit-modal-backdrop")) {
+      if ($(e.target).hasClass("zinao-chatu-entry-edit-modal-backdrop")) {
         $modal.fadeOut(200, () => $modal.remove());
         resolve([]);
       }
@@ -76514,20 +76520,20 @@ function collectRegexEntriesFromUI() {
   const entries = [];
   const containerInDocument = regexEntriesContainer && $.contains(document, regexEntriesContainer[0]);
   const freshContainer = $("#ch-regex-entries-container");
-  const freshEntryCount = freshContainer.find(".st-chatu8-preset-entry").length;
-  console.log("[st-chatu8] collectRegexEntriesFromUI \u8C03\u8BD5:", {
+  const freshEntryCount = freshContainer.find(".zinao-chatu-preset-entry").length;
+  console.log("[zinao-chatu] collectRegexEntriesFromUI \u8C03\u8BD5:", {
     \u7F13\u5B58\u5BB9\u5668\u5B58\u5728: !!regexEntriesContainer,
     \u7F13\u5B58\u5BB9\u5668\u5728\u6587\u6863\u4E2D: containerInDocument,
     \u65B0\u9009\u62E9\u5668\u627E\u5230\u7684\u5BB9\u5668: freshContainer.length > 0,
     \u65B0\u9009\u62E9\u5668\u627E\u5230\u7684\u6761\u76EE\u6570: freshEntryCount,
-    \u7F13\u5B58\u5BB9\u5668\u627E\u5230\u7684\u6761\u76EE\u6570: regexEntriesContainer ? regexEntriesContainer.find(".st-chatu8-preset-entry").length : 0
+    \u7F13\u5B58\u5BB9\u5668\u627E\u5230\u7684\u6761\u76EE\u6570: regexEntriesContainer ? regexEntriesContainer.find(".zinao-chatu-preset-entry").length : 0
   });
   const activeContainer = containerInDocument ? regexEntriesContainer : freshContainer;
   if (!activeContainer || activeContainer.length === 0) {
-    console.warn("[st-chatu8] \u6B63\u5219\u6761\u76EE\u5BB9\u5668\u4E0D\u5B58\u5728\uFF01");
+    console.warn("[zinao-chatu] \u6B63\u5219\u6761\u76EE\u5BB9\u5668\u4E0D\u5B58\u5728\uFF01");
     return entries;
   }
-  activeContainer.find(".st-chatu8-preset-entry").each(function() {
+  activeContainer.find(".zinao-chatu-preset-entry").each(function() {
     const $entry = $(this);
     const entryData = $entry.data("entryData");
     if (entryData) {
@@ -76551,7 +76557,7 @@ function loadRegexEntriesFromProfile() {
   if (!profileName) return;
   const profiles = extension_settings74[extensionName].regex_profiles;
   const profile = profiles[profileName];
-  console.log("[st-chatu8] \u52A0\u8F7D\u6B63\u5219\u914D\u7F6E:", {
+  console.log("[zinao-chatu] \u52A0\u8F7D\u6B63\u5219\u914D\u7F6E:", {
     \u914D\u7F6E\u540D\u79F0: profileName,
     \u914D\u7F6E\u662F\u5426\u5B58\u5728: !!profile,
     \u6761\u76EE\u6570\u91CF: profile?.regexEntries?.length || 0
@@ -76591,22 +76597,22 @@ function bindRegexEntryDragEvents() {
       }, 16);
     }
   }
-  regexEntriesContainer.on("dragstart", ".st-chatu8-preset-entry", function(e) {
+  regexEntriesContainer.on("dragstart", ".zinao-chatu-preset-entry", function(e) {
     draggedEntry2 = this;
     $(this).addClass("dragging");
     e.originalEvent.dataTransfer.effectAllowed = "move";
   });
-  regexEntriesContainer.on("dragend", ".st-chatu8-preset-entry", function() {
+  regexEntriesContainer.on("dragend", ".zinao-chatu-preset-entry", function() {
     $(this).removeClass("dragging");
-    regexEntriesContainer.find(".st-chatu8-preset-entry").removeClass("drag-over");
+    regexEntriesContainer.find(".zinao-chatu-preset-entry").removeClass("drag-over");
     draggedEntry2 = null;
     stopAutoScroll();
   });
-  regexEntriesContainer.on("dragover", ".st-chatu8-preset-entry", function(e) {
+  regexEntriesContainer.on("dragover", ".zinao-chatu-preset-entry", function(e) {
     e.preventDefault();
     e.originalEvent.dataTransfer.dropEffect = "move";
     if (this !== draggedEntry2) {
-      regexEntriesContainer.find(".st-chatu8-preset-entry").removeClass("drag-over");
+      regexEntriesContainer.find(".zinao-chatu-preset-entry").removeClass("drag-over");
       $(this).addClass("drag-over");
     }
     handleAutoScroll(e.originalEvent.clientY);
@@ -76617,7 +76623,7 @@ function bindRegexEntryDragEvents() {
       handleAutoScroll(e.originalEvent.clientY);
     }
   });
-  regexEntriesContainer.on("drop", ".st-chatu8-preset-entry", function(e) {
+  regexEntriesContainer.on("drop", ".zinao-chatu-preset-entry", function(e) {
     e.preventDefault();
     stopAutoScroll();
     if (this !== draggedEntry2 && draggedEntry2) {
@@ -76633,7 +76639,7 @@ function bindRegexEntryDragEvents() {
       }
       saveRegexEntriesToProfile();
     }
-    regexEntriesContainer.find(".st-chatu8-preset-entry").removeClass("drag-over");
+    regexEntriesContainer.find(".zinao-chatu-preset-entry").removeClass("drag-over");
   });
   regexEntriesContainer.on("dragleave", function(e) {
     const rect = this.getBoundingClientRect();
@@ -76646,32 +76652,32 @@ function bindRegexEntryDragEvents() {
 }
 function bindRegexEntryEvents() {
   if (!regexEntriesContainer) return;
-  regexEntriesContainer.on("click", ".st-chatu8-entry-edit", function(e) {
+  regexEntriesContainer.on("click", ".zinao-chatu-entry-edit", function(e) {
     e.stopPropagation();
-    const $entry = $(this).closest(".st-chatu8-preset-entry");
+    const $entry = $(this).closest(".zinao-chatu-preset-entry");
     showRegexEntryEditModal($entry);
   });
-  regexEntriesContainer.on("change", ".st-chatu8-entry-toggle input", function() {
-    const $entry = $(this).closest(".st-chatu8-preset-entry");
+  regexEntriesContainer.on("change", ".zinao-chatu-entry-toggle input", function() {
+    const $entry = $(this).closest(".zinao-chatu-preset-entry");
     toggleRegexEntry($entry, $(this).is(":checked"));
   });
-  regexEntriesContainer.on("click", ".st-chatu8-entry-export", function(e) {
+  regexEntriesContainer.on("click", ".zinao-chatu-entry-export", function(e) {
     e.stopPropagation();
-    const $entry = $(this).closest(".st-chatu8-preset-entry");
+    const $entry = $(this).closest(".zinao-chatu-preset-entry");
     exportRegexEntry($entry);
   });
-  regexEntriesContainer.on("click", ".st-chatu8-entry-delete", function(e) {
+  regexEntriesContainer.on("click", ".zinao-chatu-entry-delete", function(e) {
     e.stopPropagation();
-    const $entry = $(this).closest(".st-chatu8-preset-entry");
+    const $entry = $(this).closest(".zinao-chatu-preset-entry");
     deleteRegexEntry($entry);
   });
-  regexEntriesContainer.on("dblclick", ".st-chatu8-preset-entry", function(e) {
-    if ($(e.target).closest(".st-chatu8-entry-actions, .st-chatu8-entry-drag-handle").length) {
+  regexEntriesContainer.on("dblclick", ".zinao-chatu-preset-entry", function(e) {
+    if ($(e.target).closest(".zinao-chatu-entry-actions, .zinao-chatu-entry-drag-handle").length) {
       return;
     }
     showRegexEntryEditModal($(this));
   });
-  regexEntriesContainer.on("click", ".st-chatu8-entry-danger-warning", function(e) {
+  regexEntriesContainer.on("click", ".zinao-chatu-entry-danger-warning", function(e) {
     e.stopPropagation();
     const warningText = $(this).attr("title");
     if (warningText) {
@@ -76682,7 +76688,7 @@ function bindRegexEntryEvents() {
       });
     }
   });
-  regexEntriesContainer.on("click", ".st-chatu8-entry-warning", function(e) {
+  regexEntriesContainer.on("click", ".zinao-chatu-entry-warning", function(e) {
     e.stopPropagation();
     const warningText = $(this).attr("title");
     if (warningText) {
@@ -76929,7 +76935,7 @@ function detectDangerousRegex(regexStr) {
 function generateDangerousRegexWarningHTML(warnings) {
   if (!warnings || warnings.length === 0) return "";
   const warningText = warnings.map((w) => `${w.name}: ${w.description}`).join("\n");
-  return `<span class="st-chatu8-entry-danger-warning" title="${warningText}"><i class="fa-solid fa-skull-crossbones"></i></span>`;
+  return `<span class="zinao-chatu-entry-danger-warning" title="${warningText}"><i class="fa-solid fa-skull-crossbones"></i></span>`;
 }
 function escapeRegex2(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -77019,7 +77025,7 @@ async function onTestRegexClick(requestId, options = {}) {
           \u5371\u9669\u7C7B\u578B: warningNames,
           \u6B63\u5219: entry.findRegex.substring(0, 50)
         });
-        console.warn(`[st-chatu8] \u8DF3\u8FC7\u5371\u9669\u6B63\u5219 "${entry.scriptName}": ${warningNames}`);
+        console.warn(`[zinao-chatu] \u8DF3\u8FC7\u5371\u9669\u6B63\u5219 "${entry.scriptName}": ${warningNames}`);
         toastr.warning(`\u8DF3\u8FC7\u5371\u9669\u6B63\u5219 "${entry.scriptName}"<br>\u539F\u56E0: ${warningNames}`, "\u6B63\u5219\u5B89\u5168\u68C0\u67E5", {
           timeOut: 5e3,
           escapeHtml: false
@@ -77056,7 +77062,7 @@ async function onTestRegexClick(requestId, options = {}) {
             debugLog("regex.onTestRegexClick", `\u23F1\uFE0F \u6B63\u5219\u8D85\u65F6: ${entry.scriptName}`, {
               \u6B63\u5219: findRegexStr.substring(0, 50)
             });
-            console.warn(`[st-chatu8] \u6B63\u5219\u6761\u76EE "${entry.scriptName}" \u5339\u914D\u8D85\u65F6`);
+            console.warn(`[zinao-chatu] \u6B63\u5219\u6761\u76EE "${entry.scriptName}" \u5339\u914D\u8D85\u65F6`);
             toastr.warning(`\u6B63\u5219\u6761\u76EE "${entry.scriptName}" \u6267\u884C\u8D85\u65F6 (>1000ms)\uFF0C\u5DF2\u8DF3\u8FC7`, "\u6B63\u5219\u8D85\u65F6", {
               timeOut: 5e3
             });
@@ -77072,7 +77078,7 @@ async function onTestRegexClick(requestId, options = {}) {
             debugLog("regex.onTestRegexClick", `\u23F1\uFE0F \u6B63\u5219\u66FF\u6362\u8D85\u65F6: ${entry.scriptName}`, {
               \u6B63\u5219: findRegexStr.substring(0, 50)
             });
-            console.warn(`[st-chatu8] \u6B63\u5219\u6761\u76EE "${entry.scriptName}" \u66FF\u6362\u8D85\u65F6`);
+            console.warn(`[zinao-chatu] \u6B63\u5219\u6761\u76EE "${entry.scriptName}" \u66FF\u6362\u8D85\u65F6`);
             toastr.warning(`\u6B63\u5219\u6761\u76EE "${entry.scriptName}" \u66FF\u6362\u8D85\u65F6 (>1000ms)\uFF0C\u5DF2\u8DF3\u8FC7`, "\u6B63\u5219\u8D85\u65F6", {
               timeOut: 5e3
             });
@@ -77135,7 +77141,7 @@ async function onTestRegexClick(requestId, options = {}) {
           \u6587\u672C\u5305\u542B\u524D\u8FB9\u754C: containsBefore,
           \u6587\u672C\u5305\u542B\u540E\u8FB9\u754C: containsAfter
         });
-        console.log("[st-chatu8] \u524D\u540E\u6B63\u5219\u5339\u914D\u524D\u6587\u672C\u9884\u89C8:", textToProcess.substring(0, 300));
+        console.log("[zinao-chatu] \u524D\u540E\u6B63\u5219\u5339\u914D\u524D\u6587\u672C\u9884\u89C8:", textToProcess.substring(0, 300));
         debugLog("regex.onTestRegexClick", "\u524D\u540E\u6B63\u5219\u6A21\u5F0F\u751F\u6210", {
           \u524D\u8FB9\u754C\u8F6C\u4E49: before,
           \u540E\u8FB9\u754C\u8F6C\u4E49: after,
@@ -77155,7 +77161,7 @@ async function onTestRegexClick(requestId, options = {}) {
           matches1\u7C7B\u578B: matchResult.result?.matches ? typeof matchResult.result.matches[1] : "N/A",
           matches1\u503C: matchResult.result?.matches?.[1] !== void 0 ? String(matchResult.result.matches[1]).substring(0, 50) : "undefined"
         });
-        console.log("[st-chatu8] \u5B8C\u6574 matchResult:", JSON.stringify(matchResult, null, 2));
+        console.log("[zinao-chatu] \u5B8C\u6574 matchResult:", JSON.stringify(matchResult, null, 2));
         if (matchResult.success && matchResult.result && matchResult.result.matches && typeof matchResult.result.matches[1] === "string") {
           const match = matchResult.result;
           const content = match.matches[1];
@@ -77178,7 +77184,7 @@ async function onTestRegexClick(requestId, options = {}) {
           textToProcess = content;
           baseOffset = contentStart;
         } else if (matchResult.timeout) {
-          console.warn("[st-chatu8] \u524D\u540E\u6B63\u5219\u5339\u914D\u8D85\u65F6");
+          console.warn("[zinao-chatu] \u524D\u540E\u6B63\u5219\u5339\u914D\u8D85\u65F6");
           toastr.warning("\u524D\u540E\u6B63\u5219\u5339\u914D\u8D85\u65F6 (>1000ms)\uFF0C\u5DF2\u8DF3\u8FC7", "\u6B63\u5219\u8D85\u65F6", { timeOut: 5e3 });
         } else {
           debugLog("regex.onTestRegexClick", "\u26A0\uFE0F \u524D\u540E\u6B63\u5219\u672A\u80FD\u5339\u914D", {
@@ -77187,21 +77193,21 @@ async function onTestRegexClick(requestId, options = {}) {
             \u6B63\u5219\u6A21\u5F0F: contextPattern,
             \u6587\u672C\u9884\u89C8: textToProcess.substring(0, 100) + (textToProcess.length > 100 ? "..." : "")
           });
-          console.warn("[st-chatu8] \u524D\u540E\u6B63\u5219\u672A\u80FD\u5339\u914D\u6587\u672C\u3002\u6A21\u5F0F:", contextPattern);
+          console.warn("[zinao-chatu] \u524D\u540E\u6B63\u5219\u672A\u80FD\u5339\u914D\u6587\u672C\u3002\u6A21\u5F0F:", contextPattern);
         }
       } else {
         debugLog("regex.onTestRegexClick", "\u26A0\uFE0F \u524D\u540E\u6B63\u5219\u683C\u5F0F\u9519\u8BEF", {
           \u539F\u56E0: `\u5206\u5272\u540E\u90E8\u5206\u6570\u91CF\u4E3A ${parts.length}\uFF0C\u671F\u671B\u4E3A 2`,
           \u63D0\u793A: "\u683C\u5F0F\u5E94\u4E3A: \u524D\u8FB9\u754C|\u540E\u8FB9\u754C"
         });
-        console.warn("[st-chatu8] \u524D\u540E\u6B63\u5219\u683C\u5F0F\u9519\u8BEF: \u671F\u671B 1 \u4E2A\u5206\u9694\u7B26 |\uFF0C\u5B9E\u9645\u5206\u5272\u4E3A", parts.length, "\u90E8\u5206");
+        console.warn("[zinao-chatu] \u524D\u540E\u6B63\u5219\u683C\u5F0F\u9519\u8BEF: \u671F\u671B 1 \u4E2A\u5206\u9694\u7B26 |\uFF0C\u5B9E\u9645\u5206\u5272\u4E3A", parts.length, "\u90E8\u5206");
       }
     } else if (beforeAfterRegexStr.trim()) {
       debugLog("regex.onTestRegexClick", "\u26A0\uFE0F \u524D\u540E\u6B63\u5219\u7F3A\u5C11\u5206\u9694\u7B26", {
         \u8F93\u5165: beforeAfterRegexStr,
         \u63D0\u793A: "\u683C\u5F0F\u5E94\u4E3A: \u524D\u8FB9\u754C|\u540E\u8FB9\u754C\uFF0C\u4F7F\u7528 | \u4F5C\u4E3A\u5206\u9694\u7B26"
       });
-      console.warn("[st-chatu8] \u524D\u540E\u6B63\u5219\u7F3A\u5C11\u5206\u9694\u7B26 |\uFF0C\u683C\u5F0F\u5E94\u4E3A: \u524D\u8FB9\u754C|\u540E\u8FB9\u754C");
+      console.warn("[zinao-chatu] \u524D\u540E\u6B63\u5219\u7F3A\u5C11\u5206\u9694\u7B26 |\uFF0C\u683C\u5F0F\u5E94\u4E3A: \u524D\u8FB9\u754C|\u540E\u8FB9\u754C");
     } else {
       debugBranch("onTestRegexClick", "\u524D\u540E\u6B63\u5219\u4E3A\u7A7A\uFF0C\u8DF3\u8FC7", true);
     }
@@ -77269,7 +77275,7 @@ async function onTestRegexClick(requestId, options = {}) {
             }
           }
         } else if (matchAllResult.timeout) {
-          console.warn(`[st-chatu8] \u6587\u5B57\u6B63\u5219\u5339\u914D\u8D85\u65F6: ${trimmedLine.substring(0, 30)}`);
+          console.warn(`[zinao-chatu] \u6587\u5B57\u6B63\u5219\u5339\u914D\u8D85\u65F6: ${trimmedLine.substring(0, 30)}`);
           toastr.warning(`\u6587\u5B57\u6B63\u5219\u5339\u914D\u8D85\u65F6 (>1000ms)\uFF0C\u5DF2\u8DF3\u8FC7: ${trimmedLine.substring(0, 30)}...`, "\u6B63\u5219\u8D85\u65F6", {
             timeOut: 5e3
           });
@@ -77563,7 +77569,7 @@ function createRegexEntryByAI(data) {
   if (!regexEntriesContainer || regexEntriesContainer.length === 0) {
     return "\u274C \u6B63\u5219\u6761\u76EE\u5BB9\u5668\u4E0D\u5B58\u5728\uFF0C\u8BF7\u5148\u5207\u6362\u5230\u6B63\u5219\u9875\u9762\u3002";
   }
-  regexEntriesContainer.find(".st-chatu8-entries-empty").remove();
+  regexEntriesContainer.find(".zinao-chatu-entries-empty").remove();
   const newEntry = {
     ...DEFAULT_REGEX_ENTRY,
     id: generateRegexEntryId(),
@@ -77623,10 +77629,10 @@ function clearAllRegexEntries() {
   if (!regexEntriesContainer || regexEntriesContainer.length === 0) {
     return "\u274C \u6B63\u5219\u6761\u76EE\u5BB9\u5668\u4E0D\u5B58\u5728\uFF0C\u8BF7\u5148\u5207\u6362\u5230\u6B63\u5219\u9875\u9762\u3002";
   }
-  const count = regexEntriesContainer.find(".st-chatu8-preset-entry").length;
+  const count = regexEntriesContainer.find(".zinao-chatu-preset-entry").length;
   regexEntriesContainer.empty();
   regexEntriesContainer.html(`
-        <div class="st-chatu8-entries-empty">
+        <div class="zinao-chatu-entries-empty">
             <i class="fa-solid fa-inbox"></i>
             <p>\u6682\u65E0\u6B63\u5219\u6761\u76EE\uFF0C\u70B9\u51FB\u4E0A\u65B9\u6309\u94AE\u6DFB\u52A0</p>
         </div>
@@ -77685,12 +77691,12 @@ function initKnowledgeBaseSettings(settingsModal) {
   initUserSettings(settingsModal);
 }
 function setupSubNavigation2(container) {
-  container.find(".st-chatu8-sub-nav-link").off("click").on("click", function(e) {
+  container.find(".zinao-chatu-sub-nav-link").off("click").on("click", function(e) {
     e.preventDefault();
     const subTabId = $(this).data("sub-tab");
-    container.find(".st-chatu8-sub-nav-link").removeClass("active");
+    container.find(".zinao-chatu-sub-nav-link").removeClass("active");
     $(this).addClass("active");
-    container.find(".st-chatu8-sub-tab-content").css("display", "none");
+    container.find(".zinao-chatu-sub-tab-content").css("display", "none");
     container.find(`#${subTabId}`).css("display", "block");
     if (subTabId === "ch-sub-tab-kb-persona") {
       refreshPersonaSettings();
@@ -77699,12 +77705,12 @@ function setupSubNavigation2(container) {
       refreshUserSettings();
     }
   });
-  const allSubNavLinks = container.find(".st-chatu8-sub-nav-link");
+  const allSubNavLinks = container.find(".zinao-chatu-sub-nav-link");
   const firstLink = allSubNavLinks.first();
   if (firstLink.length) {
     firstLink.addClass("active");
     const firstSubTabId = firstLink.data("sub-tab");
-    container.find(".st-chatu8-sub-tab-content").css("display", "none");
+    container.find(".zinao-chatu-sub-tab-content").css("display", "none");
     container.find(`#${firstSubTabId}`).css("display", "block");
   }
 }
@@ -77747,8 +77753,8 @@ function initKBWorldBookUI(settingsModal) {
     const searchTerm = worldSearchInput.val().toLowerCase();
     const config = getKBConfig();
     kbWorldList.filter((worldName) => worldName.toLowerCase().includes(searchTerm)).forEach((worldName) => {
-      const worldItem = $("<div></div>").addClass("st-chatu8-list-item").data("worldName", worldName);
-      const checkboxWrapper = $("<span></span>").addClass("st-chatu8-world-checkbox").css({
+      const worldItem = $("<div></div>").addClass("zinao-chatu-list-item").data("worldName", worldName);
+      const checkboxWrapper = $("<span></span>").addClass("zinao-chatu-world-checkbox").css({
         position: "relative",
         marginRight: "10px",
         display: "inline-block",
@@ -77794,13 +77800,13 @@ function initKBWorldBookUI(settingsModal) {
         const entryKey = entry.uid;
         const displayName = entry.comment || `\u6761\u76EE ${entryKey}`;
         const isConstant = entry.constant === true;
-        const entryItem = $("<div></div>").addClass("st-chatu8-list-item").data("entryKey", entryKey).data("entryContent", entry.content || "");
+        const entryItem = $("<div></div>").addClass("zinao-chatu-list-item").data("entryKey", entryKey).data("entryContent", entry.content || "");
         if (isConstant) {
           entryItem.addClass("constant-entry");
         }
-        const textSpan = $("<span></span>").addClass("st-chatu8-entry-text").text(displayName);
+        const textSpan = $("<span></span>").addClass("zinao-chatu-entry-text").text(displayName);
         if (isConstant) {
-          const constantBadge = $("<span></span>").addClass("st-chatu8-constant-badge").text("\u5E38\u5F00").css({
+          const constantBadge = $("<span></span>").addClass("zinao-chatu-constant-badge").text("\u5E38\u5F00").css({
             marginLeft: "6px",
             padding: "2px 6px",
             background: "rgba(255, 193, 7, 0.2)",
@@ -77815,7 +77821,7 @@ function initKBWorldBookUI(settingsModal) {
         const keys = Array.isArray(entry.key) ? entry.key : entry.key ? [entry.key] : [];
         if (keys.length > 0) {
           const keyDisplay = keys.slice(0, 3).join(", ") + (keys.length > 3 ? "..." : "");
-          const keyBadge = $("<span></span>").addClass("st-chatu8-key-badge").text("\u{1F511} " + keyDisplay).attr("title", keys.join(", ")).css({
+          const keyBadge = $("<span></span>").addClass("zinao-chatu-key-badge").text("\u{1F511} " + keyDisplay).attr("title", keys.join(", ")).css({
             marginLeft: "6px",
             padding: "2px 6px",
             background: "rgba(33, 150, 243, 0.15)",
@@ -77833,11 +77839,11 @@ function initKBWorldBookUI(settingsModal) {
           });
           textSpan.append(keyBadge);
         }
-        const eyeIcon = $("<i></i>").addClass("fa fa-eye st-chatu8-entry-view-icon").attr("title", "\u67E5\u770B\u5185\u5BB9").on("click", function(e) {
+        const eyeIcon = $("<i></i>").addClass("fa fa-eye zinao-chatu-entry-view-icon").attr("title", "\u67E5\u770B\u5185\u5BB9").on("click", function(e) {
           e.stopPropagation();
           showEntryContentModal(displayName, entry.content || "", entry.key || [], isConstant);
         });
-        const checkboxSpan = $("<span></span>").addClass("st-chatu8-entry-checkbox");
+        const checkboxSpan = $("<span></span>").addClass("zinao-chatu-entry-checkbox");
         entryItem.append(checkboxSpan).append(textSpan).append(eyeIcon);
         const entryState = currentWorldSelections[entryKey];
         if (entryState === "force") {
@@ -77853,11 +77859,11 @@ function initKBWorldBookUI(settingsModal) {
     entryListContainer.append(fragment);
   }
   function handleWorldClick(event) {
-    const target = $(event.target).closest(".st-chatu8-list-item");
+    const target = $(event.target).closest(".zinao-chatu-list-item");
     if (!target.length) return;
     const worldName = target.data("worldName");
     if (!worldName) return;
-    const checkboxArea = $(event.target).closest(".st-chatu8-world-checkbox");
+    const checkboxArea = $(event.target).closest(".zinao-chatu-world-checkbox");
     if (checkboxArea.length) {
       const config = getKBConfig();
       if (!config.worldBookSelections) config.worldBookSelections = {};
@@ -77876,10 +77882,10 @@ function initKBWorldBookUI(settingsModal) {
   let isLongPress2 = false;
   const LONG_PRESS_DURATION = 500;
   function handleEntryMouseDown(event) {
-    const target = $(event.target).closest(".st-chatu8-list-item");
+    const target = $(event.target).closest(".zinao-chatu-list-item");
     if (!target.length || !kbActiveWorld) return;
-    if ($(event.target).closest(".st-chatu8-entry-view-icon").length) return;
-    if (!$(event.target).closest(".st-chatu8-entry-checkbox").length) return;
+    if ($(event.target).closest(".zinao-chatu-entry-view-icon").length) return;
+    if (!$(event.target).closest(".zinao-chatu-entry-checkbox").length) return;
     isLongPress2 = false;
     longPressTimer2 = setTimeout(() => {
       isLongPress2 = true;
@@ -77893,10 +77899,10 @@ function initKBWorldBookUI(settingsModal) {
     }
   }
   function handleEntryClick(event) {
-    const target = $(event.target).closest(".st-chatu8-list-item");
+    const target = $(event.target).closest(".zinao-chatu-list-item");
     if (!target.length || !kbActiveWorld) return;
-    if ($(event.target).closest(".st-chatu8-entry-view-icon").length) return;
-    if (!$(event.target).closest(".st-chatu8-entry-checkbox").length) return;
+    if ($(event.target).closest(".zinao-chatu-entry-view-icon").length) return;
+    if (!$(event.target).closest(".zinao-chatu-entry-checkbox").length) return;
     const entryKey = target.data("entryKey");
     if (entryKey === void 0 || entryKey === null) return;
     if (event.type === "contextmenu") {
@@ -78006,9 +78012,9 @@ function initKBWorldBookUI(settingsModal) {
     }
   }
   function showEntryContentModal(title, content, keys = [], isConstant = false) {
-    document.querySelector(".st-chatu8-entry-content-backdrop")?.remove();
+    document.querySelector(".zinao-chatu-entry-content-backdrop")?.remove();
     const backdrop = document.createElement("div");
-    backdrop.className = "st-chatu8-workflow-viz-backdrop st-chatu8-entry-content-backdrop";
+    backdrop.className = "zinao-chatu-workflow-viz-backdrop zinao-chatu-entry-content-backdrop";
     let keywordsHtml = "";
     if (keys && keys.length > 0) {
       const keysList = Array.isArray(keys) ? keys : [keys];
@@ -78048,19 +78054,19 @@ function initKBWorldBookUI(settingsModal) {
             ">\u5E38\u5F00</span>`;
     }
     backdrop.innerHTML = `
-            <div class="st-chatu8-workflow-viz-dialog st-chatu8-entry-content-dialog">
-                <div class="st-chatu8-workflow-viz-header">
+            <div class="zinao-chatu-workflow-viz-dialog zinao-chatu-entry-content-dialog">
+                <div class="zinao-chatu-workflow-viz-header">
                     <h3>${$("<div>").text(title).html()}${constantBadge}</h3>
-                    <span class="st-chatu8-workflow-viz-close">&times;</span>
+                    <span class="zinao-chatu-workflow-viz-close">&times;</span>
                 </div>
                 ${keywordsHtml}
-                <div class="st-chatu8-entry-content-body">
-                    <pre class="st-chatu8-entry-content-text">${$("<div>").text(content || "(\u65E0\u5185\u5BB9)").html()}</pre>
+                <div class="zinao-chatu-entry-content-body">
+                    <pre class="zinao-chatu-entry-content-text">${$("<div>").text(content || "(\u65E0\u5185\u5BB9)").html()}</pre>
                 </div>
             </div>
         `;
     document.body.appendChild(backdrop);
-    backdrop.querySelector(".st-chatu8-workflow-viz-close").onclick = () => backdrop.remove();
+    backdrop.querySelector(".zinao-chatu-workflow-viz-close").onclick = () => backdrop.remove();
     const escHandler = (e) => {
       if (e.key === "Escape") {
         backdrop.remove();
@@ -78081,13 +78087,13 @@ function initKBWorldBookUI(settingsModal) {
 }
 async function handleTestTrigger2() {
   const backdrop = document.createElement("div");
-  backdrop.className = "st-chatu8-workflow-viz-backdrop";
+  backdrop.className = "zinao-chatu-workflow-viz-backdrop";
   backdrop.style.zIndex = "10002";
   backdrop.innerHTML = `
-        <div class="st-chatu8-workflow-viz-dialog" style="width: 90%; max-width: 1000px; max-height: 85vh;">
-            <div class="st-chatu8-workflow-viz-header">
+        <div class="zinao-chatu-workflow-viz-dialog" style="width: 90%; max-width: 1000px; max-height: 85vh;">
+            <div class="zinao-chatu-workflow-viz-header">
                 <h3>\u{1F9EA} \u6D4B\u8BD5\u8D44\u6599\u5E93\u89E6\u53D1</h3>
-                <span class="st-chatu8-workflow-viz-close">&times;</span>
+                <span class="zinao-chatu-workflow-viz-close">&times;</span>
             </div>
             <div style="padding: 20px; display: flex; flex-direction: column; gap: 15px; overflow-y: auto; max-height: calc(85vh - 60px);">
                 <div>
@@ -78128,7 +78134,7 @@ async function handleTestTrigger2() {
         </div>
     `;
   document.body.appendChild(backdrop);
-  const closeBtn = backdrop.querySelector(".st-chatu8-workflow-viz-close");
+  const closeBtn = backdrop.querySelector(".zinao-chatu-workflow-viz-close");
   closeBtn.onclick = () => backdrop.remove();
   const escHandler = (e) => {
     if (e.key === "Escape") {
@@ -78476,9 +78482,9 @@ init_knowledgeBaseService();
 
 // utils/settings/about.js
 var DISCLAIMER_CONTENT = `
-    <div class="st-chatu8-settings-section">
+    <div class="zinao-chatu-settings-section">
         <h3>\u2696\uFE0F \u6B63\u5F53\u4F7F\u7528\u58F0\u660E</h3>
-        <div class="st-chatu8-disclaimer">
+        <div class="zinao-chatu-disclaimer">
             <p><strong>\u672C\u63D2\u4EF6\u4EC5\u4F9B\u4EE5\u4E0B\u7528\u9014\uFF1A</strong></p>
             <ul>
                 <li>\u{1F3A8} \u4E2A\u4EBA\u521B\u4F5C\u4E0E\u827A\u672F\u63A2\u7D22</li>
@@ -78488,9 +78494,9 @@ var DISCLAIMER_CONTENT = `
             <p>\u7528\u6237\u5E94\u5F53\u9075\u5B88\u6240\u5728\u5730\u533A\u7684\u76F8\u5173\u6CD5\u5F8B\u6CD5\u89C4\uFF0C\u5408\u7406\u3001\u5408\u6CD5\u5730\u4F7F\u7528\u672C\u63D2\u4EF6\u3002</p>
         </div>
     </div>
-    <div class="st-chatu8-settings-section">
+    <div class="zinao-chatu-settings-section">
         <h3>\u26A0\uFE0F \u514D\u8D23\u58F0\u660E</h3>
-        <div class="st-chatu8-disclaimer">
+        <div class="zinao-chatu-disclaimer">
             <p><strong>\u5173\u4E8E\u5185\u5BB9\u8D23\u4EFB\uFF1A</strong></p>
             <ul>
                 <li>\u672C\u63D2\u4EF6\u4EC5\u4F5C\u4E3A\u56FE\u50CF\u751F\u6210\u7684\u6865\u63A5\u5DE5\u5177\uFF0C\u4E0D\u76F4\u63A5\u751F\u6210\u4EFB\u4F55\u56FE\u50CF\u5185\u5BB9</li>
@@ -78509,9 +78515,9 @@ var DISCLAIMER_CONTENT = `
             </p>
         </div>
     </div>
-    <div class="st-chatu8-settings-section">
+    <div class="zinao-chatu-settings-section">
         <h3>\u{1F4B0} \u5173\u4E8E\u6536\u8D39</h3>
-        <div class="st-chatu8-disclaimer">
+        <div class="zinao-chatu-disclaimer">
             <p><strong>\u672C\u63D2\u4EF6\u5B8C\u5168\u514D\u8D39\uFF01</strong></p>
             <ul>
                 <li>\u{1F193} \u672C\u63D2\u4EF6\u4E3A\u514D\u8D39\u8F6F\u4EF6\uFF0C\u4EFB\u4F55\u4EBA\u90FD\u53EF\u4EE5\u514D\u8D39\u4F7F\u7528</li>
@@ -78525,33 +78531,33 @@ var DISCLAIMER_CONTENT = `
 function getAboutPageContent() {
   const baseContent = `
 <div id="ch-tab-about">
-    <div class="st-chatu8-settings-section">
+    <div class="zinao-chatu-settings-section">
         <h3>\u5173\u4E8E \u667A\u7ED8\u59EC \u{1F5BC}\uFE0F</h3>
         <p>\u63D2\u4EF6\u4F5C\u8005: \u4ECE\u524D\u8DDF\u4F60\u4E00\u6837</p>
-        <div class="st-chatu8-about-links">
-            <a href="https://afdian.com/a/cqgnyy" target="_blank" class="st-chatu8-about-link support">
+        <div class="zinao-chatu-about-links">
+            <a href="https://afdian.com/a/cqgnyy" target="_blank" class="zinao-chatu-about-link support">
                 <i class="fa-solid fa-heart"></i>
                 <span>\u652F\u6301\u4F5C\u8005</span>
-                <span class="st-chatu8-cute-emoji">\u{1F496}</span>
+                <span class="zinao-chatu-cute-emoji">\u{1F496}</span>
             </a>
-            <a href="https://gxcgf4l6b2y.feishu.cn/wiki/UXtHw83pmiHnx1k4WpwcIn79nec?from=from_copylink" target="_blank" class="st-chatu8-about-link help">
+            <a href="https://gxcgf4l6b2y.feishu.cn/wiki/UXtHw83pmiHnx1k4WpwcIn79nec?from=from_copylink" target="_blank" class="zinao-chatu-about-link help">
                 <i class="fa-solid fa-circle-question"></i>
                 <span>\u67E5\u770B\u5E2E\u52A9</span>
-                <span class="st-chatu8-cute-emoji">\u2753</span>
+                <span class="zinao-chatu-cute-emoji">\u2753</span>
             </a>
         </div>
     </div>
-    <div class="st-chatu8-settings-section">
+    <div class="zinao-chatu-settings-section">
         <h3>\u{1F31F} \u7AD9\u70B9\u63A8\u8350</h3>
-        <div class="st-chatu8-about-links" style="flex-direction: column; gap: 10px;">
-            <a href="https://spell.novelai.dev/" target="_blank" class="st-chatu8-about-link" style="width: 100%; justify-content: flex-start;">
+        <div class="zinao-chatu-about-links" style="flex-direction: column; gap: 10px;">
+            <a href="https://spell.novelai.dev/" target="_blank" class="zinao-chatu-about-link" style="width: 100%; justify-content: flex-start;">
                 <i class="fa-solid fa-wand-magic-sparkles" style="min-width: 20px; text-align: center;"></i>
                 <div style="display: flex; flex-direction: column; align-items: flex-start; text-align: left; margin-left: 10px;">
                     <span style="font-weight: bold;">Spell</span>
                     <span style="font-size: 0.85em; opacity: 0.8; font-weight: normal;">\u53EF\u4EE5\u89E3\u6790\u56FE\u7247\u7684 novelai \u7684 tag \u548C comfyui \u7684\u5DE5\u4F5C\u6D41</span>
                 </div>
             </a>
-            <a href="https://novelai-tag.pages.dev/" target="_blank" class="st-chatu8-about-link" style="width: 100%; justify-content: flex-start;">
+            <a href="https://novelai-tag.pages.dev/" target="_blank" class="zinao-chatu-about-link" style="width: 100%; justify-content: flex-start;">
                 <i class="fa-solid fa-tags" style="min-width: 20px; text-align: center;"></i>
                 <div style="display: flex; flex-direction: column; align-items: flex-start; text-align: left; margin-left: 10px;">
                     <span style="font-weight: bold;">NovelAI Tag</span>
@@ -78560,14 +78566,14 @@ function getAboutPageContent() {
             </a>
         </div>
     </div>
-    <div class="st-chatu8-settings-section">
+    <div class="zinao-chatu-settings-section">
         <h3>\u{1F4CB} \u66F4\u65B0\u65E5\u5FD7</h3>
-        <div class="st-chatu8-update-header">
-            <button id="ch-check-update" class="st-chatu8-btn">\u68C0\u67E5\u66F4\u65B0</button>
-            <span id="ch-update-status" class="st-chatu8-update-status"></span>
+        <div class="zinao-chatu-update-header">
+            <button id="ch-check-update" class="zinao-chatu-btn">\u68C0\u67E5\u66F4\u65B0</button>
+            <span id="ch-update-status" class="zinao-chatu-update-status"></span>
         </div>
-        <div id="ch-update-notes" class="st-chatu8-changelog-container">
-            <div class="st-chatu8-changelog-loading">\u6B63\u5728\u83B7\u53D6\u66F4\u65B0\u65E5\u5FD7...</div>
+        <div id="ch-update-notes" class="zinao-chatu-changelog-container">
+            <div class="zinao-chatu-changelog-loading">\u6B63\u5728\u83B7\u53D6\u66F4\u65B0\u65E5\u5FD7...</div>
         </div>
     </div>
     ${DISCLAIMER_CONTENT}
@@ -78579,9 +78585,9 @@ function injectProtectedDisclaimer(container) {
   if (!container) return;
   const aboutTab = container.querySelector("#ch-tab-about");
   if (!aboutTab) return;
-  const existingDisclaimer = aboutTab.querySelectorAll(".st-chatu8-disclaimer");
+  const existingDisclaimer = aboutTab.querySelectorAll(".zinao-chatu-disclaimer");
   existingDisclaimer.forEach((el) => {
-    const parentSection = el.closest(".st-chatu8-settings-section");
+    const parentSection = el.closest(".zinao-chatu-settings-section");
     if (parentSection) {
       parentSection.remove();
     }
@@ -78590,7 +78596,7 @@ function injectProtectedDisclaimer(container) {
 }
 function initAboutProtection(container) {
   if (!container) return;
-  const aboutTab = container.querySelector("#st-chatu8-tab-about");
+  const aboutTab = container.querySelector("#zinao-chatu-tab-about");
   if (!aboutTab) return;
   injectProtectedDisclaimer(aboutTab);
   const observer = new MutationObserver((mutations) => {
@@ -78603,7 +78609,7 @@ function initAboutProtection(container) {
               /** @type {Element} */
               node
             );
-            if (el.classList?.contains("st-chatu8-disclaimer") || el.querySelector?.(".st-chatu8-disclaimer")) {
+            if (el.classList?.contains("zinao-chatu-disclaimer") || el.querySelector?.(".zinao-chatu-disclaimer")) {
               needsRestore = true;
               break;
             }
@@ -78612,7 +78618,7 @@ function initAboutProtection(container) {
       }
       if (mutation.type === "characterData") {
         const parent = mutation.target.parentElement;
-        if (parent?.closest(".st-chatu8-disclaimer")) {
+        if (parent?.closest(".zinao-chatu-disclaimer")) {
           needsRestore = true;
         }
       }
@@ -79179,7 +79185,7 @@ function showCodeGenerationAnimation() {
                         animationContainer.remove();
                         closeVideo();
                         setTimeout(() => {
-                          const aiDialog = document.getElementById("st-chatu8-ai-dialog");
+                          const aiDialog = document.getElementById("zinao-chatu-ai-dialog");
                           if (aiDialog && !aiDialog.classList.contains("active")) {
                             const dialogWidth = aiDialog.offsetWidth;
                             const dialogHeight = aiDialog.offsetHeight;
@@ -79190,7 +79196,7 @@ function showCodeGenerationAnimation() {
                             aiDialog.style.left = Math.max(0, centerLeft) + "px";
                             aiDialog.style.top = Math.max(0, centerTop) + "px";
                             aiDialog.classList.add("active");
-                            const settingsPanel = document.getElementById("st-chatu8-ai-settings-panel");
+                            const settingsPanel = document.getElementById("zinao-chatu-ai-settings-panel");
                             if (settingsPanel) {
                               settingsPanel.classList.add("active");
                               addLog("[OpeningVideo] \u5DF2\u6253\u5F00\u667A\u7ED8\u59ECAI\u52A9\u624BAPI\u8BBE\u7F6E\u9762\u677F");
@@ -79219,7 +79225,7 @@ function showCodeGenerationAnimation() {
 function createVideoContainer() {
   if (videoContainer) return videoContainer;
   videoContainer = document.createElement("div");
-  videoContainer.id = "st-chatu8-opening-video-container";
+  videoContainer.id = "zinao-chatu-opening-video-container";
   videoContainer.style.cssText = `
         position: fixed;
         top: 0;
@@ -79261,7 +79267,7 @@ function createVideoContainer() {
     `;
   document.head.appendChild(style);
   const video = document.createElement("video");
-  video.id = "st-chatu8-opening-video";
+  video.id = "zinao-chatu-opening-video";
   video.style.cssText = `
         max-width: 100%;
         max-height: 100%;
@@ -79703,7 +79709,7 @@ image### 1girl, solo, blue hair ###
 - \`\u540E\u7F6E\u524D\` / \`\u540E\u7F6E\u540E\` / \`\u6700\u540E\u7F6E\` \u2014 \u63D2\u5165\u5230\u672B\u5C3E\u4E0D\u540C\u4F4D\u7F6E`
   },
   sdUrl: "SD WebUI\uFF08A1111\uFF09\u7684 API \u5730\u5740\uFF0C\u9ED8\u8BA4 `http://127.0.0.1:7860`",
-  st_chatu8_sd_auth: "SD WebUI \u542F\u7528 `--api-auth` \u65F6\u586B\u5199 `\u7528\u6237\u540D:\u5BC6\u7801`",
+  zinao_chatu_sd_auth: "SD WebUI \u542F\u7528 `--api-auth` \u65F6\u586B\u5199 `\u7528\u6237\u540D:\u5BC6\u7801`",
   sd_cchatu_8_model: '\u5F53\u524D\u4F7F\u7528\u7684 **Checkpoint \u6A21\u578B**\uFF08\u9700\u5148\u70B9\u53F3\u4FA7"\u8FDE\u63A5\u5237\u65B0\u6570\u636E"\uFF09',
   sd_cchatu_8_vae: "VAE \u89E3\u7801\u5668\uFF0C\u5F71\u54CD\u8272\u5F69\u548C\u7EC6\u8282\uFF08\u9009 `Automatic` \u8BA9 SD \u81EA\u52A8\u9009\uFF09",
   sd_cchatu_8_samplerName: "DPM++ 2M SDE",
@@ -79822,15 +79828,15 @@ image### 1girl, solo, blue hair ###
 - \`\u540E\u7F6E\u524D\` / \`\u540E\u7F6E\u540E\` / \`\u6700\u540E\u7F6E\` \u2014 \u63D2\u5165\u5230\u672B\u5C3E\u4E0D\u540C\u4F4D\u7F6E`
   },
   // ===== Banana/Grok 页（banana.html） =====
-  "st-chatu8-banana-api-url": "Banana/Grok \u517C\u5BB9 API openai\u683C\u5F0F\u7684\u670D\u52A1\u5730\u5740",
-  "st-chatu8-banana-api-key": "API Key\uFF08\u8BF7\u59A5\u5584\u4FDD\u7BA1\uFF0C\u907F\u514D\u6CC4\u9732\uFF09",
-  "st-chatu8-banana-model-select": "\u751F\u56FE\u6A21\u578B\u9009\u62E9",
-  "st-chatu8-banana-video-model-select": "\u89C6\u9891\u751F\u6210\u6A21\u578B\uFF08\u82E5\u670D\u52A1\u652F\u6301\uFF09",
-  "st-chatu8-banana-aspect-ratio": "\u8F93\u51FA\u753B\u9762\u7684\u5BBD\u9AD8\u6BD4\uFF081:1 / 16:9 / 9:16 \u7B49\uFF09\uFF08\u4EC5\u6559\u7A0B\u7684\u81EA\u90E8\u7F72\u751F\u6548\uFF09",
-  "st-chatu8-banana-fixed-prompt": "\u56FA\u5B9A**\u524D\u7F6E**\u63D0\u793A\u8BCD",
-  "st-chatu8-banana-postfix-prompt": "\u56FA\u5B9A**\u540E\u7F6E**\u63D0\u793A\u8BCD",
-  "st-chatu8-banana-prompt-replace-id": "\u66FF\u6362\u89C4\u5219\u9884\u8BBE\u6863\u4F4D",
-  "st-chatu8-banana-prompt-replace-text": {
+  "zinao-chatu-banana-api-url": "Banana/Grok \u517C\u5BB9 API openai\u683C\u5F0F\u7684\u670D\u52A1\u5730\u5740",
+  "zinao-chatu-banana-api-key": "API Key\uFF08\u8BF7\u59A5\u5584\u4FDD\u7BA1\uFF0C\u907F\u514D\u6CC4\u9732\uFF09",
+  "zinao-chatu-banana-model-select": "\u751F\u56FE\u6A21\u578B\u9009\u62E9",
+  "zinao-chatu-banana-video-model-select": "\u89C6\u9891\u751F\u6210\u6A21\u578B\uFF08\u82E5\u670D\u52A1\u652F\u6301\uFF09",
+  "zinao-chatu-banana-aspect-ratio": "\u8F93\u51FA\u753B\u9762\u7684\u5BBD\u9AD8\u6BD4\uFF081:1 / 16:9 / 9:16 \u7B49\uFF09\uFF08\u4EC5\u6559\u7A0B\u7684\u81EA\u90E8\u7F72\u751F\u6548\uFF09",
+  "zinao-chatu-banana-fixed-prompt": "\u56FA\u5B9A**\u524D\u7F6E**\u63D0\u793A\u8BCD",
+  "zinao-chatu-banana-postfix-prompt": "\u56FA\u5B9A**\u540E\u7F6E**\u63D0\u793A\u8BCD",
+  "zinao-chatu-banana-prompt-replace-id": "\u66FF\u6362\u89C4\u5219\u9884\u8BBE\u6863\u4F4D",
+  "zinao-chatu-banana-prompt-replace-text": {
     short: "\u89E6\u53D1\u8BCD\u5339\u914D\u89C4\u5219\uFF1A`\u89E6\u53D1\u8BCD=\u524D\u7F6E\u524D|\u63D2\u5165\u8BCD` \u7B49\u591A\u79CD\u683C\u5F0F",
     long: `### \u66FF\u6362\u89C4\u5219\u8BED\u6CD5
 
@@ -79844,9 +79850,9 @@ image### 1girl, solo, blue hair ###
 - \`\u66FF\u6362\u5206\u89D2\u8272\` \u2014 \u6309\u89D2\u8272\u5206\u522B\u66FF\u6362
 - \`\u540E\u7F6E\u524D\` / \`\u540E\u7F6E\u540E\` / \`\u6700\u540E\u7F6E\` \u2014 \u63D2\u5165\u5230\u672B\u5C3E\u4E0D\u540C\u4F4D\u7F6E`
   },
-  "st-chatu8-banana-conversation-preset-id": "\u5BF9\u8BDD\u578B\u751F\u56FE\u9884\u8BBE\u6863\u4F4D",
-  "st-chatu8-banana-edit-preset": "\u56FE\u50CF\u7F16\u8F91\u9884\u8BBE",
-  "st-chatu8-banana-video-preset": "\u89C6\u9891\u751F\u6210\u9884\u8BBE",
+  "zinao-chatu-banana-conversation-preset-id": "\u5BF9\u8BDD\u578B\u751F\u56FE\u9884\u8BBE\u6863\u4F4D",
+  "zinao-chatu-banana-edit-preset": "\u56FE\u50CF\u7F16\u8F91\u9884\u8BBE",
+  "zinao-chatu-banana-video-preset": "\u89C6\u9891\u751F\u6210\u9884\u8BBE",
   // ===== 悬浮球 / 智绘姬（fab.html） =====
   enable_chatu8_fab: "\u663E\u793A**\u667A\u7ED8\u59EC\u60AC\u6D6E\u7403**\uFF08\u5C4F\u5E55\u4E0A\u7684\u53EF\u62D6\u52A8\u5165\u53E3\uFF09",
   enable_chatu8_fab_video: "\u542F\u7528\u89C6\u9891\u5F62\u8C61\u6A21\u5F0F\uFF08\u66FF\u4EE3\u7B80\u5355\u56FE\u6807\uFF09",
@@ -80002,7 +80008,7 @@ function injectHelpTips(rootEl) {
     const entry = getHelpEntry(id);
     if (!entry) return;
     const icon = document.createElement("span");
-    icon.className = "st-chatu8-help-icon";
+    icon.className = "zinao-chatu-help-icon";
     icon.setAttribute("role", "button");
     icon.setAttribute("tabindex", "0");
     icon.setAttribute("aria-label", "\u67E5\u770B\u8BF4\u660E");
@@ -80016,7 +80022,7 @@ function injectHelpTips(rootEl) {
 }
 function removeHelpTips(rootEl) {
   if (!rootEl || typeof rootEl.querySelectorAll !== "function") return;
-  rootEl.querySelectorAll(".st-chatu8-help-icon").forEach((el) => el.remove());
+  rootEl.querySelectorAll(".zinao-chatu-help-icon").forEach((el) => el.remove());
   rootEl.querySelectorAll(`label[data-${INJECTED_FLAG.replace(/[A-Z]/g, (m) => "-" + m.toLowerCase())}="1"]`).forEach((l) => {
     delete l.dataset[INJECTED_FLAG];
   });
@@ -80081,8 +80087,8 @@ function initHelpTipInteractions() {
   });
   document.addEventListener("click", (e) => {
     if (!tooltipSticky) return;
-    if (e.target && e.target.closest && e.target.closest(".st-chatu8-help-tooltip")) return;
-    if (e.target && e.target.closest && e.target.closest(".st-chatu8-help-icon")) return;
+    if (e.target && e.target.closest && e.target.closest(".zinao-chatu-help-tooltip")) return;
+    if (e.target && e.target.closest && e.target.closest(".zinao-chatu-help-icon")) return;
     hideHelpTooltip();
   });
   window.addEventListener("resize", () => {
@@ -80094,7 +80100,7 @@ var tooltipSticky = false;
 function ensureTooltipEl() {
   if (tooltipEl) return tooltipEl;
   tooltipEl = document.createElement("div");
-  tooltipEl.className = "st-chatu8-help-tooltip";
+  tooltipEl.className = "zinao-chatu-help-tooltip";
   tooltipEl.style.display = "none";
   document.body.appendChild(tooltipEl);
   return tooltipEl;
@@ -80111,7 +80117,7 @@ function showHelpTooltip(anchor, text, sticky = false) {
   } catch (_) {
     el.textContent = text || "";
   }
-  el.classList.toggle("st-chatu8-help-tooltip--sticky", tooltipSticky);
+  el.classList.toggle("zinao-chatu-help-tooltip--sticky", tooltipSticky);
   el.style.display = "block";
   el.style.visibility = "hidden";
   const rect = anchor.getBoundingClientRect();
@@ -80204,7 +80210,7 @@ async function findElement(messageId) {
   await new Promise((resolve) => setTimeout(resolve, 1e3));
   const realMesText = document.querySelector(`div.mes[mesid="${messageId}"] .mes_text`);
   if (realMesText) {
-    console.log("[st-chatu8] Found real mes_text element for messageId:", messageId);
+    console.log("[zinao-chatu] Found real mes_text element for messageId:", messageId);
     debugBranch("autoLLMClick.findElement", "\u627E\u5230\u771F\u5B9EDOM\u5143\u7D20", true, {
       messageId
     });
@@ -80212,7 +80218,7 @@ async function findElement(messageId) {
     timer.end("\u627E\u5230\u771F\u5B9E\u5143\u7D20");
     return realMesText;
   }
-  console.log("[st-chatu8] Real mes_text not found for messageId:", messageId);
+  console.log("[zinao-chatu] Real mes_text not found for messageId:", messageId);
   debugBranch("autoLLMClick.findElement", "\u672A\u627E\u5230DOM\u5143\u7D20", false, {
     messageId
   });
@@ -80239,7 +80245,7 @@ function activateAutoLLMClick() {
   debugMilestone("autoLLMClick.activateAutoLLMClick", "\u81EA\u52A8LLM\u70B9\u51FB\u72B6\u6001\u5DF2\u6FC0\u6D3B\uFF0C5\u79D2\u540E\u81EA\u52A8\u5173\u95ED");
 }
 eventSource37.on(event_types6.GENERATION_STARTED, (data) => {
-  console.log("[st-chatu8] GENERATION_STARTED data:", data);
+  console.log("[zinao-chatu] GENERATION_STARTED data:", data);
   debugStartSession("\u81EA\u52A8LLM\u56FE\u7247\u751F\u6210");
   debugLog("autoLLMClick.GENERATION_STARTED", "LLM\u751F\u6210\u5F00\u59CB\u4E8B\u4EF6\u89E6\u53D1", {
     eventData: data
@@ -80250,8 +80256,8 @@ eventSource37.on(event_types6.GENERATION_STARTED, (data) => {
     generationStartChatLength = chat4.length;
     const lastMessage = chat4[generationStartChatLength - 1];
     generationStartSwipesLength = lastMessage?.swipes?.length || 0;
-    console.log("[st-chatu8] Chat array length:", generationStartChatLength);
-    console.log("[st-chatu8] Last message swipes length:", generationStartSwipesLength);
+    console.log("[zinao-chatu] Chat array length:", generationStartChatLength);
+    console.log("[zinao-chatu] Last message swipes length:", generationStartSwipesLength);
     debugLog("autoLLMClick.GENERATION_STARTED", "\u8BB0\u5F55\u751F\u6210\u5F00\u59CB\u65F6\u7684\u72B6\u6001", {
       chatLength: generationStartChatLength,
       swipesLength: generationStartSwipesLength
@@ -80259,7 +80265,7 @@ eventSource37.on(event_types6.GENERATION_STARTED, (data) => {
   } else {
     generationStartChatLength = 0;
     generationStartSwipesLength = 0;
-    console.log("[st-chatu8] Chat array is empty or not available");
+    console.log("[zinao-chatu] Chat array is empty or not available");
     debugBranch("autoLLMClick.GENERATION_STARTED", "Chat\u4E3A\u7A7A", true, {
       chatExists: !!chat4,
       chatLength: chat4?.length
@@ -80268,8 +80274,8 @@ eventSource37.on(event_types6.GENERATION_STARTED, (data) => {
 });
 eventSource37.on(event_types6.GENERATION_ENDED, async (data) => {
   const timer = debugTimer("autoLLMClick.GENERATION_ENDED", "\u5904\u7406LLM\u751F\u6210\u7ED3\u675F\u4E8B\u4EF6");
-  console.log("[st-chatu8] GENERATION_ENDED data:", data);
-  console.log("[st-chatu8] Start chat length:", generationStartChatLength, "Start swipes length:", generationStartSwipesLength);
+  console.log("[zinao-chatu] GENERATION_ENDED data:", data);
+  console.log("[zinao-chatu] Start chat length:", generationStartChatLength, "Start swipes length:", generationStartSwipesLength);
   debugLog("autoLLMClick.GENERATION_ENDED", "LLM\u751F\u6210\u7ED3\u675F\u4E8B\u4EF6\u89E6\u53D1", {
     eventData: data,
     startChatLength: generationStartChatLength,
@@ -80280,14 +80286,14 @@ eventSource37.on(event_types6.GENERATION_ENDED, async (data) => {
   const currentChatLength = chat4?.length || 0;
   const currentLastMessage = chat4 && chat4.length > 0 ? chat4[chat4.length - 1] : null;
   const currentSwipesLength = currentLastMessage?.swipes?.length || 0;
-  console.log("[st-chatu8] Current chat length:", currentChatLength, "Current swipes length:", currentSwipesLength);
+  console.log("[zinao-chatu] Current chat length:", currentChatLength, "Current swipes length:", currentSwipesLength);
   debugLog("autoLLMClick.GENERATION_ENDED", "\u83B7\u53D6\u5F53\u524D\u72B6\u6001", {
     currentChatLength,
     currentSwipesLength
   });
   const isChatIncreased = currentChatLength > generationStartChatLength;
   const isSwipesIncreased = !isChatIncreased && currentSwipesLength > generationStartSwipesLength;
-  console.log("[st-chatu8] Chat increased:", isChatIncreased, "Swipes increased:", isSwipesIncreased);
+  console.log("[zinao-chatu] Chat increased:", isChatIncreased, "Swipes increased:", isSwipesIncreased);
   debugBranch("autoLLMClick.GENERATION_ENDED", "Chat\u6216Swipes\u53D8\u5316\u68C0\u6D4B", isChatIncreased || isSwipesIncreased, {
     isChatIncreased,
     isSwipesIncreased,
@@ -80295,7 +80301,7 @@ eventSource37.on(event_types6.GENERATION_ENDED, async (data) => {
     swipesDelta: currentSwipesLength - generationStartSwipesLength
   });
   if (!isChatIncreased && !isSwipesIncreased) {
-    console.log("[st-chatu8] No chat or swipes increase detected, skipping");
+    console.log("[zinao-chatu] No chat or swipes increase detected, skipping");
     debugLog("autoLLMClick.GENERATION_ENDED", "\u65E0\u53D8\u5316 - \u8DF3\u8FC7\u5904\u7406", {
       \u539F\u56E0: "Chat\u548CSwipes\u5747\u672A\u589E\u52A0"
     });
@@ -80303,7 +80309,7 @@ eventSource37.on(event_types6.GENERATION_ENDED, async (data) => {
     return;
   }
   if (!isAutoLLMEnabled()) {
-    console.log("[st-chatu8] autoLLMImageGen is disabled, skipping");
+    console.log("[zinao-chatu] autoLLMImageGen is disabled, skipping");
     debugBranch("autoLLMClick.GENERATION_ENDED", "\u81EA\u52A8LLM\u751F\u56FE\u672A\u542F\u7528", true, {
       \u6761\u4EF6: "isAutoLLMEnabled()"
     });
@@ -80320,11 +80326,11 @@ eventSource37.on(event_types6.GENERATION_ENDED, async (data) => {
     const chat5 = context2?.chat;
     if (chat5 && chat5[messageId]) {
       const messageContent = chat5[messageId].mes;
-      console.log("[st-chatu8] Message ID:", messageId);
-      console.log("[st-chatu8] Message content:", messageContent);
+      console.log("[zinao-chatu] Message ID:", messageId);
+      console.log("[zinao-chatu] Message content:", messageContent);
       debugContent("autoLLMClick.GENERATION_ENDED", "\u6D88\u606F\u5185\u5BB9", messageContent, 300);
       if (!messageContent || messageContent.length <= 200) {
-        console.log("[st-chatu8] Message content too short (<=200), skipping. Length:", messageContent?.length || 0);
+        console.log("[zinao-chatu] Message content too short (<=200), skipping. Length:", messageContent?.length || 0);
         debugBranch("autoLLMClick.GENERATION_ENDED", "\u6D88\u606F\u957F\u5EA6\u68C0\u67E5", false, {
           \u6761\u4EF6: "messageContent.length > 200",
           \u5B9E\u9645\u957F\u5EA6: messageContent?.length || 0,
@@ -80338,7 +80344,7 @@ eventSource37.on(event_types6.GENERATION_ENDED, async (data) => {
       });
       if (extension_settings96[extensionName]?.insertOriginalText !== "true") {
         extension_settings96[extensionName].insertOriginalText = "true";
-        console.log("[st-chatu8] Auto-enabled insertOriginalText due to message length > 200");
+        console.log("[zinao-chatu] Auto-enabled insertOriginalText due to message length > 200");
         debugLog("autoLLMClick.GENERATION_ENDED", "\u81EA\u52A8\u542F\u7528 insertOriginalText", {
           \u539F\u56E0: "\u6D88\u606F\u957F\u5EA6 > 200"
         });
@@ -80350,22 +80356,22 @@ eventSource37.on(event_types6.GENERATION_ENDED, async (data) => {
           const { saveSettingsDebounced: saveSettingsDebounced61 } = await import("../../../../script.js");
           saveSettingsDebounced61();
         } catch (e) {
-          console.warn("[st-chatu8] Failed to save settings:", e);
+          console.warn("[zinao-chatu] Failed to save settings:", e);
         }
       }
       const el = await findElement(messageId);
       if (!el) {
-        console.log("[st-chatu8] Element not found for messageId:", messageId, "- skipping");
+        console.log("[zinao-chatu] Element not found for messageId:", messageId, "- skipping");
         debugBranch("autoLLMClick.GENERATION_ENDED", "\u5143\u7D20\u67E5\u627E\u5931\u8D25", false, {
           messageId,
           \u539F\u56E0: "DOM\u5143\u7D20\u672A\u627E\u5230"
         });
         return;
       }
-      console.log("[st-chatu8] Got element for messageId:", messageId, "isConnected:", el.isConnected);
+      console.log("[zinao-chatu] Got element for messageId:", messageId, "isConnected:", el.isConnected);
       debugElement("autoLLMClick.GENERATION_ENDED", "\u76EE\u6807\u5143\u7D20", el);
       try {
-        console.log("[st-chatu8] Triggering handlePromptRequest with gesture1");
+        console.log("[zinao-chatu] Triggering handlePromptRequest with gesture1");
         debugMilestone("autoLLMClick.GENERATION_ENDED", "\u5F00\u59CB\u89E6\u53D1 handlePromptRequest");
         debugLog("autoLLMClick.GENERATION_ENDED", "\u8C03\u7528 handlePromptRequest", {
           gestureId: "gesture1",
@@ -80374,13 +80380,13 @@ eventSource37.on(event_types6.GENERATION_ENDED, async (data) => {
         });
         handlePromptRequest(el, "gesture1");
       } catch (error) {
-        console.error("[st-chatu8] handlePromptRequest failed:", error);
+        console.error("[zinao-chatu] handlePromptRequest failed:", error);
         debugLog("autoLLMClick.GENERATION_ENDED", "handlePromptRequest \u8C03\u7528\u5931\u8D25", {
           error: error.message
         });
       }
     } else {
-      console.log("[st-chatu8] No message found for ID:", messageId);
+      console.log("[zinao-chatu] No message found for ID:", messageId);
       debugBranch("autoLLMClick.GENERATION_ENDED", "\u6D88\u606F\u67E5\u627E", false, {
         messageId,
         chatExists: !!chat5,
@@ -80403,7 +80409,7 @@ eventSource37.on("js_generation_ended", async (data) => {
   activateAutoLLMClick();
 });
 function initAutoLLMClick() {
-  console.log("[st-chatu8] autoLLMClick module initialized");
+  console.log("[zinao-chatu] autoLLMClick module initialized");
   debugLog("autoLLMClick.initAutoLLMClick", "autoLLMClick \u6A21\u5757\u5DF2\u521D\u59CB\u5316");
 }
 
@@ -80496,7 +80502,7 @@ async function refreshFabIconPreview(src) {
     setFabIconPreview(imageData || "");
   } catch (error) {
     if (token2 !== fabIconPreviewToken) return;
-    console.error("[st-chatu8] \u52A0\u8F7D\u60AC\u6D6E\u7403\u56FE\u6807\u9884\u89C8\u5931\u8D25:", error);
+    console.error("[zinao-chatu] \u52A0\u8F7D\u60AC\u6D6E\u7403\u56FE\u6807\u9884\u89C8\u5931\u8D25:", error);
     setFabIconPreview("");
   }
 }
@@ -80531,12 +80537,12 @@ async function handleFabIconUpload(event) {
     applyFabSettings();
     if (oldImageId && oldImageId !== imageId) {
       deleteConfigImage(oldImageId).catch((error) => {
-        console.warn("[st-chatu8] \u5220\u9664\u65E7\u60AC\u6D6E\u7403\u56FE\u6807\u5931\u8D25:", error);
+        console.warn("[zinao-chatu] \u5220\u9664\u65E7\u60AC\u6D6E\u7403\u56FE\u6807\u5931\u8D25:", error);
       });
     }
     toastr.success("\u60AC\u6D6E\u7403\u56FE\u6807\u4E0A\u4F20\u6210\u529F\uFF0C\u5DF2\u4FDD\u5B58\u5230\u9152\u9986\u3002");
   } catch (error) {
-    console.error("[st-chatu8] \u4E0A\u4F20\u60AC\u6D6E\u7403\u56FE\u6807\u5931\u8D25:", error);
+    console.error("[zinao-chatu] \u4E0A\u4F20\u60AC\u6D6E\u7403\u56FE\u6807\u5931\u8D25:", error);
     toastr.error("\u60AC\u6D6E\u7403\u56FE\u6807\u4E0A\u4F20\u5931\u8D25\uFF1A" + error.message);
   } finally {
     if (uploadBtn) uploadBtn.disabled = false;
@@ -80553,7 +80559,7 @@ async function removeFabIconImage() {
   try {
     await deleteConfigImage(imageId);
   } catch (error) {
-    console.warn("[st-chatu8] \u5220\u9664\u60AC\u6D6E\u7403\u56FE\u6807\u5931\u8D25:", error);
+    console.warn("[zinao-chatu] \u5220\u9664\u60AC\u6D6E\u7403\u56FE\u6807\u5931\u8D25:", error);
   }
   settings2.chatu8_fab_icon_image_id = "";
   saveSettingsDebounced59();
@@ -80576,7 +80582,7 @@ async function loadAllTabsContent(container) {
     const htmlContents = await Promise.all(fetchPromises);
     const finalHtml = htmlContents.map((html, index) => {
       const tabId = tabIds[index];
-      return `<div id="st-chatu8-tab-${tabId}" class="st-chatu8-tab-content" data-tab-id="${tabId}">${html}</div>`;
+      return `<div id="zinao-chatu-tab-${tabId}" class="zinao-chatu-tab-content" data-tab-id="${tabId}">${html}</div>`;
     }).join("");
     container.innerHTML = finalHtml;
     try {
@@ -80600,7 +80606,7 @@ function updateGenerationModeHandlers() {
   addLog("[UI] Generation mode handlers updated for mode: " + extension_settings97[extensionName].mode);
 }
 async function initUI({ check_update: check_update2 }) {
-  const existingPanel = document.getElementById("st-chatu8-settings");
+  const existingPanel = document.getElementById("zinao-chatu-settings");
   if (existingPanel) {
     existingPanel.remove();
   }
@@ -80624,7 +80630,7 @@ async function initUI({ check_update: check_update2 }) {
     console.error("Chatu8 UI Error: Could not load main settings panel.", error);
     return;
   }
-  const tabContentContainer = document.querySelector("#ch-settings-modal .st-chatu8-content");
+  const tabContentContainer = document.querySelector("#ch-settings-modal .zinao-chatu-content");
   if (!await loadAllTabsContent(tabContentContainer)) {
     return;
   }
@@ -80682,7 +80688,7 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
       settings2.theme_id = "\u9ED8\u8BA4-\u767D\u5929";
     }
     applyTheme(settings2.themes[settings2.theme_id]);
-    const mainKeys = ["scriptEnabled", "helpTipsEnabled", "newlineFixEnabled", "mode", "client", "displayMode", "heavyFrontendMode", "insertOriginalText", "dbclike", "collapseImage", "zidongdianji", "zidongdianji2", "longPressToEdit", "clickToPreview", "startTag", "endTag", "cache", "sdUrl", "st_chatu8_sd_auth", "comfyuiUrl", "novelaiApi", "novelaisite", "novelaiOtherSite", "enableCloudQueue", "cloudQueueUrl", "cloudQueueGreeting", "showQueueGreeting", "novelaimode", "novelai_sampler", "Schedule", "nai3Scale", "cfg_rescale", "AI_use_coords", "sm", "dyn", "nai3Variety", "nai3Deceisp", "sd_cwidth", "sd_cheight", "sd_csteps", "sd_cseed", "sdCfgScale", "restoreFaces", "novelai_width", "novelai_height", "novelai_steps", "novelai_seed", "nai3VibeTransfer", "enableVibeGroupTransfer", "normalizeRefStrength", "InformationExtracted", "ReferenceStrength", "nai3CharRef", "nai3StylePerception", "comfyui_width", "comfyui_height", "comfyui_steps", "comfyui_seed", "cfg_comfyui", "worker", "ipa", "c_fenwei", "c_xijie", "c_quanzhong", "c_idquanzhong", "AQT_sd", "UCP_sd", "AQT_novelai", "UCP_novelai", "AQT_comfyui", "UCP_comfyui", "addFurryDataset", "sd_cupscale_factor", "sd_chires_fix", "sd_chires_steps", "sd_cdenoising_strength", "sd_cclip_skip", "sd_cadetailer", "worldBookEnabled", "ai_temperature", "ai_top_p", "ai_presence_penalty", "ai_frequency_penalty", "ai_stream", "ai_private", "ai_token", "vocabulary_search_startswith", "vocabulary_search_limit", "vocabulary_search_sort", "enablePregen", "autoLLMImageGen", "autoInjectImagePrompt", "autoInjectCharDesc", "autoInjectSystemPromptText", "novelai_character_descriptions", "randomYushe", "aiAutonomousResolution", "imageAlignment", "imageSizeScale", "imageGenInterval", "translation_system_prompt", "ai_test_system", "ai_test_user", "ai_test_output", "jiuguanchucun", "vibeJiuguanchucun", "convertToJpegStorage", "weilin_lora_fix"];
+    const mainKeys = ["scriptEnabled", "helpTipsEnabled", "newlineFixEnabled", "mode", "client", "displayMode", "heavyFrontendMode", "insertOriginalText", "dbclike", "collapseImage", "zidongdianji", "zidongdianji2", "longPressToEdit", "clickToPreview", "startTag", "endTag", "cache", "sdUrl", "zinao_chatu_sd_auth", "comfyuiUrl", "novelaiApi", "novelaisite", "novelaiOtherSite", "enableCloudQueue", "cloudQueueUrl", "cloudQueueGreeting", "showQueueGreeting", "novelaimode", "novelai_sampler", "Schedule", "nai3Scale", "cfg_rescale", "AI_use_coords", "sm", "dyn", "nai3Variety", "nai3Deceisp", "sd_cwidth", "sd_cheight", "sd_csteps", "sd_cseed", "sdCfgScale", "restoreFaces", "novelai_width", "novelai_height", "novelai_steps", "novelai_seed", "nai3VibeTransfer", "enableVibeGroupTransfer", "normalizeRefStrength", "InformationExtracted", "ReferenceStrength", "nai3CharRef", "nai3StylePerception", "comfyui_width", "comfyui_height", "comfyui_steps", "comfyui_seed", "cfg_comfyui", "worker", "ipa", "c_fenwei", "c_xijie", "c_quanzhong", "c_idquanzhong", "AQT_sd", "UCP_sd", "AQT_novelai", "UCP_novelai", "AQT_comfyui", "UCP_comfyui", "addFurryDataset", "sd_cupscale_factor", "sd_chires_fix", "sd_chires_steps", "sd_cdenoising_strength", "sd_cclip_skip", "sd_cadetailer", "worldBookEnabled", "ai_temperature", "ai_top_p", "ai_presence_penalty", "ai_frequency_penalty", "ai_stream", "ai_private", "ai_token", "vocabulary_search_startswith", "vocabulary_search_limit", "vocabulary_search_sort", "enablePregen", "autoLLMImageGen", "autoInjectImagePrompt", "autoInjectCharDesc", "autoInjectSystemPromptText", "novelai_character_descriptions", "randomYushe", "aiAutonomousResolution", "imageAlignment", "imageSizeScale", "imageGenInterval", "translation_system_prompt", "ai_test_system", "ai_test_user", "ai_test_output", "jiuguanchucun", "vibeJiuguanchucun", "convertToJpegStorage", "weilin_lora_fix"];
     mainKeys.forEach((key) => {
       const element = document.getElementById(key);
       if (element) {
@@ -80917,7 +80923,7 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
         const textarea = document.getElementById(field + suffix);
         if (textarea) {
           textarea.value = currentPreset[field] ?? "";
-          const warning = textarea.closest(".st-chatu8-field-col").querySelector(".st-chatu8-unsaved-warning");
+          const warning = textarea.closest(".zinao-chatu-field-col").querySelector(".zinao-chatu-unsaved-warning");
           if (warning) $(warning).hide();
         }
       });
@@ -80928,6 +80934,7 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
     if (!settings2.prompt_replace_id) {
       settings2.prompt_replace_id = "\u9ED8\u8BA4";
     }
+    initZinaoChatuUI();
     generationTabs3.forEach((mode) => {
       const suffix = getSuffix(mode);
       const replaceSelect = document.getElementById("prompt_replace_id" + suffix);
@@ -80944,7 +80951,7 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
       const textarea = document.getElementById("prompt_replace_text" + suffix);
       if (textarea) {
         textarea.value = currentPreset.text ?? "";
-        const warning = textarea.closest(".st-chatu8-field-col").querySelector(".st-chatu8-unsaved-warning");
+        const warning = textarea.closest(".zinao-chatu-field-col").querySelector(".zinao-chatu-unsaved-warning");
         if (warning) $(warning).hide();
       }
     });
@@ -80984,7 +80991,7 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
     const worldBookTextarea = document.getElementById("worldbook_content");
     if (worldBookTextarea) {
       worldBookTextarea.value = currentWorldBookPreset.content ?? "";
-      const warning = worldBookTextarea.closest(".st-chatu8-field-col").querySelector(".st-chatu8-unsaved-warning");
+      const warning = worldBookTextarea.closest(".zinao-chatu-field-col").querySelector(".zinao-chatu-unsaved-warning");
       if (warning) $(warning).hide();
     }
     const workerSelect = document.getElementById("workerid");
@@ -81065,9 +81072,9 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
       settings2.chatu8_fab_video_paths = JSON.parse(JSON.stringify(defaultSettings.chatu8_fab_video_paths));
     }
     applyFabSettings();
-    const activeTabId = $(".st-chatu8-nav-link.active").data("tab");
+    const activeTabId = $(".zinao-chatu-nav-link.active").data("tab");
     if (activeTabId === "character") {
-      const characterTab = $("#st-chatu8-tab-character");
+      const characterTab = $("#zinao-chatu-tab-character");
       if (characterTab.length) {
         refreshCharacterSettings(characterTab);
       }
@@ -81104,23 +81111,23 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
   initLogSettings(settingsModal);
   initThemeSettings(settingsModal, settings2, currentPreviewTheme2);
   initPromptSettings(settingsModal, settings2);
-  settingsModal.on("click", ".st-chatu8-toggle", function() {
+  settingsModal.on("click", ".zinao-chatu-toggle", function() {
     const checkbox = $(this).find('input[type="checkbox"]');
     if (checkbox.length) {
       checkbox.prop("checked", !checkbox.prop("checked")).trigger("change");
     }
   });
-  settingsModal.find(".st-chatu8-nav-link").on("click", function(e) {
+  settingsModal.find(".zinao-chatu-nav-link").on("click", function(e) {
     e.preventDefault();
     const tabId = $(this).data("tab");
     if ($(this).hasClass("active")) {
       return;
     }
-    settingsModal.find(".st-chatu8-nav-link").removeClass("active");
+    settingsModal.find(".zinao-chatu-nav-link").removeClass("active");
     $(this).addClass("active");
-    const tabContents = settingsModal.find(".st-chatu8-content > .st-chatu8-tab-content");
+    const tabContents = settingsModal.find(".zinao-chatu-content > .zinao-chatu-tab-content");
     tabContents.removeClass("active");
-    const targetTab = settingsModal.find(`#st-chatu8-tab-${tabId}`);
+    const targetTab = settingsModal.find(`#zinao-chatu-tab-${tabId}`);
     if (targetTab.length) {
       targetTab.addClass("active");
       if (tabId === "log") {
@@ -81134,23 +81141,23 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
     settings2.lastTab = tabId;
   });
   const lastTabId = settings2.lastTab || "main";
-  const initialTabLink = settingsModal.find(`.st-chatu8-nav-link[data-tab="${lastTabId}"]`);
+  const initialTabLink = settingsModal.find(`.zinao-chatu-nav-link[data-tab="${lastTabId}"]`);
   if (initialTabLink.length && !initialTabLink.hasClass("active")) {
-    settingsModal.find(".st-chatu8-nav-link").removeClass("active");
+    settingsModal.find(".zinao-chatu-nav-link").removeClass("active");
     initialTabLink.addClass("active");
-    settingsModal.find(".st-chatu8-content > .st-chatu8-tab-content").removeClass("active");
-    const initialTabContent = settingsModal.find(`#st-chatu8-tab-${lastTabId}`);
+    settingsModal.find(".zinao-chatu-content > .zinao-chatu-tab-content").removeClass("active");
+    const initialTabContent = settingsModal.find(`#zinao-chatu-tab-${lastTabId}`);
     initialTabContent.addClass("active");
     if (lastTabId === "log") {
       updateLogView();
       updateErrorStats();
       updateImageGenStats();
     }
-  } else if (settingsModal.find(".st-chatu8-nav-link.active").length === 0) {
-    const firstLink = settingsModal.find(".st-chatu8-nav-link").first();
+  } else if (settingsModal.find(".zinao-chatu-nav-link.active").length === 0) {
+    const firstLink = settingsModal.find(".zinao-chatu-nav-link").first();
     firstLink.addClass("active");
     const firstTabId = firstLink.data("tab");
-    settingsModal.find(`#st-chatu8-tab-${firstTabId}`).addClass("active");
+    settingsModal.find(`#zinao-chatu-tab-${firstTabId}`).addClass("active");
   }
   initPromptReplaceControls(settingsModal);
   setupWorldBookEventListener();
@@ -81168,7 +81175,7 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
   initLLMSettings(settingsModal);
   initSendData(settingsModal);
   initKnowledgeBaseSettings(settingsModal);
-  const $kbNavLink = settingsModal.find('.st-chatu8-nav-link[data-tab="knowledgeBase"]');
+  const $kbNavLink = settingsModal.find('.zinao-chatu-nav-link[data-tab="knowledgeBase"]');
   if ($kbNavLink.length) {
     $kbNavLink.toggle(isKnowledgeBaseEnabled());
   }
@@ -81198,7 +81205,7 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
     const button = $(this);
     const originalText2 = button.text();
     const progressModal = $(`
-            <div class="st-chatu8-progress-modal" style="
+            <div class="zinao-chatu-progress-modal" style="
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -81210,7 +81217,7 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
                 justify-content: center;
                 z-index: 10001;
             ">
-                <div class="st-chatu8-progress-container" style="
+                <div class="zinao-chatu-progress-container" style="
                     background: white;
                     border-radius: 8px;
                     padding: 24px;
@@ -81219,7 +81226,7 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
                     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                 ">
                     <h3 style="margin: 0 0 16px 0; color: #333;">\u540C\u6B65\u670D\u52A1\u5668\u56FE\u7247</h3>
-                    <div class="st-chatu8-progress-bar" style="
+                    <div class="zinao-chatu-progress-bar" style="
                         width: 100%;
                         height: 24px;
                         background: #f0f0f0;
@@ -81227,7 +81234,7 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
                         overflow: hidden;
                         margin-bottom: 12px;
                     ">
-                        <div class="st-chatu8-progress-fill" style="
+                        <div class="zinao-chatu-progress-fill" style="
                             height: 100%;
                             background: linear-gradient(90deg, #4CAF50, #45a049);
                             width: 0%;
@@ -81235,13 +81242,13 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
                             border-radius: 12px;
                         "></div>
                     </div>
-                    <div class="st-chatu8-progress-text" style="
+                    <div class="zinao-chatu-progress-text" style="
                         text-align: center;
                         color: #666;
                         font-size: 14px;
                         min-height: 20px;
                     ">\u51C6\u5907\u5F00\u59CB...</div>
-                    <div class="st-chatu8-progress-percentage" style="
+                    <div class="zinao-chatu-progress-percentage" style="
                         text-align: center;
                         color: #333;
                         font-weight: bold;
@@ -81255,9 +81262,9 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
     try {
       const result = await syncServerImagesWithStorage("chatu8", (current, total, message) => {
         const percentage = Math.floor(current / total * 100);
-        progressModal.find(".st-chatu8-progress-fill").css("width", `${percentage}%`);
-        progressModal.find(".st-chatu8-progress-text").text(message);
-        progressModal.find(".st-chatu8-progress-percentage").text(`${percentage}%`);
+        progressModal.find(".zinao-chatu-progress-fill").css("width", `${percentage}%`);
+        progressModal.find(".zinao-chatu-progress-text").text(message);
+        progressModal.find(".zinao-chatu-progress-percentage").text(`${percentage}%`);
       });
       progressModal.remove();
       const ghost = result.removedGhostCount || 0;
@@ -81297,7 +81304,7 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
     settings2.ReferenceStrength = value;
     saveSettingsDebounced59();
   });
-  const CHATU8_IMAGE_REGEX_SCRIPT_NAME = "st-chatu8-\u4E0D\u53D1\u9001image\u6807\u7B7E";
+  const CHATU8_IMAGE_REGEX_SCRIPT_NAME = "zinao-chatu-\u4E0D\u53D1\u9001image\u6807\u7B7E";
   const CHATU8_IMAGE_REGEX_SCRIPT = {
     scriptName: CHATU8_IMAGE_REGEX_SCRIPT_NAME,
     findRegex: "/<image>[\\s\\S]*?<\\/image>/g",
@@ -81312,7 +81319,7 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
     minDepth: null,
     maxDepth: null
   };
-  const CHATU8_IMGTHINK_REGEX_SCRIPT_NAME = "st-chatu8-\u9690\u85CFimgthink";
+  const CHATU8_IMGTHINK_REGEX_SCRIPT_NAME = "zinao-chatu-\u9690\u85CFimgthink";
   const CHATU8_IMGTHINK_REGEX_SCRIPT = {
     scriptName: CHATU8_IMGTHINK_REGEX_SCRIPT_NAME,
     findRegex: "/<imgthink>[\\s\\S]*?<\\/imgthink>/g",
@@ -81410,7 +81417,7 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
     const isEnabled = $(this).prop("checked");
     settings2.helpTipsEnabled = isEnabled ? "true" : "false";
     saveSettingsDebounced59();
-    const container = settingsModal[0]?.querySelector(".st-chatu8-content");
+    const container = settingsModal[0]?.querySelector(".zinao-chatu-content");
     if (!container) return;
     if (isEnabled) {
       injectHelpTips(container);
@@ -81517,7 +81524,7 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
           saveSettingsDebounced59();
           return;
         }
-        const glCanvas = document.getElementById("st-chatu8-fab-video-canvas");
+        const glCanvas = document.getElementById("zinao-chatu-fab-video-canvas");
         if (!glCanvas) {
           toastr.error("\u672A\u627E\u5230\u89C6\u9891\u753B\u5E03\u5143\u7D20\uFF0C\u8BF7\u5148\u542F\u7528\u89C6\u9891\u5F62\u8C61", "\u72EC\u7ACB\u7A97\u53E3");
           $(event.target).prop("checked", false);
@@ -81528,7 +81535,7 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
         videoPlayer.setPipBackground(true);
         const stream = glCanvas.captureStream(30);
         pipVideoElement = document.createElement("video");
-        pipVideoElement.id = "st-chatu8-pip-video";
+        pipVideoElement.id = "zinao-chatu-pip-video";
         pipVideoElement.srcObject = stream;
         pipVideoElement.muted = true;
         pipVideoElement.autoplay = true;
@@ -81559,7 +81566,7 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
         });
         toastr.success("\u667A\u7ED8\u59EC\u5DF2\u5F39\u51FA\u5230\u753B\u4E2D\u753B\u7A97\u53E3\uFF0C\u53EF\u7F6E\u9876\u663E\u793A\u5728\u5176\u4ED6\u5E94\u7528\u4E0A\u65B9", "\u72EC\u7ACB\u7A97\u53E3");
       } catch (err) {
-        console.error("[st-chatu8] \u521B\u5EFA\u753B\u4E2D\u753B\u5931\u8D25:", err);
+        console.error("[zinao-chatu] \u521B\u5EFA\u753B\u4E2D\u753B\u5931\u8D25:", err);
         const vp = getGlobalVideoPlayer();
         if (vp && vp.setPipBackground) {
           vp.setPipBackground(false);
@@ -81696,7 +81703,7 @@ short blonde hair, blue eyes, casual hoodie, denim shorts`;
     applyFabSettings();
   });
   function centerFabPosition() {
-    const fab = document.getElementById("st-chatu8-fab");
+    const fab = document.getElementById("zinao-chatu-fab");
     if (!fab) return;
     const fabWidth = fab.offsetWidth;
     const fabHeight = fab.offsetHeight;
@@ -82056,7 +82063,7 @@ async function loadIsolatedUmdLibrary(scriptSrc, globalName) {
   const absoluteScriptSrc = new URL(scriptSrc, window.location.href).href;
   const response = await fetch(absoluteScriptSrc, { cache: "no-cache" });
   if (!response.ok) {
-    throw new Error(`[st-chatu8] Failed to fetch ${globalName} source: ${response.status} ${response.statusText}`);
+    throw new Error(`[zinao-chatu] Failed to fetch ${globalName} source: ${response.status} ${response.statusText}`);
   }
   const source = await response.text();
   const isolatedGlobal = {};
@@ -82086,7 +82093,7 @@ return this[${JSON.stringify(globalName)}] || window[${JSON.stringify(globalName
     void 0
   );
   if (typeof library === "undefined") {
-    throw new Error(`[st-chatu8] Isolated ${globalName} evaluation completed but no library was returned`);
+    throw new Error(`[zinao-chatu] Isolated ${globalName} evaluation completed but no library was returned`);
   }
   return library;
 }
@@ -82105,7 +82112,7 @@ function loadJSZip() {
     }
     return jszipConstructor;
   }).catch((error) => {
-    console.error("[st-chatu8] JSZip isolated load failed", {
+    console.error("[zinao-chatu] JSZip isolated load failed", {
       error,
       scriptSrc,
       environment: getModuleEnvironmentInfo()
@@ -82134,7 +82141,7 @@ function loadcrypto() {
     }
     return cryptoJs;
   }).catch((error) => {
-    console.error("[st-chatu8] CryptoJS isolated load failed", {
+    console.error("[zinao-chatu] CryptoJS isolated load failed", {
       error,
       scriptSrc,
       environment: getModuleEnvironmentInfo()
@@ -82163,7 +82170,7 @@ function loadmsgpack() {
     }
     return messagePack;
   }).catch((error) => {
-    console.error("[st-chatu8] MessagePack isolated load failed", {
+    console.error("[zinao-chatu] MessagePack isolated load failed", {
       error,
       scriptSrc,
       environment: getModuleEnvironmentInfo()
@@ -82221,15 +82228,15 @@ function setUpdateStatus(text, cls) {
   const el = document.getElementById("ch-update-status");
   if (el) {
     el.textContent = text;
-    el.className = `st-chatu8-update-status ${cls || ""}`.trim();
+    el.className = `zinao-chatu-update-status ${cls || ""}`.trim();
   }
 }
-var REINSTALL_GIT_URL = "https://github.com/damoshen123/st-chatu8.git";
+var REINSTALL_GIT_URL = "https://github.com/damoshen123/zinao-chatu.git";
 function showReinstallGuide(reason) {
-  const existing = document.getElementById("st-chatu8-reinstall-guide");
+  const existing = document.getElementById("zinao-chatu-reinstall-guide");
   if (existing) existing.remove();
   const overlay2 = document.createElement("div");
-  overlay2.id = "st-chatu8-reinstall-guide";
+  overlay2.id = "zinao-chatu-reinstall-guide";
   overlay2.style.cssText = [
     "position:fixed",
     "inset:0",
@@ -82248,7 +82255,7 @@ function showReinstallGuide(reason) {
                     box-shadow:0 10px 40px rgba(0,0,0,0.5); padding:18px 20px;">
             <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
                 <h3 style="margin:0; font-size:18px;">\u26A0\uFE0F \u81EA\u52A8\u66F4\u65B0\u5931\u8D25\uFF0C\u8BF7\u624B\u52A8\u91CD\u88C5</h3>
-                <button id="st-chatu8-reinstall-close" title="\u5173\u95ED"
+                <button id="zinao-chatu-reinstall-close" title="\u5173\u95ED"
                         style="background:transparent; border:none; color:inherit; font-size:20px; cursor:pointer; line-height:1;">\xD7</button>
             </div>
             ${safeReason ? `<div style="opacity:.85; font-size:13px; margin-bottom:10px;">\u539F\u56E0\uFF1A${safeReason}</div>` : ""}
@@ -82257,7 +82264,7 @@ function showReinstallGuide(reason) {
                 <ol style="padding-left:22px; margin:8px 0;">
                     <li>\u70B9\u51FB\u9152\u9986<b>\u53F3\u4E0A\u89D2\u7684\u5C0F\u7BB1\u5B50\u56FE\u6807</b>\uFF08\u6269\u5C55 / Extensions\uFF09\u3002</li>
                     <li>\u70B9\u51FB\u91CC\u9762\u7684\u300C<b>\u7BA1\u7406\u63D2\u4EF6</b>\u300D\uFF08Manage extensions\uFF09\u3002</li>
-                    <li>\u627E\u5230 <code>st-chatu8</code>\uFF0C\u70B9\u51FB\u5176\u53F3\u4FA7\u7684<b>\u5220\u9664</b>\u6309\u94AE\u5378\u8F7D\u3002</li>
+                    <li>\u627E\u5230 <code>zinao-chatu</code>\uFF0C\u70B9\u51FB\u5176\u53F3\u4FA7\u7684<b>\u5220\u9664</b>\u6309\u94AE\u5378\u8F7D\u3002</li>
                     <li>\u56DE\u5230\u6269\u5C55\u9762\u677F\uFF0C\u70B9\u51FB\u300C<b>\u5B89\u88C5\u6269\u5C55</b>\u300D\uFF08Install extension\uFF09\uFF0C\u7C98\u8D34\u4E0B\u9762\u7684\u5B89\u88C5\u5730\u5740\u5E76\u786E\u8BA4\u5B89\u88C5\uFF1A</li>
                 </ol>
                 <p style="margin:8px 0; padding:8px 10px; border-radius:6px;
@@ -82267,11 +82274,11 @@ function showReinstallGuide(reason) {
                     \u8BF7<b>\u4E0D\u8981\u624B\u52A8\u5237\u65B0\u9875\u9762</b>\uFF0C\u5426\u5219\u4F1A\u5BFC\u81F4\u5B89\u88C5\u5931\u8D25\u3002
                 </p>
                 <div style="display:flex; gap:8px; align-items:stretch; margin:10px 0;">
-                    <input id="st-chatu8-reinstall-url" type="text" readonly
+                    <input id="zinao-chatu-reinstall-url" type="text" readonly
                            value="${REINSTALL_GIT_URL}"
                            style="flex:1; padding:8px 10px; border-radius:6px; border:1px solid var(--SmartThemeBorderColor, #555);
                                   background:rgba(255,255,255,0.06); color:inherit; font-family:monospace; font-size:13px;" />
-                    <button id="st-chatu8-reinstall-copy"
+                    <button id="zinao-chatu-reinstall-copy"
                             style="padding:8px 14px; border-radius:6px; border:1px solid var(--SmartThemeBorderColor, #555);
                                    background:var(--SmartThemeQuoteColor, #4a90e2); color:#fff; cursor:pointer; white-space:nowrap;">
                         \u{1F4CB} \u590D\u5236\u5730\u5740
@@ -82279,7 +82286,7 @@ function showReinstallGuide(reason) {
                 </div>
             </div>
             <div style="display:flex; justify-content:flex-end; margin-top:14px;">
-                <button id="st-chatu8-reinstall-ok"
+                <button id="zinao-chatu-reinstall-ok"
                         style="padding:8px 18px; border-radius:6px; border:1px solid var(--SmartThemeBorderColor, #555);
                                background:transparent; color:inherit; cursor:pointer;">\u6211\u77E5\u9053\u4E86</button>
             </div>
@@ -82287,10 +82294,10 @@ function showReinstallGuide(reason) {
     `;
   document.body.appendChild(overlay2);
   const close = () => overlay2.remove();
-  overlay2.querySelector("#st-chatu8-reinstall-close").addEventListener("click", close);
-  overlay2.querySelector("#st-chatu8-reinstall-ok").addEventListener("click", close);
-  const copyBtn = overlay2.querySelector("#st-chatu8-reinstall-copy");
-  const urlInput = overlay2.querySelector("#st-chatu8-reinstall-url");
+  overlay2.querySelector("#zinao-chatu-reinstall-close").addEventListener("click", close);
+  overlay2.querySelector("#zinao-chatu-reinstall-ok").addEventListener("click", close);
+  const copyBtn = overlay2.querySelector("#zinao-chatu-reinstall-copy");
+  const urlInput = overlay2.querySelector("#zinao-chatu-reinstall-url");
   copyBtn.addEventListener("click", async () => {
     const text = REINSTALL_GIT_URL;
     let ok = false;
@@ -82480,7 +82487,7 @@ async function checkForUpdates2() {
   const updateNotesElement = document.getElementById("ch-update-notes");
   console.log("Checking for updates...", updateNotesElement);
   try {
-    const remoteManifestUrl = `https://raw.githubusercontent.com/damoshen123/st-chatu8/master/manifest.json?t=${(/* @__PURE__ */ new Date()).getTime()}`;
+    const remoteManifestUrl = `https://raw.githubusercontent.com/damoshen123/zinao-chatu/master/manifest.json?t=${(/* @__PURE__ */ new Date()).getTime()}`;
     const response = await fetch(remoteManifestUrl, { cache: "no-cache" });
     if (!response.ok) {
       console.error("Failed to fetch remote manifest for update check.");
@@ -82553,7 +82560,7 @@ async function main() {
       pathsChanged = true;
     }
     if (pathsChanged) {
-      console.log("[st-chatu8] \u81EA\u52A8\u8FC1\u79FB\u65E7\u7248\u89C6\u9891\u914D\u7F6E\u8DEF\u5F84 -> .chatu8");
+      console.log("[zinao-chatu] \u81EA\u52A8\u8FC1\u79FB\u65E7\u7248\u89C6\u9891\u914D\u7F6E\u8DEF\u5F84 -> .chatu8");
     }
   }
   extension_settings100[extensionName] = mergedSettings;
@@ -82592,12 +82599,12 @@ function initAutoInjectPromptListener() {
             role: "system",
             content: combined
           });
-          console.log("[st-chatu8] Auto injected image generation prompt and character descriptions into chat payload.");
+          console.log("[zinao-chatu] Auto injected image generation prompt and character descriptions into chat payload.");
         }
       });
     }
   } catch (err) {
-    console.error("[st-chatu8] Failed to initialize AutoInjectPromptListener:", err);
+    console.error("[zinao-chatu] Failed to initialize AutoInjectPromptListener:", err);
   }
 }
 function addNewElement() {

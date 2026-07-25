@@ -1,6 +1,6 @@
 /* Confirmation Modal Styles */
-#st-chatu8-settings .st-chatu8-confirm-backdrop,
-.st-chatu8-confirm-backdrop {
+#zinao-chatu-settings .zinao-chatu-confirm-backdrop,
+.zinao-chatu-confirm-backdrop {
     position: absolute;
     /* Changed from fixed to absolute */
     top: 0;
@@ -12,16 +12,16 @@
     place-items: center;
     z-index: 1100;
     /* Higher than modal */
-    font-family: var(--st-chatu8-font-family);
+    font-family: var(--zinao-chatu-font-family);
 }
 
-#st-chatu8-settings .st-chatu8-confirm-box,
-.st-chatu8-confirm-box {
-    background-color: var(--st-chatu8-bg-primary);
-    color: var(--st-chatu8-text-primary);
+#zinao-chatu-settings .zinao-chatu-confirm-box,
+.zinao-chatu-confirm-box {
+    background-color: var(--zinao-chatu-bg-primary);
+    color: var(--zinao-chatu-text-primary);
     padding: 24px;
-    border-radius: var(--st-chatu8-border-radius);
-    box-shadow: var(--st-chatu8-box-shadow);
+    border-radius: var(--zinao-chatu-border-radius);
+    box-shadow: var(--zinao-chatu-box-shadow);
     width: 90vw;
     max-width: 450px;
     display: flex;
@@ -29,14 +29,14 @@
     gap: 16px;
 }
 
-#st-chatu8-settings .st-chatu8-confirm-message,
-.st-chatu8-confirm-message {
+#zinao-chatu-settings .zinao-chatu-confirm-message,
+.zinao-chatu-confirm-message {
     margin: 0;
     font-size: 1.1rem;
 }
 
-#st-chatu8-settings .st-chatu8-confirm-buttons,
-.st-chatu8-confirm-buttons {
+#zinao-chatu-settings .zinao-chatu-confirm-buttons,
+.zinao-chatu-confirm-buttons {
     display: flex;
     justify-content: flex-end;
     gap: 12px;
@@ -44,14 +44,14 @@
 }
 
 /* Ensure the input inside the confirm box is also styled */
-#st-chatu8-settings .st-chatu8-confirm-box .st-chatu8-text-input,
-.st-chatu8-confirm-box .st-chatu8-text-input {
+#zinao-chatu-settings .zinao-chatu-confirm-box .zinao-chatu-text-input,
+.zinao-chatu-confirm-box .zinao-chatu-text-input {
     width: 100%;
     box-sizing: border-box;
 }
 
 /* Styles for the image tag edit dialog */
-.st-chatu8-edit-backdrop {
+.zinao-chatu-edit-backdrop {
     position: fixed;
     top: 0;
     left: 0;
@@ -61,13 +61,13 @@
     display: grid;
     place-items: center;
     z-index: 10000;
-    font-family: var(--st-chatu8-font-family, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif);
+    font-family: var(--zinao-chatu-font-family, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif);
 }
 
-.st-chatu8-edit-dialog {
-    background-color: var(--st-chatu8-bg-primary, #2c2c2c);
-    color: var(--st-chatu8-text-primary, #f0f0f0);
-    border: 1px solid var(--st-chatu8-border-color, #444);
+.zinao-chatu-edit-dialog {
+    background-color: var(--zinao-chatu-bg-primary, #2c2c2c);
+    color: var(--zinao-chatu-text-primary, #f0f0f0);
+    border: 1px solid var(--zinao-chatu-border-color, #444);
     border-radius: 12px;
     padding: 20px;
     z-index: 10001;
@@ -85,27 +85,27 @@
     /* No position/transform needed as backdrop handles centering */
 }
 
-.st-chatu8-edit-title {
+.zinao-chatu-edit-title {
     font-size: 1.2em;
     font-weight: 600;
     margin-bottom: 5px;
     text-align: center;
-    color: var(--st-chatu8-text-primary, #e0e0e0);
+    color: var(--zinao-chatu-text-primary, #e0e0e0);
 }
 
-.st-chatu8-edit-input {
+.zinao-chatu-edit-input {
     width: 100%;
     min-height: 200px;
     max-height: 50vh;
     /* 限制最大高度，防止输入框过大 */
-    background-color: var(--st-chatu8-input-bg, #3a3a3a);
-    color: var(--st-chatu8-input-text, #f0f0f0);
-    border: 1px solid var(--st-chatu8-input-border, #555);
+    background-color: var(--zinao-chatu-input-bg, #3a3a3a);
+    color: var(--zinao-chatu-input-text, #f0f0f0);
+    border: 1px solid var(--zinao-chatu-input-border, #555);
     border-radius: 8px;
     padding: 10px;
     box-sizing: border-box;
     font-size: 1em;
-    font-family: var(--st-chatu8-font-family, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif);
+    font-family: var(--zinao-chatu-font-family, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif);
     line-height: 1.5;
     letter-spacing: normal;
     word-spacing: normal;
@@ -117,34 +117,34 @@
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.st-chatu8-edit-input:focus {
+.zinao-chatu-edit-input:focus {
     outline: none;
-    border-color: var(--st-chatu8-accent-primary, #4a90e2);
+    border-color: var(--zinao-chatu-accent-primary, #4a90e2);
     box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.3);
 }
 
-.st-chatu8-highlight-match {
+.zinao-chatu-highlight-match {
     background-color: rgba(46, 204, 113, 0.25);
     border-radius: 4px;
     padding: 2px 0;
     box-shadow: 0 0 0 1px rgba(46, 204, 113, 0.4);
 }
 
-.st-chatu8-highlight-error {
+.zinao-chatu-highlight-error {
     background-color: rgba(231, 76, 60, 0.25);
     border-radius: 4px;
     padding: 2px 0;
     box-shadow: 0 0 0 1px rgba(231, 76, 60, 0.4);
 }
 
-.st-chatu8-edit-buttons {
+.zinao-chatu-edit-buttons {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
     margin-top: 10px;
 }
 
-.st-chatu8-edit-button {
+.zinao-chatu-edit-button {
     border: none;
     border-radius: 6px;
     padding: 10px 20px;
@@ -154,32 +154,32 @@
     transition: background-color 0.2s, transform 0.1s;
 }
 
-.st-chatu8-edit-button:active {
+.zinao-chatu-edit-button:active {
     transform: scale(0.98);
 }
 
-.st-chatu8-edit-button.send {
-    background-color: var(--st-chatu8-accent-primary, #4a90e2);
-    color: var(--st-chatu8-text-highlight, white);
+.zinao-chatu-edit-button.send {
+    background-color: var(--zinao-chatu-accent-primary, #4a90e2);
+    color: var(--zinao-chatu-text-highlight, white);
 }
 
-.st-chatu8-edit-button.send:hover {
-    background-color: var(--st-chatu8-accent-secondary, #357abd);
+.zinao-chatu-edit-button.send:hover {
+    background-color: var(--zinao-chatu-accent-secondary, #357abd);
 }
 
-.st-chatu8-edit-button.cancel {
-    background-color: var(--st-chatu8-bg-secondary, #555);
-    color: var(--st-chatu8-text-primary, #f0f0f0);
+.zinao-chatu-edit-button.cancel {
+    background-color: var(--zinao-chatu-bg-secondary, #555);
+    color: var(--zinao-chatu-text-primary, #f0f0f0);
 }
 
-.st-chatu8-edit-button.cancel:hover {
-    background-color: var(--st-chatu8-bg-tertiary, #666);
+.zinao-chatu-edit-button.cancel:hover {
+    background-color: var(--zinao-chatu-bg-tertiary, #666);
 }
 
 /* ComfyUI Inpaint Dialog Specific Styles */
 
 /* Editor container */
-.st-chatu8-inpaint-editor-container {
+.zinao-chatu-inpaint-editor-container {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -188,7 +188,7 @@
 }
 
 /* Toolbar styles */
-.st-chatu8-inpaint-toolbar {
+.zinao-chatu-inpaint-toolbar {
     display: flex;
     gap: 10px;
     align-items: center;
@@ -196,40 +196,40 @@
     margin-bottom: 15px;
 }
 
-.st-chatu8-tool-btn {
+.zinao-chatu-tool-btn {
     padding: 8px 12px;
-    border: 1px solid var(--st-chatu8-border-color, #444);
+    border: 1px solid var(--zinao-chatu-border-color, #444);
     border-radius: 6px;
-    background: var(--st-chatu8-bg-secondary, #2a2a4a);
-    color: var(--st-chatu8-text-primary, #fff);
+    background: var(--zinao-chatu-bg-secondary, #2a2a4a);
+    color: var(--zinao-chatu-text-primary, #fff);
     cursor: pointer;
     transition: all 0.2s;
     font-size: 0.9em;
 }
 
-.st-chatu8-tool-btn:hover {
-    background: var(--st-chatu8-accent-secondary, #3a3a5a);
+.zinao-chatu-tool-btn:hover {
+    background: var(--zinao-chatu-accent-secondary, #3a3a5a);
 }
 
-.st-chatu8-tool-btn.active {
-    background: var(--st-chatu8-accent-primary, #4a4a8a);
-    border-color: var(--st-chatu8-accent-primary, #6a6aaa);
+.zinao-chatu-tool-btn.active {
+    background: var(--zinao-chatu-accent-primary, #4a4a8a);
+    border-color: var(--zinao-chatu-accent-primary, #6a6aaa);
 }
 
-.st-chatu8-inpaint-brush-label {
+.zinao-chatu-inpaint-brush-label {
     display: flex;
     align-items: center;
     gap: 8px;
     font-size: 0.9em;
-    color: var(--st-chatu8-text-secondary, #ccc);
+    color: var(--zinao-chatu-text-secondary, #ccc);
 }
 
-.st-chatu8-inpaint-brush-slider {
+.zinao-chatu-inpaint-brush-slider {
     width: 100px;
 }
 
 /* Prompt section styles */
-.st-chatu8-inpaint-prompt-section {
+.zinao-chatu-inpaint-prompt-section {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -237,48 +237,48 @@
     margin-bottom: 15px;
 }
 
-.st-chatu8-inpaint-prompt-group {
+.zinao-chatu-inpaint-prompt-group {
     display: flex;
     flex-direction: column;
     gap: 5px;
     position: relative;
 }
 
-.st-chatu8-inpaint-prompt-group label {
+.zinao-chatu-inpaint-prompt-group label {
     font-size: 0.9em;
-    color: var(--st-chatu8-text-secondary, #ccc);
+    color: var(--zinao-chatu-text-secondary, #ccc);
 }
 
-.st-chatu8-inpaint-denoise-group {
+.zinao-chatu-inpaint-denoise-group {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.st-chatu8-inpaint-denoise-label {
+.zinao-chatu-inpaint-denoise-label {
     flex-shrink: 0;
     font-size: 0.9em;
-    color: var(--st-chatu8-text-secondary, #ccc);
+    color: var(--zinao-chatu-text-secondary, #ccc);
 }
 
-.st-chatu8-inpaint-denoise-slider {
+.zinao-chatu-inpaint-denoise-slider {
     flex: 1;
     min-width: 100px;
 }
 
-.st-chatu8-inpaint-denoise-value {
+.zinao-chatu-inpaint-denoise-value {
     min-width: 40px;
     text-align: right;
     font-size: 0.9em;
-    color: var(--st-chatu8-text-primary, #fff);
+    color: var(--zinao-chatu-text-primary, #fff);
 }
 
 /* Autocomplete styles for inpaint dialog */
-.st-chatu8-edit-backdrop .ch-autocomplete-results {
+.zinao-chatu-edit-backdrop .ch-autocomplete-results {
     display: none;
     position: absolute;
-    background-color: var(--st-chatu8-dropdown-list-bg, #2a2a4a);
-    border: 1px solid var(--st-chatu8-border-color, #444);
+    background-color: var(--zinao-chatu-dropdown-list-bg, #2a2a4a);
+    border: 1px solid var(--zinao-chatu-border-color, #444);
     border-radius: 6px;
     max-height: 150px;
     overflow-y: auto;
@@ -287,20 +287,20 @@
     max-width: 100%;
 }
 
-.st-chatu8-edit-backdrop .ch-autocomplete-item {
+.zinao-chatu-edit-backdrop .ch-autocomplete-item {
     padding: 8px 12px;
     cursor: pointer;
-    color: var(--st-chatu8-dropdown-text, #fff);
+    color: var(--zinao-chatu-dropdown-text, #fff);
     font-size: 0.9em;
 }
 
-.st-chatu8-edit-backdrop .ch-autocomplete-item:hover {
-    background-color: var(--st-chatu8-accent-secondary, #3a3a5a);
-    color: var(--st-chatu8-text-highlight, #fff);
+.zinao-chatu-edit-backdrop .ch-autocomplete-item:hover {
+    background-color: var(--zinao-chatu-accent-secondary, #3a3a5a);
+    color: var(--zinao-chatu-text-highlight, #fff);
 }
 
 /* Image Preview Modal */
-.st-chatu8-preview-backdrop {
+.zinao-chatu-preview-backdrop {
     position: fixed;
     top: 0;
     left: 0;
@@ -310,10 +310,10 @@
     display: grid;
     place-items: center;
     z-index: 10000;
-    font-family: var(--st-chatu8-font-family, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif);
+    font-family: var(--zinao-chatu-font-family, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif);
 }
 
-.st-chatu8-preview-dialog {
+.zinao-chatu-preview-dialog {
     background-color: #2c2c2c;
     color: #f0f0f0;
     border-radius: 12px;
@@ -332,7 +332,7 @@
     min-height: 0;
 }
 
-.st-chatu8-preview-close {
+.zinao-chatu-preview-close {
     position: absolute;
     top: 10px;
     right: 20px;
@@ -343,11 +343,11 @@
     z-index: 10;
 }
 
-.st-chatu8-preview-close:hover {
+.zinao-chatu-preview-close:hover {
     color: white;
 }
 
-.st-chatu8-preview-thumbnail-container {
+.zinao-chatu-preview-thumbnail-container {
     display: flex;
     gap: 10px;
     padding: 10px;
@@ -357,7 +357,7 @@
     flex-shrink: 0;
 }
 
-.st-chatu8-preview-thumbnail {
+.zinao-chatu-preview-thumbnail {
     height: 80px;
     width: auto;
     cursor: pointer;
@@ -366,15 +366,15 @@
     transition: border-color 0.2s, transform 0.2s;
 }
 
-.st-chatu8-preview-thumbnail:hover {
+.zinao-chatu-preview-thumbnail:hover {
     transform: scale(1.05);
 }
 
-.st-chatu8-preview-thumbnail.active {
+.zinao-chatu-preview-thumbnail.active {
     border-color: #4a90e2;
 }
 
-.st-chatu8-preview-image-container {
+.zinao-chatu-preview-image-container {
     flex: 1 1 0;
     min-height: 0;
     position: relative;
@@ -384,14 +384,14 @@
     overflow: hidden;
 }
 
-.st-chatu8-preview-large-image {
+.zinao-chatu-preview-large-image {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
     border-radius: 8px;
 }
 
-.st-chatu8-preview-nav {
+.zinao-chatu-preview-nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -406,19 +406,19 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.st-chatu8-preview-nav:hover {
+.zinao-chatu-preview-nav:hover {
     background-color: rgba(34, 34, 34, 0.6);
 }
 
-.st-chatu8-preview-nav.prev {
+.zinao-chatu-preview-nav.prev {
     left: 15px;
 }
 
-.st-chatu8-preview-nav.next {
+.zinao-chatu-preview-nav.next {
     right: 15px;
 }
 
-.st-chatu8-preview-actions {
+.zinao-chatu-preview-actions {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -429,7 +429,7 @@
     flex-wrap: wrap;
 }
 
-.st-chatu8-preview-action-button {
+.zinao-chatu-preview-action-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -453,28 +453,28 @@
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
-.st-chatu8-preview-action-button i {
+.zinao-chatu-preview-action-button i {
     font-size: 0.95em;
     opacity: 0.95;
 }
 
-.st-chatu8-preview-action-button:hover {
+.zinao-chatu-preview-action-button:hover {
     transform: translateY(-1px);
     box-shadow: 0 6px 18px rgba(74, 144, 226, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.22);
 }
 
-.st-chatu8-preview-action-button:active {
+.zinao-chatu-preview-action-button:active {
     transform: translateY(0) scale(0.98);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-.st-chatu8-preview-action-button.danger {
+.zinao-chatu-preview-action-button.danger {
     background: linear-gradient(135deg, rgba(229, 83, 83, 0.92) 0%, rgba(193, 48, 72, 0.92) 100%);
     border-color: rgba(255, 255, 255, 0.12);
 }
 
-.st-chatu8-preview-action-button.danger:hover {
+.zinao-chatu-preview-action-button.danger:hover {
     box-shadow: 0 6px 18px rgba(217, 83, 79, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.22);
 }
@@ -482,7 +482,7 @@
 /* 移动端适配：全屏铺满 + 更紧凑的按钮栏，避免图片被按钮遮挡 */
 @media (max-width: 640px),
 (pointer: coarse) {
-    .st-chatu8-preview-dialog {
+    .zinao-chatu-preview-dialog {
         width: 100vw;
         height: 100vh;
         height: 100dvh;
@@ -493,18 +493,18 @@
         gap: 6px;
     }
 
-    .st-chatu8-preview-close {
+    .zinao-chatu-preview-close {
         top: 6px;
         right: 10px;
         font-size: 2rem;
     }
 
-    .st-chatu8-preview-actions {
+    .zinao-chatu-preview-actions {
         padding: 6px 4px;
         gap: 8px;
     }
 
-    .st-chatu8-preview-action-button {
+    .zinao-chatu-preview-action-button {
         flex: 1 1 0;
         min-width: 0;
         padding: 10px 12px;
@@ -512,23 +512,23 @@
     }
 
     /* 触屏设备：隐藏左右按钮，使用滑动手势切换（使用 !important 覆盖内联样式） */
-    .st-chatu8-preview-nav {
+    .zinao-chatu-preview-nav {
         display: none !important;
     }
 
     /* 图片容器启用水平滑动手势的默认行为 */
-    .st-chatu8-preview-image-container {
+    .zinao-chatu-preview-image-container {
         touch-action: pan-y;
     }
 
     /* 计数器上移稍靠近顶边，避免遮挡图片 */
-    .st-chatu8-preview-counter {
+    .zinao-chatu-preview-counter {
         top: 6px !important;
     }
 }
 
 /* Workflow Visualization Styles */
-.st-chatu8-workflow-viz-backdrop {
+.zinao-chatu-workflow-viz-backdrop {
     position: fixed;
     top: 0;
     left: 0;
@@ -540,10 +540,10 @@
     display: grid;
     place-items: center;
     z-index: 10000;
-    font-family: var(--st-chatu8-font-family, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif);
+    font-family: var(--zinao-chatu-font-family, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif);
 }
 
-.st-chatu8-workflow-viz-dialog {
+.zinao-chatu-workflow-viz-dialog {
     background-color: #1a1a2e;
     color: #f0f0f0;
     border: 1px solid #333;
@@ -559,7 +559,7 @@
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
 }
 
-.st-chatu8-workflow-viz-header {
+.zinao-chatu-workflow-viz-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -568,14 +568,14 @@
     border-bottom: 1px solid #333;
 }
 
-.st-chatu8-workflow-viz-header h3 {
+.zinao-chatu-workflow-viz-header h3 {
     margin: 0;
     font-size: 1.2em;
     font-weight: 600;
     color: #e0e0e0;
 }
 
-.st-chatu8-workflow-viz-close {
+.zinao-chatu-workflow-viz-close {
     font-size: 2rem;
     color: #888;
     cursor: pointer;
@@ -583,11 +583,11 @@
     line-height: 1;
 }
 
-.st-chatu8-workflow-viz-close:hover {
+.zinao-chatu-workflow-viz-close:hover {
     color: #fff;
 }
 
-.st-chatu8-workflow-viz-toolbar {
+.zinao-chatu-workflow-viz-toolbar {
     display: flex;
     gap: 10px;
     padding: 12px 20px;
@@ -596,7 +596,7 @@
     align-items: center;
 }
 
-.st-chatu8-workflow-viz-toolbar .st-chatu8-btn {
+.zinao-chatu-workflow-viz-toolbar .zinao-chatu-btn {
     padding: 8px 14px;
     font-size: 0.9em;
     background-color: #3a3a5e;
@@ -607,26 +607,26 @@
     transition: all 0.2s;
 }
 
-.st-chatu8-workflow-viz-toolbar .st-chatu8-btn:hover {
+.zinao-chatu-workflow-viz-toolbar .zinao-chatu-btn:hover {
     background-color: #4a4a7e;
     border-color: #4a90e2;
     color: #fff;
 }
 
-.st-chatu8-workflow-viz-stats {
+.zinao-chatu-workflow-viz-stats {
     margin-left: auto;
     color: #888;
     font-size: 0.9em;
 }
 
 /* 主体布局 - 左右分栏 */
-.st-chatu8-workflow-viz-body {
+.zinao-chatu-workflow-viz-body {
     flex: 1;
     display: flex;
     overflow: hidden;
 }
 
-.st-chatu8-workflow-viz-container {
+.zinao-chatu-workflow-viz-container {
     flex: 1;
     overflow: auto;
     background-color: #0d0d1a;
@@ -637,50 +637,50 @@
     cursor: grab;
 }
 
-.st-chatu8-workflow-viz-container:active {
+.zinao-chatu-workflow-viz-container:active {
     cursor: grabbing;
 }
 
-.st-chatu8-workflow-viz-svg-wrapper {
+.zinao-chatu-workflow-viz-svg-wrapper {
     position: relative;
     min-width: 100%;
     min-height: 100%;
 }
 
-.st-chatu8-workflow-viz-svg {
+.zinao-chatu-workflow-viz-svg {
     display: block;
     transition: transform 0.15s ease-out;
 }
 
-.st-chatu8-workflow-viz-node {
+.zinao-chatu-workflow-viz-node {
     cursor: pointer;
     transition: filter 0.2s;
 }
 
-.st-chatu8-workflow-viz-node:hover {
+.zinao-chatu-workflow-viz-node:hover {
     filter: brightness(1.2);
 }
 
-.st-chatu8-workflow-viz-node:hover rect {
+.zinao-chatu-workflow-viz-node:hover rect {
     stroke-width: 3;
 }
 
-.st-chatu8-workflow-viz-node.selected rect {
+.zinao-chatu-workflow-viz-node.selected rect {
     stroke-width: 4;
     filter: drop-shadow(0 0 8px currentColor);
 }
 
-.st-chatu8-workflow-viz-connection {
+.zinao-chatu-workflow-viz-connection {
     transition: stroke 0.2s, stroke-width 0.2s;
 }
 
-.st-chatu8-workflow-viz-connection:hover {
+.zinao-chatu-workflow-viz-connection:hover {
     stroke: #4a90e2;
     stroke-width: 3;
 }
 
 /* 属性面板样式 */
-.st-chatu8-workflow-viz-properties {
+.zinao-chatu-workflow-viz-properties {
     width: 320px;
     min-width: 280px;
     background-color: #1a1a2e;
@@ -690,7 +690,7 @@
     flex-direction: column;
 }
 
-.st-chatu8-workflow-viz-properties-placeholder {
+.zinao-chatu-workflow-viz-properties-placeholder {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -700,46 +700,46 @@
     gap: 10px;
 }
 
-.st-chatu8-workflow-viz-properties-placeholder i {
+.zinao-chatu-workflow-viz-properties-placeholder i {
     font-size: 3rem;
 }
 
-.st-chatu8-workflow-viz-properties-placeholder p {
+.zinao-chatu-workflow-viz-properties-placeholder p {
     margin: 0;
     font-size: 0.95em;
 }
 
-.st-chatu8-workflow-viz-properties-header {
+.zinao-chatu-workflow-viz-properties-header {
     padding: 12px 16px;
     background-color: #252542;
     border-bottom: 1px solid #333;
 }
 
-.st-chatu8-workflow-viz-properties-header h4 {
+.zinao-chatu-workflow-viz-properties-header h4 {
     margin: 0 0 4px 0;
     font-size: 1em;
     color: #4a90e2;
 }
 
-.st-chatu8-workflow-viz-properties-header .node-id {
+.zinao-chatu-workflow-viz-properties-header .node-id {
     font-size: 0.85em;
     color: #888;
 }
 
-.st-chatu8-workflow-viz-properties-content {
+.zinao-chatu-workflow-viz-properties-content {
     padding: 12px;
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.st-chatu8-workflow-viz-property-group {
+.zinao-chatu-workflow-viz-property-group {
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 
-.st-chatu8-workflow-viz-property-group label {
+.zinao-chatu-workflow-viz-property-group label {
     font-size: 0.85em;
     color: #aaa;
     display: flex;
@@ -747,7 +747,7 @@
     gap: 6px;
 }
 
-.st-chatu8-workflow-viz-property-group label .connection-badge {
+.zinao-chatu-workflow-viz-property-group label .connection-badge {
     background-color: #4a90e2;
     color: white;
     padding: 1px 6px;
@@ -755,10 +755,10 @@
     font-size: 0.75em;
 }
 
-.st-chatu8-workflow-viz-property-group input[type="text"],
-.st-chatu8-workflow-viz-property-group input[type="number"],
-.st-chatu8-workflow-viz-property-group textarea,
-.st-chatu8-workflow-viz-property-group select {
+.zinao-chatu-workflow-viz-property-group input[type="text"],
+.zinao-chatu-workflow-viz-property-group input[type="number"],
+.zinao-chatu-workflow-viz-property-group textarea,
+.zinao-chatu-workflow-viz-property-group select {
     width: 100%;
     background-color: #2a2a3e;
     border: 1px solid #444;
@@ -769,30 +769,30 @@
     box-sizing: border-box;
 }
 
-.st-chatu8-workflow-viz-property-group input:focus,
-.st-chatu8-workflow-viz-property-group textarea:focus,
-.st-chatu8-workflow-viz-property-group select:focus {
+.zinao-chatu-workflow-viz-property-group input:focus,
+.zinao-chatu-workflow-viz-property-group textarea:focus,
+.zinao-chatu-workflow-viz-property-group select:focus {
     outline: none;
     border-color: #4a90e2;
     box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
 }
 
-.st-chatu8-workflow-viz-property-group textarea {
+.zinao-chatu-workflow-viz-property-group textarea {
     min-height: 60px;
     resize: vertical;
 }
 
-.st-chatu8-workflow-viz-property-group input[type="checkbox"] {
+.zinao-chatu-workflow-viz-property-group input[type="checkbox"] {
     width: auto;
     margin-right: 8px;
 }
 
-.st-chatu8-workflow-viz-property-group .checkbox-wrapper {
+.zinao-chatu-workflow-viz-property-group .checkbox-wrapper {
     display: flex;
     align-items: center;
 }
 
-.st-chatu8-workflow-viz-property-group .connection-display {
+.zinao-chatu-workflow-viz-property-group .connection-display {
     background-color: #333;
     border: 1px dashed #555;
     border-radius: 6px;
@@ -804,7 +804,7 @@
 
 /* 移动端响应式样式 - 工作流可视化 */
 @media screen and (max-width: 768px) {
-    .st-chatu8-workflow-viz-dialog {
+    .zinao-chatu-workflow-viz-dialog {
         width: 100vw;
         height: 100vh;
         height: 100dvh;
@@ -813,26 +813,26 @@
         border-radius: 0;
     }
 
-    .st-chatu8-workflow-viz-header {
+    .zinao-chatu-workflow-viz-header {
         padding: 12px 16px;
     }
 
-    .st-chatu8-workflow-viz-header h3 {
+    .zinao-chatu-workflow-viz-header h3 {
         font-size: 1em;
     }
 
-    .st-chatu8-workflow-viz-toolbar {
+    .zinao-chatu-workflow-viz-toolbar {
         flex-wrap: wrap;
         gap: 8px;
         padding: 10px 12px;
     }
 
-    .st-chatu8-workflow-viz-toolbar .st-chatu8-btn {
+    .zinao-chatu-workflow-viz-toolbar .zinao-chatu-btn {
         padding: 6px 10px;
         font-size: 0.85em;
     }
 
-    .st-chatu8-workflow-viz-stats {
+    .zinao-chatu-workflow-viz-stats {
         width: 100%;
         text-align: center;
         margin-left: 0;
@@ -840,19 +840,19 @@
     }
 
     /* 主体改为纵向布局 */
-    .st-chatu8-workflow-viz-body {
+    .zinao-chatu-workflow-viz-body {
         flex-direction: column;
         position: relative;
     }
 
     /* 图表容器占满全部可用空间 */
-    .st-chatu8-workflow-viz-container {
+    .zinao-chatu-workflow-viz-container {
         flex: 1;
         min-height: 0;
     }
 
     /* 属性面板改为全屏覆盖式 */
-    .st-chatu8-workflow-viz-properties {
+    .zinao-chatu-workflow-viz-properties {
         position: absolute;
         top: 0;
         left: 0;
@@ -871,12 +871,12 @@
     }
 
     /* 显示状态 */
-    .st-chatu8-workflow-viz-properties.visible {
+    .zinao-chatu-workflow-viz-properties.visible {
         display: flex;
     }
 
     /* 移动端属性面板关闭按钮 */
-    .st-chatu8-workflow-viz-properties-close-mobile {
+    .zinao-chatu-workflow-viz-properties-close-mobile {
         position: absolute;
         top: 10px;
         right: 16px;
@@ -887,53 +887,53 @@
         padding: 5px;
     }
 
-    .st-chatu8-workflow-viz-properties-close-mobile:hover {
+    .zinao-chatu-workflow-viz-properties-close-mobile:hover {
         color: #fff;
     }
 
-    .st-chatu8-workflow-viz-properties-placeholder {
+    .zinao-chatu-workflow-viz-properties-placeholder {
         padding: 8px 0;
         gap: 6px;
     }
 
-    .st-chatu8-workflow-viz-properties-placeholder i {
+    .zinao-chatu-workflow-viz-properties-placeholder i {
         font-size: 1.5rem;
     }
 
-    .st-chatu8-workflow-viz-properties-placeholder p {
+    .zinao-chatu-workflow-viz-properties-placeholder p {
         font-size: 0.85em;
     }
 
-    .st-chatu8-workflow-viz-properties-header {
+    .zinao-chatu-workflow-viz-properties-header {
         padding: 8px 12px;
     }
 
-    .st-chatu8-workflow-viz-properties-content {
+    .zinao-chatu-workflow-viz-properties-content {
         padding: 10px;
         gap: 10px;
     }
 
     /* 节点尺寸在移动端可能需要保持小一些 */
-    .st-chatu8-workflow-viz-node text {
+    .zinao-chatu-workflow-viz-node text {
         font-size: 0.9em;
     }
 }
 
 /* 占位符选择功能样式 */
-.st-chatu8-workflow-viz-input-wrapper {
+.zinao-chatu-workflow-viz-input-wrapper {
     display: flex;
     gap: 6px;
     align-items: stretch;
 }
 
-.st-chatu8-workflow-viz-input-wrapper input,
-.st-chatu8-workflow-viz-input-wrapper textarea,
-.st-chatu8-workflow-viz-input-wrapper select {
+.zinao-chatu-workflow-viz-input-wrapper input,
+.zinao-chatu-workflow-viz-input-wrapper textarea,
+.zinao-chatu-workflow-viz-input-wrapper select {
     flex: 1;
     min-width: 0;
 }
 
-.st-chatu8-placeholder-btn {
+.zinao-chatu-placeholder-btn {
     flex-shrink: 0;
     width: 32px;
     height: auto;
@@ -949,13 +949,13 @@
     transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
-.st-chatu8-placeholder-btn:hover {
+.zinao-chatu-placeholder-btn:hover {
     background-color: #4a4a7e;
     color: #fff;
     border-color: #4a90e2;
 }
 
-.st-chatu8-placeholder-menu {
+.zinao-chatu-placeholder-menu {
     background-color: #2a2a3e;
     border: 1px solid #444;
     border-radius: 8px;
@@ -966,7 +966,7 @@
     min-width: 200px;
 }
 
-.st-chatu8-placeholder-menu-item {
+.zinao-chatu-placeholder-menu-item {
     display: flex;
     flex-direction: column;
     padding: 10px 14px;
@@ -975,61 +975,61 @@
     transition: background-color 0.15s;
 }
 
-.st-chatu8-placeholder-menu-item:last-child {
+.zinao-chatu-placeholder-menu-item:last-child {
     border-bottom: none;
 }
 
-.st-chatu8-placeholder-menu-item:hover {
+.zinao-chatu-placeholder-menu-item:hover {
     background-color: #3a3a5e;
 }
 
-.st-chatu8-placeholder-menu-item.recommended {
+.zinao-chatu-placeholder-menu-item.recommended {
     background-color: rgba(74, 144, 226, 0.15);
     border-left: 3px solid #4a90e2;
 }
 
-.st-chatu8-placeholder-menu-item.recommended:hover {
+.zinao-chatu-placeholder-menu-item.recommended:hover {
     background-color: rgba(74, 144, 226, 0.25);
 }
 
-.st-chatu8-placeholder-menu-item .placeholder-code {
+.zinao-chatu-placeholder-menu-item .placeholder-code {
     font-family: monospace;
     font-size: 0.95em;
     color: #4a90e2;
     font-weight: 600;
 }
 
-.st-chatu8-placeholder-menu-item .placeholder-label {
+.zinao-chatu-placeholder-menu-item .placeholder-label {
     font-size: 0.8em;
     color: #888;
     margin-top: 2px;
 }
 
 /* 清除占位符选项样式 */
-.st-chatu8-placeholder-menu-item.st-chatu8-placeholder-clear {
+.zinao-chatu-placeholder-menu-item.zinao-chatu-placeholder-clear {
     border-top: 2px solid #444;
     margin-top: 4px;
     padding-top: 12px;
 }
 
-.st-chatu8-placeholder-menu-item.st-chatu8-placeholder-clear:hover {
+.zinao-chatu-placeholder-menu-item.zinao-chatu-placeholder-clear:hover {
     background-color: rgba(231, 76, 60, 0.15);
 }
 
 /* 节点跳过功能样式 */
-.st-chatu8-workflow-viz-skip-section {
+.zinao-chatu-workflow-viz-skip-section {
     padding: 12px 16px;
     background-color: #1e1e38;
     border-bottom: 1px solid #333;
 }
 
-.st-chatu8-workflow-viz-skip-group {
+.zinao-chatu-workflow-viz-skip-group {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.st-chatu8-workflow-viz-skip-label {
+.zinao-chatu-workflow-viz-skip-label {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -1039,19 +1039,19 @@
     color: #e0e0e0;
 }
 
-.st-chatu8-workflow-viz-skip-label input[type="checkbox"] {
+.zinao-chatu-workflow-viz-skip-label input[type="checkbox"] {
     width: 18px;
     height: 18px;
     cursor: pointer;
     accent-color: #f39c12;
 }
 
-.st-chatu8-workflow-viz-skip-label input[type="checkbox"]:disabled {
+.zinao-chatu-workflow-viz-skip-label input[type="checkbox"]:disabled {
     cursor: not-allowed;
     opacity: 0.5;
 }
 
-.st-chatu8-workflow-viz-skip-status {
+.zinao-chatu-workflow-viz-skip-status {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -1060,40 +1060,40 @@
     border-radius: 6px;
 }
 
-.st-chatu8-workflow-viz-skip-status i {
+.zinao-chatu-workflow-viz-skip-status i {
     font-size: 0.9em;
 }
 
-.st-chatu8-workflow-viz-skip-status.can-skip {
+.zinao-chatu-workflow-viz-skip-status.can-skip {
     background-color: rgba(46, 204, 113, 0.15);
     color: #2ecc71;
     border: 1px solid rgba(46, 204, 113, 0.3);
 }
 
-.st-chatu8-workflow-viz-skip-status.can-skip.type-match {
+.zinao-chatu-workflow-viz-skip-status.can-skip.type-match {
     background-color: rgba(155, 89, 182, 0.15);
     color: #9b59b6;
     border: 1px solid rgba(155, 89, 182, 0.3);
 }
 
-.st-chatu8-workflow-viz-skip-status.not-skippable {
+.zinao-chatu-workflow-viz-skip-status.not-skippable {
     background-color: rgba(149, 165, 166, 0.12);
     color: #95a5a6;
     border: 1px solid rgba(149, 165, 166, 0.25);
 }
 
-.st-chatu8-workflow-viz-skip-status.skipped {
+.zinao-chatu-workflow-viz-skip-status.skipped {
     background-color: rgba(243, 156, 18, 0.15);
     color: #f39c12;
     border: 1px solid rgba(243, 156, 18, 0.3);
 }
 
 /* 被跳过节点的视觉样式 */
-.st-chatu8-workflow-viz-node.skipped {
+.zinao-chatu-workflow-viz-node.skipped {
     opacity: 0.6;
 }
 
-.st-chatu8-workflow-viz-node.skipped text {
+.zinao-chatu-workflow-viz-node.skipped text {
     text-decoration: line-through;
     opacity: 0.7;
 }
@@ -1101,7 +1101,7 @@
 /* ==================== 条目编辑弹窗样式 ==================== */
 
 /* 弹窗遮罩 */
-.st-chatu8-entry-edit-modal-backdrop {
+.zinao-chatu-entry-edit-modal-backdrop {
     display: none;
     position: fixed;
     top: 0;
@@ -1115,15 +1115,15 @@
     align-items: center;
 }
 
-.st-chatu8-entry-edit-modal-backdrop[style*="block"] {
+.zinao-chatu-entry-edit-modal-backdrop[style*="block"] {
     display: flex !important;
 }
 
 /* 弹窗容器 */
-.st-chatu8-entry-edit-modal {
-    background-color: var(--st-chatu8-bg-primary, #2c2c2c);
-    color: var(--st-chatu8-text-primary, #f0f0f0);
-    border: 1px solid var(--st-chatu8-border-color, #444);
+.zinao-chatu-entry-edit-modal {
+    background-color: var(--zinao-chatu-bg-primary, #2c2c2c);
+    color: var(--zinao-chatu-text-primary, #f0f0f0);
+    border: 1px solid var(--zinao-chatu-border-color, #444);
     border-radius: 12px;
     width: 90%;
     max-width: 600px;
@@ -1135,23 +1135,23 @@
 }
 
 /* 弹窗头部 */
-.st-chatu8-entry-edit-modal-header {
+.zinao-chatu-entry-edit-modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 16px 20px;
-    background-color: var(--st-chatu8-bg-secondary, #252542);
-    border-bottom: 1px solid var(--st-chatu8-border-color, #333);
+    background-color: var(--zinao-chatu-bg-secondary, #252542);
+    border-bottom: 1px solid var(--zinao-chatu-border-color, #333);
 }
 
-.st-chatu8-entry-edit-modal-header h4 {
+.zinao-chatu-entry-edit-modal-header h4 {
     margin: 0;
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--st-chatu8-text-primary, #e0e0e0);
+    color: var(--zinao-chatu-text-primary, #e0e0e0);
 }
 
-.st-chatu8-entry-edit-modal-close {
+.zinao-chatu-entry-edit-modal-close {
     font-size: 1.8rem;
     color: #888;
     cursor: pointer;
@@ -1160,12 +1160,12 @@
     padding: 0 4px;
 }
 
-.st-chatu8-entry-edit-modal-close:hover {
+.zinao-chatu-entry-edit-modal-close:hover {
     color: #fff;
 }
 
 /* 弹窗主体 */
-.st-chatu8-entry-edit-modal-body {
+.zinao-chatu-entry-edit-modal-body {
     flex: 1;
     overflow-y: auto;
     padding: 20px;
@@ -1175,107 +1175,107 @@
 }
 
 /* 弹窗字段 */
-.st-chatu8-modal-field {
+.zinao-chatu-modal-field {
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 
-.st-chatu8-modal-field label {
+.zinao-chatu-modal-field label {
     font-size: 0.9rem;
-    color: var(--st-chatu8-text-secondary, #aaa);
+    color: var(--zinao-chatu-text-secondary, #aaa);
     font-weight: 500;
 }
 
-.st-chatu8-modal-field .st-chatu8-text-input,
-.st-chatu8-modal-field .st-chatu8-select,
-.st-chatu8-modal-field .st-chatu8-textarea {
+.zinao-chatu-modal-field .zinao-chatu-text-input,
+.zinao-chatu-modal-field .zinao-chatu-select,
+.zinao-chatu-modal-field .zinao-chatu-textarea {
     width: 100%;
     box-sizing: border-box;
 }
 
 /* 字段行 - 水平排列 */
-.st-chatu8-modal-field-row {
+.zinao-chatu-modal-field-row {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
 }
 
-.st-chatu8-modal-field-row .st-chatu8-modal-field {
+.zinao-chatu-modal-field-row .zinao-chatu-modal-field {
     flex: 1;
     min-width: 120px;
 }
 
 /* 开关字段 */
-.st-chatu8-modal-toggle-field {
+.zinao-chatu-modal-toggle-field {
     flex: 0 0 auto !important;
     min-width: auto !important;
     align-items: center;
 }
 
-.st-chatu8-modal-toggle-field .st-chatu8-toggle {
+.zinao-chatu-modal-toggle-field .zinao-chatu-toggle {
     margin-top: 4px;
 }
 
 /* 弹窗底部 */
-.st-chatu8-entry-edit-modal-footer {
+.zinao-chatu-entry-edit-modal-footer {
     display: flex;
     justify-content: flex-end;
     gap: 12px;
     padding: 16px 20px;
-    background-color: var(--st-chatu8-bg-secondary, #252542);
-    border-top: 1px solid var(--st-chatu8-border-color, #333);
+    background-color: var(--zinao-chatu-bg-secondary, #252542);
+    border-top: 1px solid var(--zinao-chatu-border-color, #333);
 }
 
 /* 弹窗内的输入框样式 - 继承设置界面样式 */
-.st-chatu8-entry-edit-modal .st-chatu8-text-input,
-.st-chatu8-entry-edit-modal .st-chatu8-textarea {
+.zinao-chatu-entry-edit-modal .zinao-chatu-text-input,
+.zinao-chatu-entry-edit-modal .zinao-chatu-textarea {
     width: 100%;
-    background: var(--st-chatu8-bg-secondary);
-    border: 1px solid var(--st-chatu8-border-color);
-    color: var(--st-chatu8-text-primary);
+    background: var(--zinao-chatu-bg-secondary);
+    border: 1px solid var(--zinao-chatu-border-color);
+    color: var(--zinao-chatu-text-primary);
     border-radius: 6px;
     padding: 10px;
     box-sizing: border-box;
 }
 
-.st-chatu8-entry-edit-modal .st-chatu8-text-input:focus,
-.st-chatu8-entry-edit-modal .st-chatu8-textarea:focus {
+.zinao-chatu-entry-edit-modal .zinao-chatu-text-input:focus,
+.zinao-chatu-entry-edit-modal .zinao-chatu-textarea:focus {
     outline: none;
-    border-color: var(--st-chatu8-accent-primary);
+    border-color: var(--zinao-chatu-accent-primary);
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.15);
 }
 
-.st-chatu8-entry-edit-modal .st-chatu8-textarea {
+.zinao-chatu-entry-edit-modal .zinao-chatu-textarea {
     resize: vertical;
     min-height: 120px;
 }
 
 /* 弹窗内的下拉框样式 */
-.st-chatu8-entry-edit-modal .st-chatu8-select {
-    background: var(--st-chatu8-dropdown-bg, var(--st-chatu8-bg-tertiary));
-    border: 1px solid var(--st-chatu8-border-color);
-    color: var(--st-chatu8-dropdown-text, var(--st-chatu8-text-primary));
+.zinao-chatu-entry-edit-modal .zinao-chatu-select {
+    background: var(--zinao-chatu-dropdown-bg, var(--zinao-chatu-bg-tertiary));
+    border: 1px solid var(--zinao-chatu-border-color);
+    color: var(--zinao-chatu-dropdown-text, var(--zinao-chatu-text-primary));
     border-radius: 6px;
     padding: 8px 12px;
     width: 100%;
 }
 
-.st-chatu8-entry-edit-modal .st-chatu8-select:focus {
+.zinao-chatu-entry-edit-modal .zinao-chatu-select:focus {
     outline: none;
-    border-color: var(--st-chatu8-accent-primary);
+    border-color: var(--zinao-chatu-accent-primary);
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
 /* 弹窗内的开关样式 */
-.st-chatu8-entry-edit-modal .st-chatu8-toggle {
+.zinao-chatu-entry-edit-modal .zinao-chatu-toggle {
     position: relative;
     display: inline-block;
     width: 50px;
     height: 28px;
 }
 
-.st-chatu8-entry-edit-modal .st-chatu8-toggle input {
+.zinao-chatu-entry-edit-modal .zinao-chatu-toggle input {
     position: absolute;
     opacity: 0;
     width: 100%;
@@ -1287,19 +1287,19 @@
     margin: 0;
 }
 
-.st-chatu8-entry-edit-modal .st-chatu8-toggle .st-chatu8-slider {
+.zinao-chatu-entry-edit-modal .zinao-chatu-toggle .zinao-chatu-slider {
     position: absolute;
     cursor: pointer;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--st-chatu8-bg-tertiary);
+    background-color: var(--zinao-chatu-bg-tertiary);
     transition: background-color 0.3s ease;
     border-radius: 28px;
 }
 
-.st-chatu8-entry-edit-modal .st-chatu8-toggle .st-chatu8-slider:before {
+.zinao-chatu-entry-edit-modal .zinao-chatu-toggle .zinao-chatu-slider:before {
     position: absolute;
     content: "";
     height: 20px;
@@ -1311,19 +1311,19 @@
     border-radius: 50%;
 }
 
-.st-chatu8-entry-edit-modal .st-chatu8-toggle input:checked+.st-chatu8-slider {
-    background-color: var(--st-chatu8-accent-primary);
+.zinao-chatu-entry-edit-modal .zinao-chatu-toggle input:checked+.zinao-chatu-slider {
+    background-color: var(--zinao-chatu-accent-primary);
 }
 
-.st-chatu8-entry-edit-modal .st-chatu8-toggle input:checked+.st-chatu8-slider:before {
+.zinao-chatu-entry-edit-modal .zinao-chatu-toggle input:checked+.zinao-chatu-slider:before {
     transform: translateX(22px);
 }
 
 /* 弹窗按钮样式 - 继承设置界面样式 */
-.st-chatu8-entry-edit-modal .st-chatu8-btn {
-    background-color: var(--st-chatu8-bg-tertiary);
-    border: 1px solid var(--st-chatu8-border-color);
-    color: var(--st-chatu8-text-primary);
+.zinao-chatu-entry-edit-modal .zinao-chatu-btn {
+    background-color: var(--zinao-chatu-bg-tertiary);
+    border: 1px solid var(--zinao-chatu-border-color);
+    color: var(--zinao-chatu-text-primary);
     padding: 10px 16px;
     border-radius: 6px;
     cursor: pointer;
@@ -1331,35 +1331,35 @@
     font-size: 0.95rem;
 }
 
-.st-chatu8-entry-edit-modal .st-chatu8-btn:hover {
-    background-color: var(--st-chatu8-accent-secondary);
-    border-color: var(--st-chatu8-accent-primary);
-    color: var(--st-chatu8-text-highlight, white);
+.zinao-chatu-entry-edit-modal .zinao-chatu-btn:hover {
+    background-color: var(--zinao-chatu-accent-secondary);
+    border-color: var(--zinao-chatu-accent-primary);
+    color: var(--zinao-chatu-text-highlight, white);
 }
 
 /* 主要按钮样式 */
-.st-chatu8-entry-edit-modal .st-chatu8-btn-primary {
-    background-color: var(--st-chatu8-accent-primary);
-    border-color: var(--st-chatu8-accent-primary);
+.zinao-chatu-entry-edit-modal .zinao-chatu-btn-primary {
+    background-color: var(--zinao-chatu-accent-primary);
+    border-color: var(--zinao-chatu-accent-primary);
     color: white;
 }
 
-.st-chatu8-entry-edit-modal .st-chatu8-btn-primary:hover {
-    background-color: var(--st-chatu8-accent-secondary);
-    border-color: var(--st-chatu8-accent-secondary);
+.zinao-chatu-entry-edit-modal .zinao-chatu-btn-primary:hover {
+    background-color: var(--zinao-chatu-accent-secondary);
+    border-color: var(--zinao-chatu-accent-secondary);
 }
 
 /* 响应式适配 - 移动端全屏模式 */
 @media screen and (max-width: 768px) {
 
     /* 遮罩层全屏 */
-    .st-chatu8-entry-edit-modal-backdrop {
+    .zinao-chatu-entry-edit-modal-backdrop {
         background-color: rgba(0, 0, 0, 0.95);
         align-items: stretch;
     }
 
     /* 弹窗改为全屏 */
-    .st-chatu8-entry-edit-modal {
+    .zinao-chatu-entry-edit-modal {
         width: 100vw !important;
         height: 100vh !important;
         height: 100dvh !important;
@@ -1371,7 +1371,7 @@
     }
 
     /* 头部样式调整 */
-    .st-chatu8-entry-edit-modal-header {
+    .zinao-chatu-entry-edit-modal-header {
         padding: 12px 16px;
         position: sticky;
         top: 0;
@@ -1379,17 +1379,17 @@
         flex-shrink: 0;
     }
 
-    .st-chatu8-entry-edit-modal-header h4 {
+    .zinao-chatu-entry-edit-modal-header h4 {
         font-size: 1rem;
     }
 
-    .st-chatu8-entry-edit-modal-close {
+    .zinao-chatu-entry-edit-modal-close {
         font-size: 2rem;
         padding: 0 8px;
     }
 
     /* 主体内容区域 */
-    .st-chatu8-entry-edit-modal-body {
+    .zinao-chatu-entry-edit-modal-body {
         flex: 1;
         padding: 16px;
         overflow-y: auto;
@@ -1397,24 +1397,24 @@
     }
 
     /* 字段行改为纵向排列 */
-    .st-chatu8-modal-field-row {
+    .zinao-chatu-modal-field-row {
         flex-direction: column;
         gap: 12px;
     }
 
-    .st-chatu8-modal-field-row .st-chatu8-modal-field {
+    .zinao-chatu-modal-field-row .zinao-chatu-modal-field {
         min-width: 100%;
     }
 
     /* 开关字段在移动端也占满宽度 */
-    .st-chatu8-modal-toggle-field {
+    .zinao-chatu-modal-toggle-field {
         flex-direction: row !important;
         justify-content: space-between;
         align-items: center;
     }
 
     /* 底部按钮区域 */
-    .st-chatu8-entry-edit-modal-footer {
+    .zinao-chatu-entry-edit-modal-footer {
         padding: 12px 16px;
         position: sticky;
         bottom: 0;
@@ -1423,38 +1423,38 @@
         flex-shrink: 0;
     }
 
-    .st-chatu8-entry-edit-modal-footer .st-chatu8-btn {
+    .zinao-chatu-entry-edit-modal-footer .zinao-chatu-btn {
         flex: 1;
         padding: 12px 16px;
         font-size: 1rem;
     }
 
     /* 输入框和文本域增大触摸区域 */
-    .st-chatu8-entry-edit-modal .st-chatu8-text-input,
-    .st-chatu8-entry-edit-modal .st-chatu8-select {
+    .zinao-chatu-entry-edit-modal .zinao-chatu-text-input,
+    .zinao-chatu-entry-edit-modal .zinao-chatu-select {
         padding: 12px;
         font-size: 16px;
         /* 防止 iOS 自动缩放 */
     }
 
-    .st-chatu8-entry-edit-modal .st-chatu8-textarea {
+    .zinao-chatu-entry-edit-modal .zinao-chatu-textarea {
         min-height: 150px;
         font-size: 16px;
         /* 防止 iOS 自动缩放 */
     }
 
     /* 开关控件增大 */
-    .st-chatu8-entry-edit-modal .st-chatu8-toggle {
+    .zinao-chatu-entry-edit-modal .zinao-chatu-toggle {
         width: 56px;
         height: 32px;
     }
 
-    .st-chatu8-entry-edit-modal .st-chatu8-toggle .st-chatu8-slider:before {
+    .zinao-chatu-entry-edit-modal .zinao-chatu-toggle .zinao-chatu-slider:before {
         height: 24px;
         width: 24px;
     }
 
-    .st-chatu8-entry-edit-modal .st-chatu8-toggle input:checked+.st-chatu8-slider:before {
+    .zinao-chatu-entry-edit-modal .zinao-chatu-toggle input:checked+.zinao-chatu-slider:before {
         transform: translateX(24px);
     }
 }
@@ -1463,55 +1463,55 @@
 /* ==================== 导入选择弹窗样式 ==================== */
 
 /* 工具栏 */
-.st-chatu8-import-toolbar {
+.zinao-chatu-import-toolbar {
     display: flex;
     gap: 10px;
     flex-direction: row !important;
 }
 
 /* 列表容器 */
-.st-chatu8-import-list {
+.zinao-chatu-import-list {
     max-height: 400px;
     overflow-y: auto;
 }
 
 /* 类型分组 */
-.st-chatu8-import-type-group {
+.zinao-chatu-import-type-group {
     margin-bottom: 16px;
 }
 
-.st-chatu8-import-type-group:last-child {
+.zinao-chatu-import-type-group:last-child {
     margin-bottom: 0;
 }
 
 /* 类型标题 */
-.st-chatu8-import-type-header {
+.zinao-chatu-import-type-header {
     margin: 0 0 10px 0;
     padding-bottom: 8px;
-    border-bottom: 1px solid var(--st-chatu8-border-color, #444);
+    border-bottom: 1px solid var(--zinao-chatu-border-color, #444);
     font-size: 1rem;
     font-weight: 600;
-    color: var(--st-chatu8-accent-primary, #4a90e2);
+    color: var(--zinao-chatu-accent-primary, #4a90e2);
 }
 
-.st-chatu8-import-count {
+.zinao-chatu-import-count {
     font-weight: normal;
-    color: var(--st-chatu8-text-secondary, #888);
+    color: var(--zinao-chatu-text-secondary, #888);
     font-size: 0.9rem;
 }
 
 /* 条目项 */
-.st-chatu8-import-item {
+.zinao-chatu-import-item {
     padding: 8px 0;
-    border-bottom: 1px solid var(--st-chatu8-border-color, #333);
+    border-bottom: 1px solid var(--zinao-chatu-border-color, #333);
 }
 
-.st-chatu8-import-item:last-child {
+.zinao-chatu-import-item:last-child {
     border-bottom: none;
 }
 
 /* 条目标签 */
-.st-chatu8-import-label {
+.zinao-chatu-import-label {
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -1519,35 +1519,35 @@
 }
 
 /* 复选框 */
-.st-chatu8-import-checkbox {
+.zinao-chatu-import-checkbox {
     width: 18px;
     height: 18px;
     cursor: pointer;
-    accent-color: var(--st-chatu8-accent-primary, #4a90e2);
+    accent-color: var(--zinao-chatu-accent-primary, #4a90e2);
 }
 
 /* 条目名称 */
-.st-chatu8-import-name {
+.zinao-chatu-import-name {
     flex: 1;
     font-size: 0.95rem;
 }
 
 /* 移动端适配 */
 @media screen and (max-width: 768px) {
-    .st-chatu8-import-list {
+    .zinao-chatu-import-list {
         max-height: none;
     }
 
-    .st-chatu8-import-checkbox {
+    .zinao-chatu-import-checkbox {
         width: 22px;
         height: 22px;
     }
 
-    .st-chatu8-import-item {
+    .zinao-chatu-import-item {
         padding: 12px 0;
     }
 
-    .st-chatu8-import-name {
+    .zinao-chatu-import-name {
         font-size: 1rem;
     }
 }
@@ -1556,78 +1556,78 @@
 /* ==================== 通用弹出框样式 ==================== */
 
 /* 弹出框模态框 */
-#st-chatu8-settings .st-chatu8-popup-modal,
-.st-chatu8-popup-modal {
+#zinao-chatu-settings .zinao-chatu-popup-modal,
+.zinao-chatu-popup-modal {
     max-width: 550px;
     width: 90%;
     max-height: 80vh;
     overflow-y: auto;
 }
 
-#st-chatu8-settings .st-chatu8-popup-modal-large,
-.st-chatu8-popup-modal-large {
+#zinao-chatu-settings .zinao-chatu-popup-modal-large,
+.zinao-chatu-popup-modal-large {
     max-width: 700px;
 }
 
 /* 弹出框标题 */
-#st-chatu8-settings .st-chatu8-popup-title,
-.st-chatu8-popup-title {
+#zinao-chatu-settings .zinao-chatu-popup-title,
+.zinao-chatu-popup-title {
     margin: 0 0 16px 0;
     padding-bottom: 12px;
-    border-bottom: 1px solid var(--st-chatu8-border-color);
-    color: var(--st-chatu8-text-primary);
+    border-bottom: 1px solid var(--zinao-chatu-border-color);
+    color: var(--zinao-chatu-text-primary);
     font-size: 1.15rem;
     font-weight: 600;
 }
 
 /* 弹出框描述 */
-#st-chatu8-settings .st-chatu8-popup-description,
-.st-chatu8-popup-description {
+#zinao-chatu-settings .zinao-chatu-popup-description,
+.zinao-chatu-popup-description {
     margin: 0 0 12px 0;
-    color: var(--st-chatu8-text-secondary);
+    color: var(--zinao-chatu-text-secondary);
     font-size: 0.9rem;
     line-height: 1.5;
 }
 
 /* 弹出框内容区域 */
-#st-chatu8-settings .st-chatu8-popup-content,
-.st-chatu8-popup-content {
+#zinao-chatu-settings .zinao-chatu-popup-content,
+.zinao-chatu-popup-content {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
 /* 代码风格文本框 */
-#st-chatu8-settings .st-chatu8-popup-code-textarea,
-.st-chatu8-popup-code-textarea {
+#zinao-chatu-settings .zinao-chatu-popup-code-textarea,
+.zinao-chatu-popup-code-textarea {
     font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
     font-size: 13px;
 }
 
 /* 主要按钮样式 */
-#st-chatu8-settings .st-chatu8-btn-primary,
-.st-chatu8-btn-primary {
-    background: var(--st-chatu8-accent-primary);
-    border-color: var(--st-chatu8-accent-primary);
-    color: var(--st-chatu8-text-highlight, white);
+#zinao-chatu-settings .zinao-chatu-btn-primary,
+.zinao-chatu-btn-primary {
+    background: var(--zinao-chatu-accent-primary);
+    border-color: var(--zinao-chatu-accent-primary);
+    color: var(--zinao-chatu-text-highlight, white);
 }
 
-#st-chatu8-settings .st-chatu8-btn-primary:hover,
-.st-chatu8-btn-primary:hover {
-    background: var(--st-chatu8-accent-secondary);
-    border-color: var(--st-chatu8-accent-secondary);
+#zinao-chatu-settings .zinao-chatu-btn-primary:hover,
+.zinao-chatu-btn-primary:hover {
+    background: var(--zinao-chatu-accent-secondary);
+    border-color: var(--zinao-chatu-accent-secondary);
 }
 
 /* 成功按钮样式 */
-#st-chatu8-settings .st-chatu8-btn-success,
-.st-chatu8-btn-success {
+#zinao-chatu-settings .zinao-chatu-btn-success,
+.zinao-chatu-btn-success {
     background: #28a745;
     border-color: #28a745;
     color: white;
 }
 
-#st-chatu8-settings .st-chatu8-btn-success:hover,
-.st-chatu8-btn-success:hover {
+#zinao-chatu-settings .zinao-chatu-btn-success:hover,
+.zinao-chatu-btn-success:hover {
     background: #218838;
     border-color: #1e7e34;
 }
@@ -1635,18 +1635,18 @@
 /* ==================== 图片上传区域样式 ==================== */
 
 /* 上传区域容器 */
-#st-chatu8-settings .st-chatu8-popup-upload-section,
-.st-chatu8-popup-upload-section {
+#zinao-chatu-settings .zinao-chatu-popup-upload-section,
+.zinao-chatu-popup-upload-section {
     margin: 16px 0;
     padding: 14px;
-    border: 1px dashed var(--st-chatu8-border-color);
-    border-radius: var(--st-chatu8-border-radius, 8px);
-    background: var(--st-chatu8-bg-secondary);
+    border: 1px dashed var(--zinao-chatu-border-color);
+    border-radius: var(--zinao-chatu-border-radius, 8px);
+    background: var(--zinao-chatu-bg-secondary);
 }
 
 /* 上传头部 */
-#st-chatu8-settings .st-chatu8-popup-upload-header,
-.st-chatu8-popup-upload-header {
+#zinao-chatu-settings .zinao-chatu-popup-upload-header,
+.zinao-chatu-popup-upload-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1654,22 +1654,22 @@
 }
 
 /* 上传标签 */
-#st-chatu8-settings .st-chatu8-popup-upload-label,
-.st-chatu8-popup-upload-label {
+#zinao-chatu-settings .zinao-chatu-popup-upload-label,
+.zinao-chatu-popup-upload-label {
     font-size: 0.9rem;
-    color: var(--st-chatu8-text-secondary);
+    color: var(--zinao-chatu-text-secondary);
 }
 
 /* 上传按钮 */
-#st-chatu8-settings .st-chatu8-popup-upload-btn,
-.st-chatu8-popup-upload-btn {
+#zinao-chatu-settings .zinao-chatu-popup-upload-btn,
+.zinao-chatu-popup-upload-btn {
     padding: 6px 12px;
     font-size: 0.85rem;
 }
 
 /* 图片预览容器 */
-#st-chatu8-settings .st-chatu8-popup-image-preview,
-.st-chatu8-popup-image-preview {
+#zinao-chatu-settings .zinao-chatu-popup-image-preview,
+.zinao-chatu-popup-image-preview {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -1677,10 +1677,10 @@
 }
 
 /* 空提示 */
-#st-chatu8-settings .st-chatu8-popup-empty-hint,
-.st-chatu8-popup-empty-hint {
+#zinao-chatu-settings .zinao-chatu-popup-empty-hint,
+.zinao-chatu-popup-empty-hint {
     font-size: 0.85rem;
-    color: var(--st-chatu8-text-secondary);
+    color: var(--zinao-chatu-text-secondary);
     opacity: 0.6;
     text-align: center;
     width: 100%;
@@ -1688,8 +1688,8 @@
 }
 
 /* 图片项容器 */
-#st-chatu8-settings .st-chatu8-popup-image-item,
-.st-chatu8-popup-image-item {
+#zinao-chatu-settings .zinao-chatu-popup-image-item,
+.zinao-chatu-popup-image-item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1697,27 +1697,27 @@
 }
 
 /* 图片包装器 */
-#st-chatu8-settings .st-chatu8-popup-image-wrapper,
-.st-chatu8-popup-image-wrapper {
+#zinao-chatu-settings .zinao-chatu-popup-image-wrapper,
+.zinao-chatu-popup-image-wrapper {
     position: relative;
     width: 64px;
     height: 64px;
     border-radius: 6px;
     overflow: hidden;
-    border: 1px solid var(--st-chatu8-border-color);
-    background: var(--st-chatu8-bg-tertiary);
+    border: 1px solid var(--zinao-chatu-border-color);
+    background: var(--zinao-chatu-bg-tertiary);
 }
 
-#st-chatu8-settings .st-chatu8-popup-image-wrapper img,
-.st-chatu8-popup-image-wrapper img {
+#zinao-chatu-settings .zinao-chatu-popup-image-wrapper img,
+.zinao-chatu-popup-image-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
 /* 图片删除按钮 */
-#st-chatu8-settings .st-chatu8-popup-image-delete,
-.st-chatu8-popup-image-delete {
+#zinao-chatu-settings .zinao-chatu-popup-image-delete,
+.zinao-chatu-popup-image-delete {
     position: absolute;
     top: 2px;
     right: 2px;
@@ -1725,8 +1725,8 @@
     height: 20px;
     border: none;
     border-radius: 50%;
-    background: var(--st-chatu8-danger-primary);
-    color: var(--st-chatu8-danger-text, white);
+    background: var(--zinao-chatu-danger-primary);
+    color: var(--zinao-chatu-danger-text, white);
     font-size: 14px;
     line-height: 1;
     cursor: pointer;
@@ -1737,36 +1737,36 @@
     transition: opacity 0.2s;
 }
 
-#st-chatu8-settings .st-chatu8-popup-image-delete:hover,
-.st-chatu8-popup-image-delete:hover {
-    background: var(--st-chatu8-danger-secondary);
+#zinao-chatu-settings .zinao-chatu-popup-image-delete:hover,
+.zinao-chatu-popup-image-delete:hover {
+    background: var(--zinao-chatu-danger-secondary);
 }
 
 /* 图片名称输入框 */
-#st-chatu8-settings .st-chatu8-popup-image-name,
-.st-chatu8-popup-image-name {
+#zinao-chatu-settings .zinao-chatu-popup-image-name,
+.zinao-chatu-popup-image-name {
     width: 64px;
     padding: 4px 6px;
-    border: 1px solid var(--st-chatu8-border-color);
+    border: 1px solid var(--zinao-chatu-border-color);
     border-radius: 4px;
-    background: var(--st-chatu8-bg-tertiary);
-    color: var(--st-chatu8-text-primary);
+    background: var(--zinao-chatu-bg-tertiary);
+    color: var(--zinao-chatu-text-primary);
     font-size: 0.75rem;
     text-align: center;
     outline: none;
     transition: border-color 0.2s;
 }
 
-#st-chatu8-settings .st-chatu8-popup-image-name:focus,
-.st-chatu8-popup-image-name:focus {
-    border-color: var(--st-chatu8-accent-primary);
+#zinao-chatu-settings .zinao-chatu-popup-image-name:focus,
+.zinao-chatu-popup-image-name:focus {
+    border-color: var(--zinao-chatu-accent-primary);
 }
 
 /* 图片计数 */
-#st-chatu8-settings .st-chatu8-popup-image-count,
-.st-chatu8-popup-image-count {
+#zinao-chatu-settings .zinao-chatu-popup-image-count,
+.zinao-chatu-popup-image-count {
     font-size: 0.8rem;
-    color: var(--st-chatu8-accent-primary);
+    color: var(--zinao-chatu-accent-primary);
     width: 100%;
     text-align: right;
     margin-top: 6px;
@@ -1775,8 +1775,8 @@
 /* ==================== 移动端响应式 ==================== */
 @media screen and (max-width: 768px) {
 
-    #st-chatu8-settings .st-chatu8-popup-modal,
-    .st-chatu8-popup-modal {
+    #zinao-chatu-settings .zinao-chatu-popup-modal,
+    .zinao-chatu-popup-modal {
         width: 100vw !important;
         height: 100vh !important;
         height: 100dvh !important;
@@ -1785,20 +1785,20 @@
         border-radius: 0 !important;
     }
 
-    #st-chatu8-settings .st-chatu8-popup-upload-header,
-    .st-chatu8-popup-upload-header {
+    #zinao-chatu-settings .zinao-chatu-popup-upload-header,
+    .zinao-chatu-popup-upload-header {
         flex-wrap: wrap;
         gap: 8px;
     }
 
-    #st-chatu8-settings .st-chatu8-popup-image-wrapper,
-    .st-chatu8-popup-image-wrapper {
+    #zinao-chatu-settings .zinao-chatu-popup-image-wrapper,
+    .zinao-chatu-popup-image-wrapper {
         width: 56px;
         height: 56px;
     }
 
-    #st-chatu8-settings .st-chatu8-popup-image-name,
-    .st-chatu8-popup-image-name {
+    #zinao-chatu-settings .zinao-chatu-popup-image-name,
+    .zinao-chatu-popup-image-name {
         width: 56px;
         font-size: 0.7rem;
     }
@@ -1809,7 +1809,7 @@
 @media screen and (max-width: 768px) {
 
     /* Vibe 生成器对话框 - 移动端全屏 */
-    .st-chatu8-vibe-generator-dialog {
+    .zinao-chatu-vibe-generator-dialog {
         width: 100vw !important;
         height: 100vh !important;
         height: 100dvh !important;
@@ -1820,7 +1820,7 @@
     }
 
     /* Vibe 生成器主体内容 - 启用滚动 */
-    .st-chatu8-vibe-generator-dialog .st-chatu8-workflow-viz-body {
+    .zinao-chatu-vibe-generator-dialog .zinao-chatu-workflow-viz-body {
         overflow-y: auto !important;
         overflow-x: hidden !important;
         -webkit-overflow-scrolling: touch;
@@ -1829,81 +1829,81 @@
     }
 
     /* Vibe 生成器内容容器 */
-    .st-chatu8-vibe-generator-content {
+    .zinao-chatu-vibe-generator-content {
         width: 100%;
         max-width: 100%;
     }
 
     /* 调整标题字体大小 */
-    .st-chatu8-vibe-generator-dialog .st-chatu8-workflow-viz-header h3 {
+    .zinao-chatu-vibe-generator-dialog .zinao-chatu-workflow-viz-header h3 {
         font-size: 1em;
     }
 
     /* 预设控制按钮 - 移动端优化 */
-    .st-chatu8-vibe-generator-dialog .st-chatu8-profile-controls {
+    .zinao-chatu-vibe-generator-dialog .zinao-chatu-profile-controls {
         flex-wrap: wrap;
         gap: 8px;
     }
 
-    .st-chatu8-vibe-generator-dialog .st-chatu8-profile-controls select {
+    .zinao-chatu-vibe-generator-dialog .zinao-chatu-profile-controls select {
         flex: 1 1 100%;
         min-width: 100%;
     }
 
-    .st-chatu8-vibe-generator-dialog .st-chatu8-icon-btn {
+    .zinao-chatu-vibe-generator-dialog .zinao-chatu-icon-btn {
         padding: 10px 12px;
         font-size: 1rem;
     }
 
     /* 图片预览容器 - 移动端优化 */
-    .st-chatu8-vibe-generator-dialog .st-chatu8-image-preview-container {
+    .zinao-chatu-vibe-generator-dialog .zinao-chatu-image-preview-container {
         max-height: 250px;
     }
 
     /* 图片控制按钮 - 移动端堆叠 */
-    .st-chatu8-vibe-generator-dialog .st-chatu8-image-controls {
+    .zinao-chatu-vibe-generator-dialog .zinao-chatu-image-controls {
         display: flex;
         flex-direction: column;
         gap: 8px;
     }
 
-    .st-chatu8-vibe-generator-dialog .st-chatu8-image-controls .st-chatu8-btn {
+    .zinao-chatu-vibe-generator-dialog .zinao-chatu-image-controls .zinao-chatu-btn {
         width: 100%;
         padding: 12px;
         font-size: 1rem;
     }
 
     /* 范围滑块容器 - 移动端优化 */
-    .st-chatu8-vibe-generator-dialog .st-chatu8-range-container {
+    .zinao-chatu-vibe-generator-dialog .zinao-chatu-range-container {
         flex-direction: column;
         gap: 8px;
     }
 
-    .st-chatu8-vibe-generator-dialog .st-chatu8-range-slider,
-    .st-chatu8-vibe-generator-dialog .st-chatu8-range-input {
+    .zinao-chatu-vibe-generator-dialog .zinao-chatu-range-slider,
+    .zinao-chatu-vibe-generator-dialog .zinao-chatu-range-input {
         width: 100%;
     }
 
     /* 主要操作按钮 - 移动端优化 */
-    .st-chatu8-vibe-generator-dialog #vibe-submit-btn,
-    .st-chatu8-vibe-generator-dialog #vibe-download-btn {
+    .zinao-chatu-vibe-generator-dialog #vibe-submit-btn,
+    .zinao-chatu-vibe-generator-dialog #vibe-download-btn {
         padding: 14px 1rem !important;
         font-size: 1.1rem !important;
     }
 
     /* 状态提示区域 - 移动端优化 */
-    .st-chatu8-vibe-generator-dialog #vibe-status {
+    .zinao-chatu-vibe-generator-dialog #vibe-status {
         font-size: 0.95rem;
         padding: 12px;
     }
 
     /* 字段标签 - 移动端优化 */
-    .st-chatu8-vibe-generator-dialog .st-chatu8-field label {
+    .zinao-chatu-vibe-generator-dialog .zinao-chatu-field label {
         font-size: 1rem;
     }
 
     /* 选择框 - 移动端优化 */
-    .st-chatu8-vibe-generator-dialog .st-chatu8-select {
+    .zinao-chatu-vibe-generator-dialog .zinao-chatu-select {
         padding: 12px;
         font-size: 1rem;
     }
@@ -1911,15 +1911,15 @@
 
 /* 小屏幕设备额外优化 (手机竖屏) */
 @media screen and (max-width: 480px) {
-    .st-chatu8-vibe-generator-dialog .st-chatu8-workflow-viz-body {
+    .zinao-chatu-vibe-generator-dialog .zinao-chatu-workflow-viz-body {
         padding: 0.75rem !important;
     }
 
-    .st-chatu8-vibe-generator-dialog .st-chatu8-field {
+    .zinao-chatu-vibe-generator-dialog .zinao-chatu-field {
         margin-bottom: 1rem !important;
     }
 
-    .st-chatu8-vibe-generator-dialog .st-chatu8-icon-btn {
+    .zinao-chatu-vibe-generator-dialog .zinao-chatu-icon-btn {
         padding: 8px 10px;
         font-size: 0.9rem;
     }
