@@ -15595,7 +15595,26 @@ async function executeTypedLLMRequest(data, requestType, responseEventName, upda
       );
     } catch (_e) {
     }
-    const outboundMessages = send_images ? prompt2 : stripImagesFromMessages(prompt2);
+    let outboundMessages = send_images ? prompt2 : stripImagesFromMessages(prompt2);
+    if (Array.isArray(outboundMessages)) {
+      outboundMessages = outboundMessages.filter((msg) => {
+        if (!msg) return false;
+        if (typeof msg.content === "string") return msg.content.trim() !== "";
+        if (Array.isArray(msg.content)) return msg.content.length > 0;
+        return true;
+      });
+    }
+    if (!outboundMessages || (Array.isArray(outboundMessages) && outboundMessages.length === 0)) {
+      const errorMsg = `${typeName}: \u63D0\u793A\u8BCD\u4E3A\u7A7A\uFF08\u5360\u4F4D\u7B26\u66FF\u6362\u540E\u65E0\u5185\u5BB9\u6216\u56FE\u7247\u88AB\u5265\u79BB\uFF09\uFF0C\u8BF7\u68C0\u67E5\u4E0A\u4E0B\u6587\u9884\u8BBE\u6216\u786E\u4FDD\u6D88\u606F\u5305\u542B\u6587\u672C\u3002`;
+      toastr.error(errorMsg);
+      activeRequests.delete(requestKey);
+      if (attempt === 0) {
+        releaseFabLoading();
+        llmTaskControllers.delete(taskId);
+      }
+      eventSource5.emit(responseEventName, { success: false, result: errorMsg, id });
+      return;
+    }
     if (!api_url || !api_key || !model) {
       const errorMsg = `${typeName}: API URL, API Key, \u6216 Model \u672A\u914D\u7F6E\u3002`;
       toastr.error(errorMsg);
