@@ -7,11 +7,6 @@
  * ====================================================
  */
 import { extension_settings } from "../../../extensions.js";
-if (extension_settings["st-chatu8"] && !extension_settings["zinao-chatu"]) {
-    extension_settings["zinao-chatu"] = extension_settings["st-chatu8"];
-    delete extension_settings["st-chatu8"];
-    console.log("[zinao-chatu] Migrated settings from st-chatu8 to zinao-chatu");
-}
 import { saveSettingsDebounced } from "../../../../script.js";
 import { initZinaoChatuUI } from "./src/ui.js";
 import { extension_settings as extension_settings2 } from "../../../extensions.js";
@@ -220,6 +215,13 @@ import { extension_settings as extension_settings99 } from "../../../extensions.
 import { eventSource as eventSource39, event_types as event_types7 } from "../../../../script.js";
 import { extension_settings as extension_settings98 } from "../../../extensions.js";
 import { eventSource as eventSource38 } from "../../../../script.js";
+
+// [zinao-chatu] 数据迁移：将旧版 st-chatu8 的配置自动继承到新版 zinao-chatu
+if (extension_settings["st-chatu8"] && !extension_settings["zinao-chatu"]) {
+    extension_settings["zinao-chatu"] = extension_settings["st-chatu8"];
+    delete extension_settings["st-chatu8"];
+    console.log("[zinao-chatu] Migrated settings from st-chatu8 to zinao-chatu");
+}
 
 var __defProp = Object.defineProperty;
 var __getOwnPropNames = Object.getOwnPropertyNames;
