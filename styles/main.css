@@ -767,6 +767,8 @@ input[name="model_tab_select"]:checked + .zinao-chatu-model-tab-label {
 #tab-radio-novelai:checked ~ #model_tab_novelai,
 #tab-radio-sd:checked ~ #model_tab_sd,
 #tab-radio-comfyui:checked ~ #model_tab_comfyui,
-#tab-radio-banana:checked ~ #model_tab_banana {
+#tab-radio-banana:checked ~ #model_tab_banana,
+#tab-radio-prompt-inline:checked ~ #panel-mode-inline,
+#tab-radio-prompt-dblclick:checked ~ #panel-mode-dblclick {
     display: block;
 }

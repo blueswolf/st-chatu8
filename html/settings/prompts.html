@@ -14,61 +14,72 @@
             </div>
         </div>
 
-        <!-- 随正文模式面板 -->
-        <div id="panel-mode-inline" class="prompt-mode-panel" style="border-top: 1px dashed var(--zinao-chatu-border-color); padding-top: 15px;">
-            <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
-                <label>角色描述 (可添加，可设置关键词激活，方便多个角色时自动选择性插入)</label>
-                <textarea id="inline_char_desc" class="zinao-chatu-textarea" rows="3"></textarea>
-            </div>
-            <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
-                <label>生图提示词</label>
-                <textarea id="inline_prompt" class="zinao-chatu-textarea" rows="3"></textarea>
-            </div>
-            <div class="zinao-chatu-field-col">
-                <label>尾部提示词 (留空备用)</label>
-                <textarea id="inline_negative_prompt" class="zinao-chatu-textarea" rows="2"></textarea>
-            </div>
-        </div>
+        <div class="zinao-chatu-model-tabs-container" style="margin-top: 15px;">
+            <!-- Tab Controls -->
+            <input type="radio" id="tab-radio-prompt-inline" name="prompt_mode_tab_select" style="display:none;" checked>
+            <label for="tab-radio-prompt-inline" class="zinao-chatu-model-tab-label" id="tab-label-prompt-inline">随正文一起输出模式</label>
 
-        <!-- 双击聊天记录模式面板 -->
-        <div id="panel-mode-dblclick" class="prompt-mode-panel" style="display: none; border-top: 1px dashed var(--zinao-chatu-border-color); padding-top: 15px;">
-            <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
-                <label>提示词模型选择</label>
-                <div style="display: flex; gap: 10px; margin-bottom: 5px;">
-                    <input type="text" id="dblclick_api_endpoint" class="zinao-chatu-text-input" placeholder="API 端点 (Endpoint)" style="flex: 2;">
-                    <input type="password" id="dblclick_api_key" class="zinao-chatu-text-input" placeholder="API Key" style="flex: 2;">
+            <input type="radio" id="tab-radio-prompt-dblclick" name="prompt_mode_tab_select" style="display:none;">
+            <label for="tab-radio-prompt-dblclick" class="zinao-chatu-model-tab-label" id="tab-label-prompt-dblclick">双击聊天记录模式</label>
+            
+            <div class="model-tab-break"></div>
+
+            <!-- 随正文模式面板 -->
+            <div id="panel-mode-inline" class="model-tab-content">
+                <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
+                    <label>角色描述 (可添加，可设置关键词激活，方便多个角色时自动选择性插入)</label>
+                    <textarea id="inline_char_desc" class="zinao-chatu-textarea" rows="3"></textarea>
                 </div>
-                <div style="display: flex; gap: 10px; align-items: center;">
-                    <select id="dblclick_model_select" class="zinao-chatu-select" style="flex: 2;">
-                        <option value="">(请先获取模型)</option>
-                    </select>
-                    <button id="dblclick_fetch_models" class="zinao-chatu-btn"><i class="fa-solid fa-sync"></i> 获取模型</button>
-                    <button id="dblclick_test_conn" class="zinao-chatu-btn"><i class="fa-solid fa-wifi"></i> 测试连接</button>
+                <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
+                    <label>生图提示词</label>
+                    <textarea id="inline_prompt" class="zinao-chatu-textarea" rows="3"></textarea>
+                </div>
+                <div class="zinao-chatu-field-col">
+                    <label>尾部提示词 (留空备用)</label>
+                    <textarea id="inline_negative_prompt" class="zinao-chatu-textarea" rows="2"></textarea>
                 </div>
             </div>
-            <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
-                <label>破限提示词</label>
-                <textarea id="dblclick_jailbreak_prompt" class="zinao-chatu-textarea" rows="3"></textarea>
-            </div>
-            <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
-                <label>生图提示词</label>
-                <textarea id="dblclick_gen_prompt" class="zinao-chatu-textarea" rows="3"></textarea>
-            </div>
-            <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
-                <label>用户要求提示词 (捕获用户在聊天区呼出生图菜单时追加并拼接)</label>
-                <textarea id="dblclick_user_req_prompt" class="zinao-chatu-textarea" rows="2"></textarea>
-            </div>
-            <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
-                <label>上下文捕获区 (设置楼层，文本如能捕获)</label>
-                <textarea id="dblclick_context_capture" class="zinao-chatu-textarea" rows="3" readonly style="background-color: var(--zinao-chatu-bg-tertiary); cursor: not-allowed;"></textarea>
-            </div>
-            <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
-                <label>正文捕获区</label>
-                <textarea id="dblclick_main_capture" class="zinao-chatu-textarea" rows="3" readonly style="background-color: var(--zinao-chatu-bg-tertiary); cursor: not-allowed;"></textarea>
-            </div>
-            <div class="zinao-chatu-field-col">
-                <label>尾部提示词</label>
-                <textarea id="dblclick_postfix_prompt" class="zinao-chatu-textarea" rows="2"></textarea>
+
+            <!-- 双击聊天记录模式面板 -->
+            <div id="panel-mode-dblclick" class="model-tab-content">
+                <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
+                    <label>提示词模型选择</label>
+                    <div style="display: flex; gap: 10px; margin-bottom: 5px;">
+                        <input type="text" id="dblclick_api_endpoint" class="zinao-chatu-text-input" placeholder="API 端点 (Endpoint)" style="flex: 2;">
+                        <input type="password" id="dblclick_api_key" class="zinao-chatu-text-input" placeholder="API Key" style="flex: 2;">
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <select id="dblclick_model_select" class="zinao-chatu-select" style="flex: 2;">
+                            <option value="">(请先获取模型)</option>
+                        </select>
+                        <button id="dblclick_fetch_models" class="zinao-chatu-btn"><i class="fa-solid fa-sync"></i> 获取模型</button>
+                        <button id="dblclick_test_conn" class="zinao-chatu-btn"><i class="fa-solid fa-wifi"></i> 测试连接</button>
+                    </div>
+                </div>
+                <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
+                    <label>破限提示词</label>
+                    <textarea id="dblclick_jailbreak_prompt" class="zinao-chatu-textarea" rows="3"></textarea>
+                </div>
+                <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
+                    <label>生图提示词</label>
+                    <textarea id="dblclick_gen_prompt" class="zinao-chatu-textarea" rows="3"></textarea>
+                </div>
+                <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
+                    <label>用户要求提示词 (捕获用户在聊天区呼出生图菜单时追加并拼接)</label>
+                    <textarea id="dblclick_user_req_prompt" class="zinao-chatu-textarea" rows="2"></textarea>
+                </div>
+                <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
+                    <label>上下文捕获区 (设置楼层，文本如能捕获，展示，但不可编辑)</label>
+                    <textarea id="dblclick_context_capture" class="zinao-chatu-textarea" rows="3" readonly style="background-color: var(--zinao-chatu-bg-tertiary); cursor: not-allowed;"></textarea>
+                </div>
+                <div class="zinao-chatu-field-col" style="margin-bottom: 10px;">
+                    <label>正文捕获区 (文本如能捕获，展示，但不可编辑)</label>
+                    <textarea id="dblclick_main_capture" class="zinao-chatu-textarea" rows="3" readonly style="background-color: var(--zinao-chatu-bg-tertiary); cursor: not-allowed;"></textarea>
+                </div>
+                <div class="zinao-chatu-field-col">
+                    <label>尾部提示词</label>
+                    <textarea id="dblclick_postfix_prompt" class="zinao-chatu-textarea" rows="2"></textarea>
+                </div>
             </div>
         </div>
     </div>

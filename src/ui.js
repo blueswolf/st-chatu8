@@ -15,13 +15,29 @@ export function initZinaoChatuUI() {
         modeToggle.checked = isDblClick;
         updateModeDisplay(isDblClick);
         
-        // 绑定事件
+        // 绑定事件 (主开关滑块)
         modeToggle.addEventListener("change", (e) => {
             const checked = e.target.checked;
             settings.prompt_generation_mode = checked ? "dblclick" : "inline";
             saveSettingsDebounced();
             updateModeDisplay(checked);
         });
+    }
+
+    const radioInline = document.getElementById("tab-radio-prompt-inline");
+    const radioDblclick = document.getElementById("tab-radio-prompt-dblclick");
+    if (radioInline && radioDblclick) {
+        const syncTabsToSlider = (e) => {
+            const isDblClick = radioDblclick.checked;
+            if (modeToggle) {
+                modeToggle.checked = isDblClick;
+            }
+            settings.prompt_generation_mode = isDblClick ? "dblclick" : "inline";
+            saveSettingsDebounced();
+            updateModeDisplay(isDblClick);
+        };
+        radioInline.addEventListener("change", syncTabsToSlider);
+        radioDblclick.addEventListener("change", syncTabsToSlider);
     }
 
     // --- 文本框与下拉框数据双向绑定 ---
@@ -62,26 +78,28 @@ export function initZinaoChatuUI() {
 function updateModeDisplay(isDblClick) {
     const inlineLabel = document.getElementById('label-mode-inline');
     const dblclickLabel = document.getElementById('label-mode-dblclick');
-    const inlinePanel = document.getElementById('panel-mode-inline');
-    const dblclickPanel = document.getElementById('panel-mode-dblclick');
+    const radioInline = document.getElementById('tab-radio-prompt-inline');
+    const radioDblclick = document.getElementById('tab-radio-prompt-dblclick');
     
-    if (!inlineLabel || !dblclickLabel || !inlinePanel || !dblclickPanel) return;
-
-    if (isDblClick) {
-        inlineLabel.style.color = 'var(--zinao-chatu-text-secondary)';
-        inlineLabel.style.fontWeight = 'normal';
-        dblclickLabel.style.color = 'var(--zinao-chatu-accent-color)';
-        dblclickLabel.style.fontWeight = 'bold';
-        
-        inlinePanel.style.display = 'none';
-        dblclickPanel.style.display = 'block';
-    } else {
-        inlineLabel.style.color = 'var(--zinao-chatu-accent-color)';
-        inlineLabel.style.fontWeight = 'bold';
-        dblclickLabel.style.color = 'var(--zinao-chatu-text-secondary)';
-        dblclickLabel.style.fontWeight = 'normal';
-        
-        inlinePanel.style.display = 'block';
-        dblclickPanel.style.display = 'none';
+    if (inlineLabel && dblclickLabel) {
+        if (isDblClick) {
+            inlineLabel.style.color = 'var(--zinao-chatu-text-secondary)';
+            inlineLabel.style.fontWeight = 'normal';
+            dblclickLabel.style.color = 'var(--zinao-chatu-accent-color)';
+            dblclickLabel.style.fontWeight = 'bold';
+        } else {
+            inlineLabel.style.color = 'var(--zinao-chatu-accent-color)';
+            inlineLabel.style.fontWeight = 'bold';
+            dblclickLabel.style.color = 'var(--zinao-chatu-text-secondary)';
+            dblclickLabel.style.fontWeight = 'normal';
+        }
+    }
+    
+    if (radioInline && radioDblclick) {
+        if (isDblClick) {
+            radioDblclick.checked = true;
+        } else {
+            radioInline.checked = true;
+        }
     }
 }
