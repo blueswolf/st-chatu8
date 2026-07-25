@@ -64,8 +64,8 @@ export function initZinaoChatuUI() {
 function updateModeDisplay(isDblClick) {
     const inlineLabel = document.getElementById('label-mode-inline');
     const dblclickLabel = document.getElementById('label-mode-dblclick');
-    const iconInline = document.getElementById('icon-active-inline');
-    const iconDblclick = document.getElementById('icon-active-dblclick');
+    const textInline = document.getElementById('text-active-inline');
+    const textDblclick = document.getElementById('text-active-dblclick');
     
     if (inlineLabel && dblclickLabel) {
         if (isDblClick) {
@@ -81,8 +81,8 @@ function updateModeDisplay(isDblClick) {
         }
     }
     
-    if (iconInline && iconDblclick) {
-        iconInline.style.display = isDblClick ? 'none' : 'inline-block';
-        iconDblclick.style.display = isDblClick ? 'inline-block' : 'none';
+    if (textInline && textDblclick) {
+        textInline.style.display = isDblClick ? 'none' : 'inline-block';
+        textDblclick.style.display = isDblClick ? 'inline-block' : 'none';
     }
 }
