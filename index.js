@@ -80419,7 +80419,7 @@ function initAutoLLMClick() {
 var settings2;
 var currentPreviewTheme2 = {};
 var generationTabs3 = ["sd", "novelai", "comfyui"];
-var tabIds = ["main", "novelai", "image-cache", "log", "theme", "fab", "sd", "comfyui", "banana", "llm", "vocabulary", "knowledgeBase", "character", "regex", "send_data", "about"];
+var tabIds = ["main", "models", "image-cache", "log", "theme", "fab", "banana", "llm", "vocabulary", "knowledgeBase", "character", "regex", "send_data", "about"];
 var FAB_ICON_ACCEPTED_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif"];
 var FAB_ICON_MAX_FILE_SIZE = 5 * 1024 * 1024;
 var FAB_ICON_MAX_DIMENSION = 512;

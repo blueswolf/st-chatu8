@@ -209,7 +209,7 @@
 }
 
 #zinao-chatu-settings .zinao-chatu-settings-section {
-    background-color: var(--zinao-chatu-bg-secondary);
+    background-color: var(--zinao-chatu-bg-secondary, #2a2a4a);
     padding: 16px;
     border-radius: var(--zinao-chatu-border-radius);
     margin-bottom: 24px;
