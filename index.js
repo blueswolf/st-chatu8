@@ -76800,37 +76800,31 @@ function onImportProfileClick2() {
 }
 var DANGEROUS_REGEX_PATTERNS = [
   {
-    // 嵌套量词: (a+)+, (a*)+, (a+)*, (.+)+, (.*)+, etc.
     pattern: /\([^)]*[+*][^)]*\)[+*]/,
     name: "\u5D4C\u5957\u91CF\u8BCD",
     description: "\u5982 (a+)+, (.+)+ \u4F1A\u5BFC\u81F4\u6307\u6570\u7EA7\u56DE\u6EAF"
   },
   {
-    // 连续通配量词: .*.*,  .+.+, .*?.+, etc.
     pattern: /\.\*\.\*|\.\+\.\+|\.\*\?\.\+|\.\+\?\.\*/,
     name: "\u8FDE\u7EED\u901A\u914D\u7B26",
     description: "\u5982 .*.*, .+.+ \u4F1A\u5BFC\u81F4\u5927\u91CF\u56DE\u6EAF"
   },
   {
-    // 贪婪匹配后跟随相似模式: .*\w, .+\w, .*\S, .+\S
     pattern: /\.\+[^?].*\.\+|\.\*[^?].*\.\*/,
     name: "\u591A\u91CD\u8D2A\u5A6A\u5339\u914D",
     description: "\u591A\u4E2A\u8D2A\u5A6A\u5339\u914D\u53EF\u80FD\u5BFC\u81F4\u6027\u80FD\u95EE\u9898"
   },
   {
-    // 空匹配循环: ()*, ()+, ()?+
     pattern: /\(\s*\)[+*]/,
     name: "\u7A7A\u5339\u914D\u5FAA\u73AF",
     description: "\u7A7A\u62EC\u53F7\u52A0\u91CF\u8BCD\u4F1A\u5BFC\u81F4\u65E0\u9650\u5FAA\u73AF"
   },
   {
-    // 复杂嵌套组合: ((a+)+)+, (((.*)+)+)+
     pattern: /\(\([^)]*[+*][^)]*\)[+*]\)/,
     name: "\u6DF1\u5C42\u5D4C\u5957\u91CF\u8BCD",
     description: "\u591A\u5C42\u5D4C\u5957\u91CF\u8BCD\u98CE\u9669\u6781\u9AD8"
   },
   {
-    // 交替匹配与量词组合: (a|b+)+, (a*|b)+
     pattern: /\([^)]*\|[^)]*[+*][^)]*\)[+*]|\([^)]*[+*][^)]*\|[^)]*\)[+*]/,
     name: "\u4EA4\u66FF\u91CF\u8BCD\u7EC4\u5408",
     description: "\u5982 (a|b+)+ \u53EF\u80FD\u5BFC\u81F4\u56DE\u6EAF"
@@ -76852,7 +76846,7 @@ function detectDangerousRegex(regexStr) {
   if (regexStr.length > 500) {
     warnings.push({
       name: "\u8FC7\u957F\u6B63\u5219",
-      description: `\u6B63\u5219\u957F\u5EA6 ${regexStr.length} \u5B57\u7B26\uFF0C\u53EF\u80FD\u5F71\u54CD\u6027\u80FD`
+      description: `\u6B63\u5219\u957F\u5EA6 ${regexStr.length} \u5B57\u7B26\u4E32\uFF0C\u53EF\u80FD\u5F71\u54CD\u6027\u80FD`
     });
   }
   const quantifierCount = (regexStr.match(/[+*?]|\{\d+,?\d*\}/g) || []).length;
@@ -76897,9 +76891,11 @@ function mergeRanges(ranges) {
 async function onTestRegexClick(requestId, options = {}) {
   const timer = debugTimer("regex.onTestRegexClick", "\u6B63\u5219\u5904\u7406\u6D41\u7A0B");
   const keepImageTag = options.keepImageTag === true;
-  const sourceText = originalText.val();
-  const beforeAfterRegexStr = beforeAfterEditor.val().trim();
-  const textRegexStr = textEditor.val();
+  const sourceText = options.sourceText !== undefined ? options.sourceText : (originalText && originalText.length ? originalText.val() : $("#ch-regex-test-original-text").val());
+  const baEditor = beforeAfterEditor && beforeAfterEditor.length ? beforeAfterEditor : $("#ch-regex-before-after-editor");
+  const beforeAfterRegexStr = baEditor.length && baEditor.val() ? baEditor.val().trim() : "";
+  const tEditor = textEditor && textEditor.length ? textEditor : $("#ch-regex-text-editor");
+  const textRegexStr = tEditor.length && tEditor.val() ? tEditor.val() : "";
   let allRemovedRanges = [];
   debugLog("regex.onTestRegexClick", "\u5F00\u59CB\u6B63\u5219\u5904\u7406", {
     \u8BF7\u6C42ID: requestId || "(\u624B\u52A8\u6D4B\u8BD5)",
@@ -77150,7 +77146,6 @@ async function onTestRegexClick(requestId, options = {}) {
     const escapedStart = startTag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const escapedEnd = endTag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const builtInFilters = [
-      // ★ 保护模式下跳过内置的 <image> 过滤器
       ...keepImageTag ? [] : [{ pattern: /<image>[\s\S]*?<\/image>/g, desc: "\u8FC7\u6EE4 <image> \u6807\u7B7E" }],
       { pattern: new RegExp(`${escapedStart}[\\s\\S]*?${escapedEnd}`, "g"), desc: `\u8FC7\u6EE4 ${startTag} \u6807\u8BB0` },
       { pattern: /<!--[\s\S]*?-->/g, desc: "\u8FC7\u6EE4 HTML \u6CE8\u91CA <!-- -->" }
@@ -77242,7 +77237,11 @@ async function onTestRegexClick(requestId, options = {}) {
       final_text = final_text.replace(/<image>[\s\S]*?<\/image>/g, "");
     }
     final_text = final_text.trim();
-    resultText.val(final_text);
+    if (resultText && resultText.length) {
+      resultText.val(final_text);
+    } else {
+      $('#ch-regex-test-result-text').val(final_text);
+    }
     debugLog("regex.onTestRegexClick", "\u6B63\u5219\u5904\u7406\u5B8C\u6210", {
       \u539F\u59CB\u957F\u5EA6: sourceText?.length || 0,
       \u6700\u7EC8\u957F\u5EA6: final_text?.length || 0,
@@ -77273,7 +77272,11 @@ ${final_text}`);
     });
     timer.end(`\u5904\u7406\u5931\u8D25: ${e.message}`);
     toastr.error(`\u6B63\u5219\u8868\u8FBE\u5F0F\u9519\u8BEF: ${e.message}`);
-    resultText.val(`\u9519\u8BEF: ${e.message}`);
+    if (resultText && resultText.length) {
+      resultText.val(`\u9519\u8BEF: ${e.message}`);
+    } else {
+      $('#ch-regex-test-result-text').val(`\u9519\u8BEF: ${e.message}`);
+    }
   }
 }
 function onRegexTestModeChange() {
@@ -77382,12 +77385,16 @@ function initRegexSettings() {
   $("#ch-gesture-2-button").on("click", () => onRecordGestureClick("gesture2"));
   eventSource31.on(eventNames.REGEX_TEST_MESSAGE, (data) => {
     const { message, id, keepImageTag } = data;
-    if (originalText && message) {
+    if (message) {
       clearLog();
       addLog(`[Regex \u539F\u59CB\u6587\u672C]
 ${message}`);
-      originalText.val(message);
-      onTestRegexClick(id, { keepImageTag: keepImageTag === true });
+      if (originalText && originalText.length) {
+        originalText.val(message);
+      } else {
+        $("#ch-regex-test-original-text").val(message);
+      }
+      onTestRegexClick(id, { keepImageTag: keepImageTag === true, sourceText: message });
     }
   });
   regexEntriesContainer = $("#ch-regex-entries-container");
