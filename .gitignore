@@ -1,0 +1,5 @@
+SillyTavern/
+node_modules/
+deploy.tar.gz
+scratch/
+git_history.txt
